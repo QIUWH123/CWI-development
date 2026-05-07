@@ -19,8 +19,8 @@ PlayerEvents.loggedIn(event => {
     server.runCommandSilent(`effect give @a minecraft:blindness 7 0 true`);
     server.runCommandSilent(`playsound clanginghowl:electric_shock player @a ${x + 34} ${y - 56} ${z + 22} 1.5 3`);
     server.runCommandSilent(`playsound minecraft:entity.generic.extinguish_fire player @a ${x + 34} ${y - 56} ${z + 22} 1 1`);
-    server.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${x + 34} ${y - 56} ${z + 22} 0.3 0.1 0.3 0 10 force`);
-    server.runCommandSilent(`particle minecraft:cloud ${x + 34} ${y - 56} ${z + 22} 0.3 0.2 0.3 0 10 force`);
+    server.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${x + 34} ${y - 56} ${z + 22} 0.3 0.1 0.3 0 10`);
+    server.runCommandSilent(`particle minecraft:cloud ${x + 34} ${y - 56} ${z + 22} 0.3 0.2 0.3 0 10`);
 
   }
 

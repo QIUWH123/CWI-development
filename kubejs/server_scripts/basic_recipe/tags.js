@@ -401,6 +401,24 @@ ServerEvents.tags('block', event => {
   event.add('minecraft:geode_invalid_blocks', 'kubejs:steel_armor_block')
   event.add('minecraft:geode_invalid_blocks', 'kubejs:steel_armor_penetrated')
 
+//mixing_vessel
+
+  event.add('kubejs:mixing_vessel', 
+    [
+      'modpack:mixing_vessel',
+      'create:fluid_tank',
+      'tfmg:aluminum_fluid_tank',
+      'tfmg:cast_iron_fluid_tank',
+      'tfmg:steel_fluid_tank',
+      'ratatouille:compost_tower',
+      'createdieselgenerators:oil_barrel',
+      'fluid:smart_gutter_outlet',
+      'fluid:gutter_outlet',
+      'fluid:fluid_atomizer',
+      'create_connected:fluid_vessel'
+    ]
+  )
+
 })
 
 ServerEvents.tags('fluid', event => {
@@ -416,7 +434,7 @@ ServerEvents.tags('fluid', event => {
 
   event.removeAll('c:water')
   event.removeAll('minecraft:water')
-  
+
   event.add('c:water', 
     [
       'minecraft:water', 
