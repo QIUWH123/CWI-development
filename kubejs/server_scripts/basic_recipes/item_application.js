@@ -255,6 +255,23 @@ ServerEvents.recipes(event => {
     ]
   })
 
+  event.custom({
+    "type": "create:item_application",
+    "ingredients": [
+      {
+        "item": "kubejs:mechanical_arm_base"
+      },
+      {
+        "tag": "modpack:chemical_sprayer"
+      }
+    ],
+    "results": [
+      {
+        "item": "createdieselgenerators:chemical_turret"
+      }
+    ]
+  })
+
 //sandpaperPolishing
 
   event.custom({

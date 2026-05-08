@@ -38,7 +38,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:gneiss",
+                  "Name": "darkerdepths:duskrock",
                   "Properties": {
                     "axis": "y"
                   }
@@ -50,7 +50,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:gneiss"
+                  "Name": "darkerdepths:duskrock"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -68,7 +68,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:schist"
+                  "Name": "kubejs:claystone"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -77,7 +77,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:schist"
+                  "Name": "kubejs:claystone"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",

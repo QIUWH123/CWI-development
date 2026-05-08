@@ -46,6 +46,7 @@ ServerEvents.recipes(event => {
 
   event.recipes.create.mixing(Fluid.of('minecraft:lava', 100), '#modpack:cobbled_stones').superheated()
   event.recipes.create.mixing(Fluid.of('createaddition:bioethanol', 250), ['minecraft:sugar','createaddition:biomass', Fluid.of('kubejs:distilled_water', 250)])
+  event.recipes.create.mixing(Fluid.of('createaddition:bioethanol', 250), [Fluid.of('kubejs:syrup', 125),'createaddition:biomass', Fluid.of('kubejs:distilled_water', 125)])
   event.recipes.create.mixing('createaddition:biomass', ['createaddition:biomass_pellet', Fluid.of('minecraft:water', 50)])
   event.recipes.create.mixing('minecraft:clay_ball', ['kubejs:clay_dust', Fluid.of('minecraft:water', 50)])
   event.recipes.create.mixing('3x minecraft:gunpowder', ['3x tfmg:nitrate_dust', '2x tfmg:sulfur_dust', 'kubejs:charcoal_dust'])

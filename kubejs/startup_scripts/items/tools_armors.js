@@ -38,6 +38,19 @@ StartupEvents.registry('item', event => {
       .hunger(1)
       .saturation(0.5)})
 
+  event.create('spider_meat')
+    .texture('kubejs:item/spider_meat')
+    .food(food => {food
+      .hunger(3)
+      .saturation(1)})
+
+  event.create('cooked_spider_meat')
+    .texture('kubejs:item/cooked_spider_meat')
+    .food(food => {food
+      .hunger(6)
+      .saturation(1)})
+
+
 //armors
 
   event.create('bronze_helmet', 'helmet')

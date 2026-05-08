@@ -90,7 +90,7 @@
       "modpack:natures/dead_bush"
     ]
   ],
-  "has_precipitation": false,
+  "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
     "ambient": [],

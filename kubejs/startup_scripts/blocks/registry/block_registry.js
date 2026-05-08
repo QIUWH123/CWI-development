@@ -1261,6 +1261,16 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
 
+  event.create('weathered_glass')
+    .soundType('glass')
+    .hardness(0.6)
+    .resistance(0.6)
+    .requiresTool(true)
+    .mapColor('#FF5500')
+    .suffocating(false)
+    .redstoneConductor(false)
+    .defaultCutout()
+
   event.create('broken_glass')
     .soundType('glass')
     .hardness(0.6)

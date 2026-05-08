@@ -273,6 +273,12 @@ StartupEvents.registry('fluid', event => {
         .stillTexture('kubejs:fluid/gas_texture')
         .gaseous()
         .noBlock()
+
+    event.create('sulfur_dioxide')
+        .color(0xEBB92F)
+        .stillTexture('kubejs:fluid/gas_texture')
+        .gaseous()
+        .noBlock()
         
     event.create('steam')
         .color(0xF8F8F8)

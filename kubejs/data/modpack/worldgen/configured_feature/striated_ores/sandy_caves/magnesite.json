@@ -65,7 +65,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:shale"
+                  "Name": "darkerdepths:aridrock"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -74,7 +74,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:shale"
+                  "Name": "darkerdepths:aridrock"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",

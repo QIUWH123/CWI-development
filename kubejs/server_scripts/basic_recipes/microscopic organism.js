@@ -963,7 +963,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             { fluid: "kubejs:ammonia_solution", amount: 3 },
-            { fluid: "kubejs:carbon_dioxide", amount: 1 },
+            { fluid: "tfmg:carbon_dioxide", amount: 1 },
             { item: "kubejs:nitrofix_rhizobium" }
         ],
         60, undefined, ['basin', 'bulk']

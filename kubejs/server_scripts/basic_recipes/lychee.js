@@ -25,7 +25,6 @@ ServerEvents.recipes(event => {
     "type": "lychee:block_interacting",
     "item_in": {"tag":"forge:tools/knives"},
     "block_in": "kubejs:dead_leaves",
-    "contextual": {"type": "is_sneaking"},
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide": true},
       {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide": true},
@@ -48,17 +47,41 @@ ServerEvents.recipes(event => {
     "type": "lychee:block_interacting",
     "item_in": {"tag":"forge:tools/knives"},
     "block_in": "minecraft:dead_bush",
-    "contextual": {"type": "is_sneaking"},
     "post": [
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide": true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"place","block":"air"},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"minecraft:stick"},
-      {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.75}},
-      {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.37}},
-      {"type":"drop_item","item":"farmersdelight:straw","contextual":{"type":"chance","chance":0.17}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.13}}
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"minecraft:dead_bush"}
+        ],
+        "else": [
+          {"type":"drop_item","item":"minecraft:stick"},
+          {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.75}},
+          {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.37}},
+          {"type":"drop_item","item":"farmersdelight:straw","contextual":{"type":"chance","chance":0.17}},
+          {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.13}}
+        ]
+      },
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"forge:tools/knives"},
+    "block_in": "darkerdepths:mossy_sprouts",
+    "post": [
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"place","block":"air"},
+      {"type":"damage_item"},
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"darkerdepths:mossy_sprouts"}
+        ]
+      }
     ]
   })
 
@@ -66,13 +89,18 @@ ServerEvents.recipes(event => {
     "type": "lychee:block_interacting",
     "item_in": {"item":"minecraft:brush"},
     "block_in": "kubejs:crystalized_phyllite",
+    "contextual": {"type": "is_sneaking"},
     "post": [
-      {"type":"place","block":"darkerdepths:mossy_grimestone"},
-      {"type":"add_item_cooldown","s":0.5},
+      {"type":"if","contextual":{"type":"chance","chance":0.23},"then": [
+        {"type":"place","block":"darkerdepths:mossy_grimestone"},
+        {"type":"drop_item","item":"kubejs:crystallum_coccus"}
+      ]},
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.75},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"kubejs:crystallum_coccus"},
-      {"type":"drop_item","item":"minecraft:redstone","contextual":{"type":"chance","chance":0.37}},
-      {"type":"drop_item","item":"kubejs:quartz_dust","contextual":{"type":"chance","chance":0.37}}
+      {"type":"drop_item","item":"minecraft:redstone","contextual":{"type":"chance","chance":0.13}},
+      {"type":"drop_item","item":"kubejs:quartz_dust","contextual":{"type":"chance","chance":0.27}}
     ]
   })
 

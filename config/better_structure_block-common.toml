@@ -1,0 +1,10 @@
+#搜索角落方块的范围
+#Range: > 0
+search_size = 80
+#是否立即加载
+load_immediately = false
+#是否在加载后自毁
+destroy_after_load = false
+#禁用客户端显示
+disable_client_message = true
+

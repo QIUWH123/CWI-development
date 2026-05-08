@@ -9,17 +9,3 @@ EntityEvents.hurt(event => {
     event.server.runCommandSilent(`particle minecraft:electric_spark ${entity.x} ${entity.y+1} ${entity.z} 0.4 0.3 0.4 0 5 force`)
     event.server.runCommandSilent(`particle create_rns:stabilizing_resonance ${entity.x} ${entity.y+0.7} ${entity.z} 0.4 0.3 0.4 0 5 force`)
 })
-
-const $BrushableBlockEntity = Java.loadClass("net.minecraft.world.level.block.entity.BrushableBlockEntity");
-const $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
-
-BlockEvents.placed("kubejs:suspicious_depleted_dirt", (event) => {
-    console.log("Placed suspicious_depleted_dirt");
-    let blockEntity = event.block.entity;
-    console.log("BlockEntity: " + blockEntity);
-    if (blockEntity instanceof $BrushableBlockEntity) {
-        console.log("Instanceof check passed, setting loot table...");
-        blockEntity.setLootTable(new $ResourceLocation("modpack:archaeology/suspicious_depleted_dirt"));
-        blockEntity.setChanged();
-    }
-});

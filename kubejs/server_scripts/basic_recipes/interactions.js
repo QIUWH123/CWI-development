@@ -60,3 +60,16 @@ LevelEvents.tick(event => {
         }
     })
 })
+
+BlockEvents.rightClicked(event => {
+  const { player, block, hand } = event;
+  if (player.mainHandItem.id !== 'minecraft:stick') return;
+  event.cancel();
+  let nbt = block.getEntityData();
+  if (nbt.isEmpty()) {
+    player.tell("§e该方块没有 NBT 数据（无方块实体）。");
+  } else {
+    player.tell("§a方块完整 NBT 数据：");
+    player.tell(nbt.toString());
+  }
+});

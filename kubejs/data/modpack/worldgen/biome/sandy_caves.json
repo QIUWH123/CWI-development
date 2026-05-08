@@ -50,9 +50,6 @@
 
       "modpack:disks/claystone",
 
-      "modpack:stones/claystone",
-
-      "modpack:striated_ores/sandy_caves/shale",
       "modpack:striated_ores/sandy_caves/claystone",
       "modpack:striated_ores/sandy_caves/lignite",
       "modpack:striated_ores/sandy_caves/bauxite",
@@ -95,11 +92,9 @@
       "darkerdepths:petrified_roots",
       "darkerdepths:arid_vegetation"
     ],
-    [
-      "minecraft:freeze_top_layer"
-    ]
+    []
   ],
-  "has_precipitation": true,
+  "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {
     "ambient": [],
