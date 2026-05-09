@@ -6,7 +6,7 @@
 	#--------------------------------------------------------------------------
 	#Default on this config will ignore one entity crush at first time.
 	#This can keep miner not broken at the first time crush for helping player.
-	keep_structure_at_first = true
+	keep_structure_at_first = false
 	#--------------------------------------------------------------------------
 	#The time record list refresh default 3600s
 	#If a structure is ignored at first time and if the second time less than 3600s
@@ -30,15 +30,15 @@
 	#0 disables this cap. If Create provides 256 and you set 128, the bearing rotates at 128.
 	#If you set a value higher than the original Create speed, the original speed is kept.
 	#Range: > 0
-	"mechanical bearing gear max speed" = 128
+	"mechanical bearing gear max speed" = 0
 	#--------------------------------------------------------------------------
 	#The longest XZ distance of block entity | If set 20: 17*42*20 is allowed but 20*42*21 is forbidden.
 	#Range: 3 ~ 500
-	"block entity max length XZ" = 40
+	"block entity max length XZ" = 128
 	#--------------------------------------------------------------------------
 	#The longest Y  distance of block entity | If set 20: 42*14*42 is allowed but 42*24*42 is forbidden.
 	#Range: 3 ~ 500
-	"block entity max length Y" = 60
+	"block entity max length Y" = 128
 	#--------------------------------------------------------------------------
 	#The scan radius used by contraption cluster detection.
 	#Only contraptions within this radius will be merged into one cluster for cluster-level limit checks.

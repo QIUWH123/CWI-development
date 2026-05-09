@@ -26,8 +26,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:pickaxes"},
     "block_in": "kubejs:claystone_clump",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item"},
@@ -41,8 +40,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:shovels"},
     "block_in": "kubejs:claystone_clump",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item","damage":1},
@@ -56,8 +54,7 @@ ServerEvents.recipes(event => {
     "item_in": {"item":"minecraft:flint"},
     "block_in": "kubejs:claystone_clump",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"hurt","source":"generic","damage":1},
@@ -65,8 +62,7 @@ ServerEvents.recipes(event => {
         "then": [
           {"type":"drop_item","item":"kubejs:claystone_base","contextual":{"type":"chance","chance":0}},
           {"type":"execute","command":"setblock ~ ~ ~ kubejs:claystone_base","hide":true},
-          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
-          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
           {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
         ]
       }
@@ -78,8 +74,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:pickaxes"},
     "block_in": "kubejs:claystone_base",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item"},
@@ -93,8 +88,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:shovels"},
     "block_in": "kubejs:claystone_base",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item","damage":2},
@@ -108,8 +102,7 @@ ServerEvents.recipes(event => {
     "item_in": {"item":"minecraft:flint"},
     "block_in": "kubejs:claystone_base",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"hurt","source":"generic","damage":1},
@@ -117,8 +110,7 @@ ServerEvents.recipes(event => {
         "then": [
           {"type":"drop_item","item":"kubejs:incomplete_furnace","contextual":{"type":"chance","chance":0}},
           {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_furnace","hide":true},
-          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
-          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
           {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
         ]
       }
@@ -130,8 +122,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:pickaxes"},
     "block_in": "kubejs:incomplete_furnace",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item"},
@@ -145,8 +136,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:shovels"},
     "block_in": "kubejs:incomplete_furnace",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item","damage":2},
@@ -160,8 +150,7 @@ ServerEvents.recipes(event => {
     "item_in": {"item":"minecraft:flint"},
     "block_in": "kubejs:incomplete_furnace",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"hurt","source":"generic","damage":1},
@@ -169,8 +158,7 @@ ServerEvents.recipes(event => {
         "then": [
           {"type":"drop_item","item":"minecraft:furnace","contextual":{"type":"chance","chance":0}},
           {"type":"execute","command":"setblock ~ ~ ~ minecraft:furnace[lit=false]{BurnTime:0,CookTime:0,CookTimeTotal:0}","hide":true},
-          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
-          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
           {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
         ]
       }
@@ -182,8 +170,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"modpack:leather"},
     "block_in": "kubejs:claystone_base",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"drop_item","item":"kubejs:incomplete_crafting_table","contextual":{"type":"chance","chance":0}},
       {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_crafting_table","hide":true}
@@ -196,7 +183,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:incomplete_crafting_table",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"drop_item","item":"minecraft:crafting_table","contextual":{"type":"chance","chance":0}},
       {"type":"execute","command":"setblock ~ ~ ~ minecraft:crafting_table", "hide":true}
@@ -209,7 +195,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:incomplete_crafting_table",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
-      {"type":"execute","command":"particle minecraft:dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"damage_item"},
       {"type":"drop_item","item":"minecraft:crafting_table","contextual":{"type":"chance","chance":0}},
@@ -223,7 +208,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:dead_leaves",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"place","block":"air"},
@@ -369,7 +353,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:ash_log",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide": true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
       {"type":"place","block":"kubejs:stripped_ash_log"},
@@ -386,7 +369,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:broken_ash_log",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide": true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:broken_ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
       {"type":"place","block":"kubejs:stripped_broken_ash_log"},
@@ -402,7 +384,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:stripped_ash_log",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:stripped_ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
       {"type":"place","block":"kubejs:stripped_broken_ash_log"},
@@ -419,7 +400,6 @@ ServerEvents.recipes(event => {
     "block_in": "kubejs:stripped_broken_ash_log",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
       {"type":"place","block":"air"},
       {"type":"add_item_cooldown","s":0.2},
