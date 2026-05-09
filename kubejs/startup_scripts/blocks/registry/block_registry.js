@@ -311,7 +311,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
 
   event.create('acidified_darkslate')
     .soundType('deepslate')
@@ -494,7 +494,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
     
   event.create('cobbled_claystone')
     .soundType('deepslate')
@@ -503,14 +503,14 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
 
   event.create('claystone_gravel','falling')
     .soundType('gravel')
     .hardness(0.6)
     .resistance(0.6)
     .tagBlock('minecraft:mineable/shovel')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
 
   event.create('cobbled_granite')
     .stoneSoundType()
@@ -1331,7 +1331,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
 
   event.create('claystone_base')
     .soundType('deepslate')
@@ -1340,7 +1340,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
 
   event.create('incomplete_furnace')
     .soundType('stone')
@@ -1349,7 +1349,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
+    .mapColor('#B0965F')
   
   event.create('incomplete_crafting_table')
     .soundType('stone')
@@ -1358,7 +1358,7 @@ StartupEvents.registry('block', event => {
     .requiresTool(true)
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
+    .mapColor('#705948')
 
   event.create('polyvinyl_chloride_plastic_block')
     .soundType('metal')

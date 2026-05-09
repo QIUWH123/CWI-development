@@ -5,7 +5,7 @@ ServerEvents.recipes(event => {
     "item_in":{"item":"kubejs:dark_ash_dust"},
     "block_in":{"blocks":["water"],"state":{"level":0}},
     "post":[
-      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide": true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide":true},
       {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.27}},
       {"type":"delay","s":3}
     ]
@@ -15,9 +15,205 @@ ServerEvents.recipes(event => {
     "type": "lychee:item_burning",
     "item_in": {"item": "kubejs:ash_dust"},
     "post": [
-      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide": true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide":true},
       {"type":"drop_item","item":"kubejs:dark_ash_dust","contextual":{"type":"chance","chance":0.67}},
       {"type":"delay","s":3}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:pickaxes"},
+    "block_in": "kubejs:claystone_clump",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item"},
+      {"type":"drop_item","item":"kubejs:claystone_base","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ kubejs:claystone_base","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:shovels"},
+    "block_in": "kubejs:claystone_clump",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item","damage":1},
+      {"type":"drop_item","item":"kubejs:claystone_base","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ kubejs:claystone_base","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"item":"minecraft:flint"},
+    "block_in": "kubejs:claystone_clump",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"hurt","source":"generic","damage":1},
+      {"type":"if","contextual":{"type":"chance","chance":0.87},
+        "then": [
+          {"type":"drop_item","item":"kubejs:claystone_base","contextual":{"type":"chance","chance":0}},
+          {"type":"execute","command":"setblock ~ ~ ~ kubejs:claystone_base","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
+          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:pickaxes"},
+    "block_in": "kubejs:claystone_base",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item"},
+      {"type":"drop_item","item":"kubejs:incomplete_furnace","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_furnace","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:shovels"},
+    "block_in": "kubejs:claystone_base",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item","damage":2},
+      {"type":"drop_item","item":"kubejs:incomplete_furnace","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_furnace","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"item":"minecraft:flint"},
+    "block_in": "kubejs:claystone_base",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"hurt","source":"generic","damage":1},
+      {"type":"if","contextual":{"type":"chance","chance":0.87},
+        "then": [
+          {"type":"drop_item","item":"kubejs:incomplete_furnace","contextual":{"type":"chance","chance":0}},
+          {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_furnace","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
+          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:pickaxes"},
+    "block_in": "kubejs:incomplete_furnace",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item"},
+      {"type":"drop_item","item":"minecraft:furnace","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ minecraft:furnace[lit=false]{BurnTime:0,CookTime:0,CookTimeTotal:0}","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:shovels"},
+    "block_in": "kubejs:incomplete_furnace",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item","damage":2},
+      {"type":"drop_item","item":"minecraft:furnace","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ minecraft:furnace[lit=false]{BurnTime:0,CookTime:0,CookTimeTotal:0}","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"item":"minecraft:flint"},
+    "block_in": "kubejs:incomplete_furnace",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"hurt","source":"generic","damage":1},
+      {"type":"if","contextual":{"type":"chance","chance":0.87},
+        "then": [
+          {"type":"drop_item","item":"minecraft:furnace","contextual":{"type":"chance","chance":0}},
+          {"type":"execute","command":"setblock ~ ~ ~ minecraft:furnace[lit=false]{BurnTime:0,CookTime:0,CookTimeTotal:0}","hide":true},
+          {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide":true},
+          {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 3","hide":true},
+          {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide":true}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"modpack:leather"},
+    "block_in": "kubejs:claystone_base",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:claystone ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"drop_item","item":"kubejs:incomplete_crafting_table","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ kubejs:incomplete_crafting_table","hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"item":"minecraft:flint"},
+    "block_in": "kubejs:incomplete_crafting_table",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"drop_item","item":"minecraft:crafting_table","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ minecraft:crafting_table", "hide":true}
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"minecraft:axes"},
+    "block_in": "kubejs:incomplete_crafting_table",
+    "post": [
+      {"type":"execute","command":"particle minecraft:falling_dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},
+      {"type":"execute","command":"particle minecraft:dust kubejs:incomplete_crafting_table ~ ~ ~ 0.4 0.3 0.4 0.02 2","hide":true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"damage_item"},
+      {"type":"drop_item","item":"minecraft:crafting_table","contextual":{"type":"chance","chance":0}},
+      {"type":"execute","command":"setblock ~ ~ ~ minecraft:crafting_table","hide":true}
     ]
   })
 
@@ -26,9 +222,9 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"forge:tools/knives"},
     "block_in": "kubejs:dead_leaves",
     "post": [
-      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide": true},
-      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide": true},
-      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
+      {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide":true},
+      {"type":"execute","command":"particle minecraft:dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.02 5","hide":true},
+      {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide":true},
       {"type":"add_item_cooldown","s":0.3},
       {"type":"place","block":"air"},
       {"type":"damage_item"},
@@ -63,7 +259,7 @@ ServerEvents.recipes(event => {
           {"type":"drop_item","item":"farmersdelight:straw","contextual":{"type":"chance","chance":0.17}},
           {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.13}}
         ]
-      },
+      }
     ]
   })
 
@@ -92,7 +288,8 @@ ServerEvents.recipes(event => {
     "contextual": {"type": "is_sneaking"},
     "post": [
       {"type":"if","contextual":{"type":"chance","chance":0.23},"then": [
-        {"type":"place","block":"darkerdepths:mossy_grimestone"},
+        {"type":"drop_item","item":"darkerdepths:mossy_grimestone","contextual":{"type":"chance","chance":0}},
+        {"type":"execute","command":"setblock ~ ~ ~ darkerdepths:mossy_grimestone","hide":true},
         {"type":"drop_item","item":"kubejs:crystallum_coccus"}
       ]},
       {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
