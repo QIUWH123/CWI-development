@@ -13,7 +13,7 @@
 	water_sensitive_check = true
 	#TNT lighting mode. May be off, simple or fancy.
 	#Allowed Values: OFF, SIMPLE, FANCY
-	tnt = "SIMPLE"
+	tnt = "OFF"
 	#Creeper lighting mode. May be off, simple or fancy.
 	#Allowed Values: OFF, SIMPLE, FANCY
 	creeper = "OFF"

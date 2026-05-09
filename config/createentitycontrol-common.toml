@@ -73,11 +73,11 @@
 	"contraption cluster global notify cooldown minutes" = 5
 	#--------------------------------------------------------------------------
 	#A list of blocks can't be moved and change into block entities.
-	blocks_unmoved = ["create:mechanical_crafter", "minecraft:cobblestone", "minecraft:stone", "minecraft:deepslate", "create:belt", "create:white_toolbox", "create:orange_toolbox", "create:magenta_toolbox", "create:yellow_toolbox", "create:lime_toolbox", "create:brown_toolbox", "create:pink_toolbox", "create:gray_toolbox", "create:light_gray_toolbox", "create:light_blue_toolbox", "create:blue_toolbox", "create:purple_toolbox", "create:cyan_toolbox", "create:green_toolbox", "create:red_toolbox", "create:black_toolbox", "minecraft:spawner"]
+	blocks_unmoved = ["kubejs:steel_armor_block", "kubejs:steel_armor_penetrated", "kubejs:steel_armor_safe", "create:mechanical_crafter", "create:belt", "create:white_toolbox", "create:orange_toolbox", "create:magenta_toolbox", "create:yellow_toolbox", "create:lime_toolbox", "create:brown_toolbox", "create:pink_toolbox", "create:gray_toolbox", "create:light_gray_toolbox", "create:light_blue_toolbox", "create:blue_toolbox", "create:purple_toolbox", "create:cyan_toolbox", "create:green_toolbox", "create:red_toolbox", "create:black_toolbox", "minecraft:spawner"]
 	#--------------------------------------------------------------------------
 	#A list of blocks can't be crushed by block entities. 
 	#If you squeeze a stone with dirt and stone in this list the dirt will drop while stone leave!
-	blocks_uncrushable = ["minecraft:deepslate", "minecraft:stone", "minecraft:cobblestone"]
+	blocks_uncrushable = ["kubejs:steel_armor_block", "kubejs:steel_armor_penetrated", "kubejs:steel_armor_safe"]
 	#--------------------------------------------------------------------------
 	#A list of blocks can be crushed by block entities.
 	#Create's default config.
@@ -94,7 +94,7 @@
 	blocks_ignore = ["create:piston_extension_pole"]
 	#--------------------------------------------------------------------------
 	#When enabled, blocks will calculate the experiment para for block entities.This might take very little time.
-	"calculate block stabilize para" = true
+	"calculate block stabilize para" = false
 	#--------------------------------------------------------------------------
 	#The max limit of stabilize para. One normal block have 100 default stabilize count.
 	#Set depend on storage box can avoid block entities NBT overflow.

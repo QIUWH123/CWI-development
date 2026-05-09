@@ -260,22 +260,22 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
-				id: "34082FFFF7D0EEC5"
-				item: "create_factory_logistics:jar_packager"
+				id: "65092CE0EA2F3720"
+				item: "fluid:communicating_vessel"
 				type: "item"
 			}]
 			x: 4.5d
 			y: 1.5d
 		}
 		{
-			dependencies: ["3D9C425E8993EE1D"]
+			dependencies: ["0AB2714AE3675671"]
 			disable_toast: true
 			id: "49BB95B4D4287747"
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
-				id: "5A8ADD7BFF85A9D0"
-				item: "create_factory_logistics:factory_fluid_gauge"
+				id: "709A41ECBC8EEBB7"
+				item: "fluid:can_filler"
 				type: "item"
 			}]
 			x: 6.5d
