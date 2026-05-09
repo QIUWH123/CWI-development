@@ -177,11 +177,6 @@
 			id: "5148FEA0B12D0880"
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{
-				id: "3E1D51DB4BCB3036"
-				item: "tfmg:blast_furnace_output"
-				type: "item"
-			}]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -673,20 +668,6 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["69BA8B4A6B6C0D75"]
-			icon: "kubejs:molten_iron_bucket"
-			id: "3F2D54A951F212E4"
-			shape: "diamond"
-			subtitle: "Molten Steel and Iron"
-			tasks: [{
-				id: "1BF4DF48F3CE0452"
-				type: "checkmark"
-			}]
-			title: "Molten Metals"
-			x: 8.0d
-			y: 6.0d
-		}
-		{
 			dependencies: ["2D1180C9EC2DE6E2"]
 			icon: "tfmg:heavy_plate"
 			id: "0DC9E40A95F02CAA"
@@ -806,6 +787,18 @@
 			}]
 			x: 10.0d
 			y: -4.0d
+		}
+		{
+			dependencies: ["69BA8B4A6B6C0D75"]
+			id: "75D002F673C6FBA1"
+			shape: "diamond"
+			tasks: [{
+				id: "11F596CEE755A0DE"
+				item: "createmetallurgy:gauge_attachment"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 6.0d
 		}
 	]
 	title: "Industrial Foregoing"

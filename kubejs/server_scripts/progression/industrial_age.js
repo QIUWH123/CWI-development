@@ -208,6 +208,19 @@ ServerEvents.recipes(event => {
     }
   )
 
+  event.shaped(
+    Item.of('createmetallurgy:gauge_attachment'),
+    [
+      'ABA',
+      'CCC'
+    ],
+    {
+      A: 'tfmg:industrial_pipe',
+      B: 'kubejs:steel_bearing',
+      C: 'tfmg:heavy_plate'
+    }
+  )
+
 //cutting
 
   event.recipes.create.cutting(['kubejs:galvanic_manual', 'kubejs:the_electrical_engineers_log'], 'kubejs:second_package')

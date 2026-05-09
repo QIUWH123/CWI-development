@@ -69,6 +69,18 @@ ServerEvents.tags('item', event => {
   //chemical_spray
   event.add('modpack:chemical_sprayer', ['modpack:chemical_sprayer', 'createdieselgenerators:chemical_sprayer_lighter'])
 
+  //petri_dish
+  event.add('modpack:petri_dish', [
+    'kubejs:fermento_mycetes_dish', 
+    'kubejs:acidolys_bacillus_dish', 
+    'kubejs:vulcan_thermus_dish', 
+    'kubejs:radiotroph_nucleavorax_dish', 
+    'kubejs:carbofusor_spirillum_dish', 
+    'kubejs:putrelys_sporogenes_dish', 
+    'kubejs:crystallum_coccus_dish', 
+    'kubejs:nitrofix_rhizobium_dish'
+  ])
+
   //type
   event.add('modpack:iron2', ['minecraft:iron_sword', 'minecraft:iron_hoe'])
   event.add('modpack:iron3', ['minecraft:iron_axe', 'minecraft:iron_pickaxe'])

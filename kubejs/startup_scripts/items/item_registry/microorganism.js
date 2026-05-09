@@ -36,4 +36,31 @@ StartupEvents.registry('item', event => {
   event.create('crystallum_coccus')
     .texture('kubejs:item/microorganisms/crystallum_coccus')
 
+//petri_dish
+
+  event.create('fermento_mycetes_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('acidolys_bacillus_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('vulcan_thermus_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('radiotroph_nucleavorax_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('carbofusor_spirillum_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('putrelys_sporogenes_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('crystallum_coccus_dish')
+    .texture('kubejs:item/petri_dish')
+
+  event.create('nitrofix_rhizobium_dish')
+    .texture('kubejs:item/petri_dish')
+
+
 })

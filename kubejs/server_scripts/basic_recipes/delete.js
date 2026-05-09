@@ -12,6 +12,10 @@ ServerEvents.recipes(event => {
 
   event.remove({ mod: 'ad_astra' })
 
+//create_rns
+
+  event.remove({ mod: 'create_rns' })
+
 //rubberWorks
 
   event.remove({ mod: 'rubberworks' })

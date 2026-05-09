@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      { "model": "kubejs:block/wet_biological_sediment", "weight": 13 },
+      { "model": "kubejs:block/wet_biological_sediment_1", "weight": 2 },
+      { "model": "kubejs:block/wet_biological_sediment_2", "weight": 5 }
+    ]
+  }
+}
