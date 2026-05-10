@@ -30,7 +30,6 @@ JEIAddedEvents.registerCategories(event => {
             layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 21, 48)
                 .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                 .addItemStack(recipe.recipeData.input)
-
             layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 141, 48)
                 .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                 .addItemStack(recipe.recipeData.output)
