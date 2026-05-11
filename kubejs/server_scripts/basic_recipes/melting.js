@@ -3,190 +3,245 @@ ServerEvents.recipes(event => {
   function tableCasting(mold,input,amount,time,output){
     event.custom({
       "type": "createmetallurgy:casting_in_table",
-      "ingredients": [
-        {
-          "item": mold
-        },
-        {
-          "amount": amount,
-          "fluid": input
-        }
-      ],
+      "ingredients": [{"item": mold},{
+      "amount": amount,"fluid": input}],
       "processingTime": time,
-      "result": {
-        "item": output
-      }
-    })
-  }
+      "result": {"item": output}
+    })}
 
   function basinCasting(input,amount,time,output){
     event.custom({
       "type": "createmetallurgy:casting_in_basin",
-      "ingredients": [
-        {
-          "amount": amount,
-          "fluid": input
-        }
-      ],
+      "ingredients": [{"amount": amount,"fluid": input}],
       "processingTime": time,
-      "result": {
-        "item": output
-      }
-    })
-  }
+      "result": {"item": output}
+    })}
 
   function basinCastingItem(item,input,amount,time,output){
     event.custom({
       "type": "createmetallurgy:casting_in_basin",
-      "ingredients": [
-        {
-          "item": item
-        },
-        {
-          "amount": amount,
-          "fluid": input
-        }
-      ],
+      "ingredients": [{"item": item},{
+      "amount": amount,"fluid": input}],
       "processingTime": time,
-      "result": {
-        "item": output
-      }
-    })
-  }
+      "result": {"item": output}
+    })}
 
   function melting(heat,input,amount,time,output){
     event.custom({
       "type": "createmetallurgy:melting",
       "heatRequirement": heat,
-      "ingredients": [
-        {
-          "item": input
-        }
-      ],
+      "ingredients": [{"item": input}],
       "processingTime": time,
-      "results": [
-        {
-          "amount": amount,
-          "fluid": output
-        }
-      ]
-    })
-  }
+      "results": [{"amount": amount,"fluid": output}]
+    })}
 
   function bulkMelting(minHeat,maxHeat,input,amount,time,output){
     event.custom({
       "type": "createmetallurgy:bulk_melting",
-      "ingredients": [
-        {
-          "item": input
-        }
-      ],
+      "ingredients": [{"item": input}],
       "maxHeatRequirement": maxHeat,
       "minHeatRequirement": minHeat,
       "processingTime": time,
-      "results": [
-        {
-          "amount": amount,
-          "fluid": output
-        }
-      ]
-    })
-  }
+      "results": [{"amount": amount,"fluid": output}]
+    })}
 
   function alloying(time,input1,amount1,input2,amount2,output,outputAmount){
     event.custom({
       "type": "createmetallurgy:alloying",
-      "ingredients": [
-        {
-          "amount": amount1,
-          "fluid": input1
-        },
-        {
-          "amount": amount2,
-          "fluid": input2
-        }
-      ],
+      "ingredients": [{"amount": amount1,"fluid": input1},{"amount": amount2,"fluid": input2}],
       "processingTime": time,
-      "results": [
-        {
-          "amount": outputAmount,
-          "fluid": output
-        }
-      ]
-    })
-  }
+      "results": [{"amount": outputAmount,"fluid": output}]
+    })}
 
   function alloyingH(time,input1,amount1,input2,amount2,output,outputAmount){
     event.custom({
       "type": "createmetallurgy:alloying",
       "heatRequirement": "heated",
-      "ingredients": [
-        {
-          "amount": amount1,
-          "fluid": input1
-        },
-        {
-          "amount": amount2,
-          "fluid": input2
-        }
-      ],
+      "ingredients": [{"amount": amount1,"fluid": input1},{"amount": amount2,"fluid": input2}],
       "processingTime": time,
-      "results": [
-        {
-          "amount": outputAmount,
-          "fluid": output
-        }
-      ]
-    })
-  }
+      "results": [{"amount": outputAmount,"fluid": output}]
+    })}
 
   function alloyingSH(time,input1,amount1,input2,amount2,output,outputAmount){
     event.custom({
       "type": "createmetallurgy:alloying",
       "heatRequirement": "superheated",
-      "ingredients": [
-        {
-          "amount": amount1,
-          "fluid": input1
-        },
-        {
-          "amount": amount2,
-          "fluid": input2
-        }
-      ],
+      "ingredients": [{"amount": amount1,"fluid": input1},{"amount": amount2,"fluid": input2}],
       "processingTime": time,
-      "results": [
-        {
-          "amount": outputAmount,
-          "fluid": output
-        }
-      ]
-    })
-  }
+      "results": [{"amount": outputAmount,"fluid": output}]
+    })}
 
   function itemAlloying(heat,time,input1,count1,input2,count2,output,outputAmount){
     event.custom({
       "type": "createmetallurgy:alloying",
       "heatRequirement": heat,
-      "ingredients": [
-        {
-          "count": count1,
-          "item": input1
-        },
-        {
-          "count": count2,
-          "item": input2
-        }
-      ],
+      "ingredients": [{"count": count1,"item": input1},{"count": count2,"item": input2}],
       "processingTime": time,
-      "results": [
-        {
-          "amount": outputAmount,
-          "fluid": output
-        }
-      ]
-    })
+      "results": [{"amount": outputAmount,"fluid": output}]
+    })}
+
+//melting
+
+  melting('heated', 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
+  bulkMelting(4,50, 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
+  const MATERIALS = [
+    {
+      id: 'copper', fluid: 'kubejs:molten_copper', mp: 217,
+      sheet: 'create:copper_sheet', ingot: 'minecraft:copper_ingot',
+      rod: 'createaddition:copper_rod', wire: 'createaddition:copper_wire',
+      nugget: 'create:copper_nugget', block: 'minecraft:copper_block', dust: 'kubejs:copper_dust'
+    },
+    {
+      id: 'gold', fluid: 'kubejs:molten_gold', mp: 213,
+      sheet: 'create:golden_sheet', ingot: 'minecraft:gold_ingot',
+      rod: 'createaddition:gold_rod', wire: 'createaddition:gold_wire',
+      nugget: 'minecraft:gold_nugget', block: 'minecraft:gold_block', dust: 'kubejs:gold_dust'
+    },
+    {
+      id: 'silver', fluid: 'kubejs:molten_silver', mp: 192,
+      sheet: 'kubejs:silver_sheet', ingot: 'kubejs:silver_ingot',
+      rod: 'kubejs:silver_rod', wire: 'kubejs:silver_wire',
+      nugget: 'kubejs:silver_nugget', block: 'kubejs:silver_block', dust: 'kubejs:silver_dust'
+    },
+    {
+      id: 'tin', fluid: 'kubejs:molten_tin', mp: 46,
+      sheet: 'kubejs:tin_sheet', ingot: 'kubejs:tin_ingot',
+      rod: 'kubejs:tin_rod', wire: 'kubejs:tin_wire',
+      nugget: 'kubejs:tin_nugget', block: 'kubejs:tin_block', dust: 'kubejs:tin_dust'
+    },
+    {
+      id: 'cast_iron', fluid: 'kubejs:molten_cast_iron', mp: 237,
+      sheet: 'tfmg:cast_iron_sheet', ingot: 'tfmg:cast_iron_ingot',
+      rod: 'vintageimprovements:cast_iron_rod', wire: 'vintageimprovements:cast_iron_wire',
+      nugget: 'tfmg:cast_iron_nugget', block: 'tfmg:cast_iron_block', dust: 'kubejs:cast_iron_dust'
+    },
+    {
+      id: 'lead', fluid: 'kubejs:molten_lead', mp: 66,
+      sheet: 'tfmg:lead_sheet', ingot: 'tfmg:lead_ingot',
+      rod: 'vintageimprovements:lead_rod', wire: 'vintageimprovements:lead_wire',
+      nugget: 'tfmg:lead_nugget', block: 'tfmg:lead_block', dust: 'kubejs:lead_dust'
+    },
+    {
+      id: 'zinc', fluid: 'kubejs:molten_zinc', mp: 84,
+      sheet: 'createaddition:zinc_sheet', ingot: 'create:zinc_ingot',
+      rod: 'vintageimprovements:zinc_rod', wire: 'vintageimprovements:zinc_wire',
+      nugget: 'create:zinc_nugget', block: 'create:zinc_block', dust: 'kubejs:zinc_dust'
+    },
+    {
+      id: 'aluminum', fluid: 'kubejs:molten_aluminum', mp: 132,
+      sheet: 'tfmg:aluminum_sheet', ingot: 'tfmg:aluminum_ingot',
+      rod: 'vintageimprovements:aluminum_rod', wire: 'tfmg:aluminum_wire',
+      nugget: 'tfmg:aluminum_nugget', block: 'tfmg:aluminum_block', dust: 'kubejs:aluminum_dust'
+    },
+    {
+      id: 'andesite_alloy', fluid: 'kubejs:molten_andesite_alloy', mp: 136,
+      sheet: 'vintageimprovements:andesite_sheet', ingot: 'create:andesite_alloy',
+      rod: 'vintageimprovements:andesite_rod', wire: 'vintageimprovements:andesite_wire',
+      nugget: null, block: 'create:andesite_alloy_block', dust: 'kubejs:andesite_alloy_dust'
+    },
+    {
+      id: 'electrum', fluid: 'kubejs:molten_electrum', mp: 208,
+      sheet: 'createaddition:electrum_sheet', ingot: 'createaddition:electrum_ingot',
+      rod: 'createaddition:electrum_rod', wire: 'createaddition:electrum_wire',
+      nugget: 'createaddition:electrum_nugget', block: 'createaddition:electrum_block', dust: 'kubejs:electrum_dust'
+    },
+    {
+      id: 'constantan', fluid: 'kubejs:molten_constantan', mp: 242,
+      sheet: 'vintageimprovements:constantan_sheet', ingot: 'tfmg:constantan_ingot',
+      rod: 'vintageimprovements:constantan_rod', wire: 'tfmg:constantan_wire',
+      nugget: 'tfmg:constantan_nugget', block: 'tfmg:constantan_block', dust: 'kubejs:constantan_dust'
+    },
+    {
+      id: 'bronze', fluid: 'kubejs:molten_bronze', mp: 216,
+      sheet: 'kubejs:bronze_sheet', ingot: 'kubejs:bronze_ingot',
+      rod: 'kubejs:bronze_rod', wire: 'kubejs:bronze_wire',
+      nugget: 'kubejs:bronze_nugget', block: 'kubejs:bronze_block', dust: 'kubejs:bronze_dust'
+    },
+    {
+      id: 'brass', fluid: 'kubejs:molten_brass', mp: 186,
+      sheet: 'create:brass_sheet', ingot: 'create:brass_ingot',
+      rod: 'createaddition:brass_rod', wire: 'vintageimprovements:brass_wire',
+      nugget: 'create:brass_nugget', block: 'create:brass_block', dust: 'kubejs:brass_dust'
+    },
+    {
+      id: 'cobalt', fluid: 'kubejs:molten_cobalt', mp: 299,
+      sheet: 'kubejs:cobalt_sheet', ingot: 'kubejs:cobalt_ingot',
+      rod: 'kubejs:cobalt_rod', wire: 'kubejs:cobalt_wire',
+      nugget: 'kubejs:cobalt_nugget', block: 'kubejs:cobalt_block', dust: 'kubejs:cobalt_dust'
+    },
+    {
+      id: 'iron', fluid: 'kubejs:molten_iron', mp: 307,
+      sheet: 'create:iron_sheet', ingot: 'minecraft:iron_ingot',
+      rod: 'createaddition:iron_rod', wire: 'createaddition:iron_wire',
+      nugget: 'minecraft:iron_nugget', block: 'minecraft:iron_block', dust: 'kubejs:iron_dust'
+    },
+    {
+      id: 'steel', fluid: 'tfmg:molten_steel', mp: 317,
+      sheet: 'tfmg:heavy_plate', ingot: 'tfmg:steel_ingot',
+      rod: 'vintageimprovements:steel_rod', wire: 'vintageimprovements:steel_wire',
+      nugget: 'tfmg:steel_nugget', block: 'tfmg:steel_block', dust: 'kubejs:steel_dust'
+    }
+  ]
+
+  function getHeat(mat) { return mat.mp >= 200 ? 'superheated' : 'heated' }
+
+  function castTime(mat, type) {
+    const base = mat.mp
+    if (type === 'sheet' || type === 'ingot') return base
+    if (type === 'rod') return Math.round(base / 2)
+    if (type === 'nugget') return Math.round(base / 5)
+    if (type === 'block') return base * 5
+    return base
   }
+
+  function meltTime(mat, type) {
+    const ingotTime = Math.round(mat.mp / 3)
+    const dustTime = Math.round(ingotTime * 0.7)
+
+    if (type === 'dust') return dustTime
+    if (type === 'sheet' || type === 'ingot') return ingotTime
+    if (type === 'wire' || type === 'rod') return Math.round(ingotTime / 2)
+    if (type === 'nugget') return Math.round(ingotTime / 5)
+    if (type === 'block') return ingotTime * 5
+    return ingotTime
+  }
+
+  const MOLD_TYPES = ['terracotta', 'fireproof_brick']
+  const SHAPES = ['sheet', 'rod', 'nugget', 'ingot']
+
+  MATERIALS.forEach(mat => {
+    MOLD_TYPES.forEach(moldPrefix => {
+      if (moldPrefix === 'terracotta' && mat.mp >= 250) return
+      SHAPES.forEach(shape => {
+        const moldItem = `kubejs:${moldPrefix}_${shape}_mold`
+        const outputItem = mat[shape]
+        if (!outputItem) return
+        const amount = (shape === 'sheet' || shape === 'ingot') ? 90 : (shape === 'rod' ? 45 : 10)
+        const time = castTime(mat, shape)
+        tableCasting(moldItem, mat.fluid, amount, time, outputItem)
+      })
+    })
+
+    if (mat.block) {
+      basinCasting(mat.fluid, 810, castTime(mat, 'block'), mat.block)
+    }
+
+    const heat = getHeat(mat)
+    const bulkMin = heat === 'superheated' ? 9 : 4
+    const bulkMax = 50
+
+    const itemTypes = ['sheet', 'wire', 'rod', 'dust', 'nugget', 'ingot', 'block']
+    itemTypes.forEach(type => {
+      const item = mat[type]
+      if (!item) return
+      const amount = (type === 'block') ? 810 :
+                    (type === 'wire' || type === 'rod') ? 45 :
+                    (type === 'nugget') ? 10 : 90
+      const time = meltTime(mat, type)
+      melting(heat, item, amount, time, mat.fluid)
+      bulkMelting(bulkMin, bulkMax, item, amount, time, mat.fluid)
+    })
+  })
 
 //basinCasting
   
@@ -201,397 +256,21 @@ ServerEvents.recipes(event => {
   tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:polyvinyl_chloride_plastic',90,46,'kubejs:polyvinyl_chloride_plastic_sheet')
   basinCasting('kubejs:polyvinyl_chloride_plastic',810,230,'kubejs:polyvinyl_chloride_plastic_block')
 
-//melting
-
-  melting('heated', 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
-  bulkMelting(4,50, 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
-
-//castingMetal
-
-  //terracotta
-
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_copper',90,217,'create:copper_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_gold',90,213,'create:golden_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_silver',90,192,'kubejs:silver_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_tin',90,46,'kubejs:tin_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_cast_iron',10,237,'tfmg:cast_iron_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_lead',90,66,'tfmg:lead_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_zinc',90,84,'createaddition:zinc_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_aluminum',90,132,'tfmg:aluminum_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_andesite_alloy',90,136,'vintageimprovements:andesite_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_electrum',90,208,'createaddition:electrum_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_constantan',90,242,'vintageimprovements:constantan_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_bronze',90,216,'kubejs:bronze_sheet')
-  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_brass',90,186,'create:brass_sheet')
-
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_copper',45,97,'createaddition:copper_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_gold',45,95,'createaddition:gold_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_silver',45,86,'kubejs:silver_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_tin',45,20,'kubejs:tin_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_cast_iron',10,106,'vintageimprovements:cast_iron_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_lead',45,29,'vintageimprovements:lead_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_zinc',45,37,'vintageimprovements:zinc_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_aluminum',45,59,'vintageimprovements:aluminum_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_andesite_alloy',45,61,'vintageimprovements:andesite_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_electrum',45,93,'createaddition:electrum_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_constantan',45,108,'vintageimprovements:constantan_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_bronze',45,97,'kubejs:bronze_rod')
-  tableCasting('kubejs:terracotta_rod_mold','kubejs:molten_brass',45,83,'createaddition:brass_rod')
-
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_copper',10,43,'create:copper_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_gold',10,42,'minecraft:gold_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_silver',10,38,'kubejs:silver_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_tin',10,9,'kubejs:tin_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_cast_iron',10,47,'tfmg:cast_iron_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_lead',10,13,'tfmg:lead_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_zinc',10,16,'create:zinc_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_aluminum',10,26,'tfmg:aluminum_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_electrum',10,41,'createaddition:electrum_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_constantan',10,48,'tfmg:constantan_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_bronze',10,43,'kubejs:bronze_nugget')
-  tableCasting('kubejs:terracotta_nugget_mold','kubejs:molten_brass',10,37,'create:brass_nugget')
-
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_copper',90,217,'minecraft:copper_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_gold',90,213,'minecraft:gold_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_silver',90,192,'kubejs:silver_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_tin',90,46,'kubejs:tin_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_cast_iron',10,237,'tfmg:cast_iron_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_lead',90,66,'tfmg:lead_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_zinc',90,84,'create:zinc_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_aluminum',90,132,'tfmg:aluminum_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_andesite_alloy',90,136,'create:andesite_alloy')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_electrum',90,208,'createaddition:electrum_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_constantan',90,242,'tfmg:constantan_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_bronze',90,216,'kubejs:bronze_ingot')
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_brass',90,186,'create:brass_ingot')
-
-  //fireproof_brick
-
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_copper',90,217,'create:copper_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_gold',90,213,'create:golden_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_silver',90,192,'kubejs:silver_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_tin',90,46,'kubejs:tin_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_cast_iron',10,237,'tfmg:cast_iron_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_lead',90,66,'tfmg:lead_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_zinc',90,84,'createaddition:zinc_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_aluminum',90,132,'tfmg:aluminum_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_andesite_alloy',90,136,'vintageimprovements:andesite_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_electrum',90,208,'createaddition:electrum_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_constantan',90,242,'vintageimprovements:constantan_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_bronze',90,216,'kubejs:bronze_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_brass',90,186,'create:brass_sheet')
-
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_cobalt',90,299,'kubejs:cobalt_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_iron',90,307,'create:iron_sheet')
-  tableCasting('kubejs:fireproof_brick_sheet_mold','tfmg:molten_steel',90,317,'tfmg:heavy_plate')
-
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_copper',45,97,'createaddition:copper_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_gold',45,95,'createaddition:gold_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_silver',45,86,'kubejs:silver_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_tin',45,20,'kubejs:tin_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_cast_iron',10,106,'vintageimprovements:cast_iron_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_lead',45,29,'vintageimprovements:lead_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_zinc',45,37,'vintageimprovements:zinc_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_aluminum',45,59,'vintageimprovements:aluminum_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_andesite_alloy',45,61,'vintageimprovements:andesite_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_electrum',45,93,'createaddition:electrum_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_constantan',45,108,'vintageimprovements:constantan_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_bronze',45,97,'kubejs:bronze_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_brass',45,83,'createaddition:brass_rod')
-
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_cobalt',45,134,'kubejs:cobalt_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','kubejs:molten_iron',45,137,'createaddition:iron_rod')
-  tableCasting('kubejs:fireproof_brick_rod_mold','tfmg:molten_steel',45,142,'vintageimprovements:steel_rod')
-
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_copper',10,43,'create:copper_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_gold',10,42,'minecraft:gold_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_silver',10,38,'kubejs:silver_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_tin',10,9,'kubejs:tin_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_cast_iron',10,47,'tfmg:cast_iron_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_lead',10,13,'tfmg:lead_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_zinc',10,16,'create:zinc_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_aluminum',10,26,'tfmg:aluminum_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_electrum',10,41,'createaddition:electrum_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_constantan',10,48,'tfmg:constantan_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_bronze',10,43,'kubejs:bronze_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_brass',10,37,'create:brass_nugget')
-
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_cobalt',10,60,'kubejs:cobalt_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','kubejs:molten_iron',10,61,'minecraft:iron_nugget')
-  tableCasting('kubejs:fireproof_brick_nugget_mold','tfmg:molten_steel',10,63,'tfmg:steel_nugget')
-
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_copper',90,217,'minecraft:copper_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_gold',90,213,'minecraft:gold_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_silver',90,192,'kubejs:silver_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_tin',90,46,'kubejs:tin_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_cast_iron',10,237,'tfmg:cast_iron_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_lead',90,66,'tfmg:lead_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_zinc',90,84,'create:zinc_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_aluminum',90,132,'tfmg:aluminum_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_andesite_alloy',90,136,'create:andesite_alloy')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_electrum',90,208,'createaddition:electrum_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_constantan',90,242,'tfmg:constantan_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_bronze',90,216,'kubejs:bronze_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_brass',90,186,'create:brass_ingot')
-
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_cobalt',90,299,'kubejs:cobalt_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_iron',90,307,'minecraft:iron_ingot')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','tfmg:molten_steel',90,317,'tfmg:steel_ingot')
-
-  basinCasting('kubejs:molten_copper',810,1085,'minecraft:copper_block')
-  basinCasting('kubejs:molten_gold',810,1065,'minecraft:gold_block')
-  basinCasting('kubejs:molten_silver',810,960,'kubejs:silver_block')
-  basinCasting('kubejs:molten_tin',810,230,'kubejs:tin_block')
-  basinCasting('kubejs:molten_cast_iron',810,1185,'tfmg:cast_iron_block')
-  basinCasting('kubejs:molten_lead',810,330,'tfmg:lead_block')
-  basinCasting('kubejs:molten_zinc',810,420,'create:zinc_block')
-  basinCasting('kubejs:molten_aluminum',810,660,'tfmg:aluminum_block')
-  basinCasting('kubejs:molten_andesite_alloy',810,680,'create:andesite_alloy_block')
-  basinCasting('kubejs:molten_electrum',810,1040,'createaddition:electrum_block')
-  basinCasting('kubejs:molten_constantan',810,1210,'tfmg:constantan_block')
-  basinCasting('kubejs:molten_bronze',810,1080,'kubejs:bronze_block')
-  basinCasting('kubejs:molten_brass',810,930,'create:brass_block')
-
-  basinCasting('kubejs:molten_cobalt',810,1495,'kubejs:cobalt_block')
-  basinCasting('kubejs:molten_iron',810,1535,'minecraft:iron_block')
-  basinCasting('tfmg:molten_steel',810,1585,'tfmg:steel_block')
-
-//melting
-
-  melting('superheated', 'create:copper_sheet', 90, 72, 'kubejs:molten_copper')
-  melting('superheated', 'create:golden_sheet', 90, 71, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_sheet', 90, 64, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_sheet', 90, 15, 'kubejs:molten_tin')
-  melting('superheated', 'tfmg:cast_iron_sheet', 10, 79, 'kubejs:molten_cast_iron')
-  melting('heated', 'tfmg:lead_sheet', 90, 22, 'kubejs:molten_lead')
-  melting('heated', 'createaddition:zinc_sheet', 90, 28, 'kubejs:molten_zinc')
-  melting('heated', 'tfmg:aluminum_sheet', 90, 44, 'kubejs:molten_aluminum')
-  melting('heated', 'vintageimprovements:andesite_sheet', 90, 45, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'createaddition:electrum_sheet', 90, 69, 'kubejs:molten_electrum')
-  melting('superheated', 'vintageimprovements', 90, 80, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_sheet', 90, 72, 'kubejs:molten_bronze')
-  melting('heated', 'create:brass_sheet', 90, 62, 'kubejs:molten_brass')
-
-  melting('superheated', 'createaddition:copper_wire', 45, 32, 'kubejs:molten_copper')
-  melting('superheated', 'createaddition:gold_wire', 45, 31, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_wire', 45, 28, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_wire', 45, 6, 'kubejs:molten_tin')
-  melting('superheated', 'vintageimprovements:cast_iron_wire', 45, 35, 'kubejs:molten_cast_iron')
-  melting('heated', 'vintageimprovements:lead_wire', 45, 9, 'kubejs:molten_lead')
-  melting('heated', 'vintageimprovements:zinc_wire', 45, 12, 'kubejs:molten_zinc')
-  melting('heated', 'tfmg:aluminum_wire', 45, 19, 'kubejs:molten_aluminum')
-  melting('heated', 'vintageimprovements:andesite_wire', 45, 20, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'createaddition:electrum_wire', 45, 31, 'kubejs:molten_electrum')
-  melting('superheated', 'tfmg:constantan_wire', 45, 36, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_wire', 45, 32, 'kubejs:molten_bronze')
-  melting('heated', 'vintageimprovements:brass_wire', 45, 27, 'kubejs:molten_brass')
-
-  melting('superheated', 'createaddition:copper_rod', 45, 32, 'kubejs:molten_copper')
-  melting('superheated', 'createaddition:gold_rod', 45, 31, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_rod', 45, 28, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_rod', 45, 6, 'kubejs:molten_tin')
-  melting('superheated', 'vintageimprovements:cast_iron_rod', 45, 35, 'kubejs:molten_cast_iron')
-  melting('heated', 'vintageimprovements:lead_rod', 45, 9, 'kubejs:molten_lead')
-  melting('heated', 'vintageimprovements:zinc_rod', 45, 12, 'kubejs:molten_zinc')
-  melting('heated', 'vintageimprovements:aluminum_rod', 45, 19, 'kubejs:molten_aluminum')
-  melting('heated', 'vintageimprovements:andesite_rod', 45, 20, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'createaddition:electrum_rod', 45, 31, 'kubejs:molten_electrum')
-  melting('superheated', 'vintageimprovements:constantan_rod', 45, 36, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_rod', 45, 32, 'kubejs:molten_bronze')
-  melting('heated', 'createaddition:brass_rod', 45, 27, 'kubejs:molten_brass')
-
-  melting('superheated', 'kubejs:copper_dust', 90, 50, 'kubejs:molten_copper')
-  melting('superheated', 'kubejs:gold_dust', 90, 49, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_dust', 90, 44, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_dust', 90, 10, 'kubejs:molten_tin')
-  melting('superheated', 'kubejs:cast_iron_dust', 10, 55, 'kubejs:molten_cast_iron')
-  melting('heated', 'kubejs:lead_dust', 90, 15, 'kubejs:molten_lead')
-  melting('heated', 'kubejs:zinc_dust', 90, 19, 'kubejs:molten_zinc')
-  melting('heated', 'kubejs:aluminum_dust', 90, 30, 'kubejs:molten_aluminum')
-  melting('heated', 'kubejs:andesite_alloy_dust', 90, 31, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'kubejs:electrum_dust', 90, 48, 'kubejs:molten_electrum')
-  melting('superheated', 'kubejs:constantan_dust', 90, 56, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_dust', 90, 50, 'kubejs:molten_bronze')
-  melting('heated', 'kubejs:brass_dust', 90, 43, 'kubejs:molten_brass')
-
-  melting('superheated', 'create:copper_nugget', 10, 14, 'kubejs:molten_copper')
-  melting('superheated', 'minecraft:gold_nugget', 10, 14, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_nugget', 10, 12, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_nugget', 10, 3, 'kubejs:molten_tin')
-  melting('superheated', 'tfmg:cast_iron_nugget', 10, 15, 'kubejs:molten_cast_iron')
-  melting('heated', 'tfmg:lead_nugget', 10, 4, 'kubejs:molten_lead')
-  melting('heated', 'create:zinc_nugget', 10, 5, 'kubejs:molten_zinc')
-  melting('heated', 'tfmg:aluminum_nugget', 10, 8, 'kubejs:molten_aluminum')
-  melting('superheated', 'createaddition:electrum_nugget', 10, 13, 'kubejs:molten_electrum')
-  melting('superheated', 'tfmg:constantan_nugget', 10, 16, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_nugget', 10, 14, 'kubejs:molten_bronze')
-  melting('heated', 'create:brass_nugget', 10, 12, 'kubejs:molten_brass')
-
-  melting('superheated', 'minecraft:copper_ingot', 90, 72, 'kubejs:molten_copper')
-  melting('superheated', 'minecraft:gold_ingot', 90, 71, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_ingot', 90, 64, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_ingot', 90, 15, 'kubejs:molten_tin')
-  melting('superheated', 'tfmg:cast_iron_ingot', 10, 79, 'kubejs:molten_cast_iron')
-  melting('heated', 'tfmg:lead_ingot', 90, 22, 'kubejs:molten_lead')
-  melting('heated', 'create:zinc_ingot', 90, 28, 'kubejs:molten_zinc')
-  melting('heated', 'tfmg:aluminum_ingot', 90, 44, 'kubejs:molten_aluminum')
-  melting('heated', 'create:andesite_alloy', 90, 45, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'createaddition:electrum_ingot', 90, 69, 'kubejs:molten_electrum')
-  melting('superheated', 'tfmg:constantan_ingot', 90, 80, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_ingot', 90, 72, 'kubejs:molten_bronze')
-  melting('heated', 'create:brass_ingot', 90, 62, 'kubejs:molten_brass')
-
-  melting('superheated', 'minecraft:copper_block', 810, 361, 'kubejs:molten_copper')
-  melting('superheated', 'minecraft:gold_block', 810, 355, 'kubejs:molten_gold')
-  melting('heated', 'kubejs:silver_block', 810, 320, 'kubejs:molten_silver')
-  melting('heated', 'kubejs:tin_block', 810, 76, 'kubejs:molten_tin')
-  melting('superheated', 'tfmg:cast_iron_block', 810, 395, 'kubejs:molten_cast_iron')
-  melting('heated', 'tfmg:lead_block', 810, 110, 'kubejs:molten_lead')
-  melting('heated', 'create:zinc_block', 810, 140, 'kubejs:molten_zinc')
-  melting('heated', 'tfmg:aluminum_block', 810, 220, 'kubejs:molten_aluminum')
-  melting('heated', 'create:andesite_alloy_block', 810, 226, 'kubejs:molten_andesite_alloy')
-  melting('superheated', 'createaddition:electrum_block', 810, 346, 'kubejs:molten_electrum')
-  melting('superheated', 'tfmg:constantan_block', 810, 403, 'kubejs:molten_constantan')
-  melting('superheated', 'kubejs:bronze_block', 810, 360, 'kubejs:molten_bronze')
-  melting('heated', 'create:brass_block', 810, 310, 'kubejs:molten_brass')
-
-//bulkMelting
-
-  bulkMelting(9,50, 'create:copper_sheet', 90, 72, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'create:golden_sheet', 90, 71, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_sheet', 90, 64, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_sheet', 90, 15, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_sheet', 90, 100, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'tfmg:cast_iron_sheet', 10, 79, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'tfmg:lead_sheet', 90, 22, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'createaddition:zinc_sheet', 90, 28, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'tfmg:aluminum_sheet', 90, 44, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'vintageimprovements:andesite_sheet', 90, 45, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'createaddition:electrum_sheet', 90, 69, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'vintageimprovements:constantan_sheet', 90, 80, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_sheet', 90, 72, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'create:brass_sheet', 90, 62, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'createaddition:copper_wire', 45, 32, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'createaddition:gold_wire', 45, 31, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_wire', 45, 28, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_wire', 45, 6, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_wire', 45, 45, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'vintageimprovements:cast_iron_wire', 45, 35, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'vintageimprovements:lead_wire', 45, 9, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'vintageimprovements:zinc_wire', 45, 12, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'tfmg:aluminum_wire', 45, 19, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'vintageimprovements:andesite_wire', 45, 20, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'createaddition:electrum_wire', 45, 31, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'tfmg:constantan_wire', 45, 36, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_wire', 45, 32, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'vintageimprovements:brass_wire', 45, 27, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'createaddition:copper_rod', 45, 32, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'createaddition:gold_rod', 45, 31, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_rod', 45, 28, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_rod', 45, 6, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_rod', 45, 45, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'vintageimprovements:cast_iron_rod', 45, 35, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'vintageimprovements:lead_rod', 45, 9, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'vintageimprovements:zinc_rod', 45, 12, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'vintageimprovements:aluminum_rod', 45, 19, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'vintageimprovements:andesite_rod', 45, 20, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'createaddition:electrum_rod', 45, 31, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'vintageimprovements:constantan_rod', 45, 36, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_rod', 45, 32, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'createaddition:brass_rod', 45, 27, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'kubejs:copper_dust', 90, 50, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'kubejs:gold_dust', 90, 49, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_dust', 90, 44, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_dust', 90, 10, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_dust', 90, 70, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'kubejs:cast_iron_dust', 10, 55, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'kubejs:lead_dust', 90, 15, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'kubejs:zinc_dust', 90, 19, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'kubejs:aluminum_dust', 90, 30, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'kubejs:andesite_alloy_dust', 90, 31, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'kubejs:electrum_dust', 90, 48, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'kubejs:constantan_dust', 90, 56, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_dust', 90, 50, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'kubejs:brass_dust', 90, 43, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'create:copper_nugget', 10, 14, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'minecraft:gold_nugget', 10, 14, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_nugget', 10, 12, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_nugget', 10, 3, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_nugget', 10, 20, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'tfmg:cast_iron_nugget', 10, 15, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'tfmg:lead_nugget', 10, 4, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'create:zinc_nugget', 10, 5, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'tfmg:aluminum_nugget', 10, 8, 'kubejs:molten_aluminum')
-  bulkMelting(9,50, 'createaddition:electrum_nugget', 10, 13, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'tfmg:constantan_nugget', 10, 16, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_nugget', 10, 14, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'create:brass_nugget', 10, 12, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'minecraft:copper_ingot', 90, 72, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'minecraft:gold_ingot', 90, 71, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_ingot', 90, 64, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_ingot', 90, 15, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_ingot', 90, 100, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'tfmg:cast_iron_ingot', 10, 79, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'tfmg:lead_ingot', 90, 22, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'create:zinc_ingot', 90, 28, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'tfmg:aluminum_ingot', 90, 44, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'create:andesite_alloy', 90, 45, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'createaddition:electrum_ingot', 90, 69, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'tfmg:constantan_ingot', 90, 80, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_ingot', 90, 72, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'create:brass_ingot', 90, 62, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'minecraft:copper_block', 810, 361, 'kubejs:molten_copper')
-  bulkMelting(9,50, 'minecraft:gold_block', 810, 355, 'kubejs:molten_gold')
-  bulkMelting(4,50, 'kubejs:silver_block', 810, 320, 'kubejs:molten_silver')
-  bulkMelting(4,50, 'kubejs:tin_block', 810, 76, 'kubejs:molten_tin')
-  bulkMelting(9,50, 'kubejs:cobalt_block', 810, 498, 'kubejs:molten_cobalt')
-  bulkMelting(9,50, 'tfmg:cast_iron_block', 810, 395, 'kubejs:molten_cast_iron')
-  bulkMelting(4,50, 'tfmg:lead_block', 810, 110, 'kubejs:molten_lead')
-  bulkMelting(4,50, 'create:zinc_block', 810, 140, 'kubejs:molten_zinc')
-  bulkMelting(4,50, 'tfmg:aluminum_block', 810, 220, 'kubejs:molten_aluminum')
-  bulkMelting(4,50, 'create:andesite_alloy_block', 810, 226, 'kubejs:molten_andesite_alloy')
-  bulkMelting(9,50, 'createaddition:electrum_block', 810, 346, 'kubejs:molten_electrum')
-  bulkMelting(9,50, 'tfmg:constantan_block', 810, 403, 'kubejs:molten_constantan')
-  bulkMelting(9,50, 'kubejs:bronze_block', 810, 360, 'kubejs:molten_bronze')
-  bulkMelting(4,50, 'create:brass_block', 810, 310, 'kubejs:molten_brass')
-
-  bulkMelting(9,50, 'tfmg:heavy_plate', 90, 105, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'vintageimprovements:steel_wire', 45, 46, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'vintageimprovements:steel_rod', 45, 46, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'kubejs:steel_dust', 90, 73, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'tfmg:steel_nugget', 10, 20, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'tfmg:steel_ingot', 90, 105, 'tfmg:molten_steel')
-  bulkMelting(9,50, 'tfmg:steel_block', 810, 527, 'tfmg:molten_steel')
-
-  bulkMelting(9,50, 'create:iron_sheet', 90, 101, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'createaddition:iron_wire', 45, 45, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'createaddition:iron_rod', 45, 45, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'kubejs:iron_dust', 90, 70, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'minecraft:iron_nugget', 10, 19, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'minecraft:iron_ingot', 90, 101, 'kubejs:molten_iron')
-  bulkMelting(9,50, 'minecraft:iron_block', 810, 510, 'kubejs:molten_iron')
-
 //mixing
 
-  alloying(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',20)
-  alloying(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',20)
-  alloying(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',20)
+  alloying(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',40)
+  alloying(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',40)
+  alloying(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',90)
   alloying(2,'kubejs:molten_copper',10,'kubejs:molten_zinc',10,'kubejs:molten_brass',20)
 
-  alloyingH(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',20)
-  alloyingH(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',20)
-  alloyingH(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',20)
+  alloyingH(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',40)
+  alloyingH(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',40)
+  alloyingH(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',90)
   alloyingH(2,'kubejs:molten_copper',10,'kubejs:molten_zinc',10,'kubejs:molten_brass',20)
 
-  alloyingSH(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',20)
-  alloyingSH(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',20)
-  alloyingSH(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',20)
+  alloyingSH(4,'kubejs:molten_gold',30,'kubejs:molten_silver',10,'kubejs:molten_electrum',40)
+  alloyingSH(4,'kubejs:molten_copper',30,'kubejs:molten_nickel',10,'kubejs:molten_constantan',40)
+  alloyingSH(9,'kubejs:molten_copper',80,'kubejs:molten_tin',10,'kubejs:molten_bronze',90)
   alloyingSH(2,'kubejs:molten_copper',10,'kubejs:molten_zinc',10,'kubejs:molten_brass',20)
   
 })
