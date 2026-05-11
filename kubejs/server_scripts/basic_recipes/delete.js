@@ -44,7 +44,11 @@ ServerEvents.recipes(event => {
 
   event.remove({ mod: 'sgjourney' })
 
+})
+
 //sophisticatedStorage
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'sophisticatedbackpacks:backpack' })
   event.remove({ id: 'sophisticatedbackpacks:copper_backpack' })
@@ -89,7 +93,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'sophisticatedbackpacks:stack_upgrade_omega_tier' })
   event.remove({ id: '' })
 
+})
+
 //darkerdepths
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'darkerdepths:duskrock' })
   event.remove({ id: 'darkerdepths:porous_petrified_log' })
@@ -102,6 +110,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'darkerdepths:magma_pad' })
   event.remove({ id: 'darkerdepths:death_anchor' })
   event.remove({ id: 'darkerdepths:rope' })
+  event.remove({ id: 'darkerdepths:scorched_remains_block' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -128,10 +137,13 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
+
+})
 
 //sgjourney
 
+ServerEvents.recipes(event => {
+
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -143,7 +155,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //geode_plus
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'geode_plus:nether_quartz_crystal_block' })
   event.remove({ id: '' })
@@ -162,12 +178,16 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //biomancy
+
+ServerEvents.recipes(event => {
 
   event.remove({ mod: 'biomancy' })
 
-  event.remove({ id: 'biofactory:filling/rich_soil' })
-  event.remove({ id: 'biomancy:crafting/dirt_from_stone_powder' })
+  //event.remove({ id: 'biofactory:filling/rich_soil' })
+  //event.remove({ id: 'biomancy:crafting/dirt_from_stone_powder' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -176,12 +196,20 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+
+})
 
 //ftb quest
 
+ServerEvents.recipes(event => {
+
   event.remove({ id: 'ftbquests:loot_crate_opener' })
 
+})
+
 //minecraft
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'minecraft:piston' })
   event.remove({ id: 'minecraft:sticky_piston' })
@@ -211,6 +239,18 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'minecraft:dispenser' })
   event.remove({ id: 'minecraft:dropper' })
   event.remove({ id: 'minecraft:shield' })
+  event.remove({ id: 'minecraft:bone_block' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -264,6 +304,18 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: 'minecraft:netherite_helmet_smithing' })
+  event.remove({ id: 'minecraft:netherite_chestplate_smithing' })
+  event.remove({ id: 'minecraft:netherite_leggings_smithing' })
+  event.remove({ id: 'minecraft:netherite_boots_smithing' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -274,7 +326,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'minecraft:gold_nugget_from_smelting' })
   event.remove({ id: 'minecraft:iron_nugget_from_smelting' })
 
+})
+
 //create new age
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'create_new_age:cutting/copper_wire' })
   event.remove({ id: 'create_new_age:cutting/overcharged_iron_wire' })
@@ -291,6 +347,8 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
   event.remove({ id: 'create_new_age:energising/overcharged_iron_sheet' })
   event.remove({ id: 'create_new_age:energising/overcharged_golden_sheet' })
   event.remove({ id: 'create_new_age:energising/overcharged_gold' })
@@ -301,14 +359,37 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: 'create_new_age:mechanical_crafting/reactor_rod' })
   event.remove({ id: 'create_new_age:shaped/electrical_connector_mirrored' })
   event.remove({ id: 'create_new_age:shaped/electrical_connector' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: 'create_new_age:mechanical_crafting/reactor_rod' })
+  event.remove({ id: 'create_new_age:mechanical_crafting/reinforced_motor' })
+  event.remove({ id: 'create_new_age:mechanical_crafting/advanced_motor_extension' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+
+})
 
 //createDieselGenerator
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'createdieselgenerators:crafting/bulk_fermenter' })
   event.remove({ id: 'createdieselgenerators:crafting/hammer' })
@@ -389,24 +470,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
-//newAge
-
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
+})
 
 //bitsnbobs
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'bits_n_bobs:item_application/chain_pulley_from_rope_pulley_using_deployer' })
   event.remove({ id: 'bits_n_bobs:item_application/chain_pulley_from_rope_pulley' })
@@ -417,7 +485,40 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   
+})
+
+//clanginghowl
+
+ServerEvents.recipes(event => {
+
+  event.remove({ id: 'clanginghowl:ex_steel/extraterrestrial_steel_ingot_blasting_smelting' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  
+})
+
 //tfmg
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'tfmg:mixing/thermite' })
   event.remove({ id: 'tfmg:mixing/gunpowder' })
@@ -485,7 +586,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'tfmg:mechanical_crafting/spark_plug' })
   event.remove({ id: 'tfmg:mechanical_crafting/simple_large_engine' })
   event.remove({ id: 'tfmg:mechanical_crafting/large_engine' })
   event.remove({ id: 'tfmg:mechanical_crafting/engine_controller' })
@@ -642,11 +743,19 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'tfmg:crafting/kinetics/blue_multimeter' })
   event.remove({ id: 'tfmg:crafting/kinetics/white_multimeter' })
 
+})
+
 //createMetallurgy
+
+ServerEvents.recipes(event => {
 
   event.remove({ mod: 'createmetallurgy' })
 
+})
+
 //functionalStorage
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'functionalstorage:oak_drawer_alternate_x1' })
   event.remove({ id: 'functionalstorage:oak_drawer_alternate_x2' })
@@ -660,7 +769,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'functionalstorage:simple_compacting_drawer' })
   event.remove({ id: 'functionalstorage:framed_simple_compacting_drawer' })
   event.remove({ id: 'functionalstorage:armory_cabinet' })
-  event.remove({ id: '' })
+  event.remove({ id: 'functionalstorage:netherite_upgrade' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: 'functionalstorage:fluid_1' })
@@ -695,7 +804,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //ratatouille
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'ratatouille:oven' })
   event.remove({ id: '' })
@@ -735,7 +848,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'ratatouille:organic_compost' })
   event.remove({ id: 'ratatouille:eggshell' })
 
+})
+
 //rustic_delight
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'rusticdelight:string_from_cotton_boll' })
   event.remove({ id: 'rusticdelight:cooked_calamari_from_campfire_cooking' })
@@ -751,7 +868,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //miners_delight
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'miners_delight:string_from_gossypium' })
   event.remove({ id: '' })
@@ -769,7 +890,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //farmersdelight
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'farmersdelight:gold_nugget_from_smelting_knife' })
   event.remove({ id: 'farmersdelight:iron_nugget_from_smelting_knife' })
@@ -796,7 +921,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'farmersdelight:netherite_knife_smithing' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -820,7 +945,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   
+})
+
 //stuffAndAddition
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'create_sa:hydraulic_engine_recipe' })
   event.remove({ id: 'create_sa:heat_engine_recipe' })
@@ -897,8 +1026,8 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'create_sa:iron_boots_haunting' })
   event.remove({ id: 'create_sa:obsidian_haunting' })
   event.remove({ id: 'create_sa:book_and_quill_haunting' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'create_sa:andesite_exoskeleton_recipe' })
+  event.remove({ id: 'create_sa:netherite_jetpack_recipe' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -908,7 +1037,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //create
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'create:compacting/blaze_cake' })
   event.remove({ id: 'create:compacting/chocolate' })
@@ -1004,6 +1137,14 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: 'create:crafting/appliances/netherite_backtank_from_netherite' })
+  event.remove({ id: 'create:crafting/appliances/netherite_diving_boots' })
+  event.remove({ id: 'create:crafting/appliances/netherite_diving_helmet' })
+  event.remove({ id: 'create:crafting/appliances/netherite_backtank' })
+  event.remove({ id: 'create:crafting/appliances/netherite_diving_boots_from_netherite' })
+  event.remove({ id: 'create:crafting/appliances/netherite_diving_helmet_from_netherite' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -1029,8 +1170,8 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'create:mechanical_crafting/wand_of_symmetry' })
+  event.remove({ id: 'create:mechanical_crafting/extendo_grip' })
   event.remove({ id: 'create:mechanical_crafting/crushing_wheel' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -1141,7 +1282,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'create:milling/charcoal' })
   event.remove({ id: 'create:milling/coal' })
 
+})
+
 //createConnected
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'create_connected:sequenced_assembly/control_chip' })
   event.remove({ id: 'create_connected:crafting/kinetics/fluid_vessel' })
@@ -1178,7 +1323,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //createaddition
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'createaddition:crafting/rolling_mill' })
   event.remove({ id: 'createaddition:crafting/large_connector_gold' })
@@ -1216,7 +1365,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: 'createaddition:rolling/straw' })
 
+})
+
 //fluid
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'fluid:mechanical_pipette' })
   event.remove({ id: 'fluid:copper_tap' })
@@ -1241,7 +1394,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'fluid:mechanical_crafting/baton' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -1263,7 +1416,11 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //createDeco
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'createdeco:pressing/andesite_sheet' })
   event.remove({ id: 'createdeco:pressing/zinc_sheet' })
@@ -1279,16 +1436,28 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
 //createChunkLoader
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'create_power_loader:crafting/empty_andesite_chunk_loader' })
   event.remove({ id: 'create_power_loader:crafting/empty_brass_chunk_loader' })
   
+})
+
 //createfisheryindustry
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'createfisheryindustry:pressing/zinc_ingot' })
 
+})
+
 //vintageimprovements
+
+ServerEvents.recipes(event => {
 
   event.remove({ id: 'vintageimprovements:pressing/cast_iron_ingot' })
   event.remove({ id: 'vintageimprovements:pressing/aluminum_ingot' })

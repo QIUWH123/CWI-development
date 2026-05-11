@@ -9,6 +9,13 @@ ServerEvents.recipes(event => {
       "results":[{"item": output}]
     })}
 
+  function cutting(input,output,count){
+    event.custom({
+      "type": "createdieselgenerators:wire_cutting",
+      "ingredients": [{"item": input}],
+      "results": [{"item": output,"count": count}]
+    })}
+
   function rolling(input,output){
     event.custom({
       "type":"createaddition:rolling",
@@ -55,6 +62,33 @@ ServerEvents.recipes(event => {
       "results": [{"item": output}]
     })}
 
+  function helveHammering(){
+    event.custom({
+	    "type": "vintageimprovements:hammering",
+      "hammerBlows": 3,
+	    "ingredients": [
+        {
+          "item": "create:zinc_ingot"
+        },
+        {
+          "item": "minecraft:copper_ingot"
+        }
+      ],
+      "results": [
+        {
+          "item": "create:zinc_ingot"
+        },
+        {
+          "item": "minecraft:copper_ingot"
+        },
+        {
+          "item": "create:brass_ingot"
+        },
+        {
+          "item": "minecraft:gold_ingot"
+        }
+      ]
+    })}
 
   function addStoragePair(bigItem, smallItem, count) {
     var smallStack = count + 'x ' + smallItem;
@@ -110,6 +144,15 @@ ServerEvents.recipes(event => {
   rolling('kubejs:cobalt_sheet','kubejs:cobalt_wire')
   rolling('kubejs:magnet_sheet','kubejs:magnet_wire')
   rolling('kubejs:magnetic_alloy_sheet','kubejs:magnetic_alloy_wire')
+
+//cutting
+
+  cutting('create:brass_ingot','kubejs:brass_circuit_board',1)
+  cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
+  cutting('tfmg:aluminum_ingot','tfmg:aluminum_wire',1)
+  cutting('tfmg:lead_ingot','vintageimprovements:lead_wire',1)
+  cutting('kubejs:tin_ingot','kubejs:tin_wire',1)
+  cutting('minecraft:dead_bush','farmersdelight:straw',1)
 
 //hammering
 

@@ -311,7 +311,7 @@ ServerEvents.recipes(event => {
     Item.of('createdieselgenerators:hammer'),
     [
       'AAA',
-      'ABA',
+      ' B ',
       ' B '
     ],
     {

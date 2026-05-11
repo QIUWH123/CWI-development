@@ -1369,8 +1369,8 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
 
-  event.create('culture_bin_blade')
-    .model('kubejs:block/culture_bin_blade_alone')
+  event.create('incubator_blade')
+    .model('kubejs:block/incubator_blade_alone')
     .soundType('metal')
     .hardness(2)
     .resistance(2.5)
@@ -1383,9 +1383,9 @@ StartupEvents.registry('block', event => {
     .suffocating(false)
     .defaultCutout()
 
-  event.create('incomplete_culture_bin')
+  event.create('incomplete_incubator')
     .soundType('metal')
-    .model('kubejs:block/culture_bin')
+    .model('kubejs:block/incubator')
     .hardness(2)
     .resistance(2.5)
     .requiresTool(true)

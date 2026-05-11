@@ -153,6 +153,9 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.3, 1)
     .addLoot("kubejs:crystallum_coccus");
 
+    event.addBlockLootModifier('darkerdepths:scorched_remains')
+    .replaceLoot('minecraft:charcoal', 'kubejs:charcoal_dust')
+
     event.addBlockLootModifier('darkerdepths:arid_deepslate')
     .replaceLoot('minecraft:deepslate', 'minecraft:cobbled_deepslate')
     .randomChanceWithLooting(0.5, 1)
@@ -243,6 +246,7 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.3, 1)
     .addLoot("tfmg:synthetic_leather");
 
+    
 //ores
 
   function oreLoot(ore,drop,original) {

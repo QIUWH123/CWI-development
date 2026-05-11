@@ -290,6 +290,8 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:axes"},
     "block_in": "kubejs:burnt_log",
     "post": [
+      {"type":"execute","command":"playsound item.axe.strip block @a ~ ~ ~ 1 1","hide": true},
+      {"type":"execute","command":"playsound block.sand.place block @a ~ ~ ~ 0.8 0.5","hide": true},
       {"type":"execute","command":"particle minecraft:large_smoke ~ ~ ~ 0.1 0.1 0.1 0.02 3","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 7","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:burnt_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
@@ -306,6 +308,8 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:axes"},
     "block_in": "kubejs:broken_burnt_log",
     "post": [
+      {"type":"execute","command":"playsound item.axe.strip block @a ~ ~ ~ 1 1","hide": true},
+      {"type":"execute","command":"playsound block.sand.place block @a ~ ~ ~ 0.8 0.5","hide": true},
       {"type":"execute","command":"particle minecraft:large_smoke ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:broken_burnt_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
@@ -321,6 +325,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:axes"},
     "block_in": "kubejs:stripped_burnt_log",
     "post": [
+      {"type":"execute","command":"playsound block.wood.break block @a ~ ~ ~ 1 1","hide": true},
       {"type":"execute","command":"particle minecraft:large_smoke ~ ~ ~ 0.1 0.1 0.1 0.02 1","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:stripped_burnt_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
@@ -337,6 +342,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag":"minecraft:axes"},
     "block_in": "kubejs:stripped_broken_burnt_log",
     "post": [
+      {"type":"execute","command":"playsound block.wood.break block @a ~ ~ ~ 1 1","hide": true},
       {"type":"execute","command":"particle minecraft:large_smoke ~ ~ ~ 0.1 0.1 0.1 0.02 1","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 3","hide": true},
       {"type":"place","block":"air"},
@@ -352,6 +358,8 @@ ServerEvents.recipes(event => {
     "item_in": {"tag": "minecraft:axes"},
     "block_in": "kubejs:ash_log",
     "post": [
+      {"type":"execute","command":"playsound item.axe.strip block @a ~ ~ ~ 1 1","hide": true},
+      {"type":"execute","command":"playsound block.sand.place block @a ~ ~ ~ 0.3 0.3","hide": true},
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 7","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
@@ -368,6 +376,8 @@ ServerEvents.recipes(event => {
     "item_in": {"tag": "minecraft:axes"},
     "block_in": "kubejs:broken_ash_log",
     "post": [
+      {"type":"execute","command":"playsound item.axe.strip block @a ~ ~ ~ 1 1","hide": true},
+      {"type":"execute","command":"playsound block.sand.place block @a ~ ~ ~ 0.3 0.3","hide": true},
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 4","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:broken_ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
@@ -383,6 +393,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag": "minecraft:axes"},
     "block_in": "kubejs:stripped_ash_log",
     "post": [
+      {"type":"execute","command":"playsound block.wood.break block @a ~ ~ ~ 1 1","hide": true},
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
       {"type":"execute","command":"particle minecraft:block kubejs:stripped_ash_log ~ ~ ~ 0.35 0.35 0.35 0.05 30","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
@@ -399,6 +410,7 @@ ServerEvents.recipes(event => {
     "item_in": {"tag": "minecraft:axes"},
     "block_in": "kubejs:stripped_broken_ash_log",
     "post": [
+      {"type":"execute","command":"playsound block.wood.break block @a ~ ~ ~ 1 1","hide": true},
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.3 0.3 0.3 0.01 3","hide": true},
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 5","hide": true},
       {"type":"place","block":"air"},

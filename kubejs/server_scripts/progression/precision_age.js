@@ -501,7 +501,7 @@ ServerEvents.recipes(event => {
       ' E '
     ], {
       A: 'kubejs:handle',
-      B: 'create:zinc_ingot',
+      B: 'createaddition:zinc_sheet',
       C: 'create:precision_mechanism',
       D: 'create:minecart_coupling',
       E: 'create:whisk'
@@ -804,19 +804,5 @@ ServerEvents.recipes(event => {
   )
   .transitionalItem('kubejs:incomplete_fluid_combustion_module')
   .loops(1)
-
-  event.custom({
-    "type": "createdieselgenerators:wire_cutting",
-    "ingredients": [
-      {
-        "item": 'create:brass_sheet'
-      }
-    ],
-    "results": [
-      {
-        "item": 'kubejs:brass_circuit_board'
-      }
-    ]
-  })
 
 })

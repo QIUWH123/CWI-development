@@ -65,5 +65,6 @@
   "skipEntityCulling": false,
   "skipBlockEntityCulling": false,
   "blockEntityFrustumCulling": true,
-  "forceDisplayCulling": false
+  "forceDisplayCulling": false,
+  "solidLeaves": false
 }
