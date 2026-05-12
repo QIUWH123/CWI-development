@@ -63,14 +63,3 @@ BlockEvents.modification(event => {
   })
 
 })
-
-ForgeEvents.onEvent("net.minecraftforge.event.entity.player.PlayerEvent$BreakSpeed", event => global.breakSpeed(event))
-
-global.breakSpeed = event => {
-    try {
-        if (event.entity.level.getBlock(event.getPosition().get()).hasTag('kubejs:unbreakable'))
-            event.setNewSpeed(0)
-    } catch (error) {
-        console.log(error)
-    }
-}

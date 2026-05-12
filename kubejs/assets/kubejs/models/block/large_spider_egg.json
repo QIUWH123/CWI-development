@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "kubejs:block/large_spider_egg_side",
+    "side": "kubejs:block/large_spider_egg_side",
+    "top": "kubejs:block/large_spider_egg_top",
+    "bottom": "kubejs:block/large_spider_egg_bottom"
+  }
+}

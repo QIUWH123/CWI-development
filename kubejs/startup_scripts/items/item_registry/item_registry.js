@@ -1,3 +1,5 @@
+// priority: 1
+
 //basic materials
 
 StartupEvents.registry('item', event => {

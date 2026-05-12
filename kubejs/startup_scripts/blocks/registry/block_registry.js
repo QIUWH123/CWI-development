@@ -2,254 +2,6 @@
 
 StartupEvents.registry('block', event => {
 
-//plants
-
-  event.create('ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/ash_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_ash_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('broken_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/broken_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/broken_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/broken_ash_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_broken_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_broken_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_broken_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_broken_ash_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('broken_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/broken_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/broken_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/broken_burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_broken_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_broken_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_broken_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_broken_burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('dead_leaves','falling')
-    .soundType('glow_lichen')
-    .hardness(0.3)
-    .resistance(0.3)
-    .mapColor('#FF5500')
-    .suffocating(false)
-    .redstoneConductor(false)
-    .defaultCutout()
-
-  event.create('spider_eggs')
-    .soundType('frogspawn')
-    .hardness(0.1)
-    .resistance(0)
-    .mapColor('#FF5500')
-    .suffocating(false)
-    .redstoneConductor(false)
-    .defaultCutout()
-
 //natural block
 
   event.create('raw_soil')
@@ -1019,6 +771,8 @@ StartupEvents.registry('block', event => {
     .resistance(0)
     .mapColor('#FF5500')
     .notSolid()
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('steel_armor_block')
     .soundType('metal')
@@ -1049,6 +803,8 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_diamond_tool')
     .tagBlock('kubejs:unbreakable')
     .mapColor('#FF5500')
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('computer_heat_vent')
     .soundType('metal')
@@ -1087,6 +843,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('precise_machine')
     .soundType('metal')
@@ -1098,6 +856,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
   
   event.create('heavy_machine')
     .soundType('metal')
@@ -1109,6 +869,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('sealed_wood')
     .soundType('wood')
@@ -1174,6 +936,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_heavy_machine')
     .soundType('metal')
@@ -1185,6 +949,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_mechanical_arm_base')
     .soundType('metal')
@@ -1196,6 +962,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('mechanical_arm_base')
     .soundType('metal')
@@ -1207,6 +975,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_diesel_engine')
     .soundType('metal')
@@ -1219,6 +989,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_large_diesel_engine')
     .soundType('metal')
@@ -1231,6 +1003,8 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_huge_diesel_engine')
     .soundType('metal')
@@ -1242,6 +1016,8 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
     .redstoneConductor(false)
+    .rotateState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.rotate(ctx.get(BlockProperties.HORIZONTAL_FACING))))
+    .mirrorState(ctx => ctx.set(BlockProperties.HORIZONTAL_FACING, ctx.mirror(ctx.get(BlockProperties.HORIZONTAL_FACING))))
 
   event.create('incomplete_heavy_machinery_casing')
     .soundType('metal')

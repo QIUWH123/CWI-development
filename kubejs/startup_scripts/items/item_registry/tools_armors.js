@@ -1,3 +1,5 @@
+// priority: 2
+
 //foods
 
 StartupEvents.registry('item', event => {
