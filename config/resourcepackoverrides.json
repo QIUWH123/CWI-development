@@ -6,29 +6,43 @@
     "force_compatible": true
   },
   "pack_overrides": {
-    "2": [
+    "1": [
       "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
       "file/Mandala Utopia.zip"
     ],
-    "$$2": {
+    "$$1": {
       "fixed_position": false,
       "required": false,
       "hidden": true
     },
-    "1": [
+    "2": [
       "file/CreateSophBackpacks.zip",
-      "file/SGJourney Refreshed.zip",
       "file/dyebound-1.0.zip",
       "file/AETexturesBackport1.20-1.1.zip",
-      "file/Fancy End - RP 1.15+ - 1.3.zip",
-      "file/Fancy Crops v1.3.zip",
+      "file/Fancy End - RP 1.15+ - 1.4.zip",
       "file/kaylas_sails.zip",
       "file/Angel's_Font_v0.8.zip",
       "file/Fwishies Custom Crits [1.0].zip",
-      "file/boss-refreshed-v2-1.19-1.21.zip"
+      "file/[Compressed] Alternative Rain Sounds 1.20-1.20.1.zip",
+      "file/Sun  Moon Fusion 2.1.zip",
+      "file/Rain Revamp [1.20].zip",
+      "file/§bArmor§8-§bReimagined§0_§8[v1.1]§0.zip",
+      "file/Brush+Juice-5.2.0.zip",
+      "file/SGJourney Refreshed.zip",
+      "file/Fancy Crops v1.3.zip"
     ],
-    "$$1": {
+    "$$2": {
       "default_position": "TOP",
+      "fixed_position": true,
+      "required": true,
+      "hidden": true
+    },
+    "3": [
+      "file/Vexxed_Visuals_TFC_v1.2.7.1.zip",
+      "file/Fungal Infection Hyper Evolved.zip"
+    ],
+    "$$3": {
+      "default_position": "BOTTOM",
       "fixed_position": true,
       "required": true,
       "hidden": true

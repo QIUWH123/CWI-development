@@ -68,6 +68,9 @@
     "goggles.detailed": false,
     "placard": true
   },
+  "genderbub": {
+    "gender_info": true
+  },
   "jade": {
     "coordinates.rel": false,
     "distance": false,
@@ -82,10 +85,6 @@
   },
   "functionalstorage": {
     "armory": true
-  },
-  "compactcrafting": {
-    "field_proxy": true,
-    "field_projector": true
   },
   "ae2": {
     "part_icon": true,

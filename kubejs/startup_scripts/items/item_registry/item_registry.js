@@ -267,13 +267,13 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/peat')
 
   event.create('lignite')
-    .texture('kubejs:item/ores/lignite')
+    .texture('tfc:item/ore/lignite')
 
   event.create('bituminous_coal')
     .texture('kubejs:item/ores/bituminous_coal')
 
   event.create('borax')
-    .texture('kubejs:item/ores/borax')
+    .texture('kubejs:item/ores/Borax Ore')
 
   event.create('malachite')
     .texture('kubejs:item/ores/malachite')
@@ -285,7 +285,7 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/magnesite')
 
   event.create('halite')
-    .texture('kubejs:item/ores/halite')
+    .texture('tfc:item/ore/halite')
 
   event.create('petzite')
     .texture('kubejs:item/ores/petzite')

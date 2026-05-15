@@ -3,16 +3,16 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
     const { data } = event
     const { jeiHelpers } = data
  
-    let corrosionTypeId = ResourceLocation.fromNamespaceAndPath('create', 'corrosion')
-    let recipeType = jeiHelpers.getRecipeType(corrosionTypeId).get()
+    let corrodingTypeId = ResourceLocation.fromNamespaceAndPath('create', 'corroding')
+    let recipeType = jeiHelpers.getRecipeType(corrodingTypeId).get()
  
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
-        (Item.of('create:encased_fan').setHoverName(Component.translate('recipe.kubejs.corrosion.catalysts').italic(false)), recipeType)
+        (Item.of('create:encased_fan').setHoverName(Component.translate('recipe.kubejs.corroding.catalysts').italic(false)), recipeType)
 })
 
 JEIAddedEvents.registerRecipes(event => {
  
-    let freezingTypeId = new ResourceLocation('create', 'corrosion')
+    let freezingTypeId = new ResourceLocation('create', 'corroding')
     let recipeBuilder = event.custom(freezingTypeId)
     
     recipeBuilder.add({
@@ -27,8 +27,8 @@ JEIAddedEvents.registerCategories(event => {
     const { jeiHelpers } = data
     const { guiHelper } = jeiHelpers
  
-    event.custom('create:corrosion', category => {
-        category.title(Component.translate('recipe.kubejs.corrosion'))
+    event.custom('create:corroding', category => {
+        category.title(Component.translate('recipe.kubejs.corroding'))
         category.setWidth(178)
         category.setHeight(72)
         category.background(guiHelper.createBlankDrawable(0, 0))

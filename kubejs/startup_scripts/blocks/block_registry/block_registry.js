@@ -136,6 +136,7 @@ StartupEvents.registry('block', event => {
 //stones
 
   event.create('gneiss')
+    .textureAll('tfc:block/rock/raw/phyllite')
     .stoneSoundType()
     .hardness(5)
     .resistance(8)
@@ -145,6 +146,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('cobbled_gneiss')
+    .textureAll('tfc:block/rock/cobble/phyllite')
     .stoneSoundType()
     .hardness(5)
     .resistance(8)
@@ -154,6 +156,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('gneiss_gravel','falling')
+    .textureAll('tfc:block/rock/gravel/phyllite')
     .soundType('gravel')
     .hardness(1.1)
     .resistance(1.1)
@@ -163,6 +166,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('schist')
+    .textureAll('tfc:block/rock/raw/slate')
     .stoneSoundType()
     .hardness(4)
     .resistance(5)
@@ -172,6 +176,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('cobbled_schist')
+    .textureAll('tfc:block/rock/cobble/slate')
     .stoneSoundType()
     .hardness(4)
     .resistance(5)
@@ -181,6 +186,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('schist_gravel','falling')
+    .textureAll('tfc:block/rock/gravel/slate')
     .soundType('gravel')
     .hardness(1)
     .resistance(1)
@@ -190,6 +196,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('rhyolite')
+    .textureAll('tfc:block/rock/raw/rhyolite')
     .stoneSoundType()
     .hardness(4)
     .resistance(8)
@@ -199,6 +206,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('cobbled_rhyolite')
+    .textureAll('tfc:block/rock/cobble/rhyolite')
     .stoneSoundType()
     .hardness(4)
     .resistance(8)
@@ -208,6 +216,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('rhyolite_gravel','falling')
+    .textureAll('tfc:block/rock/gravel/rhyolite')
     .soundType('gravel')
     .hardness(0.8)
     .resistance(0.8)

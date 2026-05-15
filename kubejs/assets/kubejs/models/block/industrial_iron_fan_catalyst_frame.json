@@ -1,0 +1,6 @@
+{
+  "parent": "kubejs:block/fan_catalyst_frame",
+  "textures": {
+    "0": "kubejs:block/fan_catalyst/fan_catalyst_industrial_iron"
+  }
+}

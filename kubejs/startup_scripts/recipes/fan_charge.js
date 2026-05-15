@@ -15,11 +15,11 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
 
     let context = $KubeJS.getStartupScriptManager().context
 
-    const corrosionRecipes = {
+    const corrodingRecipes = {
         'create:iron_sheet': 'minecraft:iron_ingot'
     }
 
-    const corrosionTypeImplementation = {
+    const corrodingTypeImplementation = {
 
         isValidAt(level, pos) {
             if (!level || !pos) return false
@@ -34,7 +34,7 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
 
         canProcess(stack, level) {
             if (!stack || !level) return false
-            if (corrosionRecipes[stack.id]) return true
+            if (corrodingRecipes[stack.id]) return true
             return false
         },
 
@@ -42,7 +42,7 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
             if (!stack || !level) return null
 
             let itemId = stack.id
-            let resultId = corrosionRecipes[itemId]
+            let resultId = corrodingRecipes[itemId]
             
             if (!resultId) return null
 
@@ -102,7 +102,7 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
         }
     }
 
-    let corrosionType = $Context.jsToJava(context, corrosionTypeImplementation, $FanProcessingType)
+    let corrodingType = $Context.jsToJava(context, corrodingTypeImplementation, $FanProcessingType)
 
-    $AllFanProcessingTypes.register('corrosion', corrosionType)
+    $AllFanProcessingTypes.register('corroding', corrodingType)
 })
