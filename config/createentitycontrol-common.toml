@@ -77,7 +77,7 @@
 	#--------------------------------------------------------------------------
 	#A list of blocks can't be crushed by block entities. 
 	#If you squeeze a stone with dirt and stone in this list the dirt will drop while stone leave!
-	blocks_uncrushable = ["kubejs:steel_armor_block", "kubejs:steel_armor_penetrated", "kubejs:steel_armor_safe"]
+	blocks_uncrushable = []
 	#--------------------------------------------------------------------------
 	#A list of blocks can be crushed by block entities.
 	#Create's default config.
