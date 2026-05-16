@@ -1,140 +1,40 @@
 ServerEvents.recipes(event => {
 
-//stones 
+// Stones processing
 
-  event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
-  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75), Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
+event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
+event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75), Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
+event.recipes.create.milling(['3x kubejs:tuff_dust', Item.of('kubejs:tuff_dust').withChance(0.75)], 'minecraft:tuff')
 
-  event.recipes.create.crushing('minecraft:cobblestone', 'minecraft:stone')
-  event.recipes.create.crushing('minecraft:cobbled_deepslate', 'minecraft:deepslate')
-  event.recipes.create.crushing('kubejs:cobbled_granite', 'minecraft:granite')
-  event.recipes.create.crushing('kubejs:cobbled_diorite', 'minecraft:diorite')
-  event.recipes.create.crushing('kubejs:cobbled_andesite', 'minecraft:andesite')
-  event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:basalt')
-  event.recipes.create.crushing('kubejs:cobbled_claystone', 'kubejs:claystone')
-  event.recipes.create.crushing('kubejs:cobbled_schist', 'kubejs:schist')
-  event.recipes.create.crushing('kubejs:cobbled_gneiss', 'kubejs:gneiss')
-  event.recipes.create.crushing('kubejs:cobbled_rhyolite', 'kubejs:rhyolite')
-  event.recipes.create.crushing('kubejs:cobbled_shale', 'kubejs:shale')
-  event.recipes.create.crushing('kubejs:cobbled_conglomerate', 'darkerdepths:duskrock')
-  event.recipes.create.crushing('kubejs:cobbled_phyllite', 'darkerdepths:grimestone')
-  event.recipes.create.crushing('kubejs:cobbled_quartzite', 'darkerdepths:aridrock')
-  event.recipes.create.crushing('kubejs:cobbled_darkslate', 'darkerdepths:darkslate')
+const stoneTypes = [
+  ['minecraft:stone', 'minecraft:cobblestone', 'minecraft:gravel', 'kubejs:stone_dust'],
+  ['minecraft:deepslate', 'minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel', 'kubejs:deepslate_dust'],
+  ['minecraft:granite', 'kubejs:cobbled_granite', 'kubejs:granite_gravel', 'kubejs:granite_dust'],
+  ['minecraft:diorite', 'kubejs:cobbled_diorite', 'kubejs:diorite_gravel', 'kubejs:diorite_dust'],
+  ['minecraft:andesite', 'kubejs:cobbled_andesite', 'kubejs:andesite_gravel', 'kubejs:andesite_dust'],
+  ['minecraft:basalt', 'kubejs:cobbled_basalt', 'kubejs:basalt_gravel', 'kubejs:basalt_dust'],
+  ['kubejs:claystone', 'kubejs:cobbled_claystone', 'kubejs:claystone_gravel', 'kubejs:claystone_dust'],
+  ['kubejs:schist', 'kubejs:cobbled_schist', 'kubejs:schist_gravel', 'kubejs:schist_dust'],
+  ['kubejs:gneiss', 'kubejs:cobbled_gneiss', 'kubejs:gneiss_gravel', 'kubejs:gneiss_dust'],
+  ['kubejs:rhyolite', 'kubejs:cobbled_rhyolite', 'kubejs:rhyolite_gravel', 'kubejs:rhyolite_dust'],
+  ['kubejs:shale', 'kubejs:cobbled_shale', 'kubejs:shale_gravel', 'kubejs:shale_dust'],
+  ['darkerdepths:duskrock', 'kubejs:cobbled_conglomerate', 'kubejs:conglomerate_gravel', 'kubejs:conglomerate_dust'],
+  ['darkerdepths:grimestone', 'kubejs:cobbled_phyllite', 'kubejs:phyllite_gravel', 'kubejs:phyllite_dust'],
+  ['darkerdepths:aridrock', 'kubejs:cobbled_quartzite', 'kubejs:quartzite_gravel', 'kubejs:quartzite_dust'],
+  ['darkerdepths:darkslate', 'kubejs:cobbled_darkslate', 'kubejs:darkslate_gravel', 'kubejs:darkslate_dust']
+]
 
-  event.recipes.create.crushing('minecraft:gravel', 'minecraft:cobblestone')
-  event.recipes.create.crushing('kubejs:deepslate_gravel', 'minecraft:cobbled_deepslate')
-  event.recipes.create.crushing('kubejs:granite_gravel', 'kubejs:cobbled_granite')
-  event.recipes.create.crushing('kubejs:diorite_gravel', 'kubejs:cobbled_diorite')
-  event.recipes.create.crushing('kubejs:andesite_gravel', 'kubejs:cobbled_andesite')
-  event.recipes.create.crushing('kubejs:basalt_gravel', 'kubejs:cobbled_basalt')
-  event.recipes.create.crushing('kubejs:claystone_gravel', 'kubejs:cobbled_claystone')
-  event.recipes.create.crushing('kubejs:schist_gravel', 'kubejs:cobbled_schist')
-  event.recipes.create.crushing('kubejs:gneiss_gravel', 'kubejs:cobbled_gneiss')
-  event.recipes.create.crushing('kubejs:rhyolite_gravel', 'kubejs:cobbled_rhyolite')
-  event.recipes.create.crushing('kubejs:shale_gravel', 'kubejs:cobbled_shale')
-  event.recipes.create.crushing('kubejs:conglomerate_gravel', 'kubejs:cobbled_conglomerate')
-  event.recipes.create.crushing('kubejs:phyllite_gravel', 'kubejs:cobbled_phyllite')
-  event.recipes.create.crushing('kubejs:quartzite_gravel', 'kubejs:cobbled_quartzite')
-  event.recipes.create.crushing('kubejs:darkslate_gravel', 'kubejs:cobbled_darkslate')
-
-  event.recipes.create.milling(['3x kubejs:stone_dust', Item.of('kubejs:stone_dust').withChance(0.75)], 'minecraft:stone')
-  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75)], 'minecraft:deepslate')
-  event.recipes.create.milling(['3x kubejs:tuff_dust', Item.of('kubejs:tuff_dust').withChance(0.75)], 'minecraft:tuff')
-  event.recipes.create.milling(['3x kubejs:granite_dust', Item.of('kubejs:granite_dust').withChance(0.75)], 'minecraft:granite')
-  event.recipes.create.milling(['3x kubejs:diorite_dust', Item.of('kubejs:diorite_dust').withChance(0.75)], 'minecraft:diorite')
-  event.recipes.create.milling(['3x kubejs:andesite_dust', Item.of('kubejs:andesite_dust').withChance(0.75)], 'minecraft:andesite')
-  event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'minecraft:basalt')
-  event.recipes.create.milling(['3x kubejs:claystone_dust', Item.of('kubejs:claystone_dust').withChance(0.75)], 'kubejs:claystone')
-  event.recipes.create.milling(['3x kubejs:schist_dust', Item.of('kubejs:schist_dust').withChance(0.75)], 'kubejs:schist')
-  event.recipes.create.milling(['3x kubejs:gneiss_dust', Item.of('kubejs:gneiss_dust').withChance(0.75)], 'kubejs:gneiss')
-  event.recipes.create.milling(['3x kubejs:rhyolite_dust', Item.of('kubejs:rhyolite_dust').withChance(0.75)], 'kubejs:rhyolite')
-  event.recipes.create.milling(['3x kubejs:shale_dust', Item.of('kubejs:shale_dust').withChance(0.75)], 'kubejs:shale')
-  event.recipes.create.milling(['3x kubejs:conglomerate_dust', Item.of('kubejs:conglomerate_dust').withChance(0.75)], 'darkerdepths:duskrock')
-  event.recipes.create.milling(['3x kubejs:phyllite_dust', Item.of('kubejs:phyllite_dust').withChance(0.75)], 'darkerdepths:grimestone')
-  event.recipes.create.milling(['3x kubejs:quartzite_dust', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:aridrock')
-  event.recipes.create.milling(['3x kubejs:darkslate_dust', Item.of('kubejs:darkslate_dust').withChance(0.75)], 'darkerdepths:darkslate')
-
-  event.recipes.create.milling(['3x kubejs:stone_dust', Item.of('kubejs:stone_dust').withChance(0.75)], 'minecraft:cobblestone')
-  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75)], 'minecraft:cobbled_deepslate')
-  event.recipes.create.milling(['3x kubejs:granite_dust', Item.of('kubejs:granite_dust').withChance(0.75)], 'kubejs:cobbled_granite')
-  event.recipes.create.milling(['3x kubejs:diorite_dust', Item.of('kubejs:diorite_dust').withChance(0.75)], 'kubejs:cobbled_diorite')
-  event.recipes.create.milling(['3x kubejs:andesite_dust', Item.of('kubejs:andesite_dust').withChance(0.75)], 'kubejs:cobbled_andesite')
-  event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'kubejs:cobbled_basalt')
-  event.recipes.create.milling(['3x kubejs:claystone_dust', Item.of('kubejs:claystone_dust').withChance(0.75)], 'kubejs:cobbled_claystone')
-  event.recipes.create.milling(['3x kubejs:schist_dust', Item.of('kubejs:schist_dust').withChance(0.75)], 'kubejs:cobbled_schist')
-  event.recipes.create.milling(['3x kubejs:gneiss_dust', Item.of('kubejs:gneiss_dust').withChance(0.75)], 'kubejs:cobbled_gneiss')
-  event.recipes.create.milling(['3x kubejs:rhyolite_dust', Item.of('kubejs:rhyolite_dust').withChance(0.75)], 'kubejs:cobbled_rhyolite')
-  event.recipes.create.milling(['3x kubejs:shale_dust', Item.of('kubejs:shale_dust').withChance(0.75)], 'kubejs:cobbled_shale')
-  event.recipes.create.milling(['3x kubejs:conglomerate_dust', Item.of('kubejs:conglomerate_dust').withChance(0.75)], 'kubejs:cobbled_conglomerate')
-  event.recipes.create.milling(['3x kubejs:phyllite_dust', Item.of('kubejs:phyllite_dust').withChance(0.75)], 'kubejs:cobbled_phyllite')
-  event.recipes.create.milling(['3x kubejs:quartzite_dust', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'kubejs:cobbled_quartzite')
-  event.recipes.create.milling(['3x kubejs:darkslate_dust', Item.of('kubejs:darkslate_dust').withChance(0.75)], 'kubejs:cobbled_darkslate')
-
-  event.recipes.create.milling(['3x kubejs:stone_dust', Item.of('kubejs:stone_dust').withChance(0.75)], 'minecraft:gravel')
-  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75)], 'kubejs:deepslate_gravel')
-  event.recipes.create.milling(['3x kubejs:granite_dust', Item.of('kubejs:granite_dust').withChance(0.75)], 'kubejs:granite_gravel')
-  event.recipes.create.milling(['3x kubejs:diorite_dust', Item.of('kubejs:diorite_dust').withChance(0.75)], 'kubejs:diorite_gravel')
-  event.recipes.create.milling(['3x kubejs:andesite_dust', Item.of('kubejs:andesite_dust').withChance(0.75)], 'kubejs:andesite_gravel')
-  event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'kubejs:basalt_gravel')
-  event.recipes.create.milling(['3x kubejs:claystone_dust', Item.of('kubejs:claystone_dust').withChance(0.75)], 'kubejs:claystone_gravel')
-  event.recipes.create.milling(['3x kubejs:schist_dust', Item.of('kubejs:schist_dust').withChance(0.75)], 'kubejs:schist_gravel')
-  event.recipes.create.milling(['3x kubejs:gneiss_dust', Item.of('kubejs:gneiss_dust').withChance(0.75)], 'kubejs:gneiss_gravel')
-  event.recipes.create.milling(['3x kubejs:rhyolite_dust', Item.of('kubejs:rhyolite_dust').withChance(0.75)], 'kubejs:rhyolite_gravel')
-  event.recipes.create.milling(['3x kubejs:shale_dust', Item.of('kubejs:shale_dust').withChance(0.75)], 'kubejs:shale_gravel')
-  event.recipes.create.milling(['3x kubejs:conglomerate_dust', Item.of('kubejs:conglomerate_dust').withChance(0.75)], 'kubejs:conglomerate_gravel')
-  event.recipes.create.milling(['3x kubejs:phyllite_dust', Item.of('kubejs:phyllite_dust').withChance(0.75)], 'kubejs:phyllite_gravel')
-  event.recipes.create.milling(['3x kubejs:quartzite_dust', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'kubejs:quartzite_gravel')
-  event.recipes.create.milling(['3x kubejs:darkslate_dust', Item.of('kubejs:darkslate_dust').withChance(0.75)], 'kubejs:darkslate_gravel')
-
-//transformation
-
-  event.recipes.create.compacting('minecraft:gravel', '4x kubejs:stone_dust')
-  event.recipes.create.compacting('kubejs:deepslate_gravel', '4x kubejs:deepslate_dust')
-  event.recipes.create.compacting('kubejs:granite_gravel', '4x kubejs:granite_dust')
-  event.recipes.create.compacting('kubejs:diorite_gravel', '4x kubejs:diorite_dust')
-  event.recipes.create.compacting('kubejs:andesite_gravel', '4x kubejs:andesite_dust')
-  event.recipes.create.compacting('kubejs:basalt_gravel', '4x kubejs:basalt_dust')
-  event.recipes.create.compacting('kubejs:claystone_gravel', '4x kubejs:claystone_dust')
-  event.recipes.create.compacting('kubejs:schist_gravel', '4x kubejs:schist_dust')
-  event.recipes.create.compacting('kubejs:gneiss_gravel', '4x kubejs:gneiss_dust')
-  event.recipes.create.compacting('kubejs:rhyolite_gravel', '4x kubejs:rhyolite_dust')
-  event.recipes.create.compacting('kubejs:shale_gravel', '4x kubejs:shale_dust')
-  event.recipes.create.compacting('kubejs:conglomerate_gravel', '4x kubejs:conglomerate_dust')
-  event.recipes.create.compacting('kubejs:phyllite_gravel', '4x kubejs:phyllite_dust')
-  event.recipes.create.compacting('kubejs:quartzite_gravel', '4x kubejs:quartzite_dust')
-  event.recipes.create.compacting('kubejs:darkslate_gravel', '4x kubejs:darkslate_dust')
-
-  event.recipes.create.compacting('minecraft:cobblestone', 'minecraft:gravel').heated()
-  event.recipes.create.compacting('minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_granite', 'kubejs:granite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_diorite', 'kubejs:diorite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_andesite', 'kubejs:andesite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_basalt', 'kubejs:basalt_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_schist', 'kubejs:schist_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_claystone', 'kubejs:claystone_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_gneiss', 'kubejs:gneiss_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_rhyolite', 'kubejs:rhyolite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_shale', 'kubejs:shale_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_conglomerate', 'kubejs:conglomerate_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_phyllite', 'kubejs:phyllite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_quartzite', 'kubejs:quartzite_gravel').heated()
-  event.recipes.create.compacting('kubejs:cobbled_darkslate', 'kubejs:darkslate_gravel').heated()
-
-  event.recipes.create.compacting('minecraft:stone', 'minecraft:cobblestone').superheated()
-  event.recipes.create.compacting('minecraft:deepslate', 'minecraft:cobbled_deepslate').superheated()
-  event.recipes.create.compacting('minecraft:granite', 'kubejs:cobbled_granite').superheated()
-  event.recipes.create.compacting('minecraft:diorite', 'kubejs:cobbled_diorite').superheated()
-  event.recipes.create.compacting('minecraft:andesite', 'kubejs:cobbled_andesite').superheated()
-  event.recipes.create.compacting('minecraft:basalt', 'kubejs:cobbled_basalt').superheated()
-  event.recipes.create.compacting('kubejs:claystone', 'kubejs:cobbled_claystone').superheated()
-  event.recipes.create.compacting('kubejs:schist', 'kubejs:cobbled_schist').superheated()
-  event.recipes.create.compacting('kubejs:gneiss', 'kubejs:cobbled_gneiss').superheated()
-  event.recipes.create.compacting('kubejs:rhyolite', 'kubejs:cobbled_rhyolite').superheated()
-  event.recipes.create.compacting('kubejs:shale', 'kubejs:cobbled_shale').superheated()
-  event.recipes.create.compacting('darkerdepths:duskrock', 'kubejs:cobbled_conglomerate').superheated()
-  event.recipes.create.compacting('darkerdepths:grimestone', 'kubejs:cobbled_phyllite').superheated()
-  event.recipes.create.compacting('darkerdepths:aridrock', 'kubejs:cobbled_quartzite').superheated()
-  event.recipes.create.compacting('darkerdepths:darkslate', 'kubejs:cobbled_darkslate').superheated()
+stoneTypes.forEach(([raw, cobbled, gravel, dust]) => {
+  event.recipes.create.crushing(cobbled, raw)
+  event.recipes.create.crushing(gravel, cobbled)
+  const dustOutputs = [`3x ${dust}`, Item.of(dust).withChance(0.75)]
+  event.recipes.create.milling(dustOutputs, raw)
+  event.recipes.create.milling(dustOutputs, cobbled)
+  event.recipes.create.milling(dustOutputs, gravel)
+  event.recipes.create.compacting(gravel, `4x ${dust}`)
+  event.recipes.create.compacting(cobbled, gravel).heated()
+  event.recipes.create.compacting(raw, cobbled).superheated()
+})
 
 //recipes
 
@@ -161,12 +61,12 @@ ServerEvents.recipes(event => {
     ],
     'minecraft:stone', 
     [
-      event.recipes.create.pressing('minecraft:stone', 'minecraft:stone'),
-      event.recipes.create.pressing('minecraft:stone', 'minecraft:stone'),
-      event.recipes.create.pressing('minecraft:stone', 'minecraft:stone'),
+      event.recipes.create.pressing('kubejs:compressed_stone', 'kubejs:compressed_stone'),
+      event.recipes.create.pressing('kubejs:compressed_stone', 'kubejs:compressed_stone'),
+      event.recipes.create.pressing('kubejs:compressed_stone', 'kubejs:compressed_stone'),
     ]
   )
-  .transitionalItem('minecraft:stone')
+  .transitionalItem('kubejs:compressed_stone')
   .loops(3)
 
 })

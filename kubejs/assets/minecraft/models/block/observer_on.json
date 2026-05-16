@@ -1,7 +1,26 @@
 {
-    "parent": "block/observer",
-    "textures": {
-        "bottom": "kubejs:block/observer_back_on",
-        "side": "kubejs:block/observer_side_on"
-    }
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "kubejs:block/observer_back_on",
+		"2": "kubejs:block/observer_front",
+		"4": "kubejs:block/observer_top",
+		"6": "create:block/smart_observer_bottom",
+		"7": "kubejs:block/observer_side_on",
+		"particle": "kubejs:block/observer_front"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#7"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#7"},
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#6"}
+			}
+		}
+	]
 }

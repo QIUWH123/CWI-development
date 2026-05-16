@@ -133,6 +133,16 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
 
+  event.create('compressed_stone')
+    .soundType('stone')
+    .hardness(3.5)
+    .resistance(3.5)
+    .requiresTool(true)
+    .notSolid()
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_stone_tool')
+    .mapColor('#FF5500')
+
 //stones
 
   event.create('gneiss')

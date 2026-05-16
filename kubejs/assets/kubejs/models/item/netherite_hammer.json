@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "kubejs:item/tools/netherite_hammer"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "kubejs:item/charged_netherite_hammer"
+    }
+  ]
+}

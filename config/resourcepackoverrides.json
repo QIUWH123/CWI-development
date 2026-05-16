@@ -6,16 +6,8 @@
     "force_compatible": true
   },
   "pack_overrides": {
-    "1": [
-      "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
-      "file/Mandala Utopia.zip"
-    ],
-    "$$1": {
-      "fixed_position": false,
-      "required": false,
-      "hidden": true
-    },
     "2": [
+      "file/MandalasGUI.zip",
       "file/CreateSophBackpacks.zip",
       "file/dyebound-1.0.zip",
       "file/AETexturesBackport1.20-1.1.zip",
@@ -29,6 +21,7 @@
       "file/§bArmor§8-§bReimagined§0_§8[v1.1]§0.zip",
       "file/Brush+Juice-5.2.0.zip",
       "file/SGJourney Refreshed.zip",
+      "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
       "file/Fancy Crops v1.3.zip"
     ],
     "$$2": {
