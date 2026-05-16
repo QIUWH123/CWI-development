@@ -1,9 +1,9 @@
 const HAMMER_REQUIREMENTS = {
-    'kubejs:bronze_hammer': 22,
-    'kubejs:iron_hammer': 25,
-    'kubejs:stone_hammer': 30,
-    'kubejs:gold_hammer': 15,
-    'kubejs:netherite_hammer': 18
+    'kubejs:bronze_hammer': 18,
+    'kubejs:iron_hammer': 20,
+    'kubejs:stone_hammer': 25,
+    'kubejs:gold_hammer': 12,
+    'kubejs:netherite_hammer': 15
 }
 
 PlayerEvents.tick(event => {

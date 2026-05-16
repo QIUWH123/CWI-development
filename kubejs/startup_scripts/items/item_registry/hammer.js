@@ -7,13 +7,15 @@ function transformBlock(level, entity, itemStack, hand) {
     let block = hit.block
     if (!block) return
     let currentBlockId = String(block.id)
-    let conversion = getConversionMap()[currentBlockId]
+    let map = global.conversionMap
+    if (!map) return
+    let conversion = map[currentBlockId]
     if (!conversion) return
     let targetBlockId = typeof conversion === 'string' ? conversion : conversion.target
     let drops = typeof conversion === 'object' ? conversion.drops : []
     let pos = hit.block.pos
     level.runCommandSilent(`particle minecraft:block ${currentBlockId} ${pos.x + 0.5} ${pos.y + 0.5} ${pos.z + 0.5} 0.5 0.5 0.5 0.05 60`)
-    level.runCommandSilent(`particle minecraft:falling_dust ${currentBlockId} ${pos.x + 0.5} ${pos.y + 0.5} ${pos.z + 0.5} 0.6 0.6 0.6 0.05 16`)
+    level.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${pos.x + 0.5} ${pos.y + 0.5} ${pos.z + 0.5} 0.6 0.6 0.6 0.05 16`)
     level.runCommandSilent(`playsound block.anvil.place block @a ${pos.x} ${pos.y} ${pos.z} 1 1`)
     drops.forEach(drop => {
         if (Math.random() < (drop.chance || 1.0)) {
@@ -28,11 +30,11 @@ function transformBlock(level, entity, itemStack, hand) {
 
 StartupEvents.registry('item', event => {
     const hammers = [
-        ['bronze_hammer', 'bronze', 22],
-        ['iron_hammer', 'iron', 25],
-        ['stone_hammer', 'stone', 30],
-        ['gold_hammer', 'gold', 15],
-        ['netherite_hammer', 'netherite', 18]
+        ['bronze_hammer', 'bronze', 18],
+        ['iron_hammer', 'iron', 20],
+        ['stone_hammer', 'stone', 25],
+        ['gold_hammer', 'gold', 12],
+        ['netherite_hammer', 'netherite', 15]
     ]
     hammers.forEach(([name, tier, requiredCharge]) => {
         event.create(name, 'pickaxe')
@@ -68,111 +70,3 @@ StartupEvents.registry('item', event => {
             .finishUsing(itemStack => itemStack)
     })
 })
-
-function getConversionMap() {
-    return {
-        'minecraft:stone': {
-            target: 'minecraft:cobblestone',
-            drops: []
-        },
-        'minecraft:cobblestone': {
-            target: 'minecraft:gravel',
-            drops: []
-        },
-        'minecraft:gravel': {
-            target: 'air',
-            drops: [
-                { item: 'kubejs:stone_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:stone_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:stone_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:stone_dust', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:deepslate': {
-            target: 'minecraft:cobbled_deepslate',
-            drops: []
-        },
-        'minecraft:cobbled_deepslate': {
-            target: 'kubejs:deepslate_gravel',
-            drops: []
-        },
-        'kubejs:deepslate_gravel': {
-            target: 'air',
-            drops: [
-                { item: 'kubejs:deepslate_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:deepslate_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:deepslate_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:deepslate_dust', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:andesite': {
-            target: 'kubejs:cobbled_andesite',
-            drops: []
-        },
-        'kubejs:cobbled_andesite': {
-            target: 'kubejs:andesite_gravel',
-            drops: []
-        },
-        'kubejs:andesite_gravel': {
-            target: 'air',
-            drops: [
-                { item: 'kubejs:andesite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:andesite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:andesite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:andesite_dust', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:diorite': {
-            target: 'kubejs:cobbled_diorite',
-            drops: []
-        },
-        'kubejs:cobbled_diorite': {
-            target: 'kubejs:diorite_gravel',
-            drops: []
-        },
-        'kubejs:diorite_gravel': {
-            target: 'air',
-            drops: [
-                { item: 'kubejs:diorite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:diorite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:diorite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:diorite_dust', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:granite': {
-            target: 'kubejs:cobbled_granite',
-            drops: []
-        },
-        'kubejs:cobbled_granite': {
-            target: 'kubejs:granite_gravel',
-            drops: []
-        },
-        'kubejs:granite_gravel': {
-            target: 'air',
-            drops: [
-                { item: 'kubejs:granite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:granite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:granite_dust', count: 1, chance: 0.75 },
-                { item: 'kubejs:granite_dust', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:iron_ore': {
-            target: 'minecraft:cobblestone',
-            drops: [
-                { item: 'minecraft:raw_iron', count: 1, chance: 0.5 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 }
-            ]
-        },
-        'minecraft:deepslate_iron_ore': {
-            target: 'minecraft:cobbled_deepslate',
-            drops: [
-                { item: 'minecraft:raw_iron', count: 1, chance: 0.5 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 },
-                { item: 'create:crushed_raw_iron', count: 1, chance: 0.75 }
-            ]
-        }
-    }
-}
