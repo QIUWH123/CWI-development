@@ -50,6 +50,7 @@ ServerEvents.recipes(event => {
   event.recipes.create.mixing('createaddition:biomass', ['createaddition:biomass_pellet', Fluid.of('minecraft:water', 50)])
   event.recipes.create.mixing('minecraft:clay_ball', ['kubejs:clay_dust', Fluid.of('minecraft:water', 50)])
   event.recipes.create.mixing('3x minecraft:gunpowder', ['3x tfmg:nitrate_dust', '2x tfmg:sulfur_dust', 'kubejs:charcoal_dust'])
+  event.recipes.create.mixing('minecraft:glow_ink_sac', ['darkerdepths:glow_grime', 'minecraft:ink_sac'])
 
   event.recipes.rubberworksSapping(Fluid.of("kubejs:molten_sticky_resin", 25), ["minecraft:oak_log", "minecraft:oak_leaves"])
   event.recipes.rubberworksSapping(Fluid.of("kubejs:molten_sticky_resin", 50), ["minecraft:spruce_log", "minecraft:spruce_leaves"])

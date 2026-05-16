@@ -3,14 +3,6 @@ ServerEvents.recipes(event => {
 //shapeless
 
   event.shapeless(
-    Item.of('create:schedule'),
-    [
-      'create:sturdy_sheet',
-      'minecraft:paper'
-    ]
-  )
-
-  event.shapeless(
     Item.of('create_sa:zinc_handle'),
     [
       '2x farmersdelight:canvas',

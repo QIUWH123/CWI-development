@@ -865,7 +865,29 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:peat" },
             { item: "kubejs:peat" },
             { item: "kubejs:peat" },
-            { tag: "modpack:clay" },
+            { item: "minecraft:clay" },
+            { item: "kubejs:carbofusor_spirillum" }
+        ],
+        [
+            { item: "kubejs:lignite", count: 2 },
+            { item: "kubejs:lignite", chance: 0.75 },
+            { fluid: "kubejs:humic_acid_slurry", amount: 100 },
+            { item: "minecraft:clay" },
+            { item: "kubejs:carbofusor_spirillum" }
+        ],
+        1200, undefined, ['basin', 'bulk']
+    );
+
+    addFermentingRecipes(event,
+        [
+            { item: "kubejs:peat" },
+            { item: "kubejs:peat" },
+            { item: "kubejs:peat" },
+            { item: "kubejs:peat" },
+            { item: "minecraft:clay" },
+            { item: "minecraft:clay" },
+            { item: "minecraft:clay" },
+            { item: "minecraft:clay" },
             { item: "kubejs:carbofusor_spirillum" }
         ],
         [

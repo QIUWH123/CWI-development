@@ -243,18 +243,18 @@
 					type: "item"
 				}
 				{
-					id: "458C73A6894765FA"
-					item: "kubejs:smoked_spider_meat"
-					type: "item"
-				}
-				{
-					id: "3D1415058361A086"
-					item: "kubejs:silverfish_abdomen"
-					type: "item"
-				}
-				{
 					id: "58C304C48FF7076B"
 					item: "miners_delight:silverfish_eggs"
+					type: "item"
+				}
+				{
+					id: "5168B7D8A1B5DE98"
+					item: "kubejs:cooked_spider_meat"
+					type: "item"
+				}
+				{
+					id: "6F4952E5704A7552"
+					item: "kubejs:spider_meat"
 					type: "item"
 				}
 			]

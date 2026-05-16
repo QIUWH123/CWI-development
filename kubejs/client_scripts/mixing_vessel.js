@@ -4,7 +4,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
     let typeId = ResourceLocation.fromNamespaceAndPath('kubejs', 'mixing_vessel')
     let recipeType = jeiHelpers.getRecipeType(typeId).get()
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
-        (Item.of('minecraft:stone').setHoverName(Component.translate('Vessel Mixing').italic(false)), recipeType)
+        (Item.of('miodpack:mixing_vessel').setHoverName(Component.translate('Vessel Mixing').italic(false)), recipeType)
 })
 
 JEIAddedEvents.registerRecipes(event => {

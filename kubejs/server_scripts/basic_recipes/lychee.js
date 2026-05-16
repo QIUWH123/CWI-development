@@ -267,6 +267,90 @@ ServerEvents.recipes(event => {
 
   event.custom({
     "type": "lychee:block_interacting",
+    "item_in": {"tag":"forge:tools/knives"},
+    "block_in": "darkerdepths:glowspurs",
+    "post": [
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"place","block":"air"},
+      {"type":"damage_item"},
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"darkerdepths:glowspurs"}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"forge:tools/knives"},
+    "block_in": "darkerdepths:glowshroom",
+    "post": [
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"place","block":"air"},
+      {"type":"damage_item"},
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"darkerdepths:glowshroom"}
+        ],
+        "else": [
+          {"type":"drop_item","item":"darkerdepths:glow_grime"},
+          {"type":"drop_item","item":"darkerdepths:glow_grime","contextual":{"type":"chance","chance":0.37}}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"forge:tools/knives"},
+    "block_in": "darkerdepths:glimmering_vines",
+    "post": [
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"place","block":"air"},
+      {"type":"damage_item"},
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"darkerdepths:glimmering_vines"}
+        ],
+        "else": [
+          {"type":"drop_item","item":"darkerdepths:glow_grime","contextual":{"type":"chance","chance":0.57}},
+          {"type":"drop_item","item":"darkerdepths:glow_grime","contextual":{"type":"chance","chance":0.17}}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
+    "item_in": {"tag":"forge:tools/knives"},
+    "block_in": "darkerdepths:glimmering_vine_plant",
+    "post": [
+      {"type":"execute","command":"particle vital_herbs:aura_crystal_particle ~ ~ ~ 0.1 0.1 0.1 0.02 2","hide": true},
+      {"type":"execute","command":"particle vital_herbs:pedestal_aura ~ ~ ~ 0.3 0.3 0.3 0.05 4","hide": true},
+      {"type":"add_item_cooldown","s":0.3},
+      {"type":"place","block":"air"},
+      {"type":"damage_item"},
+      {"type":"if","contextual": {"type": "is_sneaking"},
+        "then": [
+          {"type":"drop_item","item":"darkerdepths:glimmering_vines"}
+        ],
+        "else": [
+          {"type":"drop_item","item":"darkerdepths:glow_grime","contextual":{"type":"chance","chance":0.57}},
+          {"type":"drop_item","item":"darkerdepths:glow_grime","contextual":{"type":"chance","chance":0.17}}
+        ]
+      }
+    ]
+  })
+
+  event.custom({
+    "type": "lychee:block_interacting",
     "item_in": {"item":"minecraft:brush"},
     "block_in": "kubejs:crystalized_phyllite",
     "contextual": {"type": "is_sneaking"},

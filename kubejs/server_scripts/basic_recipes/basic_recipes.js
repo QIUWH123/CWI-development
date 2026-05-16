@@ -62,39 +62,30 @@ ServerEvents.recipes(event => {
       "results": [{"item": output}]
     })}
 
-  function helveHammering(){
-    event.custom({
-	    "type": "vintageimprovements:hammering",
-      "hammerBlows": 3,
-	    "ingredients": [
-        {
-          "item": "create:zinc_ingot"
-        },
-        {
-          "item": "minecraft:copper_ingot"
-        }
-      ],
-      "results": [
-        {
-          "item": "create:zinc_ingot"
-        },
-        {
-          "item": "minecraft:copper_ingot"
-        },
-        {
-          "item": "create:brass_ingot"
-        },
-        {
-          "item": "minecraft:gold_ingot"
-        }
-      ]
-    })}
-
   function addStoragePair(bigItem, smallItem, count) {
     var smallStack = count + 'x ' + smallItem;
     event.shapeless(Item.of(bigItem), [smallStack]);
     event.shapeless(Item.of(smallStack), [bigItem]);
   }
+
+  function deploying(using, input, output) {
+    event.custom({
+    "type": "create:deploying",
+    "ingredients": [{"item": input},{"item": using}],
+    "results": [{"item": output}]})
+  }
+
+  function deployingTag(tag, input, output) {
+    event.custom({
+    "type": "create:deploying",
+    "ingredients": [{"item": input},{"tag": tag}],
+    "results": [{"item": output}]})
+  }
+
+//curving
+
+  deploying('create:sturdy_sheet','minecraft:paper','create:schedule')
+  deployingTag('modpack:leather','minecraft:paper','vintageimprovements:recipe_card')
 
 //curving
 

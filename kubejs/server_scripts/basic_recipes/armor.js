@@ -54,3 +54,52 @@ addTools('createaddition:zinc_sheet', 'create_sa:zinc')
 addArmor('createaddition:zinc_sheet', 'create_sa:zinc')
 
 })
+
+ServerEvents.recipes(event => {
+
+  event.shaped(
+    Item.of('kubejs:stone_hammer'),
+    ['ABA', ' C ', ' C '],
+    {
+      A: '#modpack:cobbled_stones',
+      B: 'kubejs:claystone_clump',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('kubejs:iron_hammer'),
+    ['ABA', ' C ', ' C '],
+    {
+      A: 'create:iron_sheet',
+      B: 'minecraft:iron_block',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('kubejs:bronze_hammer'),
+    ['ABA', ' C ', ' C '],
+    {
+      A: 'kubejs:bronze_sheet',
+      B: 'kubejs:bronze_block',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('kubejs:gold_hammer'),
+    ['ABA', ' C ', ' C '],
+    {
+      A: 'create:gold_sheet',
+      B: 'minecraft:gold_block',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('kubejs:netherite_hammer'),
+    ['ABA', ' C ', ' C '],
+    {
+      A: 'vintageimprovements:netherite_sheet',
+      B: 'minecraft:netherite_block',
+      C: 'minecraft:stick'
+    })
+
+})

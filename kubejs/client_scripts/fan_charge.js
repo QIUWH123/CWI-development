@@ -7,7 +7,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
     let recipeType = jeiHelpers.getRecipeType(corrodingTypeId).get()
  
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
-        (Item.of('create:encased_fan').setHoverName(Component.translate('recipe.kubejs.corroding.catalysts').italic(false)), recipeType)
+        (Item.of('create:encased_fan').setHoverName(Component.translate('Bulk Corroding').italic(false)), recipeType)
 })
 
 JEIAddedEvents.registerRecipes(event => {
