@@ -379,7 +379,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:biome",
-                "biome_is": ["modpack:deep_ocean"]
+                "biome_is": ["cwi:deep_ocean"]
               },
               "then_run": {
                 "type": "minecraft:condition",
@@ -426,7 +426,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:biome",
-                "biome_is": ["modpack:smoldering_barren"]
+                "biome_is": ["cwi:smoldering_barren"]
               },
               "then_run": {
                 "type": "minecraft:condition",

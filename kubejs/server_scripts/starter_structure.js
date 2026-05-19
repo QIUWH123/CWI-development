@@ -12,8 +12,8 @@ PlayerEvents.loggedIn(event => {
     server.runCommandSilent(`gamerule doInsomnia false`);
     server.runCommandSilent(`gamerule doPatrolSpawning false`);
     server.runCommandSilent(`gamerule doTraderSpawning false`);
-    server.runCommandSilent(`place template modpack:filled_starter_bunker ${x} ${y - 58} ${z}`);
-    server.runCommandSilent(`place template modpack:starter_bunker ${x} ${y - 58} ${z}`);
+    server.runCommandSilent(`place template cwi:filled_starter_bunker ${x} ${y - 58} ${z}`);
+    server.runCommandSilent(`place template cwi:starter_bunker ${x} ${y - 58} ${z}`);
     server.runCommandSilent(`tp @a ${x + 34} ${y - 56} ${z + 22} 90 50`);
     server.runCommandSilent(`effect give @a minecraft:nausea 7 0 true`);
     server.runCommandSilent(`effect give @a minecraft:blindness 5 0 true`);

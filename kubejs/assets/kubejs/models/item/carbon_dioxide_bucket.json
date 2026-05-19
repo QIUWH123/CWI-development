@@ -1,7 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "kubejs:item/gas_bucket",
-        "layer1": "kubejs:item/fluids/carbon_dioxide"
-    }
-}

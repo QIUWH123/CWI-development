@@ -39,14 +39,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/shovel')
     .mapColor('#FF5500')
 
-  event.create('vitrified_sand')
-    .gravelSoundType()
-    .hardness(2)
-    .resistance(2)
-    .tagBlock('minecraft:needs_wooden_tool')
-    .tagBlock('minecraft:mineable/shovel')
-    .mapColor('#FF5500')
-
   event.create('crystalized_phyllite')
     .soundType('stone')
     .hardness(3)

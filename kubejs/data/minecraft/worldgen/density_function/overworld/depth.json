@@ -1,5 +1,5 @@
 {
   "type": "minecraft:add",
-  "argument1": "modpack:overworld/warped_gradient",
+  "argument1": "cwi:overworld/warped_gradient",
   "argument2": "minecraft:overworld/offset"
 }

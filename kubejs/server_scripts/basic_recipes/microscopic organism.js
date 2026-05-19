@@ -708,7 +708,7 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:clay_dust", chance: 0.97 },
             { item: "kubejs:clay_dust", chance: 0.67 },
             { item: "kubejs:lithium_dust", chance: 0.09 },
-            { item: "kubejs:bauxite_dust", chance: 0.17 },
+            { item: "tfmg:bauxite_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         600, undefined, ['basin', 'bulk']
@@ -723,7 +723,7 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:clay_dust", chance: 0.97 },
             { item: "kubejs:clay_dust", chance: 0.67 },
             { item: "kubejs:lithium_dust", chance: 0.09 },
-            { item: "kubejs:bauxite_dust", chance: 0.17 },
+            { item: "tfmg:bauxite_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1500, undefined, ['basin', 'bulk']

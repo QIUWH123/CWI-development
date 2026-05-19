@@ -25,7 +25,11 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
             if (!level || !pos) return false
             return (level.getBlockState(pos).block.id === 'tfmg:sulfuric_acid')
             || (level.getBlockState(pos).block.id === 'kubejs:concentrated_sulfuric_acid')
-            //|| (level.getBlockState(pos).block.id === 'create_connected:sulfuric_acid_catalyst')
+            || (level.getBlockState(pos).block.id === 'kubejs:brass_fan_corroding_catalyst')
+            || (level.getBlockState(pos).block.id === 'kubejs:iron_fan_corroding_catalyst')
+            || (level.getBlockState(pos).block.id === 'kubejs:cast_iron_fan_corroding_catalyst')
+            || (level.getBlockState(pos).block.id === 'kubejs:steel_fan_corroding_catalyst')
+            || (level.getBlockState(pos).block.id === 'kubejs:aluminum_fan_corroding_catalyst')
         },
 
         getPriority() {

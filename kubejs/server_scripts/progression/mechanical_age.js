@@ -89,6 +89,14 @@ ServerEvents.recipes(event => {
     ]
   )
 
+  event.shapeless(
+    Item.of('create:portable_storage_interface'),
+    [
+      'kubejs:andesite_machine',
+      'create:chute'
+    ]
+  )
+
 //shaped
 
   event.shaped(
@@ -115,6 +123,32 @@ ServerEvents.recipes(event => {
     {
       A: '#modpack:string',
       B: 'minecraft:stick'
+    }
+  )
+
+  event.shaped(
+    Item.of('minecraft:hopper'),
+    [
+      'A A',
+      'ABA',
+      ' A '
+    ],
+    {
+      A: 'create:iron_sheet',
+      B: 'create:filter'
+    }
+  )
+
+  event.shaped(
+    Item.of('minecraft:cauldron'),
+    [
+      'B B',
+      'B B',
+      'ABA'
+    ],
+    {
+      A: 'minecraft:iron_ingot',
+      B: 'create:iron_sheet'
     }
   )
 

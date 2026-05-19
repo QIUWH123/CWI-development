@@ -165,6 +165,19 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    Item.of('minecraft:anvil'),
+    [
+      'AAA',
+      ' B ',
+      'BBB'
+    ],
+    {
+      A: 'create:industrial_iron_block',
+      B: 'createdeco:industrial_iron_ingot'
+    }
+  )
+
+  event.shaped(
     Item.of('fluid:smart_fluid_interface'),
     [
       'A',

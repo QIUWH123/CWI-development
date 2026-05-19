@@ -74,7 +74,7 @@ ServerEvents.recipes(event => {
     }
   )
 
-  event.shaped(
+  event.recipes.create.mechanical_crafting(
     'sophisticatedbackpacks:stack_upgrade_tier_2',
     [
       'CBC',
@@ -89,7 +89,7 @@ ServerEvents.recipes(event => {
     }
   )
 
-  event.shaped(
+  event.recipes.create.mechanical_crafting(
     'sophisticatedbackpacks:stack_upgrade_tier_3',
     [
       'CBC',
@@ -104,5 +104,148 @@ ServerEvents.recipes(event => {
     }
   )
 
+  event.shaped(
+    'sophisticatedbackpacks:jukebox_upgrade',
+    [
+      'CDC',
+      'BAB',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'minecraft:iron_ingot',
+      C: 'create:iron_sheet',
+      D: 'minecraft:jukebox',
+      E: 'sophisticatedbackpacks:filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:advanced_jukebox_upgrade',
+    [
+      'CDC',
+      'BAB',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'create:electron_tube',
+      C: 'create:brass_sheet',
+      D: 'minecraft:jukebox',
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:restock_upgrade',
+    [
+      'CDC',
+      'BAB',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'minecraft:iron_ingot',
+      C: 'create:iron_sheet',
+      D: 'create:chute',
+      E: 'sophisticatedbackpacks:filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:advanced_restock_upgrade',
+    [
+      'CDC',
+      'BAB',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'create:electron_tube',
+      C: 'create:brass_sheet',
+      D: 'create:smart_chute',
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:deposit_upgrade',
+    [
+      'CEC',
+      'BAB',
+      'CDC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'minecraft:iron_ingot',
+      C: 'create:iron_sheet',
+      D: 'create:chute',
+      E: 'sophisticatedbackpacks:filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:advanced_deposit_upgrade',
+    [
+      'CEC',
+      'BAB',
+      'CDC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'create:electron_tube',
+      C: 'create:brass_sheet',
+      D: 'create:smart_chute',
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:advanced_feeding_upgrade',
+    [
+      'CBC',
+      'DAD',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'kubejs:integrated_electron_tube',
+      C: 'create:brass_sheet',
+      D: 'create:deployer',
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:tool_swapper_upgrade',
+    [
+      'CBC',
+      'DAD',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'create:andesite_alloy',
+      C: 'vintageimprovements:andesite_sheet',
+      D: 'create:mechanical_arm',
+      E: 'sophisticatedbackpacks:filter_upgrade'
+    }
+  )
+
+  event.shaped(
+    'sophisticatedbackpacks:advanced_alchemy_upgrade',
+    [
+      'CBC',
+      'DAD',
+      'CEC'
+    ],
+    {
+      A: 'sophisticatedbackpacks:upgrade_base',
+      B: 'kubejs:integrated_electron_tube',
+      C: 'create:brass_sheet',
+      D: 'fluid:pipette',
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+    }
+  )
 
 })

@@ -1,0 +1,120 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon",
+      "cwi:deep_ravine"
+    ]
+  },
+  "downfall": 0.4,
+  "effects": {
+    "fog_color": -5399162,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.deep_dark"
+    },
+    "fog_color": -5399162,
+    "sky_color": -7964315,
+    "water_color": -15194846,
+    "water_fog_color": -16248305
+  },
+  "features": [
+    [],
+    [],
+    [
+      "cwi:structures/lava_lake_granite_underground",
+      "cwi:structures/lava_lake_granite_surface",
+      "cwi:structures/lava_lake_basalt_underground",
+      "cwi:structures/lava_lake_basalt_surface",
+
+      "cwi:structures/acid_lake",
+      "cwi:structures/echo_geode",
+      "cwi:structures/echo_crystal_spike",
+      "cwi:structures/echo_crystal_spike_floor"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_gravel",
+      "minecraft:ore_tuff",
+      "minecraft:underwater_magma",
+
+      "cwi:disks/clay",
+      "cwi:disks/gravel",
+
+      "cwi:stones/andesite",
+      "cwi:stones/diorite",
+      "cwi:stones/granite",
+
+      "cwi:striated_ores/gneiss",
+      "cwi:striated_ores/shale",
+      "cwi:striated_ores/andesite",
+
+      "cwi:striated_ores/azurite",
+      "cwi:striated_ores/bauxite",
+      "cwi:striated_ores/cassiterite",
+      "cwi:striated_ores/chalcocite",
+      "cwi:striated_ores/galena",
+      "cwi:striated_ores/magnesite",
+      "cwi:striated_ores/halite",
+      "cwi:striated_ores/hematite",
+      "cwi:striated_ores/lignite",
+      "cwi:striated_ores/magnetite",
+      "cwi:striated_ores/malachite",
+      "cwi:striated_ores/pentlandite",
+      "cwi:striated_ores/petzite",
+      "cwi:striated_ores/sphalerite"
+    ],
+    [
+      "cwi:ores/zinc",
+      "cwi:ores/copper",
+      "cwi:ores/coal",
+      "cwi:ores/gold",
+      "cwi:ores/iron",
+      "cwi:ores/nickel",
+      "cwi:ores/lead",
+      "cwi:ores/lithium",
+      "cwi:ores/redstone",
+      "cwi:ores/lapis",
+      "cwi:ores/diamond",
+      "cwi:ores/quartz",
+      "cwi:ores/sulfur",
+      "cwi:ores/tin",
+      "cwi:ores/silver",
+      "cwi:ores/emerald"
+    ],
+    [
+      "minecraft:sculk_vein",
+      "minecraft:sculk_patch_deep_dark"
+    ],
+    [],
+    [
+      "miners_delight:patch_cave_carrots"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}

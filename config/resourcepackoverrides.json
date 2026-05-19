@@ -7,9 +7,6 @@
   },
   "pack_overrides": {
     "2": [
-      "file/Angel's_Font_v0.8.zip",
-      "file/Fwishies Custom Crits [1.0].zip",
-      "file/[Compressed] Alternative Rain Sounds 1.20-1.20.1.zip",
       "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
       "file/Fancy Crops v1.3.zip",
       "file/Brush+Juice-5.2.0.zip",
@@ -17,10 +14,16 @@
       "file/§bArmor§8-§bReimagined§0_§8[v1.1]§0.zip",
       "file/dyebound-1.0.zip",
       "file/Rain Revamp [1.20].zip",
+      "file/Sun  Moon Fusion 2.1.zip",
+      "file/Fwishies Custom Crits [1.0].zip",
+      "file/[Compressed] Alternative Rain Sounds 1.20-1.20.1.zip",
+      "file/Discography 3.1.zip",
       "file/SGJourney Refreshed.zip",
       "file/AETexturesBackport1.20-1.1.zip",
       "file/kaylas_sails.zip",
-      "file/CreateSophBackpacks.zip"
+      "file/CreateSophBackpacks.zip",
+      "file/DeceasedBackpack.zip",
+      "file/Angel's_Font_v0.8.zip"
     ],
     "$$2": {
       "default_position": "TOP",
@@ -30,7 +33,9 @@
     },
     "3": [
       "file/Vexxed_Visuals_TFC_v1.2.7.1.zip",
-      "file/Fungal Infection Hyper Evolved.zip"
+      "file/Fungal Infection Hyper Evolved.zip",
+      "file/Tuttas Retextures - Runes Edition.zip",
+      "file/Retro Exposure Edition 1.21.1.zip"
     ],
     "$$3": {
       "default_position": "BOTTOM",

@@ -1,7 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "kubejs:item/fluid_bucket",
-        "layer1": "kubejs:item/fluids/condensed_air"
-    }
-}

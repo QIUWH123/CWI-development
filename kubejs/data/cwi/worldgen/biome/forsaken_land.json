@@ -1,0 +1,107 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.5,
+  "effects": {
+    "fog_color": -5399162,
+    "sky_color": -7964315,
+    "water_color": -15194846,
+    "water_fog_color": -16248305
+  },
+  "features": [
+    [],
+    [
+      "cwi:structures/lava_lake_granite_underground",
+      "cwi:structures/lava_lake_granite_surface",
+      "cwi:structures/lava_lake_basalt_underground",
+      "cwi:structures/lava_lake_basalt_surface",
+
+      "cwi:structures/acid_lake",
+      "cwi:structures/ashstone_place",
+      "cwi:structures/scrap_place",
+      "cwi:structures/dry_biological_sediment",
+      "cwi:structures/wet_biological_sediment",
+      "cwi:structures/wet_biological_sediment_dirt",
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower"
+    ],
+    [],
+    [
+      "minecraft:ore_gravel",
+      "minecraft:ore_tuff",
+      "minecraft:underwater_magma",
+
+      "cwi:disks/clay",
+      "cwi:disks/gravel",
+      "cwi:disks/sand",
+      "cwi:disks/claystone",
+
+      "cwi:stones/claystone",
+      "cwi:stones/andesite",
+      "cwi:stones/diorite",
+      "cwi:stones/granite",
+
+      "cwi:striated_ores/azurite",
+      "cwi:striated_ores/bauxite",
+      "cwi:striated_ores/cassiterite",
+      "cwi:striated_ores/chalcocite",
+      "cwi:striated_ores/galena",
+      "cwi:striated_ores/magnesite",
+      "cwi:striated_ores/halite",
+      "cwi:striated_ores/hematite",
+      "cwi:striated_ores/lignite",
+      "cwi:striated_ores/magnetite",
+      "cwi:striated_ores/malachite",
+      "cwi:striated_ores/pentlandite",
+      "cwi:striated_ores/petzite",
+      "cwi:striated_ores/sphalerite"
+    ],
+    [],
+    [],
+    [
+      "cwi:ores/zinc",
+      "cwi:ores/copper",
+      "cwi:ores/coal",
+      "cwi:ores/gold",
+      "cwi:ores/iron",
+      "cwi:ores/nickel",
+      "cwi:ores/lead",
+      "cwi:ores/lithium",
+      "cwi:ores/redstone",
+      "cwi:ores/lapis",
+      "cwi:ores/diamond",
+      "cwi:ores/quartz",
+      "cwi:ores/sulfur",
+      "cwi:ores/tin",
+      "cwi:ores/silver",
+      "cwi:ores/emerald"
+    ],
+    [],
+    [],
+    [
+      "minecraft:glow_lichen",
+      "miners_delight:patch_cave_carrots",
+      "cwi:natures/ash_log_place",
+      "cwi:natures/fallen_ash_log",
+      "cwi:natures/dead_bush",
+      "cwi:natures/dead_leaves",
+      "cwi:surfaces/stones"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

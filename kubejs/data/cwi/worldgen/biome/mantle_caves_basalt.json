@@ -1,0 +1,109 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon",
+      "cwi:deep_ravine"
+    ]
+  },
+  "downfall": 0.0,
+  "effects": {
+    "additions_sound": {
+      "sound": "minecraft:ambient.basalt_deltas.additions",
+      "tick_chance": 0.0111
+    },
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "fog_color": 12638463,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.basalt_deltas.mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.nether.basalt_deltas"
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:smoke"
+      },
+      "probability": 0.0219
+    },
+    "fog_color": -10990522,
+    "sky_color": -10990522,
+    "water_color": -15194846,
+    "water_fog_color": -16248305
+  },
+  "features": [
+    [],
+    [
+      "cwi:structures/amethyst_geode"
+    ],
+    [],
+    [
+      "minecraft:ore_gravel",
+      "minecraft:ore_tuff",
+      "minecraft:underwater_magma",
+
+      "cwi:striated_ores/mantle_caves/granite",
+      "cwi:striated_ores/mantle_caves/rhyolite",
+      "cwi:striated_ores/mantle_caves/chromite",
+      "cwi:striated_ores/mantle_caves/magnetite",
+      "cwi:striated_ores/mantle_caves/pentlandite",
+      "cwi:striated_ores/mantle_caves/sphalerite"
+    ],
+    [
+      "minecraft:delta",
+      "cwi:structures/small_basalt_columns",
+      "cwi:structures/large_basalt_columns"
+    ],
+    [
+      "cwi:ores/zinc",
+      "cwi:ores/copper",
+      "cwi:ores/coal",
+      "cwi:ores/gold",
+      "cwi:ores/iron",
+      "cwi:ores/nickel",
+      "cwi:ores/lead",
+      "cwi:ores/lithium",
+      "cwi:ores/redstone",
+      "cwi:ores/lapis",
+      "cwi:ores/diamond",
+      "cwi:ores/quartz",
+      "cwi:ores/sulfur",
+      "cwi:ores/tin",
+      "cwi:ores/silver",
+      "cwi:ores/emerald"
+    ],
+    [
+      "cwi:stones/lava_drip",
+      "cwi:stones/magma_strip",
+      "cwi:stones/basalt_strip"
+    ],
+    [
+      "cwi:structures/basalt_blobs",
+      "minecraft:blackstone_blobs",
+      "minecraft:spring_delta",
+      "minecraft:patch_fire",
+      "minecraft:ore_magma",
+      "minecraft:spring_closed_double"
+    ]
+  ],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 1.0
+}

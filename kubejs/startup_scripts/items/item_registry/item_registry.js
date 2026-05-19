@@ -150,7 +150,6 @@ StartupEvents.registry('item', event => {
   event.create('steel_dust').texture('kubejs:item/dusts/steel_dust')
   event.create('halite_dust').texture('kubejs:item/dusts/halite_dust')
   event.create('magnesite_dust').texture('kubejs:item/dusts/magnesite_dust')
-  event.create('bauxite_dust').texture('kubejs:item/dusts/bauxite_dust')
   event.create('lignite_dust').texture('kubejs:item/dusts/lignite_dust')
   event.create('flint_dust').texture('kubejs:item/dusts/flint_dust')
   event.create('kelp_dust').texture('kubejs:item/dusts/kelp_dust')

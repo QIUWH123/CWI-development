@@ -68,8 +68,9 @@
     "goggles.detailed": false,
     "placard": true
   },
-  "genderbub": {
-    "gender_info": true
+  "exposure": {
+    "lightroom": true,
+    "photograph_frame": true
   },
   "jade": {
     "coordinates.rel": false,

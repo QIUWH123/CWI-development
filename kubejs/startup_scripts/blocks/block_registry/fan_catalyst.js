@@ -1,8 +1,8 @@
 StartupEvents.registry('block', event => {
 
   function registerCatalysts(material, hardness, resistance) {
-    const types = ['frame', 'smoking', 'haunting', 'splashing', 'blasting', 'corroding'];
-    const texture = `kubejs:block/fan_catalyst/fan_catalyst_${material}`;
+    const types = ['frame', 'smoking', 'haunting', 'splashing', 'blasting', 'corroding']
+    const texture = `kubejs:block/fan_catalyst/fan_catalyst_${material}`
 
     types.forEach(type => {
       const id = type === 'frame'
@@ -18,6 +18,7 @@ StartupEvents.registry('block', event => {
         .requiresTool(true)
         .tagBlock('minecraft:mineable/pickaxe')
         .tagBlock('minecraft:needs_stone_tool')
+        .tagBlock(`create:${type}`)
         .mapColor('#FF5500')
         .suffocating(false)
         .redstoneConductor(false)
@@ -26,8 +27,8 @@ StartupEvents.registry('block', event => {
       block.modelJson = {
         parent: parentModel,
         textures: { "0": texture }
-      };
-    });
+      }
+    })
   }
 
   registerCatalysts('brass', 3, 3)
@@ -37,4 +38,4 @@ StartupEvents.registry('block', event => {
   registerCatalysts('steel', 4, 4)
   registerCatalysts('aluminum', 3, 3)
 
-});
+})
