@@ -80,6 +80,20 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    Item.of('create_connected:inventory_access_port'),
+    [
+      'AB',
+      'CD'
+    ],
+    {
+      A: 'kubejs:integrated_electron_tube',
+      B: 'create:brass_sheet',
+      C: 'kubejs:precise_machine',
+      D: 'create:brass_funnel'
+    }
+  )
+
+  event.shaped(
     Item.of('kubejs:incomplete_control_chip'),
     [
       'DEF',
@@ -520,7 +534,7 @@ ServerEvents.recipes(event => {
     ], {
       A: 'kubejs:steam_mechanism',
       B: 'kubejs:bronze_ingot',
-      C: 'kubejs:integrated_electron_tube',
+      C: 'create_connected:control_chip',
       D: 'create:encased_fan',
       E: 'createdieselgenerators:engine_piston',
       F: 'kubejs:precise_machine',

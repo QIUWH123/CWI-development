@@ -1,69 +1,30 @@
 ServerEvents.tags('item', event => {
 
   //tools
-  event.removeAll('forge:tools/swords')
-  event.removeAll('minecraft:swords')
+
   event.add('minecraft:swords', [
-    'minecraft:wooden_sword',
-    'minecraft:stone_sword',
-    'minecraft:iron_sword',
-    'tfmg:lead_sword',
-    'tfmg:steel_sword',
-    'tfmg:aluminum_sword',
     'kubejs:rusted_iron_sword',
     'kubejs:bronze_sword'
   ])
 
-  event.removeAll('forge:tools/axes')
-  event.removeAll('minecraft:axes')
   event.add('minecraft:axes', [
-    'minecraft:wooden_axe',
-    'minecraft:stone_axe',
-    'minecraft:iron_axe',
-    'tfmg:lead_axe',
-    'tfmg:steel_axe',
-    'tfmg:aluminum_axe',
     'kubejs:rusted_iron_axe',
     'kubejs:bronze_axe'
   ])
 
-  event.removeAll('forge:tools/pickaxes')
-  event.removeAll('minecraft:pickaxes')
   event.add('minecraft:pickaxes', [
-    'minecraft:wooden_pickaxe',
-    'minecraft:stone_pickaxe',
-    'minecraft:iron_pickaxe',
-    'tfmg:lead_pickaxe',
-    'tfmg:steel_pickaxe',
-    'tfmg:aluminum_pickaxe',
     'kubejs:rusted_iron_pickaxe',
     'kubejs:bronze_pickaxe'
   ])
 
-  event.removeAll('forge:tools/shovels')
-  event.removeAll('minecraft:shovels')
   event.add('minecraft:shovels', [
-    'minecraft:wooden_shovel',
-    'minecraft:stone_shovel',
-    'minecraft:iron_shovel',
-    'tfmg:lead_shovel',
-    'tfmg:steel_shovel',
-    'tfmg:aluminum_shovel',
     'kubejs:rusted_iron_shovel',
     'kubejs:bronze_shovel'
   ])
 
-  event.removeAll('forge:tools/axes')
-  event.removeAll('minecraft:axes')
-  event.add('minecraft:axes', [
-    'minecraft:wooden_axe',
-    'minecraft:stone_axe',
-    'minecraft:iron_axe',
-    'tfmg:lead_axe',
-    'tfmg:steel_axe',
-    'tfmg:aluminum_axe',
-    'kubejs:rusted_iron_axe',
-    'kubejs:bronze_axe'
+  event.add('minecraft:hoes', [
+    'kubejs:rusted_iron_hoe',
+    'kubejs:bronze_hoe'
   ])
 
   //chemical_spray
@@ -241,7 +202,7 @@ ServerEvents.tags('block', event => {
   ]
   event.add('modpack:normal_logs', blockLogs.filter(log => !blockLogsToRemove.includes(log.toString())))
 
-//soul_fire_base_block
+//soul_fire
 
   event.add('minecraft:soul_fire_base_blocks', [
     'minecraft:reinforced_deepslate',
@@ -308,8 +269,12 @@ ServerEvents.tags('block', event => {
     'kubejs:schist',
     'minecraft:cobbled_deepslate',
     'kubejs:cobbled_schist',
-    'kubejs:cobbled_gneiss'
+    'kubejs:cobbled_gneiss',
+    'kubejs:gneiss_gravel',
+    'kubejs:schist_gravel',
+    'kubejs:deepslate_gravel'
   ])
+
   event.add('minecraft:stone_ore_replaceables', [
     'kubejs:shale',
     'kubejs:rhyolite',
@@ -321,7 +286,12 @@ ServerEvents.tags('block', event => {
     'kubejs:cobbled_andesite',
     'kubejs:cobbled_diorite',
     'kubejs:cobbled_granite',
-    'kubejs:cobbled_shale'
+    'kubejs:cobbled_shale',
+    'kubejs:shale_gravel',
+    'kubejs:rhyolite_gravel',
+    'kubejs:granite_gravel',
+    'kubejs:diorite_gravel',
+    'kubejs:andesite_gravel'
   ])
 
 //carver_replace
@@ -446,10 +416,7 @@ ServerEvents.tags('fluid', event => {
 //fuel
 
   event.add('create_sa:fuel_fluid', [
-    "minecraft:lava",
-    "createdieselgenerators:gasoline",
     "createdieselgenerators:plant_oil",
-    "createdieselgenerators:diesel",
     "createdieselgenerators:biodiesel"
   ])
 

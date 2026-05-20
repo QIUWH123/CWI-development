@@ -78,121 +78,35 @@ ServerEvents.recipes(event => {
     }
   )
 
-  event.shaped(
-    Item.of('functionalstorage:compacting_drawer'),
-    [
-      'BCB',
-      'DAD',
-      'BCB'
-    ],
-    {
-      A: '#forge:chests/wooden',
-      B: 'minecraft:stone',
-      C: 'minecraft:iron_ingot',
-      D: 'create:mechanical_press'
-    }
-  )
-
-  event.shaped(
-    Item.of('functionalstorage:compacting_framed_drawer'),
-    [
-      'BCB',
-      'DAD',
-      'BCB'
-    ],
-    {
-      A: '#forge:chests/wooden',
-      B: 'minecraft:iron_nugget',
-      C: 'minecraft:iron_ingot',
-      D: 'create:mechanical_press'
-    }
-  )
-
-  event.shaped(
+  event.recipes.create.mechanical_crafting(
     Item.of('functionalstorage:storage_controller'),
     [
       'BCB',
       'DAD',
-      'BDB'
+      'BEB'
     ],
     {
       A: 'kubejs:precise_machine',
-      B: 'minecraft:stone',
+      B: 'create:brass_sheet',
       C: 'create_connected:control_chip',
-      D: 'minecraft:iron_ingot'
+      D: 'create_connected:inventory_access_port',
+      E: 'create:brass_casing'
     }
   )
 
-  event.shaped(
-    Item.of('functionalstorage:framed_storage_controller'),
+  event.recipes.create.mechanical_crafting(
+    Item.of('3x functionalstorage:controller_extension'),
     [
       'BCB',
       'DAD',
-      'BDB'
+      'BEB'
     ],
     {
-      A: 'kubejs:precise_machine',
-      B: 'minecraft:iron_nugget',
+      A: 'create:brass_casing',
+      B: 'create:brass_sheet',
       C: 'create_connected:control_chip',
-      D: 'minecraft:iron_ingot'
-    }
-  )
-
-  event.shaped(
-    Item.of('functionalstorage:controller_extension'),
-    [
-      'BDB',
-      'DAD',
-      'BDB'
-    ],
-    {
-      A: 'create:chute',
-      B: 'minecraft:stone',
-      D: 'minecraft:iron_ingot'
-    }
-  )
-
-  event.shaped(
-    Item.of('functionalstorage:framed_controller_extension'),
-    [
-      'BDB',
-      'DAD',
-      'BDB'
-    ],
-    {
-      A: 'create:chute',
-      B: 'minecraft:iron_nugget',
-      D: 'minecraft:iron_ingot'
-    }
-  )
-
-  event.shaped(
-    Item.of('functionalstorage:simple_compacting_drawer'),
-    [
-      'BCB',
-      'CAD',
-      'BCB'
-    ],
-    {
-      A: '#forge:chests/wooden',
-      B: 'minecraft:stone',
-      C: 'minecraft:iron_ingot',
-      D: 'create:mechanical_press'
-    }
-  )
-
-  event.shaped(
-    Item.of('functionalstorage:framed_simple_compacting_drawer'),
-    [
-      'BCB',
-      'CAD',
-      'BCB'
-    ],
-    {
-      A: '#forge:chests/wooden',
-      B: 'minecraft:iron_nugget',
-      C: 'minecraft:iron_ingot',
-      D: 'create:mechanical_press'
+      D: 'create_connected:inventory_access_port',
+      E: 'create:brass_ingot'
     }
   )
 

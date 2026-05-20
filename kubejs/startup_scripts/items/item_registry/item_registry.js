@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 10
 
 //basic materials
 
@@ -119,60 +119,22 @@ StartupEvents.registry('item', event => {
   event.create('caustic_soda_powder')
   event.create('sodium_bisulfate_powder')
 
-  event.create('bone_dust').texture('kubejs:item/dusts/bone_dust')
-  event.create('quartz_dust').texture('kubejs:item/dusts/quartz_dust')
-  event.create('fluorite_dust').texture('kubejs:item/dusts/fluorite_dust')
-  event.create('diamond_dust').texture('kubejs:item/dusts/diamond_dust')
-  event.create('coal_dust').texture('kubejs:item/dusts/coal_dust')
-  event.create('gold_dust').texture('kubejs:item/dusts/gold_dust')
-  event.create('iron_dust').texture('kubejs:item/dusts/iron_dust')
-  event.create('lapis_dust').texture('kubejs:item/dusts/lapis_dust')
-  event.create('copper_dust').texture('kubejs:item/dusts/copper_dust')
-  event.create('brass_dust').texture('kubejs:item/dusts/brass_dust')
-  event.create('cobalt_dust').texture('kubejs:item/dusts/cobalt_dust')
-  event.create('magnesium_dust').texture('kubejs:item/dusts/magnesium_dust')
-  event.create('zinc_dust').texture('kubejs:item/dusts/zinc_dust')
-  event.create('vanadium_dust').texture('kubejs:item/dusts/vanadium_dust')
-  event.create('silicon_dust').texture('kubejs:item/dusts/silicon_dust')
-  event.create('charcoal_dust').texture('kubejs:item/dusts/charcoal_dust')
-  event.create('andesite_alloy_dust').texture('kubejs:item/dusts/andesite_alloy_dust')
-  event.create('nickel_dust').texture('kubejs:item/dusts/nickel_dust')
-  event.create('lead_dust').texture('kubejs:item/dusts/lead_dust')
-  event.create('cast_iron_dust').texture('kubejs:item/dusts/cast_iron_dust')
-  event.create('lithium_dust').texture('kubejs:item/dusts/lithium_dust')
-  event.create('bronze_dust').texture('kubejs:item/dusts/bronze_dust')
-  event.create('electrum_dust').texture('kubejs:item/dusts/electrum_dust')
-  event.create('constantan_dust').texture('kubejs:item/dusts/constantan_dust')
-  event.create('silver_dust').texture('kubejs:item/dusts/silver_dust')
-  event.create('tin_dust').texture('kubejs:item/dusts/tin_dust')
-  event.create('aluminum_dust').texture('kubejs:item/dusts/aluminum_dust')
-  event.create('industrial_iron_dust').texture('kubejs:item/dusts/industrial_iron_dust')
-  event.create('steel_dust').texture('kubejs:item/dusts/steel_dust')
-  event.create('halite_dust').texture('kubejs:item/dusts/halite_dust')
-  event.create('magnesite_dust').texture('kubejs:item/dusts/magnesite_dust')
-  event.create('lignite_dust').texture('kubejs:item/dusts/lignite_dust')
-  event.create('flint_dust').texture('kubejs:item/dusts/flint_dust')
-  event.create('kelp_dust').texture('kubejs:item/dusts/kelp_dust')
-  event.create('ash_dust').texture('kubejs:item/dusts/ash_dust')
-  event.create('dark_ash_dust').texture('kubejs:item/dusts/dark_ash_dust')
+  const dusts = [
+    'bone_dust', 'quartz_dust', 'fluorite_dust', 'diamond_dust', 'coal_dust',
+    'gold_dust', 'iron_dust', 'lapis_dust', 'copper_dust', 'brass_dust',
+    'cobalt_dust', 'magnesium_dust', 'zinc_dust', 'vanadium_dust', 'silicon_dust',
+    'charcoal_dust', 'andesite_alloy_dust', 'nickel_dust', 'lead_dust',
+    'cast_iron_dust', 'lithium_dust', 'bronze_dust', 'electrum_dust',
+    'constantan_dust', 'silver_dust', 'tin_dust', 'aluminum_dust',
+    'industrial_iron_dust', 'steel_dust', 'halite_dust', 'magnesite_dust',
+    'lignite_dust', 'flint_dust', 'kelp_dust', 'ash_dust', 'dark_ash_dust',
+    'clay_dust', 'stone_dust', 'deepslate_dust', 'tuff_dust', 'claystone_dust',
+    'granite_dust', 'diorite_dust', 'andesite_dust', 'basalt_dust', 'schist_dust',
+    'gneiss_dust', 'rhyolite_dust', 'shale_dust', 'quartzite_dust',
+    'conglomerate_dust', 'phyllite_dust', 'darkslate_dust'
+  ]
 
-  event.create('clay_dust').texture('kubejs:item/dusts/clay_dust')
-  event.create('stone_dust').texture('kubejs:item/dusts/stone_dust')
-  event.create('deepslate_dust').texture('kubejs:item/dusts/deepslate_dust')
-  event.create('tuff_dust').texture('kubejs:item/dusts/tuff_dust')
-  event.create('claystone_dust').texture('kubejs:item/dusts/claystone_dust')
-  event.create('granite_dust').texture('kubejs:item/dusts/granite_dust')
-  event.create('diorite_dust').texture('kubejs:item/dusts/diorite_dust')
-  event.create('andesite_dust').texture('kubejs:item/dusts/andesite_dust')
-  event.create('basalt_dust').texture('kubejs:item/dusts/basalt_dust')
-  event.create('schist_dust').texture('kubejs:item/dusts/schist_dust')
-  event.create('gneiss_dust').texture('kubejs:item/dusts/gneiss_dust')
-  event.create('rhyolite_dust').texture('kubejs:item/dusts/rhyolite_dust')
-  event.create('shale_dust').texture('kubejs:item/dusts/shale_dust')
-  event.create('quartzite_dust').texture('kubejs:item/dusts/quartzite_dust')
-  event.create('conglomerate_dust').texture('kubejs:item/dusts/conglomerate_dust')
-  event.create('phyllite_dust').texture('kubejs:item/dusts/phyllite_dust')
-  event.create('darkslate_dust').texture('kubejs:item/dusts/darkslate_dust')
+  dusts.forEach(dust => {event.create(dust).texture(`kubejs:item/dusts/${dust}`).tag('cwi:dusts')})
 
 })
 

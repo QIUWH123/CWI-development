@@ -217,7 +217,7 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
-    'sophisticatedbackpacks:tool_swapper_upgrade',
+    'sophisticatedbackpacks:advanced_tool_swapper_upgrade',
     [
       'CBC',
       'DAD',
@@ -225,10 +225,10 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'sophisticatedbackpacks:upgrade_base',
-      B: 'create:andesite_alloy',
-      C: 'vintageimprovements:andesite_sheet',
+      B: 'kubejs:integrated_electron_tube',
+      C: 'create:brass_sheet',
       D: 'create:mechanical_arm',
-      E: 'sophisticatedbackpacks:filter_upgrade'
+      E: 'sophisticatedbackpacks:advanced_filter_upgrade'
     }
   )
 

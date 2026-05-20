@@ -236,15 +236,5 @@ StartupEvents.registry('block', event => {
     .suffocating(false)
     .redstoneConductor(false)
     .defaultCutout()
-
-    event.create('spider_eggs')
-        .soundType('frogspawn')
-        .hardness(0.1)
-        .resistance(0)
-        .box(2,0,2,14,12,14,true)
-        .mapColor('#FF5500')
-        .suffocating(false)
-        .redstoneConductor(false)
-        .defaultCutout()
-
+    
 })
