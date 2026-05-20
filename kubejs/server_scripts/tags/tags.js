@@ -109,7 +109,9 @@ ServerEvents.tags('item', event => {
     'minecraft:iron_nugget',
     'create:iron_sheet',
     'createaddition:iron_rod',
-    'tfmg:steel_block'
+    'tfmg:steel_block',
+    'kubejs:rubber_block',
+    'kubejs:industrial_rubber_block'
   ])
 
   //string
@@ -171,6 +173,18 @@ ServerEvents.tags('item', event => {
     'ad_astra:glacio_cobblestone',
     'ad_astra:mars_cobblestone',
     'ad_astra:mercury_cobblestone'
+  ])
+
+//hot_items
+  event.add('cwi:hot_item', [
+    'minecraft:lava_bucket',
+    'minecraft:magma_block',
+    'minecraft:blaze_rod',
+    'minecraft:blaze_powder',
+    '#cwi:moltens',
+    'kubejs:heated_powdered_obsidian',
+    'kubejs:heated_iron_ingot',
+    'kubejs:heated_cast_iron_ingot'
   ])
 
   //glass
@@ -373,8 +387,7 @@ ServerEvents.tags('block', event => {
     'kubejs:steel_armor_penetrated'
   ])
 
-//mixing_vessel
-
+//fluid_container
   event.add('modpack:fluid_container', [
     'modpack:mixing_vessel',
     'create:fluid_tank',
@@ -387,6 +400,35 @@ ServerEvents.tags('block', event => {
     'fluid:gutter_outlet',
     'fluid:fluid_atomizer',
     'create_connected:fluid_vessel'
+  ])
+
+//Corrosive
+  event.add('cwi:corrosive', [
+    'tfmg:sulfuric_acid',
+    'tfmg:concentrated_sulfuric_acid'
+  ])
+
+//Hot
+  event.add('cwi:hot', [
+    'kubejs:molten_aluminum',
+    'kubejs:molten_vanadium',
+    'kubejs:molten_tin',
+    'kubejs:molten_silver',
+    'kubejs:molten_andesite_alloy',
+    'kubejs:molten_zinc',
+    'kubejs:molten_gold',
+    'kubejs:molten_iron',
+    'kubejs:molten_pig_iron',
+    'kubejs:molten_cast_iron',
+    'kubejs:molten_copper',
+    'kubejs:molten_brass',
+    'kubejs:molten_lead',
+    'kubejs:molten_cobalt',
+    'kubejs:molten_nickel',
+    'kubejs:molten_constantan',
+    'kubejs:molten_bronze',
+    'kubejs:molten_electrum',
+    'kubejs:molten_glass'
   ])
 
 })
@@ -422,33 +464,29 @@ ServerEvents.tags('fluid', event => {
 
   event.add('create_sa:water_fluid', 'kubejs:distilled_water')
 
-})
-
-ServerEvents.tags('fluid', event => {
-
 //Molten
-    event.add('kubejs:molten_hot', [
-        'kubejs:molten_aluminum', 'kubejs:molten_vanadium', 'kubejs:molten_tin',
-        'kubejs:molten_silver', 'kubejs:molten_andesite_alloy', 'kubejs:molten_zinc',
-        'kubejs:molten_gold', 'kubejs:molten_iron', 'kubejs:molten_pig_iron',
-        'kubejs:molten_cast_iron', 'kubejs:molten_copper', 'kubejs:molten_brass',
-        'kubejs:molten_lead', 'kubejs:molten_cobalt', 'kubejs:molten_nickel',
-        'kubejs:molten_constantan', 'kubejs:molten_bronze', 'kubejs:molten_electrum',
-        'kubejs:molten_glass'
-    ])
+  event.add('kubejs:molten_hot', [
+    'kubejs:molten_aluminum', 'kubejs:molten_vanadium', 'kubejs:molten_tin',
+    'kubejs:molten_silver', 'kubejs:molten_andesite_alloy', 'kubejs:molten_zinc',
+    'kubejs:molten_gold', 'kubejs:molten_iron', 'kubejs:molten_pig_iron',
+    'kubejs:molten_cast_iron', 'kubejs:molten_copper', 'kubejs:molten_brass',
+    'kubejs:molten_lead', 'kubejs:molten_cobalt', 'kubejs:molten_nickel',
+    'kubejs:molten_constantan', 'kubejs:molten_bronze', 'kubejs:molten_electrum',
+    'kubejs:molten_glass'
+  ])
 
 //Acid
-    event.add('kubejs:acid', [
-        'kubejs:redstone_acid', 'tfmg:concentrated_sulfuric_acid', 'kubejs:nitric_acid',
-        'kubejs:muriatic_acid', 'kubejs:acetic_acid', 'kubejs:propionic_acid',
-        'kubejs:lactic_acid', 'kubejs:wood_vinegar', 'kubejs:humic_acid_slurry',
-        'kubejs:chromatic_waste'
-    ])
+  event.add('kubejs:acid', [
+    'kubejs:redstone_acid', 'tfmg:concentrated_sulfuric_acid', 'kubejs:nitric_acid',
+    'kubejs:muriatic_acid', 'kubejs:acetic_acid', 'kubejs:propionic_acid',
+    'kubejs:lactic_acid', 'kubejs:wood_vinegar', 'kubejs:humic_acid_slurry',
+    'kubejs:chromatic_waste'
+  ])
 
 //Base
-    event.add('kubejs:base', [
-        'kubejs:caustic_soda', 'kubejs:ammonia_solution'
-    ])
+  event.add('kubejs:base', [
+    'kubejs:caustic_soda', 'kubejs:ammonia_solution'
+  ])
 
 //Organic
   event.add('kubejs:organic_solvent', [
@@ -475,13 +513,13 @@ ServerEvents.tags('fluid', event => {
 
 //Gas
   event.add('kubejs:gas', [
-  'kubejs:oxygen', 'kubejs:nitrogen', 'kubejs:nitrogen_dioxide',
-  'kubejs:ammonia', 'kubejs:chlorine', 'kubejs:natural_gas',
-  'kubejs:argon', 'kubejs:helium', 'kubejs:hydrogen_sulfide',
-  'kubejs:sulfur_dioxide', 'kubejs:steam', 'kubejs:ethane',
-  'kubejs:cracked_ethane', 'kubejs:cracked_propane', 'kubejs:cracked_naphtha',
-  'kubejs:purified_natural_gas', 'kubejs:methane', 'kubejs:syngas',
-  'kubejs:benzene', 'kubejs:toluene', 'kubejs:xylene'
+    'kubejs:oxygen', 'kubejs:nitrogen', 'kubejs:nitrogen_dioxide',
+    'kubejs:ammonia', 'kubejs:chlorine', 'kubejs:natural_gas',
+    'kubejs:argon', 'kubejs:helium', 'kubejs:hydrogen_sulfide',
+    'kubejs:sulfur_dioxide', 'kubejs:steam', 'kubejs:ethane',
+    'kubejs:cracked_ethane', 'kubejs:cracked_propane', 'kubejs:cracked_naphtha',
+    'kubejs:purified_natural_gas', 'kubejs:methane', 'kubejs:syngas',
+    'kubejs:benzene', 'kubejs:toluene', 'kubejs:xylene'
   ])
 
 })

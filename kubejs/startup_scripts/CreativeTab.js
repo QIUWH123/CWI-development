@@ -36,6 +36,10 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		.concat(Ingredient.of("#cwi:plot_items").itemIds)
 	)
 
+})
+
+StartupEvents.modifyCreativeTab("create:base", (event) => {
+
 	event.add([
 		"create:chromatic_compound",
 		"create:shadow_steel",
@@ -43,5 +47,5 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		"create:shadow_steel_casing",
 		"create:refined_radiance_casing"
 	])
-
+	
 })

@@ -37,7 +37,7 @@ StartupEvents.registry('item', event => {
         ['netherite_hammer', 'netherite', 15]
     ]
     hammers.forEach(([name, tier, requiredCharge]) => {
-        event.create(name, 'pickaxe')
+        event.create(name, 'sword')
             .texture(`kubejs:item/tools/${name}`)
             .tier(tier)
             .attackDamageBaseline(3)

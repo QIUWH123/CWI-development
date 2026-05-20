@@ -158,6 +158,23 @@ ServerEvents.recipes(event => {
 
 })
 
+//biomancy
+
+ServerEvents.recipes(event => {
+
+  event.remove({ mod: 'clanginghowl' })
+
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+
+})
+
 //ftb quest
 
 ServerEvents.recipes(event => {
@@ -211,6 +228,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'minecraft:tinted_glass' })
   event.remove({ id: 'minecraft:ender_eye' })
   event.remove({ id: 'minecraft:diamond_crystal_block_to_diamond' })
+  event.remove({ id: 'minecraft:minecart' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -224,6 +242,32 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  
   event.remove({ id: 'minecraft:stone_sword' })
   event.remove({ id: 'minecraft:stone_axe' })
   event.remove({ id: 'minecraft:stone_pickaxe' })
@@ -256,30 +300,12 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'minecraft:golden_chestplate' })
   event.remove({ id: 'minecraft:golden_leggings' })
   event.remove({ id: 'minecraft:golden_boots' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
+  
   event.remove({ id: 'minecraft:netherite_helmet_smithing' })
   event.remove({ id: 'minecraft:netherite_chestplate_smithing' })
   event.remove({ id: 'minecraft:netherite_leggings_smithing' })
   event.remove({ id: 'minecraft:netherite_boots_smithing' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
+  
   event.remove({ id: 'minecraft:gold_nugget_from_blasting' })
   event.remove({ id: 'minecraft:iron_nugget_from_blasting' })
   event.remove({ id: 'minecraft:gold_nugget_from_smelting' })

@@ -8,6 +8,7 @@ function registerMoltenMetal(event, name, color) {
       layer2: 'kubejs:item/fluids/molten/' + name.replace('molten_', '')
     })
     .tag('cwi:containers')
+    .tag('cwi:moltens')
 }
 
 function registerFluid(event, name, color, type, overrides) {
@@ -47,6 +48,7 @@ var moltenMetals = [
   ['molten_vanadium', 0xEDE8ED],
   ['molten_tin', 0xC5E3FF],
   ['molten_silver', 0xD4FFF9],
+  ['molten_molybdenum', 0xD4FFF9],
   ['molten_andesite_alloy', 0xD4FFF9],
   ['molten_zinc', 0x71eba5],
   ['molten_gold', 0xFFF860],

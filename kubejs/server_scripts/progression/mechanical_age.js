@@ -84,8 +84,8 @@ ServerEvents.recipes(event => {
   event.shapeless(
     'kubejs:claystone_clump',
     [
-      '2x kubejs:claystone',
-      '2x #modpack:cobbled_stones'
+      '2x kubejs:cobbled_claystone',
+      '2x minecraft:gravel'
     ]
   )
 
@@ -123,6 +123,17 @@ ServerEvents.recipes(event => {
     {
       A: '#modpack:string',
       B: 'minecraft:stick'
+    }
+  )
+
+  event.shaped(
+    Item.of('minecraft:minecart'),
+    [
+      'A A',
+      'AAA'
+    ],
+    {
+      A: 'create:iron_sheet'
     }
   )
 

@@ -6,6 +6,16 @@
     "force_compatible": true
   },
   "pack_overrides": {
+    "1": [
+      "file/Mandalas GUI - Dark Mode KOTS Compat 2.8.zip",
+      "file/Mandala's GUI - Dark Mode Compat 0.3.2.zip",
+      "file/Mandala Utopia.zip"
+    ],
+    "$$1": {
+      "fixed_position": false,
+      "required": false,
+      "hidden": true
+    },
     "2": [
       "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
       "file/Fancy Crops v1.3.zip",

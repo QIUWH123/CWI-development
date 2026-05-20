@@ -17,3 +17,13 @@ global.stoneTypes = [
   ['darkerdepths:aridrock', 'kubejs:cobbled_quartzite', 'kubejs:quartzite_gravel', 'kubejs:quartzite_dust'],
   ['darkerdepths:darkslate', 'kubejs:cobbled_darkslate', 'kubejs:darkslate_gravel', 'kubejs:darkslate_dust']
 ]
+
+global.microbes = [
+  ['fermento_mycetes', ['frugal', 'prolific', 'rapid']],
+  ['acidolys_bacillus', ['heap', 'efficient', 'specialized']],
+  ['vulcan_thermus', ['crude', 'thermogenic', 'thermoelectric']],
+  ['carbofusor_spirillum', ['coal_saver', 'pressurized', 'syngas_rich']],
+  ['putrelys_sporogenes', ['saprophytic', 'proteolytic', 'cellulolytic']],
+  ['nitrofix_rhizobium', ['sugar_fed', 'phototrophic', 'nitrifying']],
+  ['crystallum_coccus', ['cheap_crystal', 'fast_nucleating', 'precision']]
+];

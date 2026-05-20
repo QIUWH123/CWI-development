@@ -2,6 +2,7 @@ ServerEvents.recipes(event => {
 
 //mixing
 
+  event.recipes.create.mixing('3x kubejs:pyrite_dust', ['2x tfmg:sulfur_dust','kubejs:iron_dust']).heated()
   event.recipes.create.mixing('kubejs:caustic_soda_powder', Fluid.of('kubejs:caustic_soda', 125)).heated()
   event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:brine', 125)).heated()
   event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
@@ -616,6 +617,25 @@ event.custom({
   })
 
 //chemicalVatMixing
+
+  event.custom({
+    "type": "tfmg:vat_machine_recipe",
+    "heatRequirement": "heated",
+    "allowedVatTypes": [
+      "tfmg:cast_iron_vat",
+      "tfmg:steel_vat",
+      "tfmg:firebrick_lined_vat"
+    ],
+    "ingredients": [
+      {"item": "kubejs:iron_dust"},
+      {"item": "tfmg:sulfur_dust", "count": 2}
+    ],
+    "machines": ["tfmg:mixing"],
+    "processingTime": 10,
+    "results": [
+      {"item": "kubejs:pyrite_dust", "count": 2}
+    ]
+  })
 
   event.custom({
     "type": "tfmg:vat_machine_recipe",

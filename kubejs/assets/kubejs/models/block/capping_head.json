@@ -1,0 +1,48 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"0": "kubejs:block/model/axis_top",
+		"1": "kubejs:block/model/axis",
+		"2": "kubejs:block/industrial_rubber_block",
+		"particle": "kubejs:block/model/axis_top"
+	},
+	"elements": [
+		{
+			"name": "Axis",
+			"from": [6, 8, 6],
+			"to": [10, 13, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [6, 16, 10, 11], "texture": "#1"},
+				"east": {"uv": [6, 16, 10, 11], "texture": "#1"},
+				"south": {"uv": [6, 16, 10, 11], "texture": "#1"},
+				"west": {"uv": [6, 16, 10, 11], "texture": "#1"},
+				"up": {"uv": [6, 6, 10, 10], "texture": "#0"},
+				"down": {"uv": [6, 6, 10, 10], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Axis",
+			"from": [4, 3, 4],
+			"to": [12, 8, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 3, -2]},
+			"faces": {
+				"north": {"uv": [5, 4, 0, 12], "rotation": 90, "texture": "#2"},
+				"east": {"uv": [4, 11, 12, 16], "rotation": 180, "texture": "#2"},
+				"south": {"uv": [11, 4, 16, 12], "rotation": 90, "texture": "#2"},
+				"west": {"uv": [4, 0, 12, 5], "texture": "#2"},
+				"up": {"uv": [4, 4, 12, 12], "rotation": 90, "texture": "#2"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"head": {
+			"translation": [0, 14.5, 0]
+		}
+	}
+}

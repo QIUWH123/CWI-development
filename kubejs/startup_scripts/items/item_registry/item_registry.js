@@ -36,6 +36,9 @@ StartupEvents.registry('item', event => {
   event.create('silver_wire')
     .texture('kubejs:item/materials/silver_wire')
     
+  event.create('molybdenum_wire')
+    .texture('kubejs:item/materials/molybdenum_wire')
+    
   event.create('bronze_wire')
     .texture('kubejs:item/materials/bronze_wire')
     
@@ -57,6 +60,9 @@ StartupEvents.registry('item', event => {
   event.create('silver_sheet')
     .texture('kubejs:item/materials/silver_sheet')
     
+  event.create('molybdenum_sheet')
+    .texture('kubejs:item/materials/molybdenum_sheet')
+    
   event.create('bronze_sheet')
     .texture('kubejs:item/materials/bronze_sheet')
     
@@ -74,6 +80,9 @@ StartupEvents.registry('item', event => {
     
   event.create('silver_rod')
     .texture('kubejs:item/materials/silver_rod')
+    
+  event.create('molybdenum_rod')
+    .texture('kubejs:item/materials/molybdenum_rod')
     
   event.create('bronze_rod')
     .texture('kubejs:item/materials/bronze_rod')
@@ -107,6 +116,12 @@ StartupEvents.registry('item', event => {
     
   event.create('silver_nugget')
     .texture('kubejs:item/materials/silver_nugget')
+    
+  event.create('molybdenum_ingot')
+    .texture('kubejs:item/materials/molybdenum_ingot')
+    
+  event.create('molybdenum_nugget')
+    .texture('kubejs:item/materials/molybdenum_nugget')
 
 
 })
@@ -125,13 +140,13 @@ StartupEvents.registry('item', event => {
     'cobalt_dust', 'magnesium_dust', 'zinc_dust', 'vanadium_dust', 'silicon_dust',
     'charcoal_dust', 'andesite_alloy_dust', 'nickel_dust', 'lead_dust',
     'cast_iron_dust', 'lithium_dust', 'bronze_dust', 'electrum_dust',
-    'constantan_dust', 'silver_dust', 'tin_dust', 'aluminum_dust',
+    'constantan_dust', 'silver_dust', 'tin_dust', 'aluminum_dust', 'molybdenum_dust',
     'industrial_iron_dust', 'steel_dust', 'halite_dust', 'magnesite_dust',
     'lignite_dust', 'flint_dust', 'kelp_dust', 'ash_dust', 'dark_ash_dust',
     'clay_dust', 'stone_dust', 'deepslate_dust', 'tuff_dust', 'claystone_dust',
     'granite_dust', 'diorite_dust', 'andesite_dust', 'basalt_dust', 'schist_dust',
     'gneiss_dust', 'rhyolite_dust', 'shale_dust', 'quartzite_dust',
-    'conglomerate_dust', 'phyllite_dust', 'darkslate_dust'
+    'conglomerate_dust', 'phyllite_dust', 'darkslate_dust', 'pyrite_dust'
   ]
 
   dusts.forEach(dust => {event.create(dust).texture(`kubejs:item/dusts/${dust}`).tag('cwi:dusts')})

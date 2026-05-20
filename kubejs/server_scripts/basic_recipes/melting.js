@@ -104,6 +104,12 @@ ServerEvents.recipes(event => {
       nugget: 'kubejs:silver_nugget', block: 'kubejs:silver_block', dust: 'kubejs:silver_dust'
     },
     {
+      id: 'molybdenum', fluid: 'kubejs:molten_molybdenum', mp: 524,
+      sheet: 'kubejs:molybdenum_sheet', ingot: 'kubejs:molybdenum_ingot',
+      rod: 'kubejs:molybdenum_rod', wire: 'kubejs:molybdenum_wire',
+      nugget: 'kubejs:molybdenum_nugget', block: 'kubejs:molybdenum_block', dust: 'kubejs:molybdenum_dust'
+    },
+    {
       id: 'tin', fluid: 'kubejs:molten_tin', mp: 46,
       sheet: 'kubejs:tin_sheet', ingot: 'kubejs:tin_ingot',
       rod: 'kubejs:tin_rod', wire: 'kubejs:tin_wire',

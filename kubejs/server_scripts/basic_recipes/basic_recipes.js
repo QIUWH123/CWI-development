@@ -119,6 +119,7 @@ ServerEvents.recipes(event => {
 //rolling
 
   rolling('kubejs:silver_ingot','kubejs:silver_rod')
+  rolling('kubejs:molybdenum_ingot','kubejs:molybdenum_rod')
   rolling('kubejs:bronze_ingot','kubejs:bronze_rod')
   rolling('kubejs:tin_ingot','kubejs:tin_rod')
   rolling('kubejs:cobalt_ingot','kubejs:cobalt_rod')
@@ -130,6 +131,7 @@ ServerEvents.recipes(event => {
   rolling('tfmg:nickel_sheet','vintageimprovements:nickel_wire')
   rolling('vintageimprovements:constantan_sheet','tfmg:constantan_wire')
   rolling('kubejs:silver_sheet','kubejs:silver_wire')
+  rolling('kubejs:molybdenum_wire','kubejs:molybdenum_wire')
   rolling('kubejs:bronze_sheet','kubejs:bronze_wire')
   rolling('kubejs:tin_sheet','kubejs:tin_wire')
   rolling('kubejs:cobalt_sheet','kubejs:cobalt_wire')
@@ -157,9 +159,15 @@ ServerEvents.recipes(event => {
 
   event.recipes.create.pressing('kubejs:magnesium_sheet', 'kubejs:magnesium_ingot')
   event.recipes.create.pressing('kubejs:silver_sheet', 'kubejs:silver_ingot')
+  event.recipes.create.pressing('kubejs:molybdenum_sheet', 'kubejs:molybdenum_ingot')
   event.recipes.create.pressing('kubejs:bronze_sheet', 'kubejs:bronze_ingot')
   event.recipes.create.pressing('kubejs:tin_sheet', 'kubejs:tin_ingot')
   event.recipes.create.pressing('kubejs:cobalt_sheet', 'kubejs:cobalt_ingot')
+
+  event.recipes.create.pressing('2x kubejs:broken_burnt_log', 'kubejs:burnt_log')
+  event.recipes.create.pressing('2x kubejs:stripped_broken_burnt_log', 'kubejs:stripped_burnt_log')
+  event.recipes.create.pressing('2x kubejs:broken_ash_log', 'kubejs:ash_log')
+  event.recipes.create.pressing('2x kubejs:stripped_broken_ash_log', 'kubejs:stripped_ash_log')
 
 //liquid_burning
 
@@ -185,6 +193,8 @@ ServerEvents.recipes(event => {
   addStoragePair('kubejs:raw_silver_block', 'kubejs:raw_silver', 9)
   addStoragePair('kubejs:silver_block', 'kubejs:silver_ingot', 9)
   addStoragePair('kubejs:silver_ingot', 'kubejs:silver_nugget', 9)
+  addStoragePair('kubejs:molybdenum_block', 'kubejs:molybdenum_ingot', 9)
+  addStoragePair('kubejs:molybdenum_ingot', 'kubejs:molybdenum_nugget', 9)
   addStoragePair('kubejs:raw_cobalt_block', 'kubejs:raw_cobalt', 9)
   addStoragePair('kubejs:cobalt_block', 'kubejs:cobalt_ingot', 9)
   addStoragePair('kubejs:cobalt_ingot', 'kubejs:cobalt_nugget', 9)

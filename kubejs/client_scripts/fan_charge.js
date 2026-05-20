@@ -8,7 +8,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
  
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
         (Item.of('create:encased_fan').setHoverName(Component.translate('Bulk Corroding').italic(false)), recipeType)
-})
+    })
 
 JEIAddedEvents.registerRecipes(event => {
  
@@ -19,6 +19,7 @@ JEIAddedEvents.registerRecipes(event => {
         input: 'create:iron_sheet',
         output: 'minecraft:iron_ingot'
     })
+
 })
 
 JEIAddedEvents.registerCategories(event => {
@@ -86,4 +87,5 @@ JEIAddedEvents.registerCategories(event => {
             matrixStack.popPose()
         })
     })
+    
 })

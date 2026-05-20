@@ -1,10 +1,15 @@
 ServerEvents.tags('item', event => {
-    event.add('kubejs:no_gravity_items', 'clanginghowl:extraterrestrial_energy_crystal');
-});
+
+  event.add('cwi:no_gravity_items', [
+    'clanginghowl:extraterrestrial_energy_crystal',
+    'minecraft:nether_star'
+  ])
+
+})
 
 EntityEvents.spawned('item', event => {
   let entity = event.entity;
-  if (entity.item.hasTag('kubejs:no_gravity_items')) {
+  if (entity.item.hasTag('cwi:no_gravity_items')) {
     entity.setNoGravity(true);
     startFloating(entity);
   }
