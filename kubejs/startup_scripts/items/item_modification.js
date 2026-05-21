@@ -93,33 +93,15 @@ ItemEvents.modification(event => {
   event.modify('kubejs:stripped_burnt_log', item => {item.burnTime = 100})
   event.modify('kubejs:stripped_broken_burnt_log', item => {item.burnTime = 50})
 
+  event.modify('ratatouille:compost_residue', item => {item.burnTime = 100})
+
+  event.modify('kubejs:peat', item => {item.burnTime = 200})
+  event.modify('kubejs:lignite', item => {item.burnTime = 400})
+  event.modify('kubejs:bituminous_coal', item => {item.burnTime = 800})
+
   event.modify('kubejs:coal_dust', item => {item.burnTime = 1600})
   event.modify('kubejs:charcoal_dust', item => {item.burnTime = 1600})
   event.modify('kubejs:charcoal_block', item => {item.burnTime = 16000})
-
-
-
-  event.modify('material_note', item => {item.craftingRemainder = Item.of('material_note').item})
-  event.modify('geological_note', item => {item.craftingRemainder = Item.of('geological_note').item})
-  event.modify('environmental_note', item => {item.craftingRemainder = Item.of('environmental_note').item})
-  event.modify('chemical_note', item => {item.craftingRemainder = Item.of('chemical_note').item})
-  event.modify('mechanic_manual', item => {item.craftingRemainder = Item.of('mechanic_manual').item})
-  event.modify('fluid_manual', item => {item.craftingRemainder = Item.of('fluid_manual').item})
-  event.modify('precision_manual', item => {item.craftingRemainder = Item.of('precision_manual').item})
-  event.modify('industrial_manual', item => {item.craftingRemainder = Item.of('industrial_manual').item})
-  event.modify('galvanic_manual', item => {item.craftingRemainder = Item.of('galvanic_manual').item})
-  event.modify('petroleum_manual', item => {item.craftingRemainder = Item.of('petroleum_manual').item})
-  event.modify('bioengineering_manual', item => {item.craftingRemainder = Item.of('bioengineering_manual').item})
-
-
-
-  event.modify('minecraft:iron_sword', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_axe', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_pickaxe', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_shovel', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_hoe', item => { item.maxDamage = 983 })
-
-
 
   event.modify('minecraft:dried_kelp', item => {item.burnTime = 0})
   event.modify('minecraft:smithing_table', item => {item.burnTime = 0})
@@ -142,5 +124,25 @@ ItemEvents.modification(event => {
   event.modify('create:creative_blaze_cake', item => {item.burnTime = 0})
   event.modify('createmetallurgy:coke', item => {item.burnTime = 0})
   event.modify('ratatouille:bio_gas_bucket', item => {item.burnTime = 0})
+
+
+
+  event.modify('material_note', item => {item.craftingRemainder = Item.of('material_note').item})
+  event.modify('geological_note', item => {item.craftingRemainder = Item.of('geological_note').item})
+  event.modify('environmental_note', item => {item.craftingRemainder = Item.of('environmental_note').item})
+  event.modify('chemical_note', item => {item.craftingRemainder = Item.of('chemical_note').item})
+  event.modify('mechanic_manual', item => {item.craftingRemainder = Item.of('mechanic_manual').item})
+  event.modify('fluid_manual', item => {item.craftingRemainder = Item.of('fluid_manual').item})
+  event.modify('precision_manual', item => {item.craftingRemainder = Item.of('precision_manual').item})
+  event.modify('industrial_manual', item => {item.craftingRemainder = Item.of('industrial_manual').item})
+  event.modify('galvanic_manual', item => {item.craftingRemainder = Item.of('galvanic_manual').item})
+  event.modify('petroleum_manual', item => {item.craftingRemainder = Item.of('petroleum_manual').item})
+  event.modify('bioengineering_manual', item => {item.craftingRemainder = Item.of('bioengineering_manual').item})
+
+  event.modify('minecraft:iron_sword', item => { item.maxDamage = 983 })
+  event.modify('minecraft:iron_axe', item => { item.maxDamage = 983 })
+  event.modify('minecraft:iron_pickaxe', item => { item.maxDamage = 983 })
+  event.modify('minecraft:iron_shovel', item => { item.maxDamage = 983 })
+  event.modify('minecraft:iron_hoe', item => { item.maxDamage = 983 })
 
 })

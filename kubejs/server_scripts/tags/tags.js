@@ -111,7 +111,8 @@ ServerEvents.tags('item', event => {
     'createaddition:iron_rod',
     'tfmg:steel_block',
     'kubejs:rubber_block',
-    'kubejs:industrial_rubber_block'
+    'kubejs:industrial_rubber_block',
+    'kubejs:capping_head'
   ])
 
   //string
@@ -184,7 +185,7 @@ ServerEvents.tags('item', event => {
     '#cwi:moltens',
     'kubejs:heated_powdered_obsidian',
     'kubejs:heated_iron_ingot',
-    'kubejs:heated_cast_iron_ingot'
+    'kubejs:heated_industrial_iron_ingot'
   ])
 
   //glass

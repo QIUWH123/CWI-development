@@ -123,6 +123,13 @@ StartupEvents.registry('item', event => {
   event.create('molybdenum_nugget')
     .texture('kubejs:item/materials/molybdenum_nugget')
 
+  event.create('cellulase_enzyme')
+
+  event.create('urea')
+
+  event.create('silica_gel')
+
+  event.create('gold_nanoparticle')
 
 })
 
@@ -133,6 +140,8 @@ StartupEvents.registry('item', event => {
   event.create('heated_powdered_obsidian')
   event.create('caustic_soda_powder')
   event.create('sodium_bisulfate_powder')
+  event.create('calcium_chloride_powder')
+  event.create('lignin_powder')
 
   const dusts = [
     'bone_dust', 'quartz_dust', 'fluorite_dust', 'diamond_dust', 'coal_dust',
@@ -360,7 +369,7 @@ StartupEvents.registry('item', event => {
 
   event.create('heated_iron_ingot')
 
-  event.create('heated_cast_iron_ingot')
+  event.create('heated_industrial_iron_ingot')
 
   event.create('carbon_fiber_composite_sheet')
 

@@ -19,11 +19,11 @@ global.stoneTypes = [
 ]
 
 global.microbes = [
-  ['fermento_mycetes', ['frugal', 'prolific', 'rapid']],
-  ['acidolys_bacillus', ['heap', 'efficient', 'specialized']],
-  ['vulcan_thermus', ['crude', 'thermogenic', 'thermoelectric']],
-  ['carbofusor_spirillum', ['coal_saver', 'pressurized', 'syngas_rich']],
-  ['putrelys_sporogenes', ['saprophytic', 'proteolytic', 'cellulolytic']],
-  ['nitrofix_rhizobium', ['sugar_fed', 'phototrophic', 'nitrifying']],
-  ['crystallum_coccus', ['cheap_crystal', 'fast_nucleating', 'precision']]
-];
+  ['fermento_mycetes', 0xbfb16d, 0xfce992, 0xffb078, ['frugal', 'prolific', 'rapid']],
+  ['acidolys_bacillus', 0xacbf75, 0xdcf595, 0xdcff82, ['heap', 'efficient', 'specialized']],
+  ['vulcan_thermus', 0x9c5454, 0xd97171, 0xfa8cb4, ['crude', 'thermogenic', 'thermoelectric']],
+  ['carbofusor_spirillum', 0x85571c, 0xd69036, 0xffab66, ['coal_saver', 'pressurized', 'syngas_rich']],
+  ['putrelys_sporogenes', 0x8a535b, 0xe08794, 0xff458f, ['saprophytic', 'proteolytic', 'cellulolytic']],
+  ['nitrofix_rhizobium', 0x57b3a5, 0x66d4c3, 0x96ffd3, ['sugar_fed', 'phototrophic', 'nitrifying']],
+  ['crystallum_coccus', 0xec73f0, 0xfca6ff, 0xff87bb, ['cheap_crystal', 'fast_nucleating', 'precision']]
+]

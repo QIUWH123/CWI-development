@@ -237,7 +237,7 @@ ServerEvents.recipes(event => {
 //compacting
 
   event.recipes.create.compacting('kubejs:fireclay_disk', 'tfmg:fireclay_ball')
-  event.recipes.create.compacting('kubejs:heated_cast_iron_ingot', ['kubejs:heated_iron_ingot', '3x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
+  event.recipes.create.compacting('kubejs:heated_industrial_iron_ingot', ['kubejs:heated_iron_ingot', '3x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
 
 //mixing
 
@@ -358,7 +358,7 @@ ServerEvents.recipes(event => {
 
   event.recipes.create.sequenced_assembly(
     'tfmg:cast_iron_ingot',
-    'kubejs:heated_cast_iron_ingot', 
+    'kubejs:heated_industrial_iron_ingot', 
     [
       event.custom({"type":"createaddition:rolling","input": {"item": 'kubejs:incomplete_cast_iron_ingot'},"result": {"item": 'kubejs:incomplete_cast_iron_ingot'}}),
       event.recipes.create.pressing('kubejs:incomplete_cast_iron_ingot', 'kubejs:incomplete_cast_iron_ingot'),

@@ -24,6 +24,10 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 	addCreativeTab("plot_items")
 		.icon(() => Item.of("kubejs:material_note"))
 		.content(() => Ingredient.of("#cwi:plot_items").itemIds)
+		
+	addCreativeTab("culture_plates")
+		.icon(() => Item.of("kubejs:sterile_petri_dish"))
+		.content(() => Ingredient.of("#cwi:petri_dish").itemIds)
 
 })
 
@@ -34,6 +38,7 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 		.concat(Ingredient.of("#cwi:containers").itemIds)
 		.concat(Ingredient.of("#cwi:dusts").itemIds)
 		.concat(Ingredient.of("#cwi:plot_items").itemIds)
+		.concat(Ingredient.of("#cwi:petri_dish").itemIds)
 	)
 
 })

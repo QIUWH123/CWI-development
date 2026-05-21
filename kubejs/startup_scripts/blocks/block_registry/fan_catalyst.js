@@ -1,7 +1,7 @@
 StartupEvents.registry('block', event => {
 
   function registerCatalysts(material, hardness, resistance) {
-    const types = ['frame', 'smoking', 'haunting', 'splashing', 'blasting', 'corroding']
+    const types = ['frame', 'smoking', 'haunting', 'splashing', 'blasting', 'corroding', 'sterilizing']
     const texture = `kubejs:block/fan_catalyst/fan_catalyst_${material}`
 
     types.forEach(type => {
