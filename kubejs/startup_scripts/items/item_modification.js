@@ -103,7 +103,7 @@ ItemEvents.modification(event => {
   event.modify('kubejs:charcoal_dust', item => {item.burnTime = 1600})
   event.modify('kubejs:charcoal_block', item => {item.burnTime = 16000})
 
-  event.modify('minecraft:dried_kelp', item => {item.burnTime = 0})
+  event.modify('minecraft:dried_kelp_block', item => {item.burnTime = 0})
   event.modify('minecraft:smithing_table', item => {item.burnTime = 0})
   event.modify('minecraft:jukebox', item => {item.burnTime = 0})
   event.modify('minecraft:note_box', item => {item.burnTime = 0})

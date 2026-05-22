@@ -806,18 +806,6 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
-    Item.of('fluid:copper_tap'),
-    [
-      'ABC'
-    ],
-    {
-      A: 'create:copper_sheet',
-      B: '#modpack:rubber',
-      C: 'create:fluid_pipe'
-    }
-  )
-
-  event.shaped(
     Item.of('create:radial_chassis', 3),
     [
       ' A ',

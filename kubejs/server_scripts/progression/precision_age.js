@@ -192,6 +192,34 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    Item.of('fluid:fluid_interface'),
+    [
+      'ABC'
+    ],
+    {
+      A: 'minecraft:copper_ingot',
+      B: '#modpack:rubber',
+      C: 'create:copper_sheet'
+    }
+  )
+
+  event.shaped(
+    Item.of('fluid:smart_fluid_interface'),
+    [
+      ' D ',
+      'ABC',
+      ' E '
+    ],
+    {
+      A: 'minecraft:copper_ingot',
+      B: '#modpack:rubber',
+      C: 'create:copper_sheet',
+      D: 'create:brass_sheet',
+      E: 'create_connected:control_chip'
+    }
+  )
+
+  event.shaped(
     Item.of('fluid:smart_fluid_interface'),
     [
       'A',
