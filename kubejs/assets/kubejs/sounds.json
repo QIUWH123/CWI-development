@@ -1,0 +1,10 @@
+{
+  "player_spawn": {
+    "sounds": [
+      "kubejs:player_spawn1",
+      "kubejs:player_spawn2",
+      "kubejs:player_spawn3",
+      "kubejs:player_spawn4"
+    ]
+  }
+}

@@ -7,16 +7,6 @@
   },
   "pack_overrides": {
     "1": [
-      "file/Mandalas GUI - Dark Mode KOTS Compat 2.8.zip",
-      "file/Mandala's GUI - Dark Mode Compat 0.3.2.zip",
-      "file/Mandala Utopia.zip"
-    ],
-    "$$1": {
-      "fixed_position": false,
-      "required": false,
-      "hidden": true
-    },
-    "2": [
       "file/Fancy Crops v1.3.zip",
       "file/Brush+Juice-5.2.0.zip",
       "file/Fancy End - RP 1.15+ - 1.4.zip",
@@ -25,7 +15,7 @@
       "file/Rain Revamp [1.20].zip",
       "file/Sun  Moon Fusion 2.1.zip",
       "file/Fwishies Custom Crits [1.0].zip",
-      "file/[Compressed] Alternative Rain Sounds 1.20-1.20.1.zip",
+      "file/§6Dynamic§9Surroundings §2R21.zip",
       "file/Discography 3.1.zip",
       "file/SGJourney Refreshed.zip",
       "file/AETexturesBackport1.20-1.1.zip",
@@ -35,19 +25,19 @@
       "file/MandalasGUI+Dakmode_1.21.8_v2.5.zip",
       "file/Angel's_Font_v0.8.zip"
     ],
-    "$$2": {
+    "$$1": {
       "default_position": "TOP",
       "fixed_position": true,
       "required": true,
       "hidden": true
     },
-    "3": [
+    "2": [
       "file/Vexxed_Visuals_TFC_v1.2.7.1.zip",
       "file/Fungal Infection Hyper Evolved.zip",
       "file/Tuttas Retextures - Runes Edition.zip",
       "file/Retro Exposure Edition 1.21.1.zip"
     ],
-    "$$3": {
+    "$$2": {
       "default_position": "BOTTOM",
       "fixed_position": true,
       "required": true,
