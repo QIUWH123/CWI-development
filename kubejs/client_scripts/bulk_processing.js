@@ -1,12 +1,25 @@
-// client_scripts/bulk_processing.js
+JEIAddedEvents.registerRecipeCatalysts(event => {
+    const { data } = event
+    const { jeiHelpers } = data
+    let typeId = ResourceLocation.fromNamespaceAndPath('create', 'sterilizing')
+    let recipeType = jeiHelpers.getRecipeType(typeId).get()
+    data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
+        (Item.of('create:encased_fan').setHoverName(Component.translate('Fan Behind Ethanol').italic(false)), recipeType)
+})
 
-// ---------- 类别注册（保持原样） ----------
+JEIAddedEvents.registerRecipeCatalysts(event => {
+    const { data } = event
+    const { jeiHelpers } = data
+    let typeId = ResourceLocation.fromNamespaceAndPath('create', 'corroding')
+    let recipeType = jeiHelpers.getRecipeType(typeId).get()
+    data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
+        (Item.of('create:encased_fan').setHoverName(Component.translate('Fan Behind Sulfuric Acid').italic(false)), recipeType)
+})
+
 JEIAddedEvents.registerCategories(event => {
     const { data } = event
     const { jeiHelpers } = data
     const { guiHelper } = jeiHelpers
-
-    // Corroding 分类
     event.custom('create:corroding', category => {
         category.title(Component.translate('recipe.kubejs.corroding'))
         category.setWidth(178)
@@ -55,7 +68,6 @@ JEIAddedEvents.registerCategories(event => {
         })
     })
 
-    // Sterilizing 分类
     event.custom('create:sterilizing', category => {
         category.title(Component.translate('recipe.kubejs.sterilizing'))
         category.setWidth(178)
@@ -105,15 +117,9 @@ JEIAddedEvents.registerCategories(event => {
     })
 })
 
-// ---------- 配方注册（保持循环，无作用域问题） ----------
 JEIAddedEvents.registerRecipes(event => {
-    // Corroding recipes
     let corrodingBuilder = event.custom(new ResourceLocation('create', 'corroding'))
     corrodingBuilder.add({ input: 'create:iron_sheet', output: 'minecraft:iron_ingot' })
-    // 在此添加更多腐蚀配方...
-
-    // Sterilizing recipes
     let sterilizingBuilder = event.custom(new ResourceLocation('create', 'sterilizing'))
     sterilizingBuilder.add({ input: 'kubejs:petri_dish', output: 'kubejs:sterile_petri_dish' })
-    // 在此添加更多消毒配方...
 })

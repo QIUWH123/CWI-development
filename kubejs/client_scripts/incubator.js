@@ -4,7 +4,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
     let typeId = ResourceLocation.fromNamespaceAndPath('kubejs', 'incubator')
     let recipeType = jeiHelpers.getRecipeType(typeId).get()
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
-        (Item.of('modpack:incubator').setHoverName(Component.translate('Incubating').italic(false)), recipeType)
+        (Item.of('modpack:incubator'), recipeType)
 })
 
 JEIAddedEvents.registerRecipes(event => {
