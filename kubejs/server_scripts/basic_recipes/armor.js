@@ -53,6 +53,9 @@ addArmor('kubejs:bronze_sheet', 'kubejs:bronze')
 addTools('createaddition:zinc_sheet', 'create_sa:zinc')
 addArmor('createaddition:zinc_sheet', 'create_sa:zinc')
 
+addTools('create:brass_sheet', 'create_sa:brass')
+addArmor('create:brass_sheet', 'create_sa:brass')
+
 })
 
 ServerEvents.recipes(event => {

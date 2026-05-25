@@ -32,7 +32,6 @@ StartupEvents.registry('item', event => {
     const hammers = [
         ['bronze_hammer', 'bronze', 18],
         ['iron_hammer', 'iron', 20],
-        ['brass_hammer', 'create_sa:brass', 18],
         ['stone_hammer', 'stone', 25],
         ['gold_hammer', 'gold', 12],
         ['netherite_hammer', 'netherite', 15]
