@@ -181,7 +181,9 @@ ServerEvents.recipes(event => {
 //conversion
 
   addStoragePair('kubejs:rubber_block', 'kubejs:rubber', 9)
-  addStoragePair('kubejs:polyvinyl_chloride_plastic_block', 'kubejs:polyvinyl_chloride_plastic_sheet', 9)
+  addStoragePair('kubejs:polyvinyl_chloride_block', 'kubejs:polyvinyl_chloride', 9)
+  addStoragePair('kubejs:polyvinyl_chloride_block', 'kubejs:polyvinyl_chloride', 9)
+  addStoragePair('kubejs:polyvinyl_chloride_block', 'kubejs:polyvinyl_chloride', 9)
   addStoragePair('kubejs:sturdy_sheet_block', 'create:sturdy_sheet', 9)
   addStoragePair('kubejs:magnesium_block', 'kubejs:magnesium_ingot', 9)
   addStoragePair('kubejs:magnesium_ingot', 'kubejs:magnesium_nugget', 9)

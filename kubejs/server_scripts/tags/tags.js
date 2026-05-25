@@ -501,7 +501,9 @@ ServerEvents.tags('fluid', event => {
     'kubejs:hexamethylenediamine_solution', 'kubejs:adipic_acid_solution',
     'kubejs:condensed_natural_gas', 'kubejs:condensed_cracked_naphtha',
     'kubejs:condensed_cracked_ethane', 'kubejs:condensed_cracked_propane',
-    'kubejs:polyvinyl_chloride_plastic'
+    'kubejs:molten_polyethylene',
+    'kubejs:molten_polypropylene',
+    'kubejs:molten_polyvinyl_chloride'
   ])
 
 //normal_fluid

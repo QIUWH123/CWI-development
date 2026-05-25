@@ -27,3 +27,35 @@ global.microbes = [
   ['nitrofix_rhizobium', 0x57b3a5, 0x66d4c3, 0x96ffd3, ['sugar_fed', 'phototrophic', 'nitrifying']],
   ['crystallum_coccus', 0xec73f0, 0xfca6ff, 0xff87bb, ['cheap_crystal', 'fast_nucleating', 'precision']]
 ]
+
+global.materials = [
+  { id: 'diamond', formula: 'C', types: ['kubejs:diamond_dust', 'minecraft:diamond', 'minecraft:diamond_block'] },
+
+  { id: 'iron', formula: 'Fe', types: ['kubejs:iron_dust', 'minecraft:iron_ingot', 'minecraft:iron_nugget', 'create:iron_sheet', 'createaddition:iron_rod', 'createaddition:iron_wire', 'minecraft:iron_block'] },
+  { id: 'industrial_iron', formula: 'Fe', types: ['kubejs:industrial_iron_dust', 'createdeco:industrial_iron_ingot', 'createdeco:industrial_iron_nugget', 'createdeco:industrial_iron_sheet', 'create:industrial_iron_block'] },
+  { id: 'cast_iron', formula: 'Fe', types: ['kubejs:cast_iron_dust', 'tfmg:cast_iron_ingot', 'tfmg:cast_iron_nugget', 'tfmg:cast_iron_sheet', 'vintageimprovements:cast_iron_rod', 'vintageimprovements:cast_iron_wire', 'tfmg:cast_iron_block'] },
+  { id: 'steel', formula: 'Fe', types: ['kubejs:steel_dust', 'tfmg:steel_ingot', 'tfmg:steel_nugget', 'tfmg:heavy_plate', 'vintageimprovements:steel_rod', 'vintageimprovements:steel_wire', 'tfmg:steel_block'] },
+
+  { id: 'vanadium', formula: 'V', types: ['kubejs:vanadium_dust', 'vintageimprovements:vanadium_ingot', 'vintageimprovements:vanadium_nugget', 'vintageimprovements:vanadium_sheet', 'vintageimprovements:vanadium_rod', 'vintageimprovements:vanadium_wire', 'vintageimprovements:vanadium_block'] },
+  { id: 'zinc', formula: 'Zn', types: ['kubejs:zinc_dust', 'create:zinc_ingot', 'create:zinc_nugget', 'createaddition:zinc_sheet', 'vintageimprovements:zinc_rod', 'vintageimprovements:zinc_wire', 'create:zinc_block'] },
+  { id: 'copper', formula: 'Cu', types: ['kubejs:copper_dust', 'minecraft:copper_ingot', 'create:copper_nugget', 'create:copper_sheet', 'createaddition:copper_rod', 'createaddition:copper_wire', 'minecraft:copper_block'] },
+  { id: 'gold', formula: 'Au', types: ['kubejs:gold_dust', 'minecraft:gold_ingot', 'minecraft:gold_nugget', 'create:golden_sheet', 'createaddition:gold_rod', 'createaddition:gold_wire', 'minecraft:gold_block'] },
+  { id: 'lead', formula: 'Pb', types: ['kubejs:lead_dust', 'tfmg:lead_ingot', 'tfmg:lead_nugget', 'tfmg:lead_sheet', 'vintageimprovements:lead_rod', 'vintageimprovements:lead_wire', 'tfmg:lead_block'] },
+  { id: 'nickel', formula: 'Ni', types: ['kubejs:nickel_dust', 'tfmg:nickel_ingot', 'tfmg:nickel_nugget', 'tfmg:nickel_sheet', 'vintageimprovements:nickel_rod', 'vintageimprovements:nickel_wire', 'tfmg:nickel_block'] },
+  { id: 'aluminum', formula: 'Al', types: ['kubejs:aluminum_dust', 'tfmg:aluminum_ingot', 'tfmg:aluminum_nugget', 'tfmg:aluminum_sheet', 'vintageimprovements:aluminum_rod', 'vintageimprovements:aluminum_wire', 'tfmg:aluminum_block'] },
+  { id: 'cobalt', formula: 'Co', types: ['kubejs:cobalt_dust', 'kubejs:cobalt_ingot', 'kubejs:cobalt_nugget', 'kubejs:cobalt_sheet', 'kubejs:cobalt_rod', 'kubejs:cobalt_wire', 'kubejs:cobalt_block'] },
+  { id: 'tin', formula: 'Sn', types: ['kubejs:tin_dust', 'kubejs:tin_ingot', 'kubejs:tin_nugget', 'kubejs:tin_sheet', 'kubejs:tin_rod', 'kubejs:tin_wire', 'kubejs:tin_block'] },
+  { id: 'silver', formula: 'Ag', types: ['kubejs:silver_dust', 'kubejs:silver_ingot', 'kubejs:silver_nugget', 'kubejs:silver_sheet', 'kubejs:silver_rod', 'kubejs:silver_wire', 'kubejs:silver_block'] },
+  { id: 'molybdenum', formula: 'Mo', types: ['kubejs:molybdenum_dust', 'kubejs:molybdenum_ingot', 'kubejs:molybdenum_nugget', 'kubejs:molybdenum_sheet', 'kubejs:molybdenum_rod', 'kubejs:molybdenum_wire', 'kubejs:molybdenum_block'] },
+  { id: 'magnesium', formula: 'Mg', types: ['kubejs:magnesium_dust', 'kubejs:magnesium_ingot', 'kubejs:magnesium_nugget', 'kubejs:magnesium_sheet', 'kubejs:magnesium_rod', 'kubejs:magnesium_wire', 'kubejs:magnesium_block'] },
+
+  { id: 'constantan', formula: 'Cu₃Ni', types: ['kubejs:constantan_dust', 'tfmg:constantan_ingot', 'tfmg:constantan_nugget', 'tfmg:constantan_sheet', 'vintageimprovements:constantan_rod', 'tfmg:constantan_wire', 'tfmg:constantan_block'] },
+  { id: 'electrum', formula: 'Au₃Ag', types: ['kubejs:electrum_dust', 'createaddition:electrum_ingot', 'createaddition:electrum_nugget', 'createaddition:electrum_sheet', 'createaddition:electrum_rod', 'createaddition:electrum_wire', 'createaddition:electrum_block'] },
+  { id: 'brass', formula: 'CuZn', types: ['kubejs:brass_dust', 'create:brass_ingot', 'create:brass_nugget', 'create:brass_sheet', 'createaddition:brass_rod', 'vintageimprovements:brass_wire', 'create:brass_block'] },
+  { id: 'bronze', formula: 'Cu₃Sn', types: ['kubejs:bronze_dust', 'kubejs:bronze_ingot', 'kubejs:bronze_nugget', 'kubejs:bronze_sheet', 'kubejs:bronze_rod', 'kubejs:bronze_wire', 'kubejs:bronze_block'] },
+
+  { id: 'polyethylene', formula: '(C₂H₄)ₙ', types: ['kubejs:polyethylene_powder', 'kubejs:polyethylene', 'kubejs:polyethylene_sheet'] },
+  { id: 'polypropylene', formula: '(C₃H₆)ₙ', types: ['kubejs:polypropylene_powder', 'kubejs:polypropylene', 'kubejs:polypropylene_sheet'] },
+  { id: 'polyvinyl_chloride', formula: '(C₂H₃Cl)ₙ', types: ['kubejs:polyvinyl_chloride_powder', 'kubejs:polyvinyl_chloride', 'kubejs:polyvinyl_chloride_sheet'] },
+  //{ id: 'nylon_66', formula: '(C₁₂H₂₂N₂O₂)ₙ', types: [] }
+]

@@ -569,6 +569,33 @@ StartupEvents.registry('block', event => {
 
 //storage block
 
+  event.create('polyethylene_block')
+    .soundType('metal')
+    .hardness(4)
+    .resistance(4)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_stone_tool')
+    .mapColor('#FF5500')
+
+  event.create('polypropylene_block')
+    .soundType('metal')
+    .hardness(4)
+    .resistance(4)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_stone_tool')
+    .mapColor('#FF5500')
+
+  event.create('polyvinyl_chloride_block')
+    .soundType('metal')
+    .hardness(4)
+    .resistance(4)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_stone_tool')
+    .mapColor('#FF5500')
+
   event.create('carbon_fiber_block')
     .stoneSoundType()
     .hardness(6)
@@ -1182,15 +1209,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#705948')
-
-  event.create('polyvinyl_chloride_plastic_block')
-    .soundType('metal')
-    .hardness(4)
-    .resistance(4)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/pickaxe')
-    .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
 
   event.create('incubator_blade')
     .model('kubejs:block/incubator_blade_alone')

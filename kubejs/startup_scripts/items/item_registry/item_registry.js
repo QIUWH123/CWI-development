@@ -27,6 +27,9 @@ StartupEvents.registry('item', event => {
   event.create('nylon_salt_crystal')
   event.create('carborundum')
 
+  event.create('magnesium_wire')
+    .texture('kubejs:item/materials/magnesium_wire')
+
   event.create('cobalt_wire')
     .texture('kubejs:item/materials/cobalt_wire')
     
@@ -71,6 +74,9 @@ StartupEvents.registry('item', event => {
     
   event.create('magnetic_alloy_sheet')
     .texture('kubejs:item/materials/magnetic_alloy_sheet')
+  
+  event.create('magnesium_rod')
+    .texture('kubejs:item/materials/magnesium_rod')
   
   event.create('cobalt_rod')
     .texture('kubejs:item/materials/cobalt_rod')
@@ -365,7 +371,17 @@ StartupEvents.registry('item', event => {
     
 //normal
 
-  event.create('polyvinyl_chloride_plastic_sheet')
+  event.create('polyethylene').texture('kubejs:item/materials/polyethylene')
+  event.create('polyethylene_powder').texture('kubejs:item/materials/polyethylene_powder')
+  event.create('polyethylene_sheet').texture('kubejs:item/materials/polyethylene_sheet')
+
+  event.create('polypropylene').texture('kubejs:item/materials/polypropylene')
+  event.create('polypropylene_powder').texture('kubejs:item/materials/polypropylene_powder')
+  event.create('polypropylene_sheet').texture('kubejs:item/materials/polypropylene_sheet')
+
+  event.create('polyvinyl_chloride').texture('kubejs:item/materials/polyvinyl_chloride')
+  event.create('polyvinyl_chloride_powder').texture('kubejs:item/materials/polyvinyl_chloride_powder')
+  event.create('polyvinyl_chloride_sheet').texture('kubejs:item/materials/polyvinyl_chloride_sheet')
 
   event.create('heated_iron_ingot')
 

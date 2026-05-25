@@ -254,13 +254,23 @@ ServerEvents.recipes(event => {
   basinCasting('kubejs:molten_slime',1000,43,'minecraft:slime_block')
   basinCasting('tfmg:molten_slag',1000,1482,'tfmg:slag_block')
 
-  tableCasting('kubejs:terracotta_ingot_mold','tfmg:molten_plastic',90,46,'tfmg:plastic_sheet')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','tfmg:molten_plastic',90,46,'tfmg:plastic_sheet')
-  basinCasting('tfmg:molten_plastic',810,230,'tfmg:plastic_block')
+  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_polyethylene',90,46,'kubejs:polyethylene')
+  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_polyethylene',90,46,'kubejs:polyethylene_sheet')
+  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_polyethylene',90,46,'kubejs:polyethylene')
+  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_polyethylene',90,46,'kubejs:polyethylene_sheet')
+  basinCasting('kubejs:molten_polyethylene',810,230,'kubejs:polyethylene_block')
 
-  tableCasting('kubejs:terracotta_ingot_mold','kubejs:polyvinyl_chloride_plastic',90,46,'kubejs:polyvinyl_chloride_plastic_sheet')
-  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:polyvinyl_chloride_plastic',90,46,'kubejs:polyvinyl_chloride_plastic_sheet')
-  basinCasting('kubejs:polyvinyl_chloride_plastic',810,230,'kubejs:polyvinyl_chloride_plastic_block')
+  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_polypropylene',90,46,'kubejs:polypropylene')
+  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_polypropylene',90,46,'kubejs:polypropylene_sheet')
+  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_polypropylene',90,46,'kubejs:polypropylene')
+  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_polypropylene',90,46,'kubejs:polypropylene_sheet')
+  basinCasting('kubejs:molten_polypropylene',810,230,'kubejs:polypropylene_block')
+
+  tableCasting('kubejs:terracotta_ingot_mold','kubejs:molten_polyvinyl_chloride',90,46,'kubejs:polyvinyl_chloride')
+  tableCasting('kubejs:terracotta_sheet_mold','kubejs:molten_polyvinyl_chloride',90,46,'kubejs:polyvinyl_chloride_sheet')
+  tableCasting('kubejs:fireproof_brick_ingot_mold','kubejs:molten_polyvinyl_chloride',90,46,'kubejs:polyvinyl_chloride')
+  tableCasting('kubejs:fireproof_brick_sheet_mold','kubejs:molten_polyvinyl_chloride',90,46,'kubejs:polyvinyl_chloride_sheet')
+  basinCasting('kubejs:molten_polyvinyl_chloride',810,230,'kubejs:polyvinyl_chloride_block')
 
 //mixing
 

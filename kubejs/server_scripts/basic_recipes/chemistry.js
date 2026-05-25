@@ -336,7 +336,7 @@ event.custom({
     "processingTime": 200,
     "results": [
       {"item": "kubejs:sulfur_copper_catalyst"},
-      {"fluid": "kubejs:polyvinyl_chloride_plastic", "amount": 1000}
+      {"fluid": "kubejs:molten_polyvinyl_chloride", "amount": 1000}
     ]
   })
 
@@ -940,7 +940,7 @@ event.custom({
     "minSize": 1,
     "processingTime": 100,
     "results": [
-      {"fluid": "tfmg:molten_plastic", "amount": 100}
+      {"fluid": "kubejs:molten_polyethylene", "amount": 100}
     ]
   })
 
@@ -958,11 +958,10 @@ event.custom({
     "minSize": 1,
     "processingTime": 100,
     "results": [
-      {"fluid": "tfmg:molten_plastic", "amount": 100}
+      {"fluid": "kubejs:molten_polypropylene", "amount": 100}
     ]
   })
 
 //glass
-
 
 })
