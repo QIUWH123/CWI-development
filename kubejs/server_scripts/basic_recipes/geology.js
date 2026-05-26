@@ -12,7 +12,7 @@ ServerEvents.recipes(event => {
   
   event.recipes.create.filling('minecraft:wet_sponge', [Fluid.of('minecraft:water', 1000), 'minecraft:sponge'])
 
-  event.recipes.create.milling(['kubejs:ash_dust', Item.of('kubejs:ash_dust').withChance(0.75), Item.of('miners_delight:silverfish_eggs').withChance(0.09), Item.of('miners_delight:arthropod').withChance(0.03)], 'kubejs:depleted_dirt')
+  event.recipes.create.milling(['2x kubejs:ash_dust', Item.of('kubejs:ash_dust').withChance(0.75), Item.of('miners_delight:silverfish_eggs').withChance(0.03)], 'kubejs:depleted_dirt')
   event.recipes.create.milling('kubejs:powdered_fermento_mycetes', 'kubejs:dry_fermento_mycetes')
   event.recipes.create.milling('kubejs:bone_dust', 'biomancy:bone_fragments')
   event.recipes.create.milling(['2x minecraft:string',Item.of('minecraft:string').withChance(0.25)], 'miners_delight:gossypium')
@@ -83,6 +83,37 @@ ServerEvents.recipes(event => {
       }
     ]
   })
+    
+  event.custom({
+    "type": "ratatouille:threshing",
+    "ingredients": [
+      {
+        "item": "kubejs:depleted_dirt"
+      }
+    ],
+    "processingTime": 100,
+    "results": [
+      {
+        "item": "kubejs:ash_dust",
+        "count": 2
+      },
+      {
+        "item": "kubejs:ash_dust",
+        "count": 1,
+        "chance": 0.5
+      },
+      {
+        "item": "miners_delight:silverfish_eggs",
+        "count": 1,
+        "chance": 0.09
+      },
+      {
+        "item": "miners_delight:arthropod",
+        "count": 1,
+        "chance": 0.03
+      }
+    ]
+  })
 
   event.custom({
     "type": "ratatouille:threshing",
@@ -91,7 +122,7 @@ ServerEvents.recipes(event => {
         "item": "miners_delight:gossypium"
       }
     ],
-    "processingTime": 200,
+    "processingTime": 100,
     "results": [
       {
         "item": "rusticdelight:cotton_boll",

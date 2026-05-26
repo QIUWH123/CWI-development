@@ -10,9 +10,77 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
 JEIAddedEvents.registerRecipes(event => {
     let typeId = new ResourceLocation('kubejs', 'mixing_vessel')
     let recipeBuilder = event.custom(typeId)
-    recipeBuilder.add({
-        input: 'minecraft:stone',
-        output: 'minecraft:iron_ingot'
+
+    // 将所有配方数据整理成数组
+    const recipes = [
+        {
+            inputs: [{ item: 'tfmg:sulfur_dust', count: 2 }, { item: 'kubejs:copper_dust' }],
+            outputs: [{ item: 'kubejs:sulfur_copper_catalyst' }]
+        },
+        {
+            inputs: [{ item: 'kubejs:copper_dust' }],
+            inputFluids: [{ fluid: 'kubejs:chlorine', amount: 250 }],
+            outputs: [{ item: 'kubejs:chloride_copper_catalyst' }]
+        },
+        {
+            inputs: [{ item: 'kubejs:caustic_soda_powder', count: 2 }, { item: 'kubejs:nickel_dust' }],
+            outputs: [{ item: 'kubejs:nickel_catalyst' }]
+        },
+        {
+            inputs: [{ item: 'kubejs:nickel_dust' }],
+            inputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 250 }],
+            outputs: [{ item: 'kubejs:nickel_catalyst' }]
+        },
+        {
+            inputs: [{ item: 'kubejs:caustic_soda_powder' }],
+            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
+            outputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 125 }]
+        },
+        {
+            inputs: [{ item: 'ratatouille:salt' }],
+            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
+            outputFluids: [{ fluid: 'kubejs:brine', amount: 125 }]
+        },
+        {
+            inputs: [{ item: 'kubejs:halite_dust' }],
+            inputFluids: [{ fluid: 'minecraft:water', amount: 125 }],
+            outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
+        },
+        {
+            inputs: [{ item: 'kubejs:halite_dust' }],
+            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
+            outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
+        },
+        {
+            inputs: [{ item: 'tfmg:nitrate_dust' }],
+            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
+            outputFluids: [{ fluid: 'kubejs:nitrate_solution', amount: 125 }]
+        },
+        {
+            inputs: [{ item: 'minecraft:sugar' }, { item: 'createaddition:biomass' }],
+            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 250 }],
+            outputFluids: [{ fluid: 'createaddition:bioethanol', amount: 250 }]
+        },
+        {
+            inputs: [{ item: 'createaddition:biomass' }],
+            inputFluids: [
+                { fluid: 'kubejs:distilled_water', amount: 125 },
+                { fluid: 'kubejs:syrup', amount: 125 }
+            ],
+            outputFluids: [{ fluid: 'createaddition:bioethanol', amount: 250 }]
+        },
+        {
+            inputFluids: [
+                { fluid: 'createdieselgenerators:ethanol', amount: 50 },
+                { fluid: 'createdieselgenerators:plant_oil', amount: 50 }
+            ],
+            outputFluids: [{ fluid: 'createdieselgenerators:biodiesel', amount: 100 }]
+        }
+    ]
+
+    // 注册所有配方
+    recipes.forEach(recipe => {
+        recipeBuilder.add(recipe)
     })
 })
 
@@ -27,12 +95,43 @@ JEIAddedEvents.registerCategories(event => {
         category.background(guiHelper.createBlankDrawable(0, 0))
         category.iconSupplier(() => guiHelper.createDrawableItemStack(Item.of('modpack:mixing_vessel')))
         category.handleLookup((layoutBuilder, recipe, focuses) => {
-            layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 21, 48)
-                .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                .addItemStack(recipe.recipeData.input)
-            layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 141, 48)
-                .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                .addItemStack(recipe.recipeData.output)
+            let recipeData = recipe.recipeData
+
+            // 物品输入
+            let inputs = recipeData.inputs || []
+            inputs.forEach((stack, i) => {
+                let item = Item.of(stack.item || stack, stack.count || 1)
+                layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 48)
+                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    .addItemStack(item)
+            })
+
+            // 流体输入
+            let inputFluids = recipeData.inputFluids || []
+            inputFluids.forEach((f, i) => {
+                let fluidStack = Fluid.of(f.fluid, f.amount).toStack()
+                layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 24)
+                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    .addFluidStack(fluidStack)
+            })
+
+            // 物品输出
+            let outputs = recipeData.outputs || []
+            outputs.forEach((stack, i) => {
+                let item = Item.of(stack.item || stack, stack.count || 1)
+                layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 48)
+                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    .addItemStack(item)
+            })
+
+            // 流体输出
+            let outputFluids = recipeData.outputFluids || []
+            outputFluids.forEach((f, i) => {
+                let fluidStack = Fluid.of(f.fluid, f.amount).toStack()
+                layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 24)
+                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    .addFluidStack(fluidStack)
+            })
         })
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {
             $AllGuiTextures.JEI_SHADOW.render(graphics, 65, 39)

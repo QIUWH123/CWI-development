@@ -82,8 +82,6 @@ ServerEvents.recipes(event => {
 
 //melting
 
-  melting('heated', 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
-  bulkMelting(4,50, 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
   const MATERIALS = [
     {
       id: 'copper', fluid: 'kubejs:molten_copper', mp: 217,
@@ -217,7 +215,7 @@ ServerEvents.recipes(event => {
 
   MATERIALS.forEach(mat => {
     MOLD_TYPES.forEach(moldPrefix => {
-      if (moldPrefix === 'terracotta' && mat.mp >= 250) return
+      if (moldPrefix === 'terracotta' && mat.mp >= 200) return
       SHAPES.forEach(shape => {
         const moldItem = `kubejs:${moldPrefix}_${shape}_mold`
         const outputItem = mat[shape]
@@ -248,6 +246,11 @@ ServerEvents.recipes(event => {
       bulkMelting(bulkMin, bulkMax, item, amount, time, mat.fluid)
     })
   })
+
+//melting
+
+  melting('heated', 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
+  bulkMelting(4,50, 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
 
 //basinCasting
   

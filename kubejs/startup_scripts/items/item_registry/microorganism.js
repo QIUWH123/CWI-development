@@ -38,7 +38,7 @@ StartupEvents.registry('item', event => {
 
 StartupEvents.registry('item', event => {
 
-  global.microbes.forEach(([name, color1, color2, color3, variants]) => {
+  global.microbes.forEach(([name, color1, color2, color3, variants, times]) => {
 
     event.create(name).texture(`kubejs:item/microorganisms/${name}`)
 

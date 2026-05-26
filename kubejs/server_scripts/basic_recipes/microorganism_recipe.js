@@ -3,8 +3,8 @@ function addFermentingRecipes(event, ingredients, results, processingTime, heatR
         ingredients: ingredients,
         processingTime: processingTime,
         results: results
-    };
-    if (heatRequirement) base.heatRequirement = heatRequirement;
+    }
+    if (heatRequirement) base.heatRequirement = heatRequirement
     types.forEach(function(type) {
         var recipe = {
             type: "createdieselgenerators:" + type + "_fermenting",
@@ -12,9 +12,9 @@ function addFermentingRecipes(event, ingredients, results, processingTime, heatR
             processingTime: base.processingTime,
             results: base.results
         };
-        if (base.heatRequirement) recipe.heatRequirement = base.heatRequirement;
-        event.custom(recipe);
-    });
+        if (base.heatRequirement) recipe.heatRequirement = base.heatRequirement
+        event.custom(recipe)
+    })
 }
 
 ServerEvents.recipes(function(event) {
@@ -1260,4 +1260,4 @@ ServerEvents.recipes(function(event) {
         200, "heated", ['basin', 'bulk']
     );
 
-});
+})

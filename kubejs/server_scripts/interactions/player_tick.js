@@ -13,6 +13,6 @@ PlayerEvents.tick(event => {
 PlayerEvents.tick(event => {
     const player = event.player
     if (player.age % 10 != 0) return
-    if (player.inventory.count("#cwi:hot_item") > 0)
+    if (player.inventory.count("#cwi:hot_items") > 0)
     player.attack(player.damageSources().inFire(), 1)
 })

@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.deploying('kubejs:petri_dish',['kubejs:empty_petri_dish', 'minecraft:glass_pane'])
 
-    global.microbes.forEach(([name, color1, color2, color3, variants]) => {
+    global.microbes.forEach(([name, color1, color2, color3, variants, times]) => {
         const inputD  = `kubejs:${name}`
         const outputD = `kubejs:inoculated_${name}_petri_dish`
         event.recipes.create.deploying(outputD,['kubejs:sterile_petri_dish',inputD])

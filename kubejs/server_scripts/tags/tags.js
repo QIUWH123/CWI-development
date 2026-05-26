@@ -176,8 +176,8 @@ ServerEvents.tags('item', event => {
     'ad_astra:mercury_cobblestone'
   ])
 
-//hot_items
-  event.add('cwi:hot_item', [
+  //hot_items
+  event.add('cwi:hot_items', [
     'minecraft:lava_bucket',
     'minecraft:magma_block',
     'minecraft:blaze_rod',
