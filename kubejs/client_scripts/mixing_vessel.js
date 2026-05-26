@@ -106,13 +106,11 @@ JEIAddedEvents.registerCategories(event => {
                     .addItemStack(item)
             })
 
-            // 流体输入
+            // 流体输入 — 正确的 addFluidStack 调用
             let inputFluids = recipeData.inputFluids || []
             inputFluids.forEach((f, i) => {
-                let fluidStack = Fluid.of(f.fluid, f.amount).toStack()
                 layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 24)
-                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addFluidStack(fluidStack)
+                    .addFluidStack(f.fluid, f.amount) // 直接传入 ID 和 数量
             })
 
             // 物品输出
@@ -127,10 +125,8 @@ JEIAddedEvents.registerCategories(event => {
             // 流体输出
             let outputFluids = recipeData.outputFluids || []
             outputFluids.forEach((f, i) => {
-                let fluidStack = Fluid.of(f.fluid, f.amount).toStack()
                 layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 24)
-                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addFluidStack(fluidStack)
+                    .addFluidStack(f.fluid, f.amount)
             })
         })
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {
