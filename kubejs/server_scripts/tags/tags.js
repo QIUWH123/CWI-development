@@ -28,10 +28,10 @@ ServerEvents.tags('item', event => {
   ])
 
   //chemical_spray
-  event.add('modpack:chemical_sprayer', ['modpack:chemical_sprayer', 'createdieselgenerators:chemical_sprayer_lighter'])
+  event.add('cwi:chemical_sprayer', ['cwi:chemical_sprayer', 'createdieselgenerators:chemical_sprayer_lighter'])
 
   //petri_dish
-  event.add('modpack:petri_dish', [
+  event.add('cwi:petri_dish', [
     'kubejs:fermento_mycetes_dish', 
     'kubejs:acidolys_bacillus_dish', 
     'kubejs:vulcan_thermus_dish', 
@@ -43,21 +43,21 @@ ServerEvents.tags('item', event => {
   ])
 
   //type
-  event.add('modpack:iron2', ['minecraft:iron_sword', 'minecraft:iron_hoe'])
-  event.add('modpack:iron3', ['minecraft:iron_axe', 'minecraft:iron_pickaxe'])
-  event.add('modpack:iron1', 'minecraft:iron_shovel')
-  event.add('modpack:iron5', 'minecraft:iron_helmet')
-  event.add('modpack:iron8', 'minecraft:iron_chestplate')
-  event.add('modpack:iron7', 'minecraft:iron_leggings')
-  event.add('modpack:iron4', 'minecraft:iron_boots')
+  event.add('cwi:iron2', ['minecraft:iron_sword', 'minecraft:iron_hoe'])
+  event.add('cwi:iron3', ['minecraft:iron_axe', 'minecraft:iron_pickaxe'])
+  event.add('cwi:iron1', 'minecraft:iron_shovel')
+  event.add('cwi:iron5', 'minecraft:iron_helmet')
+  event.add('cwi:iron8', 'minecraft:iron_chestplate')
+  event.add('cwi:iron7', 'minecraft:iron_leggings')
+  event.add('cwi:iron4', 'minecraft:iron_boots')
 
-  event.add('modpack:bronze2', ['kubejs:bronze_sword', 'kubejs:bronze_hoe'])
-  event.add('modpack:bronze3', ['kubejs:bronze_axe', 'kubejs:bronze_pickaxe'])
-  event.add('modpack:bronze1', 'kubejs:bronze_shovel')
-  event.add('modpack:bronze5', 'kubejs:bronze_helmet')
-  event.add('modpack:bronze8', 'kubejs:bronze_chestplate')
-  event.add('modpack:bronze7', 'kubejs:bronze_leggings')
-  event.add('modpack:bronze4', 'kubejs:bronze_boots')
+  event.add('cwi:bronze2', ['kubejs:bronze_sword', 'kubejs:bronze_hoe'])
+  event.add('cwi:bronze3', ['kubejs:bronze_axe', 'kubejs:bronze_pickaxe'])
+  event.add('cwi:bronze1', 'kubejs:bronze_shovel')
+  event.add('cwi:bronze5', 'kubejs:bronze_helmet')
+  event.add('cwi:bronze8', 'kubejs:bronze_chestplate')
+  event.add('cwi:bronze7', 'kubejs:bronze_leggings')
+  event.add('cwi:bronze4', 'kubejs:bronze_boots')
 
   //wrench
   event.add('forge:tools/wrench', 'clanginghowl:industrial_adjustable_wrench')
@@ -116,36 +116,36 @@ ServerEvents.tags('item', event => {
   ])
 
   //string
-  event.add('modpack:string', [
+  event.add('cwi:string', [
     'tfmg:synthetic_string',
     'minecraft:string',
     'biomancy:sinew'
   ])
 
   //rubber
-  event.add('modpack:rubber', ['tfmg:rubber_sheet', 'kubejs:rubber'])
+  event.add('cwi:rubber', ['tfmg:rubber_sheet', 'kubejs:rubber'])
 
   //clay
-  event.add('modpack:clay', ['minecraft:clay', 'kubejs:clay_dust'])
+  event.add('cwi:clay', ['minecraft:clay', 'kubejs:clay_dust'])
 
   //feather
-  event.add('modpack:feather', ['kubejs:synthetic_leather', 'minecraft:feather'])
+  event.add('cwi:feather', ['kubejs:synthetic_leather', 'minecraft:feather'])
 
   //leather
-  event.add('modpack:leather', ['tfmg:synthetic_leather', 'minecraft:leather'])
+  event.add('cwi:leather', ['tfmg:synthetic_leather', 'minecraft:leather'])
 
   //basicMaterials
-  event.add('modpack:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand'])
+  event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand'])
 
   //deoxidizer
-  event.add('modpack:deoxidizer', [
+  event.add('cwi:deoxidizer', [
     'kubejs:silicon_dust',
     'kubejs:aluminum_dust',
     'kubejs:magnesium_dust'
   ])
 
   //stickyMaterials
-  event.add('modpack:sticky_materials', ['kubejs:sticky_resin', 'minecraft:slime_ball'])
+  event.add('cwi:sticky_materials', ['kubejs:sticky_resin', 'minecraft:slime_ball'])
 
   //iron
   event.remove('forge:plates/iron', 'ad_astra:iron_plate')
@@ -160,7 +160,7 @@ ServerEvents.tags('item', event => {
   event.remove('forge:storage_blocks/steel', 'ad_astra:steel_block')
 
   //cobbled_stones
-  event.add('modpack:cobbled_stones', [
+  event.add('cwi:cobbled_stones', [
     'minecraft:cobblestone',
     'minecraft:cobbled_deepslate',
     'kubejs:cobbled_andesite',
@@ -189,9 +189,9 @@ ServerEvents.tags('item', event => {
   ])
 
   //glass
-  event.add('modpack:glass1', ['minecraft:glass', 'kubejs:reinforced_glass', 'kubejs:annealed_glass'])
-  event.add('modpack:glass2', ['kubejs:reinforced_glass', 'kubejs:annealed_glass'])
-  event.add('modpack:glass3', 'kubejs:annealed_glass')
+  event.add('cwi:glass1', ['minecraft:glass', 'kubejs:reinforced_glass', 'kubejs:annealed_glass'])
+  event.add('cwi:glass2', ['kubejs:reinforced_glass', 'kubejs:annealed_glass'])
+  event.add('cwi:glass3', 'kubejs:annealed_glass')
 
   //logs
   const itemLogs = event.get('minecraft:logs').getObjectIds()
@@ -201,7 +201,7 @@ ServerEvents.tags('item', event => {
     'darkerdepths:stripped_petrified_log',
     'darkerdepths:stripped_petrified_wood'
   ]
-  event.add('modpack:normal_logs', itemLogs.filter(log => !itemLogsToRemove.includes(log.toString())))
+  event.add('cwi:normal_logs', itemLogs.filter(log => !itemLogsToRemove.includes(log.toString())))
 
 })
 
@@ -215,7 +215,7 @@ ServerEvents.tags('block', event => {
     'darkerdepths:stripped_petrified_log',
     'darkerdepths:stripped_petrified_wood'
   ]
-  event.add('modpack:normal_logs', blockLogs.filter(log => !blockLogsToRemove.includes(log.toString())))
+  event.add('cwi:normal_logs', blockLogs.filter(log => !blockLogsToRemove.includes(log.toString())))
 
 //soul_fire
 
@@ -264,17 +264,17 @@ ServerEvents.tags('block', event => {
     'kubejs:incomplete_huge_diesel_engine',
     'kubejs:incomplete_heavy_machinery_casing',
     'kubejs:incomplete_blast_furnace_reinforcement',
-    'modpack:steel_energy_input',
-    'modpack:graphite_electrode',
-    'modpack:steel_item_input',
-    'modpack:steel_item_output',
-    'modpack:steel_fluid_input',
-    'modpack:steel_fluid_output',
-    'modpack:arc_furnace_stress_output',
-    'modpack:arc_furnace',
-    'modpack:heavy_machinery_top_item_input',
-    'modpack:heavy_machinery_top_fluid_input',
-    'modpack:steel_gas_output'
+    'cwi:steel_energy_input',
+    'cwi:graphite_electrode',
+    'cwi:steel_item_input',
+    'cwi:steel_item_output',
+    'cwi:steel_fluid_input',
+    'cwi:steel_fluid_output',
+    'cwi:arc_furnace_stress_output',
+    'cwi:arc_furnace',
+    'cwi:heavy_machinery_top_item_input',
+    'cwi:heavy_machinery_top_fluid_input',
+    'cwi:steel_gas_output'
   ])
 
 //stones
@@ -337,7 +337,7 @@ ServerEvents.tags('block', event => {
 
 //cobbled_stones
 
-  event.add('modpack:cobbled_stones', [
+  event.add('cwi:cobbled_stones', [
     'minecraft:cobblestone',
     'minecraft:cobbled_deepslate',
     'kubejs:cobbled_andesite',
@@ -389,8 +389,8 @@ ServerEvents.tags('block', event => {
   ])
 
 //fluid_container
-  event.add('modpack:fluid_container', [
-    'modpack:mixing_vessel',
+  event.add('cwi:fluid_container', [
+    'cwi:mixing_vessel',
     'create:fluid_tank',
     'tfmg:aluminum_fluid_tank',
     'tfmg:cast_iron_fluid_tank',
@@ -438,7 +438,7 @@ ServerEvents.tags('fluid', event => {
 
 //fluids
 
-  event.add('modpack:water', [
+  event.add('cwi:water', [
     'minecraft:water',
     'kubejs:distilled_water'
   ])
@@ -535,7 +535,7 @@ ServerEvents.recipes(event => {
   event.replaceInput({ input: '#forge:plates/cast_iron' },'#forge:plates/cast_iron','tfmg:cast_iron_sheet')
   event.replaceInput({ input: '#forge:plates/aluminum' },'#forge:plates/aluminum','tfmg:aluminum_sheet')
   event.replaceInput({ input: 'createdeco:zinc_sheet' },'createdeco:zinc_sheet','createaddition:zinc_sheet')
-  event.replaceInput({ input: 'minecraft:string' },'minecraft:string','#modpack:string')
-  event.replaceInput({ input: 'minecraft:leather' },'minecraft:leather','#modpack:leather')
+  event.replaceInput({ input: 'minecraft:string' },'minecraft:string','#cwi:string')
+  event.replaceInput({ input: 'minecraft:leather' },'minecraft:leather','#cwi:leather')
 
 })

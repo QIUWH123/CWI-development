@@ -4,14 +4,13 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
     let typeId = ResourceLocation.fromNamespaceAndPath('kubejs', 'mixing_vessel')
     let recipeType = jeiHelpers.getRecipeType(typeId).get()
     data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
-        (Item.of('modpack:mixing_vessel'), recipeType)
+        (Item.of('cwi:mixing_vessel'), recipeType)
 })
 
 JEIAddedEvents.registerRecipes(event => {
     let typeId = new ResourceLocation('kubejs', 'mixing_vessel')
     let recipeBuilder = event.custom(typeId)
 
-    // 将所有配方数据整理成数组
     const recipes = [
         {
             inputs: [{ item: 'tfmg:sulfur_dust', count: 2 }, { item: 'kubejs:copper_dust' }],
@@ -78,7 +77,6 @@ JEIAddedEvents.registerRecipes(event => {
         }
     ]
 
-    // 注册所有配方
     recipes.forEach(recipe => {
         recipeBuilder.add(recipe)
     })
@@ -93,11 +91,12 @@ JEIAddedEvents.registerCategories(event => {
         category.setWidth(178)
         category.setHeight(72)
         category.background(guiHelper.createBlankDrawable(0, 0))
-        category.iconSupplier(() => guiHelper.createDrawableItemStack(Item.of('modpack:mixing_vessel')))
+        category.iconSupplier(() => guiHelper.createDrawableItemStack(Item.of('cwi:mixing_vessel')))
+
+        let fluidSlotBg = guiHelper.getSlotDrawable()
+
         category.handleLookup((layoutBuilder, recipe, focuses) => {
             let recipeData = recipe.recipeData
-
-            // 物品输入
             let inputs = recipeData.inputs || []
             inputs.forEach((stack, i) => {
                 let item = Item.of(stack.item || stack, stack.count || 1)
@@ -105,15 +104,12 @@ JEIAddedEvents.registerCategories(event => {
                     .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                     .addItemStack(item)
             })
-
-            // 流体输入 — 正确的 addFluidStack 调用
             let inputFluids = recipeData.inputFluids || []
             inputFluids.forEach((f, i) => {
                 layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 24)
-                    .addFluidStack(f.fluid, f.amount) // 直接传入 ID 和 数量
+                    .setBackground(fluidSlotBg, -1, -1)
+                    .addFluidStack(f.fluid, f.amount)
             })
-
-            // 物品输出
             let outputs = recipeData.outputs || []
             outputs.forEach((stack, i) => {
                 let item = Item.of(stack.item || stack, stack.count || 1)
@@ -121,14 +117,14 @@ JEIAddedEvents.registerCategories(event => {
                     .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                     .addItemStack(item)
             })
-
-            // 流体输出
             let outputFluids = recipeData.outputFluids || []
             outputFluids.forEach((f, i) => {
                 layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 24)
+                    .setBackground(fluidSlotBg, -1, -1)
                     .addFluidStack(f.fluid, f.amount)
             })
         })
+
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {
             $AllGuiTextures.JEI_SHADOW.render(graphics, 65, 39)
             $AllGuiTextures.JEI_LONG_ARROW.render(graphics, 54, 51)

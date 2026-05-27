@@ -24,7 +24,7 @@ ServerEvents.recipes(event => {
         "item": "createdieselgenerators:chip_wood_block"
       },
       {
-        "tag": "modpack:rubber"
+        "tag": "cwi:rubber"
       }
     ],
     "results": [
@@ -143,7 +143,7 @@ ServerEvents.recipes(event => {
         "item": "kubejs:mechanical_arm_base"
       },
       {
-        "tag": "modpack:chemical_sprayer"
+        "tag": "cwi:chemical_sprayer"
       }
     ],
     "results": [

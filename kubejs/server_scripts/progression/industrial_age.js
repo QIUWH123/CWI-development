@@ -136,7 +136,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'tfmg:cast_iron_sheet',
-      B: '#modpack:rubber',
+      B: '#cwi:rubber',
       C: 'tfmg:cast_iron_fluid_tank'
     }
   )
@@ -150,7 +150,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'tfmg:heavy_plate',
-      B: '#modpack:glass2'
+      B: '#cwi:glass2'
     }
   )
 
@@ -163,7 +163,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'tfmg:aluminum_sheet',
-      B: '#modpack:glass2'
+      B: '#cwi:glass2'
     }
   )
 
@@ -176,7 +176,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'tfmg:cast_iron_sheet',
-      B: '#modpack:glass2'
+      B: '#cwi:glass2'
     }
   )
 
@@ -232,7 +232,7 @@ ServerEvents.recipes(event => {
 
 //filling
 
-  event.recipes.create.filling('tfmg:rusted_blast_furnace_reinforcement', ['tfmg:blast_furnace_reinforcement', {fluidTag: "modpack:water", amount: 250}])
+  event.recipes.create.filling('tfmg:rusted_blast_furnace_reinforcement', ['tfmg:blast_furnace_reinforcement', {fluidTag: "cwi:water", amount: 250}])
 
 //compacting
 
@@ -363,7 +363,7 @@ ServerEvents.recipes(event => {
       event.custom({"type":"createaddition:rolling","input": {"item": 'kubejs:incomplete_cast_iron_ingot'},"result": {"item": 'kubejs:incomplete_cast_iron_ingot'}}),
       event.recipes.create.pressing('kubejs:incomplete_cast_iron_ingot', 'kubejs:incomplete_cast_iron_ingot'),
       event.recipes.create.pressing('kubejs:incomplete_cast_iron_ingot', 'kubejs:incomplete_cast_iron_ingot'),
-      event.recipes.create.filling('kubejs:incomplete_cast_iron_ingot', ['kubejs:incomplete_cast_iron_ingot', {fluidTag: "modpack:water", amount: 500}]),
+      event.recipes.create.filling('kubejs:incomplete_cast_iron_ingot', ['kubejs:incomplete_cast_iron_ingot', {fluidTag: "cwi:water", amount: 500}]),
       event.custom({"type":"vintageimprovements:polishing","speedLimits": 3,"ingredients": [{"item": 'kubejs:incomplete_cast_iron_ingot'}],"results": [{"item": 'kubejs:incomplete_cast_iron_ingot'}],"processingTime": 20})
     ]
   )
@@ -481,7 +481,7 @@ ServerEvents.recipes(event => {
     'tfmg:steel_pipe', 
     [
       event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', 'kubejs:steel_ring']),
-      event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', '#modpack:rubber']),
+      event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', '#cwi:rubber']),
       event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', 'kubejs:steel_bearing']),
       event.recipes.create.filling('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', Fluid.of('kubejs:molten_sticky_resin', 100)])
     ]

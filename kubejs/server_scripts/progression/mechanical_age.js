@@ -21,7 +21,7 @@ ServerEvents.recipes(event => {
   event.shapeless(
     Item.of('kubejs:net'),
     [
-      '6x #modpack:string'
+      '6x #cwi:string'
     ]
   )
 
@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
     Item.of('create:encased_chain_drive'),
     [
       'create:andesite_casing',
-      '#modpack:rubber'
+      '#cwi:rubber'
     ]
   )
 
@@ -107,7 +107,7 @@ ServerEvents.recipes(event => {
       'BBB'
     ],
     {
-      A: '#modpack:cobbled_stones',
+      A: '#cwi:cobbled_stones',
       B: 'create:iron_sheet',
       C: 'vintageimprovements:andesite_sheet'
     }
@@ -121,7 +121,7 @@ ServerEvents.recipes(event => {
       'ABA'
     ],
     {
-      A: '#modpack:string',
+      A: '#cwi:string',
       B: 'minecraft:stick'
     }
   )
@@ -240,7 +240,7 @@ ServerEvents.recipes(event => {
       'CDC'
     ],
     {
-      A: '#modpack:glass1',
+      A: '#cwi:glass1',
       B: 'kubejs:andesite_bearing',
       C: 'create:andesite_casing',
       D: 'kubejs:andesite_machine',
@@ -431,7 +431,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'minecraft:stick',
-      B: '#modpack:string'
+      B: '#cwi:string'
     }
   )
 
@@ -610,7 +610,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'create:copper_sheet',
-      B: '#modpack:glass1'
+      B: '#cwi:glass1'
     }
   )
 
@@ -621,7 +621,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'create:copper_sheet',
-      B: '#modpack:glass1'
+      B: '#cwi:glass1'
     }
   )
 
@@ -667,7 +667,7 @@ ServerEvents.recipes(event => {
       B: 'create:basin',
       C: 'kubejs:andesite_machine',
       D: 'kubejs:andesite_bearing',
-      E: '#modpack:cobbled_stones',
+      E: '#cwi:cobbled_stones',
       F: '#minecraft:logs'
     }
   )
@@ -701,7 +701,7 @@ ServerEvents.recipes(event => {
       B: 'kubejs:andesite_bearing',
       C: 'create:fluid_tank',
       D: 'create:copper_sheet',
-      E: '#modpack:rubber'
+      E: '#cwi:rubber'
     }
   )
 
@@ -761,8 +761,8 @@ ServerEvents.recipes(event => {
       'DED'
     ],
     {
-      A: '#modpack:string',
-      B: '#modpack:leather',
+      A: '#cwi:string',
+      B: '#cwi:leather',
       C: 'minecraft:chest',
       D: 'vintageimprovements:andesite_sheet',
       E: 'create:andesite_alloy'
@@ -777,7 +777,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'create:copper_casing',
-      B: '#modpack:rubber'
+      B: '#cwi:rubber'
     }
   )
 
@@ -801,7 +801,7 @@ ServerEvents.recipes(event => {
       'AAA'
     ],
     {
-      A: '#modpack:rubber'
+      A: '#cwi:rubber'
     }
   )
 
@@ -832,13 +832,27 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    Item.of('create:nozzle'),
+    [
+      'C',
+      'B',
+      'A'
+    ],
+    {
+      A: 'vintageimprovements:andesite_sheet',
+      B: 'kubejs:net',
+      C: 'vintageimprovements:andesite_wire'
+    }
+  )
+
+  event.shaped(
     Item.of('create:super_glue'),
     [
       'AB',
       'CA'
     ],
     {
-      A: '#modpack:sticky_materials',
+      A: '#cwi:sticky_materials',
       B: 'create:iron_sheet',
       C: 'minecraft:iron_nugget'
     }
@@ -856,7 +870,7 @@ ServerEvents.recipes(event => {
       B: 'minecraft:gunpowder',
       C: 'createaddition:iron_rod',
       D: 'create:iron_sheet',
-      E: '#modpack:cobbled_stones',
+      E: '#cwi:cobbled_stones',
       F: 'vintageimprovements:andesite_sheet'
     }
   )
@@ -869,7 +883,7 @@ ServerEvents.recipes(event => {
     ],
     {
       B: 'create:andesite_alloy',
-      C: '#modpack:rubber'
+      C: '#cwi:rubber'
     }
   )
 
@@ -881,16 +895,16 @@ ServerEvents.recipes(event => {
     ],
     {
       B: 'create:andesite_alloy',
-      C: '#modpack:rubber'
+      C: '#cwi:rubber'
     }
   )
 
-  event.recipes.create.mixing('minecraft:wheat_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_wheat_seeds'])
-  event.recipes.create.mixing('minecraft:melon_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_melon_seeds'])
-  event.recipes.create.mixing('minecraft:pumpkin_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_pumpkin_seeds'])
-  event.recipes.create.mixing('minecraft:beetroot_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_beetroot_seeds'])
-  event.recipes.create.mixing('farmersdelight:tomato_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_tomato_seeds'])
-  event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{fluidTag: "modpack:water", amount: 50}, 'kubejs:dry_cabbage_seeds'])
+  event.recipes.create.mixing('minecraft:wheat_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_wheat_seeds'])
+  event.recipes.create.mixing('minecraft:melon_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_melon_seeds'])
+  event.recipes.create.mixing('minecraft:pumpkin_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_pumpkin_seeds'])
+  event.recipes.create.mixing('minecraft:beetroot_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_beetroot_seeds'])
+  event.recipes.create.mixing('farmersdelight:tomato_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_tomato_seeds'])
+  event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_cabbage_seeds'])
   event.recipes.create.mixing('kubejs:andesite_compound', ['minecraft:clay_ball', 'kubejs:andesite_dust'])
 
   event.recipes.create.cutting(['kubejs:precision_manual', 'kubejs:the_precision_manufacturing_engineers_log'], 'kubejs:package')

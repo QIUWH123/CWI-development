@@ -26,7 +26,7 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:raw_soil" },
             { item: "tfmg:nitrate_dust" },
             { item: "minecraft:bone_meal" },
-            { tag: "modpack:basic_materials" },
+            { tag: "cwi:basic_materials" },
             { fluid: "kubejs:distilled_water", amount: 250 }
         ],
         [
@@ -40,7 +40,7 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:raw_soil" },
             { fluid: "kubejs:nitrate_solution", amount: 125 },
             { item: "minecraft:bone_meal" },
-            { tag: "modpack:basic_materials" },
+            { tag: "cwi:basic_materials" },
             { fluid: "kubejs:distilled_water", amount: 125 }
         ],
         [
@@ -53,7 +53,7 @@ ServerEvents.recipes(function(event) {
         [
             { item: "kubejs:raw_soil" },
             { fluid: "kubejs:nitrogen_fertilizer", amount: 100 },
-            { tag: "modpack:basic_materials" }
+            { tag: "cwi:basic_materials" }
         ],
         [
             { item: "minecraft:dirt" }
@@ -218,7 +218,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze1" }
+            { tag: "cwi:bronze1" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67 },
@@ -230,7 +230,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze2" }
+            { tag: "cwi:bronze2" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67 },
@@ -243,7 +243,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze3" }
+            { tag: "cwi:bronze3" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67 },
@@ -257,7 +257,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze4" }
+            { tag: "cwi:bronze4" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67, count: 2 },
@@ -271,7 +271,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze5" }
+            { tag: "cwi:bronze5" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67, count: 3 },
@@ -285,7 +285,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze7" }
+            { tag: "cwi:bronze7" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67, count: 4 },
@@ -299,7 +299,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:bronze8" }
+            { tag: "cwi:bronze8" }
         ],
         [
             { item: "kubejs:bronze_dust", chance: 0.67, count: 4 },
@@ -313,7 +313,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron1" }
+            { tag: "cwi:iron1" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67 },
@@ -325,7 +325,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron2" }
+            { tag: "cwi:iron2" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67 },
@@ -338,7 +338,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron3" }
+            { tag: "cwi:iron3" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67 },
@@ -352,7 +352,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron4" }
+            { tag: "cwi:iron4" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67, count: 2 },
@@ -366,7 +366,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron5" }
+            { tag: "cwi:iron5" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67, count: 3 },
@@ -380,7 +380,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron7" }
+            { tag: "cwi:iron7" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67, count: 4 },
@@ -394,7 +394,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { tag: "modpack:iron8" }
+            { tag: "cwi:iron8" }
         ],
         [
             { item: "kubejs:iron_dust", chance: 0.67, count: 4 },
@@ -1033,7 +1033,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:quartz_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1046,7 +1046,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:quartz_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1059,7 +1059,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:lapis_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1072,7 +1072,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "tfmg:sulfur_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1085,7 +1085,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "minecraft:redstone" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1098,7 +1098,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:fluorite_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1111,7 +1111,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:flint_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1124,7 +1124,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:halite_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],
@@ -1137,7 +1137,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            { fluidTag: "modpack:water", amount: 100 },
+            { fluidTag: "cwi:water", amount: 100 },
             { item: "kubejs:magnesite_dust" },
             { item: "kubejs:crystallum_coccus" }
         ],

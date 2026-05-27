@@ -8,9 +8,9 @@ ServerEvents.recipes(event => {
       'ABA'
     ],
     {
-      A: '#modpack:string',
+      A: '#cwi:string',
       B: 'create:andesite_alloy',
-      C: '#modpack:leather'
+      C: '#cwi:leather'
     }
   )
 
@@ -54,7 +54,7 @@ ServerEvents.recipes(event => {
     {
       A: 'sophisticatedbackpacks:upgrade_base',
       B: 'create:copper_sheet',
-      C: '#modpack:rubber',
+      C: '#cwi:rubber',
       D: 'create:fluid_pipe'
     }
   )

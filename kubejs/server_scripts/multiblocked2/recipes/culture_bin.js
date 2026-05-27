@@ -5,8 +5,8 @@ ServerEvents.recipes(event => {
       const cultured = `kubejs:cultured_${variant}_${name}_agar_plate`
       const duration = times[index]
 
-      event.recipes.modpack.incubating()
-        .id(`kubejs:incubating/${name}/${variant}`)
+      event.recipes.cwi.incubating()
+        .id(`cwi:incubating/${name}/${variant}`)
         .duration(duration)
         .inputItems(sealed)
         .outputItems(cultured)

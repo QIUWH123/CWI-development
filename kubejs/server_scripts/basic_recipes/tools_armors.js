@@ -37,7 +37,7 @@ function addArmor(material, outputPrefix) {
   }
 }
 
-addTools('#modpack:cobbled_stones', 'minecraft:stone')
+addTools('#cwi:cobbled_stones', 'minecraft:stone')
 
 addTools('kubejs:rusted_iron_ingot', 'kubejs:rusted_iron')
 
@@ -61,10 +61,35 @@ addArmor('create:brass_sheet', 'create_sa:brass')
 ServerEvents.recipes(event => {
 
   event.shaped(
+    Item.of('createdieselgenerators:wire_cutters'),
+    [' A ', 'CBA', ' C '],
+    {
+      A: 'create:iron_sheet',
+      B: 'create:andesite_alloy',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('minecraft:shears'),
+    [' A ', 'CBA', ' C '],
+    {
+      A: 'create:iron_sheet',
+      B: '#cwi:rubber',
+      C: 'minecraft:stick'
+    })
+
+  event.shaped(
+    Item.of('minecraft:bucket'),
+    ['A A', ' A '],
+    {
+      A: 'create:iron_sheet'
+    })
+
+  event.shaped(
     Item.of('kubejs:stone_hammer'),
     ['ABA', ' C ', ' C '],
     {
-      A: '#modpack:cobbled_stones',
+      A: '#cwi:cobbled_stones',
       B: 'kubejs:claystone_clump',
       C: 'minecraft:stick'
     })

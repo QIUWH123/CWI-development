@@ -85,7 +85,7 @@ ServerEvents.recipes(event => {
 //curving
 
   deploying('create:sturdy_sheet','minecraft:paper','create:schedule')
-  deployingTag('modpack:leather','minecraft:paper','vintageimprovements:recipe_card')
+  deployingTag('cwi:leather','minecraft:paper','vintageimprovements:recipe_card')
 
 //curving
 

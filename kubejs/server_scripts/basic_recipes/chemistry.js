@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
   event.recipes.create.mixing(Fluid.of('kubejs:caustic_soda', 125), ['kubejs:caustic_soda_powder', Fluid.of('kubejs:distilled_water', 125)])
   event.recipes.create.mixing(Fluid.of('kubejs:syrup', 125), [Fluid.of('kubejs:distilled_water', 125), 'minecraft:sugar'])
   event.recipes.create.mixing(Fluid.of('kubejs:brine', 125), [Fluid.of('kubejs:distilled_water', 125), 'ratatouille:salt'])
-  event.recipes.create.mixing(Fluid.of('kubejs:bittern', 125), [{fluidTag: "modpack:water", amount: 125}, 'kubejs:halite_dust'])
+  event.recipes.create.mixing(Fluid.of('kubejs:bittern', 125), [{fluidTag: "cwi:water", amount: 125}, 'kubejs:halite_dust'])
   event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [Fluid.of('kubejs:chlorine', 125), 'kubejs:iron_dust'])
   event.recipes.create.mixing(Fluid.of('kubejs:nitrate_solution', 125), [Fluid.of('kubejs:distilled_water', 125), 'tfmg:nitrate_dust'])
 
