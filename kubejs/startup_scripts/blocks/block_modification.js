@@ -2,40 +2,16 @@ BlockEvents.modification(event => {
 
   event.modify('minecraft:crafting_table', block => {
     block.destroySpeed = 3
-    block.soundType = 'stone'
+    block.soundType = 'deepslate'
     block.requiresTool =  true
+    block.explosionResistance = 5
   })
 
-  event.modify('minecraft:cobblestone', block => {
-    block.destroySpeed = 1.5
-  })
-
-  event.modify('minecraft:cobblestone_stairs', block => {
-    block.destroySpeed = 1.5
-  })
-
-  event.modify('minecraft:cobblestone_slab', block => {
-    block.destroySpeed = 1.5
-  })
-
-  event.modify('minecraft:cobblestone_wall', block => {
-    block.destroySpeed = 1.5
-  })
-
-  event.modify('minecraft:cobbled_deepslate', block => {
+  event.modify('minecraft:furnace', block => {
     block.destroySpeed = 3
-  })
-
-  event.modify('minecraft:cobbled_deepslate_stairs', block => {
-    block.destroySpeed = 3
-  })
-
-  event.modify('minecraft:cobbled_deepslate_slab', block => {
-    block.destroySpeed = 3
-  })
-
-  event.modify('minecraft:cobbled_deepslate_wall', block => {
-    block.destroySpeed = 3
+    block.soundType = 'deepslate'
+    block.requiresTool =  true
+    block.explosionResistance = 5
   })
 
   event.modify('tfmg:rebar_block', block => {

@@ -1,4 +1,4 @@
-// priority: 1000
+// priority: 10000
 
 let RegisterNativeEvents = {
 	onEvent: function (event, handler) {

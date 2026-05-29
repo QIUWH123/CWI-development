@@ -2,23 +2,24 @@ ServerEvents.recipes(event => {
 
 // Stones processing
 
-event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
-event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75), Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
-event.recipes.create.milling(['3x kubejs:tuff_dust', Item.of('kubejs:tuff_dust').withChance(0.75)], 'minecraft:tuff')
-event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:smooth_basalt')
-event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'minecraft:smooth_basalt')
+  event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
+  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75), Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
+  event.recipes.create.milling(['3x kubejs:tuff_dust', Item.of('kubejs:tuff_dust').withChance(0.75)], 'minecraft:tuff')
+  event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:smooth_basalt')
+  event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'minecraft:smooth_basalt')
 
-global.stoneTypes.forEach(([raw, cobbled, gravel, dust]) => {
-  event.recipes.create.crushing(cobbled, raw)
-  event.recipes.create.crushing(gravel, cobbled)
-  const dustOutputs = [`3x ${dust}`, Item.of(dust).withChance(0.75)]
-  event.recipes.create.milling(dustOutputs, raw)
-  event.recipes.create.milling(dustOutputs, cobbled)
-  event.recipes.create.milling(dustOutputs, gravel)
-  event.recipes.create.compacting(gravel, `4x ${dust}`)
-  event.recipes.create.compacting(cobbled, gravel).heated()
-  event.recipes.create.compacting(raw, cobbled).superheated()
-})
+  global.stoneTypes.forEach(entry => {
+    const [raw, cobbled, gravel, dust] = entry.types
+    event.recipes.create.crushing(cobbled, raw)
+    event.recipes.create.crushing(gravel, cobbled)
+    const dustOutputs = [`3x ${dust}`, Item.of(dust).withChance(0.75)]
+    event.recipes.create.milling(dustOutputs, raw)
+    event.recipes.create.milling(dustOutputs, cobbled)
+    event.recipes.create.milling(dustOutputs, gravel)
+    event.recipes.create.compacting(gravel, `4x ${dust}`)
+    event.recipes.create.compacting(cobbled, gravel).heated()
+    event.recipes.create.compacting(raw, cobbled).superheated()
+  })
 
 //recipes
 

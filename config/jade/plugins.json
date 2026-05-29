@@ -68,10 +68,6 @@
     "goggles.detailed": false,
     "placard": true
   },
-  "exposure": {
-    "lightroom": true,
-    "photograph_frame": true
-  },
   "jade": {
     "coordinates.rel": false,
     "distance": false,
@@ -83,6 +79,9 @@
   "expatternprovider": {
     "jade_chamber": true,
     "jade_wireless": true
+  },
+  "astages": {
+    "block_component_provider": true
   },
   "functionalstorage": {
     "armory": true

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "kubejs:block/stripped_ash_log_top",
-    "side": "kubejs:block/stripped_ash_log"
+    "end": "kubejs:block/logs/stripped_ash_log_top",
+    "side": "kubejs:block/logs/stripped_ash_log"
   }
 }

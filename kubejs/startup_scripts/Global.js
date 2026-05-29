@@ -1,21 +1,21 @@
-// priority: 10000
+// priority: 1000
 
 global.stoneTypes = [
-  ['minecraft:stone', 'minecraft:cobblestone', 'minecraft:gravel', 'kubejs:stone_dust'],
-  ['minecraft:deepslate', 'minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel', 'kubejs:deepslate_dust'],
-  ['minecraft:granite', 'kubejs:cobbled_granite', 'kubejs:granite_gravel', 'kubejs:granite_dust'],
-  ['minecraft:diorite', 'kubejs:cobbled_diorite', 'kubejs:diorite_gravel', 'kubejs:diorite_dust'],
-  ['minecraft:andesite', 'kubejs:cobbled_andesite', 'kubejs:andesite_gravel', 'kubejs:andesite_dust'],
-  ['minecraft:basalt', 'kubejs:cobbled_basalt', 'kubejs:basalt_gravel', 'kubejs:basalt_dust'],
-  ['kubejs:claystone', 'kubejs:cobbled_claystone', 'kubejs:claystone_gravel', 'kubejs:claystone_dust'],
-  ['kubejs:schist', 'kubejs:cobbled_schist', 'kubejs:schist_gravel', 'kubejs:schist_dust'],
-  ['kubejs:gneiss', 'kubejs:cobbled_gneiss', 'kubejs:gneiss_gravel', 'kubejs:gneiss_dust'],
-  ['kubejs:rhyolite', 'kubejs:cobbled_rhyolite', 'kubejs:rhyolite_gravel', 'kubejs:rhyolite_dust'],
-  ['kubejs:shale', 'kubejs:cobbled_shale', 'kubejs:shale_gravel', 'kubejs:shale_dust'],
-  ['darkerdepths:duskrock', 'kubejs:cobbled_conglomerate', 'kubejs:conglomerate_gravel', 'kubejs:conglomerate_dust'],
-  ['darkerdepths:grimestone', 'kubejs:cobbled_phyllite', 'kubejs:phyllite_gravel', 'kubejs:phyllite_dust'],
-  ['darkerdepths:aridrock', 'kubejs:cobbled_quartzite', 'kubejs:quartzite_gravel', 'kubejs:quartzite_dust'],
-  ['darkerdepths:darkslate', 'kubejs:cobbled_darkslate', 'kubejs:darkslate_gravel', 'kubejs:darkslate_dust']
+  { id: 'stone',        hardness: 2.4, sound: 'stone',     color: '#7F7F7F', types: ['minecraft:stone', 'minecraft:cobblestone', 'minecraft:gravel', 'kubejs:stone_dust'] },
+  { id: 'deepslate',    hardness: 3.3, sound: 'deepslate', color: '#3A3A3A', types: ['minecraft:deepslate', 'minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel', 'kubejs:deepslate_dust'] },
+  { id: 'granite',      hardness: 4.3, sound: 'stone',     color: '#C08080', types: ['minecraft:granite', 'kubejs:cobbled_granite', 'kubejs:granite_gravel', 'kubejs:granite_dust'] },
+  { id: 'diorite',      hardness: 4.0, sound: 'stone',     color: '#C4C4C4', types: ['minecraft:diorite', 'kubejs:cobbled_diorite', 'kubejs:diorite_gravel', 'kubejs:diorite_dust'] },
+  { id: 'andesite',     hardness: 3.7, sound: 'stone',     color: '#8C8C8C', types: ['minecraft:andesite', 'kubejs:cobbled_andesite', 'kubejs:andesite_gravel', 'kubejs:andesite_dust'] },
+  { id: 'basalt',       hardness: 4.0, sound: 'stone',     color: '#2A2A2A', types: ['minecraft:basalt', 'kubejs:cobbled_basalt', 'kubejs:basalt_gravel', 'kubejs:basalt_dust'] },
+  { id: 'claystone',    hardness: 1.7, sound: 'deepslate', color: '#B0965F', types: ['kubejs:claystone', 'kubejs:cobbled_claystone', 'kubejs:claystone_gravel', 'kubejs:claystone_dust'] },
+  { id: 'schist',       hardness: 3.4, sound: 'stone',     color: '#8A8A8A', types: ['kubejs:schist', 'kubejs:cobbled_schist', 'kubejs:schist_gravel', 'kubejs:schist_dust'] },
+  { id: 'gneiss',       hardness: 4.5, sound: 'stone',     color: '#9A8B7A', types: ['kubejs:gneiss', 'kubejs:cobbled_gneiss', 'kubejs:gneiss_gravel', 'kubejs:gneiss_dust'] },
+  { id: 'rhyolite',     hardness: 4.5, sound: 'stone',     color: '#C0B0A0', types: ['kubejs:rhyolite', 'kubejs:cobbled_rhyolite', 'kubejs:rhyolite_gravel', 'kubejs:rhyolite_dust'] },
+  { id: 'shale',        hardness: 2.3, sound: 'deepslate', color: '#5d5d5d', types: ['kubejs:shale', 'kubejs:cobbled_shale', 'kubejs:shale_gravel', 'kubejs:shale_dust'] },
+  { id: 'conglomerate', hardness: 2.8, sound: 'stone',     color: '#4a2318', types: ['darkerdepths:duskrock', 'kubejs:cobbled_conglomerate', 'kubejs:conglomerate_gravel', 'kubejs:conglomerate_dust'] },
+  { id: 'phyllite',     hardness: 2.8, sound: 'stone',     color: '#606769', types: ['darkerdepths:grimestone', 'kubejs:cobbled_phyllite', 'kubejs:phyllite_gravel', 'kubejs:phyllite_dust'] },
+  { id: 'quartzite',    hardness: 1.7, sound: 'stone',     color: '#b59f63', types: ['darkerdepths:aridrock', 'kubejs:cobbled_quartzite', 'kubejs:quartzite_gravel', 'kubejs:quartzite_dust'] },
+  { id: 'darkslate',    hardness: 3.8, sound: 'deepslate', color: '#232121', types: ['darkerdepths:darkslate', 'kubejs:cobbled_darkslate', 'kubejs:darkslate_gravel', 'kubejs:darkslate_dust'] }
 ]
 
 global.microbes = [
@@ -54,8 +54,8 @@ global.materials = [
   { id: 'brass', formula: 'CuZn', types: ['kubejs:brass_dust', 'create:brass_ingot', 'create:brass_nugget', 'create:brass_sheet', 'createaddition:brass_rod', 'vintageimprovements:brass_wire', 'create:brass_block'] },
   { id: 'bronze', formula: 'Cu₃Sn', types: ['kubejs:bronze_dust', 'kubejs:bronze_ingot', 'kubejs:bronze_nugget', 'kubejs:bronze_sheet', 'kubejs:bronze_rod', 'kubejs:bronze_wire', 'kubejs:bronze_block'] },
 
-  { id: 'polyethylene', formula: '(C₂H₄)ₙ', types: ['kubejs:polyethylene_powder', 'kubejs:polyethylene', 'kubejs:polyethylene_sheet'] },
-  { id: 'polypropylene', formula: '(C₃H₆)ₙ', types: ['kubejs:polypropylene_powder', 'kubejs:polypropylene', 'kubejs:polypropylene_sheet'] },
-  { id: 'polyvinyl_chloride', formula: '(C₂H₃Cl)ₙ', types: ['kubejs:polyvinyl_chloride_powder', 'kubejs:polyvinyl_chloride', 'kubejs:polyvinyl_chloride_sheet'] },
+  { id: 'polyethylene', formula: '(C₂H₄)ₙ', types: ['kubejs:polyethylene_powder', 'kubejs:polyethylene', 'kubejs:polyethylene_sheet', 'kubejs:polyethylene_block'] },
+  { id: 'polypropylene', formula: '(C₃H₆)ₙ', types: ['kubejs:polypropylene_powder', 'kubejs:polypropylene', 'kubejs:polypropylene_sheet', 'kubejs:polypropylene_block'] },
+  { id: 'polyvinyl_chloride', formula: '(C₂H₃Cl)ₙ', types: ['kubejs:polyvinyl_chloride_powder', 'kubejs:polyvinyl_chloride', 'kubejs:polyvinyl_chloride_sheet', 'kubejs:polyvinyl_chloride_block'] },
   //{ id: 'nylon_66', formula: '(C₁₂H₂₂N₂O₂)ₙ', types: [] }
 ]

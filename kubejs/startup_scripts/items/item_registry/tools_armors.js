@@ -97,7 +97,7 @@ StartupEvents.registry('item', event => {
 ItemEvents.toolTierRegistry(event => {
   
   event.add('bronze', tier => {
-    tier.uses = 1561
+    tier.uses = 1361
     tier.speed = 8
     tier.attackDamageBonus = 0
     tier.level = 2
@@ -122,7 +122,6 @@ ItemEvents.armorTierRegistry(event => {
     tier.durabilityMultiplier = 97
     tier.slotProtections = [3, 8, 6, 3]
     tier.enchantmentValue = 0
-    tier.equipSound = 'minecraft:item.armor.equip_iron'
     tier.repairIngredient = 'kubejs:bronze_ingot'
     tier.toughness = 1
     tier.knockbackResistance = 0.1

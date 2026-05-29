@@ -1,4 +1,3 @@
-// startup_scripts/fan_types.js
 ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent', event => {
 
     let $AllFanProcessingTypes = Java.loadClass('com.simibubi.create.content.kinetics.fan.processing.AllFanProcessingTypes')
@@ -19,11 +18,9 @@ ForgeModEvents.onEvent('net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEve
 
     let context = $KubeJS.getStartupScriptManager().context
 
-    // 创建可变的配方表（将在 server_scripts 中填充）
     let corrodingRecipesMap = new $HashMap()
     let sterilizingRecipesMap = new $HashMap()
 
-    // 暴露给 server_scripts
     global.corrodingFanRecipes = corrodingRecipesMap
     global.sterilizingFanRecipes = sterilizingRecipesMap
 

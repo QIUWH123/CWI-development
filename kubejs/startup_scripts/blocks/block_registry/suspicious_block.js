@@ -17,21 +17,21 @@ const suspiciousBlocks = [
 suspiciousBlocks.forEach((susBlock) => {
     StartupEvents.registry("block", (event) => {
         event.createCustom(susBlock.block_name, () => {
-            let turnIntoBlock = $BuiltInRegistries.BLOCK.get(new $ResourceLocation(susBlock.turns_into));
+            let turnIntoBlock = $BuiltInRegistries.BLOCK.get(new $ResourceLocation(susBlock.turns_into))
             return new $BrushableBlock(
                 turnIntoBlock,
                 $Properties.copy(Blocks.SUSPICIOUS_SAND),
                 susBlock.brushing_sound,
                 susBlock.brushingFinishedSound
-            );
-        });
-    });
+            )
+        })
+    })
 
     StartupEvents.registry("item", (event) => {
         event.createCustom(susBlock.block_name, () => {
-            let resource = new $ResourceLocation(susBlock.block_name);
-            let block = $BuiltInRegistries.BLOCK.get(resource);
-            return new $BlockItem(block, new $IProperties());
-        });
-    });
-});
+            let resource = new $ResourceLocation(susBlock.block_name)
+            let block = $BuiltInRegistries.BLOCK.get(resource)
+            return new $BlockItem(block, new $IProperties())
+        })
+    })
+})

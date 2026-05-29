@@ -142,9 +142,9 @@ ServerEvents.recipes(event => {
 
   cutting('create:brass_ingot','kubejs:brass_circuit_board',1)
   cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
-  cutting('tfmg:aluminum_ingot','tfmg:aluminum_wire',1)
-  cutting('tfmg:lead_ingot','vintageimprovements:lead_wire',1)
-  cutting('kubejs:tin_ingot','kubejs:tin_wire',1)
+  cutting('tfmg:aluminum_sheet','tfmg:aluminum_wire',1)
+  cutting('tfmg:lead_sheet','vintageimprovements:lead_wire',1)
+  cutting('kubejs:tin_sheet','kubejs:tin_wire',1)
   cutting('minecraft:dead_bush','farmersdelight:straw',1)
 
 //hammering

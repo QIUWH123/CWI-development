@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "kubejs:block/acidified_darkslate_2"
+    "all": "kubejs:block/acidified_darkslate/acidified_darkslate_2"
   }
 }

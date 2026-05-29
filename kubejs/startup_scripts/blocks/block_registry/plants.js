@@ -1,232 +1,54 @@
 StartupEvents.registry('block', event => {
 
-  event.create('ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/ash_log",
-                    "x": 90
-                }
-               }
-      }
+    const logTypes = [
+    'ash_log',
+    'stripped_ash_log',
+    'broken_ash_log',
+    'stripped_broken_ash_log',
+    'burnt_log',
+    'stripped_burnt_log',
+    'broken_burnt_log',
+    'stripped_broken_burnt_log'
+    ]
 
-  event.create('stripped_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_ash_log",
-                    "x": 90
-                }
-               }
-      }
+    function createLogBlock(event, id) {
+    let builder = event.create(id)
+        .soundType('wood')
+        .hardness(2)
+        .resistance(2)
+        .requiresTool(true)
+        .tagBlock('minecraft:mineable/axe')
+        .tagBlock('minecraft:needs_wooden_tool')
+        .mapColor('#FF5500')
 
-  event.create('broken_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/broken_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/broken_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/broken_ash_log",
-                    "x": 90
-                }
-               }
-      }
+    if (id.includes('broken')) {
+        builder = builder
+        .redstoneConductor(false)
+        .suffocating(false)
+        .defaultCutout()
+    }
 
-  event.create('stripped_broken_ash_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
+    builder.property(BlockProperties.AXIS)
         .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
         .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_broken_ash_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_broken_ash_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_broken_ash_log",
-                    "x": 90
-                }
-               }
-      }
+        "variants": {
+            "axis=x": {
+            "model": `kubejs:block/${id}`,
+            "x": 90,
+            "y": 90
+            },
+            "axis=y": {
+            "model": `kubejs:block/${id}`
+            },
+            "axis=z": {
+            "model": `kubejs:block/${id}`,
+            "x": 90
+            }
+        }
+        }
+    }
 
-  event.create('burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('broken_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/broken_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/broken_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/broken_burnt_log",
-                    "x": 90
-                }
-               }
-      }
-
-  event.create('stripped_broken_burnt_log')
-    .soundType('wood')
-    .hardness(2)
-    .resistance(2)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/axe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-    .redstoneConductor(false)
-    .suffocating(false)
-    .defaultCutout()
-    .property(BlockProperties.AXIS)
-        .placementState(event => event.set(BlockProperties.AXIS, event.clickedFace.axis))
-        .blockstateJson = {
-            "variants": {
-                "axis=x": {
-                    "model": "kubejs:block/stripped_broken_burnt_log",
-                    "x": 90,
-                    "y": 90
-                   },
-                "axis=y": {
-                    "model": "kubejs:block/stripped_broken_burnt_log"
-                },
-                "axis=z": {
-                    "model": "kubejs:block/stripped_broken_burnt_log",
-                    "x": 90
-                }
-               }
-      }
+    logTypes.forEach(id => createLogBlock(event, id))
 
   event.create('dead_leaves','falling')
     .soundType('glow_lichen')

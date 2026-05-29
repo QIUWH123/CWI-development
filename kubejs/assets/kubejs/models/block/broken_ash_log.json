@@ -2,10 +2,10 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "kubejs:block/ash_log_inner",
-		"1": "kubejs:block/ash_log_top",
-		"2": "kubejs:block/ash_log",
-		"particle": "kubejs:block/ash_log_inner"
+		"0": "kubejs:block/logs/ash_log_inner",
+		"1": "kubejs:block/logs/ash_log_top",
+		"2": "kubejs:block/logs/ash_log",
+		"particle": "kubejs:block/logs/ash_log_inner"
 	},
 	"elements": [
 		{

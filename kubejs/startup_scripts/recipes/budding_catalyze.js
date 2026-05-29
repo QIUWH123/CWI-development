@@ -1,74 +1,74 @@
 CreateEvents.spoutHandler(function(event) {
 
-    var DIRECTIONS = ["up", "north", "west", "south", "east", "down"];
-    var FACING = "facing";
+    var DIRECTIONS = ["up", "north", "west", "south", "east", "down"]
+    var FACING = "facing"
     function buddingGrow(id, fluidInput, blockInput) {
-        var outputs = Array.prototype.slice.call(arguments, 3);
+        var outputs = Array.prototype.slice.call(arguments, 3)
         event.add(id, blockInput, function(block, fluid, simulate) {
-            var matched = null;
+            var matched = null
             for (var i = 0; i < fluidInput.length; i++) {
-                var cfg = fluidInput[i];
+                var cfg = fluidInput[i]
                 if (fluid.id === cfg.id && fluid.amount >= cfg.amount) {
-                    matched = cfg;
-                    break;
+                    matched = cfg
+                    break
                 }
             }
-            if (!matched) return 0;
-            var multiplier = matched.multiplier || 1;
+            if (!matched) return 0
+            var multiplier = matched.multiplier || 1
             function getNextStageForDir(dirBlock, dir) {
-                var id = dirBlock.id;
+                var id = dirBlock.id
                 if (id === "minecraft:air") {
-                    return outputs[0] + "[" + FACING + "=" + dir + "]";
+                    return outputs[0] + "[" + FACING + "=" + dir + "]"
                 }
                 for (var stage = 0; stage < outputs.length; stage++) {
                     if (id === outputs[stage]) {
-                        if (stage + 1 >= outputs.length) return null;
-                        var face = dirBlock.properties.facing;
-                        return outputs[stage + 1] + "[" + FACING + "=" + face + "]";
+                        if (stage + 1 >= outputs.length) return null
+                        var face = dirBlock.properties.facing
+                        return outputs[stage + 1] + "[" + FACING + "=" + face + "]"
                     }
                 }
-                return null;
+                return null
             }
             function findUpgradableDirections() {
-                var upgradable = [];
+                var upgradable = []
                 for (var i = 0; i < DIRECTIONS.length; i++) {
-                    var dir = DIRECTIONS[i];
-                    var tBlock = block[dir];
-                    var nextCmd = getNextStageForDir(tBlock, dir);
+                    var dir = DIRECTIONS[i]
+                    var tBlock = block[dir]
+                    var nextCmd = getNextStageForDir(tBlock, dir)
                     if (nextCmd !== null) {
-                        upgradable.push({ dir: dir, block: tBlock, nextCmd: nextCmd, pos: tBlock.pos });
+                        upgradable.push({ dir: dir, block: tBlock, nextCmd: nextCmd, pos: tBlock.pos })
                     }
                 }
-                return upgradable;
+                return upgradable
             }
             if (simulate) {
-                return findUpgradableDirections().length > 0 ? matched.amount : 0;
+                return findUpgradableDirections().length > 0 ? matched.amount : 0
             }
-            var upgradable = findUpgradableDirections();
-            if (upgradable.length === 0) return 0;
-            var pos = block.pos;
-            var server = block.level.server;
-            server.runCommandSilent("/playsound create:spout block @a " + pos.x + " " + pos.y + " " + pos.z);
-            var attempt = 0;
+            var upgradable = findUpgradableDirections()
+            if (upgradable.length === 0) return 0
+            var pos = block.pos
+            var server = block.level.server
+            server.runCommandSilent("/playsound create:spout block @a " + pos.x + " " + pos.y + " " + pos.z)
+            var attempt = 0
             while (attempt < multiplier && upgradable.length > 0) {
-                var randomIndex = Math.floor(Math.random() * upgradable.length);
-                var selected = upgradable[randomIndex];
-                var success = Math.random() < matched.chance;
+                var randomIndex = Math.floor(Math.random() * upgradable.length)
+                var selected = upgradable[randomIndex]
+                var success = Math.random() < matched.chance
                 if (success) {
-                    server.runCommandSilent("/setblock " + selected.pos.x + " " + selected.pos.y + " " + selected.pos.z + " " + selected.nextCmd);
-                    var freshBlock = block.level.getBlock(selected.pos);
-                    var newNextCmd = getNextStageForDir(freshBlock, selected.dir);
+                    server.runCommandSilent("/setblock " + selected.pos.x + " " + selected.pos.y + " " + selected.pos.z + " " + selected.nextCmd)
+                    var freshBlock = block.level.getBlock(selected.pos)
+                    var newNextCmd = getNextStageForDir(freshBlock, selected.dir)
                     if (newNextCmd !== null) {
-                        selected.nextCmd = newNextCmd;
-                        selected.block = freshBlock;
+                        selected.nextCmd = newNextCmd
+                        selected.block = freshBlock
                     } else {
-                        upgradable.splice(randomIndex, 1);
+                        upgradable.splice(randomIndex, 1)
                     }
                 }
-                attempt++;
+                attempt++
             }
-            return matched.amount;
-        });
+            return matched.amount
+        })
     }
     
 //recipe
@@ -85,7 +85,7 @@ CreateEvents.spoutHandler(function(event) {
         "minecraft:medium_amethyst_bud",
         "minecraft:large_amethyst_bud",
         "minecraft:amethyst_cluster"
-    );
+    )
     
     buddingGrow(
         "kubejs:quartz_evolution",
@@ -99,7 +99,7 @@ CreateEvents.spoutHandler(function(event) {
         "geode_plus:medium_nether_quartz_bud",
         "geode_plus:large_nether_quartz_bud",
         "geode_plus:nether_quartz_crystal"
-    );
+    )
 
     buddingGrow(
         "kubejs:infected_amethyst_evolution",
@@ -113,7 +113,7 @@ CreateEvents.spoutHandler(function(event) {
         "minecraft:medium_amethyst_bud",
         "minecraft:large_amethyst_bud",
         "minecraft:amethyst_cluster"
-    );
+    )
     
     buddingGrow(
         "kubejs:infected_quartz_evolution",
@@ -127,7 +127,7 @@ CreateEvents.spoutHandler(function(event) {
         "geode_plus:medium_nether_quartz_bud",
         "geode_plus:large_nether_quartz_bud",
         "geode_plus:nether_quartz_crystal"
-    );
+    )
 
     buddingGrow(
         "kubejs:amber_evolution",
@@ -138,6 +138,6 @@ CreateEvents.spoutHandler(function(event) {
         ],
         "darkerdepths:porous_petrified_log",
         "darkerdepths:amber_cluster"
-    );
+    )
 
-});
+})

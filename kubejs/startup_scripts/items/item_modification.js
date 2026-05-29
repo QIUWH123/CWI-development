@@ -81,7 +81,52 @@ ItemEvents.modification(event => {
     })
   })
 
+  const nonFuelItems = [
+    'minecraft:dried_kelp_block',
+    'minecraft:smithing_table',
+    'minecraft:jukebox',
+    'minecraft:note_box',
+    'minecraft:chest',
+    'minecraft:crafting_table',
+    'minecraft:trapped_chest',
+    'minecraft:daylight_detector',
+    'minecraft:barrel',
+    'minecraft:blaze_rod',
+    'minecraft:lava',
+    'darkerdepths:stripped_petrified_log',
+    'darkerdepths:petrified_planks',
+    'darkerdepths:petrified_wood',
+    'darkerdepths:petrified_log',
+    'darkerdepths:stripped_petrified_wood',
+    'clanginghowl:blaze_fuel',
+    'create:blaze_cake',
+    'create:creative_blaze_cake',
+    'createmetallurgy:coke',
+    'ratatouille:bio_gas_bucket'
+  ]
 
+  nonFuelItems.forEach(id => {
+    event.modify(id, item => {
+      item.burnTime = 0
+    })
+  })
+
+  const space_suits = [
+      'ad_astra:space_helmet', 
+      'ad_astra:space_suit',
+      'ad_astra:space_pants', 
+      'ad_astra:space_boots',
+      'ad_astra:netherite_space_helmet', 
+      'ad_astra:netherite_space_suit',
+      'ad_astra:netherite_space_pants', 
+      'ad_astra:netherite_space_boots'
+  ]
+  
+  space_suits.forEach(id => {
+      event.modify(id, item => {
+          item.maxDamage = item.maxDamage * 4
+      })
+  })
 
   event.modify('kubejs:ash_log', item => {item.burnTime = 200})
   event.modify('kubejs:broken_ash_log', item => {item.burnTime = 100})
@@ -102,28 +147,6 @@ ItemEvents.modification(event => {
   event.modify('kubejs:coal_dust', item => {item.burnTime = 1600})
   event.modify('kubejs:charcoal_dust', item => {item.burnTime = 1600})
   event.modify('kubejs:charcoal_block', item => {item.burnTime = 16000})
-
-  event.modify('minecraft:dried_kelp_block', item => {item.burnTime = 0})
-  event.modify('minecraft:smithing_table', item => {item.burnTime = 0})
-  event.modify('minecraft:jukebox', item => {item.burnTime = 0})
-  event.modify('minecraft:note_box', item => {item.burnTime = 0})
-  event.modify('minecraft:chest', item => {item.burnTime = 0})
-  event.modify('minecraft:crafting_table', item => {item.burnTime = 0})
-  event.modify('minecraft:trapped_chest', item => {item.burnTime = 0})
-  event.modify('minecraft:daylight_detector', item => {item.burnTime = 0})
-  event.modify('minecraft:barrel', item => {item.burnTime = 0})
-  event.modify('minecraft:blaze_rod', item => {item.burnTime = 0})
-  event.modify('minecraft:lava', item => {item.burnTime = 0})
-  event.modify('darkerdepths:stripped_petrified_log', item => {item.burnTime = 0})
-  event.modify('darkerdepths:petrified_planks', item => {item.burnTime = 0})
-  event.modify('darkerdepths:petrified_wood', item => {item.burnTime = 0})
-  event.modify('darkerdepths:petrified_log', item => {item.burnTime = 0})
-  event.modify('darkerdepths:stripped_petrified_wood', item => {item.burnTime = 0})
-  event.modify('clanginghowl:blaze_fuel', item => {item.burnTime = 0})
-  event.modify('create:blaze_cake', item => {item.burnTime = 0})
-  event.modify('create:creative_blaze_cake', item => {item.burnTime = 0})
-  event.modify('createmetallurgy:coke', item => {item.burnTime = 0})
-  event.modify('ratatouille:bio_gas_bucket', item => {item.burnTime = 0})
 
   event.modify('minecraft:iron_sword', item => { item.maxDamage = 983 })
   event.modify('minecraft:iron_axe', item => { item.maxDamage = 983 })

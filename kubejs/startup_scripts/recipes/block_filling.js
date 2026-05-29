@@ -30,7 +30,7 @@ CreateEvents.spoutHandler((event) => {
     )
 
     blockFilling(
-        "mcwi:brown_mushroom",
+        "cwi:brown_mushroom",
         "minecraft:brown_mushroom",
         { id: "kubejs:nitrogen_fertilizer", amount: 10 },
         ['minecraft:brown_mushroom_block', 'minecraft:mushroom_stem']

@@ -2,10 +2,10 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "kubejs:block/stripped_burnt_log_top",
-		"2": "kubejs:block/stripped_burnt_log_inner",
-		"3": "kubejs:block/stripped_burnt_log",
-		"particle": "kubejs:block/stripped_burnt_log_top"
+		"1": "kubejs:block/logs/stripped_burnt_log_top",
+		"2": "kubejs:block/logs/stripped_burnt_log_inner",
+		"3": "kubejs:block/logs/stripped_burnt_log",
+		"particle": "kubejs:block/logs/stripped_burnt_log_top"
 	},
 	"elements": [
 		{

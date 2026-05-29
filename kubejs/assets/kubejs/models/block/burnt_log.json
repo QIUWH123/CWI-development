@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "kubejs:block/burnt_log_top",
-    "side": "kubejs:block/burnt_log"
+    "end": "kubejs:block/logs/burnt_log_top",
+    "side": "kubejs:block/logs/burnt_log"
   }
 }

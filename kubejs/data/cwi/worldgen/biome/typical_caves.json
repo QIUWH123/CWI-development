@@ -17,6 +17,7 @@
       "tick_delay": 6000
     },
     "music": {
+      "sound": "minecraft:music.overworld.cave",
       "max_delay": 24000,
       "min_delay": 12000,
       "replace_current_music": false
