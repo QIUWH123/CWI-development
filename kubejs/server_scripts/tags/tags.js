@@ -70,6 +70,20 @@ ServerEvents.tags('item', event => {
   event.add('farmersdelight:straw_harvesters', ['ae2:nether_quartz_cutting_knife', 'ae2:certus_quartz_cutting_knife'])
   event.add('minecraft:breaks_decorated_pots', ['ae2:nether_quartz_cutting_knife', 'ae2:certus_quartz_cutting_knife'])
 
+  //create_sa
+  event.add('forge:tools', [
+    'create_sa:brass_sword', 
+    'create_sa:brass_axe', 
+    'create_sa:brass_pickaxe', 
+    'create_sa:brass_shovel', 
+    'create_sa:brass_hoe', 
+    'create_sa:zinc_sword', 
+    'create_sa:zinc_axe', 
+    'create_sa:zinc_pickaxe', 
+    'create_sa:zinc_shovel', 
+    'create_sa:zinc_hoe'
+  ])
+
   //ingots
   event.add('forge:ingots', [
     'kubejs:rusted_iron_ingot',
