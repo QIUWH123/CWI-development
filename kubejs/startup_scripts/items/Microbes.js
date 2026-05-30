@@ -1,18 +1,18 @@
 StartupEvents.registry('item', event => {
 
   event.create('dry_fermento_mycetes')
-    .texture('kubejs:item/microorganisms/dry_fermento_mycetes')
+    .texture('kubejs:item/microbes/dry_fermento_mycetes')
 
   event.create('powdered_fermento_mycetes')
-    .texture('kubejs:item/microorganisms/powdered_fermento_mycetes')
+    .texture('kubejs:item/microbes/powdered_fermento_mycetes')
 
   event.create('dry_carbofusor_spirillum')
-    .texture('kubejs:item/microorganisms/dry_carbofusor_spirillum')
+    .texture('kubejs:item/microbes/dry_carbofusor_spirillum')
 
   event.create('dry_putrelys_sporogenes')
-    .texture('kubejs:item/microorganisms/dry_putrelys_sporogenes')
+    .texture('kubejs:item/microbes/dry_putrelys_sporogenes')
 
-  //event.create('radiotroph_nucleavorax').texture('kubejs:item/microorganisms/radiotroph_nucleavorax')
+  //event.create('radiotroph_nucleavorax').texture('kubejs:item/microbes/radiotroph_nucleavorax')
 
   event.create('empty_petri_dish')
     .texture('kubejs:item/bio/plate')
@@ -40,7 +40,7 @@ StartupEvents.registry('item', event => {
 
   global.microbes.forEach(([name, color1, color2, color3, variants, times]) => {
 
-    event.create(name).texture(`kubejs:item/microorganisms/${name}`)
+    event.create(name).texture(`kubejs:item/microbes/${name}`)
 
     event.create(`inoculated_${name}_petri_dish`)
       .texture('kubejs:item/petri_dish/petri_dish')

@@ -26,7 +26,6 @@ global.ender_radiator_tick = (blockEntity) => {
     let shuffledPositions = blocks.sort(() => Math.random() - 0.5)
     let pos = shuffledPositions[0]
     let { x, y, z } = { x: pos[0], y: pos[1], z: pos[2] }
-
     let block = blockEntity.level.getBlock(pos)
     
     if (block.id != "minecraft:sandstone") return
@@ -42,22 +41,23 @@ global.ender_radiator_tick = (blockEntity) => {
     )
     return
 }
-
-//StartupEvents.registry("block", (event) => {
-//    event.create("kubejs:ender_radiator")
-//        .tagBlock("minecraft:mineable/pickaxe")
-//        .tagBlock("minecraft:needs_stone_tool")
-//        .hardness(5)
-//        .soundType("STONE")
-//        .property(global.meteor_spawned_prop)
-//        .defaultState(state => { state.cycle(global.meteor_spawned_prop) })
-//        .item(item => {
-//            item.tooltip(Text.gray("It... well... Radiates ender!"))
-//            item.tooltip(Text.gray("Will convert nearby sandstone to endstone."))
-//        })
-//        .blockEntity(blockInfo => {
-//            blockInfo.serverTick(20, 0, (blockEntity) => {
-//                global.ender_radiator_tick(blockEntity)
-//            })
-//        })
-//})
+/*
+StartupEvents.registry("block", (event) => {
+    event.create("kubejs:ender_radiator")
+        .tagBlock("minecraft:mineable/pickaxe")
+        .tagBlock("minecraft:needs_stone_tool")
+        .hardness(5)
+        .soundType("STONE")
+        .property(global.meteor_spawned_prop)
+        .defaultState(state => { state.cycle(global.meteor_spawned_prop) })
+        .item(item => {
+            item.tooltip(Text.gray("It... well... Radiates ender!"))
+            item.tooltip(Text.gray("Will convert nearby sandstone to endstone."))
+        })
+        .blockEntity(blockInfo => {
+            blockInfo.serverTick(20, 0, (blockEntity) => {
+                global.ender_radiator_tick(blockEntity)
+            })
+        })
+})
+*/
