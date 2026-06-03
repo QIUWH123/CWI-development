@@ -33,6 +33,15 @@ StartupEvents.registry('item', event => {
             .tier(tier)
             .attackDamageBaseline(3)
             .unstackable()
+            .modelJson({
+                "parent": "item/handheld",
+                "textures": {"layer0": `kubejs:item/tools/${tier}_hammer`},
+                "overrides": [
+                    {"predicate": {"custom_model_data": 1}, "model": `minecraft:item/charged_${tier}_hammer_1`},
+                    {"predicate": {"custom_model_data": 2}, "model": `minecraft:item/charged_${tier}_hammer_2`},
+                    {"predicate": {"custom_model_data": 3}, "model": `minecraft:item/charged_${tier}_hammer_3`}
+                ]
+            })
             .useAnimation('spear')
             .useDuration(() => 100000)
             .use((level, player, hand) => {
@@ -57,13 +66,13 @@ StartupEvents.registry('item', event => {
                     }
                     if (successCount > 0) {
                         entity.addItemCooldown(itemStack.item, Math.floor(20 * Math.sqrt(successCount)))
-                        if (!level.isClientSide()) {
-                            level.playSound(null, entity.x, entity.y, entity.z,
-                                'minecraft:item.trident.throw', 'players', 1.0, 1.0)
-                        }
                         if (!entity.isCreative()) {
                             itemStack.hurtAndBreak(successCount, entity, (e) => e.broadcastBreakEvent(hand))
                         }
+                    }
+                    if (!level.isClientSide()) {
+                        level.playSound(null, entity.x, entity.y, entity.z,
+                            'minecraft:item.trident.throw', 'players', 1.0, 1.0)
                     }
                 }
                 const item = entity.getItemInHand(hand)

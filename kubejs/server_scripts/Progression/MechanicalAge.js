@@ -499,7 +499,7 @@ ServerEvents.recipes(event => {
     {
       A: 'create:golden_sheet',
       B: 'create:iron_sheet',
-      C: 'kubejs:polished_diamond'
+      C: 'minecraft:emerald'
     }
   )
 
