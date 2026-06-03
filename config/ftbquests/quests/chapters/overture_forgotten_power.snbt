@@ -84,6 +84,7 @@
 	quests: [
 		{
 			description: ["&6My head is pounding... The last thing I remember is... Nothing...&r\n\n&eJust a blinding light, and then this... this silent, metallic tomb. Dust hangs thick in the still air, catching the sickly red pulse of a single, dying light. It's cold. The only sounds are the creak of settling metal and my own ragged breath. &r\n\n&6Everything is broken—shattered glass, toppled lantern, rebars sticking from the wall like dead vines.&r"]
+			disable_toast: true
 			hide_until_deps_complete: true
 			icon: "kubejs:computer_heat_vent"
 			id: "48FAA6DBC81EED3F"

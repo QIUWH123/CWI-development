@@ -15,13 +15,12 @@ var armorPatterns = {
   boots:      ['A A', 'A A']
 }
 
-function addTools(material, outputPrefix, stick) {
-  if (stick === undefined) stick = 'minecraft:stick'
+function addTools(material, outputPrefix) {
   for (var tool in toolPatterns) {
     if (toolPatterns.hasOwnProperty(tool)) {
       event.shaped(Item.of(outputPrefix + '_' + tool), toolPatterns[tool], {
         A: material,
-        B: stick
+        B:'minecraft:stick'
       })
     }
   }
@@ -86,7 +85,7 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('kubejs:stone_hammer'),
+    Item.of('minecraft:stone_hammer'),
     ['ABA', ' C ', ' C '],
     {
       A: '#cwi:cobbled_stones',
@@ -95,7 +94,7 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('kubejs:iron_hammer'),
+    Item.of('minecraft:iron_hammer'),
     ['ABA', ' C ', ' C '],
     {
       A: 'create:iron_sheet',
@@ -104,7 +103,7 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('kubejs:bronze_hammer'),
+    Item.of('minecraft:bronze_hammer'),
     ['ABA', ' C ', ' C '],
     {
       A: 'kubejs:bronze_sheet',
@@ -113,7 +112,7 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('kubejs:gold_hammer'),
+    Item.of('minecraft:gold_hammer'),
     ['ABA', ' C ', ' C '],
     {
       A: 'create:gold_sheet',
@@ -122,7 +121,7 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('kubejs:netherite_hammer'),
+    Item.of('minecraft:netherite_hammer'),
     ['ABA', ' C ', ' C '],
     {
       A: 'vintageimprovements:netherite_sheet',

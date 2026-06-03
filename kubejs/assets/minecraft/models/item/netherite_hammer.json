@@ -8,7 +8,7 @@
       "predicate": {
         "custom_model_data": 1
       },
-      "model": "kubejs:item/charged_netherite_hammer"
+      "model": "minecraft:item/charged_netherite_hammer"
     }
   ]
 }

@@ -59,3 +59,11 @@ global.materials = [
   { id: 'polyvinyl_chloride', formula: '(C₂H₃Cl)ₙ', types: ['kubejs:polyvinyl_chloride_powder', 'kubejs:polyvinyl_chloride', 'kubejs:polyvinyl_chloride_sheet', 'kubejs:polyvinyl_chloride_block'] },
   //{ id: 'nylon_66', formula: '(C₁₂H₂₂N₂O₂)ₙ', types: [] }
 ]
+
+global.hammers = [
+  ['bronze_hammer', 'bronze', 18],
+  ['iron_hammer', 'iron', 20],
+  ['stone_hammer', 'stone', 25],
+  ['gold_hammer', 'gold', 12],
+  ['netherite_hammer', 'netherite', 15]
+]

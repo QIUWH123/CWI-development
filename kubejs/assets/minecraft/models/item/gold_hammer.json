@@ -1,14 +1,14 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "kubejs:item/tools/bronze_hammer"
+    "layer0": "kubejs:item/tools/gold_hammer"
   },
   "overrides": [
     {
       "predicate": {
         "custom_model_data": 1
       },
-      "model": "kubejs:item/charged_bronze_hammer"
+      "model": "minecraft:item/charged_gold_hammer"
     }
   ]
 }

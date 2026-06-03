@@ -197,8 +197,8 @@
 			hide_dependency_lines: true
 			id: "27A9A84592979C3D"
 			tasks: [{
-				id: "3B74AD93FC145389"
-				item: "kubejs:polyvinyl_chloride_plastic_sheet"
+				id: "468C369F54DD9F4C"
+				item: "kubejs:polyvinyl_chloride"
 				type: "item"
 			}]
 			x: 2.0d
@@ -209,8 +209,8 @@
 			hide_dependency_lines: true
 			id: "6BF322152F6631D9"
 			tasks: [{
-				id: "220D2AE2C8DFD25C"
-				item: "tfmg:plastic_sheet"
+				id: "0A7316C2738B1E1D"
+				item: "kubejs:polyethylene"
 				type: "item"
 			}]
 			x: 0.0d
@@ -287,6 +287,18 @@
 			}]
 			x: 6.0d
 			y: 1.0d
+		}
+		{
+			dependencies: ["648902203FB63097"]
+			hide_dependency_lines: true
+			id: "44B202DF000A40CC"
+			tasks: [{
+				id: "52C171B1A97F473B"
+				item: "kubejs:polypropylene"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 7.0d
 		}
 	]
 	title: "Material Note"

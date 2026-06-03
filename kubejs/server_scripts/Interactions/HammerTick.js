@@ -1,38 +1,48 @@
-const HAMMER_REQUIREMENTS = {
-    'kubejs:bronze_hammer': 18,
-    'kubejs:iron_hammer': 20,
-    'kubejs:stone_hammer': 25,
-    'kubejs:gold_hammer': 12,
-    'kubejs:netherite_hammer': 15
-}
+let HAMMER_REQUIREMENTS = {}
+global.hammers.forEach(([name, material, ticks]) => {
+    HAMMER_REQUIREMENTS['minecraft:' + name] = ticks
+})
 
 PlayerEvents.tick(event => {
-    const { player, level } = event
+    const player = event.player
+    const level = player.level
     if (!player.persistentData.chargedHammer_charging) {
         let mainHand = player.getItemInHand('main_hand')
         if (mainHand && mainHand.id in HAMMER_REQUIREMENTS) {
-            let tag = mainHand.nbt
-            if (tag && tag.CustomModelData === 1) {
-                mainHand.nbt = { CustomModelData: 0 }
+            if (mainHand.nbt?.CustomModelData !== 0) {
+                mainHand.nbt = Object.assign({}, mainHand.nbt || {}, { CustomModelData: 0 })
                 player.setItemInHand('main_hand', mainHand)
             }
         }
         return
     }
     let item = player.getItemInHand('main_hand')
-    let itemId = item.id
-    if (!(itemId in HAMMER_REQUIREMENTS)) return
-    let requiredCharge = HAMMER_REQUIREMENTS[itemId]
+    if (!item || item.id === 'minecraft:air' || !(item.id in HAMMER_REQUIREMENTS)) {
+        player.persistentData.chargedHammer_charging = false
+        return
+    }
     let remainingTicks = player.getUseItemRemainingTicks()
-    if (remainingTicks < 0) return
+    if (remainingTicks <= 0) {
+        player.persistentData.chargedHammer_charging = false
+        if (item.nbt?.CustomModelData !== 0) {
+            item.nbt = Object.assign({}, item.nbt || {}, { CustomModelData: 0 })
+            player.setItemInHand('main_hand', item)
+        }
+        return
+    }
+    let requiredCharge = HAMMER_REQUIREMENTS[item.id]
     let chargedTicks = 100000 - remainingTicks
-    let isCharged = chargedTicks >= requiredCharge
-    let currentModelData = (item.nbt && item.nbt.CustomModelData) || 0;
-    if (isCharged && currentModelData !== 1) {
-        item.nbt = { CustomModelData: 1 }
+    let stage = Math.min(Math.floor(chargedTicks / requiredCharge), 3)
+    let targetModel = stage >= 1 ? stage : 0
+    let currentModel = item.nbt?.CustomModelData ?? 0
+    if (targetModel !== currentModel) {
+        item.nbt = Object.assign({}, item.nbt || {}, { CustomModelData: targetModel })
         player.setItemInHand('main_hand', item)
-    } else if (!isCharged && currentModelData !== 0) {
-        item.nbt = { CustomModelData: 0 }
-        player.setItemInHand('main_hand', item)
+        if (targetModel > currentModel && targetModel > 0) {
+            if (!level.isClientSide()) {
+                level.playSound(null, player.x, player.y, player.z,
+                    'minecraft:item.trident.return', 'players', 1.0, 1.5)
+            }
+        }
     }
 })
