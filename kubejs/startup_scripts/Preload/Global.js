@@ -1,6 +1,6 @@
 // priority: 1000
 
-global.stoneTypes = [
+global.stones = [
   { id: 'stone',        hardness: 2.4, sound: 'stone',     color: '#7F7F7F', types: ['minecraft:stone', 'minecraft:cobblestone', 'minecraft:gravel', 'kubejs:stone_dust'] },
   { id: 'deepslate',    hardness: 3.3, sound: 'deepslate', color: '#3A3A3A', types: ['minecraft:deepslate', 'minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel', 'kubejs:deepslate_dust'] },
   { id: 'granite',      hardness: 4.3, sound: 'stone',     color: '#C08080', types: ['minecraft:granite', 'kubejs:cobbled_granite', 'kubejs:granite_gravel', 'kubejs:granite_dust'] },
@@ -60,10 +60,50 @@ global.materials = [
   //{ id: 'nylon_66', formula: '(C₁₂H₂₂N₂O₂)ₙ', types: [] }
 ]
 
+global.ores = [
+    ['kubejs:sulfur_ore', 'kubejs:sulfur', '', false, true],
+    ['kubejs:deepslate_sulfur_ore', 'kubejs:sulfur', '', true, true],
+    ['kubejs:fluorite_ore', 'kubejs:fluorite', '', false, true],
+    ['kubejs:deepslate_fluorite_ore', 'kubejs:fluorite', '', true, true],
+    ['minecraft:redstone_ore', 'kubejs:redstone', '', false, true],
+    ['minecraft:deepslate_redstone_ore', 'kubejs:redstone', '', true, true],
+    ['kubejs:quartz_ore', 'minecraft:quartz', '', false, true],
+    ['kubejs:deepslate_quartz_ore', 'minecraft:quartz', '', true, true],
+    ['minecraft:copper_ore', 'minecraft:raw_copper', 'create:crushed_raw_copper', false, true],
+    ['minecraft:deepslate_copper_ore', 'minecraft:raw_copper', 'create:crushed_raw_copper', true, true],
+    ['minecraft:coal_ore', 'minecraft:coal', '', false, true],
+    ['minecraft:deepslate_coal_ore', 'minecraft:coal', '', true, true],
+    ['minecraft:iron_ore', 'minecraft:raw_iron', 'create:crushed_raw_iron', false, true],
+    ['minecraft:deepslate_iron_ore', 'minecraft:raw_iron', 'create:crushed_raw_iron', true, true],
+
+    ['kubejs:silver_ore', 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', false, false],
+    ['kubejs:deepslate_silver_ore', 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', true, false],
+    ['kubejs:cobalt_ore', 'kubejs:raw_cobalt', 'kubejs:crushed_raw_cobalt', false, false],
+    ['kubejs:deepslate_cobalt_ore', 'kubejs:raw_cobalt', 'kubejs:crushed_raw_cobalt', true, false],
+    ['kubejs:tin_ore', 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', false, false],
+    ['kubejs:deepslate_tin_ore', 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', true, false],
+    ['minecraft:gold_ore', 'minecraft:raw_gold', 'create:crushed_raw_gold', false, false],
+    ['minecraft:deepslate_gold_ore', 'minecraft:raw_gold', 'create:crushed_raw_gold', true, false],
+    ['minecraft:diamond_ore', 'minecraft:diamond', '', false, false],
+    ['minecraft:deepslate_diamond_ore', 'minecraft:diamond', '', true, false],
+    ['minecraft:emerald_ore', 'minecraft:emerald', '', false, false],
+    ['minecraft:deepslate_emerald_ore', 'minecraft:emerald', '', true, false],
+    ['minecraft:lapis_ore', 'minecraft:lapis_lazuli', '', false, false],
+    ['minecraft:deepslate_lapis_ore', 'minecraft:lapis_lazuli', '', true, false],
+    ['create:zinc_ore', 'create:raw_zinc', 'create:crushed_raw_zinc', false, false],
+    ['create:deepslate_zinc_ore', 'create:raw_zinc', 'create:crushed_raw_zinc', true, false],
+    ['tfmg:lead_ore', 'tfmg:raw_lead', 'tfmg:crushed_raw_lead', false, false],
+    ['tfmg:deepslate_lead_ore', 'tfmg:raw_lead', 'tfmg:crushed_raw_lead', true, false],
+    ['tfmg:nickel_ore', 'tfmg:raw_nickel', 'tfmg:crushed_raw_nickel', false, false],
+    ['tfmg:deepslate_nickel_ore', 'tfmg:raw_nickel', 'tfmg:crushed_raw_nickel', true, false],
+    ['tfmg:lithium_ore', 'tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', false, false],
+    ['tfmg:deepslate_lithium_ore', 'tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', true, false]
+]
+
 global.hammers = [
-  ['bronze_hammer', 'bronze', 18],
-  ['iron_hammer', 'iron', 20],
-  ['stone_hammer', 'stone', 25],
-  ['gold_hammer', 'gold', 12],
-  ['netherite_hammer', 'netherite', 15]
+  ['bronze_hammer', 'bronze', 18, 3],
+  ['iron_hammer', 'iron', 20, 2],
+  ['stone_hammer', 'stone', 25, 1],
+  ['gold_hammer', 'gold', 12, 1],
+  ['netherite_hammer', 'netherite', 15, 3]
 ]

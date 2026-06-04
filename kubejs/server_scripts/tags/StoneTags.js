@@ -19,7 +19,7 @@ ServerEvents.tags('block', event => {
     return blockId.startsWith('minecraft:') || blockId.startsWith('darkerdepths:')
   }
 
-  global.stoneTypes.forEach(stone => {
+  global.stones.forEach(stone => {
     const [rawId, cobId, gravId] = stone.types
     const base = stone.hardness
     const rawTier = toolTier(base)

@@ -8,7 +8,7 @@ ServerEvents.recipes(event => {
   event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:smooth_basalt')
   event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'minecraft:smooth_basalt')
 
-  global.stoneTypes.forEach(entry => {
+  global.stones.forEach(entry => {
     const [raw, cobbled, gravel, dust] = entry.types
     event.recipes.create.crushing(cobbled, raw)
     event.recipes.create.crushing(gravel, cobbled)

@@ -14,7 +14,7 @@ global.shouldModify = function(blockId) {
 const shouldModify = global.shouldModify
 
 StartupEvents.registry('block', event => {
-  global.stoneTypes.forEach(stone => {
+  global.stones.forEach(stone => {
     const [rawId, cobId, gravId, dustId] = stone.types
     const base = stone.hardness
     const sound = stone.sound
@@ -58,7 +58,7 @@ StartupEvents.registry('block', event => {
 })
 
 BlockEvents.modification(event => {
-  global.stoneTypes.forEach(stone => {
+  global.stones.forEach(stone => {
     const [rawId, cobId, gravId, dustId] = stone.types
     const base = stone.hardness
     const sound = stone.sound
