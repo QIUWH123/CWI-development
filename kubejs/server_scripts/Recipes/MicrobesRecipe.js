@@ -925,7 +925,7 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:carbofusor_spirillum" }
         ],
         [
-            { item: "minecraft:coal", count: 3 },
+            { item: "minecraft:coal", count: 2 },
             { item: "minecraft:coal", chance: 0.75 },
             { fluid: "kubejs:methane", amount: 100 },
             { item: "kubejs:carbofusor_spirillum" }
