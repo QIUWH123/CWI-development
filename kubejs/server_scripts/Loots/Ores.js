@@ -1,5 +1,5 @@
 LootJS.modifiers(event => {
-    global.ores.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
+    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const exp = isDeepslate ? 5 : 3
         const dust = isDeepslate ? 'kubejs:deepslate_dust' : 'kubejs:stone_dust'
         const mainChance = isDeepslate ? 0.75 : 0.5

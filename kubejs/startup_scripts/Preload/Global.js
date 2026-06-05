@@ -1,6 +1,6 @@
 // priority: 1000
 
-global.stones = [
+global.stoneTypes = [
   { id: 'stone',        hardness: 2.4, sound: 'stone',     color: '#7F7F7F', types: ['minecraft:stone', 'minecraft:cobblestone', 'minecraft:gravel', 'kubejs:stone_dust'] },
   { id: 'deepslate',    hardness: 3.3, sound: 'deepslate', color: '#3A3A3A', types: ['minecraft:deepslate', 'minecraft:cobbled_deepslate', 'kubejs:deepslate_gravel', 'kubejs:deepslate_dust'] },
   { id: 'granite',      hardness: 4.3, sound: 'stone',     color: '#C08080', types: ['minecraft:granite', 'kubejs:cobbled_granite', 'kubejs:granite_gravel', 'kubejs:granite_dust'] },
@@ -28,7 +28,7 @@ global.microbes = [
   ['crystallum_coccus',   0xec73f0, 0xfca6ff, 0xff87bb, ['cheap_crystal', 'fast_nucleating', 'precision'], [1800, 1200, 4800]]
 ]
 
-global.materials = [
+global.materialTypes = [
   { id: 'diamond', formula: 'C', types: ['kubejs:diamond_dust', 'minecraft:diamond', 'minecraft:diamond_block'] },
 
   { id: 'iron', formula: 'Fe', types: ['kubejs:iron_dust', 'minecraft:iron_ingot', 'minecraft:iron_nugget', 'create:iron_sheet', 'createaddition:iron_rod', 'createaddition:iron_wire', 'minecraft:iron_block'] },
@@ -60,7 +60,7 @@ global.materials = [
   //{ id: 'nylon_66', formula: '(C₁₂H₂₂N₂O₂)ₙ', types: [] }
 ]
 
-global.ores = [
+global.oreTypes = [
     ['kubejs:sulfur_ore', 'kubejs:sulfur', '', false, true],
     ['kubejs:deepslate_sulfur_ore', 'kubejs:sulfur', '', true, true],
     ['kubejs:fluorite_ore', 'kubejs:fluorite', '', false, true],
