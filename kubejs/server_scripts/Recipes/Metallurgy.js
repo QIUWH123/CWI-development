@@ -96,7 +96,7 @@ ServerEvents.recipes(event => {
       nugget: 'minecraft:gold_nugget', block: 'minecraft:gold_block', dust: 'kubejs:gold_dust'
     },
     {
-      id: 'silver', fluid: 'kubejs:molten_silver', mp: 192,
+      id: 'silver', fluid: 'kubejs:molten_silver', mp: 201,
       sheet: 'kubejs:silver_sheet', ingot: 'kubejs:silver_ingot',
       rod: 'kubejs:silver_rod', wire: 'kubejs:silver_wire',
       nugget: 'kubejs:silver_nugget', block: 'kubejs:silver_block', dust: 'kubejs:silver_dust'
