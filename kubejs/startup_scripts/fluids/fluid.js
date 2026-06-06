@@ -53,6 +53,8 @@ var moltenMetals = [
   ['molten_zinc', 0x71eba5],
   ['molten_gold', 0xFFF860],
   ['molten_iron', 0xFF8A8A],
+  ['molten_magnesium', 0xA9B9C4],
+  ['molten_industrial_iron', 0xFF8A8A],
   ['molten_pig_iron', 0xFFABAB],
   ['molten_cast_iron', 0xFF9191],
   ['molten_copper', 0xFF6C40],

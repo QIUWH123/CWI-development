@@ -1,8 +1,11 @@
 ItemEvents.tooltip(event => {
 
   global.materialTypes.forEach(mat => {
-    mat.types.forEach(itemId => {
-      event.add(itemId, Text.of(mat.formula).yellow())
+    if (!mat.items || !mat.formula) return
+    Object.values(mat.items).forEach(itemId => {
+      if (itemId) {
+        event.add(itemId, Text.of(mat.formula).yellow())
+      }
     })
   })
 

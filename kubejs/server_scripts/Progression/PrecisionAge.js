@@ -18,38 +18,6 @@ ServerEvents.recipes(event => {
   )
 
   event.shapeless(
-    Item.of('kubejs:brass_dust', 3),
-    [
-      '2x kubejs:copper_dust',
-      '2x kubejs:zinc_dust'
-    ]
-  )
-
-  event.shapeless(
-    Item.of('kubejs:bronze_dust', 3),
-    [
-      '2x kubejs:copper_dust',
-      '2x kubejs:tin_dust'
-    ]
-  )
-
-  event.shapeless(
-    Item.of('kubejs:electrum_dust', 3),
-    [
-      '2x kubejs:gold_dust',
-      '2x kubejs:silver_dust'
-    ]
-  )
-
-  event.shapeless(
-    Item.of('kubejs:constantan_dust', 3),
-    [
-      '2x kubejs:copper_dust',
-      '2x kubejs:nickel_dust'
-    ]
-  )
-
-  event.shapeless(
     Item.of('kubejs:handle', 1),
     [
       '2x #cwi:rubber',
@@ -464,9 +432,6 @@ ServerEvents.recipes(event => {
   event.recipes.create.compacting('kubejs:heated_iron_ingot', 'minecraft:iron_ingot').superheated()
 
 //smelting/blasting
-
-  event.smelting('create:brass_ingot', 'kubejs:brass_dust')
-  event.blasting('create:brass_ingot', 'kubejs:brass_dust')
 
   event.smelting('create:brass_ingot', 'kubejs:brass_dust')
   event.blasting('create:brass_ingot', 'kubejs:brass_dust')

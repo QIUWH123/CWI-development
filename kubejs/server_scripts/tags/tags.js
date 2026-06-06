@@ -239,20 +239,6 @@ ServerEvents.tags('block', event => {
     'minecraft:sculk_catalyst'
   ])
 
-//mineable
-
-  event.remove('minecraft:mineable/axe', 'minecraft:crafting_table')
-  event.add('minecraft:mineable/pickaxe', [
-    'minecraft:crafting_table',
-    'tfmg:rebar_block',
-    'tfmg:rebar_floor',
-    'tfmg:rebar_wall',
-    'tfmg:rebar_pile',
-    'tfmg:rebar_stairs',
-    'tfmg:rebar_pillar'
-  ])
-  event.add('minecraft:mineable/axe', 'kubejs:dead_leaves')
-
 //create
 
   event.removeAll('create:windmill_sails')
@@ -444,6 +430,43 @@ ServerEvents.tags('block', event => {
     'kubejs:molten_bronze',
     'kubejs:molten_electrum',
     'kubejs:molten_glass'
+  ])
+
+})
+
+ServerEvents.tags('block', event => {
+
+//mineable
+
+  event.remove('minecraft:mineable/axe', 'minecraft:crafting_table')
+  event.add('minecraft:mineable/pickaxe', [
+    'minecraft:crafting_table',
+    'tfmg:rebar_block',
+    'tfmg:rebar_floor',
+    'tfmg:rebar_wall',
+    'tfmg:rebar_pile',
+    'tfmg:rebar_stairs',
+    'tfmg:rebar_pillar'
+  ])
+
+  event.add('minecraft:mineable/axe', 'kubejs:dead_leaves')
+
+  event.add('minecraft:needs_stone_tool', [
+    'darkerdepths:stripped_petrified_log', 
+    'darkerdepths:stripped_petrified_wood',
+    'darkerdepths:petrified_log', 
+    'darkerdepths:petrified_wood',
+    'darkerdepths:petrified_planks',
+    'darkerdepths:petrified_stairs',
+    'darkerdepths:petrified_slab',
+    'darkerdepths:petrified_fence',
+    'darkerdepths:petrified_fence_gate',
+    'darkerdepths:petrified_door',
+    'darkerdepths:petrified_trapdoor',
+    'darkerdepths:petrified_pressure_plate',
+    'darkerdepths:petrified_button',
+    'darkerdepths:petrified_sign',
+    'darkerdepths:petrified_hanging_sign'
   ])
 
 })

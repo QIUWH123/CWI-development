@@ -33,16 +33,16 @@ StartupEvents.registry('block', event => {
         .blockstateJson = {
         "variants": {
             "axis=x": {
-            "model": `kubejs:block/${id}`,
-            "x": 90,
-            "y": 90
+                "model": `kubejs:block/${id}`,
+                "x": 90,
+                "y": 90
             },
             "axis=y": {
-            "model": `kubejs:block/${id}`
+                "model": `kubejs:block/${id}`
             },
             "axis=z": {
-            "model": `kubejs:block/${id}`,
-            "x": 90
+                "model": `kubejs:block/${id}`,
+                "x": 90
             }
         }
         }
