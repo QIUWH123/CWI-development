@@ -1142,6 +1142,7 @@
 		{
 			dependencies: ["2E77D91EAB2CD464"]
 			disable_toast: true
+			icon: "minecraft:granite"
 			id: "5518C951F8D3EA0A"
 			tasks: [{
 				id: "563D463354EB9293"

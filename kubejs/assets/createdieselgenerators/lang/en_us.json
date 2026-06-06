@@ -1,0 +1,6 @@
+{
+  "createdieselgenerators.recipe.hammering": "Chiseling",
+  "item.createdieselgenerators.hammer": "Chisel",
+  "item.createdieselgenerators.hammer.tooltip.behaviour1": "Chisel items held in the _offhand_.",
+  "item.createdieselgenerators.hammer.tooltip.summary": "Can be used to chisel items."
+}

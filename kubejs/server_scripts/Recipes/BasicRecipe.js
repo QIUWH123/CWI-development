@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
 
 //custom recipe function define
 
-  function hammering(input,output){
+  function chiseling(input,output){
     event.custom({
       "type": "createdieselgenerators:hammering",
       "ingredients":[{"item": input}],
@@ -147,13 +147,7 @@ ServerEvents.recipes(event => {
   cutting('kubejs:tin_sheet','kubejs:tin_wire',1)
   cutting('minecraft:dead_bush','farmersdelight:straw',1)
 
-//hammering
-
-  hammering('create:andesite_alloy','vintageimprovements:andesite_sheet')
-  hammering('tfmg:lead_ingot','tfmg:lead_sheet')
-  hammering('tfmg:nickel_ingot','tfmg:nickel_sheet')
-  hammering('tfmg:aluminum_ingot','tfmg:aluminum_sheet')
-  hammering('kubejs:silver_ingot','kubejs:silver_sheet')
+//chiseling
 
 //pressing
 

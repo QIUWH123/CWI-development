@@ -20,7 +20,7 @@
 			rotation: 0.0d
 			width: 1.33d
 			x: 2.5d
-			y: 1.5d
+			y: -0.5d
 		}
 		{
 			height: 0.9d
@@ -36,14 +36,6 @@
 			rotation: 45.0d
 			width: 0.9d
 			x: 6.5d
-			y: 3.5d
-		}
-		{
-			height: 1.0d
-			image: "create:block/andesite_block"
-			rotation: 45.0d
-			width: 1.0d
-			x: 0.5d
 			y: 3.5d
 		}
 		{
@@ -94,7 +86,6 @@
 		}
 		{
 			dependencies: [
-				"540EF2A79DD1C92C"
 				"4C1F87459ED9C5F9"
 				"437113F4C591BBA5"
 				"476F895A01D30141"
@@ -161,37 +152,48 @@
 				item: "minecraft:clay_ball"
 				type: "item"
 			}]
+			x: 0.5d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				"5E402C739E34B7D4"
+				"540EF2A79DD1C92C"
+			]
+			disable_toast: true
+			id: "4C1F87459ED9C5F9"
+			subtitle: "The foundation of Mechanics"
+			tasks: [{
+				id: "7F391AF5145C7B48"
+				item: "kubejs:andesite_dust"
+				type: "item"
+			}]
 			x: 2.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
-			disable_toast: true
-			id: "4C1F87459ED9C5F9"
-			subtitle: "The foundation of Mechanics"
-			tasks: [{
-				id: "6D24943C8717C4F0"
-				item: "kubejs:cobbled_andesite"
-				type: "item"
-			}]
-			x: 0.5d
-			y: -6.5d
-		}
-		{
-			dependencies: ["5E402C739E34B7D4"]
-			description: ["&6&lCan Be Obtained From &r&r\n&eScraps&r\n&eAshstones&r\n&eAshen Depleted Dirt&r"]
+			description: [""]
 			disable_toast: true
 			id: "540EF2A79DD1C92C"
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
-				id: "0D2B951A706539CC"
-				item: "kubejs:ash_dust"
+				id: "5A9F3D3814243B5B"
+				item: {
+					Count: 1
+					id: "minecraft:stone_hammer"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
 			x: 2.5d
 			y: -4.5d
 		}
 		{
-			dependencies: ["40FA81C21DEF7A09"]
+			dependencies: ["6C479154F903BB77"]
 			disable_toast: true
 			id: "7BDE7169C3C400BD"
 			shape: "hexagon"
@@ -208,12 +210,12 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: -0.5d
+			y: 1.5d
 		}
 		{
 			dependencies: [
-				"7BDE7169C3C400BD"
 				"60E2563C494FB253"
+				"540EF2A79DD1C92C"
 			]
 			disable_toast: true
 			id: "701D21C32E77F5C7"
@@ -267,7 +269,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: 1.5d
+			y: -0.5d
 		}
 		{
 			dependencies: [
@@ -362,10 +364,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: [
-				"40FA81C21DEF7A09"
-				"7BDE7169C3C400BD"
-			]
+			dependencies: ["40FA81C21DEF7A09"]
 			disable_toast: true
 			id: "6C479154F903BB77"
 			tasks: [{
@@ -387,19 +386,6 @@
 			}]
 			x: 0.5d
 			y: -0.5d
-		}
-		{
-			dependencies: ["7FD48427B60C3E5A"]
-			id: "3948D2CA890C6CD0"
-			shape: "diamond"
-			subtitle: "Easier Andesite Alloy"
-			tasks: [{
-				id: "751D7BEFC0D581B0"
-				item: "kubejs:andesite_dust"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 3.5d
 		}
 		{
 			dependencies: ["6A11BA5D1C4D2924"]
@@ -911,6 +897,28 @@
 				type: "item"
 			}]
 			x: 12.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6C479154F903BB77"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "5FC63F5C6DC17A71"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Better Hammer"
+			tasks: [{
+				id: "1B92121E523FFD21"
+				item: {
+					Count: 1
+					id: "minecraft:iron_hammer"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.5d
 			y: 3.5d
 		}
 	]

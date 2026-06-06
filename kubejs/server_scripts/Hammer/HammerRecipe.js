@@ -75,7 +75,12 @@ addBlockConversion('kubejs:scrap_block', 'air', 2, [
 ])
 
 addDepotConversion('createdeco:industrial_iron_ingot', 'createdeco:industrial_iron_sheet', 3)
+addDepotConversion('create:andesite_alloy', 'vintageimprovements:andesite_sheet', 1)
 addDepotConversion('kubejs:bronze_ingot', 'kubejs:bronze_sheet', 2)
 addDepotConversion('minecraft:iron_ingot', 'create:iron_sheet', 2)
+addDepotConversion('tfmg:nickel_ingot', 'tfmg:nickel_sheet', 2)
 addDepotConversion('minecraft:copper_ingot', 'create:copper_sheet', 2)
 addDepotConversion('minecraft:gold_ingot', 'create:golden_sheet', 1)
+addDepotConversion('kubejs:silver_ingot', 'kubejs:silver_sheet', 1)
+addDepotConversion('tfmg:lead_ingot', 'tfmg:lead_sheet', 1)
+addDepotConversion('tfmg:aluminum_ingot', 'tfmg:aluminum_sheet', 1)

@@ -355,13 +355,14 @@ ServerEvents.recipes(event => {
   event.shaped(
     Item.of('createdieselgenerators:hammer'),
     [
-      'AAA',
+      '  A',
       ' B ',
-      ' B '
+      'C  '
     ],
     {
-      A: 'minecraft:iron_ingot',
-      B: 'minecraft:stick'
+      A: 'create:iron_sheet',
+      B: 'createaddition:iron_rod',
+      C: 'minecraft:stick'
     }
   )
 
