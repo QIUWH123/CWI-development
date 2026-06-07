@@ -203,10 +203,15 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.3, 1)
     .addLoot("tfmg:screw");
     event.addBlockLootModifier('kubejs:scrap_block')
-    .randomChanceWithLooting(0.6, 1)
-    .addLoot("kubejs:rusted_iron")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("kubejs:rusted_iron");
+    .addLoot("kubejs:rusted_iron_sheet")
+    .randomChanceWithLooting(0.3, 1)
+    .addLoot("kubejs:rusted_iron_rod");
+    event.addBlockLootModifier('kubejs:scrap_block')
+    .randomChanceWithLooting(0.3, 1)
+    .addLoot("kubejs:rusted_iron_ingot")
+    .randomChanceWithLooting(0.3, 1)
+    .addLoot("kubejs:rusted_iron_wire");
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.3, 1)
     .addLoot("tfmg:rebar")

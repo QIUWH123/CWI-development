@@ -50,11 +50,13 @@ StartupEvents.registry('item', event => {
   event.create('rubber')
   event.create('polybenzimidazole')
   event.create('andesite_compound')
-  event.create('rusted_iron_ingot')
   event.create('nylon_ingot')
   event.create('nylon_salt')
   event.create('nylon_salt_crystal')
   event.create('carborundum')
+
+  event.create('rusted_iron_wire')
+    .texture('kubejs:item/materials/rusted_iron_wire')
 
   event.create('magnesium_wire')
     .texture('kubejs:item/materials/magnesium_wire')
@@ -80,6 +82,9 @@ StartupEvents.registry('item', event => {
   event.create('magnetic_alloy_wire')
     .texture('kubejs:item/materials/magnetic_alloy_wire')
 
+  event.create('rusted_iron_sheet')
+    .texture('kubejs:item/materials/rusted_iron_sheet')
+
   event.create('magnesium_sheet')
     .texture('kubejs:item/materials/magnesium_sheet')
     
@@ -104,6 +109,9 @@ StartupEvents.registry('item', event => {
   event.create('magnetic_alloy_sheet')
     .texture('kubejs:item/materials/magnetic_alloy_sheet')
   
+  event.create('rusted_iron_rod')
+    .texture('kubejs:item/materials/rusted_iron_rod')
+  
   event.create('magnesium_rod')
     .texture('kubejs:item/materials/magnesium_rod')
   
@@ -121,6 +129,12 @@ StartupEvents.registry('item', event => {
     
   event.create('bronze_rod')
     .texture('kubejs:item/materials/bronze_rod')
+    
+  event.create('rusted_iron_ingot')
+    .texture('kubejs:item/materials/rusted_iron_ingot')
+    
+  event.create('rusted_iron_nugget')
+    .texture('kubejs:item/materials/rusted_iron_nugget')
     
   event.create('magnesium_ingot')
     .texture('kubejs:item/materials/magnesium_ingot')

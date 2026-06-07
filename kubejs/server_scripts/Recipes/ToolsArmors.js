@@ -38,7 +38,7 @@ function addArmor(material, outputPrefix) {
 
 addTools('#cwi:cobbled_stones', 'minecraft:stone')
 
-addTools('kubejs:rusted_iron_ingot', 'kubejs:rusted_iron')
+addTools('kubejs:rusted_iron_sheet', 'kubejs:rusted_iron')
 
 addTools('create:iron_sheet', 'minecraft:iron')
 addArmor('create:iron_sheet', 'minecraft:iron')
@@ -85,11 +85,11 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
-    Item.of('minecraft:stone_hammer'),
+    Item.of('minecraft:rusted_iron_hammer'),
     ['ABA', ' C ', ' C '],
     {
-      A: '#cwi:cobbled_stones',
-      B: 'kubejs:claystone_clump',
+      A: 'kubejs:rusted_iron_sheet',
+      B: 'kubejs:rusted_iron_block',
       C: 'minecraft:stick'
     })
 

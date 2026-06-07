@@ -50,8 +50,10 @@ global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) 
 addBlockConversion('kubejs:scrap_block', 'air', 2, [
     { item: 'tfmg:screw', chance: 0.6 },
     { item: 'tfmg:screw', chance: 0.18 },
-    { item: 'kubejs:rusted_iron', chance: 0.6 },
-    { item: 'kubejs:rusted_iron', chance: 0.18 },
+    { item: 'kubejs:rusted_iron_ingot', chance: 0.3 },
+    { item: 'kubejs:rusted_iron_rod', chance: 0.09 },
+    { item: 'kubejs:rusted_iron_sheet', chance: 0.3 },
+    { item: 'kubejs:rusted_iron_wire', chance: 0.09 },
     { item: 'tfmg:rebar', chance: 0.3 },
     { item: 'tfmg:rebar', chance: 0.09 },
     { item: 'tfmg:rebar', chance: 0.018 },
