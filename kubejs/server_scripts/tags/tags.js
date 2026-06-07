@@ -1,46 +1,7 @@
 ServerEvents.tags('item', event => {
 
-  //tools
-
-  event.add('minecraft:swords', [
-    'kubejs:rusted_iron_sword',
-    'kubejs:bronze_sword'
-  ])
-
-  event.add('minecraft:axes', [
-    'kubejs:rusted_iron_axe',
-    'kubejs:bronze_axe'
-  ])
-
-  event.add('minecraft:pickaxes', [
-    'kubejs:rusted_iron_pickaxe',
-    'kubejs:bronze_pickaxe'
-  ])
-
-  event.add('minecraft:shovels', [
-    'kubejs:rusted_iron_shovel',
-    'kubejs:bronze_shovel'
-  ])
-
-  event.add('minecraft:hoes', [
-    'kubejs:rusted_iron_hoe',
-    'kubejs:bronze_hoe'
-  ])
-
   //chemical_spray
   event.add('cwi:chemical_sprayer', ['cwi:chemical_sprayer', 'createdieselgenerators:chemical_sprayer_lighter'])
-
-  //petri_dish
-  event.add('cwi:petri_dish', [
-    'kubejs:fermento_mycetes_dish', 
-    'kubejs:acidolys_bacillus_dish', 
-    'kubejs:vulcan_thermus_dish', 
-    'kubejs:radiotroph_nucleavorax_dish', 
-    'kubejs:carbofusor_spirillum_dish', 
-    'kubejs:putrelys_sporogenes_dish', 
-    'kubejs:crystallum_coccus_dish', 
-    'kubejs:nitrofix_rhizobium_dish'
-  ])
 
   //type
   event.add('cwi:iron2', ['minecraft:iron_sword', 'minecraft:iron_hoe'])

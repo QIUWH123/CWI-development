@@ -35,30 +35,35 @@ StartupEvents.registry('item', event => {
     .tier('bronze')
     .attackDamageBaseline(11)
     .unstackable()
+    .tag('minecraft:swords')
 
   event.create('bronze_axe', 'axe')
     .texture('kubejs:item/tools/bronze_axe')
     .tier('bronze')
     .attackDamageBaseline(13)
     .unstackable()
+    .tag('minecraft:axes')
 
   event.create('bronze_pickaxe', 'pickaxe')
     .texture('kubejs:item/tools/bronze_pickaxe')
     .tier('bronze')
     .attackDamageBaseline(8)
     .unstackable()
+    .tag('minecraft:pickaxes')
 
   event.create('bronze_shovel', 'shovel')
     .texture('kubejs:item/tools/bronze_shovel')
     .tier('bronze')
     .attackDamageBaseline(8.5)
     .unstackable()
+    .tag('minecraft:shovels')
 
   event.create('bronze_hoe', 'hoe')
     .texture('kubejs:item/tools/bronze_hoe')
     .tier('bronze')
     .attackDamageBaseline(1)
     .unstackable()
+    .tag('minecraft:hoes')
 
 //rusted iron
 
@@ -67,30 +72,35 @@ StartupEvents.registry('item', event => {
     .tier('rusted_iron')
     .attackDamageBaseline(4)
     .unstackable()
+    .tag('minecraft:swords')
 
   event.create('rusted_iron_axe', 'axe')
     .texture('kubejs:item/tools/rusted_iron_axe')
     .tier('rusted_iron')
     .attackDamageBaseline(8)
     .unstackable()
+    .tag('minecraft:axes')
 
   event.create('rusted_iron_pickaxe', 'pickaxe')
     .texture('kubejs:item/tools/rusted_iron_pickaxe')
     .tier('rusted_iron')
     .attackDamageBaseline(3)
     .unstackable()
+    .tag('minecraft:pickaxes')
 
   event.create('rusted_iron_shovel', 'shovel')
     .texture('kubejs:item/tools/rusted_iron_shovel')
     .tier('rusted_iron')
     .attackDamageBaseline(3)
     .unstackable()
+    .tag('minecraft:shovels')
 
   event.create('rusted_iron_hoe', 'hoe')
     .texture('kubejs:item/tools/rusted_iron_hoe')
     .tier('rusted_iron')
     .attackDamageBaseline(0)
     .unstackable()
+    .tag('minecraft:hoes')
 
 })
 

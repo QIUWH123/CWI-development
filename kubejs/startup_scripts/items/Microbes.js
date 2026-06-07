@@ -2,15 +2,19 @@ StartupEvents.registry('item', event => {
 
   event.create('dry_fermento_mycetes')
     .texture('kubejs:item/microbes/dry_fermento_mycetes')
+    .tag('cwi:petri_dish')
 
   event.create('powdered_fermento_mycetes')
     .texture('kubejs:item/microbes/powdered_fermento_mycetes')
+    .tag('cwi:petri_dish')
 
   event.create('dry_carbofusor_spirillum')
     .texture('kubejs:item/microbes/dry_carbofusor_spirillum')
+    .tag('cwi:petri_dish')
 
   event.create('dry_putrelys_sporogenes')
     .texture('kubejs:item/microbes/dry_putrelys_sporogenes')
+    .tag('cwi:petri_dish')
 
   //event.create('radiotroph_nucleavorax').texture('kubejs:item/microbes/radiotroph_nucleavorax')
 
