@@ -182,7 +182,7 @@
 				id: "5A9F3D3814243B5B"
 				item: {
 					Count: 1
-					id: "minecraft:stone_hammer"
+					id: "minecraft:rusted_iron_hammer"
 					tag: {
 						Damage: 0
 					}
