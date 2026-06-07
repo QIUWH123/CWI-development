@@ -303,8 +303,8 @@ StartupEvents.registry('block', event => {
 
   event.create('carbon_fiber_block')
     .stoneSoundType()
-    .hardness(6)
-    .resistance(30)
+    .hardness(8)
+    .resistance(12)
     .tagBlock('minecraft:mineable/axe')
     .mapColor('#FF5500')
 
@@ -320,6 +320,15 @@ StartupEvents.registry('block', event => {
     .hardness(3)
     .resistance(4)
     .tagBlock('minecraft:mineable/axe')
+    .mapColor('#FF5500')
+
+  event.create('rusted_iron_block')
+    .stoneSoundType()
+    .hardness(4)
+    .resistance(5)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
 
   event.create('bronze_block')

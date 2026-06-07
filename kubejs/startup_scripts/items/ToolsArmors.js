@@ -7,22 +7,22 @@ StartupEvents.registry('item', event => {
 //armors
 
   event.create('bronze_helmet', 'helmet')
-    .texture('kubejs:item/tools/bronze_helmet')
+    .texture('kubejs:item/armors/bronze_helmet')
     .tier('bronze')
     .unstackable()
 
   event.create('bronze_chestplate', 'chestplate')
-    .texture('kubejs:item/tools/bronze_chestplate')
+    .texture('kubejs:item/armors/bronze_chestplate')
     .tier('bronze')
     .unstackable()
 
   event.create('bronze_leggings', 'leggings')
-    .texture('kubejs:item/tools/bronze_leggings')
+    .texture('kubejs:item/armors/bronze_leggings')
     .tier('bronze')
     .unstackable()
 
   event.create('bronze_boots', 'boots')
-    .texture('kubejs:item/tools/bronze_boots')
+    .texture('kubejs:item/armors/bronze_boots')
     .tier('bronze')
     .unstackable()
 

@@ -5,6 +5,9 @@ StartupEvents.registry('item', event => {
             .tier(tier)
             .attackDamageBaseline(3)
             .unstackable()
+            .tag('minecraft:hammer')
+            .tag('forge:tools')
+            .tag('minecraft:breaks_decorated_pots')
             .modelJson({
                 parent: 'item/handheld',
                 textures: { layer0: `kubejs:item/tools/${tier}_hammer` },

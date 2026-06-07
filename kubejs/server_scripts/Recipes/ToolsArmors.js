@@ -85,6 +85,14 @@ ServerEvents.recipes(event => {
     })
 
   event.shaped(
+    Item.of('minecraft:stone_hammer'),
+    ['AAA', ' B ', ' B '],
+    {
+      A: '#cwi:cobbled_stones',
+      B: 'minecraft:stick'
+    })
+
+  event.shaped(
     Item.of('minecraft:rusted_iron_hammer'),
     ['ABA', ' C ', ' C '],
     {

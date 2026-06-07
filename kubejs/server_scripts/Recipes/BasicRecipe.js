@@ -124,6 +124,7 @@ ServerEvents.recipes(event => {
   rolling('kubejs:tin_ingot','kubejs:tin_rod')
   rolling('kubejs:cobalt_ingot','kubejs:cobalt_rod')
   rolling('tfmg:cast_iron_ingot','vintageimprovements:cast_iron_rod')
+  rolling('kubejs:rusted_iron_ingot','kubejs:rusted_iron_rod')
 
   rolling('tfmg:aluminum_sheet','tfmg:aluminum_wire')
   rolling('tfmg:cast_iron_sheet','vintageimprovements:cast_iron_wire')
@@ -137,6 +138,7 @@ ServerEvents.recipes(event => {
   rolling('kubejs:cobalt_sheet','kubejs:cobalt_wire')
   rolling('kubejs:magnet_sheet','kubejs:magnet_wire')
   rolling('kubejs:magnetic_alloy_sheet','kubejs:magnetic_alloy_wire')
+  rolling('kubejs:rusted_iron_sheet','kubejs:rusted_iron_wire')
 
 //cutting
 
@@ -144,6 +146,7 @@ ServerEvents.recipes(event => {
   cutting('tfmg:aluminum_sheet','tfmg:aluminum_wire',1)
   cutting('tfmg:lead_sheet','vintageimprovements:lead_wire',1)
   cutting('kubejs:tin_sheet','kubejs:tin_wire',1)
+  cutting('kubejs:rusted_iron_sheet','kubejs:rusted_iron_wire',1)
   cutting('minecraft:dead_bush','farmersdelight:straw',1)
 
 //chiseling
@@ -195,6 +198,8 @@ ServerEvents.recipes(event => {
   addStoragePair('kubejs:raw_cobalt_block', 'kubejs:raw_cobalt', 9)
   addStoragePair('kubejs:cobalt_block', 'kubejs:cobalt_ingot', 9)
   addStoragePair('kubejs:cobalt_ingot', 'kubejs:cobalt_nugget', 9)
+  addStoragePair('kubejs:rusted_iron_block', 'kubejs:rusted_iron_ingot', 9)
+  addStoragePair('kubejs:rusted_iron_ingot', 'kubejs:rusted_iron_nugget', 9)
   addStoragePair('createmetallurgy:refractory_mortar', 'createmetallurgy:refractory_mortar_ball', 4)
   addStoragePair('darkerdepths:amber_block', 'darkerdepths:amber', 4)
 
