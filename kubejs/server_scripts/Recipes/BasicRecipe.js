@@ -2,11 +2,11 @@ ServerEvents.recipes(event => {
 
 //custom recipe function define
 
-  function chiseling(input,output){
+  function chiseling(input,output,count){
     event.custom({
       "type": "createdieselgenerators:hammering",
       "ingredients":[{"item": input}],
-      "results":[{"item": output}]
+      "results":[{"item": output,"count": count}]
     })}
 
   function cutting(input,output,count){
@@ -140,7 +140,6 @@ ServerEvents.recipes(event => {
 
 //cutting
 
-  cutting('create:brass_ingot','kubejs:brass_circuit_board',1)
   cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
   cutting('tfmg:aluminum_sheet','tfmg:aluminum_wire',1)
   cutting('tfmg:lead_sheet','vintageimprovements:lead_wire',1)
@@ -148,6 +147,8 @@ ServerEvents.recipes(event => {
   cutting('minecraft:dead_bush','farmersdelight:straw',1)
 
 //chiseling
+
+  chiseling('create:brass_sheet','kubejs:brass_circuit_board',1)
 
 //pressing
 

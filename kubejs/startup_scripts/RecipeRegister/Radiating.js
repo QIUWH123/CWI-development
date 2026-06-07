@@ -1,3 +1,4 @@
+/*
 function getAreaArray(pos1, pos2) {
     let positions = []
     for (let x = pos1[0]; x <= pos2[0]; x++) {
@@ -41,7 +42,7 @@ global.ender_radiator_tick = (blockEntity) => {
     )
     return
 }
-/*
+
 StartupEvents.registry("block", (event) => {
     event.create("kubejs:ender_radiator")
         .tagBlock("minecraft:mineable/pickaxe")

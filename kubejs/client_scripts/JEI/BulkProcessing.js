@@ -119,7 +119,12 @@ JEIAddedEvents.registerCategories(event => {
 
 JEIAddedEvents.registerRecipes(event => {
     let corrodingBuilder = event.custom(new ResourceLocation('create', 'corroding'))
-    corrodingBuilder.add({ input: 'create:iron_sheet', output: 'minecraft:iron_ingot' })
+    global.corrodingFanRecipes.forEach((inputId, outputId) => {
+        corrodingBuilder.add({ input: inputId, output: outputId })
+    })
+
     let sterilizingBuilder = event.custom(new ResourceLocation('create', 'sterilizing'))
-    sterilizingBuilder.add({ input: 'kubejs:petri_dish', output: 'kubejs:sterile_petri_dish' })
+    global.sterilizingFanRecipes.forEach((inputId, outputId) => {
+        sterilizingBuilder.add({ input: inputId, output: outputId })
+    })
 })
