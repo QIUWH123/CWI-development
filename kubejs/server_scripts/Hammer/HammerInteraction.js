@@ -14,6 +14,7 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
     }
 
     if (!level.isClientSide()) {
+        level.playSound(null, entity.x, entity.y, entity.z, 'minecraft:item.trident.throw', 'players', 1, 1)
         let hit = entity.rayTrace(5)
         if (hit && hit.type === 'block') {
             let pos = hit.block.pos
@@ -31,8 +32,8 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
                         let targetCount = targetItem ? (targetItem.Count || 1) : 0
                         level.server.runCommandSilent(`data modify block ${pos.x} ${pos.y} ${pos.z} HeldItem.Item.Count set value ${count - 1}`)
                         level.server.runCommandSilent(`data modify block ${pos.x} ${pos.y} ${pos.z} OutputBuffer.Items append value {id:"${conv.target}",Count:${targetCount + 1}b}`)
-                        level.runCommandSilent(`particle minecraft:item ${conv.target} ${pos.x + 0.5} ${pos.y + 0.9} ${pos.z + 0.5} 0.1 0.15 0.1 0.15 8`)
-                        level.runCommandSilent(`playsound block.anvil.place block @a ${pos.x} ${pos.y} ${pos.z} 1 1`)
+                        level.playSound(null, pos.x + 0.5, pos.y + 0.9, pos.z + 0.5, 'block.anvil.place', 'neutral', 1, 1)
+                        level.spawnParticles(`minecraft:item ${conv.target}`, true, pos.x + 0.5, pos.y + 0.9, pos.z + 0.5, 0.1, 0.3, 0.1, 12, 0.2)
                         success = 1
                     }
                 }
@@ -44,9 +45,9 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
                     if (!conv || stage < (conv.requireStage || 1)) break
                     let target = typeof conv === 'string' ? conv : conv.target
                     let drops = typeof conv === 'object' ? conv.drops : []
-                    level.runCommandSilent(`particle minecraft:block ${block.id} ${pos.x + 0.5} ${pos.y + 0.5} ${pos.z + 0.5} 0.5 0.5 0.5 0.05 60`)
-                    level.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${pos.x + 0.5} ${pos.y + 0.5} ${pos.z + 0.5} 0.6 0.6 0.6 0.05 16`)
-                    level.runCommandSilent(`playsound block.anvil.place block @a ${pos.x} ${pos.y} ${pos.z} 1 1`)
+                    level.spawnParticles(`minecraft:falling_dust minecraft:gravel`, true, pos.x + 0.5, pos.y + 0.5, pos.z + 0.5, 0.6, 0.6, 0.6, 16, 0.05)
+                    level.spawnParticles(`minecraft:block ${block.id}`, true, pos.x + 0.5, pos.y + 0.5, pos.z + 0.5, 0.5, 0.5, 0.5, 60, 0.05)
+                    level.playSound(null, pos.x, pos.y, pos.z, 'block.anvil.place', 'neutral', 1, 1)
                     drops.forEach(function(d) {
                         if (Math.random() < (d.chance || 1)) block.popItem(d.item)
                     })
@@ -57,8 +58,7 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
 
             if (success > 0) {
                 entity.addItemCooldown(itemStack.item, Math.floor(20 * Math.sqrt(success)))
-                if (!entity.isCreative()) itemStack.hurtAndBreak(success, entity, function() {})
-                level.playSound(null, entity.x, entity.y, entity.z, 'minecraft:item.trident.throw', 'players', 1, 1)
+                itemStack.hurtAndBreak(success, entity, function() {})
             }
         }
     }
