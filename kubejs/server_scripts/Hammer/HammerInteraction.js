@@ -22,9 +22,15 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
             if (block.id === 'create:depot' && hit.facing && hit.facing.getName() === 'up') {
                 let entityData = block.entityData
                 if (entityData && entityData.HeldItem && entityData.HeldItem.Item) {
-                    let conv = global.depotConversions[entityData.HeldItem.Item.id]
+                    let heldItem = entityData.HeldItem.Item
+                    let conv = global.depotConversions[heldItem.id]
                     if (conv && stage >= (conv.requireStage || 1)) {
-                        level.server.runCommandSilent(`execute in ${level.dimension} run data modify block ${pos.x} ${pos.y} ${pos.z} HeldItem.Item set value {id:"${conv.target}",Count:1b}`)
+                        let count = heldItem.Count || 1
+                        let outputItems = (entityData.OutputBuffer && entityData.OutputBuffer.Items) || []
+                        let targetItem = outputItems.find(function(it) { return it.id === conv.target })
+                        let targetCount = targetItem ? (targetItem.Count || 1) : 0
+                        level.server.runCommandSilent(`data modify block ${pos.x} ${pos.y} ${pos.z} HeldItem.Item.Count set value ${count - 1}`)
+                        level.server.runCommandSilent(`data modify block ${pos.x} ${pos.y} ${pos.z} OutputBuffer.Items append value {id:"${conv.target}",Count:${targetCount + 1}b}`)
                         level.runCommandSilent(`particle minecraft:item ${conv.target} ${pos.x + 0.5} ${pos.y + 0.9} ${pos.z + 0.5} 0.1 0.15 0.1 0.15 8`)
                         level.runCommandSilent(`playsound block.anvil.place block @a ${pos.x} ${pos.y} ${pos.z} 1 1`)
                         success = 1
