@@ -625,12 +625,13 @@ event.custom({
     ],
     "ingredients": [
       {"item": "kubejs:iron_dust"},
-      {"item": "tfmg:sulfur_dust", "count": 2}
+      {"item": "tfmg:sulfur_dust"},
+      {"item": "tfmg:sulfur_dust"}
     ],
     "machines": ["tfmg:mixing"],
     "processingTime": 10,
     "results": [
-      {"item": "kubejs:pyrite_dust", "count": 2}
+      {"item": "kubejs:pyrite_dust", "count": 3}
     ]
   })
 
