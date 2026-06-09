@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:player",
+    "minecraft:armor_stand",
+    "minecraft:zombie",
+    "minecraft:husk",
+    "minecraft:zombie_villager",
+    "minecraft:skeleton",
+    "minecraft:stray",
+    {"id":"minecraft:bogged","required":false},
+    "minecraft:piglin",
+    "minecraft:zombified_piglin"
+  ]
+}

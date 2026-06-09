@@ -1,11 +1,11 @@
 function registerMoltenMetal(event, name, color) {
   event.create(name)
     .thickTexture(color)
+    .tag('cwi:moltens')
     .bucketItem
     .textureJson({
       layer0: 'kubejs:item/fireproof_bucket',
-      layer1: 'kubejs:item/_',
-      layer2: 'kubejs:item/fluids/molten/' + name.replace('molten_', '')
+      layer1: 'kubejs:item/fluids/moltens'
     })
     .tag('cwi:containers')
     .tag('cwi:moltens')
@@ -35,12 +35,14 @@ function registerGas(event, name, color) {
     .stillTexture('kubejs:fluid/gas_texture')
     .gaseous()
     .noBlock()
+    .tag('cwi:gasses')
     .bucketItem
     .textureJson({
       layer0: 'kubejs:item/gas_container',
       layer1: 'kubejs:item/fluids/fluids'
     })
     .tag('cwi:containers')
+    .tag('cwi:gasses')
 }
 
 var moltenMetals = [

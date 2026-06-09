@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:enchanting_table",
+    "minecraft:glow_lichen",
+    "minecraft:ender_chest",
+    {"id":"minecraft:sculk_catalyst","required":false},
+    "minecraft:redstone_torch"
+  ]
+}

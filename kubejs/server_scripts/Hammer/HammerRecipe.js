@@ -37,11 +37,7 @@ global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) 
     const drops = []
     const dropCounts = isMore ? 3 : 2
     for (let i = 0; i < dropCounts; i++) {
-        if (crushedOreId === '') {
-            drops.push({ item: dropOreId, chance: 0.75 })
-        } else {
-            drops.push({ item: crushedOreId, chance: 1 })
-        }
+        drops.push({ item: dropOreId, chance: 0.75 })
     }
     drops.push({ item: dropOreId, chance: mainChance })
     addBlockConversion(oreId, cobbleTarget, 1, drops)
@@ -80,6 +76,7 @@ addDepotConversion('createdeco:industrial_iron_ingot', 'createdeco:industrial_ir
 addDepotConversion('create:andesite_alloy', 'vintageimprovements:andesite_sheet', 1)
 addDepotConversion('kubejs:bronze_ingot', 'kubejs:bronze_sheet', 2)
 addDepotConversion('minecraft:iron_ingot', 'create:iron_sheet', 2)
+addDepotConversion('tfmg:cast_iron_ingot', 'tfmg:cast_iron_sheet', 2)
 addDepotConversion('tfmg:nickel_ingot', 'tfmg:nickel_sheet', 2)
 addDepotConversion('minecraft:copper_ingot', 'create:copper_sheet', 2)
 addDepotConversion('minecraft:gold_ingot', 'create:golden_sheet', 1)
@@ -87,3 +84,14 @@ addDepotConversion('kubejs:silver_ingot', 'kubejs:silver_sheet', 1)
 addDepotConversion('tfmg:lead_ingot', 'tfmg:lead_sheet', 1)
 addDepotConversion('tfmg:aluminum_ingot', 'tfmg:aluminum_sheet', 1)
 addDepotConversion('kubejs:rusted_iron_ingot', 'kubejs:rusted_iron_sheet', 1)
+
+addDepotConversion('minecraft:raw_iron', 'create:crushed_raw_iron', 2)
+addDepotConversion('minecraft:raw_gold', 'create:crushed_raw_gold', 3)
+addDepotConversion('minecraft:raw_copper', 'create:crushed_raw_copper', 3)
+addDepotConversion('create:raw_zinc', 'create:crushed_raw_zinc', 1)
+addDepotConversion('kubejs:raw_tin', 'kubejs:crushed_raw_tin', 1)
+addDepotConversion('kubejs:raw_silver', 'kubejs:crushed_raw_silver', 1)
+addDepotConversion('tfmg:raw_lithium', 'tfmg:crushed_Raw_lithium', 1)
+addDepotConversion('tfmg:raw_lead', 'create:crushed_raw_lead', 1)
+addDepotConversion('tfmg:raw_nickel', 'create:crushed_raw_nickel', 3)
+addDepotConversion('kubejs:raw_cobalt', 'kubejs:crushed_raw_cobalt', 3)

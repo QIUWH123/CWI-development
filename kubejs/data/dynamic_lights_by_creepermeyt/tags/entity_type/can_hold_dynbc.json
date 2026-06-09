@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:player",
+    "minecraft:zombie",
+    "minecraft:husk",
+    "minecraft:fox",
+    "minecraft:zombie_villager",
+    {"id":"minecraft:allay","required":false}
+  ]
+}

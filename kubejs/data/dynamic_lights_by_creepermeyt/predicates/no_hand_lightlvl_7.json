@@ -1,0 +1,30 @@
+[
+{
+    "condition": "minecraft:inverted",
+    "term": {
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "mainhand": {
+        "tag": "dynamic_lights_by_creepermeyt:lightlvl_7"
+      }
+    }
+  }
+}
+},
+{
+    "condition": "minecraft:inverted",
+    "term": {
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "offhand": {
+        "tag": "dynamic_lights_by_creepermeyt:lightlvl_7"
+      }
+    }
+  }
+}
+}
+]
