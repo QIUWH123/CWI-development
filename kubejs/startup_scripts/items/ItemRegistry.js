@@ -48,7 +48,6 @@ StartupEvents.registry('item', event => {
   event.create('synthetic_feather')
   event.create('sticky_resin')
   event.create('rubber')
-  event.create('polybenzimidazole')
   event.create('andesite_compound')
   event.create('nylon_ingot')
   event.create('nylon_salt')
@@ -425,6 +424,10 @@ StartupEvents.registry('item', event => {
   event.create('polyvinyl_chloride').texture('kubejs:item/materials/polyvinyl_chloride')
   event.create('polyvinyl_chloride_powder').texture('kubejs:item/materials/polyvinyl_chloride_powder')
   event.create('polyvinyl_chloride_sheet').texture('kubejs:item/materials/polyvinyl_chloride_sheet')
+
+  event.create('polybenzimidazole').texture('kubejs:item/materials/polybenzimidazole')
+  event.create('polybenzimidazole_powder').texture('kubejs:item/materials/polybenzimidazole_powder')
+  event.create('polybenzimidazole_sheet').texture('kubejs:item/materials/polybenzimidazole_sheet')
 
   event.create('heated_iron_ingot')
 

@@ -60,7 +60,8 @@ global.materialTypes = [
   // polymer
   { id: 'polyethylene', type: 'polymer', formula: '(C₂H₄)ₙ', mp: 395, fluid: 'kubejs:molten_polyethylene', items: { dust: 'kubejs:polyethylene_powder', ingot: 'kubejs:polyethylene', sheet: 'kubejs:polyethylene_sheet', block: 'kubejs:polyethylene_block' } },
   { id: 'polypropylene', type: 'polymer', formula: '(C₃H₆)ₙ', mp: 415, fluid: 'kubejs:molten_polypropylene', items: { dust: 'kubejs:polypropylene_powder', ingot: 'kubejs:polypropylene', sheet: 'kubejs:polypropylene_sheet', block: 'kubejs:polypropylene_block' } },
-  { id: 'polyvinyl_chloride', type: 'polymer', formula: '(C₂H₃Cl)ₙ', mp: 330, fluid: 'kubejs:molten_polyvinyl_chloride', items: { dust: 'kubejs:polyvinyl_chloride_powder', ingot: 'kubejs:polyvinyl_chloride', sheet: 'kubejs:polyvinyl_chloride_sheet', block: 'kubejs:polyvinyl_chloride_block' } }
+  { id: 'polyvinyl_chloride', type: 'polymer', formula: '(C₂H₃Cl)ₙ', mp: 330, fluid: 'kubejs:molten_polyvinyl_chloride', items: { dust: 'kubejs:polyvinyl_chloride_powder', ingot: 'kubejs:polyvinyl_chloride', sheet: 'kubejs:polyvinyl_chloride_sheet', block: 'kubejs:polyvinyl_chloride_block' } },
+  { id: 'polybenzimidazole', type: 'polymer', formula: '(C₂₀H₁₂N₄)ₙ', mp: 700, fluid: 'kubejs:molten_polybenzimidazole', items: { dust: 'kubejs:polybenzimidazole_powder', ingot: 'kubejs:polybenzimidazole', sheet: 'kubejs:polybenzimidazole_sheet' } }
 ]
 
 global.oreTypes = [

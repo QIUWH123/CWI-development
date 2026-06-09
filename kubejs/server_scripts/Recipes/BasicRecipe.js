@@ -182,7 +182,6 @@ ServerEvents.recipes(event => {
   addStoragePair('kubejs:polyethylene_block', 'kubejs:polyethylene', 9)
   addStoragePair('kubejs:polypropylene_block', 'kubejs:polypropylene', 9)
   addStoragePair('kubejs:polyvinyl_chloride_block', 'kubejs:polyvinyl_chloride', 9)
-  addStoragePair('kubejs:sturdy_sheet_block', 'create:sturdy_sheet', 9)
   addStoragePair('kubejs:magnesium_block', 'kubejs:magnesium_ingot', 9)
   addStoragePair('kubejs:magnesium_ingot', 'kubejs:magnesium_nugget', 9)
   addStoragePair('kubejs:bronze_block', 'kubejs:bronze_ingot', 9)

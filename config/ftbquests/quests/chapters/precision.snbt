@@ -64,7 +64,7 @@
 		}
 		{
 			height: 1.0d
-			image: "kubejs:block/sturdy_sheet_block"
+			image: "minecraft:block/iron_block"
 			rotation: 45.0d
 			width: 1.0d
 			x: 14.0d
