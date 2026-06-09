@@ -1,2 +1,0 @@
-## this function generates a dynamic light at the position the function is being run, with a light level from the score of "lvl" in scoreboard "dynbclevel"
-function dynamic_lights_by_creepermeyt:internal/common/dynamiclight

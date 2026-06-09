@@ -1,1 +1,0 @@
-execute if score lvl dynbclevel matches 0..15 run function dynamic_lights_by_creepermeyt:internal/smart/summon

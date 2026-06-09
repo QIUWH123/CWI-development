@@ -1,2 +1,0 @@
-execute align xyz run summon minecraft:marker ~ ~ ~ {Tags:[dynbc,dynbc.new,dynbc.update],CustomName:'"DynamicLightByCreepermeYT"'}
-execute as @e[type=marker,tag=dynbc.new] run function dynamic_lights_by_creepermeyt:internal/smart/as_new
