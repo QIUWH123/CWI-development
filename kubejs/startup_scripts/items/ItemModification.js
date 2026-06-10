@@ -137,6 +137,8 @@ ItemEvents.modification(event => {
 
   space_suits.forEach(id => maxDamage_multiply(id, 4))
 
+  maxStackSize_change('minecraft:potion', 16)
+  
   burnTime_change('kubejs:ash_log', 200)
   burnTime_change('kubejs:broken_ash_log', 100)
   burnTime_change('kubejs:stripped_ash_log', 200)
