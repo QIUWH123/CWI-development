@@ -2,84 +2,101 @@
 
 ItemEvents.modification(event => {
 
-  event.modify('minecraft:wheat_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(2)
-      food.saturation(0.5)
-      food.fastToEat()
+  let fire_resistance = function (id) {
+    event.modify(id, item => {
+      item.fireResistant = true
     })
-  })
+  }
 
-  event.modify('minecraft:melon_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(1)
-      food.saturation(0.5)
-      food.fastToEat()
+  let food_fastToEat = function (food) {
+    event.modify(food, item => {
+      item.setFoodProperties(food => {
+        food.fastToEat()
+      })
     })
-  })
+  }
 
-  event.modify('minecraft:pumpkin_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(3)
-      food.saturation(0.5)
-      food.fastToEat()
+  let food_hungers = function (food, hunger, saturation) {
+    hunger = hunger || 3
+    saturation = saturation || 0.5
+    event.modify(food, item => {
+      item.setFoodProperties(food => {
+        food.hunger(hunger)
+        food.saturation(saturation / hunger)
+      })
     })
-  })
+  }
 
-  event.modify('minecraft:beetroot_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(3)
-      food.saturation(0.5)
-      food.fastToEat()
+  let food_effects = function (food, effect, duration, strength, probability) {
+    duration = duration || 10
+    strength = strength || 0
+    probability = probability || 1
+    event.modify(food, item => {
+      item.setFoodProperties(food => {
+        food.effect(effect, 20 * duration, strength, probability)
+      })
     })
-  })
+  }
 
-  event.modify('farmersdelight:cabbage_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(2)
-      food.saturation(0.5)
-      food.fastToEat()
+  let remove_effects = function (food, effect) {
+    event.modify(food, item => {
+      item.setFoodProperties(food => {
+        food.removeEffect(effect)
+      })
     })
-  })
+  }
 
-  event.modify('farmersdelight:tomato_seeds', item => {
-    item.setFoodProperties(food => {
-      food.hunger(2)
-      food.saturation(0.5)
-      food.fastToEat()
+  let maxDamage_change = function (item, maxDamage) {
+    event.modify(item, item => {
+      item.maxDamage = maxDamage
     })
-  })
+  }
 
-  event.modify('ratatouille:compost_mass', item => {
-    item.setFoodProperties(food => {
-      food.hunger(4)
-      food.saturation(0.5)
-      food.effect('minecraft:nausea', 100, 1, 0.3)
-    })
-  })
+  let maxStackSize_change = function (item, maxStackSize) {
+      event.modify(item, item => {
+          item.maxStackSize = maxStackSize
+      })
+  }
 
-  event.modify('minecraft:sugar_cane', item => {
-    item.setFoodProperties(food => {
-      food.hunger(4)
-      food.saturation(0.3)
+  let burnTime_change = (id, value) => {
+    event.modify(id, item => {
+      item.burnTime = value
     })
-  })
+  }
 
-  event.modify('minecraft:bamboo', item => {
-    item.setFoodProperties(food => {
-      food.hunger(2)
-      food.saturation(0.3)
+  let maxDamage_multiply = (id, factor) => {
+    event.modify(id, item => {
+      item.maxDamage = item.maxDamage * factor
     })
-  })
+  }
 
-  event.modify('ratatouille:compost_residue', item => {
-    item.setFoodProperties(food => {
-      food.hunger(6)
-      food.saturation(0.5)
-      food.effect('minecraft:nausea', 100, 1, 0.8)
-      food.effect('minecraft:hunger', 100, 1, 0.3)
-    })
-  })
+  food_hungers('minecraft:wheat_seeds', 2, 1.0)
+  food_fastToEat('minecraft:wheat_seeds')
+
+  food_hungers('minecraft:melon_seeds', 1, 0.5)
+  food_fastToEat('minecraft:melon_seeds')
+
+  food_hungers('minecraft:pumpkin_seeds', 3, 1.5)
+  food_fastToEat('minecraft:pumpkin_seeds')
+
+  food_hungers('minecraft:beetroot_seeds', 3, 1.5)
+  food_fastToEat('minecraft:beetroot_seeds')
+
+  food_hungers('farmersdelight:cabbage_seeds', 2, 1.0)
+  food_fastToEat('farmersdelight:cabbage_seeds')
+
+  food_hungers('farmersdelight:tomato_seeds', 2, 1.0)
+  food_fastToEat('farmersdelight:tomato_seeds')
+
+  food_hungers('ratatouille:compost_mass', 4, 2.0)
+  food_effects('ratatouille:compost_mass', 'minecraft:nausea', 5, 1, 0.3)
+
+  food_hungers('minecraft:sugar_cane', 4, 1.2)
+  food_hungers('minecraft:bamboo', 2, 0.6)
+
+  food_hungers('ratatouille:compost_residue', 6, 3.0)
+  food_effects('ratatouille:compost_residue', 'minecraft:nausea', 5, 1, 0.8)
+  food_effects('ratatouille:compost_residue', 'minecraft:hunger', 5, 1, 0.3)
 
   const nonFuelItems = [
     'minecraft:dried_kelp_block',
@@ -105,12 +122,6 @@ ItemEvents.modification(event => {
     'ratatouille:bio_gas_bucket'
   ]
 
-  nonFuelItems.forEach(id => {
-    event.modify(id, item => {
-      item.burnTime = 0
-    })
-  })
-
   const space_suits = [
     'ad_astra:space_helmet', 
     'ad_astra:space_suit',
@@ -121,52 +132,50 @@ ItemEvents.modification(event => {
     'ad_astra:netherite_space_pants', 
     'ad_astra:netherite_space_boots'
   ]
-  
-  space_suits.forEach(id => {
-    event.modify(id, item => {
-      item.maxDamage = item.maxDamage * 4
-    })
-  })
 
-  event.modify('kubejs:ash_log', item => {item.burnTime = 200})
-  event.modify('kubejs:broken_ash_log', item => {item.burnTime = 100})
-  event.modify('kubejs:stripped_ash_log', item => {item.burnTime = 200})
-  event.modify('kubejs:stripped_broken_ash_log', item => {item.burnTime = 100})
+  nonFuelItems.forEach(id => burnTime_change(id, 0))
 
-  event.modify('kubejs:burnt_log', item => {item.burnTime = 100})
-  event.modify('kubejs:broken_burnt_log', item => {item.burnTime = 50})
-  event.modify('kubejs:stripped_burnt_log', item => {item.burnTime = 100})
-  event.modify('kubejs:stripped_broken_burnt_log', item => {item.burnTime = 50})
+  space_suits.forEach(id => maxDamage_multiply(id, 4))
 
-  event.modify('ratatouille:compost_residue', item => {item.burnTime = 100})
+  burnTime_change('kubejs:ash_log', 200)
+  burnTime_change('kubejs:broken_ash_log', 100)
+  burnTime_change('kubejs:stripped_ash_log', 200)
+  burnTime_change('kubejs:stripped_broken_ash_log', 100)
 
-  event.modify('kubejs:peat', item => {item.burnTime = 200})
-  event.modify('kubejs:lignite', item => {item.burnTime = 400})
-  event.modify('kubejs:bituminous_coal', item => {item.burnTime = 800})
+  burnTime_change('kubejs:burnt_log', 100)
+  burnTime_change('kubejs:broken_burnt_log', 50)
+  burnTime_change('kubejs:stripped_burnt_log', 100)
+  burnTime_change('kubejs:stripped_broken_burnt_log', 50)
 
-  event.modify('kubejs:coal_dust', item => {item.burnTime = 1600})
-  event.modify('kubejs:charcoal_dust', item => {item.burnTime = 1600})
-  event.modify('kubejs:charcoal_block', item => {item.burnTime = 16000})
+  burnTime_change('ratatouille:compost_residue', 100)
 
-  event.modify('minecraft:iron_sword', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_axe', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_pickaxe', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_shovel', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_hoe', item => { item.maxDamage = 983 })
-  event.modify('minecraft:iron_hammer', item => { item.maxDamage = 983 })
+  burnTime_change('kubejs:peat', 200)
+  burnTime_change('kubejs:lignite', 400)
+  burnTime_change('kubejs:bituminous_coal', 800)
 
-  event.modify('minecraft:golden_sword', item => { item.maxDamage = 273 })
-  event.modify('minecraft:golden_axe', item => { item.maxDamage = 273 })
-  event.modify('minecraft:golden_pickaxe', item => { item.maxDamage = 273 })
-  event.modify('minecraft:golden_shovel', item => { item.maxDamage = 273 })
-  event.modify('minecraft:golden_hoe', item => { item.maxDamage = 273 })
-  event.modify('minecraft:golden_hammer', item => { item.maxDamage = 273 })
+  burnTime_change('kubejs:coal_dust', 1600)
+  burnTime_change('kubejs:charcoal_dust', 1600)
+  burnTime_change('kubejs:charcoal_block', 16000)
 
-  event.modify('minecraft:netherite_sword', item => { item.maxDamage = 3627 })
-  event.modify('minecraft:netherite_axe', item => { item.maxDamage = 3627 })
-  event.modify('minecraft:netherite_pickaxe', item => { item.maxDamage = 3627 })
-  event.modify('minecraft:netherite_shovel', item => { item.maxDamage = 3627 })
-  event.modify('minecraft:netherite_hoe', item => { item.maxDamage = 3627 })
-  event.modify('minecraft:netherite_hammer', item => { item.maxDamage = 3627 })
+  maxDamage_change('minecraft:iron_sword', 983)
+  maxDamage_change('minecraft:iron_axe', 983)
+  maxDamage_change('minecraft:iron_pickaxe', 983)
+  maxDamage_change('minecraft:iron_shovel', 983)
+  maxDamage_change('minecraft:iron_hoe', 983)
+  maxDamage_change('minecraft:iron_hammer', 983)
+
+  maxDamage_change('minecraft:golden_sword', 273)
+  maxDamage_change('minecraft:golden_axe', 273)
+  maxDamage_change('minecraft:golden_pickaxe', 273)
+  maxDamage_change('minecraft:golden_shovel', 273)
+  maxDamage_change('minecraft:golden_hoe', 273)
+  maxDamage_change('minecraft:golden_hammer', 273)
+
+  maxDamage_change('minecraft:netherite_sword', 3627)
+  maxDamage_change('minecraft:netherite_axe', 3627)
+  maxDamage_change('minecraft:netherite_pickaxe', 3627)
+  maxDamage_change('minecraft:netherite_shovel', 3627)
+  maxDamage_change('minecraft:netherite_hoe', 3627)
+  maxDamage_change('minecraft:netherite_hammer', 3627)
 
 })
