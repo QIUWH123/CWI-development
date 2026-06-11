@@ -1,5 +1,3 @@
-// priority: 1
-
 const toolTier = h => h < 2 ? 'wooden' : h < 3.5 ? 'stone' : 'iron'
 
 function downgradeTier(tier) {
@@ -48,77 +46,55 @@ global.stoneTextures = {
   'kubejs:darkslate_gravel': 'kubejs:block/stones/darkslate_gravel'
 }
 
+const stoneConfigs = global.stoneTypes.map(stone => {
+  const rawId = stone.types[0]
+  const cobId = stone.types[1]
+  const gravId = stone.types[2]
+  const base = stone.hardness
+  const sound = stone.sound
+  const color = stone.color
+  const cobH = +(base * 0.7).toFixed(1)
+  const gravH = +(base * 0.2).toFixed(1)
+  const rawTier = toolTier(base)
+  const cobTier = rawTier
+  const gravTier = downgradeTier(rawTier)
+  return { 
+    rawId: rawId, cobId: cobId, gravId: gravId, base: base, sound: sound, color: color,
+    cobH: cobH, gravH: gravH, rawTier: rawTier, cobTier: cobTier, gravTier: gravTier
+  }
+})
+
 StartupEvents.registry('block', event => {
-  global.stoneTypes.forEach(stone => {
-    const [rawId, cobId, gravId, dustId] = stone.types
-    const base = stone.hardness
-    const sound = stone.sound
-    const color = stone.color
-    const cobH = +(base * 0.7).toFixed(1)
-    const gravH = +(base * 0.2).toFixed(1)
-    const rawTier = toolTier(base)
-    const cobTier = rawTier
-    const gravTier = downgradeTier(rawTier)
-
-    function applyBlock(builder, blockId, hardness, resistance, soundType, requiresTool, tags, tier) {
+  stoneConfigs.forEach(cfg => {
+    function apply(builder, blockId, hardness, soundType, tags, tier) {
       const tex = global.stoneTextures[blockId]
-      if (tex) builder.textureAll(tex)
-      builder.hardness(hardness)
-             .resistance(resistance)
-             .soundType(soundType)
-      if (requiresTool) builder.requiresTool(true)
+      if (tex) { builder.textureAll(tex) }
+      builder.hardness(hardness).resistance(hardness * 1.2).soundType(soundType)
+      if (tags.length) { builder.requiresTool(true) }
       tags.forEach(tag => builder.tagBlock(tag))
-      if (tier) builder.tagBlock(`minecraft:needs_${tier}_tool`)
-      builder.mapColor(color)
+      if (tier) { builder.tagBlock('minecraft:needs_' + tier + '_tool') }
+      builder.mapColor(cfg.color)
     }
 
-    if (!shouldModify(rawId)) {
-      applyBlock(event.create(rawId.split(':')[1]), rawId, base, base * 1.2, sound, true, ['minecraft:mineable/pickaxe'], rawTier)
-    }
-
-    if (!shouldModify(cobId)) {
-      applyBlock(event.create(cobId.split(':')[1]), cobId, cobH, cobH * 1.2, sound, true, ['minecraft:mineable/pickaxe'], cobTier)
-    }
-
-    if (!shouldModify(gravId)) {
-      applyBlock(event.create(gravId.split(':')[1], 'falling'), gravId, gravH, gravH * 1.2, 'gravel', true, ['minecraft:mineable/shovel'], gravTier)
-    }
+    if (!shouldModify(cfg.rawId)) apply(event.create(cfg.rawId.split(':')[1]), cfg.rawId, cfg.base, cfg.sound, ['minecraft:mineable/pickaxe'], cfg.rawTier)
+    if (!shouldModify(cfg.cobId)) apply(event.create(cfg.cobId.split(':')[1]), cfg.cobId, cfg.cobH, cfg.sound, ['minecraft:mineable/pickaxe'], cfg.cobTier)
+    if (!shouldModify(cfg.gravId)) apply(event.create(cfg.gravId.split(':')[1], 'falling'), cfg.gravId, cfg.gravH, 'gravel', ['minecraft:mineable/shovel'], cfg.gravTier)
   })
 })
 
 BlockEvents.modification(event => {
-  global.stoneTypes.forEach(stone => {
-    const [rawId, cobId, gravId, dustId] = stone.types
-    const base = stone.hardness
-    const sound = stone.sound
-    const cobHardness = +(base * 0.7).toFixed(1)
-    const gravHardness = +(base * 0.2).toFixed(1)
-
-    if (shouldModify(rawId)) {
-      event.modify(rawId, block => {
-        block.setDestroySpeed(base)
-        block.setExplosionResistance(base * 1.2)
-        block.setSoundType(sound)
-        block.setRequiresTool(true)
+  stoneConfigs.forEach(cfg => {
+    function apply(id, hardness, soundType) {
+      event.modify(id, properties => {
+        properties.setDestroySpeed(hardness)
+        properties.setExplosionResistance(hardness * 1.2)
+        properties.setSoundType(soundType)
+        properties.setRequiresTool(true)
       })
     }
 
-    if (shouldModify(cobId)) {
-      event.modify(cobId, block => {
-        block.setDestroySpeed(cobHardness)
-        block.setExplosionResistance(cobHardness * 1.2)
-        block.setSoundType(sound)
-        block.setRequiresTool(true)
-      })
-    }
-
-    if (shouldModify(gravId)) {
-      event.modify(gravId, block => {
-        block.setDestroySpeed(gravHardness)
-        block.setExplosionResistance(gravHardness * 1.2)
-        block.setSoundType('gravel')
-        block.setRequiresTool(true)
-      })
-    }
+    if (shouldModify(cfg.rawId)) apply(cfg.rawId, cfg.base, cfg.sound)
+    if (shouldModify(cfg.cobId)) apply(cfg.cobId, cfg.cobH, cfg.sound)
+    if (shouldModify(cfg.gravId)) apply(cfg.gravId, cfg.gravH, 'gravel')
   })
 })

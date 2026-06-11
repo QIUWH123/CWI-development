@@ -1,0 +1,10 @@
+{
+    "music.menu.menu1": {
+        "sounds": [
+            {
+                "name": "music/menu/menu1",
+                "stream": true
+            }
+        ]
+    }
+}

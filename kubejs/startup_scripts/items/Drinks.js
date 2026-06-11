@@ -5,7 +5,7 @@ const potions = [
     {id: 'berry_wine', color: 0x8B1A3A, effect: {id: 'minecraft:speed', duration: 2400, amplifier: 0}},
     {id: 'wheat_kvas', color: 0xC2A878, effect: {id: 'minecraft:jump_boost', duration: 2400, amplifier: 0}},
     {id: 'sake', color: 0xF5F5E6, effect: {id: 'kubejs:reach', duration: 2400, amplifier: 0}}
-];
+]
 
 StartupEvents.registry('item', event => {
 
@@ -23,7 +23,7 @@ StartupEvents.registry('item', event => {
                 })
             })  
             .texture(`kubejs:item/drinks/${itemID}`)
-            .tooltip(Text.translate(`item.kubejs.${itemID}.tooltip`));
+            .tooltip(Text.translate(`item.kubejs.${itemID}.tooltip`))
     })
 })
 
