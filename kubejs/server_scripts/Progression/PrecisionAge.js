@@ -48,6 +48,30 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    Item.of('create:crafter_slot_cover'),
+    [
+      'ABA'
+    ],
+    {
+      A: 'create:brass_nugget',
+      B: 'create:brass_sheet'
+    }
+  )
+
+  event.shaped(
+    Item.of('vintageimprovements:helve_hammer_slot_cover'),
+    [
+      '  A',
+      ' B ',
+      'A  '
+    ],
+    {
+      A: 'create:brass_nugget',
+      B: 'create:brass_sheet'
+    }
+  )
+
+  event.shaped(
     Item.of('create_connected:inventory_access_port'),
     [
       'AB',

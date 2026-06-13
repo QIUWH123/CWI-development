@@ -123,7 +123,7 @@ ServerEvents.recipes(event => {
     Item.of('minecraft:gold_hammer'),
     ['ABA', ' C ', ' C '],
     {
-      A: 'create:gold_sheet',
+      A: 'create:golden_sheet',
       B: 'minecraft:gold_block',
       C: 'minecraft:stick'
     })
