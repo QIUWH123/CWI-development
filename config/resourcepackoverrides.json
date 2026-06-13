@@ -8,7 +8,7 @@
   "pack_overrides": {
     "1": [
       "file/Fancy Crops v1.3.zip",
-      "file/Brush+Juice-5.3.1.zip",
+      "file/Brush+Juice-5.4.0.zip",
       "file/Fancy End - RP 1.15+ - 1.4.zip",
       "file/§bArmor§8-§bReimagined§0_§8[v1.1]§0.zip",
       "file/dyebound-1.0.zip",
@@ -34,7 +34,9 @@
       "file/Fungal Infection Hyper Evolved.zip",
       "file/Tuttas Retextures - Runes Edition.zip",
       "file/Retro Exposure Edition 1.21.1.zip",
-      "file/Vexxed_Visuals_TFC_v1.2.7.1.zip"
+      "file/Pixion's Tech Mods v1.3.zip",
+      "file/Vexxed_Visuals_TFC_v1.2.7.1.zip",
+      "file/sweety_items_20.zip"
     ],
     "$$2": {
       "default_position": "BOTTOM",
