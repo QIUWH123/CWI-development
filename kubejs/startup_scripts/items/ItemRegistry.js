@@ -199,7 +199,7 @@ StartupEvents.registry('item', event => {
     'cast_iron_dust', 'lithium_dust', 'bronze_dust', 'electrum_dust',
     'constantan_dust', 'silver_dust', 'tin_dust', 'aluminum_dust', 'molybdenum_dust',
     'industrial_iron_dust', 'steel_dust', 'halite_dust', 'magnesite_dust',
-    'lignite_dust', 'flint_dust', 'kelp_dust', 'ash_dust', 'dark_ash_dust',
+    'lignite_dust', 'flint_dust', 'ash_dust', 'dark_ash_dust',
     'clay_dust', 'stone_dust', 'deepslate_dust', 'tuff_dust', 'claystone_dust',
     'granite_dust', 'diorite_dust', 'andesite_dust', 'basalt_dust', 'schist_dust',
     'gneiss_dust', 'rhyolite_dust', 'shale_dust', 'quartzite_dust',

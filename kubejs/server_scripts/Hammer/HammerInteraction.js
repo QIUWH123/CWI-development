@@ -60,7 +60,12 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
                     level.spawnParticles(`minecraft:block ${block.id}`, true, pos.x + 0.5, pos.y + 0.5, pos.z + 0.5, 0.5, 0.5, 0.5, 60, 0.05)
                     level.playSound(null, pos.x, pos.y, pos.z, 'block.anvil.place', 'neutral', 1, 1)
                     drops.forEach(function(d) {
-                        if (Math.random() < (d.chance || 1)) block.popItem(d.item)
+                        let count = d.count || 1;
+                        for (let c = 0; c < count; c++) {
+                            if (Math.random() < (d.chance || 1)) {
+                                block.popItem(d.item);
+                            }
+                        }
                     })
                     block.set(target)
                     success = true
