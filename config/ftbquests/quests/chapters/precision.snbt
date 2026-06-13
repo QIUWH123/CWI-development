@@ -8,14 +8,6 @@
 	images: [
 		{
 			height: 1.33d
-			image: "createdeco:block/palettes/catwalks/industrial_iron_catwalk"
-			rotation: 0.0d
-			width: 1.33d
-			x: 8.0d
-			y: 0.0d
-		}
-		{
-			height: 1.33d
 			image: "create:block/brass_casing"
 			rotation: 0.0d
 			width: 1.33d
@@ -24,7 +16,7 @@
 		}
 		{
 			height: 1.33d
-			image: "kubejs:block/bronze_block"
+			image: "kubejs:block/storage_blocks/bronze_block"
 			rotation: 0.0d
 			width: 1.33d
 			x: 8.0d
@@ -32,34 +24,10 @@
 		}
 		{
 			height: 1.0d
-			image: "kubejs:block/bronze_block"
-			rotation: 45.0d
-			width: 1.0d
-			x: 10.0d
-			y: -4.0d
-		}
-		{
-			height: 1.0d
-			image: "kubejs:block/bronze_block"
+			image: "kubejs:block/storage_blocks/bronze_block"
 			rotation: 45.0d
 			width: 1.0d
 			x: 8.0d
-			y: -4.0d
-		}
-		{
-			height: 1.0d
-			image: "kubejs:block/bronze_block"
-			rotation: 45.0d
-			width: 1.0d
-			x: 14.0d
-			y: -4.0d
-		}
-		{
-			height: 1.0d
-			image: "kubejs:block/bronze_block"
-			rotation: 45.0d
-			width: 1.0d
-			x: 12.0d
 			y: -4.0d
 		}
 		{
@@ -101,6 +69,38 @@
 			width: 1.0d
 			x: 8.0d
 			y: 6.0d
+		}
+		{
+			height: 1.0d
+			image: "kubejs:block/storage_blocks/bronze_block"
+			rotation: 45.0d
+			width: 1.0d
+			x: 10.0d
+			y: -4.0d
+		}
+		{
+			height: 1.0d
+			image: "kubejs:block/storage_blocks/bronze_block"
+			rotation: 45.0d
+			width: 1.0d
+			x: 12.0d
+			y: -4.0d
+		}
+		{
+			height: 1.0d
+			image: "kubejs:block/storage_blocks/bronze_block"
+			rotation: 45.0d
+			width: 1.0d
+			x: 14.0d
+			y: -4.0d
+		}
+		{
+			height: 1.33d
+			image: "createdeco:block/palettes/catwalks/industrial_iron_catwalk"
+			rotation: 0.0d
+			width: 1.33d
+			x: 8.0d
+			y: 0.0d
 		}
 	]
 	order_index: 8

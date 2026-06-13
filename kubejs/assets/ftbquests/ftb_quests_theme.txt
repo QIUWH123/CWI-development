@@ -1,5 +1,6 @@
 [*]
-background:          ftblibrary:textures/gui/background_squares.png; color=#DCFFFFFF; tile_size=64
+background:          kubejs:textures/gui/background.png; color=#DCFFFFFF; tile_size=64
+context_background:  kubejs:textures/gui/context_background.png; color=#DCFFFFFF; tile_size=32
 extra_quest_shapes:  diamond, pentagon, hexagon, octagon, heart, gear
 selected_chapter_highlight_1: #60999999
 selected_chapter_highlight_2: #28999999
@@ -17,7 +18,7 @@ button:                hollow_rectangle:{{widget_border}}
 panel:                 {{container_slot}}
 disabled_button:       hollow_rectangle:{{widget_border}}
 hover_button:          {{button}} + {{widget_background}}; padding=1
-context_menu:          hollow_rectangle:{{widget_border}}; round_edges + {{background}}; color=#B4B4B4; padding=1
+context_menu:          hollow_rectangle:{{widget_border}}; round_edges + {{context_background}}; color=#B4B4B4; padding=1
 scroll_bar_background: {{widget_background}}
 scroll_bar:            {{button}} + {{widget_background}}; padding=1
 container_slot:        {{button}}; padding=-1

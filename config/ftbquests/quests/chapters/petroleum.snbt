@@ -19,7 +19,7 @@
 			image: "tfmg:block/plastic_block"
 			rotation: 0.0d
 			width: 1.33d
-			x: 10.0d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -40,7 +40,7 @@
 		}
 		{
 			height: 1.33d
-			image: "kubejs:block/polyvinyl_chloride_plastic_block"
+			image: "kubejs:block/storage_blocks/polyvinyl_chloride_block"
 			rotation: 0.0d
 			width: 1.33d
 			x: 10.0d
@@ -172,11 +172,11 @@
 			id: "307A621A21A3E63C"
 			shape: "square"
 			tasks: [{
-				id: "3313BA3E37382037"
-				item: "tfmg:plastic_sheet"
+				id: "08D6CDC7E43BC8DC"
+				item: "kubejs:polyethylene"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -196,7 +196,8 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["21FEFC379E961856"]
+			dependencies: ["2BB7B30F3B59D458"]
+			hide_dependency_lines: true
 			id: "28F5C1BA9431AF60"
 			tasks: [{
 				id: "7DC916E7F2D0EBDA"
@@ -389,7 +390,6 @@
 		}
 		{
 			dependencies: ["28F5C1BA9431AF60"]
-			hide_dependent_lines: true
 			id: "3FD32B9970D4E3D9"
 			tasks: [{
 				id: "246CD4E629D90A01"
@@ -403,27 +403,24 @@
 			dependencies: ["49ACE7B6A81987AA"]
 			id: "56CD87E991F1847E"
 			tasks: [{
-				id: "3CFB16199DA6D382"
-				item: "kubejs:polyvinyl_chloride_plastic_bucket"
+				id: "04F087015BC8C95A"
+				item: "kubejs:molten_polyvinyl_chloride_bucket"
 				type: "item"
 			}]
 			x: 8.0d
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"49ACE7B6A81987AA"
-				"3FD32B9970D4E3D9"
-			]
+			dependencies: ["49ACE7B6A81987AA"]
 			dependency_requirement: "one_completed"
 			id: "44136ADDCD8EAD4F"
 			tasks: [{
-				id: "555C2227885B80DA"
-				item: "tfmg:molten_plastic_bucket"
+				id: "66A3A164A1070989"
+				item: "kubejs:molten_polyethylene_bucket"
 				type: "item"
 			}]
 			x: 10.0d
-			y: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["49ACE7B6A81987AA"]
@@ -442,8 +439,8 @@
 			id: "6BED6C70FDA0D4A7"
 			shape: "square"
 			tasks: [{
-				id: "0CC27DE2339BCB98"
-				item: "kubejs:polyvinyl_chloride_plastic_sheet"
+				id: "7A4F3061E98833AE"
+				item: "kubejs:polyvinyl_chloride"
 				type: "item"
 			}]
 			x: 10.0d
@@ -459,6 +456,28 @@
 			}]
 			x: 8.0d
 			y: 4.0d
+		}
+		{
+			dependencies: ["3FD32B9970D4E3D9"]
+			id: "5C58A1D7357251A1"
+			tasks: [{
+				id: "516045C1D1967A74"
+				item: "kubejs:molten_polypropylene_bucket"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5C58A1D7357251A1"]
+			id: "5559F2157588513F"
+			tasks: [{
+				id: "10F647FCF3D43EBC"
+				item: "kubejs:polypropylene"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 2.0d
 		}
 	]
 	title: "Petroleum Industry"

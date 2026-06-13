@@ -459,7 +459,6 @@ StartupEvents.registry('item', event => {
   event.create('incomplete_steel_drill_head')
     .texture('kubejs:item/incomplete_items/incomplete_steel_drill_head')
     .maxStackSize(16)
-    .fireResistant(true)
     .rarity('uncommon')
 
   event.create('incomplete_fluid_combustion_module')
@@ -519,13 +518,11 @@ StartupEvents.registry('item', event => {
   event.create('industrial_iron_drill_head')
     .texture('kubejs:item/machine_parts/industrial_iron_drill_head')
     .maxStackSize(16)
-    .fireResistant(true)
     .rarity('uncommon')
 
   event.create('steel_drill_head')
     .texture('kubejs:item/machine_parts/steel_drill_head')
     .maxStackSize(16)
-    .fireResistant(true)
     .rarity('uncommon')
 
   event.create('industrial_pump')
