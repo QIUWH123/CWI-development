@@ -283,14 +283,14 @@ event.custom({
       "tfmg:firebrick_lined_vat"
     ],
     "ingredients": [
-      {"item": "kubejs:chloride_copper_catalyst", "count": 1},
+      {"item": "kubejs:chlorine_copper_catalyst", "count": 1},
       {"fluid": "kubejs:muriatic_acid", "amount": 1000}
     ],
     "machines": [],
     "minSize": 1,
     "processingTime": 40,
     "results": [
-      {"item": "kubejs:chloride_copper_catalyst", "count": 1},
+      {"item": "kubejs:chlorine_copper_catalyst", "count": 1},
       {"fluid": "kubejs:chlorine", "amount": 1000},
       {"fluid": "minecraft:water", "amount": 500}
     ]

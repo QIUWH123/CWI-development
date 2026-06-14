@@ -42,6 +42,15 @@ StartupEvents.registry('item', event => {
   event.create('muddy_sugar_cane')
     .texture('kubejs:item/plants/muddy_sugar_cane')
     
+  event.create('wool')
+    .texture('tfc:item/wool')
+    
+  event.create('wool_cloth')
+    .texture('tfc:item/wool_cloth')
+    
+  event.create('wool_yarn')
+    .texture('tfc:item/wool_yarn')
+    
   event.create('net')
   event.create('sponge_gemmule')
   event.create('polished_diamond')
@@ -212,29 +221,6 @@ StartupEvents.registry('item', event => {
 
 StartupEvents.registry('item', event => {
 
-//catalyst
-
-  event.create('cobalt_catalyst')
-    .texture('kubejs:item/catalysts/cobalt_catalyst')
-
-  event.create('sulfur_copper_catalyst')
-    .texture('kubejs:item/catalysts/sulfur_copper_catalyst')
-
-  event.create('chloride_copper_catalyst')
-    .texture('kubejs:item/catalysts/chloride_copper_catalyst')
-
-  event.create('iron_catalyst')
-    .texture('kubejs:item/catalysts/iron_catalyst')
-
-  event.create('nickel_catalyst')
-    .texture('kubejs:item/catalysts/nickel_catalyst')
-
-  event.create('vanadium_catalyst')
-    .texture('kubejs:item/catalysts/vanadium_catalyst')
-
-  event.create('platinum_catalyst')
-    .texture('kubejs:item/catalysts/platinum_catalyst')
-
 //normal ores
 
   event.create('sulfur')
@@ -285,7 +271,7 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/cassiterite')
 
   event.create('sphalerite')
-    .texture('kubejs:item/ores/sphalerite')
+    .texture('tfc:item/ore/rich_sphalerite')
 
   event.create('chalcocite')
     .texture('kubejs:item/ores/chalcocite')
@@ -300,13 +286,13 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/peat')
 
   event.create('lignite')
-    .texture('kubejs:item/ores/lignite')
+    .texture('tfc:item/ore/lignite')
 
   event.create('bituminous_coal')
     .texture('kubejs:item/ores/bituminous_coal')
 
   event.create('borax')
-    .texture('kubejs:item/ores/Borax Ore')
+    .texture('kubejs:item/ores/borax')
 
   event.create('malachite')
     .texture('kubejs:item/ores/malachite')
@@ -318,7 +304,7 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/magnesite')
 
   event.create('halite')
-    .texture('kubejs:item/ores/halite')
+    .texture('tfc:item/ore/halite')
 
   event.create('petzite')
     .texture('kubejs:item/ores/petzite')

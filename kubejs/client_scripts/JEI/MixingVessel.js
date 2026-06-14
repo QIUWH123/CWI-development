@@ -19,7 +19,7 @@ JEIAddedEvents.registerRecipes(event => {
         {
             inputs: [{ item: 'kubejs:copper_dust' }],
             inputFluids: [{ fluid: 'kubejs:chlorine', amount: 250 }],
-            outputs: [{ item: 'kubejs:chloride_copper_catalyst' }]
+            outputs: [{ item: 'kubejs:chlorine_copper_catalyst' }]
         },
         {
             inputs: [{ item: 'kubejs:caustic_soda_powder', count: 2 }, { item: 'kubejs:nickel_dust' }],

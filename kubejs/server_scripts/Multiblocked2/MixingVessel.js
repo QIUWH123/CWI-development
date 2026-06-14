@@ -7,11 +7,11 @@ ServerEvents.recipes(event => {
     .outputItems("kubejs:sulfur_copper_catalyst")
 
   event.recipes.cwi.mixing_vessel_mixing()
-    .id("cwi:mixing_vessel/chloride_copper_catalyst")
+    .id("cwi:mixing_vessel/chlorine_copper_catalyst")
     .priority(1).duration(40)
     .inputItems("kubejs:copper_dust")
     .inputFluids("kubejs:chlorine 250")
-    .outputItems("kubejs:chloride_copper_catalyst")
+    .outputItems("kubejs:chlorine_copper_catalyst")
 
   event.recipes.cwi.mixing_vessel_mixing()
     .id("cwi:mixing_vessel/nickel_catalyst_from_powder")
