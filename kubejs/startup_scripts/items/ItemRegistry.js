@@ -42,15 +42,6 @@ StartupEvents.registry('item', event => {
   event.create('muddy_sugar_cane')
     .texture('kubejs:item/plants/muddy_sugar_cane')
     
-  event.create('wool')
-    .texture('tfc:item/wool')
-    
-  event.create('wool_cloth')
-    .texture('tfc:item/wool_cloth')
-    
-  event.create('wool_yarn')
-    .texture('tfc:item/wool_yarn')
-    
   event.create('net')
   event.create('sponge_gemmule')
   event.create('polished_diamond')
@@ -274,7 +265,7 @@ StartupEvents.registry('item', event => {
     .texture('tfc:item/ore/rich_sphalerite')
 
   event.create('chalcocite')
-    .texture('kubejs:item/ores/chalcocite')
+    .texture('mekanism:item/raw_lead')
 
   event.create('hematite')
     .texture('kubejs:item/ores/hematite')
@@ -290,9 +281,6 @@ StartupEvents.registry('item', event => {
 
   event.create('bituminous_coal')
     .texture('kubejs:item/ores/bituminous_coal')
-
-  event.create('borax')
-    .texture('kubejs:item/ores/borax')
 
   event.create('malachite')
     .texture('kubejs:item/ores/malachite')

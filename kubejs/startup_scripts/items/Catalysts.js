@@ -1,5 +1,5 @@
 const chlorine = 0xE8FF40
-const sulfur = 0xFFE699
+const sulfur = 0xFFE14A
 
 const catalysts = [
     ['cobalt_catalyst', 'cobalt', chlorine],

@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
 
   event.shaped(
-    Item.of('sophisticatedbackpacks:upgrade_base'),
+    'sophisticatedbackpacks:upgrade_base',
     [
       'ABA',
       'BCB',

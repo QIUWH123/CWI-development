@@ -218,15 +218,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_wooden_tool')
     .mapColor('#FF5500')
 
-  event.create('borax_ore')
-    .soundType('tuff')
-    .hardness(3)
-    .resistance(6)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/pickaxe')
-    .tagBlock('minecraft:needs_wooden_tool')
-    .mapColor('#FF5500')
-
   event.create('rutile_ore')
     .soundType('amethyst')
     .hardness(3)

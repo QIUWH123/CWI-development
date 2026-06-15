@@ -1,108 +1,74 @@
+LootJS.modifiers(event => {
+    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
+        const exp = isDeepslate ? 3 : 2
+        const dustId = isDeepslate ? 'kubejs:deepslate_dust' : 'kubejs:stone_dust'
+        const dropChance = isDeepslate ? 0.75 : 0.25
+        const modifier = event.addBlockLootModifier(oreId)
+        const dropCount = isMore ? 3 : 2
+
+        modifier.dropExperience(exp).removeLoot(oreId).removeLoot(dropOreId)
+        for (let i = 0; i < dropCount; i++) modifier.addLoot(dropOreId)
+        modifier.randomChanceWithLooting(dropChance, 1).addLoot(dropOreId)
+        modifier.randomChanceWithLooting(0.3, 1).addLoot(dustId)
+    })
+})
+
 ServerEvents.recipes(event => {
+    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
+        const dustId = isDeepslate ? 'kubejs:deepslate_dust' : 'kubejs:stone_dust'
+        const dropChance = isDeepslate ? 0.75 : 0.25
+        const dropCount = isMore ? 3 : 2
+        const dropId = (crushedOreId === '') ? dropOreId : crushedOreId
+
+        const main = `${dropCount}x ${dropId}`
+        const chance = Item.of(dropId).withChance(dropChance)
+        const dust = Item.of(dustId).withChance(0.3)
+
+        if (crushedOreId === '') event.recipes.create.crushing([main, chance, dust, dust], oreId)
+        else event.recipes.create.crushing([main, main, chance, chance, dust, dust], oreId)
+
+        if (!crushedOreId === '') {
+            event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
+            event.recipes.create.milling([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
+        }
+    })
 
 //oreCrushing
 
-  event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
-  event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
-  event.recipes.create.crushing(['2x kubejs:petzite', Item.of('kubejs:petzite').withChance(0.75)], 'create:ochrum')
-  event.recipes.create.crushing(['2x kubejs:hematite', Item.of('kubejs:hematite').withChance(0.75)], 'create:crimsite')
-  event.recipes.create.crushing(['2x kubejs:malachite', Item.of('kubejs:malachite').withChance(0.75)], 'create:veridium')
-  event.recipes.create.crushing(['2x kubejs:bauxite', Item.of('kubejs:bauxite').withChance(0.75)], 'tfmg:bauxite')
-  event.recipes.create.crushing(['2x kubejs:lignite', Item.of('kubejs:lignite').withChance(0.75)], 'tfmg:lignite')
-  event.recipes.create.crushing(['2x kubejs:galena', Item.of('kubejs:galena').withChance(0.75)], 'tfmg:galena')
-  event.recipes.create.crushing(['2x kubejs:cassiterite', Item.of('kubejs:cassiterite').withChance(0.75)], 'kubejs:cassiterite_ore')
-  event.recipes.create.crushing(['2x kubejs:magnetite', Item.of('kubejs:magnetite').withChance(0.75)], 'kubejs:magnetite_ore')
-  event.recipes.create.crushing(['2x kubejs:chalcocite', Item.of('kubejs:chalcocite').withChance(0.75)], 'kubejs:chalcocite_ore')
-  event.recipes.create.crushing(['2x kubejs:chromite', Item.of('kubejs:chromite').withChance(0.75)], 'kubejs:chromite_ore')
-  event.recipes.create.crushing(['2x kubejs:cooperite', Item.of('kubejs:cooperite').withChance(0.75)], 'kubejs:cooperite_ore')
-  event.recipes.create.crushing(['2x kubejs:magnesite', Item.of('kubejs:magnesite').withChance(0.75)], 'kubejs:magnesite_ore')
-  event.recipes.create.crushing(['2x kubejs:pentlandite', Item.of('kubejs:pentlandite').withChance(0.75)], 'kubejs:pentlandite_ore')
-  event.recipes.create.crushing(['2x kubejs:sphalerite', Item.of('kubejs:sphalerite').withChance(0.75)], 'kubejs:sphalerite_ore')
-  event.recipes.create.crushing(['2x kubejs:uraninite', Item.of('kubejs:uraninite').withChance(0.75)], 'kubejs:uraninite_ore')
-  event.recipes.create.crushing(['2x kubejs:rutile', Item.of('kubejs:rutile').withChance(0.75)], 'kubejs:rutile_ore')
-  
-  const doubleOreEntries = [
-    { shallow: 'minecraft:iron_ore', deep: 'minecraft:deepslate_iron_ore', output: 'create:crushed_raw_iron' },
-    { shallow: 'minecraft:coal_ore', deep: 'minecraft:deepslate_coal_ore', output: 'minecraft:coal' },
-    { shallow: 'minecraft:copper_ore', deep: 'minecraft:deepslate_copper_ore', output: 'create:crushed_raw_copper' },
-    { shallow: 'minecraft:redstone_ore', deep: 'minecraft:deepslate_redstone_ore', output: 'minecraft:redstone' },
-    { shallow: 'minecraft:lapis_ore', deep: 'minecraft:deepslate_lapis_ore', output: 'kubejs:lapis_dust' },
-    { shallow: 'kubejs:quartz_ore', deep: 'kubejs:deepslate_quartz_ore', output: 'kubejs:quartz_dust' },
-    { shallow: 'kubejs:fluorite_ore', deep: 'kubejs:deepslate_fluorite_ore', output: 'kubejs:fluorite_dust' },
-    { shallow: 'kubejs:sulfur_ore', deep: 'kubejs:deepslate_sulfur_ore', output: 'tfmg:sulfur_dust' }
-  ];
+    event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
+    event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
+    event.recipes.create.crushing(['2x kubejs:petzite', Item.of('kubejs:petzite').withChance(0.75)], 'create:ochrum')
+    event.recipes.create.crushing(['2x kubejs:hematite', Item.of('kubejs:hematite').withChance(0.75)], 'create:crimsite')
+    event.recipes.create.crushing(['2x kubejs:malachite', Item.of('kubejs:malachite').withChance(0.75)], 'create:veridium')
+    event.recipes.create.crushing(['2x kubejs:bauxite', Item.of('kubejs:bauxite').withChance(0.75)], 'tfmg:bauxite')
+    event.recipes.create.crushing(['2x kubejs:lignite', Item.of('kubejs:lignite').withChance(0.75)], 'tfmg:lignite')
+    event.recipes.create.crushing(['2x kubejs:galena', Item.of('kubejs:galena').withChance(0.75)], 'tfmg:galena')
+    event.recipes.create.crushing(['2x kubejs:cassiterite', Item.of('kubejs:cassiterite').withChance(0.75)], 'kubejs:cassiterite_ore')
+    event.recipes.create.crushing(['2x kubejs:magnetite', Item.of('kubejs:magnetite').withChance(0.75)], 'kubejs:magnetite_ore')
+    event.recipes.create.crushing(['2x kubejs:chalcocite', Item.of('kubejs:chalcocite').withChance(0.75)], 'kubejs:chalcocite_ore')
+    event.recipes.create.crushing(['2x kubejs:chromite', Item.of('kubejs:chromite').withChance(0.75)], 'kubejs:chromite_ore')
+    event.recipes.create.crushing(['2x kubejs:cooperite', Item.of('kubejs:cooperite').withChance(0.75)], 'kubejs:cooperite_ore')
+    event.recipes.create.crushing(['2x kubejs:magnesite', Item.of('kubejs:magnesite').withChance(0.75)], 'kubejs:magnesite_ore')
+    event.recipes.create.crushing(['2x kubejs:pentlandite', Item.of('kubejs:pentlandite').withChance(0.75)], 'kubejs:pentlandite_ore')
+    event.recipes.create.crushing(['2x kubejs:sphalerite', Item.of('kubejs:sphalerite').withChance(0.75)], 'kubejs:sphalerite_ore')
+    event.recipes.create.crushing(['2x kubejs:uraninite', Item.of('kubejs:uraninite').withChance(0.75)], 'kubejs:uraninite_ore')
+    event.recipes.create.crushing(['2x kubejs:rutile', Item.of('kubejs:rutile').withChance(0.75)], 'kubejs:rutile_ore')
 
-  const singleOreEntries = [
-    { shallow: 'minecraft:gold_ore', deep: 'minecraft:deepslate_gold_ore', output: 'create:crushed_raw_gold' },
-    { shallow: 'create:zinc_ore', deep: 'create:deepslate_zinc_ore', output: 'create:crushed_raw_zinc' },
-    { shallow: 'minecraft:diamond_ore', deep: 'minecraft:deepslate_diamond_ore', output: 'minecraft:diamond' },
-    { shallow: 'minecraft:emerald_ore', deep: 'minecraft:deepslate_emerald_ore', output: 'minecraft:emerald' },
-    { shallow: 'tfmg:nickel_ore', deep: 'tfmg:deepslate_nickel_ore', output: 'create:crushed_raw_nickel' },
-    { shallow: 'tfmg:lead_ore', deep: 'tfmg:deepslate_lead_ore', output: 'create:crushed_raw_lead' },
-    { shallow: 'tfmg:lithium_ore', deep: 'tfmg:deepslate_lithium_ore', output: 'tfmg:crushed_raw_lithium' },
-    { shallow: 'kubejs:tin_ore', deep: 'kubejs:deepslate_tin_ore', output: 'kubejs:crushed_raw_tin' },
-    { shallow: 'kubejs:cobalt_ore', deep: 'kubejs:deepslate_cobalt_ore', output: 'kubejs:crushed_raw_cobalt' },
-    { shallow: 'kubejs:silver_ore', deep: 'kubejs:deepslate_silver_ore', output: 'kubejs:crushed_raw_silver' }
-  ];
-
-  doubleOreEntries.forEach(entry => {
-    const { shallow, deep, output } = entry;
-    if (shallow) {
-      event.recipes.create.crushing([
-        `4x ${output}`,
-        Item.of(`2x ${output}`).withChance(0.75)
-      ], shallow);
-    }
-    if (deep) {
-      event.recipes.create.crushing([
-        `6x ${output}`,
-        Item.of(`2x ${output}`).withChance(0.75)
-      ], deep);
-    }
-  });
-
-  singleOreEntries.forEach(entry => {
-    const { shallow, deep, output } = entry;
-    if (shallow) {
-      event.recipes.create.crushing([
-        `2x ${output}`,
-        Item.of(output).withChance(0.75)
-      ], shallow);
-    }
-    if (deep) {
-      event.recipes.create.crushing([
-        `3x ${output}`,
-        Item.of(output).withChance(0.75)
-      ], deep);
-    }
-  });
-  
-  event.recipes.create.crushing(['kubejs:crushed_raw_silver', Item.of('kubejs:crushed_raw_silver').withChance(0.75)], 'kubejs:raw_silver')
-  event.recipes.create.crushing(['kubejs:crushed_raw_tin', Item.of('kubejs:crushed_raw_tin').withChance(0.75)], 'kubejs:raw_tin')
-  event.recipes.create.crushing(['kubejs:crushed_raw_cobalt', Item.of('kubejs:crushed_raw_cobalt').withChance(0.75)], 'kubejs:raw_cobalt')
-  event.recipes.create.crushing(['create:crushed_raw_zinc', Item.of('create:crushed_raw_zinc').withChance(0.75)], 'create:raw_zinc')
-  event.recipes.create.crushing(['create:crushed_raw_lead', Item.of('create:crushed_raw_lead').withChance(0.75)], 'tfmg:raw_lead')
-  event.recipes.create.crushing(['create:crushed_raw_nickel', Item.of('create:crushed_raw_nickel').withChance(0.75)], 'tfmg:raw_nickel')
-  event.recipes.create.crushing(['tfmg:crushed_raw_lithium', Item.of('tfmg:crushed_raw_lithium').withChance(0.75)], 'tfmg:raw_lithium')
-  event.recipes.create.crushing(['create:crushed_raw_iron', Item.of('create:crushed_raw_iron').withChance(0.75)], 'minecraft:raw_iron')
-  event.recipes.create.crushing(['create:crushed_raw_copper', Item.of('create:crushed_raw_copper').withChance(0.75)], 'minecraft:raw_copper')
-  event.recipes.create.crushing(['create:crushed_raw_gold', Item.of('create:crushed_raw_gold').withChance(0.75)], 'minecraft:raw_gold')
+    const ores = [
+        ['kubejs:halite_dust', 'kubejs:halite'],
+        ['kubejs:magnesite_dust', 'kubejs:magnesite'],
+        ['tfmg:bauxite_powder', 'kubejs:bauxite'],
+        ['kubejs:flint_dust', 'minecraft:flint'],
+        ['kubejs:charcoal_dust', 'minecraft:charcoal'],
+    ]
+    
+    ores.forEach(([crushedOreId, oreId]) => {
+        event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
+    })
 
 //dusts
 
 //ores
-
-  event.recipes.create.milling('tfmg:sulfur_dust', 'kubejs:sulfur')
-  event.recipes.create.milling('minecraft:redstone', 'kubejs:redstone')
-  event.recipes.create.milling('kubejs:lapis_dust', 'minecraft:lapis_lazuli')
-  event.recipes.create.milling('kubejs:coal_dust', 'minecraft:coal')
-  event.recipes.create.milling('kubejs:charcoal_dust', 'minecraft:charcoal')
-  event.recipes.create.milling('kubejs:flint_dust', 'minecraft:flint')
-  event.recipes.create.milling('kubejs:quartz_dust', 'minecraft:quartz')
-  event.recipes.create.milling('kubejs:fluorite_dust', 'kubejs:fluorite')
-  event.recipes.create.milling('tfmg:bauxite_powder', 'kubejs:bauxite')
-  event.recipes.create.milling('kubejs:magnesite_dust', 'kubejs:magnesite')
-  event.recipes.create.milling('kubejs:halite_dust', 'kubejs:halite')
 
   event.recipes.create.milling('kubejs:magnesium_dust', 'kubejs:magnesium_ingot')
   event.recipes.create.milling('kubejs:silicon_dust', 'tfmg:silicon_ingot')

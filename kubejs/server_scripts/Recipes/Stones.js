@@ -21,7 +21,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.compacting(raw, cobbled).superheated()
   })
 
-//recipes
+// Recipes
 
   event.recipes.create.mixing(['kubejs:granite_gravel'], ['kubejs:quartz_dust', 'minecraft:gravel', Fluid.of('minecraft:lava', 250)]).heated()
   event.recipes.create.compacting(['kubejs:granite_gravel'], ['kubejs:quartz_dust', 'minecraft:gravel']).superheated()
