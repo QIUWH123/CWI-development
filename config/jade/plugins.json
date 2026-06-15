@@ -1,4 +1,7 @@
 {
+  "nebula_libs": {
+    "common": true
+  },
   "minecraft": {
     "item_storage.show_name_amount": 5,
     "furnace": true,
@@ -79,9 +82,6 @@
   "expatternprovider": {
     "jade_chamber": true,
     "jade_wireless": true
-  },
-  "astages": {
-    "block_component_provider": true
   },
   "functionalstorage": {
     "armory": true

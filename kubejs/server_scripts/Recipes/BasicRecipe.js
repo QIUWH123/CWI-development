@@ -194,7 +194,6 @@ ServerEvents.recipes(event => {
   addStoragePair('kubejs:silver_ingot', 'kubejs:silver_nugget', 9)
   addStoragePair('kubejs:molybdenum_block', 'kubejs:molybdenum_ingot', 9)
   addStoragePair('kubejs:molybdenum_ingot', 'kubejs:molybdenum_nugget', 9)
-  addStoragePair('kubejs:raw_cobalt_block', 'kubejs:raw_cobalt', 9)
   addStoragePair('kubejs:cobalt_block', 'kubejs:cobalt_ingot', 9)
   addStoragePair('kubejs:cobalt_ingot', 'kubejs:cobalt_nugget', 9)
   addStoragePair('kubejs:rusted_iron_block', 'kubejs:rusted_iron_ingot', 9)

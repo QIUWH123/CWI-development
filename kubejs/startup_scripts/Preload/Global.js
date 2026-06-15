@@ -81,8 +81,6 @@ global.oreTypes = [
     ['minecraft:deepslate_redstone_ore', 'kubejs:redstone', 'minecraft:redstone', true, false],
     ['kubejs:silver_ore', 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', false, false],
     ['kubejs:deepslate_silver_ore', 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', true, false],
-    ['kubejs:cobalt_ore', 'kubejs:raw_cobalt', 'kubejs:crushed_raw_cobalt', false, false],
-    ['kubejs:deepslate_cobalt_ore', 'kubejs:raw_cobalt', 'kubejs:crushed_raw_cobalt', true, false],
     ['kubejs:tin_ore', 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', false, false],
     ['kubejs:deepslate_tin_ore', 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', true, false],
     ['minecraft:gold_ore', 'minecraft:raw_gold', 'create:crushed_raw_gold', false, false],

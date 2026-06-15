@@ -2,12 +2,12 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "kubejs:block/observer_back",
-		"2": "kubejs:block/observer_front",
-		"4": "kubejs:block/observer_top",
+		"0": "kubejs:block/observer/observer_back",
+		"2": "kubejs:block/observer/observer_front",
+		"4": "kubejs:block/observer/observer_top",
 		"6": "create:block/smart_observer_bottom",
-		"7": "kubejs:block/observer_side",
-		"particle": "kubejs:block/observer_front"
+		"7": "kubejs:block/observer/observer_side",
+		"particle": "kubejs:block/observer/observer_front"
 	},
 	"elements": [
 		{

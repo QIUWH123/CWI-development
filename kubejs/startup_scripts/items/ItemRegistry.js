@@ -223,17 +223,11 @@ StartupEvents.registry('item', event => {
   event.create('fluorite')
     .texture('kubejs:item/ores/fluorite')
 
-  event.create('raw_cobalt')
-    .texture('kubejs:item/ores/raw_cobalt')
-
   event.create('raw_silver')
     .texture('kubejs:item/ores/raw_silver')
 
   event.create('raw_tin')
     .texture('kubejs:item/ores/raw_tin')
-
-  event.create('crushed_raw_cobalt')
-    .texture('kubejs:item/materials/crushed_raw_cobalt')
 
   event.create('crushed_raw_silver')
     .texture('kubejs:item/materials/crushed_raw_silver')

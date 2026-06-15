@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "kubejs:block/uraninite_ore_top",
-    "side": "kubejs:block/uraninite_ore_side"
+    "end": "kubejs:block/ores/uraninite_ore_top",
+    "side": "kubejs:block/ores/uraninite_ore_side"
   }
 }

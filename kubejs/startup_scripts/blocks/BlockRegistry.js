@@ -165,6 +165,7 @@ StartupEvents.registry('block', event => {
 //compound minerals
 
   event.create('cassiterite_ore')
+    .textureAll('kubejs:block/ores/cassiterite')
     .stoneSoundType()
     .hardness(4)
     .resistance(6)
@@ -192,6 +193,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('magnesite_ore')
+    .textureAll('kubejs:block/ores/magnesite')
     .stoneSoundType()
     .hardness(2.5)
     .resistance(5)
@@ -201,6 +203,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('magnetite_ore')
+    .textureAll('kubejs:block/ores/magnetite')
     .stoneSoundType()
     .hardness(5)
     .resistance(8)
@@ -210,6 +213,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('halite_ore')
+    .textureAll('kubejs:block/ores/halite')
     .soundType('calcite')
     .hardness(3)
     .resistance(6)
@@ -237,6 +241,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('chromite_ore')
+    .textureAll('kubejs:block/ores/chromite')
     .stoneSoundType()
     .hardness(4)
     .resistance(6)
@@ -246,6 +251,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('pentlandite_ore')
+    .textureAll('kubejs:block/ores/pentlandite')
     .stoneSoundType()
     .hardness(3)
     .resistance(6)
@@ -255,6 +261,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('sphalerite_ore')
+    .textureAll('kubejs:block/ores/sphalerite')
     .stoneSoundType()
     .hardness(3)
     .resistance(6)
@@ -274,7 +281,6 @@ StartupEvents.registry('block', event => {
     { name: 'industrial_rubber_block',   sound: 'wool',  hardness: 3, resistance: 4,  tool: 'axe',     needsTool: false, tier: null },
     { name: 'rusted_iron_block',         sound: 'stone', hardness: 4, resistance: 5,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
     { name: 'bronze_block',              sound: 'stone', hardness: 5, resistance: 6,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
-    { name: 'raw_cobalt_block',          sound: 'stone', hardness: 5, resistance: 6,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
     { name: 'cobalt_block',              sound: 'stone', hardness: 5, resistance: 6,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
     { name: 'magnesium_block',           sound: 'stone', hardness: 5, resistance: 6,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
     { name: 'charcoal_block',            sound: 'stone', hardness: 5, resistance: 6,  tool: 'pickaxe', needsTool: true,  tier: 'stone' },
@@ -337,15 +343,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_iron_tool')
     .mapColor('#FF5500')
 
-  event.create('cobalt_ore')
-    .stoneSoundType()
-    .hardness(3)
-    .resistance(3)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/pickaxe')
-    .tagBlock('minecraft:needs_iron_tool')
-    .mapColor('#FF5500')
-
   event.create('fluorite_ore')
     .stoneSoundType()
     .hardness(3)
@@ -385,15 +382,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('deepslate_quartz_ore')
-    .soundType('deepslate')
-    .hardness(3)
-    .resistance(4.5)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/pickaxe')
-    .tagBlock('minecraft:needs_stone_tool')
-    .mapColor('#FF5500')
-
-  event.create('deepslate_cobalt_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
