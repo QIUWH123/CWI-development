@@ -8,9 +8,17 @@ ServerEvents.recipes(event => {
 
   event.remove({ id: 'naturescompass:natures_compass' })
 
+//multiblocked2
+
+  event.remove({ id: 'mbd2:mbd_gadgets' })
+
 //adAstra
 
   event.remove({ mod: 'ad_astra' })
+
+//functinoalStorage
+
+  event.remove({ mod: 'functionalstorage' })
 
 //create_rns
 
@@ -44,11 +52,7 @@ ServerEvents.recipes(event => {
 
   event.remove({ mod: 'sgjourney' })
 
-})
-
 //sophisticatedbackpacks
-
-ServerEvents.recipes(event => {
 
   event.remove({ mod: 'sophisticatedbackpacks' })
 
@@ -103,7 +107,6 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
 
-  event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -764,59 +767,6 @@ ServerEvents.recipes(event => {
 
 })
 
-//functionalStorage
-
-ServerEvents.recipes(event => {
-
-  event.remove({ id: 'functionalstorage:oak_drawer_alternate_x1' })
-  event.remove({ id: 'functionalstorage:oak_drawer_alternate_x2' })
-  event.remove({ id: 'functionalstorage:oak_drawer_alternate_x4' })
-  event.remove({ id: 'functionalstorage:compacting_drawer' })
-  event.remove({ id: 'functionalstorage:compacting_framed_drawer' })
-  event.remove({ id: 'functionalstorage:storage_controller' })
-  event.remove({ id: 'functionalstorage:framed_storage_controller' })
-  event.remove({ id: 'functionalstorage:controller_extension' })
-  event.remove({ id: 'functionalstorage:framed_controller_extension' })
-  event.remove({ id: 'functionalstorage:simple_compacting_drawer' })
-  event.remove({ id: 'functionalstorage:framed_simple_compacting_drawer' })
-  event.remove({ id: 'functionalstorage:armory_cabinet' })
-  event.remove({ id: 'functionalstorage:netherite_upgrade' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: 'functionalstorage:fluid_1' })
-  event.remove({ id: 'functionalstorage:fluid_2' })
-  event.remove({ id: 'functionalstorage:fluid_4' })
-  event.remove({ id: '' })
-  event.remove({ id: 'functionalstorage:ender_drawer' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: 'functionalstorage:custom_compacting/melon' })
-  event.remove({ id: 'functionalstorage:custom_compacting/quartz' })
-  event.remove({ id: 'functionalstorage:custom_compacting/clay' })
-  event.remove({ id: 'functionalstorage:custom_compacting/glowstone' })
-  event.remove({ id: 'functionalstorage:custom_compacting/packed_ice' })
-  event.remove({ id: 'functionalstorage:custom_compacting/ice' })
-  event.remove({ id: 'functionalstorage:custom_compacting/amethyst' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-
-})
-
 //ratatouille
 
 ServerEvents.recipes(event => {
@@ -1085,6 +1035,12 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: 'minecraft:chain' })
+  event.remove({ id: 'create:crafting/appliances/chain_from_zinc' })
   event.remove({ id: 'create:crafting/kinetics/schedule' })
   event.remove({ id: 'create:crafting/kinetics/filter' })
   event.remove({ id: 'create:crafting/kinetics/attribute_filter' })

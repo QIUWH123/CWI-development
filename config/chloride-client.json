@@ -14,7 +14,7 @@
   "fogOnEnd": true,
   "blueBand": true,
   "customFog": true,
-  "fogStart": 0,
+  "fogStart": -50,
   "fogEnd": 192,
   "fogShape": "CYLINDER",
   "cloudsHeight": 192,
