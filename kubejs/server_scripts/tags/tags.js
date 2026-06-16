@@ -101,7 +101,7 @@ ServerEvents.tags('item', event => {
   event.add('cwi:rubber', ['tfmg:rubber_sheet', 'kubejs:rubber'])
 
   //clay
-  event.add('cwi:clay', ['minecraft:clay', 'kubejs:clay_dust'])
+  event.add('cwi:clay', ['minecraft:clay', 'kubejs:clay_powder'])
 
   //feather
   event.add('cwi:feather', ['kubejs:synthetic_leather', 'minecraft:feather'])
@@ -114,9 +114,9 @@ ServerEvents.tags('item', event => {
 
   //deoxidizer
   event.add('cwi:deoxidizer', [
-    'kubejs:silicon_dust',
-    'kubejs:aluminum_dust',
-    'kubejs:magnesium_dust'
+    'kubejs:silicon_powder',
+    'kubejs:aluminum_powder',
+    'kubejs:magnesium_powder'
   ])
 
   //stickyMaterials

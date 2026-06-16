@@ -38,7 +38,7 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.filling(fermento_transition, [fermento_transition, Fluid.of('kubejs:syrup', 500)]),
             event.recipes.create.filling(fermento_transition, [fermento_transition, Fluid.of('kubejs:ammonia', 100)]),
-            event.recipes.create.deploying(fermento_transition, [fermento_transition, 'kubejs:bone_dust']),
+            event.recipes.create.deploying(fermento_transition, [fermento_transition, 'kubejs:bone_powder']),
             event.recipes.create.filling(fermento_transition, [fermento_transition, Fluid.of('kubejs:distilled_water', 250)])
         ]
     ).transitionalItem(fermento_transition).loops(1);
@@ -60,8 +60,8 @@ ServerEvents.recipes(event => {
         'kubejs:heap_acidolys_bacillus_agar_plate',
         'kubejs:inoculated_acidolys_bacillus_petri_dish',
         [
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_dust']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_powder']),
             event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'tfmg:sulfur_dust']),
             event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'tfmg:sulfur_dust']),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:distilled_water', 500)])
@@ -72,10 +72,10 @@ ServerEvents.recipes(event => {
         'kubejs:efficient_acidolys_bacillus_agar_plate',
         'kubejs:inoculated_acidolys_bacillus_petri_dish',
         [
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_dust']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:oxygen', 200)]),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('tfmg:sulfuric_acid', 500)])
         ]
@@ -85,10 +85,10 @@ ServerEvents.recipes(event => {
         'kubejs:specialized_acidolys_bacillus_agar_plate',
         'kubejs:inoculated_acidolys_bacillus_petri_dish',
         [
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:copper_dust']),
-            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:silver_dust']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:iron_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:copper_powder']),
+            event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:silver_powder']),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:ferric_chloride', 250)]),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:distilled_water', 250)])
         ]
@@ -160,7 +160,7 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.filling(carbofusor_transition, [carbofusor_transition, Fluid.of('kubejs:syngas', 600)]),
             event.recipes.create.deploying(carbofusor_transition, [carbofusor_transition, 'kubejs:iron_catalyst']),
-            event.recipes.create.deploying(carbofusor_transition, [carbofusor_transition, 'kubejs:copper_dust'])
+            event.recipes.create.deploying(carbofusor_transition, [carbofusor_transition, 'kubejs:copper_powder'])
         ]
     ).transitionalItem(carbofusor_transition).loops(1);
 
@@ -183,7 +183,7 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.deploying(putrelys_transition, [putrelys_transition, 'minecraft:rotten_flesh']),
             event.recipes.create.deploying(putrelys_transition, [putrelys_transition, 'minecraft:rotten_flesh']),
-            event.recipes.create.deploying(putrelys_transition, [putrelys_transition, 'kubejs:bone_dust']),
+            event.recipes.create.deploying(putrelys_transition, [putrelys_transition, 'kubejs:bone_powder']),
             event.recipes.create.filling(putrelys_transition, [putrelys_transition, Fluid.of('kubejs:ammonia', 200)]),
             event.recipes.create.filling(putrelys_transition, [putrelys_transition, Fluid.of('kubejs:distilled_water', 250)])
         ]
@@ -210,7 +210,7 @@ ServerEvents.recipes(event => {
             event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'minecraft:sugar']),
             event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'minecraft:sugar']),
             event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'minecraft:sugar']),
-            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:bone_dust']),
+            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:bone_powder']),
             event.recipes.create.filling(nitrofix_transition, [nitrofix_transition, Fluid.of('kubejs:nitrogen', 500)]),
             event.recipes.create.filling(nitrofix_transition, [nitrofix_transition, Fluid.of('kubejs:distilled_water', 300)])
         ]
@@ -220,8 +220,8 @@ ServerEvents.recipes(event => {
         'kubejs:phototrophic_nitrofix_rhizobium_agar_plate',
         'kubejs:inoculated_nitrofix_rhizobium_petri_dish',
         [
-            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:molybdenum_dust']),
-            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:molybdenum_dust']),
+            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:molybdenum_powder']),
+            event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'kubejs:molybdenum_powder']),
             event.recipes.create.deploying(nitrofix_transition, [nitrofix_transition, 'minecraft:amethyst_shard']),
             event.recipes.create.filling(nitrofix_transition, [nitrofix_transition, Fluid.of('kubejs:ammonia', 300)]),
             event.recipes.create.filling(nitrofix_transition, [nitrofix_transition, Fluid.of('kubejs:distilled_water', 400)])
@@ -247,8 +247,8 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'minecraft:quartz']),
             event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'minecraft:quartz']),
-            event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'kubejs:bone_dust']),
-            event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'kubejs:bone_dust']),
+            event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'kubejs:bone_powder']),
+            event.recipes.create.deploying(crystallum_transition, [crystallum_transition, 'kubejs:bone_powder']),
             event.recipes.create.filling(crystallum_transition, [crystallum_transition, Fluid.of('kubejs:distilled_water', 500)])
         ]
     ).transitionalItem(crystallum_transition).loops(1);

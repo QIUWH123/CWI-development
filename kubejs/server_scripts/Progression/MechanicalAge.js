@@ -49,20 +49,10 @@ ServerEvents.recipes(event => {
   )
 
   event.shapeless(
-    Item.of('kubejs:andesite_compound',3),
+    Item.of('kubejs:andesite_compound',2),
     [
       '3x minecraft:clay_ball',
-      '3x kubejs:ash_dust',
-      '3x kubejs:andesite_gravel'
-    ]
-  )
-
-  event.shapeless(
-    Item.of('kubejs:andesite_compound',3),
-    [
-      '3x minecraft:clay_ball',
-      '3x kubejs:ash_dust',
-      '3x kubejs:cobbled_andesite'
+      '3x kubejs:andesite_powder'
     ]
   )
 
@@ -863,7 +853,7 @@ ServerEvents.recipes(event => {
   event.recipes.create.mixing('minecraft:beetroot_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_beetroot_seeds'])
   event.recipes.create.mixing('farmersdelight:tomato_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_tomato_seeds'])
   event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_cabbage_seeds'])
-  event.recipes.create.mixing('kubejs:andesite_compound', ['minecraft:clay_ball', 'kubejs:andesite_dust'])
+  event.recipes.create.mixing('kubejs:andesite_compound', ['minecraft:clay_ball', 'kubejs:andesite_powder'])
 
   event.recipes.create.cutting(['kubejs:precision_manual', 'kubejs:the_precision_manufacturing_engineers_log'], 'kubejs:package')
 

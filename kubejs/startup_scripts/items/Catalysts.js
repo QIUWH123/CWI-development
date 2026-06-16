@@ -15,7 +15,7 @@ StartupEvents.registry('item', event => {
     catalysts.forEach(([name, base, type]) => {
         event.create(name)
             .textureJson({
-                layer0: `kubejs:item/dusts/${base}_dust`,
+                layer0: `kubejs:item/powders/${base}_powder`,
                 layer1: 'kubejs:item/catalyst'
             })
             .color(1, type)

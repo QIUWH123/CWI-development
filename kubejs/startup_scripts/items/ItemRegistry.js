@@ -156,28 +156,30 @@ StartupEvents.registry('item', event => {
 
 StartupEvents.registry('item', event => {
 
-  event.create('heated_powdered_obsidian')
-  event.create('caustic_soda_powder')
-  event.create('sodium_bisulfate_powder')
-  event.create('calcium_chloride_powder')
-  event.create('lignin_powder')
+    event.create('heated_powdered_obsidian')
+    event.create('caustic_soda_powder')
+    event.create('sodium_bisulfate_powder')
+    event.create('calcium_chloride_powder')
+    event.create('lignin_powder')
+    event.create('pyrite_powder')
+    event.create('ash')
+    event.create('dark_ash')
 
-  const dusts = [
-    'bone_dust', 'quartz_dust', 'fluorite_dust', 'diamond_dust', 'coal_dust',
-    'gold_dust', 'iron_dust', 'lapis_dust', 'copper_dust', 'brass_dust',
-    'cobalt_dust', 'magnesium_dust', 'zinc_dust', 'vanadium_dust', 'silicon_dust',
-    'charcoal_dust', 'andesite_alloy_dust', 'nickel_dust', 'lead_dust',
-    'cast_iron_dust', 'lithium_dust', 'bronze_dust', 'electrum_dust',
-    'constantan_dust', 'silver_dust', 'tin_dust', 'aluminum_dust', 'molybdenum_dust',
-    'industrial_iron_dust', 'steel_dust', 'halite_dust', 'magnesite_dust',
-    'lignite_dust', 'flint_dust', 'ash_dust', 'dark_ash_dust',
-    'clay_dust', 'stone_dust', 'deepslate_dust', 'tuff_dust', 'claystone_dust',
-    'granite_dust', 'diorite_dust', 'andesite_dust', 'basalt_dust', 'schist_dust',
-    'gneiss_dust', 'rhyolite_dust', 'shale_dust', 'quartzite_dust',
-    'conglomerate_dust', 'phyllite_dust', 'darkslate_dust', 'pyrite_dust'
-  ]
+    const powders = [
+        'bone_powder', 'quartz_powder', 'fluorite_powder', 'diamond_powder', 'coal_powder',
+        'gold_powder', 'iron_powder', 'lapis_powder', 'copper_powder', 'brass_powder',
+        'cobalt_powder', 'magnesium_powder', 'zinc_powder', 'vanadium_powder', 'silicon_powder',
+        'charcoal_powder', 'andesite_alloy_powder', 'nickel_powder', 'lead_powder',
+        'cast_iron_powder', 'lithium_powder', 'bronze_powder', 'electrum_powder',
+        'constantan_powder', 'silver_powder', 'tin_powder', 'aluminum_powder', 'molybdenum_powder',
+        'industrial_iron_powder', 'steel_powder', 'halite_powder', 'magnesite_powder',
+        'lignite_powder', 'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
+        'clay_powder', 'stone_powder', 'deepslate_powder', 'tuff_powder', 'claystone_powder',
+        'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',
+        'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder'
+    ]
 
-  dusts.forEach(dust => {event.create(dust).texture(`kubejs:item/dusts/${dust}`).tag('cwi:dusts')})
+    powders.forEach(powder => {event.create(powder).texture(`kubejs:item/dusts/${powder}`).tag('cwi:powders')})
 
 })
 
@@ -372,13 +374,13 @@ StartupEvents.registry('item', event => {
 
   event.create('heated_industrial_iron_ingot')
 
-  event.create('carbon_fiber_composite_sheet')
+  event.create('carbon_fiber_composite_sheet').texture('kubejs:item/carbon_fibers/carbon_fiber_composite_sheet')
 
-  event.create('carbon_fiber_strands')
+  event.create('carbon_fiber_strands').texture('kubejs:item/carbon_fibers/carbon_fiber_strands')
 
-  event.create('stabilized_fibers')
+  event.create('stabilized_fibers').texture('kubejs:item/carbon_fibers/stabilized_fibers')
 
-  event.create('pan_fibers')
+  event.create('pan_fibers').texture('kubejs:item/carbon_fibers/pan_fibers')
 
 //incomplete items
 

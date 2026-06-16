@@ -13,20 +13,20 @@ JEIAddedEvents.registerRecipes(event => {
 
     const recipes = [
         {
-            inputs: [{ item: 'tfmg:sulfur_dust', count: 2 }, { item: 'kubejs:copper_dust' }],
+            inputs: [{ item: 'tfmg:sulfur_dust', count: 2 }, { item: 'kubejs:copper_powder' }],
             outputs: [{ item: 'kubejs:sulfur_copper_catalyst' }]
         },
         {
-            inputs: [{ item: 'kubejs:copper_dust' }],
+            inputs: [{ item: 'kubejs:copper_powder' }],
             inputFluids: [{ fluid: 'kubejs:chlorine', amount: 250 }],
             outputs: [{ item: 'kubejs:chlorine_copper_catalyst' }]
         },
         {
-            inputs: [{ item: 'kubejs:caustic_soda_powder', count: 2 }, { item: 'kubejs:nickel_dust' }],
+            inputs: [{ item: 'kubejs:caustic_soda_powder', count: 2 }, { item: 'kubejs:nickel_powder' }],
             outputs: [{ item: 'kubejs:nickel_catalyst' }]
         },
         {
-            inputs: [{ item: 'kubejs:nickel_dust' }],
+            inputs: [{ item: 'kubejs:nickel_powder' }],
             inputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 250 }],
             outputs: [{ item: 'kubejs:nickel_catalyst' }]
         },
@@ -41,12 +41,12 @@ JEIAddedEvents.registerRecipes(event => {
             outputFluids: [{ fluid: 'kubejs:brine', amount: 125 }]
         },
         {
-            inputs: [{ item: 'kubejs:halite_dust' }],
+            inputs: [{ item: 'kubejs:halite_powder' }],
             inputFluids: [{ fluid: 'minecraft:water', amount: 125 }],
             outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
         },
         {
-            inputs: [{ item: 'kubejs:halite_dust' }],
+            inputs: [{ item: 'kubejs:halite_powder' }],
             inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
             outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
         },

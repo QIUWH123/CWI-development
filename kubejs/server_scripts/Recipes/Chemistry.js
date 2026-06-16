@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
 
 //mixing
 
-  event.recipes.create.mixing('3x kubejs:pyrite_dust', ['2x tfmg:sulfur_dust','kubejs:iron_dust']).heated()
+  event.recipes.create.mixing('3x kubejs:pyrite_powder', ['2x tfmg:sulfur_dust','kubejs:iron_powder']).heated()
   event.recipes.create.mixing('kubejs:caustic_soda_powder', Fluid.of('kubejs:caustic_soda', 125)).heated()
   event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:brine', 125)).heated()
   event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
@@ -10,8 +10,8 @@ ServerEvents.recipes(event => {
   event.recipes.create.mixing(Fluid.of('kubejs:caustic_soda', 125), ['kubejs:caustic_soda_powder', Fluid.of('kubejs:distilled_water', 125)])
   event.recipes.create.mixing(Fluid.of('kubejs:syrup', 125), [Fluid.of('kubejs:distilled_water', 125), 'minecraft:sugar'])
   event.recipes.create.mixing(Fluid.of('kubejs:brine', 125), [Fluid.of('kubejs:distilled_water', 125), 'ratatouille:salt'])
-  event.recipes.create.mixing(Fluid.of('kubejs:bittern', 125), [{fluidTag: "cwi:water", amount: 125}, 'kubejs:halite_dust'])
-  event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [Fluid.of('kubejs:chlorine', 125), 'kubejs:iron_dust'])
+  event.recipes.create.mixing(Fluid.of('kubejs:bittern', 125), [{fluidTag: "cwi:water", amount: 125}, 'kubejs:halite_powder'])
+  event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [Fluid.of('kubejs:chlorine', 125), 'kubejs:iron_powder'])
   event.recipes.create.mixing(Fluid.of('kubejs:nitrate_solution', 125), [Fluid.of('kubejs:distilled_water', 125), 'tfmg:nitrate_dust'])
 
 //simple distillation
@@ -262,14 +262,14 @@ event.custom({
       "tfmg:firebrick_lined_vat"
     ],
     "ingredients": [
-      {"item": "kubejs:magnesium_dust", "count": 1},
+      {"item": "kubejs:magnesium_powder", "count": 1},
       {"fluid": "kubejs:muriatic_acid", "amount": 1000}
     ],
     "machines": [],
     "minSize": 1,
     "processingTime": 200,
     "results": [
-      {"item": "kubejs:magnesium_dust", "count": 1},
+      {"item": "kubejs:magnesium_powder", "count": 1},
       {"fluid": "kubejs:chlorine", "amount": 500},
       {"fluid": "minecraft:water", "amount": 500}
     ]
@@ -624,14 +624,14 @@ event.custom({
       "tfmg:firebrick_lined_vat"
     ],
     "ingredients": [
-      {"item": "kubejs:iron_dust"},
+      {"item": "kubejs:iron_powder"},
       {"item": "tfmg:sulfur_dust"},
       {"item": "tfmg:sulfur_dust"}
     ],
     "machines": ["tfmg:mixing"],
     "processingTime": 10,
     "results": [
-      {"item": "kubejs:pyrite_dust", "count": 3}
+      {"item": "kubejs:pyrite_powder", "count": 3}
     ]
   })
 
@@ -732,8 +732,8 @@ event.custom({
       "tfmg:firebrick_lined_vat"
     ],
     "ingredients": [
-      {"item": "kubejs:coal_dust"},
-      {"item": "kubejs:coal_dust"},
+      {"item": "kubejs:coal_powder"},
+      {"item": "kubejs:coal_powder"},
       {"fluid": "kubejs:distilled_water", "amount": 250},
       {"fluid": "tfmg:hydrogen", "amount": 500}
     ],
@@ -810,7 +810,7 @@ event.custom({
     ],
     "heatRequirement": "heated",
     "ingredients": [
-      {"item": "kubejs:lead_dust", "count": 8},
+      {"item": "kubejs:lead_powder", "count": 8},
       {"item": "tfmg:sulfur_dust", "count": 3},
       {"fluid": "kubejs:distilled_water", "amount": 500}
     ],
@@ -818,7 +818,7 @@ event.custom({
     "minSize": 1,
     "processingTime": 300,
     "results": [
-      {"item": "kubejs:lead_dust", "count": 8},
+      {"item": "kubejs:lead_powder", "count": 8},
       {"item": "tfmg:sulfur_dust", "count": 2},
       {"fluid": "tfmg:sulfuric_acid", "amount": 250},
       {"fluid": "kubejs:distilled_water", "amount": 250}

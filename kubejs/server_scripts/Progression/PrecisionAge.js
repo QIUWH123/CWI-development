@@ -457,8 +457,8 @@ ServerEvents.recipes(event => {
 
 //smelting/blasting
 
-  event.smelting('create:brass_ingot', 'kubejs:brass_dust')
-  event.blasting('create:brass_ingot', 'kubejs:brass_dust')
+  event.smelting('create:brass_ingot', 'kubejs:brass_powder')
+  event.blasting('create:brass_ingot', 'kubejs:brass_powder')
 
 //mechanicalCrafting
 
@@ -717,7 +717,7 @@ ServerEvents.recipes(event => {
     [
       Item.of('create:precision_mechanism').withChance(0.9),
       Item.of('create:brass_ingot').withChance(0.05),
-      Item.of('kubejs:brass_dust').withChance(0.02),
+      Item.of('kubejs:brass_powder').withChance(0.02),
       Item.of('create:brass_nugget').withChance(0.03)
     ],
     'create:brass_sheet',
@@ -734,7 +734,7 @@ ServerEvents.recipes(event => {
     [
       Item.of('kubejs:steam_mechanism').withChance(0.9),
       Item.of('kubejs:bronze_ingot').withChance(0.05),
-      Item.of('kubejs:bronze_dust').withChance(0.02),
+      Item.of('kubejs:bronze_powder').withChance(0.02),
       Item.of('kubejs:bronze_nugget').withChance(0.03)
     ],
     'kubejs:bronze_sheet',

@@ -36,14 +36,14 @@ let fallItem = [
         particle: "/particle minecraft:electric_spark ~ ~ ~ 0.2 0.2 0.2 0.1 4"
     },
     {
-        inputItem: "kubejs:ash_dust",
+        inputItem: "kubejs:ash",
         outputItem: '',
         spaceBetween: 2,
         sound: "/playsound block.sand.place block @a ~ ~ ~ 2 2",
         particle: "/particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.6 0.4 0.6 0.03 16"
     },
     {
-        inputItem: "kubejs:dark_ash_dust",
+        inputItem: "kubejs:dark_ash",
         outputItem: '',
         spaceBetween: 2,
         sound: "/playsound block.sand.place block @a ~ ~ ~ 2 2",

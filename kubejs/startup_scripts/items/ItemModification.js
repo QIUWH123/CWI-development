@@ -155,8 +155,8 @@ ItemEvents.modification(event => {
   burnTime_change('kubejs:lignite', 400)
   burnTime_change('kubejs:bituminous_coal', 800)
 
-  burnTime_change('kubejs:coal_dust', 1600)
-  burnTime_change('kubejs:charcoal_dust', 1600)
+  burnTime_change('kubejs:coal_powder', 1600)
+  burnTime_change('kubejs:charcoal_powder', 1600)
   burnTime_change('kubejs:charcoal_block', 16000)
 
   maxDamage_change('minecraft:iron_sword', 983)

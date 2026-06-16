@@ -113,7 +113,7 @@ ServerEvents.recipes(function(event) {
             { tag: "minecraft:logs" }
         ],
         [
-            { item: "kubejs:charcoal_dust" },
+            { item: "kubejs:charcoal_powder" },
             { fluid: "kubejs:wood_vinegar", amount: 200 },
             { fluid: "ratatouille:bio_gas", amount: 75 }
         ],
@@ -125,8 +125,8 @@ ServerEvents.recipes(function(event) {
             { item: "createdieselgenerators:chip_wood_beam" }
         ],
         [
-            { item: "kubejs:dark_ash_dust" },
-            { item: "kubejs:dark_ash_dust", chance: 0.5 },
+            { item: "kubejs:dark_ash" },
+            { item: "kubejs:dark_ash", chance: 0.5 },
             { fluid: "kubejs:wood_vinegar", amount: 60 },
             { fluid: "ratatouille:bio_gas", amount: 30 }
         ],
@@ -138,7 +138,7 @@ ServerEvents.recipes(function(event) {
             { item: "createdieselgenerators:chip_wood_block" }
         ],
         [
-            { item: "kubejs:dark_ash_dust" },
+            { item: "kubejs:dark_ash" },
             { fluid: "kubejs:wood_vinegar", amount: 30 },
             { fluid: "ratatouille:bio_gas", amount: 15 }
         ],
@@ -221,7 +221,7 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze1" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         100, undefined, ['basin', 'bulk']
@@ -233,8 +233,8 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze2" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         200, undefined, ['basin', 'bulk']
@@ -246,9 +246,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze3" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         300, undefined, ['basin', 'bulk']
@@ -260,9 +260,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze4" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 2 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 2 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         400, undefined, ['basin', 'bulk']
@@ -274,9 +274,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze5" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 3 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 3 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         500, undefined, ['basin', 'bulk']
@@ -288,9 +288,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze7" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 4 },
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 2 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 4 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 2 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         700, undefined, ['basin', 'bulk']
@@ -302,9 +302,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:bronze8" }
         ],
         [
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 4 },
-            { item: "kubejs:bronze_dust", chance: 0.67, count: 3 },
-            { item: "kubejs:bronze_dust", chance: 0.67 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 4 },
+            { item: "kubejs:bronze_powder", chance: 0.67, count: 3 },
+            { item: "kubejs:bronze_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         800, undefined, ['basin', 'bulk']
@@ -316,7 +316,7 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron1" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         100, undefined, ['basin', 'bulk']
@@ -328,8 +328,8 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron2" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         200, undefined, ['basin', 'bulk']
@@ -341,9 +341,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron3" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         300, undefined, ['basin', 'bulk']
@@ -355,9 +355,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron4" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67, count: 2 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 2 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         400, undefined, ['basin', 'bulk']
@@ -369,9 +369,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron5" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67, count: 3 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 3 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         500, undefined, ['basin', 'bulk']
@@ -383,9 +383,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron7" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67, count: 4 },
-            { item: "kubejs:iron_dust", chance: 0.67, count: 2 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 4 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 2 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         700, undefined, ['basin', 'bulk']
@@ -397,9 +397,9 @@ ServerEvents.recipes(function(event) {
             { tag: "cwi:iron8" }
         ],
         [
-            { item: "kubejs:iron_dust", chance: 0.67, count: 4 },
-            { item: "kubejs:iron_dust", chance: 0.67, count: 3 },
-            { item: "kubejs:iron_dust", chance: 0.67 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 4 },
+            { item: "kubejs:iron_powder", chance: 0.67, count: 3 },
+            { item: "kubejs:iron_powder", chance: 0.67 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         800, undefined, ['basin', 'bulk']
@@ -408,14 +408,14 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:stone_dust" },
-            { item: "kubejs:stone_dust" },
-            { item: "kubejs:stone_dust" },
-            { item: "kubejs:stone_dust" }
+            { item: "kubejs:stone_powder" },
+            { item: "kubejs:stone_powder" },
+            { item: "kubejs:stone_powder" },
+            { item: "kubejs:stone_powder" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:flint_dust", chance: 0.33 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:flint_powder", chance: 0.33 },
             { item: "biomancy:stone_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -428,8 +428,8 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:gravel" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:flint_dust", chance: 0.33 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:flint_powder", chance: 0.33 },
             { item: "biomancy:stone_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -442,8 +442,8 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:cobblestone" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:flint_dust", chance: 0.33 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:flint_powder", chance: 0.33 },
             { item: "biomancy:stone_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -456,8 +456,8 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:stone" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:flint_dust", chance: 0.33 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:flint_powder", chance: 0.33 },
             { item: "biomancy:stone_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -467,17 +467,17 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:tuff_dust" },
-            { item: "kubejs:tuff_dust" },
-            { item: "kubejs:tuff_dust" },
-            { item: "kubejs:tuff_dust" }
+            { item: "kubejs:tuff_powder" },
+            { item: "kubejs:tuff_powder" },
+            { item: "kubejs:tuff_powder" },
+            { item: "kubejs:tuff_powder" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.27 },
+            { item: "kubejs:clay_powder", chance: 0.27 },
             { item: "biomancy:stone_powder", chance: 0.37 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:zinc_dust", chance: 0.09 },
-            { item: "kubejs:copper_dust", chance: 0.12 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:zinc_powder", chance: 0.09 },
+            { item: "kubejs:copper_powder", chance: 0.12 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         150, undefined, ['basin', 'bulk']
@@ -489,11 +489,11 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:tuff" },
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.27 },
+            { item: "kubejs:clay_powder", chance: 0.27 },
             { item: "biomancy:stone_powder", chance: 0.37 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:zinc_dust", chance: 0.09 },
-            { item: "kubejs:copper_dust", chance: 0.12 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:zinc_powder", chance: 0.09 },
+            { item: "kubejs:copper_powder", chance: 0.12 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         450, undefined, ['basin', 'bulk']
@@ -502,17 +502,17 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:granite_dust" },
-            { item: "kubejs:granite_dust" },
-            { item: "kubejs:granite_dust" },
-            { item: "kubejs:granite_dust" }
+            { item: "kubejs:granite_powder" },
+            { item: "kubejs:granite_powder" },
+            { item: "kubejs:granite_powder" },
+            { item: "kubejs:granite_powder" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.87 },
+            { item: "kubejs:quartz_powder", chance: 0.87 },
             { item: "biomancy:stone_powder", chance: 0.09 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:tin_dust", chance: 0.11 },
-            { item: "kubejs:iron_dust", chance: 0.14 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:tin_powder", chance: 0.11 },
+            { item: "kubejs:iron_powder", chance: 0.14 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         800, undefined, ['basin', 'bulk']
@@ -524,11 +524,11 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:granite_gravel" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.87 },
+            { item: "kubejs:quartz_powder", chance: 0.87 },
             { item: "biomancy:stone_powder", chance: 0.09 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:tin_dust", chance: 0.11 },
-            { item: "kubejs:iron_dust", chance: 0.14 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:tin_powder", chance: 0.11 },
+            { item: "kubejs:iron_powder", chance: 0.14 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1600, undefined, ['basin', 'bulk']
@@ -540,11 +540,11 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:cobbled_granite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.87 },
+            { item: "kubejs:quartz_powder", chance: 0.87 },
             { item: "biomancy:stone_powder", chance: 0.09 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:tin_dust", chance: 0.11 },
-            { item: "kubejs:iron_dust", chance: 0.14 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:tin_powder", chance: 0.11 },
+            { item: "kubejs:iron_powder", chance: 0.14 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         2000, undefined, ['basin', 'bulk']
@@ -556,11 +556,11 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:cobbled_granite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.87 },
+            { item: "kubejs:quartz_powder", chance: 0.87 },
             { item: "biomancy:stone_powder", chance: 0.09 },
-            { item: "kubejs:lead_dust", chance: 0.08 },
-            { item: "kubejs:tin_dust", chance: 0.11 },
-            { item: "kubejs:iron_dust", chance: 0.14 },
+            { item: "kubejs:lead_powder", chance: 0.08 },
+            { item: "kubejs:tin_powder", chance: 0.11 },
+            { item: "kubejs:iron_powder", chance: 0.14 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         2400, undefined, ['basin', 'bulk']
@@ -569,17 +569,17 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:diorite_dust" },
-            { item: "kubejs:diorite_dust" },
-            { item: "kubejs:diorite_dust" },
-            { item: "kubejs:diorite_dust" }
+            { item: "kubejs:diorite_powder" },
+            { item: "kubejs:diorite_powder" },
+            { item: "kubejs:diorite_powder" },
+            { item: "kubejs:diorite_powder" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.67 },
+            { item: "kubejs:quartz_powder", chance: 0.67 },
             { item: "biomancy:stone_powder", chance: 0.17 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:silver_dust", chance: 0.09 },
-            { item: "kubejs:iron_dust", chance: 0.13 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:silver_powder", chance: 0.09 },
+            { item: "kubejs:iron_powder", chance: 0.13 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         700, undefined, ['basin', 'bulk']
@@ -591,11 +591,11 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:diorite_gravel" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.67 },
+            { item: "kubejs:quartz_powder", chance: 0.67 },
             { item: "biomancy:stone_powder", chance: 0.17 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:silver_dust", chance: 0.09 },
-            { item: "kubejs:iron_dust", chance: 0.13 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:silver_powder", chance: 0.09 },
+            { item: "kubejs:iron_powder", chance: 0.13 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1050, undefined, ['basin', 'bulk']
@@ -607,11 +607,11 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:cobbled_diorite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.67 },
+            { item: "kubejs:quartz_powder", chance: 0.67 },
             { item: "biomancy:stone_powder", chance: 0.17 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:silver_dust", chance: 0.09 },
-            { item: "kubejs:iron_dust", chance: 0.13 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:silver_powder", chance: 0.09 },
+            { item: "kubejs:iron_powder", chance: 0.13 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1400, undefined, ['basin', 'bulk']
@@ -623,11 +623,11 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:diorite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.67 },
+            { item: "kubejs:quartz_powder", chance: 0.67 },
             { item: "biomancy:stone_powder", chance: 0.17 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:silver_dust", chance: 0.09 },
-            { item: "kubejs:iron_dust", chance: 0.13 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:silver_powder", chance: 0.09 },
+            { item: "kubejs:iron_powder", chance: 0.13 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1750, undefined, ['basin', 'bulk']
@@ -636,16 +636,16 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:andesite_dust" },
-            { item: "kubejs:andesite_dust" },
-            { item: "kubejs:andesite_dust" },
-            { item: "kubejs:andesite_dust" }
+            { item: "kubejs:andesite_powder" },
+            { item: "kubejs:andesite_powder" },
+            { item: "kubejs:andesite_powder" },
+            { item: "kubejs:andesite_powder" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.47 },
+            { item: "kubejs:quartz_powder", chance: 0.47 },
             { item: "biomancy:stone_powder", chance: 0.21 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:magnesite_dust", chance: 0.09 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:magnesite_powder", chance: 0.09 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         600, undefined, ['basin', 'bulk']
@@ -657,10 +657,10 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:andesite_gravel" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.47 },
+            { item: "kubejs:quartz_powder", chance: 0.47 },
             { item: "biomancy:stone_powder", chance: 0.21 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:magnesite_dust", chance: 0.09 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:magnesite_powder", chance: 0.09 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         900, undefined, ['basin', 'bulk']
@@ -672,10 +672,10 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:cobbled_andesite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.47 },
+            { item: "kubejs:quartz_powder", chance: 0.47 },
             { item: "biomancy:stone_powder", chance: 0.21 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:magnesite_dust", chance: 0.09 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:magnesite_powder", chance: 0.09 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1200, undefined, ['basin', 'bulk']
@@ -687,10 +687,10 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:andesite" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.47 },
+            { item: "kubejs:quartz_powder", chance: 0.47 },
             { item: "biomancy:stone_powder", chance: 0.21 },
-            { item: "kubejs:nickel_dust", chance: 0.17 },
-            { item: "kubejs:magnesite_dust", chance: 0.09 },
+            { item: "kubejs:nickel_powder", chance: 0.17 },
+            { item: "kubejs:magnesite_powder", chance: 0.09 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1500, undefined, ['basin', 'bulk']
@@ -699,15 +699,15 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:claystone_dust" },
-            { item: "kubejs:claystone_dust" },
-            { item: "kubejs:claystone_dust" },
-            { item: "kubejs:claystone_dust" }
+            { item: "kubejs:claystone_powder" },
+            { item: "kubejs:claystone_powder" },
+            { item: "kubejs:claystone_powder" },
+            { item: "kubejs:claystone_powder" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.97 },
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:lithium_dust", chance: 0.09 },
+            { item: "kubejs:clay_powder", chance: 0.97 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:lithium_powder", chance: 0.09 },
             { item: "tfmg:bauxite_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -720,9 +720,9 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:claystone" }
         ],
         [
-            { item: "kubejs:clay_dust", chance: 0.97 },
-            { item: "kubejs:clay_dust", chance: 0.67 },
-            { item: "kubejs:lithium_dust", chance: 0.09 },
+            { item: "kubejs:clay_powder", chance: 0.97 },
+            { item: "kubejs:clay_powder", chance: 0.67 },
+            { item: "kubejs:lithium_powder", chance: 0.09 },
             { item: "tfmg:bauxite_powder", chance: 0.17 },
             { item: "kubejs:acidolys_bacillus" }
         ],
@@ -732,16 +732,16 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:basalt_dust" },
-            { item: "kubejs:basalt_dust" },
-            { item: "kubejs:basalt_dust" },
-            { item: "kubejs:basalt_dust" }
+            { item: "kubejs:basalt_powder" },
+            { item: "kubejs:basalt_powder" },
+            { item: "kubejs:basalt_powder" },
+            { item: "kubejs:basalt_powder" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.21 },
+            { item: "kubejs:quartz_powder", chance: 0.21 },
             { item: "tfmg:sulfur_dust", chance: 0.13 },
-            { item: "kubejs:magnesite_dust", chance: 0.13 },
-            { item: "kubejs:vanadium_dust", chance: 0.21 },
+            { item: "kubejs:magnesite_powder", chance: 0.13 },
+            { item: "kubejs:vanadium_powder", chance: 0.21 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         600, undefined, ['basin', 'bulk']
@@ -753,10 +753,10 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:basalt_gravel" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.21 },
+            { item: "kubejs:quartz_powder", chance: 0.21 },
             { item: "tfmg:sulfur_dust", chance: 0.13 },
-            { item: "kubejs:magnesite_dust", chance: 0.13 },
-            { item: "kubejs:vanadium_dust", chance: 0.21 },
+            { item: "kubejs:magnesite_powder", chance: 0.13 },
+            { item: "kubejs:vanadium_powder", chance: 0.21 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         900, undefined, ['basin', 'bulk']
@@ -768,10 +768,10 @@ ServerEvents.recipes(function(event) {
             { item: "kubejs:cobbled_basalt" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.21 },
+            { item: "kubejs:quartz_powder", chance: 0.21 },
             { item: "tfmg:sulfur_dust", chance: 0.13 },
-            { item: "kubejs:magnesite_dust", chance: 0.13 },
-            { item: "kubejs:vanadium_dust", chance: 0.21 },
+            { item: "kubejs:magnesite_powder", chance: 0.13 },
+            { item: "kubejs:vanadium_powder", chance: 0.21 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1200, undefined, ['basin', 'bulk']
@@ -783,10 +783,10 @@ ServerEvents.recipes(function(event) {
             { item: "minecraft:basalt" }
         ],
         [
-            { item: "kubejs:quartz_dust", chance: 0.21 },
+            { item: "kubejs:quartz_powder", chance: 0.21 },
             { item: "tfmg:sulfur_dust", chance: 0.13 },
-            { item: "kubejs:magnesite_dust", chance: 0.13 },
-            { item: "kubejs:vanadium_dust", chance: 0.21 },
+            { item: "kubejs:magnesite_powder", chance: 0.13 },
+            { item: "kubejs:vanadium_powder", chance: 0.21 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1500, undefined, ['basin', 'bulk']
@@ -795,15 +795,15 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:quartz_dust" },
-            { item: "kubejs:quartz_dust" },
-            { item: "kubejs:quartz_dust" },
-            { item: "kubejs:quartz_dust" }
+            { item: "kubejs:quartz_powder" },
+            { item: "kubejs:quartz_powder" },
+            { item: "kubejs:quartz_powder" },
+            { item: "kubejs:quartz_powder" }
         ],
         [
-            { item: "kubejs:silicon_dust" },
-            { item: "kubejs:silicon_dust" },
-            { item: "kubejs:silicon_dust", chance: 0.47 },
+            { item: "kubejs:silicon_powder" },
+            { item: "kubejs:silicon_powder" },
+            { item: "kubejs:silicon_powder", chance: 0.47 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1200, undefined, ['basin', 'bulk']
@@ -812,15 +812,15 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { item: "kubejs:acidolys_bacillus" },
-            { item: "kubejs:quartzite_dust" },
-            { item: "kubejs:quartzite_dust" },
-            { item: "kubejs:quartzite_dust" },
-            { item: "kubejs:quartzite_dust" }
+            { item: "kubejs:quartzite_powder" },
+            { item: "kubejs:quartzite_powder" },
+            { item: "kubejs:quartzite_powder" },
+            { item: "kubejs:quartzite_powder" }
         ],
         [
-            { item: "kubejs:quartz_dust" },
-            { item: "kubejs:quartz_dust" },
-            { item: "kubejs:quartz_dust", chance: 0.47 },
+            { item: "kubejs:quartz_powder" },
+            { item: "kubejs:quartz_powder" },
+            { item: "kubejs:quartz_powder", chance: 0.47 },
             { item: "kubejs:acidolys_bacillus" }
         ],
         1200, undefined, ['basin', 'bulk']
@@ -1034,7 +1034,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:quartz_dust" },
+            { item: "kubejs:quartz_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1047,7 +1047,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:quartz_dust" },
+            { item: "kubejs:quartz_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1060,7 +1060,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:lapis_dust" },
+            { item: "kubejs:lapis_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1099,7 +1099,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:fluorite_dust" },
+            { item: "kubejs:fluorite_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1112,7 +1112,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:flint_dust" },
+            { item: "kubejs:flint_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1125,7 +1125,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:halite_dust" },
+            { item: "kubejs:halite_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1138,7 +1138,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             { fluidTag: "cwi:water", amount: 100 },
-            { item: "kubejs:magnesite_dust" },
+            { item: "kubejs:magnesite_powder" },
             { item: "kubejs:crystallum_coccus" }
         ],
         [
@@ -1209,7 +1209,7 @@ ServerEvents.recipes(function(event) {
     
     addFermentingRecipes(event,
         [
-            { item: "kubejs:charcoal_dust" },
+            { item: "kubejs:charcoal_powder" },
             { fluid: "minecraft:water", amount: 100 },
             { item: "kubejs:vulcan_thermus" }
         ],

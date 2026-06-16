@@ -241,9 +241,9 @@ ServerEvents.recipes(event => {
 
 //mixing
 
-  event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:silicon_dust','kubejs:magnesite_dust','2x tfmg:bauxite_powder','3x minecraft:clay_ball']).superheated()
-  event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:quartz_dust','kubejs:magnesite_dust','2x tfmg:bauxite_powder','3x minecraft:clay_ball']).superheated()
-  event.recipes.create.mixing(['2x kubejs:silicon_dust', Item.of('kubejs:silicon_dust').withChance(0.37)], ['4x kubejs:quartz_dust', '1x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
+  event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:silicon_powder','kubejs:magnesite_powder','2x tfmg:bauxite_powder','3x minecraft:clay_ball']).superheated()
+  event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:quartz_powder','kubejs:magnesite_powder','2x tfmg:bauxite_powder','3x minecraft:clay_ball']).superheated()
+  event.recipes.create.mixing(['2x kubejs:silicon_powder', Item.of('kubejs:silicon_powder').withChance(0.37)], ['4x kubejs:quartz_powder', '1x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
 
 //mechanicalCrafting
 
@@ -657,7 +657,7 @@ ServerEvents.recipes(event => {
     "processingTime": 300,
     "results": [
       {
-        "item": "kubejs:dark_ash_dust"
+        "item": "kubejs:dark_ash"
       },
       {
         "amount": 50,
@@ -717,7 +717,7 @@ ServerEvents.recipes(event => {
     "hotAirUsage": 0,
     "ingredients": [
       {
-        "item": "kubejs:quartz_dust"
+        "item": "kubejs:quartz_powder"
       }
     ],
     "processingTime": 20,
@@ -762,7 +762,7 @@ ServerEvents.recipes(event => {
     "hotAirUsage": 60,
     "ingredients": [
       {
-        "item": "kubejs:iron_dust"
+        "item": "kubejs:iron_powder"
       },
       {
         "tag": "tfmg:flux"

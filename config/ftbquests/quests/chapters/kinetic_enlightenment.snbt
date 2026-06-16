@@ -165,7 +165,7 @@
 			subtitle: "The foundation of Mechanics"
 			tasks: [{
 				id: "7F391AF5145C7B48"
-				item: "kubejs:andesite_dust"
+				item: "kubejs:andesite_powder"
 				type: "item"
 			}]
 			x: 2.5d

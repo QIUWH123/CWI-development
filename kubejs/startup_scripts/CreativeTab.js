@@ -14,7 +14,7 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 		.content(() => Ingredient.of("#cwi:containers").itemIds)
 		
 	addCreativeTab("dusts")
-		.icon(() => Item.of("kubejs:gold_dust"))
+		.icon(() => Item.of("kubejs:gold_powder"))
 		.content(() => Ingredient.of("#cwi:dusts").itemIds)
 		
 	addCreativeTab("tools")

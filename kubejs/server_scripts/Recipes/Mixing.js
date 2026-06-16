@@ -1,34 +1,34 @@
 ServerEvents.recipes(event => {
 
   event.shapeless(
-    Item.of('kubejs:brass_dust', 3),
+    Item.of('kubejs:brass_powder', 3),
     [
-      '2x kubejs:copper_dust',
-      '2x kubejs:zinc_dust'
+      '2x kubejs:copper_powder',
+      '2x kubejs:zinc_powder'
     ]
   )
 
   event.shapeless(
-    Item.of('kubejs:bronze_dust', 3),
+    Item.of('kubejs:bronze_powder', 3),
     [
-      '3x kubejs:copper_dust',
-      'kubejs:tin_dust'
+      '3x kubejs:copper_powder',
+      'kubejs:tin_powder'
     ]
   )
 
   event.shapeless(
-    Item.of('kubejs:constantan_dust', 3),
+    Item.of('kubejs:constantan_powder', 3),
     [
-      '3x kubejs:copper_dust',
-      'kubejs:nickel_dust'
+      '3x kubejs:copper_powder',
+      'kubejs:nickel_powder'
     ]
   )
 
   event.shapeless(
-    Item.of('kubejs:electrum_dust', 3),
+    Item.of('kubejs:electrum_powder', 3),
     [
-      '3x kubejs:gold_dust',
-      'kubejs:silver_dust'
+      '3x kubejs:gold_powder',
+      'kubejs:silver_powder'
     ]
   )
 

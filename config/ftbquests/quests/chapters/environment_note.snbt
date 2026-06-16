@@ -217,7 +217,7 @@
 			id: "0402F7A20A3CF9ED"
 			tasks: [{
 				id: "2F7E3642C002434C"
-				item: "kubejs:ash_dust"
+				item: "kubejs:ash"
 				type: "item"
 			}]
 			x: -0.5d
@@ -479,7 +479,7 @@
 			id: "006AA70EA1916072"
 			tasks: [{
 				id: "7E99FDE8E3CDAAA0"
-				item: "kubejs:bone_dust"
+				item: "kubejs:bone_powder"
 				type: "item"
 			}]
 			x: -5.0d

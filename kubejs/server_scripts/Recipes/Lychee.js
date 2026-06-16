@@ -2,21 +2,21 @@ ServerEvents.recipes(event => {
 
   event.custom({
     "type":"lychee:item_inside",
-    "item_in":{"item":"kubejs:dark_ash_dust"},
+    "item_in":{"item":"kubejs:dark_ash"},
     "block_in":{"blocks":["water"],"state":{"level":0}},
     "post":[
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide":true},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.27}},
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.27}},
       {"type":"delay","s":3}
     ]
   })
 
   event.custom({
     "type": "lychee:item_burning",
-    "item_in": {"item": "kubejs:ash_dust"},
+    "item_in": {"item": "kubejs:ash"},
     "post": [
       {"type":"execute","command":"particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.03 3","hide":true},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","contextual":{"type":"chance","chance":0.67}},
+      {"type":"drop_item","item":"kubejs:dark_ash","contextual":{"type":"chance","chance":0.67}},
       {"type":"delay","s":3}
     ]
   })
@@ -216,8 +216,8 @@ ServerEvents.recipes(event => {
       {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.75}},
       {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.43}},
       {"type":"drop_item","item":"farmersdelight:straw","contextual":{"type":"chance","chance":0.37}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.27}},
-      {"type":"drop_item","item":"kubejs:charcoal_dust","contextual":{"type":"chance","chance":0.13}},
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.27}},
+      {"type":"drop_item","item":"kubejs:charcoal_powder","contextual":{"type":"chance","chance":0.13}},
       {"type":"drop_item","item":"miners_delight:arthropod","contextual":{"type":"chance","chance":0.07}},
       {"type":"drop_item","item":"miners_delight:silverfish_eggs","contextual":{"type":"chance","chance":0.05}}
     ]
@@ -241,7 +241,7 @@ ServerEvents.recipes(event => {
           {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.75}},
           {"type":"drop_item","item":"minecraft:stick","contextual":{"type":"chance","chance":0.37}},
           {"type":"drop_item","item":"farmersdelight:straw","contextual":{"type":"chance","chance":0.17}},
-          {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.13}}
+          {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.13}}
         ]
       }
     ]
@@ -365,7 +365,7 @@ ServerEvents.recipes(event => {
       {"type":"add_item_cooldown","s":0.75},
       {"type":"damage_item"},
       {"type":"drop_item","item":"minecraft:redstone","contextual":{"type":"chance","chance":0.13}},
-      {"type":"drop_item","item":"kubejs:quartz_dust","contextual":{"type":"chance","chance":0.27}}
+      {"type":"drop_item","item":"kubejs:quartz_powder","contextual":{"type":"chance","chance":0.27}}
     ]
   })
 
@@ -382,9 +382,9 @@ ServerEvents.recipes(event => {
       {"type":"place","block":"kubejs:stripped_burnt_log"},
       {"type":"add_item_cooldown","s":0.2},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","count":2},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","contextual":{"type":"chance","chance":0.57}},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","contextual":{"type":"chance","chance":0.23}}
+      {"type":"drop_item","item":"kubejs:dark_ash","count":2},
+      {"type":"drop_item","item":"kubejs:dark_ash","contextual":{"type":"chance","chance":0.57}},
+      {"type":"drop_item","item":"kubejs:dark_ash","contextual":{"type":"chance","chance":0.23}}
     ]})
 
   event.custom({
@@ -400,8 +400,8 @@ ServerEvents.recipes(event => {
       {"type":"place","block":"kubejs:stripped_broken_burnt_log"},
       {"type":"add_item_cooldown","s":0.2},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust"},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","contextual":{"type":"chance","chance":0.73}}
+      {"type":"drop_item","item":"kubejs:dark_ash"},
+      {"type":"drop_item","item":"kubejs:dark_ash","contextual":{"type":"chance","chance":0.73}}
     ]})
 
   event.custom({
@@ -418,7 +418,7 @@ ServerEvents.recipes(event => {
       {"type":"damage_item"},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":5},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":3,"contextual":{"type":"chance","chance":0.75}},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","count":2,"contextual":{"type":"chance","chance":0.73}}
+      {"type":"drop_item","item":"kubejs:dark_ash","count":2,"contextual":{"type":"chance","chance":0.73}}
     ]})
 
   event.custom({
@@ -434,7 +434,7 @@ ServerEvents.recipes(event => {
       {"type":"damage_item"},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":5},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":3,"contextual":{"type":"chance","chance":0.75}},
-      {"type":"drop_item","item":"kubejs:dark_ash_dust","count":2,"contextual":{"type":"chance","chance":0.73}}
+      {"type":"drop_item","item":"kubejs:dark_ash","count":2,"contextual":{"type":"chance","chance":0.73}}
     ]})
   
   event.custom({
@@ -450,9 +450,9 @@ ServerEvents.recipes(event => {
       {"type":"place","block":"kubejs:stripped_ash_log"},
       {"type":"add_item_cooldown","s":0.2},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"kubejs:ash_dust"},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.73}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.27}}
+      {"type":"drop_item","item":"kubejs:ash"},
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.73}},
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.27}}
     ]})
   
   event.custom({
@@ -468,8 +468,8 @@ ServerEvents.recipes(event => {
       {"type":"place","block":"kubejs:stripped_broken_ash_log"},
       {"type":"add_item_cooldown","s":0.2},
       {"type":"damage_item"},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.63}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.13}}
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.63}},
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.13}}
     ]})
   
   event.custom({
@@ -486,7 +486,7 @@ ServerEvents.recipes(event => {
       {"type":"damage_item"},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":6},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":4,"contextual":{"type":"chance","chance":0.85}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.53}}
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.53}}
     ]})
   
   event.custom({
@@ -502,7 +502,7 @@ ServerEvents.recipes(event => {
       {"type":"damage_item"},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":6},
       {"type":"drop_item","item":"createdieselgenerators:wood_chip","count":4,"contextual":{"type":"chance","chance":0.85}},
-      {"type":"drop_item","item":"kubejs:ash_dust","contextual":{"type":"chance","chance":0.53}}
+      {"type":"drop_item","item":"kubejs:ash","contextual":{"type":"chance","chance":0.53}}
     ]})
 
   event.custom({

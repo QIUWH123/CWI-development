@@ -2,11 +2,11 @@ ServerEvents.recipes(event => {
 
 // Stones processing
 
-  event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
-  event.recipes.create.milling(['3x kubejs:deepslate_dust', Item.of('kubejs:deepslate_dust').withChance(0.75), Item.of('kubejs:quartzite_dust').withChance(0.75)], 'darkerdepths:arid_deepslate')
-  event.recipes.create.milling(['3x kubejs:tuff_dust', Item.of('kubejs:tuff_dust').withChance(0.75)], 'minecraft:tuff')
+  event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_powder').withChance(0.75)], 'darkerdepths:arid_deepslate')
+  event.recipes.create.milling(['3x kubejs:deepslate_powder', Item.of('kubejs:deepslate_powder').withChance(0.75), Item.of('kubejs:quartzite_powder').withChance(0.75)], 'darkerdepths:arid_deepslate')
+  event.recipes.create.milling(['3x kubejs:tuff_powder', Item.of('kubejs:tuff_powder').withChance(0.75)], 'minecraft:tuff')
   event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:smooth_basalt')
-  event.recipes.create.milling(['3x kubejs:basalt_dust', Item.of('kubejs:basalt_dust').withChance(0.75)], 'minecraft:smooth_basalt')
+  event.recipes.create.milling(['3x kubejs:basalt_powder', Item.of('kubejs:basalt_powder').withChance(0.75)], 'minecraft:smooth_basalt')
 
   global.stoneTypes.forEach(entry => {
     const [raw, cobbled, gravel, dust] = entry.types
@@ -23,21 +23,21 @@ ServerEvents.recipes(event => {
 
 // Recipes
 
-  event.recipes.create.mixing(['kubejs:granite_gravel'], ['kubejs:quartz_dust', 'minecraft:gravel', Fluid.of('minecraft:lava', 250)]).heated()
-  event.recipes.create.compacting(['kubejs:granite_gravel'], ['kubejs:quartz_dust', 'minecraft:gravel']).superheated()
-  event.recipes.create.mixing(['3x kubejs:granite_dust', Item.of('kubejs:granite_dust').withChance(0.37)], ['kubejs:quartz_dust', Fluid.of('minecraft:lava', 250)]).superheated()
-  event.recipes.create.filling(['kubejs:granite_dust'], ['kubejs:quartz_dust', Fluid.of('minecraft:lava', 20)])
-  event.recipes.create.mixing('2x kubejs:granite_dust', ['kubejs:quartz_dust', 'kubejs:diorite_dust'])
+  event.recipes.create.mixing(['kubejs:granite_gravel'], ['kubejs:quartz_powder', 'minecraft:gravel', Fluid.of('minecraft:lava', 250)]).heated()
+  event.recipes.create.compacting(['kubejs:granite_gravel'], ['kubejs:quartz_powder', 'minecraft:gravel']).superheated()
+  event.recipes.create.mixing(['3x kubejs:granite_powder', Item.of('kubejs:granite_powder').withChance(0.37)], ['kubejs:quartz_powder', Fluid.of('minecraft:lava', 250)]).superheated()
+  event.recipes.create.filling(['kubejs:granite_powder'], ['kubejs:quartz_powder', Fluid.of('minecraft:lava', 20)])
+  event.recipes.create.mixing('2x kubejs:granite_powder', ['kubejs:quartz_powder', 'kubejs:diorite_powder'])
 
   event.recipes.create.filling('kubejs:diorite_gravel', ['kubejs:basalt_gravel', Fluid.of('tfmg:liquid_silicon', 125)])
-  event.recipes.create.filling('kubejs:diorite_dust', ['kubejs:basalt_dust', Fluid.of('tfmg:liquid_silicon', 20)])
+  event.recipes.create.filling('kubejs:diorite_powder', ['kubejs:basalt_powder', Fluid.of('tfmg:liquid_silicon', 20)])
   event.recipes.create.filling('kubejs:diorite_gravel', ['kubejs:andesite_gravel', Fluid.of('tfmg:liquid_silicon', 125)])
-  event.recipes.create.filling('kubejs:diorite_dust', ['kubejs:andesite_dust', Fluid.of('tfmg:liquid_silicon', 20)])
-  event.recipes.create.mixing('2x kubejs:diorite_dust', ['kubejs:stone_dust', 'kubejs:quartz_dust'])
+  event.recipes.create.filling('kubejs:diorite_powder', ['kubejs:andesite_powder', Fluid.of('tfmg:liquid_silicon', 20)])
+  event.recipes.create.mixing('2x kubejs:diorite_powder', ['kubejs:stone_powder', 'kubejs:quartz_powder'])
 
-  event.recipes.create.mixing('2x kubejs:andesite_dust', ['kubejs:stone_dust', 'kubejs:diorite_dust'])
+  event.recipes.create.mixing('2x kubejs:andesite_powder', ['kubejs:stone_powder', 'kubejs:diorite_powder'])
 
-  event.recipes.create.compacting(['kubejs:rhyolite_gravel', Item.of('kubejs:rhyolite_dust').withChance(0.37)], ['kubejs:granite_gravel', 'minecraft:flint', Fluid.of('minecraft:lava', 250)]).superheated()
+  event.recipes.create.compacting(['kubejs:rhyolite_gravel', Item.of('kubejs:rhyolite_powder').withChance(0.37)], ['kubejs:granite_gravel', 'minecraft:flint', Fluid.of('minecraft:lava', 250)]).superheated()
 
   event.recipes.create.sequenced_assembly(
     [

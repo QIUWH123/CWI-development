@@ -272,7 +272,7 @@
 			id: "5CB3035210A39A5F"
 			tasks: [{
 				id: "7A80B4CA2B0BF9F0"
-				item: "kubejs:silicon_dust"
+				item: "kubejs:silicon_powder"
 				type: "item"
 			}]
 			x: 0.0d
@@ -284,7 +284,7 @@
 			id: "09A16A54841462D0"
 			tasks: [{
 				id: "1399CB6A28A8469E"
-				item: "kubejs:magnesite_dust"
+				item: "kubejs:magnesite_powder"
 				type: "item"
 			}]
 			x: 0.0d
