@@ -157,13 +157,16 @@ StartupEvents.registry('item', event => {
 StartupEvents.registry('item', event => {
 
     event.create('heated_powdered_obsidian')
-    event.create('caustic_soda_powder')
-    event.create('sodium_bisulfate_powder')
-    event.create('calcium_chloride_powder')
-    event.create('lignin_powder')
-    event.create('pyrite_powder')
     event.create('ash')
     event.create('dark_ash')
+
+    const colorPowders = [
+      ['pyrite_powder', 0xE5C100],
+      ['lignin_powder', 0xE8C396],
+      ['calcium_chloride_powder', 0xFFFFFF],
+      ['sodium_bisulfate_powder', 0xFFFACD],
+      ['caustic_soda_powder', 0xF0F8FF]
+    ]
 
     const powders = [
         'bone_powder', 'quartz_powder', 'fluorite_powder', 'diamond_powder', 'coal_powder',
@@ -179,7 +182,8 @@ StartupEvents.registry('item', event => {
         'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder'
     ]
 
-    powders.forEach(powder => {event.create(powder).texture(`kubejs:item/dusts/${powder}`).tag('cwi:powders')})
+    colorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder`).color(color).tag('cwi:powders')})
+    powders.forEach(powder => {event.create(powder).texture(`kubejs:item/powders/${powder}`).tag('cwi:powders')})
 
 })
 

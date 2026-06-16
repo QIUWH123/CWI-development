@@ -1,6 +1,8 @@
 function registerMoltenMetal(event, name, color) {
   event.create(name)
-    .thickTexture(color)
+    .stillTexture('kubejs:fluid/metal_still')
+    .flowingTexture('kubejs:fluid/metal_flow')
+    .color(color)
     .tag('cwi:moltens')
     .bucketItem
     .textureJson({
