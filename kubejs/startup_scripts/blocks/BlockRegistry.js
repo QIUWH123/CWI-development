@@ -1,5 +1,15 @@
 // priority: 1
 
+function cubeColumnModel(top, side) {
+    return {
+        "parent": "minecraft:block/cube_column",
+        "textures": {
+            "end": top,
+            "side": side
+        }
+    }
+}
+
 StartupEvents.registry('block', event => {
 
 //natural block
@@ -223,6 +233,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('rutile_ore')
+    .textureAll('kubejs:block/ores/rutile')
     .soundType('amethyst')
     .hardness(3)
     .resistance(6)
@@ -239,6 +250,7 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
+    .modelJson = cubeColumnModel('kubejs:block/ores/uraninite_top', 'kubejs:block/ores/uraninite_side')
 
   event.create('chromite_ore')
     .textureAll('kubejs:block/ores/chromite')
@@ -308,6 +320,7 @@ StartupEvents.registry('block', event => {
 //ores
 
   event.create('quartz_ore')
+    .textureAll('kubejs:block/ores/quartz_ore')
     .stoneSoundType()
     .hardness(3)
     .resistance(3)
@@ -317,6 +330,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('sulfur_ore')
+    .textureAll('kubejs:block/ores/sulfur_ore')
     .stoneSoundType()
     .hardness(3)
     .resistance(3)
@@ -326,6 +340,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('tin_ore')
+    .textureAll('kubejs:block/ores/tin_ore')
     .stoneSoundType()
     .hardness(3)
     .resistance(3)
@@ -335,6 +350,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('silver_ore')
+    .textureAll('kubejs:block/ores/silver_ore')
     .stoneSoundType()
     .hardness(3)
     .resistance(3)
@@ -344,6 +360,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('fluorite_ore')
+    .textureAll('kubejs:block/ores/fluorite_ore')
     .stoneSoundType()
     .hardness(3)
     .resistance(3)
@@ -355,6 +372,7 @@ StartupEvents.registry('block', event => {
 //deepslate ores
 
   event.create('deepslate_tin_ore')
+    .textureAll('kubejs:block/ores/deepslate_tin_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
@@ -364,6 +382,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('deepslate_sulfur_ore')
+    .textureAll('kubejs:block/ores/deepslate_sulfur_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
@@ -373,6 +392,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('deepslate_silver_ore')
+    .textureAll('kubejs:block/ores/deepslate_silver_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
@@ -382,6 +402,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('deepslate_quartz_ore')
+    .textureAll('kubejs:block/ores/deepslate_quartz_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
@@ -391,6 +412,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('deepslate_fluorite_ore')
+    .textureAll('kubejs:block/ores/deepslate_fluorite_ore')
     .soundType('deepslate')
     .hardness(3)
     .resistance(4.5)
@@ -407,9 +429,6 @@ StartupEvents.registry('block', event => {
     .resistance(0)
     .mapColor('#FF5500')
     .notSolid()
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('steel_armor_block')
     .soundType('metal')
@@ -440,9 +459,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_diamond_tool')
     .tagBlock('kubejs:unbreakable')
     .mapColor('#FF5500')
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('computer_heat_vent')
     .soundType('metal')
@@ -481,9 +497,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('precise_machine')
     .soundType('metal')
@@ -495,9 +508,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
   
   event.create('heavy_machine')
     .soundType('metal')
@@ -509,9 +519,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('sealed_wood')
     .soundType('wood')
@@ -577,9 +584,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_heavy_machine')
     .soundType('metal')
@@ -591,9 +595,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_mechanical_arm_base')
     .soundType('metal')
@@ -605,9 +606,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('mechanical_arm_base')
     .soundType('metal')
@@ -619,9 +617,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_diesel_engine')
     .soundType('metal')
@@ -634,9 +629,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_large_diesel_engine')
     .soundType('metal')
@@ -649,9 +641,6 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .notSolid()
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_huge_diesel_engine')
     .soundType('metal')
@@ -663,9 +652,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
     .redstoneConductor(false)
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_heavy_machinery_casing')
     .soundType('metal')
@@ -676,9 +662,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_blast_furnace_reinforcement')
     .soundType('metal')
@@ -689,9 +672,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#FF5500')
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('weathered_glass')
     .soundType('glass')
@@ -757,6 +737,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
   
   event.create('claystone_clump')
+    .textureAll('kubejs:block/claystone_base_bottom')
     .soundType('deepslate')
     .hardness(3)
     .resistance(3)
@@ -773,6 +754,7 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#B0965F')
+    .modelJson = cubeColumnModel('kubejs:block/claystone_base_bottom', 'kubejs:block/claystone_base_side')
 
   event.create('incomplete_furnace')
     .soundType('stone')
@@ -782,9 +764,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('minecraft:mineable/pickaxe')
     .tagBlock('minecraft:needs_stone_tool')
     .mapColor('#B0965F')
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
   
   event.create('incomplete_crafting_table')
     .soundType('stone')
@@ -808,9 +787,6 @@ StartupEvents.registry('block', event => {
     .redstoneConductor(false)
     .suffocating(false)
     .defaultCutout()
-	  .property(BlockProperties.FACING)
-    .defaultState(state => state.setValue(BlockProperties.FACING, Direction.NORTH))
-    .placementState(state => state.setValue(BlockProperties.FACING, state.horizontalDirection.opposite))
 
   event.create('incomplete_incubator')
     .soundType('metal')
