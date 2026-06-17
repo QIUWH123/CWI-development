@@ -230,10 +230,10 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/pentlandite')
 
   event.create('cassiterite')
-    .texture('kubejs:item/ores/cassiterite')
+    .texture('tfc:item/ore/rich_sphalerite')
 
   event.create('sphalerite')
-    .texture('tfc:item/ore/rich_sphalerite')
+    .texture('kubejs:item/ores/sphalerite')
 
   event.create('chalcocite')
     .texture('mekanism:item/raw_lead')

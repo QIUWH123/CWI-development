@@ -252,6 +252,16 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
     .modelJson = cubeColumnModel('kubejs:block/ores/uraninite_top', 'kubejs:block/ores/uraninite_side')
 
+  event.create('gravitite_ore')
+    .soundType('amethyst')
+    .hardness(6)
+    .resistance(12)
+    .requiresTool(true)
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_diamond_tool')
+    .mapColor('#FF5500')
+    .modelJson = cubeColumnModel('kubejs:block/ores/gravitite_top', 'kubejs:block/ores/gravitite_side')
+
   event.create('chromite_ore')
     .textureAll('kubejs:block/ores/chromite')
     .stoneSoundType()
