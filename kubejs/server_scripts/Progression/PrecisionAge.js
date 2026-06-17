@@ -20,7 +20,7 @@ ServerEvents.recipes(event => {
   event.shapeless(
     Item.of('kubejs:handle', 1),
     [
-      '2x #cwi:rubber',
+      '2x #cwi:rubbers',
       '1x create_sa:zinc_handle'
     ]
   )
@@ -108,7 +108,7 @@ ServerEvents.recipes(event => {
       'B'
     ],
     {
-      A: '#cwi:rubber',
+      A: '#cwi:rubbers',
       B: 'create:andesite_alloy'
     }
   )
@@ -137,7 +137,7 @@ ServerEvents.recipes(event => {
     {
       A: 'create_connected:control_chip',
       B: 'create:brass_sheet',
-      C: '#cwi:rubber'
+      C: '#cwi:rubbers'
     }
   )
 
@@ -151,7 +151,7 @@ ServerEvents.recipes(event => {
     {
       A: 'create_connected:control_chip',
       B: 'create:brass_sheet',
-      C: '#cwi:rubber',
+      C: '#cwi:rubbers',
       D: 'create:electron_tube'
     }
   )
@@ -190,7 +190,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'minecraft:copper_ingot',
-      B: '#cwi:rubber',
+      B: '#cwi:rubbers',
       C: 'create:copper_sheet'
     }
   )
@@ -204,7 +204,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'minecraft:copper_ingot',
-      B: '#cwi:rubber',
+      B: '#cwi:rubbers',
       C: 'create:copper_sheet',
       D: 'create:brass_sheet',
       E: 'create_connected:control_chip'
@@ -644,7 +644,7 @@ ServerEvents.recipes(event => {
     {
       A: 'create_connected:control_chip',
       B: 'create:copper_sheet',
-      C: '#cwi:rubber'
+      C: '#cwi:rubbers'
     }
   )
 

@@ -35,15 +35,15 @@
 			image: "minecraft:block/iron_block"
 			rotation: 45.0d
 			width: 1.0d
-			x: 14.0d
-			y: -2.0d
+			x: 16.0d
+			y: -4.0d
 		}
 		{
 			height: 1.0d
 			image: "create:block/industrial_iron_block_top"
 			rotation: 45.0d
 			width: 1.0d
-			x: 10.0d
+			x: 16.0d
 			y: 6.0d
 		}
 		{
@@ -272,8 +272,8 @@
 		}
 		{
 			dependencies: [
-				"6D37805074F5C079"
 				"233D8C38E18799CF"
+				"25C5F3ED706FFA9C"
 			]
 			disable_toast: true
 			id: "7A7EB90A68EA8845"
@@ -712,8 +712,8 @@
 				type: "item"
 			}]
 			title: "Filling Tanks"
-			x: 14.0d
-			y: -2.0d
+			x: 16.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["7E7168763D8B3AAE"]
@@ -730,9 +730,11 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["612A2B07C4F613E6"]
+			dependencies: [
+				"233D8C38E18799CF"
+				"3A8590545AC9E328"
+			]
 			disable_toast: true
-			hide_dependency_lines: true
 			id: "64100A05BE92A991"
 			shape: "hexagon"
 			size: 1.5d
@@ -741,8 +743,8 @@
 				item: "rubberworks:compressor"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 6.0d
+			x: 12.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7A7EB90A68EA8845"]
@@ -776,6 +778,7 @@
 		{
 			dependencies: ["7A7EB90A68EA8845"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "5C8B8FCFF3830E1D"
 			shape: "diamond"
 			tasks: [
@@ -790,7 +793,7 @@
 					type: "item"
 				}
 			]
-			x: 10.0d
+			x: 16.0d
 			y: 6.0d
 		}
 		{
@@ -845,7 +848,7 @@
 					type: "item"
 				}
 			]
-			x: 12.0d
+			x: 14.0d
 			y: 6.0d
 		}
 		{
@@ -881,7 +884,7 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["612A2B07C4F613E6"]
+			dependencies: ["3A8590545AC9E328"]
 			id: "233D8C38E18799CF"
 			shape: "rsquare"
 			size: 1.75d
@@ -1065,20 +1068,13 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["59C14FA285FD0CD7"]
-			id: "263E53F32A4D8904"
+			dependencies: ["612A2B07C4F613E6"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "4A30DD9F422A3EBC"
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{
-				id: "22E4CFA03C41E6A8"
-				item: "create:schedule"
-				type: "item"
-			}]
-			x: 4.0d
-			y: -4.0d
-		}
-		{
-			id: "4A30DD9F422A3EBC"
 			tasks: [
 				{
 					id: "1CC4527FD0AAF002"
@@ -1100,6 +1096,8 @@
 			y: -2.0d
 		}
 		{
+			dependencies: ["6D37805074F5C079"]
+			disable_toast: true
 			id: "25C5F3ED706FFA9C"
 			tasks: [{
 				id: "7E7026F03B4791B9"
@@ -1108,6 +1106,73 @@
 			}]
 			x: 10.0d
 			y: 4.0d
+		}
+		{
+			dependencies: ["612A2B07C4F613E6"]
+			id: "3A8590545AC9E328"
+			tasks: [{
+				id: "0B8B0E87EBB280B1"
+				item: "createdeco:industrial_iron_sheet"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D37805074F5C079"]
+			disable_toast: true
+			id: "748F017B8A7A73EF"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "4DEC205462B55FFD"
+				item: "vintageimprovements:vibrating_table"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["25C5F3ED706FFA9C"]
+			id: "22D4FFFA7C4A4009"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "5F2D930C719E6CBF"
+				item: "cwi:incubator"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1D16D3568A4B56AC"]
+			hide_dependency_lines: true
+			id: "0AC1C1497E7EBDA7"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "4617AE58275233A1"
+				item: "cwi:mixing_vessel"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["53BF409251D93EE1"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "0F10364E2DA4BE4C"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "09AEA3C15634C3D5"
+				item: "functionalstorage:storage_controller"
+				type: "item"
+			}]
+			x: 14.0d
+			y: -2.0d
 		}
 	]
 	title: "Precision Engraving"

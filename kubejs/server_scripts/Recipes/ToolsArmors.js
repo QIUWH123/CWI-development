@@ -82,7 +82,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:iron_sheet',
-            B: '#cwi:rubber',
+            B: '#cwi:rubbers',
             C: 'minecraft:stick',
         }
     )

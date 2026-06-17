@@ -167,7 +167,7 @@ ServerEvents.recipes(event => {
 
   event.custom({
     "type": "lychee:block_interacting",
-    "item_in": {"tag":"cwi:leather"},
+    "item_in": {"tag":"cwi:leathers"},
     "block_in": "kubejs:claystone_base",
     "post": [
       {"type":"execute","command":"particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 3","hide":true},

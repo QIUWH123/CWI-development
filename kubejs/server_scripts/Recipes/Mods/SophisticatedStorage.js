@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
     {
       A: '#cwi:string',
       B: 'create:andesite_alloy',
-      C: '#cwi:leather'
+      C: '#cwi:leathers'
     }
   )
 
@@ -54,7 +54,7 @@ ServerEvents.recipes(event => {
     {
       A: 'sophisticatedbackpacks:upgrade_base',
       B: 'create:copper_sheet',
-      C: '#cwi:rubber',
+      C: '#cwi:rubbers',
       D: 'create:fluid_pipe'
     }
   )

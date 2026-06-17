@@ -136,7 +136,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'tfmg:cast_iron_sheet',
-      B: '#cwi:rubber',
+      B: '#cwi:rubbers',
       C: 'tfmg:cast_iron_fluid_tank'
     }
   )
@@ -481,7 +481,7 @@ ServerEvents.recipes(event => {
     'tfmg:steel_pipe', 
     [
       event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', 'kubejs:steel_ring']),
-      event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', '#cwi:rubber']),
+      event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', '#cwi:rubbers']),
       event.recipes.create.deploying('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', 'kubejs:steel_bearing']),
       event.recipes.create.filling('kubejs:incomplete_industrial_pump', ['kubejs:incomplete_industrial_pump', Fluid.of('kubejs:molten_sticky_resin', 100)])
     ]

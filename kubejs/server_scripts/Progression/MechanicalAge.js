@@ -29,7 +29,7 @@ ServerEvents.recipes(event => {
     Item.of('create:encased_chain_drive'),
     [
       'create:andesite_casing',
-      '#cwi:rubber'
+      '#cwi:rubbers'
     ]
   )
 
@@ -649,7 +649,7 @@ ServerEvents.recipes(event => {
       B: 'kubejs:andesite_bearing',
       C: 'create:fluid_tank',
       D: 'create:copper_sheet',
-      E: '#cwi:rubber'
+      E: '#cwi:rubbers'
     }
   )
 
@@ -710,7 +710,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: '#cwi:string',
-      B: '#cwi:leather',
+      B: '#cwi:leathers',
       C: 'minecraft:chest',
       D: 'vintageimprovements:andesite_sheet',
       E: 'create:andesite_alloy'
@@ -725,7 +725,7 @@ ServerEvents.recipes(event => {
     ],
     {
       A: 'create:copper_casing',
-      B: '#cwi:rubber'
+      B: '#cwi:rubbers'
     }
   )
 
@@ -749,7 +749,7 @@ ServerEvents.recipes(event => {
       'AAA'
     ],
     {
-      A: '#cwi:rubber'
+      A: '#cwi:rubbers'
     }
   )
 
@@ -831,7 +831,7 @@ ServerEvents.recipes(event => {
     ],
     {
       B: 'create:andesite_alloy',
-      C: '#cwi:rubber'
+      C: '#cwi:rubbers'
     }
   )
 
@@ -843,7 +843,7 @@ ServerEvents.recipes(event => {
     ],
     {
       B: 'create:andesite_alloy',
-      C: '#cwi:rubber'
+      C: '#cwi:rubbers'
     }
   )
 

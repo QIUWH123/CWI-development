@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "kubejs:block/steel_armor/steel_armor_block",
+    "down": "kubejs:block/steel_armor/steel_armor_block",
+    "up": "kubejs:block/steel_armor/steel_armor_block",
+    "north": "kubejs:block/steel_armor/steel_armor_block",
+    "east": "kubejs:block/steel_armor/steel_armor_safe",
+    "south": "kubejs:block/steel_armor/steel_armor_block",
+    "west": "kubejs:block/steel_armor/steel_armor_block"
+  }
+}

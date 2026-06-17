@@ -1,7 +1,7 @@
 BlockEvents.rightClicked("minecraft:spawner", event => {
     const { block, item } = event
 
-    if (item.id != "sgjourney:golden_idol") return
+    if (item.id != 'minecraft:totem_of_undying') return
 
     let SpawnerEntityData = {
         Delay: 20,

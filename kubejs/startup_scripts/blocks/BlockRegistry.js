@@ -441,6 +441,7 @@ StartupEvents.registry('block', event => {
     .notSolid()
 
   event.create('steel_armor_block')
+    .textureAll('kubejs:block/steel_armor/steel_armor_block')
     .soundType('metal')
     .hardness(120)
     .resistance(2000)
@@ -451,6 +452,7 @@ StartupEvents.registry('block', event => {
     .mapColor('#FF5500')
 
   event.create('steel_armor_penetrated')
+    .textureAll('kubejs:block/steel_armor/steel_armor_penetrated')
     .soundType('metal')
     .hardness(100)
     .resistance(1600)

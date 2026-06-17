@@ -55,7 +55,7 @@
 		{
 			description: ["&eThe familiar Overworld has been transformed into a hazardous, post-cataclysmic wasteland.&r"]
 			disable_toast: true
-			icon: "kubejs:cassiterite"
+			icon: "kubejs:bauxite"
 			id: "581352108711C576"
 			shape: "circle"
 			size: 2.0d

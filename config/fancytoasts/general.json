@@ -2,7 +2,7 @@
   "isJadeHiding": true,
   "isBossBarHiding": true,
   "isAetherEnabled": true,
-  "areSoundsEnabled": true,
+  "areSoundsEnabled": false,
   "taskVolume": 1.0,
   "goalVolume": 1.0,
   "challengeVolume": 1.0,

@@ -7,6 +7,17 @@
 	id: "347EE10EFFCA1769"
 	order_index: 12
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "0DFA888EA5975E50"
+		shape: "gear"
+		size: 2.0d
+		tasks: [{
+			id: "264FB3B6A8B2FE27"
+			item: "kubejs:bioengineering_manual"
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
 	title: "Bioengineering"
 }

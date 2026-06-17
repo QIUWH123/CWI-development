@@ -102,7 +102,7 @@ ServerEvents.recipes(event => {
 // Deploying
 
     deploying('create:sturdy_sheet','minecraft:paper','create:schedule')
-    deployingTag('cwi:leather','minecraft:paper','vintageimprovements:recipe_card')
+    deployingTag('cwi:leathers','minecraft:paper','vintageimprovements:recipe_card')
 
 // Curving
 
@@ -187,7 +187,7 @@ ServerEvents.recipes(event => {
 // Item Application
 
     itemApplication('createdieselgenerators:chip_wood_block', 'vintageimprovements:andesite_sheet', 'create:andesite_casing')
-    itemApplication('createdieselgenerators:chip_wood_block', 'cwi:rubber', 'kubejs:sealed_wood', true)
+    itemApplication('createdieselgenerators:chip_wood_block', 'cwi:rubbers', 'kubejs:sealed_wood', true)
     itemApplication('kubejs:sealed_wood', 'create:copper_sheet', 'create:copper_casing')
     itemApplication('kubejs:quality_sealed_wood', 'create:brass_sheet', 'create:brass_casing')
     itemApplication('create:brass_casing', 'createdeco:industrial_iron_sheet', 'kubejs:industrial_casing')

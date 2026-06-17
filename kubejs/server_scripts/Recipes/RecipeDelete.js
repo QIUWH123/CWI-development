@@ -146,7 +146,7 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
 
-  event.remove({ mod: 'biomancy' })
+  //event.remove({ mod: 'biomancy' })
 
   //event.remove({ id: 'biofactory:filling/rich_soil' })
   //event.remove({ id: 'biomancy:crafting/dirt_from_stone_powder' })
@@ -836,7 +836,7 @@ ServerEvents.recipes(event => {
 ServerEvents.recipes(event => {
 
   event.remove({ id: 'miners_delight:string_from_gossypium' })
-  event.remove({ id: '' })
+  event.remove({ id: 'miners_delight:copper_pot' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: '' })
@@ -851,6 +851,22 @@ ServerEvents.recipes(event => {
   event.remove({ id: '' })
   event.remove({ id: '' })
 
+})
+
+//vitalHerbs
+
+ServerEvents.recipes(event => {
+
+  event.remove({ id: 'vital_herbs:teapot_recipe' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  event.remove({ id: '' })
+  
 })
 
 //farmersdelight
@@ -873,7 +889,7 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'farmersdelight:netherite_knife_smithing' })
   event.remove({ id: '' })
   event.remove({ id: '' })
-  event.remove({ id: '' })
+  event.remove({ id: 'farmersdelight:cooking_pot' })
   event.remove({ id: '' })
   event.remove({ id: '' })
   event.remove({ id: 'farmersdelight:packed_mud_from_straw' })

@@ -24,7 +24,7 @@ ServerEvents.recipes(event => {
         "item": "createdieselgenerators:chip_wood_block"
       },
       {
-        "tag": "cwi:rubber"
+        "tag": "cwi:rubbers"
       }
     ],
     "results": [

@@ -97,17 +97,23 @@ ServerEvents.tags('item', event => {
     'biomancy:sinew'
   ])
 
+  //charcoal
+  event.add('cwi:charcoals', ['minecrft:charcoal', 'kubejs:charcoal_powder'])
+
+  //coal
+  event.add('cwi:coals', ['minecraft:coal', 'kubejs:coal_powder'])
+
   //rubber
-  event.add('cwi:rubber', ['tfmg:rubber_sheet', 'kubejs:rubber'])
+  event.add('cwi:rubbers', ['tfmg:rubber_sheet', 'kubejs:rubber'])
 
   //clay
-  event.add('cwi:clay', ['minecraft:clay', 'kubejs:clay_powder'])
+  event.add('cwi:clays', ['minecraft:clay', 'kubejs:clay_powder'])
 
   //feather
-  event.add('cwi:feather', ['kubejs:synthetic_leather', 'minecraft:feather'])
+  event.add('cwi:feathers', ['kubejs:synthetic_leather', 'minecraft:feather'])
 
   //leather
-  event.add('cwi:leather', ['tfmg:synthetic_leather', 'minecraft:leather'])
+  event.add('cwi:leathers', ['tfmg:synthetic_leather', 'minecraft:leather'])
 
   //basicMaterials
   event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand'])
@@ -534,6 +540,6 @@ ServerEvents.recipes(event => {
   event.replaceInput({ input: '#forge:plates/aluminum' },'#forge:plates/aluminum','tfmg:aluminum_sheet')
   event.replaceInput({ input: 'createdeco:zinc_sheet' },'createdeco:zinc_sheet','createaddition:zinc_sheet')
   event.replaceInput({ input: 'minecraft:string' },'minecraft:string','#cwi:string')
-  event.replaceInput({ input: 'minecraft:leather' },'minecraft:leather','#cwi:leather')
+  event.replaceInput({ input: 'minecraft:leather' },'minecraft:leather','#cwi:leathers')
 
 })
