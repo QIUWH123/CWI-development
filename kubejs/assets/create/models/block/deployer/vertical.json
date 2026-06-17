@@ -6,9 +6,9 @@
 		"5": "create:block/deployer_side_1",
 		"6": "create:block/deployer_top",
 		"7": "create:block/deployer_inner",
-		"particle": "create:block/deployer_gearbox_top",
-		"gearbox_top": "create:block/deployer_gearbox_top",
-		"gearbox": "create:block/deployer_gearbox",
+		"particle": "create:block/brass_casing",
+		"gearbox_top": "create:block/brass_casing",
+		"gearbox": "create:block/brass_gearbox",
 		"andesite_casing_short": "create:block/deployer_side_2"
 	},
 	"elements": [

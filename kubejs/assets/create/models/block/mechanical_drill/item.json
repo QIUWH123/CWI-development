@@ -8,7 +8,7 @@
 		"7": "block/polished_andesite",
 		"8": "create:block/mechanical_drill_top",
 		"10": "create:block/mechanical_drill_side",
-		"particle": "create:block/mechanical_drill_gearbox_top",
+		"particle": "create:block/industrial_iron_block",
                 "gearbox": "create:block/mechanical_drill_gearbox"
 	},
 	"elements": [

@@ -200,7 +200,7 @@ ServerEvents.recipes(event => {
       'AEA'
     ],
     {
-      A: 'vintageimprovements:iron_spring',
+      A: 'vintageimprovements:industrial_iron_spring',
       B: 'create:large_cogwheel',
       C: 'tfmg:hardened_planks',
       D: 'kubejs:andesite_machine',

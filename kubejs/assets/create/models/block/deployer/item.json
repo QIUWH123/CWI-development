@@ -10,8 +10,8 @@
 		"10": "create:block/deployer_side_1",
 		"18": "create:block/deployer",
 		"particle": "create:block/axis",
-		"gearbox_top": "create:block/deployer_gearbox_top",
-		"gearbox": "create:block/deployer_gearbox",
+		"gearbox_top": "create:block/brass_casing",
+		"gearbox": "create:block/brass_gearbox",
 		"andesite_casing_short": "create:block/deployer_side_2",
 		"mechanical_press_pole": "create:block/mechanical_press_pole",
 		"mechanical_press_head": "create:block/mechanical_press_head"

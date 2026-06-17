@@ -4,6 +4,8 @@
 
 StartupEvents.registry('item', event => {
 
+  event.create('vintageimprovements:industrial_iron_spring')
+
   event.create('dust-covered_seeds').displayName('Dust-Covered Seeds')
     .texture('kubejs:item/plants/dust-covered_seeds')
 

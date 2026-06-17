@@ -51,7 +51,7 @@
 			image: "create:block/industrial_iron_block_top"
 			rotation: 45.0d
 			width: 1.0d
-			x: 14.0d
+			x: 16.0d
 			y: 2.0d
 		}
 		{
@@ -227,7 +227,7 @@
 		{
 			dependencies: ["1D16D3568A4B56AC"]
 			description: [
-				"   &3---&r  &bSupports Superheating&r  &3---&r "
+				"   &3-----&r   &bSupports Superheating&r   &3-----&r "
 				""
 				"&eConverts liquid fuel into sustained thermal energy for power generation and industrial heat applications. &r"
 				""
@@ -273,7 +273,7 @@
 		{
 			dependencies: [
 				"6D37805074F5C079"
-				"148115A10C1A0F03"
+				"233D8C38E18799CF"
 			]
 			disable_toast: true
 			id: "7A7EB90A68EA8845"
@@ -284,7 +284,7 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 12.0d
 			y: 4.0d
 		}
 		{
@@ -424,7 +424,7 @@
 				item: "kubejs:industrial_iron_blade"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 8.0d
 			y: 2.0d
 		}
 		{
@@ -662,7 +662,7 @@
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -726,7 +726,7 @@
 				item: "kubejs:steel_armor_block"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 15.0d
 			y: 0.0d
 		}
 		{
@@ -753,7 +753,7 @@
 				item: "kubejs:industrial_iron_drill_head"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 14.0d
 			y: 2.0d
 		}
 		{
@@ -770,7 +770,7 @@
 				}
 				type: "item"
 			}]
-			x: 14.0d
+			x: 16.0d
 			y: 2.0d
 		}
 		{
@@ -890,7 +890,7 @@
 				item: "kubejs:industrial_casing"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 10.0d
 			y: 2.0d
 		}
 		{
@@ -905,7 +905,7 @@
 				item: "createmetallurgy:foundry_mixer"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 16.0d
 			y: 4.0d
 		}
 		{
@@ -937,7 +937,7 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 14.0d
 			y: 4.0d
 		}
 		{
@@ -1076,6 +1076,38 @@
 			}]
 			x: 4.0d
 			y: -4.0d
+		}
+		{
+			id: "4A30DD9F422A3EBC"
+			tasks: [
+				{
+					id: "1CC4527FD0AAF002"
+					item: "functionalstorage:fluid_1"
+					type: "item"
+				}
+				{
+					id: "37E011A0F1369C85"
+					item: "functionalstorage:fluid_2"
+					type: "item"
+				}
+				{
+					id: "54FF4322EB2EDEBC"
+					item: "functionalstorage:fluid_4"
+					type: "item"
+				}
+			]
+			x: 16.0d
+			y: -2.0d
+		}
+		{
+			id: "25C5F3ED706FFA9C"
+			tasks: [{
+				id: "7E7026F03B4791B9"
+				item: "vintageimprovements:industrial_iron_spring"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 4.0d
 		}
 	]
 	title: "Precision Engraving"

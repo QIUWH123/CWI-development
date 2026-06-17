@@ -337,14 +337,13 @@ ServerEvents.recipes(event => {
   event.shaped(
     'vintageimprovements:spring_coiling_machine_wheel',
     [
+      ' A ',
       'ABA',
-      'BCB',
-      'ABA'
+      ' A '
     ],
     {
       A: 'kubejs:bronze_sheet',
-      B: 'kubejs:bronze_ingot',
-      C: 'create:gearshift'
+      B: 'create:gearshift'
     }
   )
 
@@ -494,7 +493,7 @@ ServerEvents.recipes(event => {
       'DECBD',
       '  AF '
     ], {
-      A: 'vintageimprovements:iron_spring',
+      A: 'vintageimprovements:industrial_iron_spring',
       B: 'kubejs:industrial_casing',
       C: 'kubejs:precise_machine',
       D: 'create:brass_sheet',

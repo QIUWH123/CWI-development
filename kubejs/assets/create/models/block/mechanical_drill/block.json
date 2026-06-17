@@ -4,8 +4,8 @@
 	"textures": {
 		"4": "create:block/mechanical_drill_top",
 		"10": "create:block/mechanical_drill_side",
-		"gearbox_top": "create:block/mechanical_drill_gearbox_top",
-		"particle": "create:block/mechanical_drill_gearbox_top",
+		"gearbox_top": "create:block/industrial_iron_block",
+		"particle": "create:block/industrial_iron_block",
                 "gearbox": "create:block/mechanical_drill_gearbox"
 	},
 	"elements": [
