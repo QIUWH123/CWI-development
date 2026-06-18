@@ -10,74 +10,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
 JEIAddedEvents.registerRecipes(event => {
     let typeId = new ResourceLocation('kubejs', 'mixing_vessel')
     let recipeBuilder = event.custom(typeId)
-
-    const recipes = [
-        {
-            inputs: [{ item: 'tfmg:sulfur_dust', count: 2 }, { item: 'kubejs:copper_powder' }],
-            outputs: [{ item: 'kubejs:sulfur_copper_catalyst' }]
-        },
-        {
-            inputs: [{ item: 'kubejs:copper_powder' }],
-            inputFluids: [{ fluid: 'kubejs:chlorine', amount: 250 }],
-            outputs: [{ item: 'kubejs:chlorine_copper_catalyst' }]
-        },
-        {
-            inputs: [{ item: 'kubejs:caustic_soda_powder', count: 2 }, { item: 'kubejs:nickel_powder' }],
-            outputs: [{ item: 'kubejs:nickel_catalyst' }]
-        },
-        {
-            inputs: [{ item: 'kubejs:nickel_powder' }],
-            inputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 250 }],
-            outputs: [{ item: 'kubejs:nickel_catalyst' }]
-        },
-        {
-            inputs: [{ item: 'kubejs:caustic_soda_powder' }],
-            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-            outputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 125 }]
-        },
-        {
-            inputs: [{ item: 'ratatouille:salt' }],
-            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-            outputFluids: [{ fluid: 'kubejs:brine', amount: 125 }]
-        },
-        {
-            inputs: [{ item: 'kubejs:halite_powder' }],
-            inputFluids: [{ fluid: 'minecraft:water', amount: 125 }],
-            outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
-        },
-        {
-            inputs: [{ item: 'kubejs:halite_powder' }],
-            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-            outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
-        },
-        {
-            inputs: [{ item: 'tfmg:nitrate_dust' }],
-            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-            outputFluids: [{ fluid: 'kubejs:nitrate_solution', amount: 125 }]
-        },
-        {
-            inputs: [{ item: 'minecraft:sugar' }, { item: 'createaddition:biomass' }],
-            inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 250 }],
-            outputFluids: [{ fluid: 'createaddition:bioethanol', amount: 250 }]
-        },
-        {
-            inputs: [{ item: 'createaddition:biomass' }],
-            inputFluids: [
-                { fluid: 'kubejs:distilled_water', amount: 125 },
-                { fluid: 'kubejs:syrup', amount: 125 }
-            ],
-            outputFluids: [{ fluid: 'createaddition:bioethanol', amount: 250 }]
-        },
-        {
-            inputFluids: [
-                { fluid: 'createdieselgenerators:ethanol', amount: 50 },
-                { fluid: 'createdieselgenerators:plant_oil', amount: 50 }
-            ],
-            outputFluids: [{ fluid: 'createdieselgenerators:biodiesel', amount: 100 }]
-        }
-    ]
-
-    recipes.forEach(recipe => {
+    global.mixingVesselRecipes.forEach(recipe => {
         recipeBuilder.add(recipe)
     })
 })
