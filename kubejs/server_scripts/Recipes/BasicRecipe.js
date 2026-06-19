@@ -7,21 +7,24 @@ ServerEvents.recipes(event => {
             "type": "createdieselgenerators:hammering",
             "ingredients":[{"item": input}],
             "results":[{"item": output,"count": count}]
-        })}
+        })
+    }
 
     function cutting(input,output,count){
         event.custom({
             "type": "createdieselgenerators:wire_cutting",
             "ingredients": [{"item": input}],
             "results": [{"item": output,"count": count}]
-        })}
+        })
+    }
 
     function rolling(input,output){
         event.custom({
             "type":"createaddition:rolling",
             "input": {"item": input},
             "result": {"item": output,"count": 2}
-        })}
+        })
+    }
 
     function liquidBurning(input,amount,burnTime,superheated){
         event.custom({
@@ -29,7 +32,8 @@ ServerEvents.recipes(event => {
             "input": {"fluid": input,"amount": amount},
             "burnTime": burnTime,
             "superheated": superheated
-        })}
+        })
+    }
 
     function charging(input,output,energy,chargeRate){
         event.custom({
@@ -38,21 +42,24 @@ ServerEvents.recipes(event => {
             "result": {"item": output,"count": 1},
             "energy": energy,
             "maxChargeRate": chargeRate
-        })}
+        })
+    }
 
     function turning(input,output,count){
         event.custom({
             "type":"vintageimprovements:turning",
             "ingredients": [{"item": input}],
             "results": [{"item": output,"count": count}]
-        })}
+        })
+    }
 
     function demolding(input,output){
         event.custom({
             "type": "ratatouille:demolding",
             "ingredients": {"item": input},
             "results": {"item": output}
-        })}
+        })
+    }
 
     function curving(head,input,output){
         event.custom({
@@ -60,7 +67,8 @@ ServerEvents.recipes(event => {
             "itemAsHead": head,
             "ingredients": [{"item": input}],
             "results": [{"item": output}]
-        })}
+        })
+    }
 
     function addStoragePair(bigItem, smallItem, count) {
         var smallStack = count + 'x ' + smallItem
@@ -72,14 +80,16 @@ ServerEvents.recipes(event => {
         event.custom({
             "type": "create:deploying",
             "ingredients": [{"item": input},{"item": using}],
-            "results": [{"item": output}]})
+            "results": [{"item": output}]
+        })
     }
 
     function deployingTag(tag, input, output) {
         event.custom({
             "type": "create:deploying",
             "ingredients": [{"item": input},{"tag": tag}],
-            "results": [{"item": output}]})
+            "results": [{"item": output}]
+        })
     }
 
     function itemApplication(first, second, output, isSecondTag) {
@@ -135,28 +145,6 @@ ServerEvents.recipes(event => {
 
 // Rolling
 
-    rolling('kubejs:silver_ingot','kubejs:silver_rod')
-    rolling('kubejs:molybdenum_ingot','kubejs:molybdenum_rod')
-    rolling('kubejs:bronze_ingot','kubejs:bronze_rod')
-    rolling('kubejs:tin_ingot','kubejs:tin_rod')
-    rolling('kubejs:cobalt_ingot','kubejs:cobalt_rod')
-    rolling('tfmg:cast_iron_ingot','vintageimprovements:cast_iron_rod')
-    rolling('kubejs:rusted_iron_ingot','kubejs:rusted_iron_rod')
-
-    rolling('tfmg:aluminum_sheet','tfmg:aluminum_wire')
-    rolling('tfmg:cast_iron_sheet','vintageimprovements:cast_iron_wire')
-    rolling('tfmg:lead_sheet','vintageimprovements:lead_wire')
-    rolling('tfmg:nickel_sheet','vintageimprovements:nickel_wire')
-    rolling('vintageimprovements:constantan_sheet','tfmg:constantan_wire')
-    rolling('kubejs:silver_sheet','kubejs:silver_wire')
-    rolling('kubejs:molybdenum_wire','kubejs:molybdenum_wire')
-    rolling('kubejs:bronze_sheet','kubejs:bronze_wire')
-    rolling('kubejs:tin_sheet','kubejs:tin_wire')
-    rolling('kubejs:cobalt_sheet','kubejs:cobalt_wire')
-    rolling('kubejs:magnet_sheet','kubejs:magnet_wire')
-    rolling('kubejs:magnetic_alloy_sheet','kubejs:magnetic_alloy_wire')
-    rolling('kubejs:rusted_iron_sheet','kubejs:rusted_iron_wire')
-
 // Cutting
 
     cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
@@ -171,13 +159,6 @@ ServerEvents.recipes(event => {
     chiseling('create:brass_sheet','kubejs:brass_circuit_board',1)
 
 // Pressing
-
-    event.recipes.create.pressing('kubejs:magnesium_sheet', 'kubejs:magnesium_ingot')
-    event.recipes.create.pressing('kubejs:silver_sheet', 'kubejs:silver_ingot')
-    event.recipes.create.pressing('kubejs:molybdenum_sheet', 'kubejs:molybdenum_ingot')
-    event.recipes.create.pressing('kubejs:bronze_sheet', 'kubejs:bronze_ingot')
-    event.recipes.create.pressing('kubejs:tin_sheet', 'kubejs:tin_ingot')
-    event.recipes.create.pressing('kubejs:cobalt_sheet', 'kubejs:cobalt_ingot')
 
     event.recipes.create.pressing('2x kubejs:broken_burnt_log', 'kubejs:burnt_log')
     event.recipes.create.pressing('2x kubejs:stripped_broken_burnt_log', 'kubejs:stripped_burnt_log')

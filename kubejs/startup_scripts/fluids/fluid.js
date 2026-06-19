@@ -101,6 +101,7 @@ var normalFluids = [
   ['molten_polyethylene', 0xE4E8EB, 'thick'],
   ['molten_polypropylene', 0xD0EEF7, 'thick'],
   ['molten_polyvinyl_chloride', 0xE8E8CA, 'thick'],
+  ['molten_polybenzimidazole', 0x091652, 'thick'],
   ['ferric_chloride', 0x6B4226, 'thin'],
   ['nitrogen_fertilizer', 0xFFEB63, 'thin'],
   ['nitric_acid', 0xC25A34, 'thin'],

@@ -110,14 +110,14 @@ ServerEvents.recipes(event => {
         if (shape === 'sheet' || shape === 'ingot') return ingotTime
         if (shape === 'nugget') return Math.round(ingotTime / 5)
         if (shape === 'rod' || shape === 'wire') return Math.round(ingotTime / 3)
-        if (shape === 'dust') return Math.round(ingotTime * 0.75)
+        if (shape === 'powder') return Math.round(ingotTime * 0.75)
         return ingotTime
     }
 
 // Auto Generated Casting Melting And Bulk Melting For All Metals And Alloys
 
     materials.forEach(mat => {
-        if (!['metal', 'alloy'].includes(mat.type)) return
+        if (!['metal', 'alloy', 'polymer'].includes(mat.type)) return
         if (!mat.fluid) return
         moldTypes.forEach(moldPrefix => {
             if (moldPrefix === 'terracotta' && mat.mp >= 1200) return
@@ -137,7 +137,7 @@ ServerEvents.recipes(event => {
         const heat = getHeat(mat)
         const bulkMin = heat === 'superheated' ? 9 : 4
         const bulkMax = 50
-        const itemTypes = ['sheet', 'wire', 'rod', 'dust', 'nugget', 'ingot', 'block']
+        const itemTypes = ['sheet', 'wire', 'rod', 'powder', 'nugget', 'ingot', 'block']
         itemTypes.forEach(type => {
             const item = mat.items[type]
             if (!item) return
@@ -148,6 +148,21 @@ ServerEvents.recipes(event => {
             melting(heat, item, amount, calcTime(mat, type), mat.fluid)
             bulkMelting(bulkMin, bulkMax, item, amount, calcTime(mat, type), mat.fluid)
         })
+    })
+
+// Auto Generated Pressing Milling and Rolling
+
+    materials.forEach(mat => {
+        if (!['metal', 'alloy', 'polymer'].includes(mat.type)) return
+        if (!mat.items) return;
+
+        const items = mat.items;
+
+        if (items.ingot && items.sheet) event.recipes.create.pressing(items.sheet, items.ingot)
+        if (items.ingot && items.powder) event.recipes.create.milling(items.powder, items.ingot)
+        if (items.sheet && items.powder) event.recipes.create.milling(items.powder, items.sheet)
+        if (items.ingot && items.rod) event.custom({"type":"createaddition:rolling","input": {"item": items.ingot},"result": {"item": items.rod,"count": 2}})
+        if (items.sheet && items.wire) event.custom({"type":"createaddition:rolling","input": {"item": items.sheet},"result": {"item": items.wire,"count": 2}})
     })
 
 // Special Melting And Casting

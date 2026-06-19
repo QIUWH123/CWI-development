@@ -64,32 +64,8 @@ ServerEvents.recipes(event => {
     
     ores.forEach(([crushedOreId, oreId]) => {
         event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
+        event.recipes.create.milling([crushedOreId, crushedOreId], oreId)
     })
-
-//dusts
-
-//ores
-
-  event.recipes.create.milling('kubejs:magnesium_powder', 'kubejs:magnesium_ingot')
-  event.recipes.create.milling('kubejs:silicon_powder', 'tfmg:silicon_ingot')
-  event.recipes.create.milling('kubejs:copper_powder', 'minecraft:copper_ingot')
-  event.recipes.create.milling('kubejs:iron_powder', 'minecraft:iron_ingot')
-  event.recipes.create.milling('kubejs:gold_powder', 'minecraft:gold_ingot')
-  event.recipes.create.milling('kubejs:brass_powder', 'create:brass_ingot')
-  event.recipes.create.milling('kubejs:andesite_alloy_powder', 'create:andesite_alloy')
-  event.recipes.create.milling('kubejs:zinc_powder', 'create:zinc_ingot')
-  event.recipes.create.milling('kubejs:industrial_iron_powder', 'createdeco:industrial_iron_ingot')
-  event.recipes.create.milling('kubejs:lead_powder', 'tfmg:lead_ingot')
-  event.recipes.create.milling('kubejs:nickel_powder', 'tfmg:nickel_ingot')
-  event.recipes.create.milling('kubejs:lithium_powder', 'tfmg:lithium_ingot')
-  event.recipes.create.milling('kubejs:aluminum_powder', 'tfmg:aluminum_ingot')
-  event.recipes.create.milling('kubejs:steel_powder', 'tfmg:steel_ingot')
-  event.recipes.create.milling('kubejs:cast_iron_powder', 'tfmg:cast_iron_ingot')
-  event.recipes.create.milling('kubejs:silver_powder', 'kubejs:silver_ingot')
-  event.recipes.create.milling('kubejs:bronze_powder', 'kubejs:bronze_ingot')
-  event.recipes.create.milling('kubejs:tin_powder', 'kubejs:tin_ingot')
-  event.recipes.create.milling('kubejs:cobalt_powder', 'kubejs:cobalt_ingot')
-
 })
 
 ServerEvents.recipes(event => {
