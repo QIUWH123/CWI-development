@@ -11,6 +11,7 @@
 	quests: [
 		{
 			dependencies: ["77638D6698CCC725"]
+			disable_toast: true
 			hide_dependency_lines: true
 			icon: "minecraft:stone"
 			id: "73F7C99EE4ABCE4F"
@@ -27,6 +28,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "2F94FFCC16D5C49D"
 			tasks: [{
 				id: "5161456C10D9FF38"
@@ -38,6 +40,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "0506C2A234B9703F"
 			tasks: [{
 				id: "1A0D0F9C7776F8F5"
@@ -49,6 +52,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "10B2B5FA8BC2D32D"
 			tasks: [{
 				id: "31A42EA54EC6558D"
@@ -60,6 +64,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "0950824625FE540D"
 			tasks: [{
 				id: "4B43540B357A8EFE"
@@ -71,6 +76,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "6D052D453279A7A2"
 			tasks: [{
 				id: "6F529AFEAFB092D0"
@@ -82,6 +88,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "7D513F2990AAD38B"
 			tasks: [{
 				id: "2683A832779B14E8"
@@ -93,6 +100,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "290B3071C2AC1F08"
 			tasks: [{
 				id: "685E986232FD0658"
@@ -104,6 +112,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "00BD2A9056BBD12D"
 			tasks: [{
 				id: "10939380EA3E8139"
@@ -115,6 +124,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "1F80AA8218471AE0"
 			tasks: [{
 				id: "311DF0A1A4E63D61"
@@ -126,6 +136,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "7BE37EB99A6D4CF7"
 			tasks: [{
 				id: "334C0B73D5B087BD"
@@ -137,6 +148,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "3500006A693DD345"
 			tasks: [{
 				id: "3BD0713511B91B51"
@@ -148,6 +160,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "719F83D1EB14EF52"
 			tasks: [{
 				id: "4960F5FBC32AC80F"
@@ -159,6 +172,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "01551CCFD7B02814"
 			tasks: [{
 				id: "03D62FF42AB2FEEF"
@@ -170,6 +184,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "32B8611C97510295"
 			tasks: [{
 				id: "74756C52720C6F0D"
@@ -181,6 +196,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "798B24CD005209E9"
 			tasks: [{
 				id: "200888FB3B585774"
@@ -210,6 +226,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "6FAF3C840644F9D0"
 			tasks: [{
 				id: "566322A37985C8CB"
@@ -221,6 +238,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "364041AAD78EB3A1"
 			tasks: [{
 				id: "69E8118A6CA7B38F"
@@ -232,6 +250,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "743931EEF79771D1"
 			tasks: [{
 				id: "1BAAFD77F9D5EDD0"
@@ -243,6 +262,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "424B057217E415F9"
 			tasks: [{
 				id: "265BB5411D3E288D"
@@ -254,6 +274,7 @@
 		}
 		{
 			dependencies: ["77638D6698CCC725"]
+			disable_toast: true
 			hide_dependency_lines: true
 			icon: "minecraft:stone"
 			id: "450EC9FCCFB49FA9"
@@ -270,6 +291,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "5F134945AFC3583E"
 			tasks: [{
 				id: "63C13B1B01E5C984"
@@ -281,6 +303,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "348F7BF851E4C95E"
 			tasks: [{
 				id: "2DCBC6BED2B52D8B"
@@ -292,6 +315,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "51C86C8C68E48EA9"
 			tasks: [{
 				id: "3440339E4523FD30"
@@ -303,6 +327,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "73FF6276224EBAB6"
 			tasks: [{
 				id: "009830F1DF08E26C"
@@ -314,6 +339,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "4D4BB95CAA968736"
 			tasks: [{
 				id: "128F345ADA9E3AC7"
@@ -325,6 +351,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "14774B797AB28D64"
 			tasks: [{
 				id: "78ABBFD3E9D7DE72"
@@ -336,6 +363,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "207759E6F9A95646"
 			tasks: [{
 				id: "5569500FF32BB2BB"
@@ -347,6 +375,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "60C945A7A8D4054A"
 			tasks: [{
 				id: "498220F65D5BE201"
@@ -358,6 +387,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "2285D4636ABBCF53"
 			tasks: [{
 				id: "2E008892DC6B6EAF"
@@ -369,6 +399,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "4BBBB627F7AB501F"
 			tasks: [{
 				id: "7B0F509F8C00BD43"
@@ -380,6 +411,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "07953215B5F0ABE7"
 			tasks: [{
 				id: "512A6D8BB54C56CF"
@@ -391,6 +423,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "3C495220D7F4ABD1"
 			tasks: [{
 				id: "3AA091AF027F2613"
@@ -402,6 +435,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "1F9C0D9632351F1F"
 			tasks: [{
 				id: "03F45974D02BD3FE"
@@ -413,6 +447,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "00C88F4A64520F95"
 			tasks: [{
 				id: "4916A21522C0ADE3"
@@ -442,6 +477,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "22E99910557AA046"
 			tasks: [{
 				id: "15205896899F318D"
@@ -453,6 +489,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "1A6BEA4E485D5F19"
 			tasks: [{
 				id: "1794F2B9DFCFDE2E"
@@ -464,6 +501,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "46D938DC84518EF3"
 			tasks: [{
 				id: "33537F6C4AEF7C07"
@@ -475,6 +513,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "44808873B24D25DD"
 			tasks: [{
 				id: "1C962C982C780E9F"
@@ -486,6 +525,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "69868F26E8CAEB28"
 			tasks: [{
 				id: "1A1C789CAC4B7371"
@@ -497,6 +537,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "11CBF5CC3C77AFB9"
 			tasks: [{
 				id: "2B383E502AECAA19"
@@ -508,6 +549,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "20AE4883883AF881"
 			tasks: [{
 				id: "4B0890512C62C155"
@@ -519,6 +561,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "76D20CBA56A8B826"
 			tasks: [{
 				id: "40201443DD9F482D"
@@ -530,6 +573,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "18CC2E58DB8CDEB3"
 			tasks: [{
 				id: "0A9022A2CF5CDC60"
@@ -541,6 +585,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "3E9879ACA95F92AD"
 			tasks: [{
 				id: "615B47936C4A8976"
@@ -552,6 +597,7 @@
 		}
 		{
 			dependencies: ["77638D6698CCC725"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "3D033B6C68308599"
 			size: 1.5d
@@ -567,6 +613,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "271399BED991F412"
 			tasks: [{
 				id: "4FBFFCB100EB3892"
@@ -578,6 +625,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "358330F488CD75B2"
 			tasks: [{
 				id: "47B73ADAB9F3B596"
@@ -589,6 +637,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "7FBC9ED123F2CE31"
 			tasks: [{
 				id: "241698BA3E822B40"
@@ -600,6 +649,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "743DE43A446F6831"
 			tasks: [{
 				id: "52847CAE982D994B"
@@ -611,6 +661,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "72C8DB6B6A21D418"
 			tasks: [{
 				id: "437C1C048631BBF4"
@@ -622,6 +673,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "7B61D3E3B02B25F8"
 			tasks: [{
 				id: "3E091330F6E282A9"
@@ -633,6 +685,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "4A9F896B7EF913BF"
 			tasks: [{
 				id: "7499F9D72AB524DB"
@@ -644,6 +697,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "00C1FAED2B66021C"
 			tasks: [{
 				id: "58131E981E981E35"
@@ -655,6 +709,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "02CCDCFA7F27891E"
 			tasks: [{
 				id: "5AFF76524A87FA2D"
@@ -666,6 +721,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "195C1679FB4756BA"
 			tasks: [{
 				id: "4B7B1F1051678976"
@@ -677,6 +733,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "6D7E66BD12CC0882"
 			tasks: [{
 				id: "0D8AED3B467E204F"
@@ -688,6 +745,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "6B6AD4A40DAB9EB4"
 			tasks: [{
 				id: "5C304FB531C2940E"
@@ -699,6 +757,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "5D74DA7D8F03E458"
 			tasks: [{
 				id: "1A54FEC5B61DD379"
@@ -710,6 +769,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "48F5761F604C0223"
 			tasks: [{
 				id: "36BA2D6C7F5871A7"
@@ -721,6 +781,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "4B225719A3B6CA8A"
 			tasks: [{
 				id: "6B676F06A8B485D4"
@@ -732,6 +793,7 @@
 		}
 		{
 			dependencies: ["3D033B6C68308599"]
+			disable_toast: true
 			id: "6448B8454B6AEE6F"
 			tasks: [{
 				id: "35E9F81CD0EF7502"
@@ -759,6 +821,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "383C9ACAB37B7DC5"
 			tasks: [{
 				id: "5CD007067D64B15B"
@@ -770,6 +833,7 @@
 		}
 		{
 			dependencies: ["3A1C6C2C5F5965E7"]
+			disable_toast: true
 			id: "7867DE61D423BBA8"
 			tasks: [{
 				id: "0E21E29DA3E0FCBF"
@@ -781,6 +845,7 @@
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]
+			disable_toast: true
 			id: "3209C4128550BBD3"
 			tasks: [{
 				id: "2DBDFF4EA100A1E6"
@@ -792,6 +857,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "21312E8A3700E4BE"
 			tasks: [{
 				id: "1AA41F880DEE9DD5"
@@ -803,6 +869,7 @@
 		}
 		{
 			dependencies: ["009C96B36DFFDD5B"]
+			disable_toast: true
 			id: "34DFDAC6840F28EF"
 			tasks: [{
 				id: "3811EB884FC71C4E"
@@ -814,6 +881,7 @@
 		}
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
+			disable_toast: true
 			id: "16F39EF6812B7239"
 			tasks: [{
 				id: "3DCBBD8A1026B875"

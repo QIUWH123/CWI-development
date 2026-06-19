@@ -117,6 +117,7 @@
 				"461B8FFD37D6D4A8"
 				"34A1646F3FC3509B"
 			]
+			disable_toast: true
 			id: "3E0CF50CF54A7795"
 			shape: "square"
 			tasks: [{
@@ -132,6 +133,7 @@
 				"5148FEA0B12D0880"
 				"4B93583D74E7E010"
 			]
+			disable_toast: true
 			id: "0635A293D5BA7EF2"
 			shape: "square"
 			tasks: [{
@@ -144,6 +146,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "09E6FDDC7DCCD8E3"
 			shape: "hexagon"
@@ -158,6 +161,7 @@
 		}
 		{
 			dependencies: ["09E6FDDC7DCCD8E3"]
+			disable_toast: true
 			id: "4784F318EADDD9C3"
 			tasks: [{
 				id: "66AC72A9F1107284"
@@ -174,6 +178,7 @@
 				"13C9C9F227B312DD"
 				"337E1339823083A2"
 			]
+			disable_toast: true
 			id: "5148FEA0B12D0880"
 			shape: "hexagon"
 			size: 1.5d
@@ -182,6 +187,7 @@
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			disable_toast: true
 			id: "49EB4FE7D42831FA"
 			tasks: [{
 				id: "12E0D24622EA9C27"
@@ -193,6 +199,7 @@
 		}
 		{
 			dependencies: ["14B9150E857D89D3"]
+			disable_toast: true
 			id: "4DADEE61B50B2B74"
 			shape: "square"
 			subtitle: "Even MORE Refractory"
@@ -206,6 +213,7 @@
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
+			disable_toast: true
 			id: "13C9C9F227B312DD"
 			shape: "hexagon"
 			size: 1.5d
@@ -227,6 +235,7 @@
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
+			disable_toast: true
 			id: "337E1339823083A2"
 			shape: "hexagon"
 			size: 1.5d
@@ -245,6 +254,7 @@
 				"09A16A54841462D0"
 				"6DFB21A13808280F"
 			]
+			disable_toast: true
 			id: "14B9150E857D89D3"
 			tasks: [{
 				id: "33967496483FF39B"
@@ -256,6 +266,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "307C9A0994617AEA"
 			tasks: [{
@@ -268,6 +279,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "5CB3035210A39A5F"
 			tasks: [{
@@ -280,6 +292,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "09A16A54841462D0"
 			tasks: [{
@@ -321,6 +334,7 @@
 		}
 		{
 			dependencies: ["0635A293D5BA7EF2"]
+			disable_toast: true
 			id: "5742E5A99ED7CEF1"
 			tasks: [{
 				id: "00A8A83AA19B71F6"
@@ -332,6 +346,7 @@
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			disable_toast: true
 			id: "7D93855EB57F68E5"
 			shape: "hexagon"
 			size: 1.5d
@@ -345,6 +360,7 @@
 		}
 		{
 			dependencies: ["72BBEB2B8E9363AB"]
+			disable_toast: true
 			id: "33288F9895EE3A5E"
 			tasks: [{
 				id: "71517F0A0693C35F"
@@ -356,6 +372,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "6DFB21A13808280F"
 			tasks: [{
@@ -368,6 +385,7 @@
 		}
 		{
 			dependencies: ["09E6FDDC7DCCD8E3"]
+			disable_toast: true
 			id: "72BBEB2B8E9363AB"
 			tasks: [{
 				id: "27F49C90ECC65A2E"
@@ -379,6 +397,7 @@
 		}
 		{
 			dependencies: ["4784F318EADDD9C3"]
+			disable_toast: true
 			id: "461B8FFD37D6D4A8"
 			tasks: [{
 				id: "34124BBFCA8DAEA6"
@@ -390,6 +409,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "34A1646F3FC3509B"
 			tasks: [{
@@ -402,6 +422,7 @@
 		}
 		{
 			dependencies: ["72BBEB2B8E9363AB"]
+			disable_toast: true
 			id: "70556A32DA19E441"
 			shape: "diamond"
 			tasks: [{
@@ -414,6 +435,7 @@
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			disable_toast: true
 			id: "5C5628BB82D53C81"
 			shape: "hexagon"
 			size: 1.5d
@@ -427,6 +449,7 @@
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			disable_toast: true
 			id: "1AC4C7E11C7A406E"
 			shape: "hexagon"
 			size: 1.5d
@@ -441,6 +464,7 @@
 		}
 		{
 			dependencies: ["5531421570274E82"]
+			disable_toast: true
 			id: "08C023B7583B9161"
 			shape: "rsquare"
 			size: 1.5d
@@ -454,6 +478,7 @@
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			disable_toast: true
 			id: "5531421570274E82"
 			shape: "rsquare"
 			size: 1.5d
@@ -467,6 +492,7 @@
 		}
 		{
 			dependencies: ["5C5628BB82D53C81"]
+			disable_toast: true
 			id: "4879996922D6BF38"
 			shape: "diamond"
 			tasks: [{
@@ -479,6 +505,7 @@
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			disable_toast: true
 			id: "1FC1928E91DA9191"
 			shape: "hexagon"
 			size: 1.5d
@@ -492,6 +519,7 @@
 		}
 		{
 			dependencies: ["5531421570274E82"]
+			disable_toast: true
 			id: "25A473E67B1697E0"
 			shape: "hexagon"
 			size: 1.5d
@@ -505,6 +533,7 @@
 		}
 		{
 			dependencies: ["08C023B7583B9161"]
+			disable_toast: true
 			id: "38C3399F3559D720"
 			shape: "hexagon"
 			size: 1.5d
@@ -518,6 +547,7 @@
 		}
 		{
 			dependencies: ["25A473E67B1697E0"]
+			disable_toast: true
 			id: "168029E07C5CA042"
 			shape: "diamond"
 			tasks: [{
@@ -530,6 +560,7 @@
 		}
 		{
 			dependencies: ["128293ACBBFC6D76"]
+			disable_toast: true
 			id: "5FEBE3E71CBDBB0F"
 			tasks: [{
 				id: "162AE1D02886E438"
@@ -541,6 +572,7 @@
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			disable_toast: true
 			id: "128293ACBBFC6D76"
 			tasks: [{
 				id: "396C3695091DF81B"
@@ -552,6 +584,7 @@
 		}
 		{
 			dependencies: ["2D1180C9EC2DE6E2"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "4A57AE1DCC0BFE11"
 			shape: "gear"
@@ -566,6 +599,7 @@
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			disable_toast: true
 			id: "2D1180C9EC2DE6E2"
 			shape: "hexagon"
 			size: 1.5d
@@ -579,6 +613,7 @@
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			disable_toast: true
 			icon_scale: 0.8d
 			id: "4B93583D74E7E010"
 			shape: "hexagon"
@@ -594,6 +629,7 @@
 		}
 		{
 			dependencies: ["7D93855EB57F68E5"]
+			disable_toast: true
 			id: "69BA8B4A6B6C0D75"
 			shape: "hexagon"
 			size: 1.5d
@@ -607,6 +643,7 @@
 		}
 		{
 			dependencies: ["25A473E67B1697E0"]
+			disable_toast: true
 			id: "2E0453F54E312FDB"
 			shape: "diamond"
 			tasks: [{
@@ -619,6 +656,7 @@
 		}
 		{
 			dependencies: ["38C3399F3559D720"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "4BB8F26DFBE7AFCD"
 			shape: "diamond"
@@ -655,6 +693,7 @@
 		}
 		{
 			dependencies: ["1FC1928E91DA9191"]
+			disable_toast: true
 			id: "6CDF4C4F3924B144"
 			shape: "hexagon"
 			size: 1.5d
@@ -669,6 +708,7 @@
 		}
 		{
 			dependencies: ["2D1180C9EC2DE6E2"]
+			disable_toast: true
 			icon: "tfmg:heavy_plate"
 			id: "0DC9E40A95F02CAA"
 			shape: "diamond"
@@ -683,6 +723,7 @@
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "68B7323CA1B8BCCF"
 			shape: "hexagon"
@@ -697,6 +738,7 @@
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "2AA9C7BE2A0D3BA2"
 			shape: "hexagon"
@@ -711,6 +753,7 @@
 		}
 		{
 			dependencies: ["08C023B7583B9161"]
+			disable_toast: true
 			id: "32035A4118FD39B0"
 			shape: "diamond"
 			tasks: [{
@@ -723,6 +766,7 @@
 		}
 		{
 			dependencies: ["70556A32DA19E441"]
+			disable_toast: true
 			id: "34F011FB69FB0B93"
 			shape: "hexagon"
 			size: 1.5d
@@ -736,6 +780,7 @@
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "45287FE5D913F14D"
 			tasks: [{
@@ -752,6 +797,7 @@
 				"5FEBE3E71CBDBB0F"
 				"0B372411B5263246"
 			]
+			disable_toast: true
 			id: "6278A4EBD6EF8DE7"
 			shape: "octagon"
 			size: 2.0d
@@ -765,6 +811,7 @@
 		}
 		{
 			dependencies: ["6278A4EBD6EF8DE7"]
+			disable_toast: true
 			id: "53E0446A29083D90"
 			shape: "octagon"
 			size: 2.0d
@@ -778,6 +825,7 @@
 		}
 		{
 			dependencies: ["128293ACBBFC6D76"]
+			disable_toast: true
 			hide_dependent_lines: true
 			id: "0B372411B5263246"
 			tasks: [{
@@ -790,6 +838,7 @@
 		}
 		{
 			dependencies: ["69BA8B4A6B6C0D75"]
+			disable_toast: true
 			id: "75D002F673C6FBA1"
 			shape: "diamond"
 			tasks: [{

@@ -1,5 +1,5 @@
 {
-  "configVersion": 7,
+  "configVersion": 8,
   "renderNametagsThroughWalls": true,
   "blockEntityWhitelist": [
     "create:rope_pulley",
@@ -59,7 +59,14 @@
     "minecraft:pale_oak_chest_boat",
     "minecraft:bamboo_chest_raft",
     "minecraft:mangrove_chest_boat",
-    "voidscape:corrupted_pawn"
+    "voidscape:corrupted_pawn",
+    "cinematiccataclysm:scylla_cutscene",
+    "cinematiccataclysm:maledictus_cutscene",
+    "cinematiccataclysm:leviathan_cutscene",
+    "cinematiccataclysm:ancient_remnant_cutscene",
+    "createbigcannons:cannon_carriage",
+    "createbigcannons:pitch_contraption",
+    "cinematiccataclysm:ignis_cutscene"
   ],
   "disableF3": false,
   "skipEntityCulling": false,

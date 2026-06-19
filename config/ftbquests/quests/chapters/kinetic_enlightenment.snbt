@@ -52,7 +52,6 @@
 	quests: [
 		{
 			dependencies: ["661157F41CB9C876"]
-			disable_toast: true
 			hide_dependent_lines: true
 			id: "5E402C739E34B7D4"
 			invisible: true
@@ -73,6 +72,7 @@
 				"42229A4123AA3541"
 				"5E24F2344B85B318"
 			]
+			disable_toast: true
 			id: "60E2563C494FB253"
 			shape: "square"
 			subtitle: "The Alloy of Mechanics"
@@ -261,6 +261,7 @@
 		}
 		{
 			dependencies: ["7FD48427B60C3E5A"]
+			disable_toast: true
 			id: "40FA81C21DEF7A09"
 			shape: "square"
 			tasks: [{
@@ -312,6 +313,7 @@
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			disable_toast: true
 			id: "235292F382A4C466"
 			shape: "diamond"
 			tasks: [
@@ -407,6 +409,7 @@
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			disable_toast: true
 			id: "621E7183CC10DDAC"
 			ignore_reward_blocking: true
 			shape: "diamond"
@@ -503,6 +506,7 @@
 		}
 		{
 			dependencies: ["1266E8AE2713DF7E"]
+			disable_toast: true
 			icon: "create:water_wheel"
 			id: "775DF78EB236C941"
 			shape: "octagon"
@@ -532,6 +536,7 @@
 		}
 		{
 			dependencies: ["1E00920BBA587F26"]
+			disable_toast: true
 			icon: "create:windmill_bearing"
 			id: "7CAFFE1A4C01CF47"
 			shape: "octagon"
@@ -554,6 +559,7 @@
 		}
 		{
 			dependencies: ["775DF78EB236C941"]
+			disable_toast: true
 			id: "242D3A2688376BA0"
 			ignore_reward_blocking: true
 			shape: "octagon"
@@ -629,6 +635,7 @@
 		}
 		{
 			dependencies: ["285908C913E29547"]
+			disable_toast: true
 			id: "2CC58D6978615651"
 			shape: "diamond"
 			tasks: [
@@ -672,6 +679,7 @@
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			disable_toast: true
 			id: "6B423AB39398252B"
 			shape: "hexagon"
 			size: 1.5d
@@ -872,6 +880,7 @@
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "07B2757EC96E4E09"
 			shape: "hexagon"
@@ -887,6 +896,7 @@
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "623F4EF31A00940F"
 			shape: "hexagon"

@@ -243,8 +243,6 @@ key_tfmg.keyinfo.transmission_shift_up:key.keyboard.v
 key_tfmg.keyinfo.transmission_shift_down:key.keyboard.c
 key_tfmg.keyinfo.custom_button:key.keyboard.b
 key_tfmg.keyinfo.engine_start:key.keyboard.i
-key_key.ad_astra.toggle_suit_flight:key.keyboard.v
-key_key.ad_astra.open_radio:key.keyboard.r
 soundCategory_master:0.303672133692053
 soundCategory_music:1.0
 soundCategory_record:1.0

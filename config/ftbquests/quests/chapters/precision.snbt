@@ -127,6 +127,7 @@
 				""
 				"&eSmelt copper and zinc dust together, and you’ll have a material that turns crude contraptions into real machines.&r"
 			]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "51B224D51AE9FFAD"
 			shape: "square"
@@ -153,6 +154,7 @@
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			disable_toast: true
 			id: "549E4EE23C1A3AB8"
 			shape: "square"
 			tasks: [{
@@ -177,6 +179,7 @@
 				""
 				"&cHandle it carefully, could be factured if it falls on the ground.&r"
 			]
+			disable_toast: true
 			id: "1D16D3568A4B56AC"
 			shape: "rsquare"
 			size: 1.5d
@@ -214,6 +217,7 @@
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			disable_toast: true
 			id: "612A2B07C4F613E6"
 			shape: "square"
 			tasks: [{
@@ -235,6 +239,7 @@
 				""
 				"&eDesigned for integration into industrial systems where sustained heat output is essential.&r"
 			]
+			disable_toast: true
 			id: "51EF890D08BB88B8"
 			shape: "hexagon"
 			size: 1.5d
@@ -249,6 +254,7 @@
 		}
 		{
 			dependencies: ["61B2E0C63F00A944"]
+			disable_toast: true
 			id: "3CC959E1243E962E"
 			tasks: [{
 				id: "2086A44BD5849958"
@@ -307,6 +313,7 @@
 				"5518FD26FF090152"
 			]
 			description: ["&eAssembled from rubber hand and control chip, this articulated arm performs repetitive assembly tasks with consistent accuracy.&r"]
+			disable_toast: true
 			id: "00C03DD3A3903E7C"
 			shape: "hexagon"
 			size: 1.5d
@@ -328,6 +335,7 @@
 				""
 				"&cHandle it carefully, could be factured if it falls on the ground.&r"
 			]
+			disable_toast: true
 			id: "785427A61D5C6471"
 			subtitle: "A Simple Diode"
 			tasks: [{
@@ -340,6 +348,7 @@
 		}
 		{
 			dependencies: ["53BF409251D93EE1"]
+			disable_toast: true
 			id: "7B2506C2B1F67B51"
 			shape: "hexagon"
 			size: 1.5d
@@ -353,6 +362,7 @@
 		}
 		{
 			dependencies: ["51B224D51AE9FFAD"]
+			disable_toast: true
 			id: "68973D217B4EDAB9"
 			tasks: [{
 				id: "2AE30EC30861415E"
@@ -383,6 +393,7 @@
 		}
 		{
 			dependencies: ["00C03DD3A3903E7C"]
+			disable_toast: true
 			id: "3CD9A2ACE4B55909"
 			tasks: [
 				{
@@ -404,6 +415,7 @@
 				"3CD9A2ACE4B55909"
 				"7D38C4D9ED31E904"
 			]
+			disable_toast: true
 			id: "3BE4C9ED2CFB6296"
 			shape: "hexagon"
 			size: 1.5d
@@ -455,6 +467,7 @@
 				""
 				"&cHandle it carefully, could be factured if it falls on the ground.&r"
 			]
+			disable_toast: true
 			hide_dependency_lines: false
 			id: "5518FD26FF090152"
 			shape: "rsquare"
@@ -470,6 +483,7 @@
 		}
 		{
 			dependencies: ["36EB97B842C0099F"]
+			disable_toast: true
 			id: "59C14FA285FD0CD7"
 			tasks: [{
 				id: "35D77ACFED239955"
@@ -481,6 +495,7 @@
 		}
 		{
 			dependencies: ["549E4EE23C1A3AB8"]
+			disable_toast: true
 			id: "02E7571BE326FB95"
 			shape: "diamond"
 			tasks: [
@@ -534,6 +549,7 @@
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			disable_toast: true
 			id: "67A795C95E8DA367"
 			shape: "hexagon"
 			size: 1.5d
@@ -550,6 +566,7 @@
 				"68973D217B4EDAB9"
 				"59C14FA285FD0CD7"
 			]
+			disable_toast: true
 			id: "2812D99E5A60DF15"
 			shape: "rsquare"
 			size: 1.75d
@@ -563,6 +580,7 @@
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			disable_toast: true
 			id: "28BD3950F860F78C"
 			shape: "hexagon"
 			size: 1.5d
@@ -576,6 +594,7 @@
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			disable_toast: true
 			id: "6CE800627DED4C1F"
 			shape: "hexagon"
 			size: 1.5d
@@ -589,6 +608,7 @@
 		}
 		{
 			dependencies: ["549E4EE23C1A3AB8"]
+			disable_toast: true
 			id: "6D2CAE4E440B1120"
 			shape: "diamond"
 			tasks: [
@@ -717,6 +737,7 @@
 		}
 		{
 			dependencies: ["7E7168763D8B3AAE"]
+			disable_toast: true
 			id: "7268A2EB9AEE52C0"
 			shape: "gear"
 			size: 2.75d
@@ -858,6 +879,7 @@
 				""
 				"&eIt can be programmed to pull specific materials from storage or maintain exact stock levels across multiple production lines. With these in place, a facility moves from simple automation to true supply chain control.&r"
 			]
+			disable_toast: true
 			id: "6528C36E0791C790"
 			shape: "hexagon"
 			size: 1.5d
@@ -949,6 +971,7 @@
 				"612A2B07C4F613E6"
 				"549E4EE23C1A3AB8"
 			]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "66A46D3B415C4286"
 			shape: "hexagon"
@@ -969,6 +992,7 @@
 				"&eConsist of redstone control chips, allowing precise adjustments to output ratios and process timing.&r"
 				""
 			]
+			disable_toast: true
 			id: "2E5DB3DB00FF5C7C"
 			shape: "hexagon"
 			size: 1.5d
@@ -988,6 +1012,7 @@
 				""
 				"&cHandle it carefully, could be factured if it falls on the ground.&r"
 			]
+			disable_toast: true
 			id: "5D253C4D8B1EC58C"
 			shape: "diamond"
 			subtitle: "Find Biomes In A Much Faster Way"
@@ -1001,6 +1026,7 @@
 		}
 		{
 			dependencies: ["5518FD26FF090152"]
+			disable_toast: true
 			id: "7D38C4D9ED31E904"
 			tasks: [{
 				id: "5D10178F50BCF72A"
@@ -1012,6 +1038,7 @@
 		}
 		{
 			dependencies: ["3BE4C9ED2CFB6296"]
+			disable_toast: true
 			id: "699DDF861A8CE682"
 			shape: "diamond"
 			tasks: [{
@@ -1030,6 +1057,7 @@
 		}
 		{
 			dependencies: ["53BF409251D93EE1"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "10C9BB26856AB087"
 			shape: "hexagon"
@@ -1045,6 +1073,7 @@
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			disable_toast: true
 			id: "326240A261EFDFDC"
 			shape: "hexagon"
 			size: 1.5d
@@ -1058,6 +1087,7 @@
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			disable_toast: true
 			id: "36EB97B842C0099F"
 			tasks: [{
 				id: "77F20A9C7AF13DE0"
@@ -1109,6 +1139,7 @@
 		}
 		{
 			dependencies: ["612A2B07C4F613E6"]
+			disable_toast: true
 			id: "3A8590545AC9E328"
 			tasks: [{
 				id: "0B8B0E87EBB280B1"
@@ -1134,6 +1165,7 @@
 		}
 		{
 			dependencies: ["25C5F3ED706FFA9C"]
+			disable_toast: true
 			id: "22D4FFFA7C4A4009"
 			shape: "hexagon"
 			size: 1.5d
@@ -1147,6 +1179,7 @@
 		}
 		{
 			dependencies: ["1D16D3568A4B56AC"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "0AC1C1497E7EBDA7"
 			shape: "hexagon"

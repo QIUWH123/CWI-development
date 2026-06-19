@@ -184,7 +184,7 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.7, 1)
     .addLoot("kubejs:ash")
     .randomChanceWithLooting(0.5, 1)
-    .addLoot("kubejs:ash");
+    .addLoot("kubejs:ash")
 
     event.addBlockLootModifier('kubejs:dark_ash_stone')
     .replaceLoot('kubejs:dark_ash_stone', 'kubejs:dark_ash')
@@ -193,7 +193,7 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.7, 1)
     .addLoot("kubejs:dark_ash")
     .randomChanceWithLooting(0.5, 1)
-    .addLoot("kubejs:dark_ash");
+    .addLoot("kubejs:dark_ash")
 
     event.addBlockLootModifier('kubejs:scrap_block')
     .removeLoot("kubejs:scrap_block");
@@ -201,64 +201,57 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.6, 1)
     .addLoot("tfmg:screw")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("tfmg:screw");
+    .addLoot("tfmg:screw")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.3, 1)
     .addLoot("kubejs:rusted_iron_sheet")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("kubejs:rusted_iron_rod");
+    .addLoot("kubejs:rusted_iron_rod")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.3, 1)
     .addLoot("kubejs:rusted_iron_ingot")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("kubejs:rusted_iron_wire");
+    .addLoot("kubejs:rusted_iron_wire")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.3, 1)
     .addLoot("tfmg:rebar")
     .randomChanceWithLooting(0.3, 1)
     .addLoot("tfmg:rebar")
     .randomChanceWithLooting(0.2, 1)
-    .addLoot("tfmg:rebar");
+    .addLoot("tfmg:rebar")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.7, 1)
     .addLoot("kubejs:dark_ash")
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:dark_ash")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("kubejs:dark_ash");
+    .addLoot("kubejs:dark_ash")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.7, 1)
     .addLoot("kubejs:ash")
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:ash")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("kubejs:ash");
+    .addLoot("kubejs:ash")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.8, 1)
     .addLoot("kubejs:rubber")
     .randomChanceWithLooting(0.7, 1)
     .addLoot("kubejs:rubber")
     .randomChanceWithLooting(0.5, 1)
-    .addLoot("kubejs:rubber");
-    event.addBlockLootModifier('kubejs:scrap_block')
-    .randomChanceWithLooting(0.6, 1)
-    .addLoot("minecraft:gray_wool")
-    .randomChanceWithLooting(0.7, 1)
-    .addLoot("minecraft:gray_wool")
-    .randomChanceWithLooting(0.5, 1)
-    .addLoot("minecraft:black_wool");
+    .addLoot("kubejs:rubber")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.8, 1)
     .addLoot("tfmg:synthetic_string")
     .randomChanceWithLooting(0.7, 1)
     .addLoot("tfmg:synthetic_string")
     .randomChanceWithLooting(0.5, 1)
-    .addLoot("tfmg:synthetic_string");
+    .addLoot("tfmg:synthetic_string")
     event.addBlockLootModifier('kubejs:scrap_block')
     .randomChanceWithLooting(0.6, 1)
     .addLoot("tfmg:synthetic_leather")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("tfmg:synthetic_leather");
+    .addLoot("tfmg:synthetic_leather")
 
     event.addBlockLootModifier('kubejs:dark_ash_stone_quartz')
     .replaceLoot('kubejs:dark_ash_stone_quartz', 'kubejs:dark_ash')
@@ -267,12 +260,10 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:dark_ash");
     event.addBlockLootModifier('kubejs:dark_ash_stone_quartz')
-    .replaceLoot('kubejs:dark_ash_stone_quartz', 'kubejs:dark_ash')
     .addLoot("minecraft:quartz")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("minecraft:quartz");
+    .addLoot("minecraft:quartz")
     event.addBlockLootModifier('kubejs:dark_ash_stone_quartz')
-    .replaceLoot('kubejs:dark_ash_stone_quartz', 'kubejs:dark_ash')
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:quartz_powder")
     .randomChanceWithLooting(0.3, 1)
@@ -285,12 +276,10 @@ LootJS.modifiers((event) => {
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:dark_ash");
     event.addBlockLootModifier('kubejs:dark_ash_stone_coal')
-    .replaceLoot('kubejs:dark_ash_stone_coal', 'kubejs:dark_ash')
     .addLoot("minecraft:coal")
     .randomChanceWithLooting(0.3, 1)
-    .addLoot("minecraft:coal");
-    event.addBlockLootModifier('kubejs:dark_ash_stone')
-    .replaceLoot('kubejs:dark_ash_stone_coal', 'kubejs:dark_ash')
+    .addLoot("minecraft:coal")
+    event.addBlockLootModifier('kubejs:dark_ash_stone_coal')
     .randomChanceWithLooting(0.5, 1)
     .addLoot("kubejs:coal_powder")
     .randomChanceWithLooting(0.3, 1)

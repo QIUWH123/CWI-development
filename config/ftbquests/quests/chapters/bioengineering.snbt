@@ -9,6 +9,7 @@
 	quest_links: [ ]
 	quests: [{
 		id: "0DFA888EA5975E50"
+		invisible: true
 		shape: "gear"
 		size: 2.0d
 		tasks: [{

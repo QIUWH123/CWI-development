@@ -472,15 +472,6 @@ StartupEvents.registry('block', event => {
     .tagBlock('kubejs:unbreakable')
     .mapColor('#FF5500')
 
-  event.create('computer_heat_vent')
-    .soundType('metal')
-    .hardness(3)
-    .resistance(4.5)
-    .requiresTool(true)
-    .tagBlock('minecraft:mineable/pickaxe')
-    .tagBlock('minecraft:needs_iron_tool')
-    .mapColor('#FF5500')
-
   event.create('rusted_heavy_machinery_casing')
     .soundType('metal')
     .hardness(3)

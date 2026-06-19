@@ -73,12 +73,6 @@ var moltenMetals = [
 ]
 
 var specialFluids = [
-  ['origin_blood', null, null, 'kubejs:fluid/origin_blood_still', 'kubejs:fluid/origin_blood_flow', null],
-  ['redstone_acid', null, null, 'kubejs:fluid/redstone_acid_still', 'kubejs:fluid/redstone_acid_flow', {
-    layer0: 'kubejs:item/fluid_container',
-    layer1: 'kubejs:item/_',
-    layer2: 'kubejs:item/fluids/redstone_acid'
-  }],
   ['molten_sticky_resin', null, null, 'kubejs:fluid/molten_sticky_resin_still', 'kubejs:fluid/molten_sticky_resin_flow', {
     layer0: 'kubejs:item/fluid_container',
     layer1: 'kubejs:item/_',

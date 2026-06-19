@@ -48,6 +48,7 @@
 				"761160110BAD09FD"
 			]
 			description: ["&eA basic ecosystem has taken root, plants can now survive. Nutrient cycles are still fragile, but the soil can sustain life without constant intervention.&r"]
+			disable_toast: true
 			id: "2DD3C94512042C0F"
 			shape: "rsquare"
 			size: 1.5d
@@ -63,6 +64,7 @@
 		{
 			dependencies: ["58E9697AC16F146C"]
 			description: ["&eDecomposition is complete, yielding a dark, crumbly medium teeming with active biology. This is the end goal, rich soil that can support agriculture and function as a self‑sustaining living system, promoting plat growth.&r"]
+			disable_toast: true
 			id: "5AE545956D2B2D20"
 			shape: "rsquare"
 			size: 1.5d
@@ -568,6 +570,7 @@
 		}
 		{
 			dependencies: ["0C0473AAE983CA2E"]
+			disable_toast: true
 			id: "2E4198E131B2BB5B"
 			tasks: [{
 				id: "3B7A26C837ED8213"
@@ -579,6 +582,7 @@
 		}
 		{
 			dependencies: ["4D6AEAB5700A47E9"]
+			disable_toast: true
 			id: "7D32088AF5AAE27F"
 			tasks: [{
 				id: "1321F245E1668631"
@@ -590,6 +594,7 @@
 		}
 		{
 			dependencies: ["377CA90F7E982A02"]
+			disable_toast: true
 			id: "77D5342F1FB3885B"
 			tasks: [{
 				id: "3ACC9C144F65D22C"
@@ -601,6 +606,7 @@
 		}
 		{
 			dependencies: ["0287E7B4D93AE3DC"]
+			disable_toast: true
 			id: "153B2DE93991BCD7"
 			tasks: [{
 				id: "048B9A9FADFB639F"
@@ -612,6 +618,7 @@
 		}
 		{
 			dependencies: ["42B7FB696E682E11"]
+			disable_toast: true
 			id: "59F567AA29FE1F58"
 			tasks: [{
 				id: "7CB5372C167F9ECD"
@@ -623,6 +630,7 @@
 		}
 		{
 			dependencies: ["4ACCA5D64B4F6533"]
+			disable_toast: true
 			id: "32E76B484D204790"
 			tasks: [{
 				id: "74BB97FCE9B89BCC"
@@ -891,7 +899,6 @@
 		}
 		{
 			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
 			hide_dependency_lines: true
 			id: "03FD5DEDB1A74683"
 			size: 1.5d
@@ -923,6 +930,7 @@
 		}
 		{
 			dependencies: ["3EEC66CE7B96ECD5"]
+			disable_toast: true
 			id: "227D6E30C7143BCB"
 			tasks: [{
 				id: "113602BC7C5C48E9"
@@ -934,6 +942,7 @@
 		}
 		{
 			dependencies: ["227D6E30C7143BCB"]
+			disable_toast: true
 			id: "52452BBA9F49586A"
 			subtitle: "Carbon Fusing"
 			tasks: [{
@@ -946,6 +955,7 @@
 		}
 		{
 			dependencies: ["3EEC66CE7B96ECD5"]
+			disable_toast: true
 			id: "7CC8C2930A5D8598"
 			tasks: [{
 				id: "732ECC82E87F8AC5"
@@ -1014,6 +1024,7 @@
 		}
 		{
 			dependencies: ["52452BBA9F49586A"]
+			disable_toast: true
 			id: "11D7AE36D5A92985"
 			tasks: [{
 				id: "740338ABF143935B"
@@ -1025,6 +1036,7 @@
 		}
 		{
 			dependencies: ["52452BBA9F49586A"]
+			disable_toast: true
 			id: "27A374095C25B7E0"
 			subtitle: "Faster Composting"
 			tasks: [{
@@ -1037,6 +1049,7 @@
 		}
 		{
 			dependencies: ["3EEC66CE7B96ECD5"]
+			disable_toast: true
 			id: "0B04CA26E87AB968"
 			tasks: [{
 				id: "78AA522C15DA3239"
@@ -1048,6 +1061,7 @@
 		}
 		{
 			dependencies: ["0B04CA26E87AB968"]
+			disable_toast: true
 			id: "01D81AC34759CA01"
 			subtitle: "Decomposition"
 			tasks: [{
@@ -1060,6 +1074,7 @@
 		}
 		{
 			dependencies: ["52452BBA9F49586A"]
+			disable_toast: true
 			id: "666E40867F521D15"
 			tasks: [{
 				id: "21AB4264B2A1F6AF"

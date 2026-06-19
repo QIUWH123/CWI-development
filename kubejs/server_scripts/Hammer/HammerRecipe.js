@@ -40,26 +40,32 @@ global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) 
     ])
 })
 
+addBlockConversion('kubejs:dark_ash_stone', 'air', 1, [
+    { item: 'kubejs:dark_ash', chance: 0.75, count: 4 }
+])
+
+addBlockConversion('kubejs:dark_ash_stone_quartz', 'air', 1, [
+    { item: 'kubejs:dark_ash', chance: 0.75, count: 3 },
+    { item: 'minecraft:quartz', chance: 0.65, count: 2 },
+    { item: 'kubejs:quartz_powder', chance: 0.35, count: 2 }
+])
+
+addBlockConversion('kubejs:dark_ash_stone_coal', 'air', 1, [
+    { item: 'kubejs:dark_ash', chance: 0.75, count: 3 },
+    { item: 'minecraft:coal', chance: 0.65, count: 2 },
+    { item: 'kubejs:coal_powder', chance: 0.35, count: 2 }
+])
+
 addBlockConversion('kubejs:scrap_block', 'air', 2, [
-    { item: 'tfmg:screw', chance: 0.39, count: 2 },
+    { item: 'tfmg:screw', chance: 0.45, count: 2 },
     { item: 'kubejs:rusted_iron_ingot', chance: 0.3, count: 1 },
-    { item: 'kubejs:rusted_iron_rod', chance: 0.09, count: 1 },
+    { item: 'kubejs:rusted_iron_rod', chance: 0.3, count: 1 },
     { item: 'kubejs:rusted_iron_sheet', chance: 0.3, count: 1 },
-    { item: 'kubejs:rusted_iron_wire', chance: 0.09, count: 1 },
-    { item: 'kubejs:rusted_iron_nugget', chance: 0.17, count: 1 },
-    { item: 'tfmg:rebar', chance: 0.136, count: 3 },
-    { item: 'kubejs:dark_ash', chance: 0.3867, count: 3 },
-    { item: 'kubejs:ash', chance: 0.3867, count: 3 },
-    { item: 'kubejs:rubber', chance: 0.5467, count: 3 },
-    { item: 'minecraft:white_wool', chance: 0.51, count: 2 },
-    { item: 'minecraft:gray_wool', chance: 0.51, count: 2 },
-    { item: 'minecraft:black_wool', chance: 0.21, count: 1 },
-    { item: 'tfmg:steel_pipe', chance: 0.31, count: 1 },
-    { item: 'tfmg:steel_cogwheel', chance: 0.71, count: 1 },
-    { item: 'tfmg:large_steel_cogwheel', chance: 0.12, count: 1 },
-    { item: 'create:shaft', chance: 0.23, count: 1 },
-    { item: 'tfmg:synthetic_string', chance: 0.5467, count: 3 },
-    { item: 'tfmg:synthetic_leather', chance: 0.39, count: 2 }
+    { item: 'kubejs:rusted_iron_wire', chance: 0.3, count: 1 },
+    { item: 'tfmg:rebar', chance: 0.25, count: 3 },
+    { item: 'kubejs:rubber', chance: 0.75, count: 3 },
+    { item: 'tfmg:synthetic_string', chance: 0.75, count: 3 },
+    { item: 'tfmg:synthetic_leather', chance: 0.45, count: 2 }
 ])
 
 addDepotConversion('createdeco:industrial_iron_ingot', 'createdeco:industrial_iron_sheet', 3)

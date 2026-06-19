@@ -27,7 +27,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			disable_toast: true
 			id: "497B62C9B689DE39"
 			invisible: true
 			shape: "gear"
@@ -43,6 +42,7 @@
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
+			disable_toast: true
 			id: "03B2E935BC80D280"
 			shape: "square"
 			tasks: [{
@@ -366,6 +366,7 @@
 		}
 		{
 			dependencies: ["68EF942EB6D8901B"]
+			disable_toast: true
 			id: "35DCFF2700B3C97B"
 			shape: "hexagon"
 			size: 1.5d

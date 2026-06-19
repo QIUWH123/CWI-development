@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "overture_forgotten_power"
 	group: ""
-	icon: "kubejs:computer_heat_vent"
+	icon: "kubejs:rusted_industrial_aluminum_casing"
 	id: "48D40525EA37660A"
 	images: [
 		{
@@ -86,7 +86,7 @@
 			description: ["&6My head is pounding... The last thing I remember is... Nothing...&r\n\n&eJust a blinding light, and then this... this silent, metallic tomb. Dust hangs thick in the still air, catching the sickly red pulse of a single, dying light. It's cold. The only sounds are the creak of settling metal and my own ragged breath. &r\n\n&6Everything is broken—shattered glass, toppled lantern, rebars sticking from the wall like dead vines.&r"]
 			disable_toast: true
 			hide_until_deps_complete: true
-			icon: "kubejs:computer_heat_vent"
+			icon: "kubejs:rusted_industrial_aluminum_casing"
 			id: "48FAA6DBC81EED3F"
 			shape: "gear"
 			size: 2.5d
@@ -465,6 +465,7 @@
 		}
 		{
 			dependencies: ["7A4768D007A9209B"]
+			disable_toast: true
 			id: "01145B3810F3CA52"
 			subtitle: "Material Information"
 			tasks: [{
