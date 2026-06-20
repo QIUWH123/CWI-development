@@ -154,9 +154,9 @@ ServerEvents.recipes(event => {
 
     materials.forEach(mat => {
         if (!['metal', 'alloy', 'polymer'].includes(mat.type)) return
-        if (!mat.items) return;
+        if (!mat.items) return
 
-        const items = mat.items;
+        const items = mat.items
 
         if (items.ingot && items.sheet) event.recipes.create.pressing(items.sheet, items.ingot)
         if (items.ingot && items.powder) event.recipes.create.milling(items.powder, items.ingot)

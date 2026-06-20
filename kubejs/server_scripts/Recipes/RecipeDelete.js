@@ -1,4 +1,11 @@
+// priority: 10
+
 ServerEvents.recipes(event => {
+
+// Type Delete
+
+  event.remove({ type: 'createaddition:rolling' })
+  event.remove({ type: 'create:pressing' , output : '#cwi:sheets' })
 
 //constructionWand
 
@@ -1505,38 +1512,6 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'vintageimprovements:pressing/nickel_ingot' })
   event.remove({ id: 'vintageimprovements:pressing/lead_ingot' })
 
-  event.remove({ id: 'vintageimprovements:rolling/invar_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/pure_gold_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/cobalt_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/manyullyn_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/palladium_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/hepatizon_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/constantan_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/refined_radiance_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/silver_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/amethyst_bronze_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/tin_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/rose_gold_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/bronze_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/shadow_steel_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/rhodium_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/platinum_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/signalum_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/lumium_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/pig_iron_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/enderium_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/osmium_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/refined_glowstone_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/refined_obsidian_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/aluminum_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/zinc_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/cast_iron_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/lead_plate' })
-  event.remove({ id: 'vintageimprovements:rolling/nickel_plate' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
-  event.remove({ id: '' })
   event.remove({ id: 'vintageimprovements:grinder_polishing/rose_quartz' })
   event.remove({ id: '' })
   event.remove({ id: '' })

@@ -162,12 +162,15 @@ StartupEvents.registry('item', event => {
     event.create('ash')
     event.create('dark_ash')
 
-    const colorPowders = [
+    const liteColorPowders = [
       ['pyrite_powder', 0xE5C100],
-      ['lignin_powder', 0xE8C396],
-      ['calcium_chloride_powder', 0xFFFFFF],
       ['sodium_bisulfate_powder', 0xFFFACD],
       ['caustic_soda_powder', 0xF0F8FF]
+    ]
+
+    const darkColorPowders = [
+      ['lignin_powder', 0xE8C396],
+      ['calcium_chloride_powder', 0xFFFFFF]
     ]
 
     const powders = [
@@ -175,7 +178,7 @@ StartupEvents.registry('item', event => {
         'gold_powder', 'iron_powder', 'lapis_powder', 'copper_powder', 'brass_powder',
         'cobalt_powder', 'magnesium_powder', 'zinc_powder', 'vanadium_powder', 'silicon_powder',
         'charcoal_powder', 'andesite_alloy_powder', 'nickel_powder', 'lead_powder',
-        'cast_iron_powder', 'lithium_powder', 'bronze_powder', 'electrum_powder',
+        'cast_iron_powder', 'lithium_powder', 'bronze_powder', 'electrum_powder', 'rusted_iron_powder',
         'constantan_powder', 'silver_powder', 'tin_powder', 'aluminum_powder', 'molybdenum_powder',
         'industrial_iron_powder', 'steel_powder', 'halite_powder', 'magnesite_powder',
         'lignite_powder', 'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
@@ -184,7 +187,8 @@ StartupEvents.registry('item', event => {
         'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder'
     ]
 
-    colorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder`).color(color).tag('cwi:powders')})
+    liteColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_lite`).color(color).tag('cwi:powders')})
+    darkColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_dark`).color(color).tag('cwi:powders')})
     powders.forEach(powder => {event.create(powder).texture(`kubejs:item/powders/${powder}`).tag('cwi:powders')})
 
 })
