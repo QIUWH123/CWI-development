@@ -19,8 +19,8 @@
 			image: "tfmg:block/plastic_block"
 			rotation: 0.0d
 			width: 1.33d
-			x: 12.0d
-			y: 0.0d
+			x: 10.0d
+			y: -2.0d
 		}
 		{
 			height: 1.0d
@@ -31,20 +31,20 @@
 			y: -4.0d
 		}
 		{
-			height: 1.0d
-			image: "tfmg:block/heavy_machinery_casing"
-			rotation: 45.0d
-			width: 1.0d
+			height: 1.33d
+			image: "kubejs:block/storage_blocks/polyvinyl_chloride_block"
+			rotation: 0.0d
+			width: 1.33d
 			x: 8.0d
 			y: -4.0d
 		}
 		{
 			height: 1.33d
-			image: "kubejs:block/storage_blocks/polyvinyl_chloride_block"
+			image: "kubejs:block/storage_blocks/polypropylene_block"
 			rotation: 0.0d
 			width: 1.33d
 			x: 10.0d
-			y: -4.0d
+			y: 4.0d
 		}
 	]
 	order_index: 10
@@ -182,8 +182,8 @@
 				item: "kubejs:polyethylene"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 0.0d
+			x: 10.0d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -297,19 +297,6 @@
 		{
 			dependencies: ["3DB9E5F294FAFF09"]
 			disable_toast: true
-			id: "093025BD51F9AE36"
-			shape: "diamond"
-			tasks: [{
-				id: "1A26B7A2462B19BF"
-				item: "tfmg:napalm_potato"
-				type: "item"
-			}]
-			x: 6.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["3DB9E5F294FAFF09"]
-			disable_toast: true
 			id: "3B660F7A6A01F864"
 			shape: "diamond"
 			tasks: [{
@@ -317,7 +304,7 @@
 				item: "tfmg:napalm_bomb"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 6.0d
 			y: -4.0d
 		}
 		{
@@ -383,7 +370,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: -2.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["7E496F23593AA01F"]
@@ -449,19 +436,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["49ACE7B6A81987AA"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "7095658F1B054ED5"
-			tasks: [{
-				id: "41A32029B02A6559"
-				item: "tfmg:cooling_fluid_bucket"
-				type: "item"
-			}]
-			x: 10.0d
-			y: 4.0d
-		}
-		{
 			dependencies: ["56CD87E991F1847E"]
 			disable_toast: true
 			id: "6BED6C70FDA0D4A7"
@@ -471,7 +445,7 @@
 				item: "kubejs:polyvinyl_chloride"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 8.0d
 			y: -4.0d
 		}
 		{
@@ -502,13 +476,14 @@
 			dependencies: ["5C58A1D7357251A1"]
 			disable_toast: true
 			id: "5559F2157588513F"
+			shape: "square"
 			tasks: [{
 				id: "10F647FCF3D43EBC"
 				item: "kubejs:polypropylene"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 2.0d
+			x: 10.0d
+			y: 4.0d
 		}
 	]
 	title: "Petroleum Industry"

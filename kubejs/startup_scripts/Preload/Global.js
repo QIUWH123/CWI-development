@@ -29,14 +29,14 @@ global.microbes = [
 ]
 
 global.materialTypes = [
-    // alloy
+    // alloys
     { id: 'andesite_alloy', type: 'alloy', formula: '?', mp: 1198, stiffness: 150, fluid: 'kubejs:molten_andesite_alloy', items: { powder: 'kubejs:andesite_alloy_powder', ingot: 'create:andesite_alloy', rod: 'vintageimprovements:andesite_rod', wire: 'vintageimprovements:andesite_wire', sheet: 'vintageimprovements:andesite_sheet', block: 'create:andesite_alloy_block' } },
     { id: 'brass', type: 'alloy', formula: 'CuZn', mp: 1153, stiffness: 110, fluid: 'kubejs:molten_brass', items: { powder: 'kubejs:brass_powder', ingot: 'create:brass_ingot', nugget: 'create:brass_nugget', sheet: 'create:brass_sheet', rod: 'createaddition:brass_rod', wire: 'vintageimprovements:brass_wire', block: 'create:brass_block' } },
     { id: 'bronze', type: 'alloy', formula: 'Cu₄Sn', mp: 1217, stiffness: 110, fluid: 'kubejs:molten_bronze', items: { powder: 'kubejs:bronze_powder', ingot: 'kubejs:bronze_ingot', nugget: 'kubejs:bronze_nugget', sheet: 'kubejs:bronze_sheet', rod: 'kubejs:bronze_rod', wire: 'kubejs:bronze_wire', block: 'kubejs:bronze_block' } },
     { id: 'constantan', type: 'alloy', formula: 'Cu₃Ni', mp: 1525, stiffness: 160, fluid: 'kubejs:molten_constantan', items: { powder: 'kubejs:constantan_powder', ingot: 'tfmg:constantan_ingot', nugget: 'tfmg:constantan_nugget', sheet: 'vintageimprovements:constantan_sheet', rod: 'vintageimprovements:constantan_rod', wire: 'tfmg:constantan_wire', block: 'tfmg:constantan_block' } },
     { id: 'electrum', type: 'alloy', formula: 'Au₃Ag', mp: 1213, stiffness: 75, fluid: 'kubejs:molten_electrum', items: { powder: 'kubejs:electrum_powder', ingot: 'createaddition:electrum_ingot', nugget: 'createaddition:electrum_nugget', sheet: 'createaddition:electrum_sheet', rod: 'createaddition:electrum_rod', wire: 'createaddition:electrum_wire', block: 'createaddition:electrum_block' } },
 
-    // metal
+    // metals
     { id: 'aluminum', type: 'metal', formula: 'Al', mp: 933, stiffness: 70, fluid: 'kubejs:molten_aluminum', items: { powder: 'kubejs:aluminum_powder', ingot: 'tfmg:aluminum_ingot', nugget: 'tfmg:aluminum_nugget', sheet: 'tfmg:aluminum_sheet', rod: 'vintageimprovements:aluminum_rod', wire: 'tfmg:aluminum_wire', block: 'tfmg:aluminum_block' } },
     { id: 'cast_iron', type: 'metal', formula: 'Fe', mp: 1473, stiffness: 150, fluid: 'kubejs:molten_cast_iron', items: { powder: 'kubejs:cast_iron_powder', ingot: 'tfmg:cast_iron_ingot', nugget: 'tfmg:cast_iron_nugget', sheet: 'tfmg:cast_iron_sheet', rod: 'vintageimprovements:cast_iron_rod', wire: 'vintageimprovements:cast_iron_wire', block: 'tfmg:cast_iron_block' } },
     { id: 'cobalt', type: 'metal', formula: 'Co', mp: 1768, stiffness: 210, fluid: 'kubejs:molten_cobalt', items: { powder: 'kubejs:cobalt_powder', ingot: 'kubejs:cobalt_ingot', nugget: 'kubejs:cobalt_nugget', sheet: 'kubejs:cobalt_sheet', rod: 'kubejs:cobalt_rod', wire: 'kubejs:cobalt_wire', block: 'kubejs:cobalt_block' } },
@@ -58,15 +58,15 @@ global.materialTypes = [
     // non-metal
     { id: 'diamond', type: 'non-metal', formula: 'C', mp: 3820, stiffness: 1100, fluid: null, items: { powder: 'kubejs:diamond_powder', ingot: 'minecraft:diamond', block: 'minecraft:diamond_block' } },
 
-    //metalloid
+    //metalloids
     { id: 'silicon', type: 'metalloid', formula: 'Si', mp: 1687, stiffness: 130, fluid: 'tfmg:liquid_silicon', items: { powder: 'kubejs:silicon_powder', ingot: 'tfmg:silicon_ingot' } },
 
-    // polymer
+    // polymers
     { id: 'polyethylene', type: 'polymer', formula: '(C₂H₄)ₙ', mp: 395, stiffness: 0.5, fluid: 'kubejs:molten_polyethylene', items: { powder: 'kubejs:polyethylene_powder', ingot: 'kubejs:polyethylene', sheet: 'kubejs:polyethylene_sheet', block: 'kubejs:polyethylene_block' } },
     { id: 'polypropylene', type: 'polymer', formula: '(C₃H₆)ₙ', mp: 415, stiffness: 1.2, fluid: 'kubejs:molten_polypropylene', items: { powder: 'kubejs:polypropylene_powder', ingot: 'kubejs:polypropylene', sheet: 'kubejs:polypropylene_sheet', block: 'kubejs:polypropylene_block' } },
     { id: 'polyvinyl_chloride', type: 'polymer', formula: '(C₂H₃Cl)ₙ', mp: 330, stiffness: 3.0, fluid: 'kubejs:molten_polyvinyl_chloride', items: { powder: 'kubejs:polyvinyl_chloride_powder', ingot: 'kubejs:polyvinyl_chloride', sheet: 'kubejs:polyvinyl_chloride_sheet', block: 'kubejs:polyvinyl_chloride_block' } },
     { id: 'polybenzimidazole', type: 'polymer', formula: '(C₂₀H₁₂N₄)ₙ', mp: 700, stiffness: 7.0, fluid: 'kubejs:molten_polybenzimidazole', items: { powder: 'kubejs:polybenzimidazole_powder', ingot: 'kubejs:polybenzimidazole', sheet: 'kubejs:polybenzimidazole_sheet' } }
-];
+]
 
 global.oreTypes = [
     ['kubejs:sulfur_ore', 'kubejs:sulfur', 'tfmg:sulfur_dust', false, true],

@@ -132,6 +132,7 @@
 			dependencies: [
 				"5148FEA0B12D0880"
 				"4B93583D74E7E010"
+				"13C9C9F227B312DD"
 			]
 			disable_toast: true
 			id: "0635A293D5BA7EF2"
@@ -175,13 +176,17 @@
 			dependencies: [
 				"3E0CF50CF54A7795"
 				"49EB4FE7D42831FA"
-				"13C9C9F227B312DD"
 				"337E1339823083A2"
 			]
 			disable_toast: true
 			id: "5148FEA0B12D0880"
 			shape: "hexagon"
 			size: 1.5d
+			tasks: [{
+				id: "053DC5CC9134C583"
+				item: "cwi:blast_furnace"
+				type: "item"
+			}]
 			x: 4.0d
 			y: 0.0d
 		}
@@ -219,13 +224,13 @@
 			size: 1.5d
 			tasks: [
 				{
-					id: "22951217AB4DA25F"
-					item: "tfmg:blast_furnace_hatch"
+					id: "043662A42D209F9F"
+					item: "tfmg:air_intake"
 					type: "item"
 				}
 				{
-					id: "043662A42D209F9F"
-					item: "tfmg:air_intake"
+					id: "2B00603360C21C6A"
+					item: "cwi:furnace_hatch"
 					type: "item"
 				}
 			]

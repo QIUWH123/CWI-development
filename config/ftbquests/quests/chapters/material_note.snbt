@@ -257,8 +257,8 @@
 			hide_dependency_lines: true
 			id: "4FAFF56A3C8E29C9"
 			tasks: [{
-				id: "7BAF9F6BE89FFA95"
-				item: "kubejs:nylon_ingot"
+				id: "71B113416F2DB07B"
+				item: "kubejs:molybdenum_ingot"
 				type: "item"
 			}]
 			x: 6.0d
@@ -273,8 +273,8 @@
 				item: "tfmg:nickel_ingot"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 1.0d
+			x: -6.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["7D0C6F93C6FE1761"]
@@ -285,8 +285,8 @@
 				item: "kubejs:cobalt_ingot"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 1.0d
+			x: -4.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["7D0C6F93C6FE1761"]
@@ -299,6 +299,66 @@
 			}]
 			x: -2.0d
 			y: 7.0d
+		}
+		{
+			dependencies: ["7D0C6F93C6FE1761"]
+			hide_dependency_lines: true
+			id: "5364A002C4D3D6A6"
+			tasks: [{
+				id: "101E0CE58E85733C"
+				item: "tfmg:nickel_ingot"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7D0C6F93C6FE1761"]
+			hide_dependency_lines: true
+			id: "235EA89106B32A57"
+			tasks: [{
+				id: "26995A2B30031B32"
+				item: "kubejs:tin_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7D0C6F93C6FE1761"]
+			hide_dependency_lines: true
+			id: "6D894A82B8D874AA"
+			tasks: [{
+				id: "292A116AF5A196B5"
+				item: "minecraft:netherite_ingot"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7D0C6F93C6FE1761"]
+			hide_dependency_lines: true
+			id: "0AB8858F5F5E5E79"
+			tasks: [{
+				id: "1FC7A7624A48B1A9"
+				item: "tfmg:aluminum_ingot"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7D0C6F93C6FE1761"]
+			hide_dependency_lines: true
+			id: "63070C40A4782909"
+			tasks: [{
+				id: "7F9A8A62A9E7B305"
+				item: "vintageimprovements:vanadium_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 9.0d
 		}
 	]
 	title: "Material Note"

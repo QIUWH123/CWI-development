@@ -48,7 +48,6 @@ ServerEvents.tags('item', event => {
   //ingots
   event.add('forge:ingots', [
     'kubejs:rusted_iron_ingot',
-    'kubejs:nylon_ingot',
     'kubejs:magnesium_ingot',
     'kubejs:cobalt_ingot',
     'kubejs:tin_ingot',

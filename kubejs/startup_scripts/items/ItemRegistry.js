@@ -22,7 +22,6 @@ StartupEvents.registry('item', event => {
   event.create('sticky_resin')
   event.create('rubber')
   event.create('andesite_compound')
-  event.create('nylon_ingot')
   event.create('nylon_salt')
   event.create('nylon_salt_crystal')
   event.create('carborundum')
@@ -213,10 +212,10 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/raw_tin')
 
   event.create('crushed_raw_silver')
-    .texture('kubejs:item/materials/crushed_raw_silver')
+    .texture('kubejs:item/ores/crushed_raw_silver')
 
   event.create('crushed_raw_tin')
-    .texture('kubejs:item/materials/crushed_raw_tin')
+    .texture('kubejs:item/ores/crushed_raw_tin')
 
 //mineral compounds
 
