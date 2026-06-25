@@ -1,0 +1,91 @@
+
+#Stage 1 seismic hammer tuning
+[hammer]
+	#Horizontal scan radius in blocks.
+	#Range: 1 ~ 64
+	radius = 12
+	#Maximum depth in blocks for normal pressure scans.
+	#Range: 1 ~ 128
+	depth = 25
+	#Seismic hammer cooldown in ticks.
+	#Range: 0 ~ 1200
+	cooldownTicks = 200
+	#Maximum echo return delay for the deepest anomaly in ticks.
+	#Range: 1 ~ 200
+	maxEchoDelayTicks = 30
+	#Maximum anomalies sent to clients for rendering.
+	#Range: 1 ~ 32
+	maxEchoes = 8
+	#Minimum horizontal distance in blocks used to merge nearby anomalies into one echo.
+	#Range: 1 ~ 32
+	echoMergeDistance = 5
+	#Expected scans from a full copper backtank.
+	#Range: 1 ~ 200
+	scansPerBacktank = 24
+	#Backtank fill ratio below which scans become weak.
+	#Range: 0.01 ~ 1.0
+	lowPressureThreshold = 0.25
+	#Depth multiplier when the hammer strikes soft terrain (sand/dirt/gravel).
+	#Range: 0.1 ~ 1.0
+	softBlockDepthMultiplier = 0.7
+	#Baseline confidence jitter for anomaly evaluation.
+	#Range: 0.0 ~ 1.0
+	baseNoise = 0.1
+
+#Global seismic scan queue budgeting and pacing.
+[scanQueue]
+	#Total scan block checks processed globally per server tick.
+	#Range: 64 ~ 250000
+	blockBudgetPerTick = 4800
+	#Maximum block checks per job before rotating to the next queued scan.
+	#Range: 16 ~ 50000
+	slicePerJob = 800
+	#Soft time cap for seismic scan queue work per server tick in microseconds. Set 0 to disable.
+	#Range: 0 ~ 20000
+	timeBudgetMicros = 3000
+
+#Stage 2 seismic station tuning
+[station]
+	#Horizontal scan radius in blocks for the seismic station.
+	#Range: 1 ~ 96
+	radius = 16
+	#Base ticks between station strikes at minimum required speed.
+	#Range: 1 ~ 200
+	strikeIntervalTicks = 20
+	#Lower bound for strike interval when the station is overdriven.
+	#Range: 1 ~ 200
+	minStrikeIntervalTicks = 6
+	#Global multiplier applied to station strike intervals.
+	#Range: 1 ~ 20
+	strikeIntervalMultiplier = 5
+	#Minimum absolute RPM required on the station input shaft to start scanning.
+	#Range: 1 ~ 512
+	minSpeed = 32
+	#Maximum strike speed multiplier from RPM scaling.
+	#Range: 1.0 ~ 10.0
+	maxSpeedBonus = 2.5
+	#Base stress impact at minimum station speed.
+	#Range: 0.0 ~ 1024.0
+	stressImpact = 12.0
+	#Confidence jitter used for station anomaly evaluation.
+	#Range: 0.0 ~ 1.0
+	noise = 0.08
+
+#Seismic projector gameplay tuning.
+[projector]
+	#Minimum absolute RPM required for the seismic projector to operate.
+	#Range: 1 ~ 512
+	minSpeed = 32
+	#Base stress impact applied by the seismic projector.
+	#Range: 0.0 ~ 1024.0
+	stressImpact = 8.0
+	#Maximum horizontal range in chunks from projector to station for loading seismograms.
+	#Range: 0 ~ 64
+	stationRangeChunks = 3
+	#Minimum horizontal distance in blocks between loaded station nodes.
+	#Range: 1 ~ 64
+	minNodeDistanceBlocks = 8
+	#Maximum horizontal matching radius in blocks when triangulating signals.
+	#Range: 1 ~ 64
+	matchRadiusBlocks = 12
+

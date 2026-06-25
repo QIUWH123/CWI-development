@@ -1,0 +1,15 @@
+
+[progression]
+	#When true, completing a research graph immediately grants the configured AStages stage.
+	autoAwardStageOnCompletion = true
+	#When true, right-clicking a completed research sample to claim its stage consumes the sample.
+	consumeCompletedSampleOnClaim = false
+
+[client_behavior]
+	#When true, completed research samples reveal every generated graph node and edge.
+	revealCompletedGraph = false
+
+[integrations]
+	#When true, research table material submissions can consume matching items from Sophisticated Backpacks carried by the player.
+	enableSophisticatedBackpackMaterials = true
+

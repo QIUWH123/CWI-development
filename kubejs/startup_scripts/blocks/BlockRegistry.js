@@ -816,5 +816,5 @@ StartupEvents.registry('block', event => {
     .redstoneConductor(false)
     .suffocating(false)
     .defaultCutout()
-
+    
 })
