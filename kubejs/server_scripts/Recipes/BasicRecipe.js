@@ -148,7 +148,7 @@ ServerEvents.recipes(event => {
 // Cutting
 
     cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
-    cutting('tfmg:aluminum_sheet','tfmg:aluminum_wire',1)
+    cutting('tfmg:aluminum_sheet','vintageimprovements:aluminum_wire',1)
     cutting('tfmg:lead_sheet','vintageimprovements:lead_wire',1)
     cutting('kubejs:tin_sheet','kubejs:tin_wire',1)
     cutting('kubejs:rusted_iron_sheet','kubejs:rusted_iron_wire',1)
