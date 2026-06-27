@@ -5,7 +5,7 @@ StartupEvents.registry('item', event => {
             .tier(tier)
             .attackDamageBaseline(3)
             .unstackable()
-            .tag('minecraft:hammer')
+            .tag('minecraft:hammers')
             .tag('forge:tools')
             .tag('minecraft:breaks_decorated_pots')
             .modelJson({

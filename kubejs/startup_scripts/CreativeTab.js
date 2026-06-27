@@ -15,7 +15,7 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 		
 	addCreativeTab("dusts")
 		.icon(() => Item.of("kubejs:gold_powder"))
-		.content(() => Ingredient.of("#cwi:dusts").itemIds)
+		.content(() => Ingredient.of("#cwi:powders").itemIds)
 		
 	addCreativeTab("tools")
 		.icon(() => Item.of("minecraft:iron_pickaxe"))
@@ -36,7 +36,7 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 	event.remove(
 		Ingredient.of("#cwi:fan_catalysts").itemIds
 		.concat(Ingredient.of("#cwi:containers").itemIds)
-		.concat(Ingredient.of("#cwi:dusts").itemIds)
+		.concat(Ingredient.of("#cwi:powders").itemIds)
 		.concat(Ingredient.of("#cwi:plot_items").itemIds)
 		.concat(Ingredient.of("#cwi:petri_dish").itemIds)
 	)

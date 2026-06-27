@@ -6,6 +6,7 @@ StartupEvents.registry('item', event => {
 
   event.create('vintageimprovements:industrial_iron_spring')
   event.create('vintageimprovements:industrial_iron_rod')
+  event.create('vintageimprovements:industrial_iron_wire')
 
   event.create('dust-covered_seeds').displayName('Dust-Covered Seeds')
     .texture('kubejs:item/plants/dust-covered_seeds')
@@ -73,7 +74,7 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/materials/molybdenum_sheet')
     
   event.create('bronze_sheet')
-    .texture('kubejs:item/materials/bronze_sheet')
+    .texture('alloyed:item/bronze_sheet')
     
   event.create('magnet_sheet')
     .texture('kubejs:item/materials/magnet_sheet')
@@ -127,10 +128,10 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/materials/tin_nugget')
     
   event.create('bronze_ingot')
-    .texture('kubejs:item/materials/bronze_ingot')
+    .texture('alloyed:item/bronze_ingot')
     
   event.create('bronze_nugget')
-    .texture('kubejs:item/materials/bronze_nugget')
+    .texture('alloyed:item/bronze_nugget')
     
   event.create('silver_ingot')
     .texture('kubejs:item/materials/silver_ingot')

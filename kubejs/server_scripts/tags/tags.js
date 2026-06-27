@@ -1,3 +1,53 @@
+// Removal
+
+ServerEvents.tags('item', event => {
+    event.removeAll('accessories:back')
+    event.removeAll('ad_astra:iron_plates')
+    event.removeAll('ad_astra:iron_rods')
+    event.removeAll('ad_astra:steel_blocks')
+    event.removeAll('ad_astra:steel_ingots')
+    event.removeAll('ad_astra:steel_nuggets')
+    event.removeAll('ad_astra:steel_rods')
+    event.removeAll('ad_astra:steel_plates')
+    event.removeAll('tfmg:spools')
+    event.removeAll('ae2:quartz_sword')
+    event.removeAll('ae2:quartz_axe')
+    event.removeAll('ae2:quartz_pickaxe')
+    event.removeAll('ae2:quartz_shovel')
+    event.removeAll('ae2:quartz_hoe')
+    event.removeAll('ae2:quartz_wrench')
+    event.removeAll('create:crushed_raw_materials')
+    event.removeAll('ae2:p2p_attunements/fe_p2p_tunnel')
+    event.removeAll('ae2:p2p_attunements/fluid_p2p_tunnel')
+    event.removeAll('ae2:p2p_attunements/item_p2p_tunnel')
+    event.removeAll('ae2:p2p_attunements/light_p2p_tunnel')
+    event.removeAll('ae2:p2p_attunements/me_p2p_tunnel')
+    event.removeAll('ae2:p2p_attunements/redstone_p2p_tunnel')
+    event.removeAll('ae2:metal_ingots')
+    event.removeAll('create:create_ingots')
+    event.removeAll('vintageimprovements:small_springs')
+    event.removeAll('vintageimprovements:springs')
+    event.removeAll('createaddition:spools')
+    event.removeAll('createmetallurgy:graphite_molds')
+})
+
+ServerEvents.tags('block', event => {
+    event.removeAll('ad_astra:steel_blocks')
+})
+
+ServerEvents.tags('fluid', event => {
+    event.removeAll('tfmg:blast_stove_fuel')
+    event.removeAll('ad_astra:oil')
+    event.removeAll('forge:crude_oil')
+    event.removeAll('create:bottomless/deny')
+    event.removeAll('forge:molten_material')
+    event.removeAll('forge:plantoil')
+    event.removeAll('forge:diesel')
+    event.removeAll('forge:gasoline')
+    event.removeAll('c:water')
+    event.removeAll('minecraft:water')
+})
+
 ServerEvents.tags('item', event => {
 
   //chemical_spray
@@ -31,52 +81,6 @@ ServerEvents.tags('item', event => {
   event.add('farmersdelight:straw_harvesters', ['ae2:nether_quartz_cutting_knife', 'ae2:certus_quartz_cutting_knife'])
   event.add('minecraft:breaks_decorated_pots', ['ae2:nether_quartz_cutting_knife', 'ae2:certus_quartz_cutting_knife'])
 
-  //create_sa
-  event.add('forge:tools', [
-    'create_sa:brass_sword', 
-    'create_sa:brass_axe', 
-    'create_sa:brass_pickaxe', 
-    'create_sa:brass_shovel', 
-    'create_sa:brass_hoe', 
-    'create_sa:zinc_sword', 
-    'create_sa:zinc_axe', 
-    'create_sa:zinc_pickaxe', 
-    'create_sa:zinc_shovel', 
-    'create_sa:zinc_hoe'
-  ])
-
-  //ingots
-  event.add('forge:ingots', [
-    'kubejs:rusted_iron_ingot',
-    'kubejs:magnesium_ingot',
-    'kubejs:cobalt_ingot',
-    'kubejs:tin_ingot',
-    'kubejs:bronze_ingot',
-    'kubejs:silver_ingot'
-  ])
-
-  //sheets
-  event.add('forge:plates', [
-    'createdeco:industrial_iron_sheet',
-    'kubejs:magnetic_alloy_sheet',
-    'kubejs:magnet_sheet',
-    'kubejs:bronze_sheet',
-    'kubejs:silver_sheet',
-    'kubejs:tin_sheet',
-    'kubejs:cobalt_sheet',
-    'kubejs:magnesium_sheet',
-    'create_new_age:overcharged_iron_sheet',
-    'create_new_age:overcharged_golden_sheet'
-  ])
-
-  //rods
-  event.add('forge:rods', [
-    'kubejs:magnet_rod',
-    'kubejs:bronze_rod',
-    'kubejs:silver_rod',
-    'kubejs:tin_rod'
-  ])
-
   //curving_head
   event.add('vintageimprovements:curving_heads', [
     'minecraft:iron_ingot',
@@ -104,9 +108,6 @@ ServerEvents.tags('item', event => {
 
   //rubber
   event.add('cwi:rubbers', ['tfmg:rubber_sheet', 'kubejs:rubber'])
-
-  //clay
-  event.add('cwi:clays', ['minecraft:clay', 'kubejs:clay_powder'])
 
   //feather
   event.add('cwi:feathers', ['kubejs:synthetic_leather', 'minecraft:feather'])
@@ -150,6 +151,12 @@ ServerEvents.tags('item', event => {
     'kubejs:cobbled_gneiss',
     'kubejs:cobbled_rhyolite',
     'kubejs:cobbled_shale',
+    'kubejs:cobbled_basalt',
+    'kubejs:cobbled_phyllite',
+    'kubejs:cobbled_darkslate',
+    'kubejs:cobbled_claystone',
+    'kubejs:cobbled_quartzite',
+    'kubejs:cobbled_conglomerate',
     'ad_astra:moon_cobblestone',
     'ad_astra:glacio_cobblestone',
     'ad_astra:mars_cobblestone',
@@ -313,6 +320,12 @@ ServerEvents.tags('block', event => {
     'kubejs:cobbled_gneiss',
     'kubejs:cobbled_rhyolite',
     'kubejs:cobbled_shale',
+    'kubejs:cobbled_basalt',
+    'kubejs:cobbled_phyllite',
+    'kubejs:cobbled_darkslate',
+    'kubejs:cobbled_claystone',
+    'kubejs:cobbled_quartzite',
+    'kubejs:cobbled_conglomerate',
     'ad_astra:moon_cobblestone',
     'ad_astra:glacio_cobblestone',
     'ad_astra:mars_cobblestone',
@@ -446,9 +459,6 @@ ServerEvents.tags('fluid', event => {
     'kubejs:distilled_water'
   ])
 
-  event.removeAll('c:water')
-  event.removeAll('minecraft:water')
-
   event.add('c:water', [
     'minecraft:water', 
     'minecraft:flowing_water'
@@ -532,11 +542,6 @@ ServerEvents.tags('fluid', event => {
 
 ServerEvents.recipes(event => {
 
-  event.replaceInput({ input: '#forge:plates/zinc' },'#forge:plates/zinc','createaddition:zinc_sheet')
-  event.replaceInput({ input: '#forge:plates/nickel' },'#forge:plates/nickel','tfmg:nickel_sheet')
-  event.replaceInput({ input: '#forge:plates/lead' },'#forge:plates/lead','tfmg:lead_sheet')
-  event.replaceInput({ input: '#forge:plates/cast_iron' },'#forge:plates/cast_iron','tfmg:cast_iron_sheet')
-  event.replaceInput({ input: '#forge:plates/aluminum' },'#forge:plates/aluminum','tfmg:aluminum_sheet')
   event.replaceInput({ input: 'createdeco:zinc_sheet' },'createdeco:zinc_sheet','createaddition:zinc_sheet')
   event.replaceInput({ input: 'minecraft:string' },'minecraft:string','#cwi:string')
   event.replaceInput({ input: 'minecraft:leather' },'minecraft:leather','#cwi:leathers')

@@ -38,6 +38,7 @@ function registerGas(event, name, color) {
     .gaseous()
     .noBlock()
     .tag('cwi:gasses')
+    .tag('tfmg:gas')
     .bucketItem
     .textureJson({
       layer0: 'kubejs:item/gas_container',

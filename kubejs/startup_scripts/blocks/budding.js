@@ -24,8 +24,8 @@ StartupEvents.registry('block', (event) => {
   event.create('infected_budding_amethyst')
     .soundType('amethyst')
     .requiresTool(true)
-    .tagBoth('mineable/pickaxe')
-    .tagBoth('minecraft:needs_iron_tool')
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_iron_tool')
     .randomTick(growthHandler(0.2, {
       'minecraft:air': 'minecraft:small_amethyst_bud',
       'minecraft:small_amethyst_bud': 'minecraft:medium_amethyst_bud',
@@ -36,8 +36,8 @@ StartupEvents.registry('block', (event) => {
   event.create('infected_budding_quartz')
     .soundType('amethyst')
     .requiresTool(true)
-    .tagBoth('mineable/pickaxe')
-    .tagBoth('minecraft:needs_iron_tool')
+    .tagBlock('minecraft:mineable/pickaxe')
+    .tagBlock('minecraft:needs_iron_tool')
     .randomTick(growthHandler(0.2, {
       'minecraft:air': 'geode_plus:small_nether_quartz_bud',
       'geode_plus:small_nether_quartz_bud': 'geode_plus:medium_nether_quartz_bud',
