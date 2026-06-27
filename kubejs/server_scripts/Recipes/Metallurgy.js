@@ -163,6 +163,8 @@ ServerEvents.recipes(event => {
         if (items.sheet && items.powder) event.recipes.create.milling(items.powder, items.sheet)
         if (items.ingot && items.rod) event.custom({"type":"createaddition:rolling","input": {"item": items.ingot},"result": {"item": items.rod,"count": 2}})
         if (items.sheet && items.wire) event.custom({"type":"createaddition:rolling","input": {"item": items.sheet},"result": {"item": items.wire,"count": 2}})
+        if (items.ingot && items.rod && mat.stiffness < 100) event.custom({"type": "createdieselgenerators:wire_cutting", "ingredients": [{"item": items.ingot}], "results": [{"item": items.rod, "chance": 0.3,"count": 2}]})
+        if (items.sheet && items.wire && mat.stiffness < 100) event.custom({"type": "createdieselgenerators:wire_cutting", "ingredients": [{"item": items.sheet}], "results": [{"item": items.wire, "chance": 0.3,"count": 2}]})
         if (items.ingot && items.sheet && mat.stiffness < 250) addDepotConversion(items.ingot, items.sheet, (mat.stiffness < 150) ? 1 : (mat.stiffness < 200) ? 2 : 3)
     })
 

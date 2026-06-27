@@ -10,11 +10,19 @@ ServerEvents.recipes(event => {
         })
     }
 
-    function cutting(input,output,count){
+    function cutting(input,output,chance,count){
         event.custom({
             "type": "createdieselgenerators:wire_cutting",
             "ingredients": [{"item": input}],
-            "results": [{"item": output,"count": count}]
+            "results": [{"item": output,"chance": chance,"count": count}]
+        })
+    }
+
+    function cuttingTwo(input,output1,chance1,count1,output2,chance2,count2){
+        event.custom({
+            "type": "createdieselgenerators:wire_cutting",
+            "ingredients": [{"item": input}],
+            "results": [{"item": output1,"chance": chance1,"count": count1}, {"item": output2,"chance": chance2,"count": count2}]
         })
     }
 
@@ -147,12 +155,7 @@ ServerEvents.recipes(event => {
 
 // Cutting
 
-    cutting('create:brass_sheet','vintageimprovements:brass_wire',1)
-    cutting('tfmg:aluminum_sheet','vintageimprovements:aluminum_wire',1)
-    cutting('tfmg:lead_sheet','vintageimprovements:lead_wire',1)
-    cutting('kubejs:tin_sheet','kubejs:tin_wire',1)
-    cutting('kubejs:rusted_iron_sheet','kubejs:rusted_iron_wire',1)
-    cutting('minecraft:dead_bush','farmersdelight:straw',1)
+    cuttingTwo('minecraft:dead_bush','minecraft:stick',1,2,'farmersdelight:straw',0.57,1)
 
 // Chiseling
 

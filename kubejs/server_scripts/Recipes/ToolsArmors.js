@@ -49,11 +49,12 @@ ServerEvents.recipes(event => {
     addTools('kubejs:bronze_sheet', 'kubejs:bronze')
     addArmor('kubejs:bronze_sheet', 'kubejs:bronze')
 
-    addTools('createaddition:zinc_sheet', 'create_sa:zinc')
-    addArmor('createaddition:zinc_sheet', 'create_sa:zinc')
-
-    addTools('create:brass_sheet', 'create_sa:brass')
+    addTools('create:brass_sheet', 'kubejs:brass')
     addArmor('create:brass_sheet', 'create_sa:brass')
+
+    addTools('createaddition:zinc_sheet', 'kubejs:zinc')
+
+    addTools('tfmg:heavy_plate', 'kubejs:steel')
 
 })
 

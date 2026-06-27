@@ -1,3 +1,4 @@
+// OreLootModification
 LootJS.modifiers(event => {
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const exp = isDeepslate ? 3 : 2
@@ -13,7 +14,10 @@ LootJS.modifiers(event => {
     })
 })
 
+// OreProcessingRecipes
 ServerEvents.recipes(event => {
+
+// OreTypeCrushingLoop
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
         const dropChance = isDeepslate ? 0.75 : 0.25
@@ -33,8 +37,7 @@ ServerEvents.recipes(event => {
         }
     })
 
-//oreCrushing
-
+// SpecialOreCrushing
     event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
     event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
     event.recipes.create.crushing(['2x kubejs:petzite', Item.of('kubejs:petzite').withChance(0.75)], 'create:ochrum')
@@ -54,128 +57,146 @@ ServerEvents.recipes(event => {
     event.recipes.create.crushing(['2x kubejs:uraninite', Item.of('kubejs:uraninite').withChance(0.75)], 'kubejs:uraninite_ore')
     event.recipes.create.crushing(['2x kubejs:rutile', Item.of('kubejs:rutile').withChance(0.75)], 'kubejs:rutile_ore')
 
+// PowderCrushingPairs
     const ores = [
         ['kubejs:halite_powder', 'kubejs:halite'],
         ['kubejs:magnesite_powder', 'kubejs:magnesite'],
         ['tfmg:bauxite_powder', 'kubejs:bauxite'],
         ['kubejs:flint_powder', 'minecraft:flint'],
-        ['kubejs:charcoal_powder', 'minecraft:charcoal'],
+        ['kubejs:charcoal_powder', 'minecraft:charcoal']
     ]
-    
+
     ores.forEach(([crushedOreId, oreId]) => {
         event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
         event.recipes.create.milling([crushedOreId, crushedOreId], oreId)
     })
 })
 
+// RecipeRemoval
 ServerEvents.recipes(event => {
 
-//delete
+// VanillaSmeltingRemoval
+    const vanillaSmeltingIds = [
+        'minecraft:gold_ingot_from_smelting_gold_ore',
+        'minecraft:gold_ingot_from_blasting_gold_ore',
+        'minecraft:gold_ingot_from_smelting_deepslate_gold_ore',
+        'minecraft:gold_ingot_from_blasting_deepslate_gold_ore',
+        'minecraft:coal_from_smelting_coal_ore',
+        'minecraft:coal_from_blasting_coal_ore',
+        'minecraft:coal_from_smelting_deepslate_coal_ore',
+        'minecraft:coal_from_blasting_deepslate_coal_ore',
+        'minecraft:iron_ingot_from_smelting_iron_ore',
+        'minecraft:iron_ingot_from_blasting_iron_ore',
+        'minecraft:iron_ingot_from_smelting_deepslate_iron_ore',
+        'minecraft:iron_ingot_from_blasting_deepslate_iron_ore',
+        'minecraft:copper_ingot_from_smelting_copper_ore',
+        'minecraft:copper_ingot_from_blasting_copper_ore',
+        'minecraft:copper_ingot_from_smelting_deepslate_copper_ore',
+        'minecraft:copper_ingot_from_blasting_deepslate_copper_ore',
+        'minecraft:redstone_from_smelting_redstone_ore',
+        'minecraft:redstone_from_blasting_redstone_ore',
+        'minecraft:redstone_from_smelting_deepslate_redstone_ore',
+        'minecraft:redstone_from_blasting_deepslate_redstone_ore',
+        'minecraft:emerald_from_smelting_emerald_ore',
+        'minecraft:emerald_from_blasting_emerald_ore',
+        'minecraft:emerald_from_smelting_deepslate_emerald_ore',
+        'minecraft:emerald_from_blasting_deepslate_emerald_ore',
+        'minecraft:diamond_from_smelting_diamond_ore',
+        'minecraft:diamond_from_blasting_diamond_ore',
+        'minecraft:diamond_from_smelting_deepslate_diamond_ore',
+        'minecraft:diamond_from_blasting_deepslate_diamond_ore',
+        'minecraft:lapis_lazuli_from_smelting_lapis_ore',
+        'minecraft:lapis_lazuli_from_blasting_lapis_ore',
+        'minecraft:lapis_lazuli_from_smelting_deepslate_lapis_ore',
+        'minecraft:lapis_lazuli_from_blasting_deepslate_lapis_ore',
+        'minecraft:gold_ingot_from_blasting_nether_gold_ore',
+        'minecraft:gold_ingot_from_smelting_nether_gold_ore',
+        'minecraft:quartz_from_blasting',
+        'minecraft:quartz'
+    ]
+    vanillaSmeltingIds.forEach(id => event.remove({id: id}))
 
-  event.remove({ id: 'minecraft:gold_ingot_from_smelting_gold_ore' })
-  event.remove({ id: 'minecraft:gold_ingot_from_blasting_gold_ore' })
-  event.remove({ id: 'minecraft:gold_ingot_from_smelting_deepslate_gold_ore' })
-  event.remove({ id: 'minecraft:gold_ingot_from_blasting_deepslate_gold_ore' })
-  event.remove({ id: 'minecraft:coal_from_smelting_coal_ore' })
-  event.remove({ id: 'minecraft:coal_from_blasting_coal_ore' })
-  event.remove({ id: 'minecraft:coal_from_smelting_deepslate_coal_ore' })
-  event.remove({ id: 'minecraft:coal_from_blasting_deepslate_coal_ore' })
-  event.remove({ id: 'minecraft:iron_ingot_from_smelting_iron_ore' })
-  event.remove({ id: 'minecraft:iron_ingot_from_blasting_iron_ore' })
-  event.remove({ id: 'minecraft:iron_ingot_from_smelting_deepslate_iron_ore' })
-  event.remove({ id: 'minecraft:iron_ingot_from_blasting_deepslate_iron_ore' })
-  event.remove({ id: 'minecraft:copper_ingot_from_smelting_copper_ore' })
-  event.remove({ id: 'minecraft:copper_ingot_from_blasting_copper_ore' })
-  event.remove({ id: 'minecraft:copper_ingot_from_smelting_deepslate_copper_ore' })
-  event.remove({ id: 'minecraft:copper_ingot_from_blasting_deepslate_copper_ore' })
-  event.remove({ id: 'minecraft:redstone_from_smelting_redstone_ore' })
-  event.remove({ id: 'minecraft:redstone_from_blasting_redstone_ore' })
-  event.remove({ id: 'minecraft:redstone_from_smelting_deepslate_redstone_ore' })
-  event.remove({ id: 'minecraft:redstone_from_blasting_deepslate_redstone_ore' })
-  event.remove({ id: 'minecraft:emerald_from_smelting_emerald_ore' })
-  event.remove({ id: 'minecraft:emerald_from_blasting_emerald_ore' })
-  event.remove({ id: 'minecraft:emerald_from_smelting_deepslate_emerald_ore' })
-  event.remove({ id: 'minecraft:emerald_from_blasting_deepslate_emerald_ore' })
-  event.remove({ id: 'minecraft:diamond_from_smelting_diamond_ore' })
-  event.remove({ id: 'minecraft:diamond_from_blasting_diamond_ore' })
-  event.remove({ id: 'minecraft:diamond_from_smelting_deepslate_diamond_ore' })
-  event.remove({ id: 'minecraft:diamond_from_blasting_deepslate_diamond_ore' })
-  event.remove({ id: 'minecraft:lapis_lazuli_from_smelting_lapis_ore' })
-  event.remove({ id: 'minecraft:lapis_lazuli_from_blasting_lapis_ore' })
-  event.remove({ id: 'minecraft:lapis_lazuli_from_smelting_deepslate_lapis_ore' })
-  event.remove({ id: 'minecraft:lapis_lazuli_from_blasting_deepslate_lapis_ore' })
-  event.remove({ id: 'minecraft:gold_ingot_from_blasting_nether_gold_ore' })
-  event.remove({ id: 'minecraft:gold_ingot_from_smelting_nether_gold_ore' })
-  event.remove({ id: 'minecraft:quartz_from_blasting' })
-  event.remove({ id: 'minecraft:quartz' })
+// CreateOreCrushingRemoval
+    const createOreCrushingIds = [
+        'create:crushing/veridium_recycling',
+        'create:crushing/veridium',
+        'create:crushing/ochrum_recycling',
+        'create:crushing/ochrum',
+        'create:crushing/asurine_recycling',
+        'create:crushing/asurine',
+        'create:crushing/crimsite_recycling',
+        'create:crushing/crimsite',
+        'tfmg:crushing/bauxite',
+        'tfmg:crushing/galena',
+        'create:crushing/coal_ore',
+        'create:crushing/deepslate_coal_ore',
+        'create:crushing/iron_ore',
+        'create:crushing/deepslate_iron_ore',
+        'create:crushing/copper_ore',
+        'create:crushing/deepslate_copper_ore',
+        'create:crushing/gold_ore',
+        'create:crushing/deepslate_gold_ore',
+        'create:crushing/redstone_ore',
+        'create:crushing/deepslate_redstone_ore',
+        'create:crushing/emerald_ore',
+        'create:crushing/deepslate_emerald_ore',
+        'create:crushing/diamond_ore',
+        'create:crushing/deepslate_diamond_ore',
+        'create:crushing/lapis_ore',
+        'create:crushing/deepslate_lapis_ore',
+        'create:crushing/nether_gold_ore',
+        'create:crushing/nether_quartz_ore',
+        'create:crushing/zinc_ore',
+        'create:crushing/deepslate_zinc_ore',
+        'create:crushing/lead_ore',
+        'create:crushing/nickel_ore',
+        'tfmg:crushing/lithium_ore',
+        'tfmg:crushing/deepslate_lithium_ore'
+    ]
+    createOreCrushingIds.forEach(id => event.remove({id: id}))
 
-  event.remove({ id: 'create:crushing/veridium_recycling' })
-  event.remove({ id: 'create:crushing/veridium' })
-  event.remove({ id: 'create:crushing/ochrum_recycling' })
-  event.remove({ id: 'create:crushing/ochrum' })
-  event.remove({ id: 'create:crushing/asurine_recycling' })
-  event.remove({ id: 'create:crushing/asurine' })
-  event.remove({ id: 'create:crushing/crimsite_recycling' })
-  event.remove({ id: 'create:crushing/crimsite' })
-  event.remove({ id: 'tfmg:crushing/bauxite' })
-  event.remove({ id: 'tfmg:crushing/galena' })
+// RawBlockCrushingRemoval
+    const rawBlockCrushingIds = [
+        'create:crushing/raw_iron_block',
+        'create:crushing/raw_gold_block',
+        'create:crushing/raw_copper_block',
+        'create:crushing/raw_zinc_block',
+        'create:crushing/raw_lead_block',
+        'create:crushing/raw_nickel_block',
+        'tfmg:crushing/raw_lithium_block'
+    ]
+    rawBlockCrushingIds.forEach(id => event.remove({id: id}))
 
-  event.remove({ id: 'create:crushing/coal_ore' })
-  event.remove({ id: 'create:crushing/deepslate_coal_ore' })
-  event.remove({ id: 'create:crushing/iron_ore' })
-  event.remove({ id: 'create:crushing/deepslate_iron_ore' })
-  event.remove({ id: 'create:crushing/copper_ore' })
-  event.remove({ id: 'create:crushing/deepslate_copper_ore' })
-  event.remove({ id: 'create:crushing/gold_ore' })
-  event.remove({ id: 'create:crushing/deepslate_gold_ore' })
-  event.remove({ id: 'create:crushing/redstone_ore' })
-  event.remove({ id: 'create:crushing/deepslate_redstone_ore' })
-  event.remove({ id: 'create:crushing/emerald_ore' })
-  event.remove({ id: 'create:crushing/deepslate_emerald_ore' })
-  event.remove({ id: 'create:crushing/diamond_ore' })
-  event.remove({ id: 'create:crushing/deepslate_diamond_ore' })
-  event.remove({ id: 'create:crushing/lapis_ore' })
-  event.remove({ id: 'create:crushing/deepslate_lapis_ore' })
-  event.remove({ id: 'create:crushing/nether_gold_ore' })
-  event.remove({ id: 'create:crushing/nether_quartz_ore' })
-  event.remove({ id: 'create:crushing/zinc_ore' })
-  event.remove({ id: 'create:crushing/deepslate_zinc_ore' })
-  event.remove({ id: 'create:crushing/lead_ore' })
-  event.remove({ id: 'create:crushing/nickel_ore' })
-  event.remove({ id: 'tfmg:crushing/lithium_ore' })
-  event.remove({ id: 'tfmg:crushing/deepslate_lithium_ore' })
+// RawItemCrushingRemoval
+    const rawItemCrushingIds = [
+        'create:crushing/raw_iron',
+        'create:crushing/raw_gold',
+        'create:crushing/raw_copper',
+        'create:crushing/raw_zinc',
+        'create:crushing/raw_lead',
+        'create:crushing/raw_nickel',
+        'tfmg:crushing/raw_lithium'
+    ]
+    rawItemCrushingIds.forEach(id => event.remove({id: id}))
 
-  event.remove({ id: 'create:crushing/raw_iron_block' })
-  event.remove({ id: 'create:crushing/raw_gold_block' })
-  event.remove({ id: 'create:crushing/raw_copper_block' })
-  event.remove({ id: 'create:crushing/raw_zinc_block' })
-  event.remove({ id: 'create:crushing/raw_lead_block' })
-  event.remove({ id: 'create:crushing/raw_nickel_block' })
-  event.remove({ id: 'tfmg:crushing/raw_lithium_block' })
-
-  event.remove({ id: 'create:crushing/raw_iron' })
-  event.remove({ id: 'create:crushing/raw_gold' })
-  event.remove({ id: 'create:crushing/raw_copper' })
-  event.remove({ id: 'create:crushing/raw_zinc' })
-  event.remove({ id: 'create:crushing/raw_lead' })
-  event.remove({ id: 'create:crushing/raw_nickel' })
-  event.remove({ id: 'tfmg:crushing/raw_lithium' })
-
-  event.remove({ id: 'minecraft:iron_ingot_from_blasting_raw_iron' })
-  event.remove({ id: 'minecraft:gold_ingot_from_blasting_raw_gold' })
-  event.remove({ id: 'minecraft:copper_ingot_from_blasting_raw_copper' })
-  event.remove({ id: 'minecraft:iron_ingot_from_smelting_raw_iron' })
-  event.remove({ id: 'minecraft:gold_ingot_from_smelting_raw_gold' })
-  event.remove({ id: 'minecraft:copper_ingot_from_smelting_raw_copper' })
-  event.remove({ id: 'create:smelting/zinc_ingot_from_ore' })
-  event.remove({ id: 'create:smelting/zinc_ingot_from_raw_ore' })
-  event.remove({ id: 'create:blasting/zinc_ingot_from_ore' })
-  event.remove({ id: 'create:blasting/zinc_ingot_from_raw_ore' })
-  event.remove({ id: 'tfmg:smelting/lithium_ingot_blasting' })
-  event.remove({ id: 'tfmg:smelting/lithium_ingot' })
-  event.remove({ id: 'tfmg:smelting/nickel_ingot_blasting' })
-  event.remove({ id: 'tfmg:smelting/nickel_ingot' })
-  event.remove({ id: 'tfmg:smelting/lead_ingot_blasting' })
-  event.remove({ id: 'tfmg:smelting/lead_ingot' })
-
+// RawSmeltingRemoval
+    const rawSmeltingIds = [
+        'minecraft:iron_ingot_from_blasting_raw_iron',
+        'minecraft:gold_ingot_from_blasting_raw_gold',
+        'minecraft:copper_ingot_from_blasting_raw_copper',
+        'minecraft:iron_ingot_from_smelting_raw_iron',
+        'minecraft:gold_ingot_from_smelting_raw_gold',
+        'minecraft:copper_ingot_from_smelting_raw_copper',
+        'create:smelting/zinc_ingot_from_ore',
+        'create:smelting/zinc_ingot_from_raw_ore',
+        'create:blasting/zinc_ingot_from_ore',
+        'create:blasting/zinc_ingot_from_raw_ore',
+        'tfmg:smelting/lithium_ingot_blasting',
+        'tfmg:smelting/lithium_ingot',
+        'tfmg:smelting/nickel_ingot_blasting',
+        'tfmg:smelting/nickel_ingot',
+        'tfmg:smelting/lead_ingot_blasting',
+        'tfmg:smelting/lead_ingot'
+    ]
+    rawSmeltingIds.forEach(id => event.remove({id: id}))
 })

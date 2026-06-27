@@ -60,7 +60,9 @@ ServerEvents.recipes(event => {
   event.recipes.rubberworksSapping(Fluid.of("kubejs:molten_sticky_resin", 40), ["minecraft:birch_log", "minecraft:birch_leaves"])
   event.recipes.rubberworksSapping(Fluid.of("kubejs:molten_sticky_resin", 40), ["minecraft:acacia_log", "minecraft:acacia_leaves"])
   
-  event.recipes.rubberworksCompressing([Item.of('kubejs:stone_powder').withChance(0.73), Item.of('kubejs:rhyolite_powder').withChance(0.26), Item.of('kubejs:diorite_powder').withChance(0.32), Item.of('kubejs:granite_powder').withChance(0.43)], Fluid.of("minecraft:lava", 500)).superheated()
+  event.recipes.rubberworksCompressing([Item.of('kubejs:stone_powder').withChance(0.35), Item.of('kubejs:rhyolite_powder').withChance(0.13), Item.of('kubejs:diorite_powder').withChance(0.16), Item.of('kubejs:granite_powder').withChance(0.21)], Fluid.of("minecraft:lava", 100))
+  event.recipes.rubberworksCompressing([Item.of('minecraft:sugar').withChance(0.57), Item.of('minecraft:sugar').withChance(0.21)], Fluid.of("create:honey", 100))
+  event.recipes.create.mixing('minecraft:sugar', Fluid.of("create:honey", 100)).heated
   
   event.custom({
     "type": "createdieselgenerators:distillation",

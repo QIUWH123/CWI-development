@@ -85,7 +85,7 @@ JEIAddedEvents.registerRecipes(event => {
 
 JEIAddedEvents.registerRecipeCatalysts(event => {
     const { jeiHelpers } = event.data
-    const hammerIds = Ingredient.of('#minecraft:hammer').getItemIds()
+    const hammerIds = Ingredient.of('#minecraft:hammers').getItemIds()
     const blockType = jeiHelpers.getRecipeType(ResourceLocation.fromNamespaceAndPath('kubejs', 'block_conversion')).get()
     const depotType = jeiHelpers.getRecipeType(ResourceLocation.fromNamespaceAndPath('kubejs', 'depot_conversion')).get()
     hammerIds.forEach(id => event.data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"](Item.of(id), [blockType, depotType]))
