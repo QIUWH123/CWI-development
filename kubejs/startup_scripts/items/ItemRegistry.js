@@ -164,14 +164,18 @@ StartupEvents.registry('item', event => {
     event.create('dark_ash')
 
     const liteColorPowders = [
+    ]
+
+    const middleColorPowders = [
       ['pyrite_powder', 0xE5C100],
       ['sodium_bisulfate_powder', 0xFFFACD],
-      ['caustic_soda_powder', 0xF0F8FF]
+      ['caustic_soda_powder', 0xF0F8FF],
+      ['lignin_powder', 0xE8C396],
+      ['soda_powder', 0xE0FEFF],
+      ['calcium_chloride_powder', 0xFFFFFF]
     ]
 
     const darkColorPowders = [
-      ['lignin_powder', 0xE8C396],
-      ['calcium_chloride_powder', 0xFFFFFF]
     ]
 
     const powders = [
@@ -185,12 +189,13 @@ StartupEvents.registry('item', event => {
         'lignite_powder', 'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
         'clay_powder', 'stone_powder', 'deepslate_powder', 'tuff_powder', 'claystone_powder',
         'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',
-        'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder'
+        'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder', 'glass_powder', 'borax_powder'
     ]
 
-    liteColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_lite`).color(color).tag('cwi:powders')})
-    darkColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_dark`).color(color).tag('cwi:powders')})
     powders.forEach(powder => {event.create(powder).texture(`kubejs:item/powders/${powder}`).tag('cwi:powders')})
+    liteColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_lite`).color(color).tag('cwi:powders')})
+    middleColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_middle`).color(color).tag('cwi:powders')})
+    darkColorPowders.forEach(([powder, color]) => {event.create(powder).texture(`kubejs:item/powders/powder_dark`).color(color).tag('cwi:powders')})
 
 })
 

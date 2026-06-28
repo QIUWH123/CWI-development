@@ -86,6 +86,10 @@
   "functionalstorage": {
     "armory": true
   },
+  "create_biotech": {
+    "experience_info": true,
+    "bionic_name": true
+  },
   "ae2": {
     "part_icon": true,
     "charger": true,

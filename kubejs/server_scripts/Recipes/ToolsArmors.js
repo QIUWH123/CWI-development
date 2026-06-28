@@ -53,6 +53,7 @@ ServerEvents.recipes(event => {
     addArmor('create:brass_sheet', 'create_sa:brass')
 
     addTools('createaddition:zinc_sheet', 'kubejs:zinc')
+    addTools('createaddition:zinc_sheet', 'create_sa:zinc')
 
     addTools('tfmg:heavy_plate', 'kubejs:steel')
 

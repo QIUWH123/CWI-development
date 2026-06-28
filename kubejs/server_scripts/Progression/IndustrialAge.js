@@ -96,6 +96,35 @@ ServerEvents.recipes(event => {
   )
 
   event.shaped(
+    'cwi:blast_furnace',
+    [
+      'ABA',
+      'CDC',
+      'ABA'
+    ],
+    {
+      A: 'tfmg:fireproof_bricks',
+      B: 'tfmg:cast_iron_sheet',
+      C: 'tfmg:cast_iron_fluid_tank',
+      D: 'tfmg:cast_iron_block'
+    }
+  )
+
+  event.shaped(
+    'cwi:furnace_hatch',
+    [
+      'ABA',
+      'BCB',
+      'ABA'
+    ],
+    {
+      A: 'tfmg:fireproof_bricks',
+      B: 'tfmg:cast_iron_pipe',
+      C: 'tfmg:cast_iron_fluid_tank'
+    }
+  )
+
+  event.shaped(
     Item.of('tfmg:concrete_hose'),
     [
       'AEA',

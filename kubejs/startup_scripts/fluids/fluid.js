@@ -70,7 +70,9 @@ var moltenMetals = [
   ['molten_constantan', 0xF5DFB3],
   ['molten_bronze', 0x7D511B],
   ['molten_electrum', 0x9E8518],
-  ['molten_glass', 0xFFD8D8]
+  ['molten_glass', 0xFFD8D8],
+  ['molten_tempered_glass', 0xFFD8D8],
+  ['molten_borosilicate_glass', 0xFFD8D8]
 ]
 
 var specialFluids = [
@@ -122,6 +124,7 @@ var normalFluids = [
   ['pan_precursor', 0x8B6B50, 'thin'],
   ['acrylonitrile', 0x374E60, 'thin'],
   ['acetone', 0x90A0A0, 'thin'],
+  ['potassium_solution', 0x88AADD, 'thin'],
   ['silicate_solution', 0xC0D0D0, 'thin'],
   ['methanol', 0xE0B040, 'thin'],
   ['synthetic_ester_base_oil', 0xF0C060, 'thin'],
