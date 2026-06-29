@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "kubejs:block/ores/cooperite0" },
+      { "model": "kubejs:block/ores/cooperite1" },
+      { "model": "kubejs:block/ores/cooperite2" },
+      { "model": "kubejs:block/ores/cooperite3" }
+    ]
+  }
+}

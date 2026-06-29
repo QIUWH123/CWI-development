@@ -284,7 +284,7 @@ StartupEvents.registry('item', event => {
     .texture('kubejs:item/ores/petzite')
 
   event.create('rutile')
-    .texture('mekanism:item/crystal_nitro')
+    .texture('kubejs:item/ores/rutile')
 
   event.create('uraninite')
     .texture('kubejs:item/ores/uraninite')

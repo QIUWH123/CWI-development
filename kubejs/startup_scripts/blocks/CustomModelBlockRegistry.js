@@ -12,13 +12,23 @@ function cubeColumnModel(top, side) {
 
 StartupEvents.registry('block', event => {
 
-    event.create('uraninite_ore')
+    event.create('rutile_ore')
         .soundType('amethyst')
-        .hardness(3)
+        .hardness(4)
         .resistance(6)
         .requiresTool(true)
         .tagBlock('minecraft:mineable/pickaxe')
-        .tagBlock('minecraft:needs_stone_tool')
+        .tagBlock('minecraft:needs_iron_tool')
+        .mapColor('#FF5500')
+        .modelJson = cubeColumnModel('kubejs:block/ores/rutile_top', 'kubejs:block/ores/rutile_side')
+
+    event.create('uraninite_ore')
+        .soundType('amethyst')
+        .hardness(4)
+        .resistance(6)
+        .requiresTool(true)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
         .mapColor('#FF5500')
         .modelJson = cubeColumnModel('kubejs:block/ores/uraninite_top', 'kubejs:block/ores/uraninite_side')
 

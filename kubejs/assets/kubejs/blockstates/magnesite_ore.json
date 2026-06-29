@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "kubejs:block/ores/magnesite0" },
+      { "model": "kubejs:block/ores/magnesite1" },
+      { "model": "kubejs:block/ores/magnesite2" },
+      { "model": "kubejs:block/ores/magnesite3" }
+    ]
+  }
+}

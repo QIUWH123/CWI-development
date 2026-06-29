@@ -184,6 +184,7 @@ StartupEvents.registry('block', event => {
         .mapColor('#FF5500')
 
     event.create('chalcocite_ore')
+        .textureAll('kubejs:block/ores/chalcocite')
         .stoneSoundType()
         .hardness(4.5)
         .resistance(8)
@@ -193,7 +194,6 @@ StartupEvents.registry('block', event => {
         .mapColor('#FF5500')
 
     event.create('magnesite_ore')
-        .textureAll('kubejs:block/ores/magnesite')
         .stoneSoundType()
         .hardness(2.5)
         .resistance(5)
@@ -220,16 +220,6 @@ StartupEvents.registry('block', event => {
         .requiresTool(true)
         .tagBlock('minecraft:mineable/pickaxe')
         .tagBlock('minecraft:needs_wooden_tool')
-        .mapColor('#FF5500')
-
-    event.create('rutile_ore')
-        .textureAll('kubejs:block/ores/rutile')
-        .soundType('amethyst')
-        .hardness(3)
-        .resistance(6)
-        .requiresTool(true)
-        .tagBlock('minecraft:mineable/pickaxe')
-        .tagBlock('minecraft:needs_stone_tool')
         .mapColor('#FF5500')
 
     event.create('chromite_ore')
