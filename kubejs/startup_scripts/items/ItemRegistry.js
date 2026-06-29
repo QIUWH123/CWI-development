@@ -4,6 +4,9 @@
 
 StartupEvents.registry('item', event => {
 
+  event.create('glass_batch')
+  event.create('sintered_glass_blank')
+
   event.create('vintageimprovements:industrial_iron_spring')
   event.create('vintageimprovements:industrial_iron_rod')
   event.create('vintageimprovements:industrial_iron_wire')

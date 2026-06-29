@@ -1,0 +1,5 @@
+{
+    "ldlib": {
+        "connection": "kubejs:block/tempered_glass_ctm"
+    }
+}
