@@ -4,13 +4,13 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.mixing('3x kubejs:pyrite_powder', ['2x tfmg:sulfur_dust','kubejs:iron_powder']).heated()
     event.recipes.create.mixing('kubejs:caustic_soda_powder', Fluid.of('kubejs:caustic_soda', 125)).heated()
-    event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:brine', 125)).heated()
+    event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:salt_solution', 125)).heated()
     event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
     event.recipes.create.mixing('tfmg:nitrate_dust', Fluid.of('kubejs:nitrate_solution', 125)).heated()
     event.recipes.create.mixing(Fluid.of('kubejs:caustic_soda', 125), ['kubejs:caustic_soda_powder', Fluid.of('kubejs:distilled_water', 125)])
     event.recipes.create.mixing(Fluid.of('kubejs:syrup', 125), [Fluid.of('kubejs:distilled_water', 125), 'minecraft:sugar'])
-    event.recipes.create.mixing(Fluid.of('kubejs:brine', 125), [Fluid.of('kubejs:distilled_water', 125), 'ratatouille:salt'])
-    event.recipes.create.mixing(Fluid.of('kubejs:bittern', 125), [{fluidTag: "cwi:water", amount: 125}, 'kubejs:halite_powder'])
+    event.recipes.create.mixing(Fluid.of('kubejs:salt_solution', 125), [Fluid.of('kubejs:distilled_water', 125), 'ratatouille:salt'])
+    event.recipes.create.mixing(Fluid.of('kubejs:raw_brine', 125), [{fluidTag: "cwi:water", amount: 125}, 'kubejs:halite_powder'])
     event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [Fluid.of('kubejs:chlorine', 125), 'kubejs:iron_powder'])
     event.recipes.create.mixing(Fluid.of('kubejs:nitrate_solution', 125), [Fluid.of('kubejs:distilled_water', 125), 'tfmg:nitrate_dust'])
 
@@ -353,7 +353,7 @@ ServerEvents.recipes(event => {
         "results": [
             {"fluid": "kubejs:purified_natural_gas", "amount": 900},
             {"fluid": "tfmg:carbon_dioxide", "amount": 100},
-            {"fluid": "kubejs:brine", "amount": 500}
+            {"fluid": "kubejs:salt_solution", "amount": 500}
         ]
     })
 
@@ -484,7 +484,7 @@ ServerEvents.recipes(event => {
         "results": [
             {"fluid": "kubejs:epichlorohydrin", "amount": 1000},
             {"fluid": "kubejs:muriatic_acid", "amount": 500},
-            {"fluid": "kubejs:brine", "amount": 250}
+            {"fluid": "kubejs:salt_solution", "amount": 250}
         ]
     })
 
@@ -919,7 +919,7 @@ ServerEvents.recipes(event => {
         "processingTime": 150,
         "results": [
             {"fluid": "kubejs:epoxy_resin", "amount": 1000},
-            {"fluid": "kubejs:brine", "amount": 150}
+            {"fluid": "kubejs:salt_solution", "amount": 150}
         ]
     })
 

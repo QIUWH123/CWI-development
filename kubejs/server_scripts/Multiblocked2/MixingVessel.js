@@ -44,28 +44,28 @@ global.mixingVesselRecipes = [
         outputFluids: [{ fluid: 'kubejs:caustic_soda', amount: 125 }]
     },
     {
-        id: 'cwi:mixing_vessel/brine_fluid',
+        id: 'cwi:mixing_vessel/salt_solution_fluid',
         priority: 0,
         duration: 40,
         inputs: [{ item: 'ratatouille:salt' }],
         inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-        outputFluids: [{ fluid: 'kubejs:brine', amount: 125 }]
+        outputFluids: [{ fluid: 'kubejs:salt_solution', amount: 125 }]
     },
     {
-        id: 'cwi:mixing_vessel/bittern_fluid_from_water',
+        id: 'cwi:mixing_vessel/raw_brine_fluid_from_water',
         priority: 0,
         duration: 40,
         inputs: [{ item: 'kubejs:halite_powder' }],
         inputFluids: [{ fluid: 'minecraft:water', amount: 125 }],
-        outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
+        outputFluids: [{ fluid: 'kubejs:raw_brine', amount: 125 }]
     },
     {
-        id: 'cwi:mixing_vessel/bittern_fluid_from_distilled_water',
+        id: 'cwi:mixing_vessel/raw_brine_fluid_from_distilled_water',
         priority: 0,
         duration: 40,
         inputs: [{ item: 'kubejs:halite_powder' }],
         inputFluids: [{ fluid: 'kubejs:distilled_water', amount: 125 }],
-        outputFluids: [{ fluid: 'kubejs:bittern', amount: 125 }]
+        outputFluids: [{ fluid: 'kubejs:raw_brine', amount: 125 }]
     },
     {
         id: 'cwi:mixing_vessel/nitrate_solution_fluid',

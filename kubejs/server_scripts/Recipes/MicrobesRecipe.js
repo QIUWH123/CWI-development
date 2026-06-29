@@ -64,7 +64,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            {fluid: "kubejs:bittern", amount: 500}
+            {fluid: "kubejs:raw_brine", amount: 500}
         ],
         [
             {item: "ratatouille:salt", count: 3},
@@ -1051,7 +1051,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            {fluid: "kubejs:bittern", amount: 500},
+            {fluid: "kubejs:raw_brine", amount: 500},
             {item: "kubejs:vulcan_thermus"}
         ],
         [

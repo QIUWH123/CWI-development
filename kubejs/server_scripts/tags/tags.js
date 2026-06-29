@@ -467,7 +467,7 @@ ServerEvents.tags('fluid', event => {
 
 // NormalFluids
     event.add('kubejs:normal_fluids', [
-        'kubejs:brine', 'kubejs:bittern', 'kubejs:nitrate_solution',
+        'kubejs:salt_solution', 'kubejs:raw_brine', 'kubejs:nitrate_solution',
         'kubejs:silicate_solution', 'kubejs:distilled_water', 'kubejs:nitrogen_fertilizer',
         'kubejs:wheat_juice', 'kubejs:syrup', 'kubejs:origin_blood',
         'kubejs:molten_slime', 'kubejs:molten_rubber', 'kubejs:molten_sticky_resin'

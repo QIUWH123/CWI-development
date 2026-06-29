@@ -31,12 +31,15 @@
     [],
     [],
     [
+      "cwi:structures/acid_lake_underground",
+      "cwi:structures/acid_lake_surface",
+      "cwi:structures/alkaline_lake_underground",
+      "cwi:structures/alkaline_lake_surface",
       "cwi:structures/lava_lake_granite_underground",
       "cwi:structures/lava_lake_granite_surface",
       "cwi:structures/lava_lake_basalt_underground",
       "cwi:structures/lava_lake_basalt_surface",
-
-      "cwi:structures/acid_lake",
+      
       "cwi:structures/echo_geode",
       "cwi:structures/echo_crystal_spike",
       "cwi:structures/echo_crystal_spike_floor"
