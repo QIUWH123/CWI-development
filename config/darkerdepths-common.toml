@@ -26,7 +26,7 @@
 
 [Biomes]
 	#Darker Depths biome & surfacerule injection
-	biome_injection = true
+	biome_injection = false
 
 	#Climate parameters for the sandy_catacombs biome.
 	[Biomes.sandy_catacombs]
@@ -157,7 +157,7 @@
 	#Recommended to keep this value low (< 2500) as baking is typically not a priority.
 	#A value too low will result in worse performance overall as chunks will repeatedly have to be revisited as baking has not completed.
 	#Range: > 500
-	heat_bake_budget = 2500
+	heat_bake_budget = 500
 	#Disable baking heatable blocks (not recommended!)
 	#Blocks such as Darkslate will not generate with the correct stages and will not be updated to be correct heat values upon generation if true.
 	#Baking does require additional resources, so disabling should improve world gen performance.

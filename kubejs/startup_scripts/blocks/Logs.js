@@ -61,17 +61,8 @@ StartupEvents.registry('block', event => {
                     "x": 90
                 }
             }
-        };
+        }
     }
 
     logTypes.forEach(id => createLogBlock(event, id))
-
-    event.create('dead_leaves', 'falling')
-        .soundType('glow_lichen')
-        .hardness(0.3)
-        .resistance(0.3)
-        .mapColor('#FF5500')
-        .suffocating(false)
-        .redstoneConductor(false)
-        .defaultCutout()
 })
