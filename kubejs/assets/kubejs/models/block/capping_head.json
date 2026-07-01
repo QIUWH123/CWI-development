@@ -7,7 +7,7 @@
 	"textures": {
 		"0": "kubejs:block/model/axis_top",
 		"1": "kubejs:block/model/axis",
-		"2": "kubejs:block/industrial_rubber_block",
+		"2": "kubejs:block/storage_blocks/industrial_rubber_block",
 		"particle": "kubejs:block/model/axis_top"
 	},
 	"elements": [
