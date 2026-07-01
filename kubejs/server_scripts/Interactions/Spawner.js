@@ -94,7 +94,6 @@ BlockEvents.rightClicked("minecraft:spawner", event => {
                 },
                 weight: 1
             },
-
             {
                 data: {
                     entity: {
