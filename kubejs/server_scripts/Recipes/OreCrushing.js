@@ -1,4 +1,5 @@
 // OreLootModification
+
 LootJS.modifiers(event => {
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const exp = isDeepslate ? 3 : 2
@@ -15,9 +16,11 @@ LootJS.modifiers(event => {
 })
 
 // OreProcessingRecipes
+
 ServerEvents.recipes(event => {
 
 // OreTypeCrushingLoop
+
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
         const dropChance = isDeepslate ? 0.75 : 0.25
@@ -38,6 +41,7 @@ ServerEvents.recipes(event => {
     })
 
 // SpecialOreCrushing
+
     event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
     event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
     event.recipes.create.crushing(['2x kubejs:petzite', Item.of('kubejs:petzite').withChance(0.75)], 'create:ochrum')
@@ -58,6 +62,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.crushing(['2x kubejs:rutile', Item.of('kubejs:rutile').withChance(0.75)], 'kubejs:rutile_ore')
 
 // PowderCrushingPairs
+
     const ores = [
         ['kubejs:halite_powder', 'kubejs:halite'],
         ['kubejs:magnesite_powder', 'kubejs:magnesite'],
@@ -73,9 +78,11 @@ ServerEvents.recipes(event => {
 })
 
 // RecipeRemoval
+
 ServerEvents.recipes(event => {
 
 // VanillaSmeltingRemoval
+
     const vanillaSmeltingIds = [
         'minecraft:gold_ingot_from_smelting_gold_ore',
         'minecraft:gold_ingot_from_blasting_gold_ore',
@@ -117,6 +124,7 @@ ServerEvents.recipes(event => {
     vanillaSmeltingIds.forEach(id => event.remove({id: id}))
 
 // CreateOreCrushingRemoval
+
     const createOreCrushingIds = [
         'create:crushing/veridium_recycling',
         'create:crushing/veridium',
@@ -156,6 +164,7 @@ ServerEvents.recipes(event => {
     createOreCrushingIds.forEach(id => event.remove({id: id}))
 
 // RawBlockCrushingRemoval
+
     const rawBlockCrushingIds = [
         'create:crushing/raw_iron_block',
         'create:crushing/raw_gold_block',
@@ -168,6 +177,7 @@ ServerEvents.recipes(event => {
     rawBlockCrushingIds.forEach(id => event.remove({id: id}))
 
 // RawItemCrushingRemoval
+
     const rawItemCrushingIds = [
         'create:crushing/raw_iron',
         'create:crushing/raw_gold',
@@ -180,6 +190,7 @@ ServerEvents.recipes(event => {
     rawItemCrushingIds.forEach(id => event.remove({id: id}))
 
 // RawSmeltingRemoval
+
     const rawSmeltingIds = [
         'minecraft:iron_ingot_from_blasting_raw_iron',
         'minecraft:gold_ingot_from_blasting_raw_gold',
@@ -199,4 +210,5 @@ ServerEvents.recipes(event => {
         'tfmg:smelting/lead_ingot'
     ]
     rawSmeltingIds.forEach(id => event.remove({id: id}))
+
 })

@@ -12,7 +12,7 @@ const suspiciousBlocks = [
         brushing_sound: SoundType.SUSPICIOUS_GRAVEL.getStepSound(),
         brushingFinishedSound: SoundType.ANVIL.getHitSound()
     }
-];
+]
 
 suspiciousBlocks.forEach((susBlock) => {
     StartupEvents.registry("block", (event) => {

@@ -1,4 +1,5 @@
-// FermentingHelper
+// Fermenting Helper
+
 function addFermentingRecipes(event, ingredients, results, processingTime, heatRequirement, types) {
     var base = {
         ingredients: ingredients,
@@ -18,10 +19,12 @@ function addFermentingRecipes(event, ingredients, results, processingTime, heatR
     })
 }
 
-// FermentingRecipes
+// Fermenting Recipes
+
 ServerEvents.recipes(function(event) {
 
-    // GeneralRecipes
+// General Recipes
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:raw_soil"},
@@ -107,7 +110,8 @@ ServerEvents.recipes(function(event) {
         2400, undefined, ['basin', 'bulk']
     )
 
-    // BulkOnly
+// Bulk Only
+
     addFermentingRecipes(event,
         [
             {tag: "minecraft:logs"}
@@ -145,7 +149,8 @@ ServerEvents.recipes(function(event) {
         900, "heated", ['bulk']
     )
 
-    // Lichen
+// Lichen
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:soaked_depleted_dirt"},
@@ -159,7 +164,8 @@ ServerEvents.recipes(function(event) {
         1500, undefined, ['basin', 'bulk']
     )
 
-    // FermentoMycetes
+// Fermento Mycetes
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:powdered_fermento_mycetes"},
@@ -211,7 +217,8 @@ ServerEvents.recipes(function(event) {
         50, undefined, ['basin', 'bulk']
     )
 
-    // AcidolysBacillus
+// Acidolys Bacillus
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:acidolys_bacillus"},
@@ -633,7 +640,8 @@ ServerEvents.recipes(function(event) {
         1200, undefined, ['basin', 'bulk']
     )
 
-    // CarbofusorSpirillum
+// Carbofusor Spirillum
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:carbofusor_spirillum"},
@@ -769,7 +777,8 @@ ServerEvents.recipes(function(event) {
         6, "heated", ['basin', 'bulk']
     )
 
-    // NitrofixRhizobium
+// Nitrofix Rhizobium
+
     addFermentingRecipes(event,
         [
             {fluid: "minecraft:water", amount: 4},
@@ -808,7 +817,8 @@ ServerEvents.recipes(function(event) {
         20, "heated", ['basin', 'bulk']
     )
 
-    // CrystallumCoccus
+// Crystallum Coccus
+
     addFermentingRecipes(event,
         [
             {fluid: "kubejs:redstone_acid", amount: 1000},
@@ -833,19 +843,6 @@ ServerEvents.recipes(function(event) {
             {item: "kubejs:infected_budding_quartz"}
         ],
         2400, "heated", ['basin', 'bulk']
-    )
-
-    addFermentingRecipes(event,
-        [
-            {fluidTag: "cwi:water", amount: 100},
-            {item: "kubejs:quartz_powder"},
-            {item: "kubejs:crystallum_coccus"}
-        ],
-        [
-            {item: "minecraft:quartz"},
-            {item: "kubejs:crystallum_coccus"}
-        ],
-        300, undefined, ['basin', 'bulk']
     )
 
     addFermentingRecipes(event,
@@ -952,7 +949,8 @@ ServerEvents.recipes(function(event) {
         300, undefined, ['basin', 'bulk']
     )
 
-    // PutrelysSporogenes
+// Putrelys Sporogenes
+
     addFermentingRecipes(event,
         [
             {item: "ratatouille:compost_mass"},
@@ -981,7 +979,8 @@ ServerEvents.recipes(function(event) {
         1200, undefined, ['basin', 'bulk']
     )
 
-    // VulcanThermus
+// Vulcan Thermus
+
     addFermentingRecipes(event,
         [
             {item: "kubejs:vulcan_thermus"},
