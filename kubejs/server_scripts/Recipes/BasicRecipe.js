@@ -2,79 +2,82 @@ ServerEvents.recipes(event => {
 
 // Custom Recipe Function Define
 
-    function chiseling(input,output,count){
+    function chiseling(input, output, count) {
         event.custom({
             "type": "createdieselgenerators:hammering",
-            "ingredients":[{"item": input}],
-            "results":[{"item": output,"count": count}]
+            "ingredients": [{ "item": input }],
+            "results": [{ "item": output, "count": count }]
         })
     }
 
-    function cutting(input,output,chance,count){
+    function cutting(input, output, chance, count) {
         event.custom({
             "type": "createdieselgenerators:wire_cutting",
-            "ingredients": [{"item": input}],
-            "results": [{"item": output,"chance": chance,"count": count}]
+            "ingredients": [{ "item": input }],
+            "results": [{ "item": output, "chance": chance, "count": count }]
         })
     }
 
-    function cuttingTwo(input,output1,chance1,count1,output2,chance2,count2){
+    function cuttingTwo(input, output1, chance1, count1, output2, chance2, count2) {
         event.custom({
             "type": "createdieselgenerators:wire_cutting",
-            "ingredients": [{"item": input}],
-            "results": [{"item": output1,"chance": chance1,"count": count1}, {"item": output2,"chance": chance2,"count": count2}]
+            "ingredients": [{ "item": input }],
+            "results": [
+                { "item": output1, "chance": chance1, "count": count1 },
+                { "item": output2, "chance": chance2, "count": count2 }
+            ]
         })
     }
 
-    function rolling(input,output){
+    function rolling(input, output) {
         event.custom({
-            "type":"createaddition:rolling",
-            "input": {"item": input},
-            "result": {"item": output,"count": 2}
+            "type": "createaddition:rolling",
+            "input": { "item": input },
+            "result": { "item": output, "count": 2 }
         })
     }
 
-    function liquidBurning(input,amount,burnTime,superheated){
+    function liquidBurning(input, amount, burnTime, superheated) {
         event.custom({
-            "type":"createaddition:liquid_burning",
-            "input": {"fluid": input,"amount": amount},
+            "type": "createaddition:liquid_burning",
+            "input": { "fluid": input, "amount": amount },
             "burnTime": burnTime,
             "superheated": superheated
         })
     }
 
-    function charging(input,output,energy,chargeRate){
+    function charging(input, output, energy, chargeRate) {
         event.custom({
-            "type":"createaddition:charging",
-            "input": {"item": input,"count": 1 },
-            "result": {"item": output,"count": 1},
+            "type": "createaddition:charging",
+            "input": { "item": input, "count": 1 },
+            "result": { "item": output, "count": 1 },
             "energy": energy,
             "maxChargeRate": chargeRate
         })
     }
 
-    function turning(input,output,count){
+    function turning(input, output, count) {
         event.custom({
-            "type":"vintageimprovements:turning",
-            "ingredients": [{"item": input}],
-            "results": [{"item": output,"count": count}]
+            "type": "vintageimprovements:turning",
+            "ingredients": [{ "item": input }],
+            "results": [{ "item": output, "count": count }]
         })
     }
 
-    function demolding(input,output){
+    function demolding(input, output) {
         event.custom({
             "type": "ratatouille:demolding",
-            "ingredients": {"item": input},
-            "results": {"item": output}
+            "ingredients": { "item": input },
+            "results": { "item": output }
         })
     }
 
-    function curving(head,input,output){
+    function curving(head, input, output) {
         event.custom({
             "type": "vintageimprovements:curving",
             "itemAsHead": head,
-            "ingredients": [{"item": input}],
-            "results": [{"item": output}]
+            "ingredients": [{ "item": input }],
+            "results": [{ "item": output }]
         })
     }
 
@@ -87,47 +90,47 @@ ServerEvents.recipes(event => {
     function deploying(using, input, output) {
         event.custom({
             "type": "create:deploying",
-            "ingredients": [{"item": input},{"item": using}],
-            "results": [{"item": output}]
+            "ingredients": [{ "item": input }, { "item": using }],
+            "results": [{ "item": output }]
         })
     }
 
     function deployingTag(tag, input, output) {
         event.custom({
             "type": "create:deploying",
-            "ingredients": [{"item": input},{"tag": tag}],
-            "results": [{"item": output}]
+            "ingredients": [{ "item": input }, { "tag": tag }],
+            "results": [{ "item": output }]
         })
     }
 
     function itemApplication(first, second, output, isSecondTag) {
-        var secondIngredient = isSecondTag ? {"tag": second} : {"item": second};
+        var secondIngredient = isSecondTag ? { "tag": second } : { "item": second }
         event.custom({
             "type": "create:item_application",
-            "ingredients": [{"item": first}, secondIngredient],
-            "results": [{"item": output}]
+            "ingredients": [{ "item": first }, secondIngredient],
+            "results": [{ "item": output }]
         })
     }
 
     function sandpaperPolishing(input, output) {
         event.custom({
             "type": "create:sandpaper_polishing",
-            "ingredients": [{"item": input}],
-            "results": [{"item": output}]
+            "ingredients": [{ "item": input }],
+            "results": [{ "item": output }]
         })
     }
 
 // Deploying
 
-    deploying('create:sturdy_sheet','minecraft:paper','create:schedule')
-    deployingTag('cwi:leathers','minecraft:paper','vintageimprovements:recipe_card')
+    deploying('create:sturdy_sheet', 'minecraft:paper', 'create:schedule')
+    deployingTag('cwi:leathers', 'minecraft:paper', 'vintageimprovements:recipe_card')
 
 // Curving
 
-    curving('minecraft:iron_ingot','kubejs:clay_disk','kubejs:clay_ingot_mold')
-    curving('minecraft:iron_nugget','kubejs:clay_disk','kubejs:clay_nugget_mold')
-    curving('create:iron_sheet','kubejs:clay_disk','kubejs:clay_sheet_mold')
-    curving('createaddition:iron_rod','kubejs:clay_disk','kubejs:clay_rod_mold')
+    curving('minecraft:iron_ingot', 'kubejs:clay_disk', 'kubejs:clay_ingot_mold')
+    curving('minecraft:iron_nugget', 'kubejs:clay_disk', 'kubejs:clay_nugget_mold')
+    curving('create:iron_sheet', 'kubejs:clay_disk', 'kubejs:clay_sheet_mold')
+    curving('createaddition:iron_rod', 'kubejs:clay_disk', 'kubejs:clay_rod_mold')
 
 // Turning
 
@@ -155,11 +158,11 @@ ServerEvents.recipes(event => {
 
 // Cutting
 
-    cuttingTwo('minecraft:dead_bush','minecraft:stick',1,2,'farmersdelight:straw',0.57,1)
+    cuttingTwo('minecraft:dead_bush', 'minecraft:stick', 1, 2, 'farmersdelight:straw', 0.57, 1)
 
 // Chiseling
 
-    chiseling('create:brass_sheet','kubejs:brass_circuit_board',1)
+    chiseling('create:brass_sheet', 'kubejs:brass_circuit_board', 1)
 
 // Pressing
 

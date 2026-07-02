@@ -2,1523 +2,735 @@
 
 ServerEvents.recipes(event => {
 
-// Type Delete
+// Type Remove
 
     event.remove({ type: 'createaddition:rolling' })
     event.remove({ type: 'vintageimprovements:coiling' })
     event.remove({ type: 'vintageimprovements:turning' })
-    event.remove({ type: 'create:pressing' , output : '#cwi:sheets' })
+    event.remove({ type: 'create:pressing', output: '#cwi:sheets' })
     event.remove({ type: 'createdieselgenerators:wire_cutting' })
     event.remove({ type: 'createdieselgenerators:hammering' })
     event.remove({ type: 'createdieselgenerators:compression_molding' })
     event.remove({ type: 'createdieselgenerators:distillation' })
 
-// Stuff And Addition
-
-    event.remove({ mod: 'create_sa' })
-
-// Construction Wand
-
-    event.remove({ mod: 'constructionwand' })
-
-// Natures Compass
-
-    event.remove({ id: 'naturescompass:natures_compass' })
-
-// Multiblocked2
-
-    event.remove({ id: 'mbd2:mbd_gadgets' })
-
-// Ad Astra
-
-    event.remove({ mod: 'ad_astra' })
-
-// Functinoal Storage
-
-    event.remove({ mod: 'functionalstorage' })
-
-// Create Rns
-
-    event.remove({ mod: 'create_rns' })
-
-// Rubber Works
-
-    event.remove({ mod: 'rubberworks' })
-
-// Ae2
-
-    event.remove({ mod: 'ae2' })
-
-// Appflux
-
-    event.remove({ mod: 'appflux' })
-
-// Advanced Ae
-
-    event.remove({ mod: 'advanced_ae' })
-
-// Sculk Catalytic Chamber
-
-    event.remove({ mod: 'sculkcatalyticchamber' })
-
-// Expattern Provider
-
-    event.remove({ mod: 'expatternprovider' })
-
-// Sg Journey
-
-    event.remove({ mod: 'sgjourney' })
-
-// Sophisticated Backpacks
-
-    event.remove({ mod: 'sophisticatedbackpacks' })
-
-})
-
-// Darker Depths
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'darkerdepths:duskrock' })
-    event.remove({ id: 'darkerdepths:porous_petrified_log' })
-    event.remove({ id: 'darkerdepths:amber_block' })
-    event.remove({ id: 'darkerdepths:amber' })
-    event.remove({ id: 'darkerdepths:void_soul_torch' })
-    event.remove({ id: 'darkerdepths:darkslate' })
-    event.remove({ id: 'darkerdepths:forsaken_bronze_ingot_from_scrap' })
-    event.remove({ id: 'darkerdepths:grimestone' })
-    event.remove({ id: 'darkerdepths:magma_pad' })
-    event.remove({ id: 'darkerdepths:death_anchor' })
-    event.remove({ id: 'darkerdepths:rope' })
-    event.remove({ id: 'darkerdepths:scorched_remains_block' })
-    event.remove({ id: 'darkerdepths:glow_ink_sac_from_glow_grime' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Sg Journey
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Geode Plus
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'geode_plus:nether_quartz_crystal_block' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Biomancy
-
-ServerEvents.recipes(event => {
-
-    event.remove({ mod: 'biomancy' })
-
-    //event.remove({ id: 'biofactory:filling/rich_soil' })
-    //event.remove({ id: 'biomancy:crafting/dirt_from_stone_powder' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Biomancy
-
-ServerEvents.recipes(event => {
-
-    event.remove({ mod: 'clanginghowl' })
-
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Ftb Quest
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'ftbquests:loot_crate_opener' })
-
-})
-
-// Minecraft
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'minecraft:piston' })
-    event.remove({ id: 'minecraft:sticky_piston' })
-    event.remove({ id: 'minecraft:stonecutter' })
-    event.remove({ id: 'minecraft:coarse_dirt' })
-    event.remove({ id: 'minecraft:enchanting_table' })
-    event.remove({ id: 'minecraft:stick_from_bamboo_item' })
-    event.remove({ id: 'minecraft:sandstone' })
-    event.remove({ id: 'minecraft:copper_ingot_from_waxed_copper_block' })
-    event.remove({ id: 'minecraft:diorite' })
-    event.remove({ id: 'minecraft:andesite' })
-    event.remove({ id: 'minecraft:granite' })
-    event.remove({ id: 'minecraft:observer' })
-    event.remove({ id: 'minecraft:smoker' })
-    event.remove({ id: 'minecraft:blast_furnace' })
-    event.remove({ id: 'minecraft:furnace' })
-    event.remove({ id: 'minecraft:crafting_table' })
-    event.remove({ id: 'minecraft:packed_ice' })
-    event.remove({ id: 'minecraft:blue_ice' })
-    event.remove({ id: 'minecraft:netherite_shovel_smithing' })
-    event.remove({ id: 'minecraft:netherite_pickaxe_smithing' })
-    event.remove({ id: 'minecraft:netherite_axe_smithing' })
-    event.remove({ id: 'minecraft:netherite_hoe_smithing' })
-    event.remove({ id: 'minecraft:netherite_sword_smithing' })
-    event.remove({ id: 'minecraft:quartz_block' })
-    event.remove({ id: 'minecraft:fermented_spider_eye' })
-    event.remove({ id: 'minecraft:dispenser' })
-    event.remove({ id: 'minecraft:dropper' })
-    event.remove({ id: 'minecraft:shield' })
-    event.remove({ id: 'minecraft:bone_block' })
-    event.remove({ id: 'minecraft:netherite_scrap_from_blasting' })
-    event.remove({ id: 'minecraft:charcoal' })
-    event.remove({ id: 'minecraft:leather' })
-    event.remove({ id: 'minecraft:anvil' })
-    event.remove({ id: 'minecraft:kjs/stonecutter' })
-    event.remove({ id: 'minecraft:hopper' })
-    event.remove({ id: 'minecraft:cauldron' })
-    event.remove({ id: 'minecraft:brewing_stand' })
-    event.remove({ id: 'minecraft:magma_block' })
-    event.remove({ id: 'minecraft:tinted_glass' })
-    event.remove({ id: 'minecraft:ender_eye' })
-    event.remove({ id: 'minecraft:diamond_crystal_block_to_diamond' })
-    event.remove({ id: 'minecraft:minecart' })
-    event.remove({ id: 'minecraft:beacon' })
-    event.remove({ id: 'minecraft:shears' })
-    event.remove({ id: 'minecraft:glass_pane' })
-    event.remove({ id: 'minecraft:bread' })
-    event.remove({ id: 'minecraft:cake' })
-    event.remove({ id: 'minecraft:chain' })
-    event.remove({ id: 'minecraft:sugar_from_honey_bottle' })
-    event.remove({ id: 'minecraft:glass' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-  
-    event.remove({ id: 'minecraft:stone_sword' })
-    event.remove({ id: 'minecraft:stone_axe' })
-    event.remove({ id: 'minecraft:stone_pickaxe' })
-    event.remove({ id: 'minecraft:stone_shovel' })
-    event.remove({ id: 'minecraft:stone_hoe' })
-    event.remove({ id: 'minecraft:iron_sword' })
-    event.remove({ id: 'minecraft:iron_axe' })
-    event.remove({ id: 'minecraft:iron_pickaxe' })
-    event.remove({ id: 'minecraft:iron_shovel' })
-    event.remove({ id: 'minecraft:iron_hoe' })
-    event.remove({ id: 'minecraft:iron_helmet' })
-    event.remove({ id: 'minecraft:iron_chestplate' })
-    event.remove({ id: 'minecraft:iron_leggings' })
-    event.remove({ id: 'minecraft:iron_boots' })
-    event.remove({ id: 'minecraft:diamond_sword' })
-    event.remove({ id: 'minecraft:diamond_axe' })
-    event.remove({ id: 'minecraft:diamond_pickaxe' })
-    event.remove({ id: 'minecraft:diamond_shovel' })
-    event.remove({ id: 'minecraft:diamond_hoe' })
-    event.remove({ id: 'minecraft:diamond_helmet' })
-    event.remove({ id: 'minecraft:diamond_chestplate' })
-    event.remove({ id: 'minecraft:diamond_leggings' })
-    event.remove({ id: 'minecraft:diamond_boots' })
-    event.remove({ id: 'minecraft:golden_sword' })
-    event.remove({ id: 'minecraft:golden_axe' })
-    event.remove({ id: 'minecraft:golden_pickaxe' })
-    event.remove({ id: 'minecraft:golden_shovel' })
-    event.remove({ id: 'minecraft:golden_hoe' })
-    event.remove({ id: 'minecraft:golden_helmet' })
-    event.remove({ id: 'minecraft:golden_chestplate' })
-    event.remove({ id: 'minecraft:golden_leggings' })
-    event.remove({ id: 'minecraft:golden_boots' })
-  
-    event.remove({ id: 'minecraft:netherite_helmet_smithing' })
-    event.remove({ id: 'minecraft:netherite_chestplate_smithing' })
-    event.remove({ id: 'minecraft:netherite_leggings_smithing' })
-    event.remove({ id: 'minecraft:netherite_boots_smithing' })
-  
-    event.remove({ id: 'minecraft:gold_nugget_from_blasting' })
-    event.remove({ id: 'minecraft:iron_nugget_from_blasting' })
-    event.remove({ id: 'minecraft:gold_nugget_from_smelting' })
-    event.remove({ id: 'minecraft:iron_nugget_from_smelting' })
-
-})
-
-// Create New Age
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'create_new_age:cutting/copper_wire' })
-    event.remove({ id: 'create_new_age:cutting/overcharged_iron_wire' })
-    event.remove({ id: 'create_new_age:cutting/overcharged_golden_wire' })
-    event.remove({ id: 'create_new_age:sequenced_assembly/overcharged_diamond_wire' })
-    event.remove({ id: 'create_new_age:mixing/thorium' })
-    event.remove({ id: 'create_new_age:crushing/radioactive_thorium' })
-    event.remove({ id: 'create_new_age:compacting/blank_circuit' })
-    event.remove({ id: 'create_new_age:deploying/copper_circuit' })
-    event.remove({ id: 'create_new_age:pressing/overcharged_iron_sheet' })
-    event.remove({ id: 'create_new_age:pressing/overcharged_golden_sheet' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_new_age:energising/overcharged_iron_sheet' })
-    event.remove({ id: 'create_new_age:energising/overcharged_golden_sheet' })
-    event.remove({ id: 'create_new_age:energising/overcharged_gold' })
-    event.remove({ id: 'create_new_age:energising/experience_bottle' })
-    event.remove({ id: 'create_new_age:energising/overcharged_iron' })
-    event.remove({ id: 'create_new_age:energising/overcharged_diamond' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_new_age:mechanical_crafting/reactor_rod' })
-    event.remove({ id: 'create_new_age:shaped/electrical_connector_mirrored' })
-    event.remove({ id: 'create_new_age:shaped/electrical_connector' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_new_age:mechanical_crafting/reactor_rod' })
-    event.remove({ id: 'create_new_age:mechanical_crafting/reinforced_motor' })
-    event.remove({ id: 'create_new_age:mechanical_crafting/advanced_motor_extension' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Create Diesel Generator
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'createdieselgenerators:crafting/bulk_fermenter' })
-    event.remove({ id: 'createdieselgenerators:crafting/hammer' })
-    event.remove({ id: 'createdieselgenerators:crafting/burner' })
-    event.remove({ id: 'createdieselgenerators:crafting/engine_piston_from_rods' })
-    event.remove({ id: 'createdieselgenerators:crafting/engine_piston' })
-    event.remove({ id: 'createdieselgenerators:crafting/huge_diesel_engine' })
-    event.remove({ id: 'createdieselgenerators:crafting/diesel_engine' })
-    event.remove({ id: 'createdieselgenerators:crafting/large_diesel_engine' })
-    event.remove({ id: 'createdieselgenerators:crafting/pumpjack_bearing' })
-    event.remove({ id: 'createdieselgenerators:crafting/pumpjack_head' })
-    event.remove({ id: 'createdieselgenerators:crafting/pumpjack_hole' })
-    event.remove({ id: 'createdieselgenerators:crafting/asphalt_stairs' })
-    event.remove({ id: 'createdieselgenerators:crafting/asphalt_slab' })
-    event.remove({ id: 'createdieselgenerators:crafting/asphalt_block' })
-    event.remove({ id: 'createdieselgenerators:crafting/kelp_handle' })
-    event.remove({ id: 'createdieselgenerators:crafting/oil_scanner' })
-    event.remove({ id: 'createdieselgenerators:crafting/oil_barrel' })
-    event.remove({ id: 'createdieselgenerators:crafting/canister' })
-    event.remove({ id: 'createdieselgenerators:crafting/chip_wood_beam' })
-    event.remove({ id: 'createdieselgenerators:crafting/distillation_controller' })
-    event.remove({ id: 'createdieselgenerators:crafting/basin_lid' })
-    event.remove({ id: 'createdieselgenerators:crafting/engine_silencer' })
-    event.remove({ id: 'createdieselgenerators:crafting/engine_turbocharger' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:stonecutting/asphalt_stairs' })
-    event.remove({ id: 'createdieselgenerators:stonecutting/asphalt_slab' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:cutting/bowl_mold' })
-    event.remove({ id: 'createdieselgenerators:cutting/lines_mold' })
-    event.remove({ id: 'createdieselgenerators:cutting/chain_mold' })
-    event.remove({ id: 'createdieselgenerators:cutting/bar_mold' })
-    event.remove({ id: 'createdieselgenerators:cutting/wood_chips' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/copper_rod' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/electrum_rod' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/gold_rod' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/iron_rod' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/electrum_sheet' })
-    event.remove({ id: 'createdieselgenerators:compat/createaddition/zinc_sheet' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:mechanical_crafting/chemcial_sprayer' })
-    event.remove({ id: 'createdieselgenerators:mechanical_crafting/pumpjack_crank' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:mixing/biodiesel' })
-    event.remove({ id: 'createdieselgenerators:mixing/asphalt_block' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:basin_fermenting/fermented_spider_eye' })
-    event.remove({ id: 'createdieselgenerators:basin_fermenting/dough' })
-    event.remove({ id: 'createdieselgenerators:basin_fermenting/magma_cream' })
-    event.remove({ id: 'createdieselgenerators:basin_fermenting/fermentable' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:crushing/wood_chip_sticks' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:bulk_fermenting/magma_cream' })
-    event.remove({ id: 'createdieselgenerators:bulk_fermenting/lava' })
-    event.remove({ id: 'createdieselgenerators:bulk_fermenting/fermentable' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdieselgenerators:casting/chocolate_bar' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Bits N Bobs
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'bits_n_bobs:item_application/chain_pulley_from_rope_pulley_using_deployer' })
-    event.remove({ id: 'bits_n_bobs:item_application/chain_pulley_from_rope_pulley' })
-    event.remove({ id: '' })
-    event.remove({ id: 'bits_n_bobs:splashing/weathered_girder' })
-    event.remove({ id: 'bits_n_bobs:splashing/weathered_girder_strut' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-  
-})
-
-// Clanging Howl
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'clanginghowl:ex_steel/extraterrestrial_steel_ingot_blasting_smelting' })
-    event.remove({ id: 'clanginghowl:ex_steel/extraterrestrial_steel_nugget_blasting_smelting' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-  
-})
-
-// Tfmg
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'tfmg:mixing/thermite' })
-    event.remove({ id: 'tfmg:mixing/gunpowder' })
-    event.remove({ id: 'tfmg:mixing/asphalt_mixture' })
-    event.remove({ id: 'tfmg:mixing/concrete_mixture' })
-    event.remove({ id: 'tfmg:mixing/constantan' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:engine_cylinder_cheap' })
-    event.remove({ id: 'tfmg:engine_cylinder' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:casting/slag_block' })
-    event.remove({ id: 'tfmg:casting/plastic_sheet' })
-    event.remove({ id: 'tfmg:casting/steel' })
-    event.remove({ id: 'tfmg:casting/cinderblock' })
-    event.remove({ id: 'tfmg:casting/silicon' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:large_pumpjack_hammer_part_from_storage_blocks_steel_stonecutting' })
-    event.remove({ id: 'tfmg:screw_from_ingots_steel_stonecutting' })
-    event.remove({ id: 'tfmg:engine_cylinder_gas' })
-    event.remove({ id: 'tfmg:engine_cylinder_spark_plug' })
-    event.remove({ id: 'tfmg:turbine_blade' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:winding/electromagnetic_coil' })
-    event.remove({ id: 'tfmg:winding/resistor' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:constantan_wire_from_ingots_constantan_stonecutting' })
-    event.remove({ id: 'tfmg:aluminum_wire_from_ingots_aluminum_stonecutting' })
-    event.remove({ id: 'tfmg:copper_wire_from_ingots_copper_stonecutting' })
-    event.remove({ id: 'tfmg:rebar_from_ingots_steel_stonecutting' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:coking/coal' })
-    event.remove({ id: 'tfmg:coking/charcoal' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:crushing/copper_sulfate' })
-    event.remove({ id: 'tfmg:crushing/sulfur' })
-    event.remove({ id: 'tfmg:crushing/dirt' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:mechanical_crafting/spark_plug' })
-    event.remove({ id: 'tfmg:mechanical_crafting/simple_large_engine' })
-    event.remove({ id: 'tfmg:mechanical_crafting/large_engine' })
-    event.remove({ id: 'tfmg:mechanical_crafting/engine_controller' })
-    event.remove({ id: 'tfmg:mechanical_crafting/quad_potato_cannon' })
-    event.remove({ id: 'tfmg:mechanical_crafting/rotor' })
-    event.remove({ id: 'tfmg:mechanical_crafting/stator' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:item_application/heavy_machinery_casing_using_deployer' })
-    event.remove({ id: 'tfmg:item_application/heavy_machinery_casing' })
-    event.remove({ id: 'tfmg:item_application/steel_casing_using_deployer' })
-    event.remove({ id: 'tfmg:item_application/steel_casing' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/naphtha' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/plastic_from_ethylene' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/plastic_from_propylene' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/neon' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/etched_circuit_board' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/arc_furnace_steel' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/sulfuric_acid' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/aluminum' })
-    event.remove({ id: 'tfmg:vat_machine_recipe/concrete' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:blasting/nickel_ingot_blasting' })
-    event.remove({ id: 'tfmg:blasting/lead_ingot_blasting' })
-    event.remove({ id: 'tfmg:blasting/lithium_ingot_blasting' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:distillation/heavy_oil' })
-    event.remove({ id: 'tfmg:distillation/heavy_oil_no_naphtha' })
-    event.remove({ id: 'tfmg:distillation/heavy_oil_light_distillation' })
-    event.remove({ id: 'tfmg:distillation/crude_oil' })
-    event.remove({ id: 'tfmg:distillation/crude_oil_no_naphtha' })
-    event.remove({ id: 'tfmg:distillation/crude_oil_light_distillation' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:industrial_blasting/steel_from_dust' })
-    event.remove({ id: 'tfmg:industrial_blasting/steel_from_raw_iron' })
-    event.remove({ id: 'tfmg:industrial_blasting/steel' })
-    event.remove({ id: 'tfmg:industrial_blasting/silicon' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:compacting/cast_iron' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:sequenced_assembly/motor' })
-    event.remove({ id: 'tfmg:sequenced_assembly/generator' })
-    event.remove({ id: 'tfmg:sequenced_assembly/steel_mechanism' })
-    event.remove({ id: 'tfmg:sequenced_assembly/potentiometer' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'tfmg:crafting/kinetics/blast_furnace_output' })
-    event.remove({ id: 'tfmg:crafting/kinetics/blast_furnace_hatch' })
-    event.remove({ id: 'tfmg:crafting/kinetics/plastic_sheet' })
-    event.remove({ id: 'tfmg:crafting/kinetics/plastic_block' })
-    event.remove({ id: 'tfmg:crafting/kinetics/segmented_display' })
-    event.remove({ id: 'tfmg:crafting/kinetics/traffic_light' })
-    event.remove({ id: 'tfmg:crafting/kinetics/voltmeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/voltage_observer' })
-    event.remove({ id: 'tfmg:crafting/kinetics/electric_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/electrical_switch' })
-    event.remove({ id: 'tfmg:crafting/kinetics/electric_diode' })
-    event.remove({ id: 'tfmg:crafting/kinetics/neon_tube' })
-    event.remove({ id: 'tfmg:crafting/kinetics/aluminum_lamp' })
-    event.remove({ id: 'tfmg:crafting/kinetics/modern_light' })
-    event.remove({ id: 'tfmg:crafting/kinetics/circular_light' })
-    event.remove({ id: 'tfmg:crafting/kinetics/light_bulb' })
-    event.remove({ id: 'tfmg:crafting/kinetics/accumulatorfrom_lithium' })
-    event.remove({ id: 'tfmg:crafting/kinetics/accumulator' })
-    event.remove({ id: 'tfmg:crafting/kinetics/diagonal_cable_block' })
-    event.remove({ id: 'tfmg:crafting/kinetics/electric_post' })
-    event.remove({ id: 'tfmg:crafting/kinetics/cable_tube' })
-    event.remove({ id: 'tfmg:crafting/kinetics/converter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/transformer' })
-    event.remove({ id: 'tfmg:crafting/kinetics/plastic_mechanical_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/cast_iron_mechanical_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/aluminum_mechanical_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/steel_mechanical_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/brass_mechanical_pump' })
-    event.remove({ id: 'tfmg:crafting/kinetics/winding_machine' })
-    event.remove({ id: 'tfmg:crafting/kinetics/engine_gearbox' })
-    event.remove({ id: 'tfmg:crafting/kinetics/rusted_blast_furnace_reinforcement' })
-    event.remove({ id: 'tfmg:crafting/kinetics/machine_input' })
-    event.remove({ id: 'tfmg:crafting/kinetics/pumpjack_crank' })
-    event.remove({ id: 'tfmg:crafting/kinetics/cast_iron_fluid_tank' })
-    event.remove({ id: 'tfmg:crafting/kinetics/aluminum_fluid_tank' })
-    event.remove({ id: 'tfmg:crafting/kinetics/steel_fluid_tank' })
-    event.remove({ id: 'tfmg:crafting/kinetics/steel_chemical_vat' })
-    event.remove({ id: 'tfmg:crafting/kinetics/cast_iron_chemical_vat' })
-    event.remove({ id: 'tfmg:crafting/kinetics/steel_distillation_controller' })
-    event.remove({ id: 'tfmg:crafting/kinetics/surface_scanner' })
-    event.remove({ id: 'tfmg:crafting/kinetics/casting_basin' })
-    event.remove({ id: 'tfmg:crafting/kinetics/air_intake' })
-    event.remove({ id: 'tfmg:crafting/kinetics/turbine_engine' })
-    event.remove({ id: 'tfmg:crafting/kinetics/radial_engine' })
-    event.remove({ id: 'tfmg:crafting/kinetics/regular_engine' })
-    event.remove({ id: 'tfmg:crafting/kinetics/coke_oven' })
-    event.remove({ id: 'tfmg:crafting/kinetics/blast_stove' })
-    event.remove({ id: 'tfmg:crafting/kinetics/blast_furnace_reinforcement' })
-    event.remove({ id: 'tfmg:crafting/kinetics/polarizer' })
-    event.remove({ id: 'tfmg:crafting/kinetics/large_pumpjack_hammer_head' })
-    event.remove({ id: 'tfmg:crafting/kinetics/large_pumpjack_hammer_connector' })
-    event.remove({ id: 'tfmg:crafting/kinetics/concrete_hose' })
-    event.remove({ id: 'tfmg:crafting/kinetics/multimeter' })
-
-    event.remove({ id: 'tfmg:crafting/kinetics/black_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/orange_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/purple_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/cyan_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/brown_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/light_gray_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/yellow_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/magenta_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/pink_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/lime_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/green_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/red_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/light_blue_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/blue_multimeter' })
-    event.remove({ id: 'tfmg:crafting/kinetics/white_multimeter' })
-
-})
-
-// Create Metallurgy
-
-ServerEvents.recipes(event => {
-
-    event.remove({ mod: 'createmetallurgy' })
-
-})
-
-// Ratatouille
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'ratatouille:oven' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:threshing/boil_stone' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:demolding/cake_mold_baked' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:smoking/cake_mold_baked' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:composting/slime_ball' })
-    event.remove({ id: 'ratatouille:composting/fermented_spider_eye' })
-    event.remove({ id: 'ratatouille:composting/leather' })
-    event.remove({ id: 'ratatouille:composting/composting' })
-    event.remove({ id: 'ratatouille:composting/more_dough' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:mechanical_demolder' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'ratatouille:organic_compost' })
-    event.remove({ id: 'ratatouille:eggshell' })
-
-})
-
-// Rustic Delight
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'rusticdelight:string_from_cotton_boll' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_from_campfire_cooking' })
-    event.remove({ id: 'rusticdelight:cooked_calamari' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_from_smoking' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_slice_from_campfire_cooking' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_slice' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_slice_from_smoking' })
-    event.remove({ id: 'rusticdelight:cutting/cooked_calamari_slice' })
-    event.remove({ id: 'rusticdelight:cooked_calamari_slice_from_campfire_cooking' })
-    event.remove({ id: 'rusticdelight:cutting/calamari_slice' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Miners Delight
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'miners_delight:string_from_gossypium' })
-    event.remove({ id: 'miners_delight:copper_pot' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:cake_from_milk_bottle' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Vital Herbs
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'vital_herbs:teapot_recipe' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-  
-})
-
-// Farmers Delight
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'farmersdelight:gold_nugget_from_smelting_knife' })
-    event.remove({ id: 'farmersdelight:iron_nugget_from_smelting_knife' })
-    event.remove({ id: 'farmersdelight:gold_nugget_from_blasting_knife' })
-    event.remove({ id: 'farmersdelight:iron_nugget_from_blasting_knife' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:organic_compost_from_rotten_flesh' })
-    event.remove({ id: 'farmersdelight:organic_compost_from_tree_bark' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:iron_knife' })
-    event.remove({ id: 'farmersdelight:golden_knife' })
-    event.remove({ id: 'farmersdelight:diamond_knife' })
-    event.remove({ id: 'farmersdelight:netherite_knife_smithing' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:cooking_pot' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:packed_mud_from_straw' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:bread_from_smelting' })
-    event.remove({ id: 'farmersdelight:bread_from_smoking' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:cake_from_milk_bottle' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:cutting/stone' })
-    event.remove({ id: 'farmersdelight:cutting/deepslate' })
-    event.remove({ id: 'farmersdelight:cutting/gravel' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'farmersdelight:cutting/salmon' })
-    event.remove({ id: 'farmersdelight:cutting/chicken' })
-    event.remove({ id: 'farmersdelight:cutting/cooked_cod' })
-    event.remove({ id: 'farmersdelight:cutting/cooked_salmon' })
-    event.remove({ id: 'farmersdelight:cutting/cod' })
-    event.remove({ id: 'farmersdelight:cutting/cooked_chicken' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-  
-})
-
-// Create
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'create:compacting/blaze_cake' })
-    event.remove({ id: 'create:compacting/chocolate' })
-    event.remove({ id: 'create:compacting/andesite_from_flint' })
-    event.remove({ id: 'create:compacting/diorite_from_flint' })
-    event.remove({ id: 'create:compacting/granite_from_flint' })
-    event.remove({ id: 'create:compacting/cake_mold' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:smelting/bread' })
-    event.remove({ id: 'create:smelting/scoria' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:mixing/andesite_alloy_from_zinc' })
-    event.remove({ id: 'create:mixing/andesite_alloy' })
-    event.remove({ id: 'create:mixing/brass_ingot' })
-    event.remove({ id: 'create:mixing/organic_compost' })
-    event.remove({ id: 'create:mixing/compost_residue' })
-    event.remove({ id: 'create:mixing/pulp' })
-    event.remove({ id: 'create:mixing/lava_from_cobble' })
-    event.remove({ id: 'create:mixing/salt' })
-    event.remove({ id: 'create:mixing/compat/ae2/fluix_crystal' })
-    event.remove({ id: 'create:mixing/tea' })
-    event.remove({ id: 'create:mixing/cake_batter' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:crafting/appliances/chain_from_zinc' })
-    event.remove({ id: 'create:crafting/kinetics/schedule' })
-    event.remove({ id: 'create:crafting/kinetics/filter' })
-    event.remove({ id: 'create:crafting/kinetics/attribute_filter' })
-    event.remove({ id: 'create:crafting/logistics/andesite_funnel' })
-    event.remove({ id: 'create:crafting/logistics/andesite_tunnel' })
-    event.remove({ id: 'create:crafting/logistics/content_observer' })
-    event.remove({ id: 'create:crafting/appliances/slime_ball' })
-    event.remove({ id: 'create:crafting/materials/electron_tube' })
-    event.remove({ id: 'create:crafting/kinetics/basin' })
-    event.remove({ id: 'create:crafting/kinetics/propeller' })
-    event.remove({ id: 'create:crafting/kinetics/whisk' })
-    event.remove({ id: 'create:crafting/kinetics/windmill_bearing' })
-    event.remove({ id: 'create:crafting/kinetics/sail_frame_from_conversion' })
-    event.remove({ id: 'create:crafting/kinetics/white_sail' })
-    event.remove({ id: 'create:crafting/kinetics/white_sail_from_conversion' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_mixer' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_press' })
-    event.remove({ id: 'create:crafting/materials/andesite_alloy' })
-    event.remove({ id: 'create:crafting/materials/andesite_alloy_from_zinc' })
-    event.remove({ id: 'create:crafting/kinetics/millstone' })
-    event.remove({ id: 'create:crafting/logistics/package_frogport' })
-    event.remove({ id: 'create:crafting/logistics/packager' })
-    event.remove({ id: 'create:crafting/schematics/schematicannon' })
-    event.remove({ id: 'create:crafting/materials/rose_quartz' })
-    event.remove({ id: 'create:crafting/kinetics/nixie_tube' })
-    event.remove({ id: 'create:crafting/kinetics/deployer' })
-    event.remove({ id: 'create:crafting/kinetics/brass_hand' })
-    event.remove({ id: 'create:crafting/kinetics/smart_chute' })
-    event.remove({ id: 'create:crafting/logistics/brass_tunnel' })
-    event.remove({ id: 'create:crafting/logistics/brass_funnel' })
-    event.remove({ id: 'create:crafting/kinetics/empty_blaze_burner' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_crafter' })
-    event.remove({ id: 'create:crafting/kinetics/steam_engine' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_arm' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_drill' })
-    event.remove({ id: 'create:crafting/kinetics/depot' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_saw' })
-    event.remove({ id: 'create:crafting/kinetics/spout' })
-    event.remove({ id: 'create:crafting/kinetics/belt_connector' })
-    event.remove({ id: 'create:crafting/kinetics/fluid_tank' })
-    event.remove({ id: 'create:crafting/kinetics/item_drain' })
-    event.remove({ id: 'create:crafting/kinetics/hose_pulley' })
-    event.remove({ id: 'create:crafting/kinetics/encased_chain_drive_from_zinc' })
-    event.remove({ id: 'create:crafting/kinetics/encased_chain_drive' })
-    event.remove({ id: 'create:crafting/kinetics/super_glue' })
-    event.remove({ id: 'create:crafting/kinetics/linear_chassis' })
-    event.remove({ id: 'create:crafting/kinetics/radial_chassis' })
-    event.remove({ id: 'create:crafting/kinetics/mechanical_pump' })
-    event.remove({ id: 'create:crafting/kinetics/elevator_pulley' })
-    event.remove({ id: 'create:crafting/kinetics/rope_pulley' })
-    event.remove({ id: 'create:crafting/kinetics/portable_storage_interface' })
-    event.remove({ id: 'create:crafting/kinetics/nozzle' })
-    event.remove({ id: 'create:crafting/kinetics/crafter_slot_cover' })
-    event.remove({ id: 'create:crafting/curiosities/cake' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:filling/cake_mold_filled' })
-    event.remove({ id: 'create:filling/cake' })
-    event.remove({ id: 'create:filling/honey_cake' })
-    event.remove({ id: 'create:filling/gunpowder' })
-    event.remove({ id: 'create:filling/grass_block' })
-    event.remove({ id: 'create:filling/blaze_cake' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:crafting/appliances/netherite_backtank_from_netherite' })
-    event.remove({ id: 'create:crafting/appliances/netherite_diving_boots' })
-    event.remove({ id: 'create:crafting/appliances/netherite_diving_helmet' })
-    event.remove({ id: 'create:crafting/appliances/netherite_backtank' })
-    event.remove({ id: 'create:crafting/appliances/netherite_diving_boots_from_netherite' })
-    event.remove({ id: 'create:crafting/appliances/netherite_diving_helmet_from_netherite' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:pressing/calorite_ingot' })
-    event.remove({ id: 'create:pressing/desh_ingot' })
-    event.remove({ id: 'create:pressing/steel_ingot' })
-    event.remove({ id: 'create:pressing/ostrum_ingot' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:industrial_iron_block_from_ingots_iron_stonecutting' })
-    event.remove({ id: 'create:industrial_iron_block_from_iron_ingots_stonecutting' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:mechanical_crafting/wand_of_symmetry' })
-    event.remove({ id: 'create:mechanical_crafting/extendo_grip' })
-    event.remove({ id: 'create:mechanical_crafting/crushing_wheel' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:item_application/andesite_casing_from_log_using_deployer' })
-    event.remove({ id: 'create:item_application/andesite_casing_from_wood_using_deployer' })
-    event.remove({ id: 'create:item_application/andesite_casing_from_log' })
-    event.remove({ id: 'create:item_application/andesite_casing_from_wood' })
-    event.remove({ id: 'create:item_application/copper_casing_from_log_using_deployer' })
-    event.remove({ id: 'create:item_application/copper_casing_from_wood_using_deployer' })
-    event.remove({ id: 'create:item_application/copper_casing_from_log' })
-    event.remove({ id: 'create:item_application/copper_casing_from_wood' })
-    event.remove({ id: 'create:item_application/brass_casing_from_log_using_deployer' })
-    event.remove({ id: 'create:item_application/brass_casing_from_wood_using_deployer' })
-    event.remove({ id: 'create:item_application/brass_casing_from_log' })
-    event.remove({ id: 'create:item_application/brass_casing_from_wood' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:crushing/tuff' })
-    event.remove({ id: 'create:crushing/tuff_recycling' })
-    event.remove({ id: 'create:crushing/diorite' })
-    event.remove({ id: 'create:crushing/diorite_recycling' })
-    event.remove({ id: 'create:crushing/gilded_blackstone' })
-    event.remove({ id: 'create:crushing/gravel' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:splashing/wheat_flour' })
-    event.remove({ id: 'create:splashing/ice' })
-    event.remove({ id: 'create:splashing/sand' })
-    event.remove({ id: 'create:splashing/red_sand' })
-    event.remove({ id: 'create:splashing/soul_sand' })
-    event.remove({ id: 'create:splashing/crushed_raw_zinc' })
-    event.remove({ id: 'create:splashing/crushed_raw_gold' })
-    event.remove({ id: 'create:splashing/crushed_raw_copper' })
-    event.remove({ id: 'create:splashing/gravel' })
-    event.remove({ id: 'create:splashing/crushed_raw_iron' })
-    event.remove({ id: 'create:splashing/industrial_iron_block' })
-    event.remove({ id: 'create:splashing/industrial_iron_window' })
-    event.remove({ id: 'create:splashing/industrial_iron_window_pane' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:haunting/glow_ink_sac' })
-    event.remove({ id: 'create:haunting/blackstone' })
-    event.remove({ id: 'create:haunting/infested_deepslate' })
-    event.remove({ id: 'create:haunting/infested_stone' })
-    event.remove({ id: 'create:haunting/infested_stone_bricks' })
-    event.remove({ id: 'create:haunting/infested_mossy_stone_bricks' })
-    event.remove({ id: 'create:haunting/infested_cracked_stone_bricks' })
-    event.remove({ id: 'create:haunting/infested_chiseled_stone_bricks' })
-    event.remove({ id: 'create:haunting/soul_soil' })
-    event.remove({ id: 'create:haunting/soul_sand' })
-    event.remove({ id: 'create:haunting/lapis_recycling' })
-    event.remove({ id: 'create:haunting/glow_berries' })
-    event.remove({ id: 'create:haunting/nether_brick' })
-    event.remove({ id: 'create:haunting/warped_fungus' })
-    event.remove({ id: 'create:haunting/crimson_fungus' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:sequenced_assembly/track' })
-    event.remove({ id: 'create:sequenced_assembly/precision_mechanism' })
-    event.remove({ id: 'create:sequenced_assembly/sturdy_sheet' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create:milling/wheat_flour' })
-    event.remove({ id: 'create:milling/gravel' })
-    event.remove({ id: 'create:milling/dripstone_block' })
-    event.remove({ id: 'create:milling/andesite' })
-    event.remove({ id: 'create:milling/cobblestone' })
-    event.remove({ id: 'create:milling/calcite' })
-    event.remove({ id: 'create:milling/charcoal' })
-    event.remove({ id: 'create:milling/coal' })
-
-})
-
-// Create Connected
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'create_connected:sequenced_assembly/control_chip' })
-    event.remove({ id: 'create_connected:crafting/kinetics/fluid_vessel' })
-    event.remove({ id: 'create_connected:crafting/kinetics/kinetic_bridge' })
-    event.remove({ id: 'create_connected:crafting/kinetics/cross_connector' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst' })
-    event.remove({ id: 'create_connected:crafting/kinetics/inventory_access_port' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_withering' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_blasting' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_smoking' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragon_head' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_seething' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_splashing' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_freezing' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragons_breath' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_enriched' })
-    event.remove({ id: 'create_connected:crafting/kinetics/empty_fan_catalyst_from_haunting' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_connected:filling/fan_splashing_catalyst' })
-    event.remove({ id: 'create_connected:filling/fan_blasting_catalyst' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'create_connected:item_application/smoking_catalyst_from_empty' })
-    event.remove({ id: 'create_connected:item_application/blasting_catalyst_from_empty' })
-    event.remove({ id: 'create_connected:item_application/haunting_catalyst_from_empty' })
-    event.remove({ id: 'create_connected:item_application/splashing_catalyst_from_empty' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Create Addition
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'createaddition:crafting/rolling_mill' })
-    event.remove({ id: 'createaddition:crafting/large_connector_gold' })
-    event.remove({ id: 'createaddition:crafting/large_connector_electrum' })
-    event.remove({ id: 'createaddition:crafting/small_connector_copper' })
-    event.remove({ id: 'createaddition:crafting/spool' })
-    event.remove({ id: 'createaddition:crafting/copper_spool' })
-    event.remove({ id: 'createaddition:crafting/gold_spool' })
-    event.remove({ id: 'createaddition:crafting/electrum_spool' })
-    event.remove({ id: 'createaddition:crafting/festive_spool' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createaddition:mechanical_crafting/alternator' })
-    event.remove({ id: 'createaddition:mechanical_crafting/tesla_coil' })
-    event.remove({ id: 'createaddition:mechanical_crafting/electric_motor' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createaddition:liquid_burning/lava' })
-    event.remove({ id: 'createaddition:liquid_burning/gasoline' })
-    event.remove({ id: 'createaddition:liquid_burning/diesel' })
-    event.remove({ id: 'createaddition:liquid_burning/plantoil' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_plants' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_saplings' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_sticks' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_flowers' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_honeycomb' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_leaves' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_crops' })
-    event.remove({ id: 'createaddition:mixing/biomass_from_plant_foods' })
-    event.remove({ id: 'createaddition:mixing/bioethanol' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createaddition:compacting/seed_oil' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createaddition:rolling/straw' })
-
-})
-
-// Fluid
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'fluid:mechanical_pipette' })
-    event.remove({ id: 'fluid:copper_tap' })
-    event.remove({ id: 'fluid:smart_fluid_interface' })
-    event.remove({ id: 'fluid:smart_gutter_outlet' })
-    event.remove({ id: 'fluid:can_filler' })
-    event.remove({ id: 'fluid:fluid_atomizer' })
-    event.remove({ id: 'fluid:copper_sink' })
-    event.remove({ id: 'fluid:redstone_valve' })
-    event.remove({ id: 'fluid:redstone_triple_valve' })
-    event.remove({ id: 'fluid:fluid_interface' })
-    event.remove({ id: 'fluid:centrifugal_pump' })
-    event.remove({ id: '' })
-    event.remove({ id: 'fluid:mixing/slime_fluid_from_slime_ball' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'fluid:glueing/sticky_piston' })
-    event.remove({ id: 'fluid:glueing/sticky_mechanical_piston' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'fluid:mechanical_crafting/baton' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'fluid:haunting/haunting_fluid_bucket_from_slime_fluid_bucket' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'fluid:freezing/breeze_rod_from_blaze_rod' })
-    event.remove({ id: 'fluid:freezing/blue_ice_from_packed_ice' })
-    event.remove({ id: 'fluid:freezing/slime_ball_from_magma_cream' })
-    event.remove({ id: 'fluid:freezing/packed_ice_from_ice' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Create Deco
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'createdeco:pressing/andesite_sheet' })
-    event.remove({ id: 'createdeco:pressing/zinc_sheet' })
-    event.remove({ id: 'createdeco:pressing/netherite_sheet' })
-    event.remove({ id: '' })
-    event.remove({ id: 'createdeco:compacting/industrial_iron_ingot' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-
-})
-
-// Create Chunk Loader
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'create_power_loader:crafting/empty_andesite_chunk_loader' })
-    event.remove({ id: 'create_power_loader:crafting/empty_brass_chunk_loader' })
-  
-})
-
-// Create Fishery Industry
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'createfisheryindustry:pressing/zinc_ingot' })
-
-})
-
-// Vintage Improvements
-
-ServerEvents.recipes(event => {
-
-    event.remove({ id: 'vintageimprovements:pressing/cast_iron_ingot' })
-    event.remove({ id: 'vintageimprovements:pressing/aluminum_ingot' })
-    event.remove({ id: 'vintageimprovements:pressing/nickel_ingot' })
-    event.remove({ id: 'vintageimprovements:pressing/lead_ingot' })
-
-    event.remove({ id: 'vintageimprovements:grinder_polishing/rose_quartz' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:centrifugation/magma_cream' })
-    event.remove({ id: 'vintageimprovements:centrifugation/ender_eye' })
-    event.remove({ id: 'vintageimprovements:centrifugation/honey_comb' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:rolling/refined_radiance' })
-    event.remove({ id: 'vintageimprovements:rolling/shadow_steel' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:mechanical_crafting/helve_hammer' })
-    event.remove({ id: 'vintageimprovements:mechanical_crafting/laser' })
-    event.remove({ id: 'vintageimprovements:mechanical_crafting/lathe' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:stonecutting/v_shaped_curving_head' })
-    event.remove({ id: 'vintageimprovements:stonecutting/w_shaped_curving_head' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:craft/vacuum_chamber' })
-    event.remove({ id: 'vintageimprovements:craft/sulfur_items_to_block' })
-    event.remove({ id: 'vintageimprovements:craft/sulfur_block_to_items' })
-    event.remove({ id: 'vintageimprovements:craft/sulfur_item_to_nuggets' })
-    event.remove({ id: 'vintageimprovements:craft/sulfur_nuggets_to_item' })
-    event.remove({ id: 'vintageimprovements:craft/spring_coiling_machine' })
-    event.remove({ id: 'vintageimprovements:craft/curving_press' })
-    event.remove({ id: 'vintageimprovements:craft/vibrating_table' })
-    event.remove({ id: 'vintageimprovements:craft/centrifuge' })
-    event.remove({ id: 'vintageimprovements:craft/belt_grinder' })
-    event.remove({ id: 'vintageimprovements:craft/spring_coiling_machine_wheel' })
-    event.remove({ id: 'vintageimprovements:craft/helve_hammer_slot_cover' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:crushing/scoria' })
-    event.remove({ id: 'vintageimprovements:crushing/scoria_recycling' })
-    event.remove({ id: 'vintageimprovements:crushing/basalt_recycling' })
-    event.remove({ id: 'vintageimprovements:crushing/basalt' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:milling/sulfur' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:sequenced_assembly/redstone_module' })
-    event.remove({ id: 'vintageimprovements:sequenced_assembly/recipe_card' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:curving/iron_sheet' })
-    event.remove({ id: 'vintageimprovements:curving/diamond' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: '' })
-    event.remove({ id: 'vintageimprovements:pressurizing/copper_sulfate' })
-    event.remove({ id: 'vintageimprovements:pressurizing/sulfur_trioxide' })
-    event.remove({ id: 'vintageimprovements:pressurizing/sulfur_trioxide_alt' })
-    event.remove({ id: 'vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust' })
-    event.remove({ id: 'vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust' })
-    event.remove({ id: 'vintageimprovements:pressurizing/sulfuric_acid' })
-    event.remove({ id: 'vintageimprovements:pressurizing/sulfur_dioxide' })
+// Whole Mod Remove
+
+    const modsToRemove = [
+        'create_sa', 'constructionwand', 'ad_astra', 'functionalstorage',
+        'create_rns', 'rubberworks', 'ae2', 'appflux', 'advanced_ae',
+        'sculkcatalyticchamber', 'expatternprovider', 'sgjourney',
+        'sophisticatedbackpacks', 'createmetallurgy', 'biomancy', 'clanginghowl'
+    ]
+    modsToRemove.forEach(mod => event.remove({ mod: mod }))
+
+// All Recipe Id Remove
+
+    const idsToRemove = [
+
+    // Bits N Bobs
+
+        'bits_n_bobs:item_application/chain_pulley_from_rope_pulley_using_deployer',
+        'bits_n_bobs:item_application/chain_pulley_from_rope_pulley',
+        'bits_n_bobs:splashing/weathered_girder',
+        'bits_n_bobs:splashing/weathered_girder_strut',
+
+    // Create
+
+        'create:compacting/andesite_from_flint',
+        'create:compacting/blaze_cake',
+        'create:compacting/cake_mold',
+        'create:compacting/chocolate',
+        'create:compacting/diorite_from_flint',
+        'create:compacting/granite_from_flint',
+        'create:crafting/appliances/chain_from_zinc',
+        'create:crafting/appliances/netherite_backtank',
+        'create:crafting/appliances/netherite_backtank_from_netherite',
+        'create:crafting/appliances/netherite_diving_boots',
+        'create:crafting/appliances/netherite_diving_boots_from_netherite',
+        'create:crafting/appliances/netherite_diving_helmet',
+        'create:crafting/appliances/netherite_diving_helmet_from_netherite',
+        'create:crafting/appliances/slime_ball',
+        'create:crafting/curiosities/cake',
+        'create:crafting/kinetics/attribute_filter',
+        'create:crafting/kinetics/basin',
+        'create:crafting/kinetics/belt_connector',
+        'create:crafting/kinetics/brass_hand',
+        'create:crafting/kinetics/crafter_slot_cover',
+        'create:crafting/kinetics/depot',
+        'create:crafting/kinetics/deployer',
+        'create:crafting/kinetics/elevator_pulley',
+        'create:crafting/kinetics/empty_blaze_burner',
+        'create:crafting/kinetics/encased_chain_drive',
+        'create:crafting/kinetics/encased_chain_drive_from_zinc',
+        'create:crafting/kinetics/filter',
+        'create:crafting/kinetics/fluid_tank',
+        'create:crafting/kinetics/hose_pulley',
+        'create:crafting/kinetics/item_drain',
+        'create:crafting/kinetics/linear_chassis',
+        'create:crafting/kinetics/mechanical_arm',
+        'create:crafting/kinetics/mechanical_crafter',
+        'create:crafting/kinetics/mechanical_drill',
+        'create:crafting/kinetics/mechanical_mixer',
+        'create:crafting/kinetics/mechanical_press',
+        'create:crafting/kinetics/mechanical_pump',
+        'create:crafting/kinetics/mechanical_saw',
+        'create:crafting/kinetics/millstone',
+        'create:crafting/kinetics/nixie_tube',
+        'create:crafting/kinetics/nozzle',
+        'create:crafting/kinetics/portable_storage_interface',
+        'create:crafting/kinetics/propeller',
+        'create:crafting/kinetics/radial_chassis',
+        'create:crafting/kinetics/rope_pulley',
+        'create:crafting/kinetics/sail_frame_from_conversion',
+        'create:crafting/kinetics/schedule',
+        'create:crafting/kinetics/smart_chute',
+        'create:crafting/kinetics/spout',
+        'create:crafting/kinetics/steam_engine',
+        'create:crafting/kinetics/super_glue',
+        'create:crafting/kinetics/whisk',
+        'create:crafting/kinetics/white_sail',
+        'create:crafting/kinetics/white_sail_from_conversion',
+        'create:crafting/kinetics/windmill_bearing',
+        'create:crafting/logistics/andesite_funnel',
+        'create:crafting/logistics/andesite_tunnel',
+        'create:crafting/logistics/brass_funnel',
+        'create:crafting/logistics/brass_tunnel',
+        'create:crafting/logistics/content_observer',
+        'create:crafting/logistics/package_frogport',
+        'create:crafting/logistics/packager',
+        'create:crafting/materials/andesite_alloy',
+        'create:crafting/materials/andesite_alloy_from_zinc',
+        'create:crafting/materials/electron_tube',
+        'create:crafting/materials/rose_quartz',
+        'create:crafting/schematics/schematicannon',
+        'create:crushing/diorite',
+        'create:crushing/diorite_recycling',
+        'create:crushing/gilded_blackstone',
+        'create:crushing/gravel',
+        'create:crushing/tuff',
+        'create:crushing/tuff_recycling',
+        'create:filling/blaze_cake',
+        'create:filling/cake',
+        'create:filling/cake_mold_filled',
+        'create:filling/grass_block',
+        'create:filling/gunpowder',
+        'create:filling/honey_cake',
+        'create:haunting/blackstone',
+        'create:haunting/crimson_fungus',
+        'create:haunting/glow_berries',
+        'create:haunting/glow_ink_sac',
+        'create:haunting/infested_chiseled_stone_bricks',
+        'create:haunting/infested_cracked_stone_bricks',
+        'create:haunting/infested_deepslate',
+        'create:haunting/infested_mossy_stone_bricks',
+        'create:haunting/infested_stone',
+        'create:haunting/infested_stone_bricks',
+        'create:haunting/lapis_recycling',
+        'create:haunting/nether_brick',
+        'create:haunting/soul_sand',
+        'create:haunting/soul_soil',
+        'create:haunting/warped_fungus',
+        'create:industrial_iron_block_from_ingots_iron_stonecutting',
+        'create:industrial_iron_block_from_iron_ingots_stonecutting',
+        'create:item_application/andesite_casing_from_log',
+        'create:item_application/andesite_casing_from_log_using_deployer',
+        'create:item_application/andesite_casing_from_wood',
+        'create:item_application/andesite_casing_from_wood_using_deployer',
+        'create:item_application/brass_casing_from_log',
+        'create:item_application/brass_casing_from_log_using_deployer',
+        'create:item_application/brass_casing_from_wood',
+        'create:item_application/brass_casing_from_wood_using_deployer',
+        'create:item_application/copper_casing_from_log',
+        'create:item_application/copper_casing_from_log_using_deployer',
+        'create:item_application/copper_casing_from_wood',
+        'create:item_application/copper_casing_from_wood_using_deployer',
+        'create:mechanical_crafting/crushing_wheel',
+        'create:mechanical_crafting/extendo_grip',
+        'create:mechanical_crafting/wand_of_symmetry',
+        'create:milling/andesite',
+        'create:milling/calcite',
+        'create:milling/charcoal',
+        'create:milling/coal',
+        'create:milling/cobblestone',
+        'create:milling/dripstone_block',
+        'create:milling/gravel',
+        'create:milling/wheat_flour',
+        'create:mixing/andesite_alloy',
+        'create:mixing/andesite_alloy_from_zinc',
+        'create:mixing/brass_ingot',
+        'create:mixing/cake_batter',
+        'create:mixing/compat/ae2/fluix_crystal',
+        'create:mixing/compost_residue',
+        'create:mixing/lava_from_cobble',
+        'create:mixing/organic_compost',
+        'create:mixing/pulp',
+        'create:mixing/salt',
+        'create:mixing/tea',
+        'create:pressing/calorite_ingot',
+        'create:pressing/desh_ingot',
+        'create:pressing/ostrum_ingot',
+        'create:pressing/steel_ingot',
+        'create:sequenced_assembly/precision_mechanism',
+        'create:sequenced_assembly/sturdy_sheet',
+        'create:sequenced_assembly/track',
+        'create:smelting/bread',
+        'create:smelting/scoria',
+        'create:splashing/crushed_raw_copper',
+        'create:splashing/crushed_raw_gold',
+        'create:splashing/crushed_raw_iron',
+        'create:splashing/crushed_raw_zinc',
+        'create:splashing/gravel',
+        'create:splashing/ice',
+        'create:splashing/industrial_iron_block',
+        'create:splashing/industrial_iron_window',
+        'create:splashing/industrial_iron_window_pane',
+        'create:splashing/red_sand',
+        'create:splashing/sand',
+        'create:splashing/soul_sand',
+        'create:splashing/wheat_flour',
+
+    // Create Connected
+
+        'create_connected:crafting/kinetics/cross_connector',
+        'create_connected:crafting/kinetics/empty_fan_catalyst',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_blasting',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragon_head',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_ending_dragons_breath',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_enriched',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_freezing',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_haunting',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_seething',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_smoking',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_splashing',
+        'create_connected:crafting/kinetics/empty_fan_catalyst_from_withering',
+        'create_connected:crafting/kinetics/fluid_vessel',
+        'create_connected:crafting/kinetics/inventory_access_port',
+        'create_connected:crafting/kinetics/kinetic_bridge',
+        'create_connected:filling/fan_blasting_catalyst',
+        'create_connected:filling/fan_splashing_catalyst',
+        'create_connected:item_application/blasting_catalyst_from_empty',
+        'create_connected:item_application/haunting_catalyst_from_empty',
+        'create_connected:item_application/smoking_catalyst_from_empty',
+        'create_connected:item_application/splashing_catalyst_from_empty',
+        'create_connected:sequenced_assembly/control_chip',
+
+    // Create New Age
+
+        'create_new_age:compacting/blank_circuit',
+        'create_new_age:crushing/radioactive_thorium',
+        'create_new_age:cutting/copper_wire',
+        'create_new_age:cutting/overcharged_golden_wire',
+        'create_new_age:cutting/overcharged_iron_wire',
+        'create_new_age:deploying/copper_circuit',
+        'create_new_age:energising/experience_bottle',
+        'create_new_age:energising/overcharged_diamond',
+        'create_new_age:energising/overcharged_gold',
+        'create_new_age:energising/overcharged_golden_sheet',
+        'create_new_age:energising/overcharged_iron',
+        'create_new_age:energising/overcharged_iron_sheet',
+        'create_new_age:mechanical_crafting/advanced_motor_extension',
+        'create_new_age:mechanical_crafting/reactor_rod',
+        'create_new_age:mechanical_crafting/reinforced_motor',
+        'create_new_age:mixing/thorium',
+        'create_new_age:pressing/overcharged_golden_sheet',
+        'create_new_age:pressing/overcharged_iron_sheet',
+        'create_new_age:sequenced_assembly/overcharged_diamond_wire',
+        'create_new_age:shaped/electrical_connector',
+        'create_new_age:shaped/electrical_connector_mirrored',
+
+    // Create Chunk Loader
+
+        'create_power_loader:crafting/empty_andesite_chunk_loader',
+        'create_power_loader:crafting/empty_brass_chunk_loader',
+
+    // Create Addition
+
+        'createaddition:compacting/seed_oil',
+        'createaddition:crafting/copper_spool',
+        'createaddition:crafting/electrum_spool',
+        'createaddition:crafting/festive_spool',
+        'createaddition:crafting/gold_spool',
+        'createaddition:crafting/large_connector_electrum',
+        'createaddition:crafting/large_connector_gold',
+        'createaddition:crafting/rolling_mill',
+        'createaddition:crafting/small_connector_copper',
+        'createaddition:crafting/spool',
+        'createaddition:liquid_burning/diesel',
+        'createaddition:liquid_burning/gasoline',
+        'createaddition:liquid_burning/lava',
+        'createaddition:liquid_burning/plantoil',
+        'createaddition:mechanical_crafting/alternator',
+        'createaddition:mechanical_crafting/electric_motor',
+        'createaddition:mechanical_crafting/tesla_coil',
+        'createaddition:mixing/bioethanol',
+        'createaddition:mixing/biomass_from_crops',
+        'createaddition:mixing/biomass_from_flowers',
+        'createaddition:mixing/biomass_from_honeycomb',
+        'createaddition:mixing/biomass_from_leaves',
+        'createaddition:mixing/biomass_from_plant_foods',
+        'createaddition:mixing/biomass_from_plants',
+        'createaddition:mixing/biomass_from_saplings',
+        'createaddition:mixing/biomass_from_sticks',
+        'createaddition:rolling/straw',
+
+    // Create Deco
+
+        'createdeco:compacting/industrial_iron_ingot',
+        'createdeco:pressing/andesite_sheet',
+        'createdeco:pressing/netherite_sheet',
+        'createdeco:pressing/zinc_sheet',
+
+    // Create Diesel Generator
+
+        'createdieselgenerators:basin_fermenting/dough',
+        'createdieselgenerators:basin_fermenting/fermentable',
+        'createdieselgenerators:basin_fermenting/fermented_spider_eye',
+        'createdieselgenerators:basin_fermenting/magma_cream',
+        'createdieselgenerators:bulk_fermenting/fermentable',
+        'createdieselgenerators:bulk_fermenting/lava',
+        'createdieselgenerators:bulk_fermenting/magma_cream',
+        'createdieselgenerators:casting/chocolate_bar',
+        'createdieselgenerators:compat/createaddition/copper_rod',
+        'createdieselgenerators:compat/createaddition/electrum_rod',
+        'createdieselgenerators:compat/createaddition/electrum_sheet',
+        'createdieselgenerators:compat/createaddition/gold_rod',
+        'createdieselgenerators:compat/createaddition/iron_rod',
+        'createdieselgenerators:compat/createaddition/zinc_sheet',
+        'createdieselgenerators:crafting/asphalt_block',
+        'createdieselgenerators:crafting/asphalt_slab',
+        'createdieselgenerators:crafting/asphalt_stairs',
+        'createdieselgenerators:crafting/basin_lid',
+        'createdieselgenerators:crafting/bulk_fermenter',
+        'createdieselgenerators:crafting/burner',
+        'createdieselgenerators:crafting/canister',
+        'createdieselgenerators:crafting/chip_wood_beam',
+        'createdieselgenerators:crafting/diesel_engine',
+        'createdieselgenerators:crafting/distillation_controller',
+        'createdieselgenerators:crafting/engine_piston',
+        'createdieselgenerators:crafting/engine_piston_from_rods',
+        'createdieselgenerators:crafting/engine_silencer',
+        'createdieselgenerators:crafting/engine_turbocharger',
+        'createdieselgenerators:crafting/hammer',
+        'createdieselgenerators:crafting/huge_diesel_engine',
+        'createdieselgenerators:crafting/kelp_handle',
+        'createdieselgenerators:crafting/large_diesel_engine',
+        'createdieselgenerators:crafting/oil_barrel',
+        'createdieselgenerators:crafting/oil_scanner',
+        'createdieselgenerators:crafting/pumpjack_bearing',
+        'createdieselgenerators:crafting/pumpjack_head',
+        'createdieselgenerators:crafting/pumpjack_hole',
+        'createdieselgenerators:crushing/wood_chip_sticks',
+        'createdieselgenerators:cutting/bar_mold',
+        'createdieselgenerators:cutting/bowl_mold',
+        'createdieselgenerators:cutting/chain_mold',
+        'createdieselgenerators:cutting/lines_mold',
+        'createdieselgenerators:cutting/wood_chips',
+        'createdieselgenerators:mechanical_crafting/chemcial_sprayer',
+        'createdieselgenerators:mechanical_crafting/pumpjack_crank',
+        'createdieselgenerators:mixing/asphalt_block',
+        'createdieselgenerators:mixing/biodiesel',
+        'createdieselgenerators:stonecutting/asphalt_slab',
+        'createdieselgenerators:stonecutting/asphalt_stairs',
+
+    // Create Fishery Industry
+
+        'createfisheryindustry:pressing/zinc_ingot',
+
+    // Darker Depths
+
+        'darkerdepths:amber',
+        'darkerdepths:amber_block',
+        'darkerdepths:darkslate',
+        'darkerdepths:death_anchor',
+        'darkerdepths:duskrock',
+        'darkerdepths:forsaken_bronze_ingot_from_scrap',
+        'darkerdepths:glow_ink_sac_from_glow_grime',
+        'darkerdepths:grimestone',
+        'darkerdepths:magma_pad',
+        'darkerdepths:porous_petrified_log',
+        'darkerdepths:rope',
+        'darkerdepths:scorched_remains_block',
+        'darkerdepths:void_soul_torch',
+
+    // Farmers Delight
+
+        'farmersdelight:bread_from_smelting',
+        'farmersdelight:bread_from_smoking',
+        'farmersdelight:cooking_pot',
+        'farmersdelight:cutting/chicken',
+        'farmersdelight:cutting/cod',
+        'farmersdelight:cutting/cooked_chicken',
+        'farmersdelight:cutting/cooked_cod',
+        'farmersdelight:cutting/cooked_salmon',
+        'farmersdelight:cutting/deepslate',
+        'farmersdelight:cutting/gravel',
+        'farmersdelight:cutting/salmon',
+        'farmersdelight:cutting/stone',
+        'farmersdelight:diamond_knife',
+        'farmersdelight:gold_nugget_from_blasting_knife',
+        'farmersdelight:gold_nugget_from_smelting_knife',
+        'farmersdelight:golden_knife',
+        'farmersdelight:iron_knife',
+        'farmersdelight:iron_nugget_from_blasting_knife',
+        'farmersdelight:iron_nugget_from_smelting_knife',
+        'farmersdelight:netherite_knife_smithing',
+        'farmersdelight:organic_compost_from_rotten_flesh',
+        'farmersdelight:organic_compost_from_tree_bark',
+        'farmersdelight:packed_mud_from_straw',
+
+    // Fluid
+
+        'fluid:can_filler',
+        'fluid:centrifugal_pump',
+        'fluid:copper_sink',
+        'fluid:copper_tap',
+        'fluid:fluid_atomizer',
+        'fluid:fluid_interface',
+        'fluid:freezing/blue_ice_from_packed_ice',
+        'fluid:freezing/breeze_rod_from_blaze_rod',
+        'fluid:freezing/packed_ice_from_ice',
+        'fluid:freezing/slime_ball_from_magma_cream',
+        'fluid:glueing/sticky_mechanical_piston',
+        'fluid:glueing/sticky_piston',
+        'fluid:haunting/haunting_fluid_bucket_from_slime_fluid_bucket',
+        'fluid:mechanical_crafting/baton',
+        'fluid:mechanical_pipette',
+        'fluid:mixing/slime_fluid_from_slime_ball',
+        'fluid:redstone_triple_valve',
+        'fluid:redstone_valve',
+        'fluid:smart_fluid_interface',
+        'fluid:smart_gutter_outlet',
+
+    // Ftb Quest
+
+        'ftbquests:loot_crate_opener',
+
+    // Geode Plus
+
+        'geode_plus:nether_quartz_crystal_block',
+
+    // Multiblocked2
+
+        'mbd2:mbd_gadgets',
+
+    // Miners Delight
+
+        'miners_delight:copper_pot',
+        'miners_delight:string_from_gossypium',
+        'farmersdelight:cake_from_milk_bottle',
+
+    // Minecraft
+
+        'minecraft:andesite',
+        'minecraft:anvil',
+        'minecraft:beacon',
+        'minecraft:blast_furnace',
+        'minecraft:blue_ice',
+        'minecraft:bone_block',
+        'minecraft:bread',
+        'minecraft:brewing_stand',
+        'minecraft:cake',
+        'minecraft:cauldron',
+        'minecraft:chain',
+        'minecraft:charcoal',
+        'minecraft:coarse_dirt',
+        'minecraft:copper_ingot_from_waxed_copper_block',
+        'minecraft:crafting_table',
+        'minecraft:diamond_axe',
+        'minecraft:diamond_boots',
+        'minecraft:diamond_chestplate',
+        'minecraft:diamond_crystal_block_to_diamond',
+        'minecraft:diamond_helmet',
+        'minecraft:diamond_hoe',
+        'minecraft:diamond_leggings',
+        'minecraft:diamond_pickaxe',
+        'minecraft:diamond_shovel',
+        'minecraft:diamond_sword',
+        'minecraft:diorite',
+        'minecraft:dispenser',
+        'minecraft:dropper',
+        'minecraft:enchanting_table',
+        'minecraft:ender_eye',
+        'minecraft:fermented_spider_eye',
+        'minecraft:furnace',
+        'minecraft:glass',
+        'minecraft:glass_pane',
+        'minecraft:gold_nugget_from_blasting',
+        'minecraft:gold_nugget_from_smelting',
+        'minecraft:golden_axe',
+        'minecraft:golden_boots',
+        'minecraft:golden_chestplate',
+        'minecraft:golden_helmet',
+        'minecraft:golden_hoe',
+        'minecraft:golden_leggings',
+        'minecraft:golden_pickaxe',
+        'minecraft:golden_shovel',
+        'minecraft:golden_sword',
+        'minecraft:granite',
+        'minecraft:hopper',
+        'minecraft:iron_axe',
+        'minecraft:iron_boots',
+        'minecraft:iron_chestplate',
+        'minecraft:iron_helmet',
+        'minecraft:iron_hoe',
+        'minecraft:iron_leggings',
+        'minecraft:iron_nugget_from_blasting',
+        'minecraft:iron_nugget_from_smelting',
+        'minecraft:iron_pickaxe',
+        'minecraft:iron_shovel',
+        'minecraft:iron_sword',
+        'minecraft:kjs/stonecutter',
+        'minecraft:leather',
+        'minecraft:magma_block',
+        'minecraft:minecart',
+        'minecraft:netherite_axe_smithing',
+        'minecraft:netherite_boots_smithing',
+        'minecraft:netherite_chestplate_smithing',
+        'minecraft:netherite_helmet_smithing',
+        'minecraft:netherite_hoe_smithing',
+        'minecraft:netherite_leggings_smithing',
+        'minecraft:netherite_pickaxe_smithing',
+        'minecraft:netherite_scrap_from_blasting',
+        'minecraft:netherite_shovel_smithing',
+        'minecraft:netherite_sword_smithing',
+        'minecraft:observer',
+        'minecraft:packed_ice',
+        'minecraft:piston',
+        'minecraft:quartz_block',
+        'minecraft:sandstone',
+        'minecraft:shears',
+        'minecraft:shield',
+        'minecraft:smoker',
+        'minecraft:stick_from_bamboo_item',
+        'minecraft:sticky_piston',
+        'minecraft:stone_axe',
+        'minecraft:stone_hoe',
+        'minecraft:stone_pickaxe',
+        'minecraft:stone_shovel',
+        'minecraft:stone_sword',
+        'minecraft:stonecutter',
+        'minecraft:sugar_from_honey_bottle',
+        'minecraft:tinted_glass',
+
+    // Natures Compass
+
+        'naturescompass:natures_compass',
+
+    // Ratatouille
+
+        'ratatouille:composting/composting',
+        'ratatouille:composting/fermented_spider_eye',
+        'ratatouille:composting/leather',
+        'ratatouille:composting/more_dough',
+        'ratatouille:composting/slime_ball',
+        'ratatouille:demolding/cake_mold_baked',
+        'ratatouille:eggshell',
+        'ratatouille:mechanical_demolder',
+        'ratatouille:organic_compost',
+        'ratatouille:oven',
+        'ratatouille:smoking/cake_mold_baked',
+        'ratatouille:threshing/boil_stone',
+
+    // Rustic Delight
+
+        'rusticdelight:cooked_calamari',
+        'rusticdelight:cooked_calamari_from_campfire_cooking',
+        'rusticdelight:cooked_calamari_from_smoking',
+        'rusticdelight:cooked_calamari_slice',
+        'rusticdelight:cooked_calamari_slice_from_campfire_cooking',
+        'rusticdelight:cooked_calamari_slice_from_smoking',
+        'rusticdelight:cutting/calamari_slice',
+        'rusticdelight:cutting/cooked_calamari_slice',
+        'rusticdelight:string_from_cotton_boll',
+
+    // Tfmg
+
+        'tfmg:aluminum_wire_from_ingots_aluminum_stonecutting',
+        'tfmg:blasting/lead_ingot_blasting',
+        'tfmg:blasting/lithium_ingot_blasting',
+        'tfmg:blasting/nickel_ingot_blasting',
+        'tfmg:casting/cinderblock',
+        'tfmg:casting/plastic_sheet',
+        'tfmg:casting/silicon',
+        'tfmg:casting/slag_block',
+        'tfmg:casting/steel',
+        'tfmg:coking/charcoal',
+        'tfmg:coking/coal',
+        'tfmg:compacting/cast_iron',
+        'tfmg:constantan_wire_from_ingots_constantan_stonecutting',
+        'tfmg:copper_wire_from_ingots_copper_stonecutting',
+        'tfmg:crafting/kinetics/accumulator',
+        'tfmg:crafting/kinetics/accumulatorfrom_lithium',
+        'tfmg:crafting/kinetics/air_intake',
+        'tfmg:crafting/kinetics/aluminum_fluid_tank',
+        'tfmg:crafting/kinetics/aluminum_lamp',
+        'tfmg:crafting/kinetics/aluminum_mechanical_pump',
+        'tfmg:crafting/kinetics/black_multimeter',
+        'tfmg:crafting/kinetics/blast_furnace_hatch',
+        'tfmg:crafting/kinetics/blast_furnace_output',
+        'tfmg:crafting/kinetics/blast_furnace_reinforcement',
+        'tfmg:crafting/kinetics/blast_stove',
+        'tfmg:crafting/kinetics/blue_multimeter',
+        'tfmg:crafting/kinetics/brass_mechanical_pump',
+        'tfmg:crafting/kinetics/brown_multimeter',
+        'tfmg:crafting/kinetics/cable_tube',
+        'tfmg:crafting/kinetics/cast_iron_chemical_vat',
+        'tfmg:crafting/kinetics/cast_iron_fluid_tank',
+        'tfmg:crafting/kinetics/cast_iron_mechanical_pump',
+        'tfmg:crafting/kinetics/casting_basin',
+        'tfmg:crafting/kinetics/circular_light',
+        'tfmg:crafting/kinetics/coke_oven',
+        'tfmg:crafting/kinetics/concrete_hose',
+        'tfmg:crafting/kinetics/converter',
+        'tfmg:crafting/kinetics/cyan_multimeter',
+        'tfmg:crafting/kinetics/diagonal_cable_block',
+        'tfmg:crafting/kinetics/electric_diode',
+        'tfmg:crafting/kinetics/electric_post',
+        'tfmg:crafting/kinetics/electric_pump',
+        'tfmg:crafting/kinetics/electrical_switch',
+        'tfmg:crafting/kinetics/engine_gearbox',
+        'tfmg:crafting/kinetics/green_multimeter',
+        'tfmg:crafting/kinetics/large_pumpjack_hammer_connector',
+        'tfmg:crafting/kinetics/large_pumpjack_hammer_head',
+        'tfmg:crafting/kinetics/light_blue_multimeter',
+        'tfmg:crafting/kinetics/light_bulb',
+        'tfmg:crafting/kinetics/light_gray_multimeter',
+        'tfmg:crafting/kinetics/lime_multimeter',
+        'tfmg:crafting/kinetics/machine_input',
+        'tfmg:crafting/kinetics/magenta_multimeter',
+        'tfmg:crafting/kinetics/modern_light',
+        'tfmg:crafting/kinetics/multimeter',
+        'tfmg:crafting/kinetics/neon_tube',
+        'tfmg:crafting/kinetics/orange_multimeter',
+        'tfmg:crafting/kinetics/pink_multimeter',
+        'tfmg:crafting/kinetics/plastic_block',
+        'tfmg:crafting/kinetics/plastic_mechanical_pump',
+        'tfmg:crafting/kinetics/plastic_sheet',
+        'tfmg:crafting/kinetics/polarizer',
+        'tfmg:crafting/kinetics/pumpjack_crank',
+        'tfmg:crafting/kinetics/purple_multimeter',
+        'tfmg:crafting/kinetics/radial_engine',
+        'tfmg:crafting/kinetics/red_multimeter',
+        'tfmg:crafting/kinetics/regular_engine',
+        'tfmg:crafting/kinetics/rusted_blast_furnace_reinforcement',
+        'tfmg:crafting/kinetics/segmented_display',
+        'tfmg:crafting/kinetics/steel_chemical_vat',
+        'tfmg:crafting/kinetics/steel_distillation_controller',
+        'tfmg:crafting/kinetics/steel_fluid_tank',
+        'tfmg:crafting/kinetics/steel_mechanical_pump',
+        'tfmg:crafting/kinetics/surface_scanner',
+        'tfmg:crafting/kinetics/traffic_light',
+        'tfmg:crafting/kinetics/transformer',
+        'tfmg:crafting/kinetics/turbine_engine',
+        'tfmg:crafting/kinetics/voltage_observer',
+        'tfmg:crafting/kinetics/voltmeter',
+        'tfmg:crafting/kinetics/white_multimeter',
+        'tfmg:crafting/kinetics/winding_machine',
+        'tfmg:crafting/kinetics/yellow_multimeter',
+        'tfmg:crushing/copper_sulfate',
+        'tfmg:crushing/dirt',
+        'tfmg:crushing/sulfur',
+        'tfmg:distillation/crude_oil',
+        'tfmg:distillation/crude_oil_light_distillation',
+        'tfmg:distillation/crude_oil_no_naphtha',
+        'tfmg:distillation/heavy_oil',
+        'tfmg:distillation/heavy_oil_light_distillation',
+        'tfmg:distillation/heavy_oil_no_naphtha',
+        'tfmg:engine_cylinder',
+        'tfmg:engine_cylinder_cheap',
+        'tfmg:engine_cylinder_gas',
+        'tfmg:engine_cylinder_spark_plug',
+        'tfmg:industrial_blasting/silicon',
+        'tfmg:industrial_blasting/steel',
+        'tfmg:industrial_blasting/steel_from_dust',
+        'tfmg:industrial_blasting/steel_from_raw_iron',
+        'tfmg:item_application/heavy_machinery_casing',
+        'tfmg:item_application/heavy_machinery_casing_using_deployer',
+        'tfmg:item_application/steel_casing',
+        'tfmg:item_application/steel_casing_using_deployer',
+        'tfmg:large_pumpjack_hammer_part_from_storage_blocks_steel_stonecutting',
+        'tfmg:mechanical_crafting/engine_controller',
+        'tfmg:mechanical_crafting/large_engine',
+        'tfmg:mechanical_crafting/quad_potato_cannon',
+        'tfmg:mechanical_crafting/rotor',
+        'tfmg:mechanical_crafting/simple_large_engine',
+        'tfmg:mechanical_crafting/spark_plug',
+        'tfmg:mechanical_crafting/stator',
+        'tfmg:mixing/asphalt_mixture',
+        'tfmg:mixing/concrete_mixture',
+        'tfmg:mixing/constantan',
+        'tfmg:mixing/gunpowder',
+        'tfmg:mixing/thermite',
+        'tfmg:rebar_from_ingots_steel_stonecutting',
+        'tfmg:screw_from_ingots_steel_stonecutting',
+        'tfmg:sequenced_assembly/generator',
+        'tfmg:sequenced_assembly/motor',
+        'tfmg:sequenced_assembly/potentiometer',
+        'tfmg:sequenced_assembly/steel_mechanism',
+        'tfmg:turbine_blade',
+        'tfmg:vat_machine_recipe/aluminum',
+        'tfmg:vat_machine_recipe/arc_furnace_steel',
+        'tfmg:vat_machine_recipe/concrete',
+        'tfmg:vat_machine_recipe/etched_circuit_board',
+        'tfmg:vat_machine_recipe/naphtha',
+        'tfmg:vat_machine_recipe/neon',
+        'tfmg:vat_machine_recipe/plastic_from_ethylene',
+        'tfmg:vat_machine_recipe/plastic_from_propylene',
+        'tfmg:vat_machine_recipe/sulfuric_acid',
+        'tfmg:winding/electromagnetic_coil',
+        'tfmg:winding/resistor',
+
+    // Vintage Improvements
+
+        'vintageimprovements:centrifugation/ender_eye',
+        'vintageimprovements:centrifugation/honey_comb',
+        'vintageimprovements:centrifugation/magma_cream',
+        'vintageimprovements:craft/belt_grinder',
+        'vintageimprovements:craft/centrifuge',
+        'vintageimprovements:craft/curving_press',
+        'vintageimprovements:craft/helve_hammer_slot_cover',
+        'vintageimprovements:craft/spring_coiling_machine',
+        'vintageimprovements:craft/spring_coiling_machine_wheel',
+        'vintageimprovements:craft/sulfur_block_to_items',
+        'vintageimprovements:craft/sulfur_item_to_nuggets',
+        'vintageimprovements:craft/sulfur_items_to_block',
+        'vintageimprovements:craft/sulfur_nuggets_to_item',
+        'vintageimprovements:craft/vacuum_chamber',
+        'vintageimprovements:craft/vibrating_table',
+        'vintageimprovements:crushing/basalt',
+        'vintageimprovements:crushing/basalt_recycling',
+        'vintageimprovements:crushing/scoria',
+        'vintageimprovements:crushing/scoria_recycling',
+        'vintageimprovements:curving/diamond',
+        'vintageimprovements:curving/iron_sheet',
+        'vintageimprovements:grinder_polishing/rose_quartz',
+        'vintageimprovements:mechanical_crafting/helve_hammer',
+        'vintageimprovements:mechanical_crafting/laser',
+        'vintageimprovements:mechanical_crafting/lathe',
+        'vintageimprovements:milling/sulfur',
+        'vintageimprovements:pressing/aluminum_ingot',
+        'vintageimprovements:pressing/cast_iron_ingot',
+        'vintageimprovements:pressing/lead_ingot',
+        'vintageimprovements:pressing/nickel_ingot',
+        'vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust',
+        'vintageimprovements:pressurizing/copper_sulfate',
+        'vintageimprovements:pressurizing/sulfuric_acid',
+        'vintageimprovements:pressurizing/sulfur_dioxide',
+        'vintageimprovements:pressurizing/sulfur_trioxide',
+        'vintageimprovements:pressurizing/sulfur_trioxide_alt',
+        'vintageimprovements:rolling/refined_radiance',
+        'vintageimprovements:rolling/shadow_steel',
+        'vintageimprovements:sequenced_assembly/recipe_card',
+        'vintageimprovements:sequenced_assembly/redstone_module',
+        'vintageimprovements:stonecutting/v_shaped_curving_head',
+        'vintageimprovements:stonecutting/w_shaped_curving_head',
+
+    // Vital Herbs
+
+        'vital_herbs:teapot_recipe'
+
+    ]
+    idsToRemove.forEach(id => event.remove({ id: id }))
 
 })

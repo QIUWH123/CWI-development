@@ -1,7 +1,9 @@
 ServerEvents.recipes(event => {
-    
+
+// Functional Storage Tier 4 Fluid Drawer
+
     event.shaped(
-        Item.of('functionalstorage:fluid_4'),
+        'functionalstorage:fluid_4',
         [
             'ABA',
             'BBB',
@@ -13,8 +15,10 @@ ServerEvents.recipes(event => {
         }
     )
 
+// Functional Storage Tier 2 Fluid Drawer
+
     event.shaped(
-        Item.of('functionalstorage:fluid_2'),
+        'functionalstorage:fluid_2',
         [
             'BAB',
             'BBB',
@@ -26,8 +30,10 @@ ServerEvents.recipes(event => {
         }
     )
 
+// Functional Storage Tier 1 Fluid Drawer
+
     event.shaped(
-        Item.of('functionalstorage:fluid_1'),
+        'functionalstorage:fluid_1',
         [
             'BBB',
             'BAB',
@@ -39,8 +45,10 @@ ServerEvents.recipes(event => {
         }
     )
 
+// Functional Storage Controller
+
     event.recipes.create.mechanical_crafting(
-        Item.of('functionalstorage:storage_controller'),
+        'functionalstorage:storage_controller',
         [
             'BCB',
             'DAD',
@@ -55,8 +63,10 @@ ServerEvents.recipes(event => {
         }
     )
 
+// Functional Storage Controller Extension
+
     event.recipes.create.mechanical_crafting(
-        Item.of('3x functionalstorage:controller_extension'),
+        '3x functionalstorage:controller_extension',
         [
             'BCB',
             'DAD',
@@ -72,6 +82,8 @@ ServerEvents.recipes(event => {
     )
 
 })
+
+// Functional Storage Drawers Auto Generated
 
 ServerEvents.recipes(event => {
 

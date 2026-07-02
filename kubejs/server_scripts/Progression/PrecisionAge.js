@@ -3,7 +3,7 @@ ServerEvents.recipes(event => {
 // Shapeless
 
     event.shapeless(
-        Item.of('create_sa:zinc_handle'),
+        'create_sa:zinc_handle',
         [
             '2x farmersdelight:canvas',
             'createaddition:iron_rod'
@@ -11,14 +11,14 @@ ServerEvents.recipes(event => {
     )
 
     event.shapeless(
-        Item.of('create:nixie_tube'),
+        'create:nixie_tube',
         [
             '2x create:electron_tube'
         ]
     )
 
     event.shapeless(
-        Item.of('kubejs:handle', 1),
+        'kubejs:handle',
         [
             '2x #cwi:rubbers',
             '1x create_sa:zinc_handle'
@@ -36,7 +36,7 @@ ServerEvents.recipes(event => {
 // Shaped
 
     event.shaped(
-        Item.of('tfmg:brass_mechanical_pump'),
+        'tfmg:brass_mechanical_pump',
         [
             'ABC'
         ],
@@ -48,7 +48,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:crafter_slot_cover'),
+        'create:crafter_slot_cover',
         [
             'ABA'
         ],
@@ -59,7 +59,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('vintageimprovements:helve_hammer_slot_cover'),
+        'vintageimprovements:helve_hammer_slot_cover',
         [
             '  A',
             ' B ',
@@ -72,7 +72,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create_connected:inventory_access_port'),
+        'create_connected:inventory_access_port',
         [
             'AB',
             'CD'
@@ -86,7 +86,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('kubejs:incomplete_control_chip'),
+        'kubejs:incomplete_control_chip',
         [
             'DEF',
             'ABC'
@@ -102,7 +102,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('kubejs:rubber_hand'),
+        'kubejs:rubber_hand',
         [
             'A',
             'B'
@@ -114,7 +114,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:deployer'),
+        'create:deployer',
         [
             'A',
             'B',
@@ -128,7 +128,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:brass_funnel'),
+        'create:brass_funnel',
         [
             'A',
             'B',
@@ -142,7 +142,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:brass_tunnel', 2),
+        '2x create:brass_tunnel',
         [
             'AD',
             'BB',
@@ -157,7 +157,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('fluid:smart_gutter_outlet'),
+        'fluid:smart_gutter_outlet',
         [
             'A',
             'B',
@@ -171,7 +171,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('minecraft:anvil'),
+        'minecraft:anvil',
         [
             'AAA',
             ' B ',
@@ -184,7 +184,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('fluid:fluid_interface'),
+        'fluid:fluid_interface',
         [
             'ABC'
         ],
@@ -196,7 +196,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('fluid:smart_fluid_interface'),
+        'fluid:smart_fluid_interface',
         [
             ' D ',
             'ABC',
@@ -212,7 +212,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('fluid:smart_fluid_interface'),
+        'fluid:smart_fluid_interface',
         [
             'A',
             'B',
@@ -226,7 +226,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:elevator_pulley'),
+        'create:elevator_pulley',
         [
             'A',
             'B',
@@ -240,7 +240,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:smart_chute'),
+        'create:smart_chute',
         [
             'A',
             'B',
@@ -254,7 +254,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        Item.of('create:mechanical_crafter', 3),
+        '3x create:mechanical_crafter',
         [
             'A',
             'B',
@@ -445,9 +445,9 @@ ServerEvents.recipes(event => {
 
 // Mixing
 
-    event.recipes.create.mixing(Fluid.of('kubejs:redstone_acid', 500), [{fluidTag: "cwi:water", amount: 500}, '4x minecraft:redstone'])
+    event.recipes.create.mixing(Fluid.of('kubejs:redstone_acid', 500), [{ fluidTag: "cwi:water", amount: 500 }, '4x minecraft:redstone'])
     event.recipes.create.mixing('kubejs:heated_powdered_obsidian', [Fluid.of('minecraft:lava', 500), 'create:powdered_obsidian']).superheated()
-    event.recipes.create.mixing('3x createmetallurgy:refractory_mortar_ball', [{fluidTag: "cwi:water", amount: 100}, 'minecraft:sand', 'tfmg:limesand', 'minecraft:clay_ball']).heated()
+    event.recipes.create.mixing('3x createmetallurgy:refractory_mortar_ball', [{ fluidTag: "cwi:water", amount: 100 }, 'minecraft:sand', 'tfmg:limesand', 'minecraft:clay_ball']).heated()
 
 // Compacting
 
@@ -462,7 +462,7 @@ ServerEvents.recipes(event => {
 // Mechanical Crafting
 
     event.recipes.create.mechanical_crafting(
-        Item.of('create_power_loader:brass_chunk_loader'),
+        'create_power_loader:brass_chunk_loader',
         [
             'EAE',
             'ABA',
@@ -574,7 +574,7 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.create.mechanical_crafting(
-        Item.of('create_sa:creative_filling_tank'),
+        'create_sa:creative_filling_tank',
         [
             'ABA',
             'BCB',
@@ -588,7 +588,7 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.create.mechanical_crafting(
-        Item.of('vintageimprovements:spring_coiling_machine'),
+        'vintageimprovements:spring_coiling_machine',
         [
             'GBC',
             'ADA',
@@ -606,7 +606,7 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.create.mechanical_crafting(
-        Item.of('kubejs:robot_arm'),
+        'kubejs:robot_arm',
         [
             'ABA',
             ' CB',
@@ -620,7 +620,7 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.create.mechanical_crafting(
-        Item.of('kubejs:robot_hand'),
+        'kubejs:robot_hand',
         [
             '  A',
             'BC ',
@@ -635,7 +635,7 @@ ServerEvents.recipes(event => {
     )
 
     event.recipes.create.mechanical_crafting(
-        Item.of('kubejs:robot_pipette'),
+        'kubejs:robot_pipette',
         [
             ' BA',
             ' CB',
@@ -679,9 +679,9 @@ ServerEvents.recipes(event => {
         'create:sturdy_sheet',
         'kubejs:heated_powdered_obsidian', 
         [
-            event.custom({"type":"createaddition:rolling","input": {"item": 'create:unprocessed_obsidian_sheet'},"result": {"item": 'create:unprocessed_obsidian_sheet'}}),
+            event.custom({ "type": "createaddition:rolling", "input": { "item": "create:unprocessed_obsidian_sheet" }, "result": { "item": "create:unprocessed_obsidian_sheet" } }),
             event.recipes.create.pressing('create:unprocessed_obsidian_sheet', 'create:unprocessed_obsidian_sheet'),
-            event.recipes.create.filling('create:unprocessed_obsidian_sheet', ['create:unprocessed_obsidian_sheet', {fluidTag: "cwi:water", amount: 500}])
+            event.recipes.create.filling('create:unprocessed_obsidian_sheet', ['create:unprocessed_obsidian_sheet', { fluidTag: "cwi:water", amount: 500 }])
         ]
     )
     .transitionalItem('create:unprocessed_obsidian_sheet')
@@ -766,7 +766,7 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.pressing('kubejs:incomplete_industrial_iron_ingot', 'kubejs:incomplete_industrial_iron_ingot'),
             event.recipes.create.pressing('kubejs:incomplete_industrial_iron_ingot', 'kubejs:incomplete_industrial_iron_ingot'),
-            event.recipes.create.filling('kubejs:incomplete_industrial_iron_ingot', ['kubejs:incomplete_industrial_iron_ingot', {fluidTag: "cwi:water", amount: 500}])
+            event.recipes.create.filling('kubejs:incomplete_industrial_iron_ingot', ['kubejs:incomplete_industrial_iron_ingot', { fluidTag: "cwi:water", amount: 500 }])
         ]
     )
     .transitionalItem('kubejs:incomplete_industrial_iron_ingot')
@@ -776,11 +776,11 @@ ServerEvents.recipes(event => {
         'kubejs:industrial_iron_blade',
         'kubejs:heated_iron_ingot', 
         [
-            event.custom({"type":"createaddition:rolling","input": {"item": 'kubejs:incomplete_industrial_iron_blade'},"result": {"item": 'kubejs:incomplete_industrial_iron_blade'}}),
+            event.custom({ "type": "createaddition:rolling", "input": { "item": "kubejs:incomplete_industrial_iron_blade" }, "result": { "item": "kubejs:incomplete_industrial_iron_blade" } }),
             event.recipes.create.cutting('kubejs:incomplete_industrial_iron_blade', 'kubejs:incomplete_industrial_iron_blade'),
             event.recipes.create.pressing('kubejs:incomplete_industrial_iron_blade', 'kubejs:incomplete_industrial_iron_blade'),
-            event.recipes.create.filling('kubejs:incomplete_industrial_iron_blade', ['kubejs:incomplete_industrial_iron_blade', {fluidTag: "cwi:water", amount: 500}]),
-            event.custom({"type":"vintageimprovements:polishing","speedLimits": 3,"ingredients": [{"item": 'kubejs:incomplete_industrial_iron_blade'}],"results": [{"item": 'kubejs:incomplete_industrial_iron_blade'}],"processingTime": 50})
+            event.recipes.create.filling('kubejs:incomplete_industrial_iron_blade', ['kubejs:incomplete_industrial_iron_blade', { fluidTag: "cwi:water", amount: 500 }]),
+            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_industrial_iron_blade" }], "results": [{ "item": "kubejs:incomplete_industrial_iron_blade" }], "processingTime": 50 })
         ]
     )
     .transitionalItem('kubejs:incomplete_industrial_iron_blade')
