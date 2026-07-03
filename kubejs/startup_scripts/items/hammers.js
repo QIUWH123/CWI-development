@@ -1,9 +1,9 @@
 StartupEvents.registry('item', event => {
-    global.hammers.forEach(([name, tier, requiredCharge, maxStage]) => {
+    global.hammers.forEach(([name, tier, requiredCharge, maxStage, attackDamageBaseline]) => {
         const effectiveMax = maxStage || 3
         event.create('minecraft:' + name, 'sword')
             .tier(tier)
-            .attackDamageBaseline(3)
+            .attackDamageBaseline(3 + attackDamageBaseline)
             .unstackable()
             .tag('minecraft:hammers')
             .tag('forge:tools')
