@@ -1,5 +1,3 @@
-// Mixing Vessel Recipes
-
 global.mixingVesselRecipes = [
     {
         id: 'cwi:mixing_vessel/sulfur_copper_catalyst',
@@ -111,8 +109,6 @@ global.mixingVesselRecipes = [
     }
 ]
 
-// Mixing Vessel Recipe Registration
-
 ServerEvents.recipes(event => {
     global.mixingVesselRecipes.forEach(recipe => {
         let builder = event.recipes.cwi.mixing_vessel_mixing()
@@ -141,17 +137,28 @@ ServerEvents.recipes(event => {
 
         if (recipe.outputs) {
             recipe.outputs.forEach(out => {
-                let itemStr = out.item
-                if (out.count && out.count > 1) {
-                    itemStr = `${out.count}x ${itemStr}`
+                let count = out.count || 1
+                if (out.chance !== undefined && out.chance < 1) {
+                    builder.chance(out.chance, b => {
+                        let itemStr = out.item
+                        if (count > 1) itemStr = `${count}x ${itemStr}`
+                        b.outputItems(itemStr)
+                    })
+                } else {
+                    let itemStr = out.item
+                    if (count > 1) itemStr = `${count}x ${itemStr}`
+                    builder.outputItems(itemStr)
                 }
-                builder.outputItems(itemStr)
             })
         }
 
         if (recipe.outputFluids) {
             recipe.outputFluids.forEach(f => {
-                builder.outputFluids(`${f.fluid} ${f.amount}`)
+                if (f.chance !== undefined && f.chance < 1) {
+                    builder.chance(f.chance, b => b.outputFluids(`${f.fluid} ${f.amount}`))
+                } else {
+                    builder.outputFluids(`${f.fluid} ${f.amount}`)
+                }
             })
         }
     })

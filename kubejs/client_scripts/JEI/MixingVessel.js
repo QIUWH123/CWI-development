@@ -10,8 +10,31 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
 JEIAddedEvents.registerRecipes(event => {
     let typeId = new ResourceLocation('kubejs', 'mixing_vessel')
     let recipeBuilder = event.custom(typeId)
+
     global.mixingVesselRecipes.forEach(recipe => {
-        recipeBuilder.add(recipe)
+        let cloned = JSON.parse(JSON.stringify(recipe))
+        if (cloned.outputs) {
+            cloned.outputs = cloned.outputs.map(out => ({
+                item: out.item,
+                count: out.count || 1,
+                chance: out.chance !== undefined ? out.chance : 1
+            }))
+        }
+        if (cloned.outputFluids) {
+            cloned.outputFluids = cloned.outputFluids.map(f => ({
+                fluid: f.fluid,
+                amount: f.amount,
+                chance: f.chance !== undefined ? f.chance : 1
+            }))
+        }
+        if (cloned.inputFluids) {
+            cloned.inputFluids = cloned.inputFluids.map(f => ({
+                fluid: f.fluid,
+                amount: f.amount,
+                chance: f.chance !== undefined ? f.chance : 1
+            }))
+        }
+        recipeBuilder.add(cloned)
     })
 })
 
@@ -26,36 +49,74 @@ JEIAddedEvents.registerCategories(event => {
         category.background(guiHelper.createBlankDrawable(0, 0))
         category.iconSupplier(() => guiHelper.createDrawableItemStack(Item.of('cwi:mixing_vessel')))
 
-        let fluidSlotBg = guiHelper.getSlotDrawable()
-
         category.handleLookup((layoutBuilder, recipe, focuses) => {
             let recipeData = recipe.recipeData
+
+            const layoutSlots = (items, maxPerRow, baseY, centerX, role, itemBuilder, fluidBuilder) => {
+                if (!items || items.length === 0) return
+                const rows = []
+                for (let i = 0; i < items.length; i += maxPerRow) rows.push(items.slice(i, i + maxPerRow))
+                rows.forEach((row, rowIndex) => {
+                    const y = baseY - rowIndex * 18
+                    const startX = centerX - (row.length - 1) * 9
+                    row.forEach((entry, i) => {
+                        const slot = layoutBuilder.addSlot(role, startX + i * 18, y)
+                        if (itemBuilder) itemBuilder(slot, entry)
+                        else if (fluidBuilder) fluidBuilder(slot, entry)
+                    })
+                })
+            }
+
             let inputs = recipeData.inputs || []
-            inputs.forEach((stack, i) => {
-                let item = Item.of(stack.item || stack, stack.count || 1)
-                layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 48)
-                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addItemStack(item)
-            })
+            layoutSlots(inputs, 2, 48, 18, $RecipeIngredientRole.INPUT,
+                (slot, stack) => {
+                    let item = Item.of(stack.item || stack, stack.count || 1)
+                    slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    slot.addItemStack(item)
+                }
+            )
+
             let inputFluids = recipeData.inputFluids || []
-            inputFluids.forEach((f, i) => {
-                layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18 + i * 18, 24)
-                    .setBackground(fluidSlotBg, -1, -1)
-                    .addFluidStack(f.fluid, f.amount)
-            })
+            layoutSlots(inputFluids, 2, 9, 18, $RecipeIngredientRole.INPUT,
+                null,
+                (slot, f) => {
+                    slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                        .setFluidRenderer(f.amount, false, 16, 16)
+                        .addFluidStack(f.fluid, f.amount)
+                }
+            )
+
             let outputs = recipeData.outputs || []
-            outputs.forEach((stack, i) => {
-                let item = Item.of(stack.item || stack, stack.count || 1)
-                layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 48)
-                    .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addItemStack(item)
-            })
+            layoutSlots(outputs, 2, 48, 142, $RecipeIngredientRole.OUTPUT,
+                (slot, out) => {
+                    const stack = Item.of(out.item, out.count || 1)
+                    if (out.chance && out.chance < 1) {
+                        const po = new $ProcessingOutput(stack, out.chance)
+                        slot.setBackground($CreateRecipeCategory.getRenderedSlot(po), -1, -1)
+                            .addRichTooltipCallback($CreateRecipeCategory.addStochasticTooltip(po))
+                    } else {
+                        slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    }
+                    slot.addItemStack(stack)
+                }
+            )
+
             let outputFluids = recipeData.outputFluids || []
-            outputFluids.forEach((f, i) => {
-                layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 142 + i * 18, 24)
-                    .setBackground(fluidSlotBg, -1, -1)
-                    .addFluidStack(f.fluid, f.amount)
-            })
+            layoutSlots(outputFluids, 2, 9, 142, $RecipeIngredientRole.OUTPUT,
+                null,
+                (slot, f) => {
+                    if (f.chance && f.chance < 1) {
+                        slot.setBackground($CreateRecipeCategory.getRenderedSlot(f.chance), -1, -1)
+                        slot.addRichTooltipCallback((view, tooltip) => {
+                            tooltip.add(Component.literal(`${Math.round(f.chance * 100)}% Chance`).withStyle(ChatFormatting.GOLD))
+                        })
+                    } else {
+                        slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    }
+                    slot.setFluidRenderer(f.amount, false, 16, 16)
+                        .addFluidStack(f.fluid, f.amount)
+                }
+            )
         })
 
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {

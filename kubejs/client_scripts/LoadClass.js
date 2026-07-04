@@ -1,3 +1,5 @@
+// priority: 1000
+
 const $AllGuiTextures = Java.loadClass('com.simibubi.create.foundation.gui.AllGuiTextures')
 const $AnimatedKinetics = Java.loadClass('com.simibubi.create.compat.jei.category.animations.AnimatedKinetics')
 const $AllPartialModels = Java.loadClass('com.simibubi.create.AllPartialModels')
@@ -7,3 +9,16 @@ const $DoubleItemIcon = Java.loadClass('com.simibubi.create.compat.jei.DoubleIte
 const $RecipeIngredientRole = Java.loadClass('mezz.jei.api.recipe.RecipeIngredientRole')
 const $ItemIcon = Java.loadClass('com.simibubi.create.compat.jei.ItemIcon')
 const $ProcessingOutput = Java.loadClass('com.simibubi.create.content.processing.recipe.ProcessingOutput')
+
+const $AllBlocks = Java.loadClass('com.simibubi.create.AllBlocks')
+const $Lighting = Java.loadClass('com.mojang.blaze3d.platform.Lighting')
+const $AnimationTickHolder = Java.loadClass('net.createmod.catnip.animation.AnimationTickHolder')
+const $GuiGameElement = Java.loadClass('net.createmod.catnip.gui.element.GuiGameElement')
+const $ForgeCatnipServices = Java.loadClass('net.createmod.catnip.platform.ForgeCatnipServices')
+const $UIRenderHelper = Java.loadClass('net.createmod.catnip.gui.UIRenderHelper')
+const $LightTexture = Java.loadClass('net.minecraft.client.renderer.LightTexture')
+const $FluidStack = Java.loadClass('net.minecraftforge.fluids.FluidStack')
+const $Minecraft = Java.loadClass('net.minecraft.client.Minecraft')
+const $MultiBufferSource = Java.loadClass('net.minecraft.client.renderer.MultiBufferSource')
+const $Tesselator = Java.loadClass('com.mojang.blaze3d.vertex.Tesselator')
+const $AnimatedSpout = Java.loadClass('com.simibubi.create.compat.jei.category.animations.AnimatedSpout')
