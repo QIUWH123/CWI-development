@@ -142,6 +142,48 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
+        'minecraft:brass_hammer',
+        [
+            'ABA',
+            ' C ',
+            ' C '
+        ],
+        {
+            A: 'create:brass_sheet',
+            B: 'create:brass_block',
+            C: 'minecraft:stick',
+        }
+    )
+
+    event.shaped(
+        'minecraft:zinc_hammer',
+        [
+            'ABA',
+            ' C ',
+            ' C '
+        ],
+        {
+            A: 'createaddition:zinc_sheet',
+            B: 'create:zinc_block',
+            C: 'minecraft:stick',
+        }
+    )
+
+    event.shaped(
+        'minecraft:steel_hammer',
+        [
+            'ABA',
+            ' C ',
+            ' C '
+        ],
+        {
+            A: 'tfmg:heavy_plate',
+            B: 'tfmg:steel_block',
+            C: 'minecraft:stick',
+        }
+    )
+
+    event.shaped(
         'minecraft:bronze_hammer',
         [
             'ABA',

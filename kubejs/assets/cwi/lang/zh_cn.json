@@ -4,5 +4,8 @@
   "block.cwi.mixing_vessel": "搅拌釜",
   "block.cwi.incubator": "培养器",
   "block.cwi.spider_egg": "蜘蛛卵",
-  "block.cwi.dride_algae": "干藻"
+  "block.cwi.dride_algae": "干藻",
+
+  "cwi.blast_furnace_processing": "高炉冶炼",
+  "cwi.arc_furnace_processing": "电弧炉冶炼"
 }

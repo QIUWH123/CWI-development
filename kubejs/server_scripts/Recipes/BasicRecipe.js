@@ -163,6 +163,7 @@ ServerEvents.recipes(event => {
 // Chiseling
 
     chiseling('create:brass_sheet', 'kubejs:brass_circuit_board', 1)
+    chiseling('minecraft:glass', 'minecraft:glass_pane', 1)
 
 // Pressing
 

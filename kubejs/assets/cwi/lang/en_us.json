@@ -4,5 +4,8 @@
   "block.cwi.mixing_vessel": "Mixing Vessel",
   "block.cwi.incubator": "Incubator",
   "block.cwi.spider_egg": "Spider Egg",
-  "block.cwi.dride_algae": "Dried Algae"
+  "block.cwi.dride_algae": "Dried Algae",
+
+  "cwi.blast_furnace_processing": "Blast Furnace Smelting",
+  "cwi.arc_furnace_processing": "Arc Furnace Smelting"
 }

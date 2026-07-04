@@ -212,6 +212,39 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
+        'cwi:mixing_vessel',
+        [
+            'CEC',
+            'BAB',
+            'CDC'
+        ],
+        {
+            A: 'create:whisk',
+            B: '#cwi:rubbers',
+            C: 'create:copper_sheet',
+            D: 'kubejs:precise_machine',
+            E: 'create:copper_casing'
+        }
+    )
+
+    event.shaped(
+        'cwi:incubator',
+        [
+            'CDC',
+            'BAF',
+            'CEC'
+        ],
+        {
+            A: 'create:iron_sheet',
+            B: 'minecraft:clock',
+            C: 'create:brass_sheet',
+            D: 'minecraft:glass_pane',
+            E: 'kubejs:precise_machine',
+            F: 'create_connected:control_chip'
+        }
+    )
+
+    event.shaped(
         'fluid:smart_fluid_interface',
         [
             'A',
