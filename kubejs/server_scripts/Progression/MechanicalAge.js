@@ -42,13 +42,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shapeless(
-        'minecraft:paper',
-        [
-            '3x createdieselgenerators:wood_chip'
-        ]
-    )
-
-    event.shapeless(
         '2x kubejs:andesite_compound',
         [
             '3x minecraft:clay_ball',
@@ -197,28 +190,6 @@ ServerEvents.recipes(event => {
         {
             A: 'createdieselgenerators:chip_wood_block',
             B: 'minecraft:stick'
-        }
-    )
-
-    event.shaped(
-        'create:filter',
-        [
-            'ABA'
-        ],
-        {
-            A: 'create:iron_sheet',
-            B: 'kubejs:net'
-        }
-    )
-
-    event.shaped(
-        'create:attribute_filter',
-        [
-            'ABA'
-        ],
-        {
-            A: 'create:brass_sheet',
-            B: 'kubejs:net'
         }
     )
 
@@ -585,38 +556,6 @@ ServerEvents.recipes(event => {
             B: 'create:cardboard_block',
             C: 'kubejs:andesite_machine',
             D: 'minecraft:redstone'
-        }
-    )
-
-    event.shaped(
-        'fluid:can_filler',
-        [
-            ' A ',
-            'ABA',
-            'DCD'
-        ],
-        {
-            A: 'create:copper_sheet',
-            B: 'kubejs:rubber_block',
-            C: 'kubejs:andesite_machine',
-            D: 'minecraft:redstone'
-        }
-    )
-
-    event.shaped(
-        'create:schematicannon',
-        [
-            'ABA',
-            'FCF',
-            'EDE'
-        ],
-        {
-            A: 'vintageimprovements:andesite_sheet',
-            B: 'create:basin',
-            C: 'kubejs:andesite_machine',
-            D: 'kubejs:andesite_bearing',
-            E: '#cwi:cobbled_stones',
-            F: '#minecraft:logs'
         }
     )
 

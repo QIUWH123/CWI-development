@@ -1,5 +1,7 @@
-ServerEvents.recipes(event => {
+// priority: 5
 
+ServerEvents.recipes(event => {
+    
 // Custom Recipe Function Define
 
     function chiseling(input, output, count) {

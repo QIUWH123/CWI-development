@@ -91,6 +91,16 @@ var specialFluids = [
         layer1: 'kubejs:item/_',
         layer2: 'kubejs:item/fluids/sticky_resin'
     }],
+    ['pulp', null, null, 'kubejs:fluid/pulp_still', 'kubejs:fluid/pulp_flow', {
+        layer0: 'kubejs:item/fluid_container',
+        layer1: 'kubejs:item/_',
+        layer2: 'kubejs:item/fluids/pulp'
+    }],
+    ['fine_pulp', null, null, 'kubejs:fluid/fine_pulp_still', 'kubejs:fluid/fine_pulp_flow', {
+        layer0: 'kubejs:item/fluid_container',
+        layer1: 'kubejs:item/_',
+        layer2: 'kubejs:item/fluids/fine_pulp'
+    }],
     ['tfmg:concentrated_sulfuric_acid', null, null, 'kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow', {
         layer0: 'kubejs:item/fluid_container',
         layer1: 'kubejs:item/_',

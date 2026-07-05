@@ -1,4 +1,4 @@
-// Priority: 10
+// priority: 10
 
 ServerEvents.recipes(event => {
 
@@ -166,6 +166,8 @@ ServerEvents.recipes(event => {
         'create:mixing/pulp',
         'create:mixing/salt',
         'create:mixing/tea',
+        'create:mixing/cardboard_pulp',
+        'create:pressing/sugar_cane',
         'create:pressing/calorite_ingot',
         'create:pressing/desh_ingot',
         'create:pressing/ostrum_ingot',
@@ -256,6 +258,7 @@ ServerEvents.recipes(event => {
         'createaddition:crafting/rolling_mill',
         'createaddition:crafting/small_connector_copper',
         'createaddition:crafting/spool',
+        'createaddition:crushing/diamond',
         'createaddition:liquid_burning/diesel',
         'createaddition:liquid_burning/gasoline',
         'createaddition:liquid_burning/lava',
@@ -290,6 +293,7 @@ ServerEvents.recipes(event => {
         'createdieselgenerators:bulk_fermenting/fermentable',
         'createdieselgenerators:bulk_fermenting/lava',
         'createdieselgenerators:bulk_fermenting/magma_cream',
+        'createdieselgenerators:bulk_fermenting/pulp',
         'createdieselgenerators:casting/chocolate_bar',
         'createdieselgenerators:compat/createaddition/copper_rod',
         'createdieselgenerators:compat/createaddition/electrum_rod',
@@ -378,6 +382,8 @@ ServerEvents.recipes(event => {
         'farmersdelight:organic_compost_from_rotten_flesh',
         'farmersdelight:organic_compost_from_tree_bark',
         'farmersdelight:packed_mud_from_straw',
+        'farmersdelight:cake_from_milk_bottle',
+        'farmersdelight:paper_from_tree_bark',
 
     // Fluid
 
@@ -387,6 +393,7 @@ ServerEvents.recipes(event => {
         'fluid:copper_tap',
         'fluid:fluid_atomizer',
         'fluid:fluid_interface',
+        'fluid:communicating_vessel',
         'fluid:freezing/blue_ice_from_packed_ice',
         'fluid:freezing/breeze_rod_from_blaze_rod',
         'fluid:freezing/packed_ice_from_ice',
@@ -400,6 +407,7 @@ ServerEvents.recipes(event => {
         'fluid:redstone_triple_valve',
         'fluid:redstone_valve',
         'fluid:smart_fluid_interface',
+        'fluid:fluid_manifest',
         'fluid:smart_gutter_outlet',
 
     // Ftb Quest
@@ -418,7 +426,6 @@ ServerEvents.recipes(event => {
 
         'miners_delight:copper_pot',
         'miners_delight:string_from_gossypium',
-        'farmersdelight:cake_from_milk_bottle',
 
     // Minecraft
 
@@ -430,6 +437,7 @@ ServerEvents.recipes(event => {
         'minecraft:bone_block',
         'minecraft:bread',
         'minecraft:brewing_stand',
+        'minecraft:paper',
         'minecraft:cake',
         'minecraft:cauldron',
         'minecraft:chain',
@@ -543,6 +551,7 @@ ServerEvents.recipes(event => {
         'rusticdelight:cutting/calamari_slice',
         'rusticdelight:cutting/cooked_calamari_slice',
         'rusticdelight:string_from_cotton_boll',
+        'rusticdelight:paper_from_cotton_boll',
 
     // Tfmg
 

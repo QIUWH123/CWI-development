@@ -114,16 +114,23 @@ ServerEvents.tags('item', event => {
 
 // CurvingHeads
     event.add('vintageimprovements:curving_heads', [
-        'minecraft:iron_ingot',
-        'minecraft:iron_nugget',
-        'create:iron_sheet',
-        'createaddition:iron_rod',
-        'tfmg:steel_block',
+        '#cwi:ingots',
+        '#cwi:sheets',
+        '#cwi:nuggets',
+        '#cwi:powders',
+        '#cwi:wires',
+        '#cwi:rods',
+        '#cwi:blocks',
         'kubejs:rubber_block',
         'kubejs:industrial_rubber_block',
         'kubejs:capping_head'
     ])
 
+// Molds
+    event.add('ratatouille:mold', [
+        'kubejs:forming_fabric'
+    ])
+    
 // StringMaterials
     event.add('cwi:string', [
         'tfmg:synthetic_string',
@@ -147,7 +154,7 @@ ServerEvents.tags('item', event => {
     event.add('cwi:leathers', ['tfmg:synthetic_leather', 'minecraft:leather'])
 
 // BasicMaterials
-    event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand'])
+    event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand', 'kubejs:caustic_soda_powder'])
 
 // DeoxidizerPowders
     event.add('cwi:deoxidizer', [

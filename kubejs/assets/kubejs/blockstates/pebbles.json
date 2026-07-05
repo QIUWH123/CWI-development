@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "kubejs:block/pebbles1", "weight": 1 },
+      { "model": "kubejs:block/pebbles2", "weight": 1 },
+      { "model": "kubejs:block/pebbles3", "weight": 1 },
+      { "model": "kubejs:block/pebbles4", "weight": 1 }
+    ]
+  }
+}

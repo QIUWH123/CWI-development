@@ -157,61 +157,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'fluid:smart_gutter_outlet',
-        [
-            'A',
-            'B',
-            'C'
-        ],
-        {
-            A: 'create:brass_sheet',
-            B: 'fluid:gutter_outlet',
-            C: 'create_connected:control_chip'
-        }
-    )
-
-    event.shaped(
-        'minecraft:anvil',
-        [
-            'AAA',
-            ' B ',
-            'BBB'
-        ],
-        {
-            A: 'create:industrial_iron_block',
-            B: 'createdeco:industrial_iron_ingot'
-        }
-    )
-
-    event.shaped(
-        'fluid:fluid_interface',
-        [
-            'ABC'
-        ],
-        {
-            A: 'minecraft:copper_ingot',
-            B: '#cwi:rubbers',
-            C: 'create:copper_sheet'
-        }
-    )
-
-    event.shaped(
-        'fluid:smart_fluid_interface',
-        [
-            ' D ',
-            'ABC',
-            ' E '
-        ],
-        {
-            A: 'minecraft:copper_ingot',
-            B: '#cwi:rubbers',
-            C: 'create:copper_sheet',
-            D: 'create:brass_sheet',
-            E: 'create_connected:control_chip'
-        }
-    )
-
-    event.shaped(
         'cwi:mixing_vessel',
         [
             'CEC',
@@ -241,20 +186,6 @@ ServerEvents.recipes(event => {
             D: 'minecraft:glass_pane',
             E: 'kubejs:precise_machine',
             F: 'create_connected:control_chip'
-        }
-    )
-
-    event.shaped(
-        'fluid:smart_fluid_interface',
-        [
-            'A',
-            'B',
-            'C'
-        ],
-        {
-            A: 'create:brass_sheet',
-            B: 'fluid:fluid_interface',
-            C: 'create_connected:control_chip'
         }
     )
 
