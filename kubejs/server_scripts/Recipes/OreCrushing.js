@@ -26,21 +26,34 @@ ServerEvents.recipes(event => {
         const dropChance = isDeepslate ? 0.75 : 0.25
         const dropCount = isMore ? 3 : 2
         const dropId = (crushedOreId === '') ? dropOreId : crushedOreId
+        const processingTime = isDeepslate ? 300 : 200
 
-        const main = `${dropCount}x ${dropId}`
-        const chance = Item.of(dropId).withChance(dropChance)
-        const dust = Item.of(dustId).withChance(0.3)
+        if (crushedOreId === '') {
+            event.recipes.create.crushing([
+                `${dropCount}x ${dropId}`, 
+                Item.of(dropId).withChance(dropChance), 
+                Item.of(dustId).withChance(0.35), 
+                Item.of(dustId).withChance(0.25)
+            ], oreId).processingTime(processingTime)
+        }
 
-        if (crushedOreId === '') event.recipes.create.crushing([main, chance, dust, dust], oreId)
-        else event.recipes.create.crushing([main, main, chance, chance, dust, dust], oreId)
+        else {
+            event.recipes.create.crushing([
+                `${dropCount + 1}x ${dropId}`, 
+                `${dropCount - 1}x ${dropId}`, 
+                Item.of(dropId).withChance(dropChance + 0.1), 
+                Item.of(dropId).withChance(dropChance - 0.1), 
+                Item.of(dustId).withChance(0.35), 
+                Item.of(dustId).withChance(0.25)
+            ], oreId).processingTime(processingTime)
+        }
 
         if (!crushedOreId === '') {
             event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
-            event.recipes.create.milling([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
         }
     })
 
-// SpecialOreCrushing
+// CompoundMineralCrushing
 
     event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
     event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
@@ -68,12 +81,15 @@ ServerEvents.recipes(event => {
         ['kubejs:magnesite_powder', 'kubejs:magnesite'],
         ['tfmg:bauxite_powder', 'kubejs:bauxite'],
         ['kubejs:flint_powder', 'minecraft:flint'],
-        ['kubejs:charcoal_powder', 'minecraft:charcoal']
+        ['tfmg:sulfur_dust', 'kubejs:sulfur'],
+        ['minecraft:redstone', 'kubejs:redstone'],
+        ['kubejs:lapis_powder', 'minecraft:lapis_lazuli'],
+        ['kubejs:charcoal_powder', 'minecraft:charcoal'],
+        ['kubejs:coal_powder', 'minecraft:coal']
     ]
 
     ores.forEach(([crushedOreId, oreId]) => {
-        event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
-        event.recipes.create.milling([crushedOreId, crushedOreId], oreId)
+        event.recipes.create.milling([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
     })
 })
 

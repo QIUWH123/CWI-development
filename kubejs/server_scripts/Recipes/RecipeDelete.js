@@ -155,6 +155,7 @@ ServerEvents.recipes(event => {
         'create:milling/dripstone_block',
         'create:milling/gravel',
         'create:milling/wheat_flour',
+        'create:milling/granite',
         'create:mixing/andesite_alloy',
         'create:mixing/andesite_alloy_from_zinc',
         'create:mixing/brass_ingot',

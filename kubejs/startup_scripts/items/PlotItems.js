@@ -11,6 +11,8 @@ StartupEvents.registry('item', event => {
 
     event.create('material_note').texture('kubejs:item/plots/material_note').tag('cwi:plot_items')
 
+    event.create('survival_note').texture('kubejs:item/plots/survival_note').tag('cwi:plot_items')
+
     event.create('geological_note').texture('kubejs:item/plots/geological_note').tag('cwi:plot_items')
 
     event.create('environmental_note').texture('kubejs:item/plots/environmental_note').tag('cwi:plot_items')

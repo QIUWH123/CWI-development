@@ -22,18 +22,18 @@ ServerEvents.recipes(event => {
 
 // Mixing
 
-    event.recipes.create.mixing('minecraft:wheat_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_wheat_seeds'])
-    event.recipes.create.mixing('minecraft:melon_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_melon_seeds'])
-    event.recipes.create.mixing('minecraft:pumpkin_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_pumpkin_seeds'])
-    event.recipes.create.mixing('minecraft:beetroot_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_beetroot_seeds'])
-    event.recipes.create.mixing('farmersdelight:tomato_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_tomato_seeds'])
-    event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_cabbage_seeds'])
+    event.recipes.create.mixing('minecraft:wheat_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_wheat_seeds']).processingTime(200)
+    event.recipes.create.mixing('minecraft:melon_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_melon_seeds']).processingTime(200)
+    event.recipes.create.mixing('minecraft:pumpkin_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_pumpkin_seeds']).processingTime(200)
+    event.recipes.create.mixing('minecraft:beetroot_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_beetroot_seeds']).processingTime(200)
+    event.recipes.create.mixing('farmersdelight:tomato_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_tomato_seeds']).processingTime(200)
+    event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{ "fluidTag": "cwi:water", "amount": 50 }, 'kubejs:dry_cabbage_seeds']).processingTime(200)
 
     event.recipes.create.mixing('farmersdelight:organic_compost', ['2x ratatouille:compost_residue', 'minecraft:dirt', Fluid.of('minecraft:water', 250)])
     event.recipes.create.mixing('3x minecraft:bone_meal', ['2x kubejs:bone_powder', 'biomancy:stone_powder'])
 
-    event.recipes.create.mixing('kubejs:sticky_resin', 'kubejs:rubber').heated()
-    event.recipes.create.mixing(Fluid.of('kubejs:molten_sticky_resin', 100), 'kubejs:sticky_resin').heated()
+    event.recipes.create.mixing('kubejs:sticky_resin', 'kubejs:rubber').heated().processingTime(600)
+    event.recipes.create.mixing(Fluid.of('kubejs:molten_sticky_resin', 100), 'kubejs:sticky_resin').heated().processingTime(600)
     event.recipes.create.mixing(Fluid.of('createdieselgenerators:biodiesel', 100), [Fluid.of('createdieselgenerators:ethanol', 50), Fluid.of('createdieselgenerators:plant_oil', 50)])
     event.recipes.create.mixing('minecraft:bamboo', ['kubejs:muddy_bamboo', { "fluidTag": "cwi:water", "amount": 500 }])
     event.recipes.create.mixing('minecraft:sugar_cane', ['kubejs:muddy_sugar_cane', { "fluidTag": "cwi:water", "amount": 500 }])

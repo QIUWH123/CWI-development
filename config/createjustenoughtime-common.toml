@@ -1,0 +1,15 @@
+
+#Misc
+[misc]
+	#Processing outputs display detailed probabilities, accurate to four decimal places
+	display_precise_chance = true
+	#Display all outputs of sequenced assembly, rather than "Random salvage"
+	display_all_assembly_results = true
+	#Fix the issue where item drain does not display the probability of output
+	display_chance_for_item_drain = true
+	#If Create Craft&Addition is installed, a list of items available for super heating will display, including Blaze Cake and Fuel Bucket
+	#Unlike the original Create, which only displays Blaze Cake
+	display_super_heating_fuel = true
+	#Fix various JEI display errors in Create: Love & War
+	fix_love_and_war_jei = true
+
