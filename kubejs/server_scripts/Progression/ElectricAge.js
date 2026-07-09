@@ -8,10 +8,10 @@ ServerEvents.recipes(event => {
             'CEC'
         ],
         {
-            A: 'vintageimprovements:constantan_sheet',
+            A: 'kubejs:constantan_sheet',
             B: 'create_new_age:overcharged_diamond_wire',
             C: 'tfmg:heavy_plate',
-            D: 'vintageimprovements:constantan_rod',
+            D: 'kubejs:constantan_rod',
             E: 'kubejs:steel_ring'
         }
     )

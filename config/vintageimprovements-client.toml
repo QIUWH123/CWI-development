@@ -14,19 +14,19 @@
 	[client.hideItems]
 		#.
 		#Hides all Springs from creative tab & JEI (you still can craft it)
-		hideSprings = false
+		hideSprings = true
 		#.
 		#Hides all Small Springs from creative tab & JEI (you still can craft it)
-		hideSmallSprings = false
+		hideSmallSprings = true
 		#.
 		#Hides all Rods from creative tab & JEI (you still can craft it)
-		hideRods = false
+		hideRods = true
 		#.
 		#Hides all Sheets from creative tab & JEI (you still can craft it)
-		hideSheets = false
+		hideSheets = true
 		#.
 		#Hides all Wires from creative tab & JEI (you still can craft it)
-		hideWires = false
+		hideWires = true
 
 	#.
 	#Position of Create: Vintage Improvements config button in the main menu & pause menu

@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:fluid_tank',
-            B: 'createdeco:industrial_iron_ingot'
+            B: 'kubejs:industrial_iron_ingot'
         }
     )
 
@@ -26,7 +26,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:fluid_tank',
-            B: 'createdeco:industrial_iron_ingot'
+            B: 'kubejs:industrial_iron_ingot'
         }
     )
 
@@ -41,7 +41,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:fluid_tank',
-            B: 'createdeco:industrial_iron_ingot'
+            B: 'kubejs:industrial_iron_ingot'
         }
     )
 
@@ -100,7 +100,7 @@ ServerEvents.recipes(event => {
         ['mangrove', 'minecraft:mangrove_planks'],
         ['cherry', 'minecraft:cherry_planks'],
         ['framed', 'createdeco:iron_mesh_fence'],
-        ['framed', 'createdeco:industrial_iron_mesh_fence']
+        ['framed', 'kubejs:industrial_iron_wire']
     ]
 
     const cores = ['create:item_vault', 'create_connected:item_silo']

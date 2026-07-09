@@ -13,7 +13,7 @@ ServerEvents.recipes(event => {
             A: '#cwi:string',
             B: '#cwi:leathers',
             C: 'minecraft:chest',
-            D: 'vintageimprovements:andesite_sheet',
+            D: 'kubejs:andesite_alloy_sheet',
             E: 'create:andesite_alloy'
         }
     )
@@ -88,7 +88,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'sophisticatedbackpacks:upgrade_base',
-            B: 'vintageimprovements:andesite_sheet',
+            B: 'kubejs:andesite_alloy_sheet',
             C: 'create:andesite_alloy',
             D: 'kubejs:andesite_machine'
         }

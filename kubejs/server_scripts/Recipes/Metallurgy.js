@@ -109,7 +109,7 @@ ServerEvents.recipes(event => {
         if (shape === 'block') return blockTime
         if (shape === 'sheet' || shape === 'ingot') return ingotTime
         if (shape === 'nugget') return Math.round(ingotTime / 5)
-        if (shape === 'rod' || shape === 'wire') return Math.round(ingotTime / 3)
+        if (shape === 'rod' || shape === 'wire' || shape === 'spring') return Math.round(ingotTime / 3)
         if (shape === 'powder') return Math.round(ingotTime * 0.75)
         return ingotTime
     }
@@ -137,7 +137,7 @@ ServerEvents.recipes(event => {
         const heat = getHeat(mat)
         const bulkMin = heat === 'superheated' ? 9 : 4
         const bulkMax = 50
-        const itemTypes = ['sheet', 'wire', 'rod', 'powder', 'nugget', 'ingot', 'block']
+        const itemTypes = ['sheet', 'wire', 'spring', 'rod', 'powder', 'nugget', 'ingot', 'block']
         itemTypes.forEach(type => {
             const item = mat.items[type]
             if (!item) return
@@ -163,6 +163,8 @@ ServerEvents.recipes(event => {
         if (items.sheet && items.powder) event.recipes.create.milling(items.powder, items.sheet)
         if (items.ingot && items.rod) event.custom({ "type": "createaddition:rolling", "input": { "item": items.ingot }, "result": { "item": items.rod, "count": 2 } })
         if (items.sheet && items.wire) event.custom({ "type": "createaddition:rolling", "input": { "item": items.sheet }, "result": { "item": items.wire, "count": 2 } })
+        if (items.wire && items.spring) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.wire }], "results": [{ "item": items.spring }], "processingTime": 7.5 * Math.sqrt(mat.stiffness)})
+        if (items.rod && items.spring) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.rod }], "results": [{ "item": items.spring }], "processingTime": 10 * Math.sqrt(mat.stiffness) })
         if (items.ingot && items.rod && mat.stiffness < 100) event.custom({ "type": "createdieselgenerators:wire_cutting", "ingredients": [{ "item": items.ingot }], "results": [{ "item": items.rod, "count": 2 }] })
         if (items.sheet && items.wire && mat.stiffness < 100) event.custom({ "type": "createdieselgenerators:wire_cutting", "ingredients": [{ "item": items.sheet }], "results": [{ "item": items.wire, "count": 2 }] })
         if (items.ingot && items.sheet && mat.stiffness < 250) addDepotConversion(items.ingot, items.sheet, (mat.stiffness < 150) ? 1 : (mat.stiffness < 200) ? 2 : 3)

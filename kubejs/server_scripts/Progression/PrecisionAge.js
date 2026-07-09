@@ -238,7 +238,7 @@ ServerEvents.recipes(event => {
             'ACA'
         ],
         {
-            A: 'vintageimprovements:iron_spring',
+            A: 'kubejs:iron_spring',
             B: 'kubejs:andesite_bearing',
             C: 'kubejs:andesite_machine'
         }
@@ -293,7 +293,7 @@ ServerEvents.recipes(event => {
             'A'
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
+            A: 'kubejs:industrial_iron_sheet',
             B: 'create:fluid_tank'
         }
     )
@@ -346,7 +346,7 @@ ServerEvents.recipes(event => {
             'A A'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet'
+            A: 'kubejs:andesite_alloy_sheet'
         }
     )
 
@@ -357,7 +357,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'createmetallurgy:refractory_mortar'
         }
     )
@@ -382,9 +382,9 @@ ServerEvents.recipes(event => {
             'AEA'
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
+            A: 'kubejs:industrial_iron_sheet',
             B: 'create:fluid_pipe',
-            C: 'createdeco:industrial_iron_ingot',
+            C: 'kubejs:industrial_iron_ingot',
             D: 'create:crushing_wheel',
             E: 'kubejs:industrial_casing'
         }
@@ -397,8 +397,8 @@ ServerEvents.recipes(event => {
             ' A '
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
-            B: 'createdeco:industrial_iron_ingot'
+            A: 'kubejs:industrial_iron_sheet',
+            B: 'kubejs:industrial_iron_ingot'
         }
     )
 
@@ -457,12 +457,12 @@ ServerEvents.recipes(event => {
             'DECBD',
             '  AF '
         ], {
-            A: 'vintageimprovements:industrial_iron_spring',
+            A: 'kubejs:industrial_iron_spring',
             B: 'kubejs:industrial_casing',
             C: 'kubejs:precise_machine',
             D: 'create:brass_sheet',
             E: 'kubejs:industrial_iron_blade',
-            F: 'createdeco:industrial_iron_sheet',
+            F: 'kubejs:industrial_iron_sheet',
             G: 'create_connected:control_chip'
         }
     )
@@ -529,7 +529,7 @@ ServerEvents.recipes(event => {
         ], {
             A: 'kubejs:bronze_ingot',
             B: 'create:flywheel',
-            C: 'createdeco:industrial_iron_ingot',
+            C: 'kubejs:industrial_iron_ingot',
             D: 'kubejs:steam_mechanism',
             E: 'kubejs:precise_machine',
             F: 'kubejs:andesite_machine',
@@ -546,7 +546,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:sturdy_sheet',
-            B: 'createdeco:industrial_iron_ingot',
+            B: 'kubejs:industrial_iron_ingot',
             C: 'create:fluid_tank'
         }
     )
@@ -559,7 +559,7 @@ ServerEvents.recipes(event => {
             'FEF'
         ],
         {
-            A: 'createdeco:industrial_iron_ingot',
+            A: 'kubejs:industrial_iron_ingot',
             B: 'kubejs:industrial_iron_blade',
             C: 'vintageimprovements:spring_coiling_machine_wheel',
             D: 'kubejs:precise_machine',
@@ -577,7 +577,7 @@ ServerEvents.recipes(event => {
             ' A '
         ],
         {
-            A: 'createdeco:industrial_iron_ingot',
+            A: 'kubejs:industrial_iron_ingot',
             B: 'createaddition:brass_rod',
             C: 'create_connected:control_chip'
         }
@@ -591,9 +591,9 @@ ServerEvents.recipes(event => {
             'DB '
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
+            A: 'kubejs:industrial_iron_sheet',
             B: 'create:brass_ingot',
-            C: 'createdeco:industrial_iron_ingot',
+            C: 'kubejs:industrial_iron_ingot',
             D: 'create_connected:control_chip'
         }
     )
@@ -616,7 +616,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.sequenced_assembly(
         '3x create:track',
-        'createdeco:industrial_iron_sheet', 
+        'kubejs:industrial_iron_sheet', 
         [
             event.recipes.create.deploying('create:incomplete_track', ['create:incomplete_track', 'kubejs:bronze_rod']),
             event.recipes.create.pressing('create:incomplete_track', 'create:incomplete_track'),
@@ -685,7 +685,7 @@ ServerEvents.recipes(event => {
         ],
         'create:brass_sheet',
         [
-            event.recipes.create.deploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'vintageimprovements:brass_wire']),
+            event.recipes.create.deploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'kubejs:brass_wire']),
             event.recipes.create.deploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:brass_nugget']),
             event.recipes.create.deploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'tfmg:screwdriver'])
         ]
@@ -725,7 +725,7 @@ ServerEvents.recipes(event => {
     .loops(1)
 
     event.recipes.create.sequenced_assembly(
-        'createdeco:industrial_iron_ingot',
+        'kubejs:industrial_iron_ingot',
         'kubejs:heated_iron_ingot', 
         [
             event.recipes.create.pressing('kubejs:incomplete_industrial_iron_ingot', 'kubejs:incomplete_industrial_iron_ingot'),

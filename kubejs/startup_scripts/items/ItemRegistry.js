@@ -7,10 +7,6 @@ StartupEvents.registry('item', event => {
     event.create('glass_batch')
     event.create('sintered_glass_blank')
 
-    event.create('vintageimprovements:industrial_iron_spring')
-    event.create('vintageimprovements:industrial_iron_rod')
-    event.create('vintageimprovements:industrial_iron_wire')
-
     event.create('dust-covered_seeds').displayName('Dust-Covered Seeds')
         .texture('kubejs:item/plants/dust-covered_seeds')
 
@@ -31,123 +27,6 @@ StartupEvents.registry('item', event => {
     event.create('nylon_salt_crystal')
     event.create('carborundum')
 
-    event.create('rusted_iron_wire')
-        .texture('kubejs:item/materials/rusted_iron_wire')
-
-    event.create('magnesium_wire')
-        .texture('kubejs:item/materials/magnesium_wire')
-
-    event.create('cobalt_wire')
-        .texture('kubejs:item/materials/cobalt_wire')
-
-    event.create('tin_wire')
-        .texture('kubejs:item/materials/tin_wire')
-
-    event.create('silver_wire')
-        .texture('kubejs:item/materials/silver_wire')
-
-    event.create('molybdenum_wire')
-        .texture('kubejs:item/materials/molybdenum_wire')
-
-    event.create('bronze_wire')
-        .texture('kubejs:item/materials/bronze_wire')
-
-    event.create('magnet_wire')
-        .texture('kubejs:item/materials/magnet_wire')
-
-    event.create('magnetic_alloy_wire')
-        .texture('kubejs:item/materials/magnetic_alloy_wire')
-
-    event.create('rusted_iron_sheet')
-        .texture('kubejs:item/materials/rusted_iron_sheet')
-
-    event.create('magnesium_sheet')
-        .texture('kubejs:item/materials/magnesium_sheet')
-
-    event.create('cobalt_sheet')
-        .texture('kubejs:item/materials/cobalt_sheet')
-
-    event.create('tin_sheet')
-        .texture('kubejs:item/materials/tin_sheet')
-
-    event.create('silver_sheet')
-        .texture('kubejs:item/materials/silver_sheet')
-
-    event.create('molybdenum_sheet')
-        .texture('kubejs:item/materials/molybdenum_sheet')
-
-    event.create('bronze_sheet')
-        .texture('alloyed:item/bronze_sheet')
-
-    event.create('magnet_sheet')
-        .texture('kubejs:item/materials/magnet_sheet')
-
-    event.create('magnetic_alloy_sheet')
-        .texture('kubejs:item/materials/magnetic_alloy_sheet')
-
-    event.create('rusted_iron_rod')
-        .texture('kubejs:item/materials/rusted_iron_rod')
-
-    event.create('magnesium_rod')
-        .texture('kubejs:item/materials/magnesium_rod')
-
-    event.create('cobalt_rod')
-        .texture('kubejs:item/materials/cobalt_rod')
-
-    event.create('tin_rod')
-        .texture('kubejs:item/materials/tin_rod')
-
-    event.create('silver_rod')
-        .texture('kubejs:item/materials/silver_rod')
-
-    event.create('molybdenum_rod')
-        .texture('kubejs:item/materials/molybdenum_rod')
-
-    event.create('bronze_rod')
-        .texture('kubejs:item/materials/bronze_rod')
-
-    event.create('rusted_iron_ingot')
-        .texture('kubejs:item/materials/rusted_iron_ingot')
-
-    event.create('rusted_iron_nugget')
-        .texture('kubejs:item/materials/rusted_iron_nugget')
-
-    event.create('magnesium_ingot')
-        .texture('kubejs:item/materials/magnesium_ingot')
-
-    event.create('magnesium_nugget')
-        .texture('kubejs:item/materials/magnesium_nugget')
-
-    event.create('cobalt_ingot')
-        .texture('kubejs:item/materials/cobalt_ingot')
-
-    event.create('cobalt_nugget')
-        .texture('kubejs:item/materials/cobalt_nugget')
-
-    event.create('tin_ingot')
-        .texture('kubejs:item/materials/tin_ingot')
-
-    event.create('tin_nugget')
-        .texture('kubejs:item/materials/tin_nugget')
-
-    event.create('bronze_ingot')
-        .texture('alloyed:item/bronze_ingot')
-
-    event.create('bronze_nugget')
-        .texture('alloyed:item/bronze_nugget')
-
-    event.create('silver_ingot')
-        .texture('kubejs:item/materials/silver_ingot')
-
-    event.create('silver_nugget')
-        .texture('kubejs:item/materials/silver_nugget')
-
-    event.create('molybdenum_ingot')
-        .texture('kubejs:item/materials/molybdenum_ingot')
-
-    event.create('molybdenum_nugget')
-        .texture('kubejs:item/materials/molybdenum_nugget')
-
     event.create('cellulase_enzyme')
 
     event.create('urea')
@@ -156,6 +35,34 @@ StartupEvents.registry('item', event => {
 
     event.create('gold_nanoparticle')
 
+})
+
+const TARGET_TYPES = ['ingot', 'nugget', 'sheet', 'rod', 'wire', 'spring']
+
+const SPECIAL_TEXTURES = {
+    'bronze_ingot': 'alloyed:item/bronze_ingot',
+    'bronze_nugget': 'alloyed:item/bronze_nugget',
+    'bronze_sheet': 'alloyed:item/bronze_sheet'
+}
+
+StartupEvents.registry('item', event => {
+    
+    global.materialTypes.forEach(material => {
+        if (!material.items) return;
+
+        TARGET_TYPES.forEach(type => {
+            let fullId = material.items[type]
+            if (!fullId || !fullId.startsWith('kubejs:')) return
+
+            let itemID = fullId.substring(7)
+
+            let texturePath;
+            if (SPECIAL_TEXTURES[itemID]) texturePath = SPECIAL_TEXTURES[itemID]
+            else texturePath = `kubejs:item/materials/${itemID}`
+
+            event.create(itemID).texture(texturePath)
+        })
+    })
 })
 
 // Dust
@@ -192,7 +99,8 @@ StartupEvents.registry('item', event => {
         'lignite_powder', 'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
         'clay_powder', 'stone_powder', 'deepslate_powder', 'tuff_powder', 'claystone_powder',
         'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',
-        'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder', 'glass_powder', 'borax_powder'
+        'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder', 'glass_powder', 'borax_powder',
+        'polyethylene_powder', 'polypropylene_powder', 'polyvinyl_chloride_powder', 'polybenzimidazole_powder'
     ]
 
     powders.forEach(powder => {
@@ -384,22 +292,6 @@ StartupEvents.registry('item', event => {
 StartupEvents.registry('item', event => {
 
 // Normal
-
-    event.create('polyethylene').texture('kubejs:item/materials/polyethylene')
-    event.create('polyethylene_powder').texture('kubejs:item/materials/polyethylene_powder')
-    event.create('polyethylene_sheet').texture('kubejs:item/materials/polyethylene_sheet')
-
-    event.create('polypropylene').texture('kubejs:item/materials/polypropylene')
-    event.create('polypropylene_powder').texture('kubejs:item/materials/polypropylene_powder')
-    event.create('polypropylene_sheet').texture('kubejs:item/materials/polypropylene_sheet')
-
-    event.create('polyvinyl_chloride').texture('kubejs:item/materials/polyvinyl_chloride')
-    event.create('polyvinyl_chloride_powder').texture('kubejs:item/materials/polyvinyl_chloride_powder')
-    event.create('polyvinyl_chloride_sheet').texture('kubejs:item/materials/polyvinyl_chloride_sheet')
-
-    event.create('polybenzimidazole').texture('kubejs:item/materials/polybenzimidazole')
-    event.create('polybenzimidazole_powder').texture('kubejs:item/materials/polybenzimidazole_powder')
-    event.create('polybenzimidazole_sheet').texture('kubejs:item/materials/polybenzimidazole_sheet')
 
     event.create('heated_iron_ingot')
 

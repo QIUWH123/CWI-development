@@ -5,8 +5,6 @@ ServerEvents.recipes(event => {
 // Type Remove
 
     event.remove({ type: 'createaddition:rolling' })
-    event.remove({ type: 'vintageimprovements:coiling' })
-    event.remove({ type: 'vintageimprovements:turning' })
     event.remove({ type: 'create:pressing', output: '#cwi:sheets' })
     event.remove({ type: 'createdieselgenerators:wire_cutting' })
     event.remove({ type: 'createdieselgenerators:hammering' })
@@ -16,10 +14,23 @@ ServerEvents.recipes(event => {
 // Whole Mod Remove
 
     const modsToRemove = [
-        'create_sa', 'constructionwand', 'ad_astra', 'functionalstorage',
-        'create_rns', 'rubberworks', 'ae2', 'appflux', 'advanced_ae',
-        'sculkcatalyticchamber', 'expatternprovider', 'sgjourney',
-        'sophisticatedbackpacks', 'createmetallurgy', 'biomancy', 'clanginghowl'
+        'create_sa',
+        'constructionwand',
+        'ad_astra',
+        'functionalstorage',
+        'create_rns', 
+        'rubberworks', 
+        'ae2', 
+        'appflux', 
+        'advanced_ae',
+        'sculkcatalyticchamber', 
+        'expatternprovider', 
+        'sgjourney',
+        'sophisticatedbackpacks', 
+        'createmetallurgy', 
+        'biomancy',
+        'clanginghowl', 
+        'vintageimprovements'
     ]
     modsToRemove.forEach(mod => event.remove({ mod: mod }))
 
@@ -690,51 +701,6 @@ ServerEvents.recipes(event => {
         'tfmg:vat_machine_recipe/sulfuric_acid',
         'tfmg:winding/electromagnetic_coil',
         'tfmg:winding/resistor',
-
-    // Vintage Improvements
-
-        'vintageimprovements:centrifugation/ender_eye',
-        'vintageimprovements:centrifugation/honey_comb',
-        'vintageimprovements:centrifugation/magma_cream',
-        'vintageimprovements:craft/belt_grinder',
-        'vintageimprovements:craft/centrifuge',
-        'vintageimprovements:craft/curving_press',
-        'vintageimprovements:craft/helve_hammer_slot_cover',
-        'vintageimprovements:craft/spring_coiling_machine',
-        'vintageimprovements:craft/spring_coiling_machine_wheel',
-        'vintageimprovements:craft/sulfur_block_to_items',
-        'vintageimprovements:craft/sulfur_item_to_nuggets',
-        'vintageimprovements:craft/sulfur_items_to_block',
-        'vintageimprovements:craft/sulfur_nuggets_to_item',
-        'vintageimprovements:craft/vacuum_chamber',
-        'vintageimprovements:craft/vibrating_table',
-        'vintageimprovements:crushing/basalt',
-        'vintageimprovements:crushing/basalt_recycling',
-        'vintageimprovements:crushing/scoria',
-        'vintageimprovements:crushing/scoria_recycling',
-        'vintageimprovements:curving/diamond',
-        'vintageimprovements:curving/iron_sheet',
-        'vintageimprovements:grinder_polishing/rose_quartz',
-        'vintageimprovements:mechanical_crafting/helve_hammer',
-        'vintageimprovements:mechanical_crafting/laser',
-        'vintageimprovements:mechanical_crafting/lathe',
-        'vintageimprovements:milling/sulfur',
-        'vintageimprovements:pressing/aluminum_ingot',
-        'vintageimprovements:pressing/cast_iron_ingot',
-        'vintageimprovements:pressing/lead_ingot',
-        'vintageimprovements:pressing/nickel_ingot',
-        'vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust',
-        'vintageimprovements:pressurizing/copper_sulfate',
-        'vintageimprovements:pressurizing/sulfuric_acid',
-        'vintageimprovements:pressurizing/sulfur_dioxide',
-        'vintageimprovements:pressurizing/sulfur_trioxide',
-        'vintageimprovements:pressurizing/sulfur_trioxide_alt',
-        'vintageimprovements:rolling/refined_radiance',
-        'vintageimprovements:rolling/shadow_steel',
-        'vintageimprovements:sequenced_assembly/recipe_card',
-        'vintageimprovements:sequenced_assembly/redstone_module',
-        'vintageimprovements:stonecutting/v_shaped_curving_head',
-        'vintageimprovements:stonecutting/w_shaped_curving_head',
 
     // Vital Herbs
 

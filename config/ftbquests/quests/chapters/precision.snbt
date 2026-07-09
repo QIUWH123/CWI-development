@@ -103,7 +103,7 @@
 			y: 0.0d
 		}
 	]
-	order_index: 8
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -222,7 +222,7 @@
 			shape: "square"
 			tasks: [{
 				id: "3D58417254FBFD77"
-				item: "createdeco:industrial_iron_ingot"
+				item: "kubejs:industrial_iron_ingot"
 				type: "item"
 			}]
 			x: 8.0d
@@ -1098,40 +1098,12 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["612A2B07C4F613E6"]
-			dependency_requirement: "one_completed"
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "4A30DD9F422A3EBC"
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [
-				{
-					id: "1CC4527FD0AAF002"
-					item: "functionalstorage:fluid_1"
-					type: "item"
-				}
-				{
-					id: "37E011A0F1369C85"
-					item: "functionalstorage:fluid_2"
-					type: "item"
-				}
-				{
-					id: "54FF4322EB2EDEBC"
-					item: "functionalstorage:fluid_4"
-					type: "item"
-				}
-			]
-			x: 16.0d
-			y: -2.0d
-		}
-		{
 			dependencies: ["6D37805074F5C079"]
 			disable_toast: true
 			id: "25C5F3ED706FFA9C"
 			tasks: [{
 				id: "7E7026F03B4791B9"
-				item: "vintageimprovements:industrial_iron_spring"
+				item: "kubejs:industrial_iron_spring"
 				type: "item"
 			}]
 			x: 10.0d
@@ -1143,7 +1115,7 @@
 			id: "3A8590545AC9E328"
 			tasks: [{
 				id: "0B8B0E87EBB280B1"
-				item: "createdeco:industrial_iron_sheet"
+				item: "kubejs:industrial_iron_sheet"
 				type: "item"
 			}]
 			x: 10.0d
@@ -1204,7 +1176,7 @@
 				item: "functionalstorage:storage_controller"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 16.0d
 			y: -2.0d
 		}
 	]

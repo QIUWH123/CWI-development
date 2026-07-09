@@ -164,8 +164,6 @@ ServerEvents.recipes(event => {
     })
 })
 
-const $IMachine = Java.loadClass('com.lowdragmc.mbd2.api.machine.IMachine')
-
 MBDMachineEvents.onBeforeRecipeModify("cwi:mixing_vessel", (event) => {
     let { machine, recipe } = event.getEvent()
     let partmachine = $IMachine.ofMachine(machine.level, machine.pos).orElse(null)

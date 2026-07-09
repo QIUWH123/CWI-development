@@ -58,8 +58,8 @@ ServerEvents.recipes(event => {
             'ABA'
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
-            B: 'createdeco:industrial_iron_ingot',
+            A: 'kubejs:industrial_iron_sheet',
+            B: 'kubejs:industrial_iron_ingot',
             C: 'kubejs:industrial_casing'
         }
     )
@@ -87,7 +87,7 @@ ServerEvents.recipes(event => {
             'ADA'
         ],
         {
-            A: 'createdeco:industrial_iron_sheet',
+            A: 'kubejs:industrial_iron_sheet',
             B: 'tfmg:cast_iron_pipe',
             C: 'kubejs:andesite_machine',
             D: 'kubejs:industrial_casing',
@@ -216,7 +216,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'tfmg:fireproof_bricks'
         }
     )
@@ -229,7 +229,7 @@ ServerEvents.recipes(event => {
             'AEA'
         ],
         {
-            A: 'vintageimprovements:industrial_iron_spring',
+            A: 'kubejs:industrial_iron_spring',
             B: 'create:large_cogwheel',
             C: 'tfmg:hardened_planks',
             D: 'kubejs:andesite_machine',

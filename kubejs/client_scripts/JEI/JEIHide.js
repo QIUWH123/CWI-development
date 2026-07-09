@@ -50,11 +50,6 @@ JEIEvents.hideItems(event => {
     'createdeco:andesite_sheet',
     'createdeco:netherite_sheet',
     'createdeco:zinc_sheet',
-    'vintageimprovements:nickel_sheet',
-    'vintageimprovements:lead_sheet',
-    'vintageimprovements:cast_iron_sheet',
-    'vintageimprovements:zinc_sheet',
-    'vintageimprovements:aluminum_sheet',
 
     'fluid:smoking_fluid_bucket',
     'fluid:haunting_fluid_bucket',

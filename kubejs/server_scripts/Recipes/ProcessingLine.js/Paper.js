@@ -44,7 +44,7 @@ ServerEvents.recipes(function(event) {
             'ABA'
         ],
         {
-            A: 'vintageimprovements:andesite_rod',
+            A: 'kubejs:andesite_alloy_rod',
             B: 'minecraft:stick',
             C: 'farmersdelight:canvas'
         }

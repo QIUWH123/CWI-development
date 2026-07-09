@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:industrial_iron_block',
-            B: 'createdeco:industrial_iron_ingot'
+            B: 'kubejs:industrial_iron_ingot'
         }
     )
 

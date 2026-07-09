@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
             'ABA'
         ],
         {
-            A: 'vintageimprovements:andesite_rod',
+            A: 'kubejs:andesite_alloy_rod',
             B: 'kubejs:net'
         }
     )
@@ -131,7 +131,7 @@ ServerEvents.recipes(event => {
             'EDE'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:basin',
             C: 'kubejs:andesite_machine',
             D: 'kubejs:andesite_bearing',

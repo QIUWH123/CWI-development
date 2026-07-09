@@ -5,7 +5,7 @@
 	group: ""
 	icon: "kubejs:material_note"
 	id: "2B780E114CBB7C3C"
-	order_index: 5
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -162,7 +162,7 @@
 			id: "3FA76D1E7FAA0B28"
 			tasks: [{
 				id: "18CB75BD48B444A0"
-				item: "createdeco:industrial_iron_ingot"
+				item: "kubejs:industrial_iron_ingot"
 				type: "item"
 			}]
 			x: 2.0d

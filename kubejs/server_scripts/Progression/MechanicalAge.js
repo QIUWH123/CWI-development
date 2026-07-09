@@ -92,7 +92,7 @@ ServerEvents.recipes(event => {
         {
             A: '#cwi:cobbled_stones',
             B: 'create:iron_sheet',
-            C: 'vintageimprovements:andesite_sheet'
+            C: 'kubejs:andesite_alloy_sheet'
         }
     )
 
@@ -205,7 +205,7 @@ ServerEvents.recipes(event => {
             B: 'kubejs:andesite_bearing',
             C: 'create:andesite_casing',
             D: 'kubejs:andesite_machine',
-            E: 'vintageimprovements:andesite_sheet'
+            E: 'kubejs:andesite_alloy_sheet'
         }
     )
 
@@ -217,7 +217,7 @@ ServerEvents.recipes(event => {
             'CDC'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:shaft',
             C: 'create:andesite_alloy',
             D: 'create:andesite_casing'
@@ -245,7 +245,7 @@ ServerEvents.recipes(event => {
             'B'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:andesite_casing'
         }
     )
@@ -272,7 +272,7 @@ ServerEvents.recipes(event => {
             'A'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:fluid_tank'
         }
     )
@@ -284,7 +284,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'minecraft:clock'
         }
     )
@@ -297,7 +297,7 @@ ServerEvents.recipes(event => {
             'A A'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'minecraft:clock'
         }
     )
@@ -309,7 +309,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet'
+            A: 'kubejs:andesite_alloy_sheet'
         }
     )
 
@@ -380,7 +380,7 @@ ServerEvents.recipes(event => {
             B: 'kubejs:andesite_machine',
             C: 'kubejs:andesite_bearing',
             D: 'create:shaft',
-            E: 'vintageimprovements:andesite_sheet'
+            E: 'kubejs:andesite_alloy_sheet'
         }
     )
 
@@ -405,7 +405,7 @@ ServerEvents.recipes(event => {
             ' A '
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:cogwheel'
         }
     )
@@ -514,7 +514,7 @@ ServerEvents.recipes(event => {
             'C'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:item_vault',
             C: 'kubejs:andesite_machine'
         }
@@ -552,7 +552,7 @@ ServerEvents.recipes(event => {
             'DCD'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'create:cardboard_block',
             C: 'kubejs:andesite_machine',
             D: 'minecraft:redstone'
@@ -570,8 +570,8 @@ ServerEvents.recipes(event => {
             A: 'create:cogwheel',
             B: 'kubejs:andesite_machine',
             C: 'create:fluid_pipe',
-            D: 'vintageimprovements:andesite_sheet',
-            E: 'vintageimprovements:andesite_rod'
+            D: 'kubejs:andesite_alloy_sheet',
+            E: 'kubejs:andesite_alloy_rod'
         }
     )
 
@@ -583,7 +583,7 @@ ServerEvents.recipes(event => {
             'DCD'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'kubejs:andesite_bearing',
             C: 'create:fluid_tank',
             D: 'create:copper_sheet',
@@ -709,9 +709,9 @@ ServerEvents.recipes(event => {
             'A'
         ],
         {
-            A: 'vintageimprovements:andesite_sheet',
+            A: 'kubejs:andesite_alloy_sheet',
             B: 'kubejs:net',
-            C: 'vintageimprovements:andesite_wire'
+            C: 'kubejs:andesite_alloy_wire'
         }
     )
 
@@ -741,7 +741,7 @@ ServerEvents.recipes(event => {
             C: 'createaddition:iron_rod',
             D: 'create:iron_sheet',
             E: '#cwi:cobbled_stones',
-            F: 'vintageimprovements:andesite_sheet'
+            F: 'kubejs:andesite_alloy_sheet'
         }
     )
 
