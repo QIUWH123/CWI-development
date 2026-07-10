@@ -222,22 +222,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'vintageimprovements:centrifuge',
-        [
-            'ABA',
-            'CDC',
-            'AEA'
-        ],
-        {
-            A: 'kubejs:industrial_iron_spring',
-            B: 'create:large_cogwheel',
-            C: 'tfmg:hardened_planks',
-            D: 'kubejs:andesite_machine',
-            E: 'tfmg:steel_casing'
-        }
-    )
-
-    event.shaped(
         'createmetallurgy:gauge_attachment',
         [
             'ABA',
@@ -276,11 +260,30 @@ ServerEvents.recipes(event => {
 
 // Mechanical Crafting
 
-    event.recipes.create.mechanical_crafting('tfmg:steel_distillation_controller', [
+   event.recipes.create.mechanical_crafting(
+        'vintageimprovements:centrifuge',
+        [
+            'ABA',
+            'CDC',
+            'AEA'
+        ],
+        {
+            A: 'kubejs:industrial_iron_spring',
+            B: 'create:large_cogwheel',
+            C: 'tfmg:hardened_planks',
+            D: 'kubejs:andesite_machine',
+            E: 'tfmg:steel_casing'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'tfmg:steel_distillation_controller', 
+        [
             'CAC',
             'DFD',
             'BEB'
-        ], {
+        ], 
+        {
             A: 'kubejs:industrial_pump',
             B: 'tfmg:steel_chemical_vat',
             C: 'tfmg:steel_mechanism',
@@ -290,11 +293,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('tfmg:surface_scanner', [
+    event.recipes.create.mechanical_crafting(
+        'tfmg:surface_scanner', 
+        [
             'AAA',
             'BCB',
             'DED'
-        ], {
+        ], 
+        {
             A: 'kubejs:integrated_electron_tube',
             B: 'tfmg:steel_mechanism',
             C: 'kubejs:heavy_machine',
@@ -303,11 +309,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('tfmg:quad_potato_cannon', [
+    event.recipes.create.mechanical_crafting(
+        'tfmg:quad_potato_cannon', 
+        [
             'AGIHG',
             'EFIHG',
             ' GA  '
-        ], {
+        ], 
+        {
             A: 'tfmg:heavy_plate',
             E: 'tfmg:steel_mechanism',
             F: 'kubejs:heavy_machine',
@@ -317,11 +326,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('vintageimprovements:helve_hammer', [
+    event.recipes.create.mechanical_crafting(
+        'vintageimprovements:helve_hammer', 
+        [
             'ABA  ',
             'EFEHG',
             'ADA  '
-        ], {
+        ], 
+        {
             A: 'tfmg:heavy_plate',
             B: 'tfmg:steel_ingot',
             D: 'tfmg:heavy_machinery_casing',
@@ -332,22 +344,28 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('tfmg:machine_input', [
+    event.recipes.create.mechanical_crafting(
+        'tfmg:machine_input', 
+        [
             'A',
             'B',
             'C'
-        ], {
+        ], 
+        {
             A: 'create:shaft',
             B: 'kubejs:heavy_machine',
             C: 'tfmg:heavy_machinery_casing'
         }
     )
 
-    event.recipes.create.mechanical_crafting('tfmg:pumpjack_crank', [
+    event.recipes.create.mechanical_crafting(
+        'tfmg:pumpjack_crank', 
+        [
             'A A',
             'EFE',
             'BDB'
-        ], {
+        ], 
+        {
             A: 'tfmg:heavy_plate',
             B: 'tfmg:steel_ingot',
             D: 'tfmg:heavy_machinery_casing',
@@ -356,11 +374,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('vintageimprovements:vacuum_chamber', [
+    event.recipes.create.mechanical_crafting(
+        'vintageimprovements:vacuum_chamber', 
+        [
             'BCB',
             'EFE',
             'ADA'
-        ], {
+        ], 
+        {
             A: 'tfmg:rubber_sheet',
             B: 'tfmg:heavy_plate',
             C: 'kubejs:steel_bearing',
@@ -370,10 +391,13 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting(Item.of('create_sa:portable_drill').enchant('minecraft:efficiency', 5), [
+    event.recipes.create.mechanical_crafting(
+        Item.of('create_sa:portable_drill').enchant('minecraft:efficiency', 5), 
+        [
             'AA   ',
             'DEFCB'
-        ], {
+        ], 
+        {
             A: 'kubejs:handle',
             B: 'kubejs:steel_drill_head',
             C: 'kubejs:steam_mechanism',

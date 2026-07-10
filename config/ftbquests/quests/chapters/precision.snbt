@@ -1179,6 +1179,20 @@
 			x: 16.0d
 			y: -2.0d
 		}
+		{
+			dependencies: ["3CC959E1243E962E"]
+			disable_toast: true
+			id: "30DB76E3E3C7E3BB"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "2A72D75DC2F2F416"
+				item: "cwi:stirling_engine"
+				type: "item"
+			}]
+			x: 14.0d
+			y: -2.0d
+		}
 	]
 	title: "Precision Engraving"
 }
