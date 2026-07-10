@@ -1,6 +1,6 @@
 PlayerEvents.tick(event => {
     const player = event.player
-    if (player.age % 10 != 0) return
+    if (globalTickCounter % 10 != 0) return
 
     // Hot Item Effect
         if (player.inventory.count("#cwi:hot_items") > 0) {

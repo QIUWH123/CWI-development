@@ -45,34 +45,3 @@ PlayerEvents.chat((event) => {
         }
     }
 })
-
-PlayerEvents.loggedIn((event) => {
-    let {player, server} = event
-
-    for (let i = 0; i < global.debugUserName.length; i++) {
-        if (player.username === global.debugUserName[i]) {
-            // Iterate over Tag
-            Ingredient.of("#minecraft:sand")
-                .getItemIds()
-                .forEach((print) => {
-                    console.log(print)
-                })
-        }
-    }
-})
-
-BlockEvents.rightClicked((event) => {
-    let {player} = event
-
-    let blockState = event.getBlock().getBlockState()
-    let pos = event.getBlock().getPos()
-    let blockHardness = blockState.getDestroySpeed(event.getLevel(), pos)
-
-    for (let i = 0; i < global.debugUserName.length; i++) {
-        if (event.hand !== "MAIN_HAND" &&
-            player.crouching &&
-            player.username === global.debugUserName[i]) {
-            player.tell(Component.translate("message.kubejs.debug.getHardness", [blockHardness]))
-        }
-    }
-})
