@@ -5,10 +5,10 @@
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"0": "kubejs:block/model/axis_top",
-		"1": "kubejs:block/model/axis",
+		"0": "create:block/axis_top",
+		"1": "create:block/axis",
 		"2": "kubejs:block/storage_blocks/industrial_rubber_block",
-		"particle": "kubejs:block/model/axis_top"
+		"particle": "kubejs:block/storage_blocks/industrial_rubber_block"
 	},
 	"elements": [
 		{

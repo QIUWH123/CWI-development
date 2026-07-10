@@ -3,12 +3,12 @@
 	"credit": "Made with Blockbench",
 	"parent": "kubejs:block/machine",
 	"textures": {
-		"0": "kubejs:block/model/precise_nixie_tube",
-		"3": "kubejs:block/model/axis_top",
-		"4": "kubejs:block/model/axis",
-		"5": "kubejs:block/model/precise_mechanical_arm",
-		"7": "kubejs:block/model/brass_casing",
-		"particle": "kubejs:block/model/brass_casing"
+		"0": "kubejs:block/model/precise_machine_1",
+		"3": "create:block/axis_top",
+		"4": "create:block/axis",
+		"5": "kubejs:block/model/precise_machine_2",
+		"7": "create:block/brass_casing",
+		"particle": "kubejs:block/model/precise_machine_2"
 	},
 	"elements": [
 		{
