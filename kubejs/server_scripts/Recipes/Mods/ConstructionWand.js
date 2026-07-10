@@ -39,7 +39,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:golden_sheet',
-            B: 'create:iron_sheet',
+            B: 'create:brass_sheet',
             C: 'create:polished_rose_quartz'
         }
     )
@@ -53,8 +53,8 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:golden_sheet',
-            B: 'create:iron_sheet',
-            C: 'minecraft:emerald'
+            B: 'create:brass_sheet',
+            C: 'minecraft:diamond'
         }
     )
 

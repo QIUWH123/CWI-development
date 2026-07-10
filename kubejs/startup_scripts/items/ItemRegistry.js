@@ -18,7 +18,6 @@ StartupEvents.registry('item', event => {
 
     event.create('net')
     event.create('sponge_gemmule')
-    event.create('polished_diamond')
     event.create('synthetic_feather')
     event.create('sticky_resin')
     event.create('rubber')

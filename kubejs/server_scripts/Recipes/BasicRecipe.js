@@ -189,7 +189,6 @@ ServerEvents.recipes(event => {
 // Sandpaper Polishing
 
     sandpaperPolishing('kubejs:sealed_wood', 'kubejs:polished_sealed_wood')
-    sandpaperPolishing('minecraft:diamond', 'kubejs:polished_diamond')
     sandpaperPolishing('geode_plus:nether_quartz_crystal_block', 'minecraft:quartz_block')
 
 // Liquid Burning

@@ -532,6 +532,7 @@ ServerEvents.recipes(event => {
         'minecraft:stonecutter',
         'minecraft:sugar_from_honey_bottle',
         'minecraft:tinted_glass',
+        'minecraft:lead',
 
     // Natures Compass
 
