@@ -1,7 +1,6 @@
 {
 	"format_version": "1.21.11",
 	"credit": "NukaTeam's Work",
-	"render_type": "cutout",
 	"texture_size": [128, 128],
 	"textures": {
 		"0": "kubejs:block/model/scrap_block",

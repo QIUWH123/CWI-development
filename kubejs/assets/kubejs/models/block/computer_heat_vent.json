@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "kubejs:block/computer_heat_vent_top",
-    "side": "kubejs:block/computer_heat_vent_side"
-  }
-}
