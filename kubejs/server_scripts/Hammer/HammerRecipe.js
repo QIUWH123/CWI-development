@@ -44,6 +44,10 @@ addBlockConversion('kubejs:dark_ash_stone', 'air', 1, [
     { item: 'kubejs:dark_ash', chance: 0.75, count: 4 }
 ])
 
+addBlockConversion('kubejs:ash_stone', 'air', 1, [
+    { item: 'kubejs:ash', chance: 0.75, count: 4 }
+])
+
 addBlockConversion('kubejs:dark_ash_stone_quartz', 'air', 1, [
     { item: 'kubejs:dark_ash', chance: 0.75, count: 3 },
     { item: 'minecraft:quartz', chance: 0.65, count: 2 },
