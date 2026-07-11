@@ -99,10 +99,6 @@ ServerEvents.recipes(event => {
     const moldTypes = ['terracotta', 'fireproof_brick']
     const shapes = ['sheet', 'rod', 'nugget', 'ingot']
 
-    function getHeat(mat) {
-        return mat.mp >= 1200 ? 'superheated' : 'heated'
-    }
-
     function calcTime(mat, shape) {
         const blockTime = mat.mp
         const ingotTime = Math.round(blockTime / 5)
@@ -134,7 +130,9 @@ ServerEvents.recipes(event => {
             basinCasting(mat.fluid, 810, calcTime(mat, 'block'), mat.items.block)
         }
 
-        const heat = getHeat(mat)
+        if (mat.mp > 2400) return
+        
+        const heat = mat.mp >= 1200 ? 'superheated' : 'heated'
         const bulkMin = heat === 'superheated' ? 9 : 4
         const bulkMax = 50
         const itemTypes = ['sheet', 'wire', 'spring', 'rod', 'powder', 'nugget', 'ingot', 'block']
@@ -158,13 +156,13 @@ ServerEvents.recipes(event => {
 
         const items = mat.items
 
-        if (items.ingot && items.sheet) event.recipes.create.pressing(items.sheet, items.ingot)
-        if (items.ingot && items.powder) event.recipes.create.milling(items.powder, items.ingot)
-        if (items.sheet && items.powder) event.recipes.create.milling(items.powder, items.sheet)
-        if (items.ingot && items.rod) event.custom({ "type": "createaddition:rolling", "input": { "item": items.ingot }, "result": { "item": items.rod, "count": 2 } })
-        if (items.sheet && items.wire) event.custom({ "type": "createaddition:rolling", "input": { "item": items.sheet }, "result": { "item": items.wire, "count": 2 } })
-        if (items.wire && items.spring) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.wire }], "results": [{ "item": items.spring }], "processingTime": 7.5 * Math.sqrt(mat.stiffness)})
-        if (items.rod && items.spring) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.rod }], "results": [{ "item": items.spring }], "processingTime": 10 * Math.sqrt(mat.stiffness) })
+        if (items.ingot && items.sheet && mat.stiffness < 400) event.recipes.create.pressing(items.sheet, items.ingot)
+        if (items.ingot && items.powder && mat.stiffness < 400) event.recipes.create.milling(items.powder, items.ingot)
+        if (items.sheet && items.powder && mat.stiffness < 400) event.recipes.create.milling(items.powder, items.sheet)
+        if (items.ingot && items.rod && mat.stiffness < 400) event.custom({ "type": "createaddition:rolling", "input": { "item": items.ingot }, "result": { "item": items.rod, "count": 2 } })
+        if (items.sheet && items.wire && mat.stiffness < 400) event.custom({ "type": "createaddition:rolling", "input": { "item": items.sheet }, "result": { "item": items.wire, "count": 2 } })
+        if (items.wire && items.spring && mat.stiffness < 400) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.wire }], "results": [{ "item": items.spring }], "processingTime": 7.5 * Math.sqrt(mat.stiffness)})
+        if (items.rod && items.spring && mat.stiffness < 300) event.custom({ "type":"vintageimprovements:coiling", "springColor": "000000", "ingredients": [ { "item": items.rod }], "results": [{ "item": items.spring }], "processingTime": 10 * Math.sqrt(mat.stiffness) })
         if (items.ingot && items.rod && mat.stiffness < 100) event.custom({ "type": "createdieselgenerators:wire_cutting", "ingredients": [{ "item": items.ingot }], "results": [{ "item": items.rod, "count": 2 }] })
         if (items.sheet && items.wire && mat.stiffness < 100) event.custom({ "type": "createdieselgenerators:wire_cutting", "ingredients": [{ "item": items.sheet }], "results": [{ "item": items.wire, "count": 2 }] })
         if (items.ingot && items.sheet && mat.stiffness < 250) addDepotConversion(items.ingot, items.sheet, (mat.stiffness < 150) ? 1 : (mat.stiffness < 200) ? 2 : 3)

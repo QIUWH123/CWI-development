@@ -176,7 +176,7 @@ ServerEvents.recipes(event => {
 
 // Item Application
 
-    itemApplication('createdieselgenerators:chip_wood_block', 'vintageimprovements:andesite_sheet', 'create:andesite_casing')
+    itemApplication('createdieselgenerators:chip_wood_block', 'kubejs:andesite_alloy_sheet', 'create:andesite_casing')
     itemApplication('createdieselgenerators:chip_wood_block', 'cwi:rubbers', 'kubejs:sealed_wood', true)
     itemApplication('kubejs:sealed_wood', 'create:copper_sheet', 'create:copper_casing')
     itemApplication('kubejs:quality_sealed_wood', 'create:brass_sheet', 'create:brass_casing')
@@ -216,6 +216,8 @@ ServerEvents.recipes(event => {
     addStoragePair('kubejs:raw_silver_block', 'kubejs:raw_silver', 9)
     addStoragePair('kubejs:silver_block', 'kubejs:silver_ingot', 9)
     addStoragePair('kubejs:silver_ingot', 'kubejs:silver_nugget', 9)
+    addStoragePair('create:industrial_iron_block', 'kubejs:industrial_iron_ingot', 9)
+    addStoragePair('kubejs:industrial_iron_ingot', 'kubejs:industrial_iron_nugget', 9)
     addStoragePair('kubejs:molybdenum_block', 'kubejs:molybdenum_ingot', 9)
     addStoragePair('kubejs:molybdenum_ingot', 'kubejs:molybdenum_nugget', 9)
     addStoragePair('kubejs:cobalt_block', 'kubejs:cobalt_ingot', 9)

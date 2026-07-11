@@ -215,3 +215,11 @@ StartupEvents.registry('fluid', function (event) {
         registerGas(event, entry[0], entry[1])
     })
 })
+
+BlockEvents.modification(event => {
+    moltenMetals.forEach(([id,_]) => {
+        event.modify(`kubejs:${id}`, block => {
+            block.lightEmission = 12
+        })
+    })
+})

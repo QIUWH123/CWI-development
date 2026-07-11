@@ -507,11 +507,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('create_sa:brass_jetpack_chestplate', [
+    event.recipes.create.mechanical_crafting(
+        'create_sa:brass_jetpack_chestplate', 
+        [
             'ABCBA',
             'DEFED',
             ' BGB '
-        ], {
+        ], 
+        {
             A: 'kubejs:steam_mechanism',
             B: 'kubejs:bronze_ingot',
             C: 'create_connected:control_chip',
@@ -522,11 +525,14 @@ ServerEvents.recipes(event => {
         }
     )
 
-    event.recipes.create.mechanical_crafting('create_sa:brass_exoskeleton_chestplate', [
+    event.recipes.create.mechanical_crafting(
+        'create_sa:brass_exoskeleton_chestplate', 
+        [
             'DABAD',
             'CAEAC',
             'GAFAG'
-        ], {
+        ], 
+        {
             A: 'kubejs:bronze_ingot',
             B: 'create:flywheel',
             C: 'kubejs:industrial_iron_ingot',
@@ -534,6 +540,22 @@ ServerEvents.recipes(event => {
             E: 'kubejs:precise_machine',
             F: 'kubejs:andesite_machine',
             G: 'createdieselgenerators:engine_piston'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'cwi:stirling_engine', 
+        [
+            'BAB',
+            'BCB',
+            'DED'
+        ], 
+        {
+            A: 'kubejs:industrial_iron_sheet',
+            B: 'createdieselgenerators:engine_piston',
+            C: 'kubejs:steam_mechanism',
+            D: 'kubejs:industrial_iron_ingot',
+            E: 'minecraft:copper_block'
         }
     )
 

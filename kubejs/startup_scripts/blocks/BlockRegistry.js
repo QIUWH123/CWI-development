@@ -570,6 +570,17 @@ StartupEvents.registry('block', event => {
         .notSolid()
         .redstoneConductor(false)
 
+    event.create('incomplete_stirling_engine')
+        .soundType('metal')
+        .hardness(3)
+        .resistance(6)
+        .requiresTool(true)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .tagBlock('minecraft:needs_stone_tool')
+        .mapColor('#FF5500')
+        .notSolid()
+        .redstoneConductor(false)
+
     event.create('incomplete_diesel_engine')
         .soundType('metal')
         .texture('particle', 'tfmg:block/heavy_machinery_casing')

@@ -1,3 +1,4 @@
+/*
 ForgeEvents.onEvent('net.minecraftforge.event.level.BlockEvent$FluidPlaceBlockEvent', event => {
 	const result = event.getNewState().getBlock();
 	let block
@@ -27,3 +28,4 @@ ForgeEvents.onEvent('com.simibubi.create.api.event.PipeCollisionEvent$Spill', ev
         event.setState(null);
     }
 });
+*/
