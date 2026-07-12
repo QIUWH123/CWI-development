@@ -15,12 +15,23 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 		
 	addCreativeTab("dusts")
 		.icon(() => Item.of("kubejs:gold_powder"))
-		.content(() => Ingredient.of("#cwi:powders").itemIds)
+		.content(() => Ingredient.of("#cwi:all_powders").itemIds)
 		
 	addCreativeTab("tools")
 		.icon(() => Item.of("minecraft:iron_pickaxe"))
-		.content(() => Ingredient.of("#forge:tools").itemIds)
+		.content(() => Ingredient.of("#minecraft:tools").itemIds)
 		
+	addCreativeTab("materials")
+		.icon(() => Item.of("kubejs:bronze_ingot"))
+		.content(() => Ingredient.of("#cwi:ingots").itemIds
+			.concat(Ingredient.of("#cwi:sheets").itemIds)
+			.concat(Ingredient.of("#cwi:nuggets").itemIds)
+			.concat(Ingredient.of("#cwi:powders").itemIds)
+			.concat(Ingredient.of("#cwi:wires").itemIds)
+			.concat(Ingredient.of("#cwi:rods").itemIds)
+			.concat(Ingredient.of("#cwi:blocks").itemIds)
+		)
+
 	addCreativeTab("plot_items")
 		.icon(() => Item.of("kubejs:material_note"))
 		.content(() => Ingredient.of("#cwi:plot_items").itemIds)
@@ -33,8 +44,8 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 
-    event.setIcon("kubejs:rusted_aluminum_casing")
-    event.setDisplayName(Component.translate("itemGroup.kubejs.tab"))
+    event.setIcon("kubejs:rusted_industrial_aluminum_casing")
+    event.setDisplayName(CWI)
 
 	event.remove(
 		Ingredient.of("#cwi:fan_catalysts").itemIds

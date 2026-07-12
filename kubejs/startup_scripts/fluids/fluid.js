@@ -64,6 +64,7 @@ var moltenMetals = [
     ['molten_iron', 0xFF8A8A],
     ['molten_steel', 0xFFAD8A],
     ['molten_magnesium', 0xA9B9C4],
+    ['molten_netherite', 0x403D45],
     ['molten_industrial_iron', 0xFF8A8A],
     ['molten_pig_iron', 0xFFABAB],
     ['molten_cast_iron', 0xFF9191],

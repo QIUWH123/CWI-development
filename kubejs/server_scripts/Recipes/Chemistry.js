@@ -959,6 +959,4 @@ ServerEvents.recipes(event => {
         ]
     })
 
-// Glass
-
 })

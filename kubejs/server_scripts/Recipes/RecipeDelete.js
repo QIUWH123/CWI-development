@@ -228,6 +228,7 @@ ServerEvents.recipes(event => {
         'create_connected:item_application/smoking_catalyst_from_empty',
         'create_connected:item_application/splashing_catalyst_from_empty',
         'create_connected:sequenced_assembly/control_chip',
+        'create_connected:crafting/kinetics/dashboard',
 
     // Create New Age
 

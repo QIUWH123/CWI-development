@@ -1,3 +1,4 @@
+/*
 const potions = [
     {id: 'sweetcord_beer', color: 0xE3C16F, effect: {id: 'minecraft:haste', duration: 2400, amplifier: 0}},
     {id: 'apple_cidar', color: 0xD4A373, effect: {id: 'minecraft:slow_falling', duration: 2400, amplifier: 0}},
@@ -34,3 +35,4 @@ StartupEvents.registry('fluid', event => {
             .noBlock()
     })
 })
+*/

@@ -37,7 +37,7 @@ StartupEvents.registry('item', event => {
     const liteColorPowders = []
 
     const middleColorPowders = [
-        ['pyrite_powder', 0xE5C100],
+        ['pyrite_powder', 0xFFE587],
         ['sodium_bisulfate_powder', 0xFFFACD],
         ['caustic_soda_powder', 0xF0F8FF],
         ['lignin_powder', 0xE8C396],
@@ -63,16 +63,16 @@ StartupEvents.registry('item', event => {
     ]
 
     powders.forEach(powder => {
-        event.create(powder).texture(`kubejs:item/powders/${powder}`).tag('cwi:powders')
+        event.create(powder).texture(`kubejs:item/powders/${powder}`).tag('cwi:all_powders')
     })
     liteColorPowders.forEach(([powder, color]) => {
-        event.create(powder).texture(`kubejs:item/powders/powder_lite`).color(color).tag('cwi:powders')
+        event.create(powder).texture(`kubejs:item/powders/powder_lite`).color(color).tag('cwi:all_powders')
     })
     middleColorPowders.forEach(([powder, color]) => {
-        event.create(powder).texture(`kubejs:item/powders/powder_middle`).color(color).tag('cwi:powders')
+        event.create(powder).texture(`kubejs:item/powders/powder_middle`).color(color).tag('cwi:all_powders')
     })
     darkColorPowders.forEach(([powder, color]) => {
-        event.create(powder).texture(`kubejs:item/powders/powder_dark`).color(color).tag('cwi:powders')
+        event.create(powder).texture(`kubejs:item/powders/powder_dark`).color(color).tag('cwi:all_powders')
     })
 
 })

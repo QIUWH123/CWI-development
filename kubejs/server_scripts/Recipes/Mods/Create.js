@@ -140,4 +140,16 @@ ServerEvents.recipes(event => {
         }
     )
 
+    event.shaped(
+        'create_connected:dashboard',
+        [
+            'A',
+            'B'
+        ],
+        {
+            A: 'create:display_board',
+            B: 'kubejs:precise_machine'
+        }
+    )
+
 })

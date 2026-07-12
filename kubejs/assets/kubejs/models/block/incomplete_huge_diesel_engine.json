@@ -3,7 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "createdieselgenerators:block/engine_piston_block"
+		"0": "createdieselgenerators:block/engine_piston_block",
+		"particle": "createdieselgenerators:block/engine_piston_block"
 	},
 	"elements": [
 		{
