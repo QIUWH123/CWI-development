@@ -51,8 +51,8 @@ BlockEvents.rightClicked((event) => {
 
     let blockState = event.getBlock().getBlockState();
     let pos = event.getBlock().getPos();
-    let blockHardness = blockState.getDestroySpeed(event.getLevel(), pos);
-    let blockResistance = blockState.getBlock().getExplosionResistance();
+    let blockHardness = blockState.getDestroySpeed(event.getLevel(), pos)
+    let blockResistance = blockState.getBlock().getExplosionResistance()
 
     for (let i = 0; i < global.debugUserName.length; i++) {
         if (
