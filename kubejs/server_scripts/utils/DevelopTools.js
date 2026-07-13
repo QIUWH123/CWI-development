@@ -45,3 +45,23 @@ PlayerEvents.chat((event) => {
         }
     }
 })
+
+BlockEvents.rightClicked((event) => {
+    let { player } = event;
+
+    let blockState = event.getBlock().getBlockState();
+    let pos = event.getBlock().getPos();
+    let blockHardness = blockState.getDestroySpeed(event.getLevel(), pos);
+    let blockResistance = blockState.getBlock().getExplosionResistance();
+
+    for (let i = 0; i < global.debugUserName.length; i++) {
+        if (
+            event.hand !== "MAIN_HAND" &&
+            player.crouching &&
+            player.username === global.debugUserName[i]
+        ) {
+            player.tell(Text.of(`Hardness: ${blockHardness}`));
+            player.tell(Text.of(`Resistance: ${blockResistance}`));
+        }
+    }
+});

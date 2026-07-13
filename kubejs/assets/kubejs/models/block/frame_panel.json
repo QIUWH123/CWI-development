@@ -1,0 +1,44 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "kubejs:block/model/building_blocks/frame_panels/steel",
+		"particle": "kubejs:block/model/building_blocks/frame_panels/steel"
+	},
+	"elements": [
+		{
+			"from": [2, 3, 2],
+			"to": [14, 0, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 3, -12]},
+			"faces": {
+				"north": {"uv": [1, 14.5, 7, 16], "texture": "#0"},
+				"east": {"uv": [1, 14.5, 7, 16], "texture": "#0"},
+				"south": {"uv": [1, 14.5, 7, 16], "texture": "#0"},
+				"west": {"uv": [1, 14.5, 7, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 3, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, -14]},
+			"faces": {
+				"north": {"uv": [1, 14.5, 7, 16], "texture": "#0"},
+				"east": {"uv": [0, 14.5, 8, 16], "texture": "#0"},
+				"south": {"uv": [0, 14.5, 8, 16], "texture": "#0"},
+				"west": {"uv": [0, 14.5, 8, 16], "texture": "#0"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#0"},
+				"down": {"uv": [8, 0, 16, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 1, 2],
+			"to": [14, 2, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
+			"faces": {
+				"up": {"uv": [1, 1, 7, 7], "texture": "#0"},
+				"down": {"uv": [1, 1, 7, 7], "texture": "#0"}
+			}
+		}
+	]
+}

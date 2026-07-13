@@ -50,6 +50,13 @@ StartupEvents.registry('block', event => {
         .tagBlock('minecraft:mineable/shovel')
         .mapColor('#FF5500')
 
+    event.create('depleted_dirt_slab', 'slab')
+        .soundType('gravel')
+        .hardness(0.8)
+        .resistance(0.8)
+        .tagBlock('minecraft:mineable/shovel')
+        .mapColor('#FF5500')
+
     event.create('ashen_depleted_dirt')
         .soundType('gravel')
         .hardness(1)

@@ -1,0 +1,77 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "kubejs:block/model/building_blocks/frame_eaves/steel",
+		"particle": "kubejs:block/model/building_blocks/frame_eaves/steel"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 8],
+			"to": [16, 8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, -8, -6]},
+			"faces": {
+				"north": {"uv": [8, 12, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"south": {"uv": [8, 12, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 4, 4], "texture": "#0"},
+				"up": {"uv": [8, 12, 16, 16], "texture": "#0"},
+				"down": {"uv": [8, 12, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 6, 10],
+			"to": [16, 2, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, -2, -4]},
+			"faces": {
+				"north": {"uv": [8, 13, 16, 15], "texture": "#0"},
+				"south": {"uv": [8, 13, 16, 15], "texture": "#0"},
+				"up": {"uv": [8, 13, 16, 15], "texture": "#0"},
+				"down": {"uv": [8, 13, 16, 15], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 6, 8],
+			"to": [14, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, -6]},
+			"faces": {
+				"east": {"uv": [0, 1, 4, 3], "texture": "#0"},
+				"west": {"uv": [0, 1, 4, 3], "texture": "#0"},
+				"up": {"uv": [9, 12, 15, 16], "texture": "#0"},
+				"down": {"uv": [9, 12, 15, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, 8, 10],
+			"to": [14, 0, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -4]},
+			"faces": {
+				"north": {"uv": [9, 12, 15, 16], "texture": "#0"},
+				"east": {"uv": [1, 0, 3, 4], "texture": "#0"},
+				"south": {"uv": [9, 12, 15, 16], "texture": "#0"},
+				"west": {"uv": [1, 0, 3, 4], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 1, 9],
+			"to": [15, 7, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, -7, -5]},
+			"faces": {
+				"north": {"uv": [4.5, 0.5, 11.5, 3.5], "texture": "#0"},
+				"south": {"uv": [4.5, 0.5, 11.5, 3.5], "texture": "#0"},
+				"up": {"uv": [4.5, 0.5, 11.5, 3.5], "texture": "#0"},
+				"down": {"uv": [4.5, 0.5, 11.5, 3.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}

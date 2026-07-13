@@ -89,6 +89,17 @@ ServerEvents.recipes(event => {
         event.shapeless(Item.of(smallStack), [bigItem])
     }
 
+    function slabPair(type, block, slab) {
+        event.shaped(`6x ${slab}`, ['AAA'], { A: block })
+        if (type == 'stone') event.stonecutting(`2x ${slab}`, block)
+        if (type == 'wood') event.recipes.create.cutting(`2x ${slab}`, block)
+    }
+
+    function stoneSlabPair(block, slab) {
+        event.shaped(`6x ${slab}`, ['AAA'], { A: block })
+        event.stonecutting(`2x ${slab}`, block)
+    }
+
     function deploying(using, input, output) {
         event.custom({
             "type": "create:deploying",
@@ -227,4 +238,7 @@ ServerEvents.recipes(event => {
     addStoragePair('createmetallurgy:refractory_mortar', 'createmetallurgy:refractory_mortar_ball', 4)
     addStoragePair('darkerdepths:amber_block', 'darkerdepths:amber', 4)
 
+// Slab
+
+    slabPair('normal', 'kubejs:depleted_dirt', 'kubejs:depleted_dirt_slab')
 })
