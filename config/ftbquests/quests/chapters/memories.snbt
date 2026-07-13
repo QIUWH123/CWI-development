@@ -16,7 +16,7 @@
 			invisible: true
 			shape: "gear"
 			size: 3.0d
-			subtitle: "Not Finished Yet"
+			subtitle: "Not Yet Completed"
 			tasks: [{
 				id: "59DD8C7F23D11AAD"
 				title: "Not Started Yet"

@@ -62,10 +62,11 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(['minecraft:string', Item.of('minecraft:string').withChance(0.5)], 'rusticdelight:cotton_boll')
     event.recipes.create.milling(['create:wheat_flour', Item.of('create:wheat_flour').withChance(0.5)], 'ratatouille:wheat_kernels')
     event.recipes.create.milling(['2x createaddition:biomass', Item.of('createaddition:biomass').withChance(0.25)], 'ratatouille:compost_residue')
+    event.recipes.create.milling(['3x createdieselgenerators:wood_chip', Item.of('createdieselgenerators:wood_chip').withChance(0.25)], 'minecraft:bamboo')
+    event.recipes.create.milling(['createdieselgenerators:wood_chip', Item.of('createdieselgenerators:wood_chip').withChance(0.5)], 'minecraft:stick')
+    event.recipes.create.milling(['2x createdieselgenerators:wood_chip', Item.of('createdieselgenerators:wood_chip').withChance(0.75)], 'minecraft:dead_bush')
 
 // Crushing
-
-    event.recipes.create.crushing(['2x createdieselgenerators:wood_chip', Item.of('createdieselgenerators:wood_chip').withChance(0.5)], 'minecraft:bamboo')
 
     event.recipes.create.crushing([Item.of('2x kubejs:darkslate_powder').withChance(0.75), Item.of('kubejs:darkslate_powder').withChance(0.57), Item.of('kubejs:dark_ash').withChance(0.27), Item.of('kubejs:acidolys_bacillus').withChance(0.83), Item.of('kubejs:acidolys_bacillus').withChance(0.73), Item.of('kubejs:dark_ash').withChance(0.58)], 'kubejs:acidified_darkslate')
     event.recipes.create.crushing([Item.of('2x kubejs:claystone_powder').withChance(0.75), Item.of('kubejs:claystone_powder').withChance(0.57), Item.of('kubejs:ash').withChance(0.27), Item.of('kubejs:dry_carbofusor_spirillum').withChance(0.58), Item.of('kubejs:dry_putrelys_sporogenes').withChance(0.73), Item.of('biomancy:bone_fragments').withChance(0.73)], 'kubejs:claystone_biological_sediment')

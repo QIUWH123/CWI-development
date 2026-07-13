@@ -243,6 +243,31 @@ ServerEvents.recipes(event => {
         ]
     })
 
+// Block Interacting - Scrap Block
+
+    event.custom({
+        "type": "lychee:block_interacting",
+        "item_in": { "type": "lychee:always_true" },
+        "block_in": "kubejs:scrap_block",
+        "contextual": { "type": "is_sneaking" },
+        "post": [
+            { "type": "execute", "command": "particle minecraft:falling_dust minecraft:gravel ~ ~ ~ 0.4 0.3 0.4 0.03 16", "hide": true },
+            { "type": "execute", "command": "particle minecraft:smoke ~ ~ ~ 0.3 0.3 0.3 0.05 12", "hide": true },
+            { "type": "place", "block": "kubejs:small_scrap_block" },
+            { "type": "add_item_cooldown", "s": 0.5 },
+            { "type": "drop_item", "item": "tfmg:screw", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "kubejs:rubber", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "kubejs:rubber", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "tfmg:synthetic_string", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "tfmg:synthetic_string", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "tfmg:synthetic_leather", "contextual": { "type": "chance", "chance": 0.75 } },
+            { "type": "drop_item", "item": "kubejs:ash", "contextual": { "type": "chance", "chance": 0.5 } },
+            { "type": "drop_item", "item": "kubejs:ash", "contextual": { "type": "chance", "chance": 0.5 } },
+            { "type": "drop_item", "item": "kubejs:ash", "contextual": { "type": "chance", "chance": 0.5 } },
+            { "type": "hurt", "source": "generic", "damage": 1, "contextual": { "type": "chance", "chance": 0.5 }  }
+        ]
+    })
+
 // Block Interacting - Dead Bush
 
     event.custom({

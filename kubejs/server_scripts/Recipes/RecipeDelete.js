@@ -490,6 +490,7 @@ ServerEvents.recipes(event => {
         'minecraft:golden_sword',
         'minecraft:granite',
         'minecraft:hopper',
+        'minecraft:stick',
         'minecraft:iron_axe',
         'minecraft:iron_boots',
         'minecraft:iron_chestplate',

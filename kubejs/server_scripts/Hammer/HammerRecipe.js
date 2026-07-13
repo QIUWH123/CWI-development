@@ -60,16 +60,21 @@ addBlockConversion('kubejs:dark_ash_stone_coal', 'air', 1, [
     { item: 'kubejs:coal_powder', chance: 0.35, count: 2 }
 ])
 
-addBlockConversion('kubejs:scrap_block', 'air', 2, [
+addBlockConversion('kubejs:scrap_block', 'kubejs:small_scrap_block', 1, [
     { item: 'tfmg:screw', chance: 0.45, count: 2 },
-    { item: 'kubejs:rusted_iron_ingot', chance: 0.3, count: 1 },
-    { item: 'kubejs:rusted_iron_rod', chance: 0.3, count: 1 },
-    { item: 'kubejs:rusted_iron_sheet', chance: 0.3, count: 1 },
-    { item: 'kubejs:rusted_iron_wire', chance: 0.3, count: 1 },
-    { item: 'tfmg:rebar', chance: 0.25, count: 3 },
+    { item: 'kubejs:ash', chance: 0.5, count: 3 },
     { item: 'kubejs:rubber', chance: 0.75, count: 3 },
     { item: 'tfmg:synthetic_string', chance: 0.75, count: 3 },
     { item: 'tfmg:synthetic_leather', chance: 0.45, count: 2 }
+])
+
+addBlockConversion('kubejs:small_scrap_block', 'air', 1, [
+    { item: 'kubejs:rusted_iron_rod', chance: 0.3, count: 1 },
+    { item: 'kubejs:rusted_iron_wire', chance: 0.3, count: 1 },
+    { item: 'kubejs:rusted_iron_ingot', chance: 0.3, count: 1 },
+    { item: 'kubejs:rusted_iron_sheet', chance: 0.3, count: 1 },
+    { item: 'tfmg:rebar', chance: 0.25, count: 3 },
+    { item: 'kubejs:ash', chance: 0.5, count: 2 }
 ])
 
 addDepotConversion('minecraft:raw_iron', 'create:crushed_raw_iron', 2)

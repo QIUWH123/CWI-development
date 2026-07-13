@@ -15,7 +15,7 @@
 			id: "7D0C6F93C6FE1761"
 			shape: "gear"
 			size: 3.0d
-			subtitle: "Not Finished Yet"
+			subtitle: "Not Yet Completed"
 			tasks: [{
 				id: "648902203FB63097"
 				item: "kubejs:material_note"

@@ -810,7 +810,7 @@
 			id: "77638D6698CCC725"
 			shape: "gear"
 			size: 3.0d
-			subtitle: "Not Finished"
+			subtitle: "Not Yet Completed"
 			tasks: [{
 				id: "6630B88145632850"
 				item: "kubejs:geological_note"

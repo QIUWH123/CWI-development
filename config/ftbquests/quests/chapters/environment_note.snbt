@@ -7,22 +7,398 @@
 	id: "60102DCD9C448A39"
 	order_index: 4
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["0EA786F00A19ADC6"]
-		hide_dependent_lines: true
-		hide_until_deps_complete: true
-		icon_scale: 0.9d
-		id: "5733B6FE443F3A31"
-		shape: "gear"
-		size: 3.0d
-		subtitle: "Not Finished"
-		tasks: [{
-			id: "1D492A4724A72E91"
-			item: "kubejs:survival_note"
-			type: "item"
-		}]
-		x: -8.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: ["0EA786F00A19ADC6"]
+			hide_dependent_lines: true
+			hide_until_deps_complete: true
+			icon_scale: 0.9d
+			id: "5733B6FE443F3A31"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "Not Yet Completed"
+			tasks: [{
+				id: "1D492A4724A72E91"
+				item: "kubejs:survival_note"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			hide_dependency_lines: true
+			id: "771B7234DC99AC45"
+			size: 1.5d
+			subtitle: "Materials Left By Predecessors"
+			tasks: [{
+				icon: "kubejs:scrap_block"
+				id: "6C16CDE22AD419FB"
+				observe_type: 0
+				timer: 0L
+				title: "Scraps"
+				to_observe: "minecraft:air"
+				type: "observation"
+			}]
+			x: -3.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "0E8772CBC63F7D6D"
+			tasks: [{
+				id: "5BD7811C16176D8D"
+				item: "tfmg:synthetic_leather"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			disable_toast: true
+			id: "263A0574B7E0C0DC"
+			tasks: [{
+				id: "7E892ECCB2757553"
+				item: "tfmg:rebar"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			id: "080FA7C3F386B9B8"
+			tasks: [
+				{
+					id: "678126CA721835BE"
+					item: "kubejs:rusted_iron_wire"
+					type: "item"
+				}
+				{
+					id: "3C4AF3CD7E620955"
+					item: "kubejs:rusted_iron_rod"
+					type: "item"
+				}
+				{
+					id: "5BE50FC535A03FCE"
+					item: "kubejs:rusted_iron_nugget"
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "444E20B159183D13"
+			tasks: [{
+				id: "593E43DB4EAD6A5E"
+				item: "tfmg:synthetic_string"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "0B1ECD95761E02BA"
+			tasks: [{
+				id: "6C5A4784B81DB339"
+				item: "kubejs:rubber"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "1A75CF6A6C2F2AE5"
+			tasks: [{
+				id: "36A37A454B0383AB"
+				item: "tfmg:screw"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			icon: "kubejs:small_scrap_block"
+			id: "0E58512F3902F0F9"
+			size: 1.5d
+			subtitle: "Heavy Materials In Scraps"
+			tasks: [{
+				id: "69F404CA0EE1CBEC"
+				title: "Small Scraps"
+				type: "checkmark"
+			}]
+			title: "Small Scraps"
+			x: -0.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			id: "4ABFD18B3CCA0DF5"
+			tasks: [
+				{
+					id: "2609A4A738073E54"
+					item: "kubejs:rusted_iron_sheet"
+					type: "item"
+				}
+				{
+					id: "450FE0414747589F"
+					item: "kubejs:rusted_iron_ingot"
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "108DC1287F75BF74"
+			tasks: [
+				{
+					id: "3B0ED0431CA1E243"
+					item: "kubejs:ash_log"
+					type: "item"
+				}
+				{
+					id: "58AA81299CFFA069"
+					item: "kubejs:burnt_log"
+					type: "item"
+				}
+			]
+			title: "Logs"
+			x: -6.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["108DC1287F75BF74"]
+			disable_toast: true
+			id: "1DEDFF868BA0A8E5"
+			tasks: [
+				{
+					id: "516D3FD1026FDB9B"
+					item: "kubejs:stripped_ash_log"
+					type: "item"
+				}
+				{
+					id: "44851F77226FFBEB"
+					item: "kubejs:stripped_burnt_log"
+					type: "item"
+				}
+			]
+			title: "Stripped Logs"
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1DEDFF868BA0A8E5"]
+			disable_toast: true
+			id: "0725AF9EC929C5C6"
+			tasks: [
+				{
+					id: "240E9371567294CB"
+					item: "kubejs:stripped_broken_ash_log"
+					type: "item"
+				}
+				{
+					id: "5E1E6299B941234B"
+					item: "kubejs:stripped_broken_burnt_log"
+					type: "item"
+				}
+			]
+			title: "Stripped Broken Logs"
+			x: -3.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "61523773DA8A8372"
+			size: 1.5d
+			subtitle: "Wood Alternatives"
+			tasks: [{
+				id: "420E946C6278CA51"
+				item: "darkerdepths:petrified_log"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0725AF9EC929C5C6"]
+			disable_toast: true
+			id: "52CA338C1BB121C9"
+			size: 1.5d
+			tasks: [{
+				id: "0BDCB097BDC61AFD"
+				item: "createdieselgenerators:wood_chip"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["61523773DA8A8372"]
+			disable_toast: true
+			id: "3A35A3762C132C15"
+			tasks: [{
+				id: "5C3D4259A040FD9D"
+				item: "darkerdepths:petrified_planks"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "minecraft:rusted_iron_hammer"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "52B0015D7D0E531F"
+			size: 1.5d
+			tasks: [
+				{
+					id: "38CCC97DF417D319"
+					item: {
+						Count: 1
+						id: "minecraft:rusted_iron_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3B7E194858631C9B"
+					item: {
+						Count: 1
+						id: "minecraft:zinc_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "093C363DC3779902"
+					item: {
+						Count: 1
+						id: "minecraft:gold_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "22F44750E8BDBB16"
+					item: {
+						Count: 1
+						id: "minecraft:iron_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1745CA408D3CC898"
+					item: {
+						Count: 1
+						id: "minecraft:stone_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2F77D0216E3F6A66"
+					item: {
+						Count: 1
+						id: "minecraft:brass_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "55361CF1EBA60A33"
+					item: {
+						Count: 1
+						id: "minecraft:bronze_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5113FB61F8F9A862"
+					item: {
+						Count: 1
+						id: "minecraft:steel_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2DF521752BE9866C"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Hammers"
+			x: -11.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&eWhen you awaken, the future world may already be covered in dust.&r"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "033BB57BC19A2871"
+			size: 1.5d
+			tasks: [{
+				id: "0976505849EE73E9"
+				item: "kubejs:depleted_dirt"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 3.0d
+		}
+	]
 	title: "Survival Note"
 }

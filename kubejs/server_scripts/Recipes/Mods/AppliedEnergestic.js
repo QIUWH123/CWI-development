@@ -1,3 +1,5 @@
+/*
+
 ServerEvents.recipes(event => {
     const colors = [
         'white', 'light_gray', 'gray', 'black', 'lime', 'yellow', 'orange', 'brown', 'red', 'pink', 'magenta', 'purple', 'blue', 'light_blue', 'cyan', 'green'
@@ -22,3 +24,5 @@ ServerEvents.recipes(event => {
         });
     });
 });
+
+*/
