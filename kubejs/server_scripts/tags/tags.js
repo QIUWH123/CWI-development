@@ -494,6 +494,9 @@ ServerEvents.tags('fluid', event => {
 
 // RecipeInputReplacements
 ServerEvents.recipes(event => {
+    event.replaceInput({input: 'createdeco:industrial_iron_ingot'}, 'createdeco:industrial_iron_ingot', 'kubejs:industrial_iron_ingot')
+    event.replaceInput({input: 'createdeco:industrial_iron_sheet'}, 'createdeco:industrial_iron_sheet', 'kubejs:industrial_iron_sheet')
+    event.replaceInput({input: 'createdeco:industrial_iron_nugget'}, 'createdeco:industrial_iron_nugget', 'kubejs:industrial_iron_nugget')
     event.replaceInput({input: 'createdeco:zinc_sheet'}, 'createdeco:zinc_sheet', 'createaddition:zinc_sheet')
     event.replaceInput({input: 'minecraft:string'}, 'minecraft:string', '#cwi:string')
     event.replaceInput({input: 'minecraft:leather'}, 'minecraft:leather', '#cwi:leathers')

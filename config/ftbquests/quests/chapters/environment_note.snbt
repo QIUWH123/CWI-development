@@ -392,12 +392,101 @@
 			id: "033BB57BC19A2871"
 			size: 1.5d
 			tasks: [{
-				id: "0976505849EE73E9"
-				item: "kubejs:depleted_dirt"
-				type: "item"
+				icon: "kubejs:depleted_dirt"
+				id: "592DBEBAF018FD49"
+				observe_type: 0
+				timer: 0L
+				to_observe: "kubejs:depleted_dirt"
+				type: "observation"
 			}]
+			title: "Depleted Dirt"
 			x: -9.5d
 			y: 3.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&eRusted Iron is a cheat and accessable material at the start, can be optained from scrap block&r"]
+			hide_dependency_lines: true
+			icon: "kubejs:rusted_iron_block"
+			id: "4A50B3F60E44489D"
+			subtitle: "Essential Tools for Survival"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				icon: "kubejs:rusted_iron_block"
+				id: "06E77EAC49BA7B1A"
+				type: "dimension"
+			}]
+			title: "Survival Tools"
+			x: -12.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "1B9E9B4590DF4D98"
+			tasks: [{
+				id: "0030B2D2F29BAF9B"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_shovel"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -12.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "278267C48509B7F4"
+			tasks: [{
+				id: "5EF98BE344B53895"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "10BC5553D9D78A57"
+			tasks: [{
+				id: "603B69AD8322B2C6"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "19FB0E0AA89A3169"
+			tasks: [{
+				id: "54148E84516FBAB3"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: -0.5d
 		}
 	]
 	title: "Survival Note"

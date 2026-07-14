@@ -229,6 +229,7 @@ ServerEvents.recipes(event => {
     addStoragePair('kubejs:silver_ingot', 'kubejs:silver_nugget', 9)
     addStoragePair('create:industrial_iron_block', 'kubejs:industrial_iron_ingot', 9)
     addStoragePair('kubejs:industrial_iron_ingot', 'kubejs:industrial_iron_nugget', 9)
+    addStoragePair('minecraft:netherite_ingot', 'kubejs:netherite_nugget', 9)
     addStoragePair('kubejs:molybdenum_block', 'kubejs:molybdenum_ingot', 9)
     addStoragePair('kubejs:molybdenum_ingot', 'kubejs:molybdenum_nugget', 9)
     addStoragePair('kubejs:cobalt_block', 'kubejs:cobalt_ingot', 9)
