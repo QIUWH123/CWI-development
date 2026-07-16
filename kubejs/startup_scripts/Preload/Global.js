@@ -106,6 +106,13 @@ global.oreTypes = [
     ['tfmg:deepslate_lithium_ore', 'tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', true, false]
 ]
 
+global.colors = [
+    'white', 'orange', 'magenta', 'light_blue',
+    'yellow', 'lime', 'pink', 'gray',
+    'light_gray', 'cyan', 'purple', 'blue',
+    'brown', 'green', 'red', 'black'
+]
+
 global.hammers = [
     ['bronze_hammer', 'bronze', 18, 2, 2],
     ['brass_hammer', 'brass', 19, 2, 1],

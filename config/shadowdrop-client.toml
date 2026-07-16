@@ -1,0 +1,55 @@
+
+# Shadow Drop: Configuration
+# (check the mod page for more information on compatibility with other mods)
+#
+[contexts]
+	# Items in hotbar have shadows
+	hotbarEnabled = true
+	# Hotbar shadows are cropped
+	hotbarCropped = true
+	# Items in slots have shadows
+	slotEnabled = true
+	# Slot shadows are cropped
+	slotCropped = true
+	# Items in slots being hovered over have shadows
+	hoverEnabled = true
+	# Items in slots being hovered over are cropped
+	hoverCropped = true
+	# Items carried by the cursor have shadows
+	cursorEnabled = true
+	# Items in GUIs with slots have shadows
+	outsideEnabled = false
+	# Items in GUIs without slots have shadows
+	elsewhereEnabled = true
+
+[appearance]
+	# Shadow color (RGB hex)
+	shadowColor = "#000000"
+	# Shadow opacity (percentage, where 100% is fully opaque, and 0% disables the mod
+	#Range: 0 ~ 100
+	shadowAlpha = 39
+	# Shadow X offset
+	#Range: -4 ~ 4
+	shadowOffsetX = 1
+	# Shadow Y offset
+	#Range: -4 ~ 4
+	shadowOffsetY = 1
+
+[slotDetection]
+	# List of RGB hex colours for detection of visual slots
+	# This colour is searched for in the bottom-right corner pixel wherever an item is rendered
+	# Adjust for compatibility with resource packs or modded GUIs where this pixel is not #FFFFFF
+	slotBrColors = ["#FFFFFF"]
+
+[exceptions]
+	# List of items with half shadow alpha (e.g. "#forge:glass", "minecraft:glass")
+	translucentItems = ["#forge:glass", "#forge:glass_panes", "minecraft:beacon"]
+	# List of items with no shadow (e.g. "#forge:glass", "minecraft:glass")
+	transparentItems = []
+
+[advanced]
+	# Force refresh of the depth buffer when rendering shadows
+	# Fixes shadow rendering in some places (such as square shadows or shadows overlapping incorrectly)
+	# May break rendering elsewhere!
+	forceDepthRefresh = false
+

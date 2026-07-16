@@ -1,5 +1,3 @@
-// Catalyst Blocks Registry
-
 StartupEvents.registry('block', event => {
 
 // Register Fan Catalysts By Material

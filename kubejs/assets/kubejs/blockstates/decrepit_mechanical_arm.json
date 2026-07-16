@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      { "model": "kubejs:block/decrepit_mechanical_arm/decrepit_mechanical_arm", "weight": 1 },
+      { "model": "kubejs:block/decrepit_mechanical_arm/decrepit_mechanical_arm1", "weight": 1 },
+      { "model": "kubejs:block/decrepit_mechanical_arm/decrepit_mechanical_arm2", "weight": 1 }
+    ]
+  }
+}
