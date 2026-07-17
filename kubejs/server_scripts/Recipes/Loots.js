@@ -393,6 +393,37 @@ LootJS.modifiers((event) => {
 
 LootJS.modifiers((event) => {
 
+    event.addBlockLootModifier(`kubejs:small_pile_of_shafts`)
+        .replaceLoot(`kubejs:small_pile_of_shafts`, 'create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+
+    event.addBlockLootModifier(`kubejs:pile_of_shafts`)
+        .replaceLoot(`kubejs:pile_of_shafts`, 'create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+
+    event.addBlockLootModifier(`kubejs:large_pile_of_shafts`)
+        .replaceLoot(`kubejs:large_pile_of_shafts`, 'create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+        .addLoot('create:shaft')
+
     global.pipePileDefinitions.forEach(([pipeId, texturePath, hardness, resistance, soundType, miningType, toolLevel, pipes]) => {
         
         event.addBlockLootModifier(`kubejs:small_pile_of_${pipeId}_pipes`)
