@@ -6,15 +6,16 @@ const LOCKED = 1
 // Basic Weapon Lockpicking Configs
 
 const lockPickConfigs = {
-    "minecraft:iron_sword":       { successChance: 0.1, durabilityCost: 3 },
-    "minecraft:diamond_sword":    { successChance: 0.2, durabilityCost: 2 },
-    "minecraft:netherite_sword":  { successChance: 0.3, durabilityCost: 1 }
+    "minecraft:iron_sword":       { successChance: 0.02, durabilityCost: 3 },
+    "minecraft:diamond_sword":    { successChance: 0.20, durabilityCost: 2 },
+    "minecraft:netherite_sword":  { successChance: 0.30, durabilityCost: 1 }
 }
 
 // Core Lockpicking Event
 
-BlockEvents.rightClicked(event => {
-    const { player, block, level } = event
+BlockEvents.rightClicked(e => {
+    const { player, block, level } = e
+
     // Skip Crate Blocks
     if (block.id.endsWith("_crate")) return
 
@@ -35,6 +36,7 @@ BlockEvents.rightClicked(event => {
     if (lockValue === UNLOCKED) {
         level.spawnParticles('minecraft:falling_dust minecraft:gravel', true, block.x + 0.5, block.y + 0.8, block.z + 0.5, 0.25, 0.1, 0.25, 12, 0)
         level.spawnParticles('minecraft:campfire_cosy_smoke', true, block.x + 0.5, block.y + 0.8, block.z + 0.5, 0.25, 0.1, 0.25, 3, 0)
+
         if (Math.random() < 0.1) {
             const silverfish = level.createEntity("minecraft:silverfish")
             silverfish.setPosition(block.x + 0.5 + Math.random() / 4, block.y + 0.9, block.z + 0.5 + Math.random() / 4)
@@ -48,7 +50,7 @@ BlockEvents.rightClicked(event => {
     if (!config) {
         player.setStatusMessage(Component.translate("message.kubejs.no_lockpick"))
         level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.chain.break", "neutral", 1.0, 0.8)
-        event.cancel()
+        e.cancel()
         return
     }
 
@@ -67,5 +69,5 @@ BlockEvents.rightClicked(event => {
     // Common Operations: Durability Cost, Trapdoor Sound, Item Cooldown, Cancel Event
     player.damageHeldItem("main_hand", config.durabilityCost)
     level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.iron_trapdoor.close", "neutral", 2.0, 1.2)
-    event.cancel()
+    e.cancel()
 })

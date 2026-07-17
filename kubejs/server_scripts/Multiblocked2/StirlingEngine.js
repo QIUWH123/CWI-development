@@ -1,11 +1,17 @@
+// Imports
+
 const $IMachine = Java.loadClass('com.lowdragmc.mbd2.api.machine.IMachine')
 const $BlazeBurnerBlock = Java.loadClass('com.simibubi.create.content.processing.burner.BlazeBurnerBlock')
+
+// Direction Offsets For Particle Positions
 
 const directionOffsets = {}
 directionOffsets[Direction.NORTH] = [-0.1, 0.4, 1.1, 0.8, -0.1, 0.8, 1.1, 0.4]
 directionOffsets[Direction.EAST]  = [0.6, -0.1, 0.2, 1.1, 0.2, -0.1, 0.6, 1.1]
 directionOffsets[Direction.SOUTH] = [-0.1, 0.2, 1.1, 0.6, -0.1, 0.6, 1.1, 0.2]
 directionOffsets[Direction.WEST]  = [0.8, -0.1, 0.4, 1.1, 0.4, -0.1, 0.8, 1.1]
+
+// Update Machine Speed And State
 
 function updateMachine(machine) {
     const level = machine.getLevel()
@@ -35,6 +41,8 @@ function updateMachine(machine) {
     machine.customData.putInt('rpm', targetRPM)
 }
 
+// On Machine Placed
+
 MBDMachineEvents.onPlaced('cwi:stirling_engine', event => {
     const machine = event.getEvent().getMachine()
     machine.getLevel().getServer().scheduleInTicks(1, () => {
@@ -48,9 +56,13 @@ MBDMachineEvents.onPlaced('cwi:stirling_engine', event => {
     })
 })
 
+// On Neighbor Changed
+
 MBDMachineEvents.onNeighborChanged('cwi:stirling_engine', event => {
     updateMachine(event.getEvent().getMachine())
 })
+
+// On Machine Tick
 
 MBDMachineEvents.onTick('cwi:stirling_engine', event => {
     if (globalTickCounter % 20) return

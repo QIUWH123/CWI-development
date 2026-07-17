@@ -1,6 +1,14 @@
 global.debugUserName = [
-    "QIUWH"
+    "QIUWH",
+    "Liaux_awa"
 ]
+
+PlayerEvents.loggedIn(event => {
+    const { player, server } = event
+    if (player.username === "Liaux_awa") {
+        
+    }
+})
 
 ItemEvents.rightClicked((event) => {
     let {item, player} = event

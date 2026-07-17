@@ -1,3 +1,5 @@
+// Block Conversion Helpers
+
 function addBlockConversion(input, target, stage, drops) {
     global.blockConversions[input] = {
         target: target,
@@ -13,11 +15,17 @@ function addDepotConversion(input, target, stage) {
     }
 }
 
+// Initialize Conversion Maps
+
 global.blockConversions = {}
 global.depotConversions = {}
 
+// Basic Block Conversions
+
 addBlockConversion('minecraft:smooth_basalt', 'kubejs:cobbled_basalt')
 addBlockConversion('minecraft:obsidian', 'minecraft:obsidian')
+
+// Stone Type Conversions
 
 global.stoneTypes.forEach(function(stone) {
     const types = stone.types
@@ -27,6 +35,8 @@ global.stoneTypes.forEach(function(stone) {
         { item: types[3], chance: 0.75, count: 4 }
     ])
 })
+
+// Ore Type Conversions
 
 global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
     const cobbleTarget = isDeepslate ? 'minecraft:cobbled_deepslate' : 'minecraft:cobblestone'
@@ -39,6 +49,8 @@ global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) 
         { item: dropOreId, chance: mergedChance, count: totalEntries }
     ])
 })
+
+// Special Block Conversions
 
 addBlockConversion('kubejs:dark_ash_stone', 'air', 1, [
     { item: 'kubejs:dark_ash', chance: 0.75, count: 4 }
@@ -76,6 +88,8 @@ addBlockConversion('kubejs:small_scrap_block', 'air', 1, [
     { item: 'tfmg:rebar', chance: 0.25, count: 3 },
     { item: 'kubejs:ash', chance: 0.5, count: 2 }
 ])
+
+// Depot Conversions
 
 addDepotConversion('minecraft:raw_iron', 'create:crushed_raw_iron', 2)
 addDepotConversion('minecraft:raw_gold', 'create:crushed_raw_gold', 3)

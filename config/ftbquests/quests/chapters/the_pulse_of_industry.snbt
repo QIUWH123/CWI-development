@@ -27,6 +27,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			hide_dependent_lines: true
 			id: "497B62C9B689DE39"
 			invisible: true
 			shape: "gear"
@@ -82,7 +83,7 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["68EF942EB6D8901B"]
+			dependencies: ["497B62C9B689DE39"]
 			disable_toast: true
 			id: "4D08D43112F8E50A"
 			shape: "hexagon"

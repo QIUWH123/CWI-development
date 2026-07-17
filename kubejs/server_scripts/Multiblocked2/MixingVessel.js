@@ -1,3 +1,5 @@
+// Mixing Vessel Recipes
+
 global.mixingVesselRecipes = [
     {
         id: 'cwi:mixing_vessel/sulfur_copper_catalyst',
@@ -109,6 +111,8 @@ global.mixingVesselRecipes = [
     }
 ]
 
+// Mixing Vessel Recipe Registration
+
 ServerEvents.recipes(event => {
     global.mixingVesselRecipes.forEach(recipe => {
         let builder = event.recipes.cwi.mixing_vessel_mixing()
@@ -163,6 +167,8 @@ ServerEvents.recipes(event => {
         }
     })
 })
+
+// Mixing Vessel Speed Modifier
 
 MBDMachineEvents.onBeforeRecipeModify("cwi:mixing_vessel", (event) => {
     let { machine, recipe } = event.getEvent()

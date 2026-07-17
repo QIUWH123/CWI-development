@@ -43,17 +43,6 @@ StartupEvents.registry('block', event => {
         'copper', 'constantan', 'zinc', 'aluminum'
     ]
 
-// Pipe Pile Definitions
-
-    const pipePileDefinitions = [
-        ['steel',     'tfmg:block/steel_pipes',      6, 7, 'metal', 'pickaxe', 'stone'],
-        ['cast_iron', 'tfmg:block/cast_iron_pipes',  4, 6, 'metal', 'pickaxe', 'stone'],
-        ['brass',     'tfmg:block/brass_pipes',      3, 6, 'metal', 'pickaxe', 'stone'],
-        ['copper',    'kubejs:block/model/pipes',    3, 6, 'metal', 'pickaxe', 'stone'],
-        ['aluminum',  'tfmg:block/aluminum_pipes',   3, 6, 'metal', 'pickaxe', 'stone'],
-        ['plastic',   'tfmg:block/plastic_pipes',    2, 2, 'metal', 'pickaxe', 'stone']
-    ]
-
 // Panel Definitions
 
     const panelDefinitions = [
@@ -149,16 +138,15 @@ StartupEvents.registry('block', event => {
 
 // Pipe Piles
 
-    pipePileDefinitions.forEach(([pipeId, texturePath, hardness, resistance, soundType, miningType, toolLevel]) => {
-        const blockTags = [`minecraft:mineable/${miningType}`, `minecraft:needs_${toolLevel}_tool`]
-
-        ;['small_pile', 'pile', 'large_pile'].forEach(pileSize => {
+    global.pipePileDefinitions.forEach(([pipeId, texturePath, hardness, resistance, soundType, miningType, toolLevel, pipes]) => {
+    
+        ['small_pile', 'pile', 'large_pile'].forEach(pileSize => {
             registerBlock(`${pileSize}_of_${pipeId}_pipes`, {
                 blockType: 'cardinal',
                 soundType: soundType,
                 hardness: hardness,
                 resistance: resistance,
-                blockTags: blockTags,
+                blockTags: [`minecraft:mineable/${miningType}`, `minecraft:needs_${toolLevel}_tool`],
                 modelJson: {
                     parent: `kubejs:block/pipe_piles/${pileSize}_of_pipes`,
                     textures: { '0': texturePath }

@@ -4,14 +4,14 @@
 	"textures": {
 		"0": "create:block/axis_top",
 		"1": "create:block/axis",
-		"particle": "#1"
+		"particle": "create:block/axis"
 	},
 	"elements": [
 		{
 			"name": "Axis",
-			"from": [0, 0, 0],
-			"to": [4, 4, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [2, 2, 8]},
+			"from": [1, 0, 0],
+			"to": [5, 4, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 2, 8]},
 			"faces": {
 				"north": {"uv": [6, 6, 10, 10], "texture": "#0"},
 				"east": {"uv": [6, 0, 10, 16], "rotation": 270, "texture": "#1"},

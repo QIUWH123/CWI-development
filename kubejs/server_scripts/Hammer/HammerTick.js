@@ -1,9 +1,14 @@
+// Hammer Requirements And Max Stage
+
 let HAMMER_REQUIREMENTS = {}
 let HAMMER_MAX_STAGE = {}
+
 global.hammers.forEach(function(arr) {
     HAMMER_REQUIREMENTS['minecraft:' + arr[0]] = arr[2]
     HAMMER_MAX_STAGE['minecraft:' + arr[0]] = arr[3] || 3
 })
+
+// Player Tick For Hammer Charge Display
 
 PlayerEvents.tick(function(event) {
     let player = event.player
@@ -20,6 +25,7 @@ PlayerEvents.tick(function(event) {
     }
 
     let remaining = player.getUseItemRemainingTicks()
+
     if (remaining <= 0) {
         data.chargedHammer_charging = false
         if (mainHand.nbt && mainHand.nbt.CustomModelData !== 0) {
@@ -36,6 +42,7 @@ PlayerEvents.tick(function(event) {
     if (targetModel !== currentModel) {
         mainHand.nbt = Object.assign({}, mainHand.nbt || {}, { CustomModelData: targetModel })
         player.setItemInHand('main_hand', mainHand)
+
         if (targetModel > currentModel && !event.level.isClientSide()) {
             event.level.playSound(null, player.x, player.y, player.z, 'minecraft:item.trident.return', 'players', 1, 1.5)
         }
