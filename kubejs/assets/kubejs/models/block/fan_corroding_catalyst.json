@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "kubejs:block/fan_catalyst/fan_catalyst_steel",
 		"particle": "#0",
-		"content": "tfmg:fluid/sulfuric_acid_still"
+		"content": "kubejs:fluid/sulfuric_acid_still"
 	},
 	"elements": [
 		{

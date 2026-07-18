@@ -10,7 +10,7 @@
     "fluid": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "tfmg:sulfuric_acid",
+        "Name": "kubejs:sulfuric_acid",
         "Properties": {
           "level": "0"
         }

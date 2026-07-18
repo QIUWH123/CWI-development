@@ -41,6 +41,6 @@ StartupEvents.postInit((event) => {
         );
     }
 
-    blockGen('iron_ore', 'iron_block', 'tfmg:concentrated_sulfuric_acid')
+    blockGen('iron_ore', 'iron_block', 'kubejs:concentrated_sulfuric_acid')
 })
 */

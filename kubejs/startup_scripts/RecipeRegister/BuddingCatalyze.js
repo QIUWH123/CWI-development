@@ -63,7 +63,7 @@ global.buddingGrowRecipes = [
         id: "kubejs:amber_evolution",
         fluidInput: [
             { id: "minecraft:water", amount: 200, chance: 0.1, multiplier: 1 },
-            { id: "tfmg:sulfuric_acid",  amount: 50,  chance: 0.5, multiplier: 1 },
+            { id: "kubejs:sulfuric_acid",  amount: 50,  chance: 0.5, multiplier: 1 },
             { id: "tfmg:ethylene", amount: 50, chance: 0.75, multiplier: 1 }
         ],
         blockInput: "darkerdepths:porous_petrified_log",

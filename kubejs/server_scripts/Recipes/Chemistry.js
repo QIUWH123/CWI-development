@@ -243,7 +243,7 @@ ServerEvents.recipes(event => {
         ],
         "ingredients": [
             {"item": "ratatouille:salt", "count": 3},
-            {"fluid": "tfmg:sulfuric_acid", "amount": 1000}
+            {"fluid": "kubejs:sulfuric_acid", "amount": 1000}
         ],
         "machines": [],
         "minSize": 1,
@@ -454,7 +454,7 @@ ServerEvents.recipes(event => {
             {"fluid": "kubejs:benzene", "amount": 250},
             {"fluid": "tfmg:propylene", "amount": 250},
             {"fluid": "tfmg:air", "amount": 250},
-            {"fluid": "tfmg:sulfuric_acid", "amount": 50}
+            {"fluid": "kubejs:sulfuric_acid", "amount": 50}
         ],
         "machines": [],
         "minSize": 1,
@@ -820,7 +820,7 @@ ServerEvents.recipes(event => {
         "results": [
             {"item": "kubejs:lead_powder", "count": 8},
             {"item": "tfmg:sulfur_dust", "count": 2},
-            {"fluid": "tfmg:sulfuric_acid", "amount": 250},
+            {"fluid": "kubejs:sulfuric_acid", "amount": 250},
             {"fluid": "kubejs:distilled_water", "amount": 250}
         ]
     })

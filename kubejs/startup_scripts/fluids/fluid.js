@@ -52,7 +52,7 @@ function registerGas(event, name, color) {
 
 // Molten Metals Data
 
-var moltenMetals = [
+global.moltenMetals = [
     ['molten_aluminum', 0xE8FAFF],
     ['molten_vanadium', 0xEDE8ED],
     ['molten_tin', 0xC5E3FF],
@@ -82,7 +82,7 @@ var moltenMetals = [
 
 // Special Fluids Data
 
-var specialFluids = [
+global.specialFluids = [
     ['redstone_acid', null, null, 'kubejs:fluid/redstone_acid_still', 'kubejs:fluid/redstone_acid_flow', {
         layer0: 'kubejs:item/fluid_container',
         layer1: 'kubejs:item/_',
@@ -103,16 +103,21 @@ var specialFluids = [
         layer1: 'kubejs:item/_',
         layer2: 'kubejs:item/fluids/fine_pulp'
     }],
-    ['tfmg:concentrated_sulfuric_acid', null, null, 'kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow', {
+    ['kubejs:concentrated_sulfuric_acid', null, null, 'kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow', {
         layer0: 'kubejs:item/fluid_container',
         layer1: 'kubejs:item/_',
         layer2: 'kubejs:item/fluids/concentrated_sulfuric_acid'
+    }],
+    ['kubejs:sulfuric_acid', null, null, 'kubejs:fluid/sulfuric_acid_still', 'kubejs:fluid/sulfuric_acid_flow', {
+        layer0: 'kubejs:item/fluid_container',
+        layer1: 'kubejs:item/_',
+        layer2: 'kubejs:item/fluids/sulfuric_acid'
     }]
 ]
 
 // Normal Fluids Data
 
-var normalFluids = [
+global.normalFluids = [
     ['condensed_air', 0xFFFFFF, 'thick'],
     ['syrup', 0xD4BE5D, 'thick'],
     ['wheat_juice', 0xD4BE5D, 'thick'],
@@ -169,7 +174,7 @@ var normalFluids = [
 
 // Gases Data
 
-var gases = [
+global.gases = [
     ['oxygen', 0xFAFFFA],
     ['nitrogen', 0xD0E0F0],
     ['nitrogen_dioxide', 0xF08060],
@@ -196,11 +201,11 @@ var gases = [
 // Fluid Registry
 
 StartupEvents.registry('fluid', function (event) {
-    moltenMetals.forEach(function (entry) {
+    global.moltenMetals.forEach(function (entry) {
         registerMoltenMetal(event, entry[0], entry[1])
     })
 
-    specialFluids.forEach(function (entry) {
+    global.specialFluids.forEach(function (entry) {
         registerFluid(event, entry[0], null, null, {
             still: entry[3],
             flowing: entry[4],
@@ -208,17 +213,17 @@ StartupEvents.registry('fluid', function (event) {
         })
     })
 
-    normalFluids.forEach(function (entry) {
+    global.normalFluids.forEach(function (entry) {
         registerFluid(event, entry[0], entry[1], entry[2])
     })
 
-    gases.forEach(function (entry) {
+    global.gases.forEach(function (entry) {
         registerGas(event, entry[0], entry[1])
     })
 })
 
 BlockEvents.modification(event => {
-    moltenMetals.forEach(([id,_]) => {
+    global.moltenMetals.forEach(([id,_]) => {
         event.modify(`kubejs:${id}`, block => {
             block.lightEmission = 12
         })

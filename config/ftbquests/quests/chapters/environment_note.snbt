@@ -921,7 +921,7 @@
 			subtitle: "Better Treatment Fluid"
 			tasks: [{
 				id: "0B95F908194F6666"
-				item: "tfmg:sulfuric_acid_bucket"
+				item: "kubejs:sulfuric_acid_bucket"
 				type: "item"
 			}]
 			x: 4.0d

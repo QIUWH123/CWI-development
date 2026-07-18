@@ -370,15 +370,6 @@ ServerEvents.tags('block', event => {
         'fluid:fluid_atomizer',
         'create_connected:fluid_vessel'
     ])
-
-// CorrosiveFluidsBlock
-    event.add('cwi:corrosive', [
-        'tfmg:sulfuric_acid',
-        'tfmg:concentrated_sulfuric_acid'
-    ])
-
-// HotFluidsBlock
-    event.add('cwi:hot', moltenHotFluids)
 })
 
 // MiningToolTags
@@ -444,10 +435,10 @@ ServerEvents.tags('fluid', event => {
 
 // AcidFluids
     event.add('kubejs:acid', [
-        'kubejs:redstone_acid', 'tfmg:concentrated_sulfuric_acid', 'kubejs:nitric_acid',
+        'kubejs:redstone_acid', 'kubejs:concentrated_sulfuric_acid', 'kubejs:nitric_acid',
         'kubejs:muriatic_acid', 'kubejs:acetic_acid', 'kubejs:propionic_acid',
         'kubejs:lactic_acid', 'kubejs:wood_vinegar', 'kubejs:humic_acid_slurry',
-        'kubejs:chromatic_waste'
+        'kubejs:chromatic_waste', 'kubejs:sulfuric_acid'
     ])
 
 // BaseFluids

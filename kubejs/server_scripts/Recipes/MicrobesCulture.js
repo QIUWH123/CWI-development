@@ -85,7 +85,7 @@ ServerEvents.recipes(event => {
             event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
             event.recipes.create.deploying(acidolys_transition, [acidolys_transition, 'kubejs:pyrite_powder']),
             event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:oxygen', 200)]),
-            event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('tfmg:sulfuric_acid', 500)])
+            event.recipes.create.filling(acidolys_transition, [acidolys_transition, Fluid.of('kubejs:sulfuric_acid', 500)])
         ]
     ).transitionalItem(acidolys_transition).loops(1)
 
