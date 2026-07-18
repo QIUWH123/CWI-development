@@ -1,5 +1,5 @@
 ServerEvents.loaded((event) => {
-  const { server } = event;
+  const { server } = event
   if (server.persistentData.getBoolean('first_loaded')) return
     server.persistentData.putBoolean('first_loaded', true)
     server.gameRules.set('keepInventory', 'true')

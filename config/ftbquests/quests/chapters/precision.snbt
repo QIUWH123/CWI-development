@@ -107,6 +107,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			hide_dependent_lines: true
 			id: "32BA01C17B48E245"
 			invisible: true
 			shape: "gear"
@@ -125,43 +126,51 @@
 			description: [
 				"&eBrass is the foundation for any mechanism that demands accuracy. &r"
 				""
-				"&eSmelt copper and zinc dust together, and you’ll have a material that turns crude contraptions into real machines.&r"
+				"&eSmelt copper and zinc dust together, and you'll have a material that turns crude contraptions into real machines.&r"
 			]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "51B224D51AE9FFAD"
 			shape: "square"
+			subtitle: "The Alloy of Precision"
 			tasks: [{
 				id: "3AF05ADCD1A40C7F"
 				item: "create:brass_ingot"
 				type: "item"
 			}]
+			title: "Brass Ingot"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["68973D217B4EDAB9"]
+			description: ["&eA casing made from brass. Used for more advanced machinery than andesite.&r"]
 			id: "12887B78FD9C72DA"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Casing for Precision"
 			tasks: [{
 				id: "59554561A9869559"
 				item: "create:brass_casing"
 				type: "item"
 			}]
+			title: "Brass Casing"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			description: ["&eAn alloy of copper and tin. Stronger than brass, suitable for tools and armor.&r"]
 			disable_toast: true
 			id: "549E4EE23C1A3AB8"
 			shape: "square"
+			subtitle: "Stronger Alloy"
 			tasks: [{
 				id: "62800B31CA89B1CA"
 				item: "kubejs:bronze_ingot"
 				type: "item"
 			}]
+			title: "Bronze Ingot"
 			x: 8.0d
 			y: -2.0d
 		}
@@ -189,6 +198,7 @@
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
+			title: "Precision Mechanism"
 			x: 4.0d
 			y: 0.0d
 		}
@@ -212,19 +222,23 @@
 				item: "kubejs:precise_machine"
 				type: "item"
 			}]
+			title: "Precise Machine Core"
 			x: 6.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			description: ["&eA reinforced version of iron. Hard and durable.&r"]
 			disable_toast: true
 			id: "612A2B07C4F613E6"
 			shape: "square"
+			subtitle: "Heavy Duty"
 			tasks: [{
 				id: "3D58417254FBFD77"
 				item: "kubejs:industrial_iron_ingot"
 				type: "item"
 			}]
+			title: "Industrial Iron Ingot"
 			x: 8.0d
 			y: 0.0d
 		}
@@ -249,30 +263,37 @@
 				item: "createaddition:straw"
 				type: "item"
 			}]
+			title: "Straw"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["61B2E0C63F00A944"]
+			description: ["&eA mechanism that harnesses steam pressure to generate mechanical power. Used for engines and advanced tools.&r"]
 			disable_toast: true
 			id: "3CC959E1243E962E"
+			subtitle: "Steam Power"
 			tasks: [{
 				id: "2086A44BD5849958"
 				item: "kubejs:steam_mechanism"
 				type: "item"
 			}]
+			title: "Steam Mechanism"
 			x: 12.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["612A2B07C4F613E6"]
+			description: ["&eA precision-machined piston. Used in stirling engines, steam mechanisms, and jetpacks.&r"]
 			disable_toast: true
 			id: "61B2E0C63F00A944"
+			subtitle: "Precision Machined"
 			tasks: [{
 				id: "0128972083BC8E2E"
 				item: "createdieselgenerators:engine_piston"
 				type: "item"
 			}]
+			title: "Engine Piston"
 			x: 10.0d
 			y: -2.0d
 		}
@@ -281,15 +302,18 @@
 				"233D8C38E18799CF"
 				"25C5F3ED706FFA9C"
 			]
+			description: ["&eA machine for turning and shaping metals. Uses blades to cut precise profiles.&r"]
 			disable_toast: true
 			id: "7A7EB90A68EA8845"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Metal Turning"
 			tasks: [{
 				id: "40EB2155EC2FD3DA"
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
+			title: "Lathe"
 			x: 12.0d
 			y: 4.0d
 		}
@@ -304,6 +328,7 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
+			title: "Polished Rose Quartz"
 			x: 0.0d
 			y: 2.0d
 		}
@@ -317,12 +342,13 @@
 			id: "00C03DD3A3903E7C"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "An Artificial Arm"
+			subtitle: "An Artificial Hand"
 			tasks: [{
 				id: "200F0D7440714DA2"
 				item: "create:deployer"
 				type: "item"
 			}]
+			title: "Deployer"
 			x: 4.0d
 			y: 2.0d
 		}
@@ -343,32 +369,39 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
+			title: "Electron Tube"
 			x: 0.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["53BF409251D93EE1"]
+			description: ["&eA mechanical crafting table that automates complex recipes. Uses multiple slots and sequenced assembly.&r"]
 			disable_toast: true
 			id: "7B2506C2B1F67B51"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Automated Crafting"
 			tasks: [{
 				id: "627A0E815A3D5CF0"
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
+			title: "Mechanical Crafter"
 			x: 6.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["51B224D51AE9FFAD"]
+			description: ["&eBrass ingot pressed into a thin sheet. Used for casings and precision components.&r"]
 			disable_toast: true
 			id: "68973D217B4EDAB9"
+			subtitle: "Thin Brass"
 			tasks: [{
 				id: "2AE30EC30861415E"
 				item: "create:brass_sheet"
 				type: "item"
 			}]
+			title: "Brass Sheet"
 			x: 2.0d
 			y: 0.0d
 		}
@@ -379,22 +412,27 @@
 				"148115A10C1A0F03"
 				"7B2506C2B1F67B51"
 			]
+			description: ["&eWinds wire into coiled springs. Produces springs used in lathes and other precision machinery.&r"]
 			disable_toast: true
 			id: "6D37805074F5C079"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Spring Production"
 			tasks: [{
 				id: "1FE568FEC7D2BB58"
 				item: "vintageimprovements:spring_coiling_machine"
 				type: "item"
 			}]
+			title: "Spring Coiling Machine"
 			x: 8.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["00C03DD3A3903E7C"]
+			description: ["&eRobotic components used to assemble a full mechanical arm.&r"]
 			disable_toast: true
 			id: "3CD9A2ACE4B55909"
+			subtitle: "Mechanical Parts"
 			tasks: [
 				{
 					id: "3E90D9CF5FF5250C"
@@ -407,6 +445,7 @@
 					type: "item"
 				}
 			]
+			title: "Robot Hand and Arm"
 			x: 4.0d
 			y: 4.0d
 		}
@@ -415,27 +454,33 @@
 				"3CD9A2ACE4B55909"
 				"7D38C4D9ED31E904"
 			]
+			description: ["&eA fully articulated mechanical arm. Moves items between inventories with precision.&r"]
 			disable_toast: true
 			id: "3BE4C9ED2CFB6296"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Item Transport"
 			tasks: [{
 				id: "1DE9C406DBAB9576"
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
+			title: "Mechanical Arm"
 			x: 6.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["612A2B07C4F613E6"]
+			description: ["&eA blade made from industrial iron. Fits onto a lathe for cutting metals.&r"]
 			disable_toast: true
 			id: "148115A10C1A0F03"
+			subtitle: "Lathe Tool"
 			tasks: [{
 				id: "7F4CF1DCFA09C614"
 				item: "kubejs:industrial_iron_blade"
 				type: "item"
 			}]
+			title: "Industrial Iron Blade"
 			x: 8.0d
 			y: 2.0d
 		}
@@ -455,6 +500,7 @@
 				item: "create:rose_quartz"
 				type: "item"
 			}]
+			title: "Rose Quartz"
 			x: -2.0d
 			y: 2.0d
 		}
@@ -478,26 +524,32 @@
 				item: "create_connected:control_chip"
 				type: "item"
 			}]
+			title: "Control Chip"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["36EB97B842C0099F"]
+			description: ["&eA sheet made from heated powdered obsidian. Used for railway casings and sturdy components.&r"]
 			disable_toast: true
 			id: "59C14FA285FD0CD7"
+			subtitle: "Obsidian Plate"
 			tasks: [{
 				id: "35D77ACFED239955"
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
+			title: "Sturdy Sheet"
 			x: 2.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["549E4EE23C1A3AB8"]
+			description: ["&eArmor made from bronze. Tougher than iron.&r"]
 			disable_toast: true
 			id: "02E7571BE326FB95"
 			shape: "diamond"
+			subtitle: "Tougher Armor"
 			tasks: [
 				{
 					id: "077583A3707AA4B0"
@@ -544,20 +596,24 @@
 					type: "item"
 				}
 			]
+			title: "Bronze Armor"
 			x: 10.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			description: ["&eA control panel for trains. Allows manual operation of train movement.&r"]
 			disable_toast: true
 			id: "67A795C95E8DA367"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Manual Operation"
 			tasks: [{
 				id: "2CC1833B7C4E8D5A"
 				item: "create:controls"
 				type: "item"
 			}]
+			title: "Train Controls"
 			x: 0.0d
 			y: -4.0d
 		}
@@ -566,51 +622,62 @@
 				"68973D217B4EDAB9"
 				"59C14FA285FD0CD7"
 			]
+			description: ["&eA casing made from sturdy sheet and brass. Foundation for railway equipment.&r"]
 			disable_toast: true
 			id: "2812D99E5A60DF15"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Train Foundation"
 			tasks: [{
 				id: "0688432FA30EA4CE"
 				item: "create:railway_casing"
 				type: "item"
 			}]
+			title: "Railway Casing"
 			x: 0.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			description: ["&eControl Train Direction and emits redstone signals based on train positions. Used for railway control.&r"]
 			disable_toast: true
 			id: "28BD3950F860F78C"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Railway Signal"
 			tasks: [{
 				id: "05A4B3D9B1F217E0"
 				item: "create:track_signal"
 				type: "item"
 			}]
+			title: "Track Signal"
 			x: -2.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			description: ["&eA station block for trains. Allows trains to stop and be scheduled.&r"]
 			disable_toast: true
 			id: "6CE800627DED4C1F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Train Stop"
 			tasks: [{
 				id: "5CD0F39DC3538CDD"
 				item: "create:track_station"
 				type: "item"
 			}]
+			title: "Track Station"
 			x: 2.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["549E4EE23C1A3AB8"]
+			description: ["&eTools made from bronze. More durable than iron tools.&r"]
 			disable_toast: true
 			id: "6D2CAE4E440B1120"
 			shape: "diamond"
+			subtitle: "Durable Tools"
 			tasks: [
 				{
 					id: "7B5F334AFDE5BB7B"
@@ -668,28 +735,34 @@
 					type: "item"
 				}
 			]
+			title: "Bronze Tools"
 			x: 8.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["4A993A8E3CFDEC82"]
+			description: ["&eA drill powered by mechanical energy. Can break through hardened blocks.&r"]
 			disable_toast: true
 			id: "7E7168763D8B3AAE"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Hard Block Breaker"
 			tasks: [{
 				id: "44D7F3BF3197A7AE"
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
+			title: "Mechanical Drill"
 			x: 12.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["3CC959E1243E962E"]
+			description: ["&eA chestplate equipped with a brass jetpack. Allows short bursts of flight.&r"]
 			disable_toast: true
 			id: "1179AACAA33B2ACB"
 			shape: "diamond"
+			subtitle: "Short Flight"
 			tasks: [{
 				id: "1A34A2FCF9D0B78F"
 				item: {
@@ -699,14 +772,17 @@
 				}
 				type: "item"
 			}]
+			title: "Brass Jetpack"
 			x: 12.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["3CC959E1243E962E"]
+			description: ["&eA brass exoskeleton that enhances carrying capacity and movement.&r"]
 			disable_toast: true
 			id: "73448C27E377A62B"
 			shape: "diamond"
+			subtitle: "Enhanced Strength"
 			tasks: [{
 				id: "7984A95493018473"
 				item: {
@@ -716,11 +792,12 @@
 				}
 				type: "item"
 			}]
+			title: "Brass Exoskeleton"
 			x: 14.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["612A2B07C4F613E6"]
+			dependencies: ["32BA01C17B48E245"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "47D86B0C09158DB9"
@@ -737,16 +814,17 @@
 		}
 		{
 			dependencies: ["7E7168763D8B3AAE"]
+			description: [""]
 			disable_toast: true
 			id: "7268A2EB9AEE52C0"
 			shape: "gear"
 			size: 2.75d
-			subtitle: "Could Only Be Break From Drills"
 			tasks: [{
 				id: "785EEF5C44B50847"
 				item: "kubejs:steel_armor_block"
 				type: "item"
 			}]
+			title: "Armored Door"
 			x: 15.0d
 			y: 0.0d
 		}
@@ -755,35 +833,43 @@
 				"233D8C38E18799CF"
 				"3A8590545AC9E328"
 			]
+			description: ["&eApplies pressure to materials. Used to process magma and other substances.&r"]
 			disable_toast: true
 			id: "64100A05BE92A991"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Pressure Application"
 			tasks: [{
 				id: "34294E6204408536"
 				item: "rubberworks:compressor"
 				type: "item"
 			}]
+			title: "Compressor"
 			x: 12.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["7A7EB90A68EA8845"]
+			description: ["&eA drill head made from industrial iron.&r"]
 			disable_toast: true
 			id: "4A993A8E3CFDEC82"
+			subtitle: "Drill Attachment"
 			tasks: [{
 				id: "5DF6C6FA6DB8F89A"
 				item: "kubejs:industrial_iron_drill_head"
 				type: "item"
 			}]
+			title: "Industrial Iron Drill Head"
 			x: 14.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["4A993A8E3CFDEC82"]
+			description: ["&eA portable drill that can be carried and used by hand.&r"]
 			disable_toast: true
 			id: "34269C4BA12E6891"
 			shape: "diamond"
+			subtitle: "Handheld Drill"
 			tasks: [{
 				id: "775CE69D73B1F2A2"
 				item: {
@@ -793,36 +879,36 @@
 				}
 				type: "item"
 			}]
+			title: "Portable Drill"
 			x: 16.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["7A7EB90A68EA8845"]
+			dependencies: ["32BA01C17B48E245"]
+			description: ["&eTools shaped by a lathe. Propeller and whisk for mixing applications.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
+			icon: "create:whisk"
 			id: "5C8B8FCFF3830E1D"
 			shape: "diamond"
-			tasks: [
-				{
-					id: "6096BE933356F57D"
-					item: "create:propeller"
-					type: "item"
-				}
-				{
-					id: "797E5F535A052CCE"
-					item: "create:whisk"
-					type: "item"
-				}
-			]
+			subtitle: "Lathe Products"
+			tasks: [{
+				id: "2C8804D1FE4B3B61"
+				type: "checkmark"
+			}]
+			title: "Propeller and Whisk"
 			x: 16.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["7A7EB90A68EA8845"]
+			dependency_requirement: "one_completed"
+			description: ["&eInterchangeable heads for the curving press. Convex, Concave, W-shaped, and V-shaped profiles.&r"]
 			disable_toast: true
 			id: "43E7F2CC1771B0FD"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Press Profiles"
 			tasks: [
 				{
 					id: "357D6E710A556346"
@@ -869,11 +955,13 @@
 					type: "item"
 				}
 			]
+			title: "Curving Heads"
 			x: 14.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["5518FD26FF090152"]
+			dependency_requirement: "one_completed"
 			description: [
 				"&eBuilt around a redstone control chip, this component handles item filtering, extraction, and precise flow management for automated factories. &r"
 				""
@@ -907,19 +995,23 @@
 		}
 		{
 			dependencies: ["3A8590545AC9E328"]
+			description: ["&eA casing made from industrial iron. Used for better machinery and advanced equipment.&r"]
 			id: "233D8C38E18799CF"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Industrial Enclosure"
 			tasks: [{
 				id: "19B64B7E835FFA26"
 				item: "kubejs:industrial_casing"
 				type: "item"
 			}]
+			title: "Industrial Casing"
 			x: 10.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["7A7EB90A68EA8845"]
+			description: ["&eA mixer designed for foundry use. Handles molten fluids for alloy production.&r"]
 			disable_toast: true
 			id: "1040B7CD0595052C"
 			shape: "hexagon"
@@ -930,6 +1022,7 @@
 				item: "createmetallurgy:foundry_mixer"
 				type: "item"
 			}]
+			title: "Foundry Mixer"
 			x: 16.0d
 			y: 4.0d
 		}
@@ -949,11 +1042,13 @@
 				item: "kubejs:integrated_electron_tube"
 				type: "item"
 			}]
+			title: "Integrated Electron Tube"
 			x: -2.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["7A7EB90A68EA8845"]
+			description: ["&eA whisk that can withstand high temperatures. Used for mixing in foundry applications.&r"]
 			disable_toast: true
 			id: "1A00D73D9FE52AAD"
 			subtitle: "Fireproof Whisk"
@@ -962,25 +1057,25 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
+			title: "Sturdy Whisk"
 			x: 14.0d
 			y: 4.0d
 		}
 		{
-			dependencies: [
-				"59C14FA285FD0CD7"
-				"612A2B07C4F613E6"
-				"549E4EE23C1A3AB8"
-			]
+			dependencies: ["32BA01C17B48E245"]
+			description: ["&eRails for trains. Used to build railway networks between locations.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "66A46D3B415C4286"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Railway Line"
 			tasks: [{
 				id: "3E9EC71859E19390"
 				item: "create:track"
 				type: "item"
 			}]
+			title: "Track"
 			x: 6.0d
 			y: -4.0d
 		}
@@ -1002,6 +1097,7 @@
 				item: "createdieselgenerators:distillation_controller"
 				type: "item"
 			}]
+			title: "Distillation Controller"
 			x: 6.0d
 			y: -2.0d
 		}
@@ -1021,26 +1117,32 @@
 				item: "naturescompass:naturescompass"
 				type: "item"
 			}]
+			title: "Nature's Compass"
 			x: 0.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["5518FD26FF090152"]
+			description: ["&eA base structure for building a mechanical arm.&r"]
 			disable_toast: true
 			id: "7D38C4D9ED31E904"
+			subtitle: "Arm Foundation"
 			tasks: [{
 				id: "5D10178F50BCF72A"
 				item: "kubejs:mechanical_arm_base"
 				type: "item"
 			}]
+			title: "Mechanical Arm Base"
 			x: 4.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["3BE4C9ED2CFB6296"]
+			description: ["&eA wand that places blocks from a large inventory. Useful for large-scale construction.&r"]
 			disable_toast: true
 			id: "699DDF861A8CE682"
 			shape: "diamond"
+			subtitle: "Construction Wand"
 			tasks: [{
 				id: "48BDB8635FF8BE5E"
 				item: {
@@ -1052,11 +1154,13 @@
 				}
 				type: "item"
 			}]
+			title: "Infinity Wand"
 			x: 8.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["53BF409251D93EE1"]
+			dependencies: ["32BA01C17B48E245"]
+			description: ["&eObserves and detects items passing through containers. Sends redstone signals based on contents.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "10C9BB26856AB087"
@@ -1068,128 +1172,156 @@
 				item: "create:content_observer"
 				type: "item"
 			}]
+			title: "Content Observer"
 			x: -2.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["2812D99E5A60DF15"]
+			description: ["&eDetects passing trains and emits redstone signals. Used for railway automation.&r"]
 			disable_toast: true
 			id: "326240A261EFDFDC"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Train Detection"
 			tasks: [{
 				id: "5E9D604EAF585932"
 				item: "create:track_observer"
 				type: "item"
 			}]
+			title: "Track Observer"
 			x: -2.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["51EF890D08BB88B8"]
+			description: ["&eObsidian powder heated to high temperature. Used to make sturdy sheets.&r"]
 			disable_toast: true
 			id: "36EB97B842C0099F"
+			subtitle: "Heat-Treated Powder"
 			tasks: [{
 				id: "77F20A9C7AF13DE0"
 				item: "kubejs:heated_powdered_obsidian"
 				type: "item"
 			}]
+			title: "Heated Powdered Obsidian"
 			x: 4.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["6D37805074F5C079"]
+			description: ["&eA spring made from industrial iron. Used in lathes.&r"]
 			disable_toast: true
 			id: "25C5F3ED706FFA9C"
+			subtitle: "Lathe Component"
 			tasks: [{
 				id: "7E7026F03B4791B9"
 				item: "kubejs:industrial_iron_spring"
 				type: "item"
 			}]
+			title: "Industrial Iron Spring"
 			x: 10.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["612A2B07C4F613E6"]
+			description: ["&eIndustrial iron pressed into a thin sheet. Used for casings and heavy components.&r"]
 			disable_toast: true
 			id: "3A8590545AC9E328"
+			subtitle: "Heavy Sheet"
 			tasks: [{
 				id: "0B8B0E87EBB280B1"
 				item: "kubejs:industrial_iron_sheet"
 				type: "item"
 			}]
+			title: "Industrial Iron Sheet"
 			x: 10.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6D37805074F5C079"]
+			description: ["&eVibrates items to separate or process them.&r"]
 			disable_toast: true
 			id: "748F017B8A7A73EF"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Item Separation"
 			tasks: [{
 				id: "4DEC205462B55FFD"
 				item: "vintageimprovements:vibrating_table"
 				type: "item"
 			}]
+			title: "Vibrating Table"
 			x: 10.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["25C5F3ED706FFA9C"]
+			description: ["&eIncubates fungal and bacterial cultures. Used to grow and harvest them.&r"]
 			disable_toast: true
 			id: "22D4FFFA7C4A4009"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Culture"
 			tasks: [{
 				id: "5F2D930C719E6CBF"
 				item: "cwi:incubator"
 				type: "item"
 			}]
+			title: "Incubator"
 			x: 12.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["1D16D3568A4B56AC"]
+			dependencies: ["32BA01C17B48E245"]
+			description: ["&eA vessel for mixing fluids. Used in various chemical and industrial processes.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "0AC1C1497E7EBDA7"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Mixing"
 			tasks: [{
 				id: "4617AE58275233A1"
 				item: "cwi:mixing_vessel"
 				type: "item"
 			}]
+			title: "Mixing Vessel"
 			x: 4.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["53BF409251D93EE1"]
+			dependencies: ["32BA01C17B48E245"]
+			description: ["&eLinks multiple storage units into a single accessible inventory.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "0F10364E2DA4BE4C"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Unified Storage"
 			tasks: [{
 				id: "09AEA3C15634C3D5"
 				item: "functionalstorage:storage_controller"
 				type: "item"
 			}]
+			title: "Storage Controller"
 			x: 16.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["3CC959E1243E962E"]
+			description: ["&eAn engine powered by temperature differences. Converts heat into mechanical energy.&r"]
 			disable_toast: true
 			id: "30DB76E3E3C7E3BB"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Heat Engine"
 			tasks: [{
 				id: "2A72D75DC2F2F416"
 				item: "cwi:stirling_engine"
 				type: "item"
 			}]
+			title: "Stirling Engine"
 			x: 14.0d
 			y: -2.0d
 		}

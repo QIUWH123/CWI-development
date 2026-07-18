@@ -804,7 +804,7 @@
 			y: 1.1d
 		}
 		{
-			dependencies: ["22D1B05586484074"]
+			dependencies: ["01145B3810F3CA52"]
 			hide_until_deps_complete: true
 			icon_scale: 0.9d
 			id: "77638D6698CCC725"

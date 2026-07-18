@@ -40,30 +40,6 @@
 		}
 		{
 			height: 1.0d
-			image: "tfmg:block/steel_vat_top"
-			rotation: 45.0d
-			width: 1.0d
-			x: 14.0d
-			y: 6.0d
-		}
-		{
-			height: 1.0d
-			image: "tfmg:block/steel_vat_top"
-			rotation: 45.0d
-			width: 1.0d
-			x: 12.0d
-			y: 6.0d
-		}
-		{
-			height: 1.0d
-			image: "tfmg:block/steel_vat_top"
-			rotation: 45.0d
-			width: 1.0d
-			x: 10.0d
-			y: 6.0d
-		}
-		{
-			height: 1.0d
 			image: "kubejs:item/molds/fireproof_brick_disk"
 			rotation: 45.0d
 			width: 1.0d
@@ -80,25 +56,58 @@
 		}
 		{
 			height: 1.0d
-			image: "tfmg:block/steel_vat_top"
+			image: "tfmg:block/steel_casing"
 			rotation: 45.0d
 			width: 1.0d
-			x: 16.0d
-			y: 2.0d
+			x: 10.0d
+			y: -4.0d
 		}
 		{
 			height: 1.0d
-			image: "tfmg:block/steel_vat_top"
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 12.0d
+			y: 6.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
 			rotation: 45.0d
 			width: 1.0d
 			x: 12.0d
 			y: 4.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 14.0d
+			y: 6.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 16.0d
+			y: 2.0d
 		}
 	]
 	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
+			hide_dependent_lines: true
 			id: "7A0C6B3904C55546"
 			invisible: true
 			shape: "gear"
@@ -117,14 +126,17 @@
 				"461B8FFD37D6D4A8"
 				"34A1646F3FC3509B"
 			]
+			description: ["&eAn alloy of iron and coke. Stronger than bronze, used for industrial components.&r"]
 			disable_toast: true
 			id: "3E0CF50CF54A7795"
 			shape: "square"
+			subtitle: "Dark Iron"
 			tasks: [{
 				id: "52F9478B200B748C"
 				item: "tfmg:cast_iron_ingot"
 				type: "item"
 			}]
+			title: "Cast Iron Ingot"
 			x: 2.0d
 			y: 0.0d
 		}
@@ -134,41 +146,54 @@
 				"4B93583D74E7E010"
 				"13C9C9F227B312DD"
 			]
+			description: ["&eRefined from iron and coke in a blast furnace. The fundament of heavy industry.&r"]
 			disable_toast: true
 			id: "0635A293D5BA7EF2"
 			shape: "square"
+			subtitle: "True Industrial Metal"
 			tasks: [{
 				id: "7942A16831EDA69A"
 				item: "tfmg:steel_ingot"
 				type: "item"
 			}]
+			title: "Steel Ingot"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: [
+				"   &3----------&r   &bRequires Fuel to Operate&r   &3----------&r"
+				""
+				"&eBurns coal into coal coke. Produces creosote as a byproduct.&r"
+			]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "09E6FDDC7DCCD8E3"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Coke Production"
 			tasks: [{
 				id: "471C4245F65D97F6"
 				item: "tfmg:coke_oven"
 				type: "item"
 			}]
+			title: "Coke Oven"
 			x: 2.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["09E6FDDC7DCCD8E3"]
+			description: ["&eSmokeless fuel from the coke oven. Burns hotter and longer than coal.&r"]
 			disable_toast: true
 			id: "4784F318EADDD9C3"
+			subtitle: "High-Carbon Fuel"
 			tasks: [{
 				id: "66AC72A9F1107284"
 				item: "tfmg:coal_coke"
 				type: "item"
 			}]
+			title: "Coal Coke"
 			x: 0.0d
 			y: -4.0d
 		}
@@ -178,32 +203,39 @@
 				"49EB4FE7D42831FA"
 				"337E1339823083A2"
 			]
+			description: ["&eSmelts iron into steel using hot air and coke. Requires multiple supporting components.&r"]
 			disable_toast: true
 			id: "5148FEA0B12D0880"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Steel Production"
 			tasks: [{
 				id: "053DC5CC9134C583"
 				item: "cwi:blast_furnace"
 				type: "item"
 			}]
+			title: "Blast Furnace"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			description: ["&eRefractory bricks that line the blast furnace. Withstand extreme temperatures.&r"]
 			disable_toast: true
 			id: "49EB4FE7D42831FA"
+			subtitle: "Blast Furnace Lining"
 			tasks: [{
 				id: "12E0D24622EA9C27"
 				item: "tfmg:fireproof_bricks"
 				type: "item"
 			}]
+			title: "Fireproof Bricks"
 			x: 4.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["14B9150E857D89D3"]
+			description: ["&eBricks made from fireclay. Can handle the highest temperatures.&r"]
 			disable_toast: true
 			id: "4DADEE61B50B2B74"
 			shape: "square"
@@ -213,15 +245,18 @@
 				item: "tfmg:fireproof_brick"
 				type: "item"
 			}]
+			title: "Fireproof Brick"
 			x: 4.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
+			description: ["&ePreheats air before it enters the blast furnace. Improves efficiency.&r"]
 			disable_toast: true
 			id: "13C9C9F227B312DD"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Preheating Components"
 			tasks: [
 				{
 					id: "043662A42D209F9F"
@@ -240,15 +275,18 @@
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
+			description: ["&eHeats air before it enters the blast furnace. Uses fuel to generate the hot blast.&r"]
 			disable_toast: true
 			id: "337E1339823083A2"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Hot Blast"
 			tasks: [{
 				id: "3AD67A3E7E1B6578"
 				item: "tfmg:blast_stove"
 				type: "item"
 			}]
+			title: "Blast Stove"
 			x: 2.0d
 			y: 2.0d
 		}
@@ -259,52 +297,64 @@
 				"09A16A54841462D0"
 				"6DFB21A13808280F"
 			]
+			description: ["&eA special clay blend that withstands extreme heat. The base for fireproof bricks.&r"]
 			disable_toast: true
 			id: "14B9150E857D89D3"
+			subtitle: "Refractory Clay"
 			tasks: [{
 				id: "33967496483FF39B"
 				item: "tfmg:fireclay_ball"
 				type: "item"
 			}]
+			title: "Fireclay Ball"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: ["&ePowdered bauxite. The primary source of aluminum.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "307C9A0994617AEA"
+			subtitle: "Aluminum Ore"
 			tasks: [{
 				id: "65314E54C8FBBB97"
 				item: "tfmg:bauxite_powder"
 				type: "item"
 			}]
+			title: "Bauxite Powder"
 			x: 0.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eFine silicon powder. Used in refractory materials and electronics.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "5CB3035210A39A5F"
+			subtitle: "From Quartz"
 			tasks: [{
 				id: "7A80B4CA2B0BF9F0"
 				item: "kubejs:silicon_powder"
 				type: "item"
 			}]
+			title: "Silicon Powder"
 			x: 0.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: ["&ePowdered magnesite. Added to fireclay for high-temperature resistance.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "09A16A54841462D0"
+			subtitle: "Refractory Mineral"
 			tasks: [{
 				id: "1399CB6A28A8469E"
 				item: "kubejs:magnesite_powder"
 				type: "item"
 			}]
+			title: "Magnesite Powder"
 			x: 0.0d
 			y: 6.0d
 		}
@@ -313,147 +363,181 @@
 				"33288F9895EE3A5E"
 				"5742E5A99ED7CEF1"
 			]
+			description: ["&eA casing made from steel and hardened wood. Used for heavy industrial machines.&r"]
 			id: "7F050F2D70CEA448"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Casing for Industry"
 			tasks: [{
 				id: "4D9D2D44DFEBC788"
 				item: "tfmg:steel_casing"
 				type: "item"
 			}]
+			title: "Steel Casing"
 			x: 8.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			description: ["&eA reinforced casing made from heavy plates. For the most demanding machinery.&r"]
 			id: "213E8A29FFD8F2F6"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Heavy Enclosure"
 			tasks: [{
 				id: "0A70FC9BF912EC2A"
 				item: "tfmg:heavy_machinery_casing"
 				type: "item"
 			}]
+			title: "Heavy Machinery Casing"
 			x: 10.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["0635A293D5BA7EF2"]
+			description: ["&eA heavy plate of steel. Used for casings and structural components.&r"]
 			disable_toast: true
 			id: "5742E5A99ED7CEF1"
+			subtitle: "Thick Steel"
 			tasks: [{
 				id: "00A8A83AA19B71F6"
 				item: "tfmg:heavy_plate"
 				type: "item"
 			}]
+			title: "Heavy Plate"
 			x: 8.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			description: ["&eReinforces the blast furnace structure. Allows it to withstand higher pressures.&r"]
 			disable_toast: true
 			id: "7D93855EB57F68E5"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Strengthening"
 			tasks: [{
 				id: "53AF58ACC8D7D86D"
 				item: "tfmg:blast_furnace_reinforcement"
 				type: "item"
 			}]
+			title: "Blast Furnace Reinforcement"
 			x: 8.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["72BBEB2B8E9363AB"]
+			description: ["&eWood treated with creosote. Durable and resistant to weathering.&r"]
 			disable_toast: true
 			id: "33288F9895EE3A5E"
+			subtitle: "Creosote-Treated"
 			tasks: [{
 				id: "71517F0A0693C35F"
 				item: "kubejs:harden_wood"
 				type: "item"
 			}]
+			title: "Harden Wood"
 			x: 6.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eUsed in fireclay and other refractory recipes.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "6DFB21A13808280F"
+			subtitle: "Binding Agent"
 			tasks: [{
 				id: "7C030214A8273473"
 				item: "minecraft:clay_ball"
 				type: "item"
 			}]
+			title: "Clay Ball"
 			x: 2.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["09E6FDDC7DCCD8E3"]
+			description: ["&eOily byproduct of coke production. Used to treat wood and as a fuel.&r"]
 			disable_toast: true
 			id: "72BBEB2B8E9363AB"
+			subtitle: "Wood Treatment"
 			tasks: [{
 				id: "27F49C90ECC65A2E"
 				item: "tfmg:creosote_bucket"
 				type: "item"
 			}]
+			title: "Creosote Bucket"
 			x: 4.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["4784F318EADDD9C3"]
+			description: ["&eCoal coke ground into dust. Used in steel production.&r"]
 			disable_toast: true
 			id: "461B8FFD37D6D4A8"
+			subtitle: "Powdered Coke"
 			tasks: [{
 				id: "34124BBFCA8DAEA6"
 				item: "tfmg:coal_coke_dust"
 				type: "item"
 			}]
+			title: "Coal Coke Dust"
 			x: 2.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eCrushed limestone. Used as flux in steelmaking.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "34A1646F3FC3509B"
+			subtitle: "Crushed Limestone"
 			tasks: [{
 				id: "43235D5BFDAF9C4F"
 				item: "tfmg:limesand"
 				type: "item"
 			}]
+			title: "Limesand"
 			x: 0.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["72BBEB2B8E9363AB"]
+			description: ["&ePlanks made from hardened wood. Used in casing recipes.&r"]
 			disable_toast: true
 			id: "70556A32DA19E441"
 			shape: "diamond"
+			subtitle: "Treated Wood"
 			tasks: [{
 				id: "5AD2D3D030ACF624"
 				item: "tfmg:hardened_planks"
 				type: "item"
 			}]
+			title: "Hardened Planks"
 			x: 6.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			description: ["&eA basin for casting blocks of metal. Handles high-temperature melts.&r"]
 			disable_toast: true
 			id: "5C5628BB82D53C81"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fireproof Casting"
 			tasks: [{
 				id: "429620DCD4A9043A"
 				item: "createmetallurgy:casting_basin"
 				type: "item"
 			}]
+			title: "Casting Basin"
 			x: 6.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			description: ["&eA firebox for heating. Another option for generating heat.&r"]
 			disable_toast: true
 			id: "1AC4C7E11C7A406E"
 			shape: "hexagon"
@@ -464,160 +548,195 @@
 				item: "tfmg:firebox"
 				type: "item"
 			}]
+			title: "Firebox"
 			x: 4.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["5531421570274E82"]
+			description: ["&eA mechanism built with steel components. More durable and powerful than brass.&r"]
 			disable_toast: true
 			id: "08C023B7583B9161"
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "Steel Precision"
 			tasks: [{
 				id: "15FEAB67600B7431"
 				item: "tfmg:steel_mechanism"
 				type: "item"
 			}]
+			title: "Steel Mechanism"
 			x: 12.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			description: ["&eBearings made from steel. Reduce friction better than andesite bearings.&r"]
 			disable_toast: true
 			id: "5531421570274E82"
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "Stronger Bearings"
 			tasks: [{
 				id: "666A88C414E59C27"
 				item: "kubejs:steel_bearing"
 				type: "item"
 			}]
+			title: "Steel Bearing"
 			x: 10.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["5C5628BB82D53C81"]
+			description: ["&eWaste material from the blast furnace. Can be processed into useful blocks.&r"]
 			disable_toast: true
 			id: "4879996922D6BF38"
 			shape: "diamond"
+			subtitle: "Smelting Byproduct"
 			tasks: [{
 				id: "56DA74974453C52D"
 				item: "tfmg:slag_block"
 				type: "item"
 			}]
+			title: "Slag Block"
 			x: 6.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			description: ["&eA more powerful mixer for industrial-scale recipes. Handles larger batches and more complex mixtures.&r"]
 			disable_toast: true
 			id: "1FC1928E91DA9191"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Advanced Mixing"
 			tasks: [{
 				id: "563D14AA4A2FFE47"
 				item: "tfmg:industrial_mixer"
 				type: "item"
 			}]
+			title: "Industrial Mixer"
 			x: 14.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["5531421570274E82"]
+			description: ["&ePours and shapes concrete. Used with the concrete recipe.&r"]
 			disable_toast: true
 			id: "25A473E67B1697E0"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Concrete Production"
 			tasks: [{
 				id: "0F53995BB1004383"
 				item: "tfmg:concrete_hose"
 				type: "item"
 			}]
+			title: "Concrete Hose"
 			x: 10.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["08C023B7583B9161"]
+			description: ["&eA vat for chemical reactions. Different attachments enable various processes.&r"]
 			disable_toast: true
 			id: "38C3399F3559D720"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Chemical Processing"
 			tasks: [{
 				id: "6D513D39818E4606"
 				item: "tfmg:steel_chemical_vat"
 				type: "item"
 			}]
+			title: "Steel Chemical Vat"
 			x: 14.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["25A473E67B1697E0"]
+			description: ["&eLiquid concrete. Pours like water, hardens into solid blocks.&r"]
 			disable_toast: true
 			id: "168029E07C5CA042"
 			shape: "diamond"
+			subtitle: "Wet Concrete"
 			tasks: [{
 				id: "4B3516DC2346C052"
 				item: "tfmg:concrete"
 				type: "item"
 			}]
+			title: "Concrete"
 			x: 12.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["128293ACBBFC6D76"]
+			description: ["&ePumps fluids between tanks and machines.&r"]
 			disable_toast: true
 			id: "5FEBE3E71CBDBB0F"
+			subtitle: "Fluid Transport"
 			tasks: [{
 				id: "162AE1D02886E438"
 				item: "kubejs:industrial_pump"
 				type: "item"
 			}]
+			title: "Industrial Pump"
 			x: 12.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["5742E5A99ED7CEF1"]
+			description: ["&eA steel ring. Part of the industrial pump assembly.&r"]
 			disable_toast: true
 			id: "128293ACBBFC6D76"
+			subtitle: "Pump Component"
 			tasks: [{
 				id: "396C3695091DF81B"
 				item: "kubejs:steel_ring"
 				type: "item"
 			}]
+			title: "Steel Ring"
 			x: 10.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["2D1180C9EC2DE6E2"]
+			description: ["&eA heavily armored safe. A helve hammer can break it open.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "4A57AE1DCC0BFE11"
 			shape: "gear"
 			size: 2.75d
+			subtitle: "Break Open With Helve Hammer"
 			tasks: [{
 				id: "64B432CF940A6991"
 				item: "kubejs:steel_armor_safe"
 				type: "item"
 			}]
+			title: "Armored Safe"
 			x: 15.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["202D27DC120594C9"]
+			description: ["&eA mechanical hammer for heavy forging. Applies tremendous force.&r"]
 			disable_toast: true
 			id: "2D1180C9EC2DE6E2"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Stronger Press"
 			tasks: [{
 				id: "760C61E0052D0AB2"
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
+			title: "Helve Hammer"
 			x: 14.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["4DADEE61B50B2B74"]
+			description: ["&eA mold made from fireproof brick. Can handle higher temperatures than terracotta.&r"]
 			disable_toast: true
 			icon_scale: 0.8d
 			id: "4B93583D74E7E010"
@@ -629,42 +748,50 @@
 				item: "kubejs:fireproof_brick_disk"
 				type: "item"
 			}]
+			title: "Fireproof Brick Disk"
 			x: 6.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["7D93855EB57F68E5"]
+			description: ["&eA large crucible for melting metals. Holds more than a basin.&r"]
 			disable_toast: true
 			id: "69BA8B4A6B6C0D75"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Larger Smelting"
 			tasks: [{
 				id: "55E74BA4F5D08C85"
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
+			title: "Industrial Crucible"
 			x: 8.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["25A473E67B1697E0"]
+			description: ["&eAsphalt for paving roads.&r"]
 			disable_toast: true
 			id: "2E0453F54E312FDB"
 			shape: "diamond"
+			subtitle: "Road Material"
 			tasks: [{
 				id: "758ABC986A5C74BB"
 				item: "createdieselgenerators:asphalt_block"
 				type: "item"
 			}]
+			title: "Asphalt Block"
 			x: 10.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["38C3399F3559D720"]
+			description: ["&eA powerful potato launcher. For fun.&r"]
 			disable_toast: true
-			hide_dependency_lines: true
 			id: "4BB8F26DFBE7AFCD"
 			shape: "diamond"
+			subtitle: "Fun Item"
 			tasks: [{
 				id: "12C7928F48194FDD"
 				item: {
@@ -676,6 +803,7 @@
 				}
 				type: "item"
 			}]
+			title: "Quad Potato Cannon"
 			x: 14.0d
 			y: 6.0d
 		}
@@ -685,29 +813,34 @@
 				"08C023B7583B9161"
 				"5FEBE3E71CBDBB0F"
 			]
+			description: ["&eThe central machine core for heavy industrial equipment. Integrates steel mechanisms, casings, and pumps.&r"]
 			id: "202D27DC120594C9"
 			shape: "rsquare"
 			size: 2.0d
+			subtitle: "The Core of Industry"
 			tasks: [{
 				id: "42F366E855E89AC0"
 				item: "kubejs:heavy_machine"
 				type: "item"
 			}]
+			title: "Heavy Machine Core"
 			x: 12.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1FC1928E91DA9191"]
+			description: ["&eBlades for the industrial mixer. Enables more recipes.&r"]
 			disable_toast: true
 			id: "6CDF4C4F3924B144"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "Need Aluminum"
+			subtitle: "Mixer Upgrade"
 			tasks: [{
 				id: "45D21A385A6EB927"
 				item: "tfmg:mixer_blade"
 				type: "item"
 			}]
+			title: "Mixer Blade"
 			x: 16.0d
 			y: -2.0d
 		}
@@ -723,76 +856,92 @@
 				title: "Faster Sheets"
 				type: "checkmark"
 			}]
+			title: "Faster Sheets"
 			x: 16.0d
 			y: 2.0d
 		}
 		{
-			dependencies: ["202D27DC120594C9"]
+			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eScans the surface for oil deposits. Useful for finding fuel sources.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "68B7323CA1B8BCCF"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Scan for Oil"
 			tasks: [{
 				id: "4E1510BF396FB99C"
 				item: "tfmg:surface_scanner"
 				type: "item"
 			}]
+			title: "Surface Scanner"
 			x: 16.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["202D27DC120594C9"]
+			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eAn input port for machines. Allows items to be fed automatically.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "2AA9C7BE2A0D3BA2"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Item Input"
 			tasks: [{
 				id: "277872E762FFAB5A"
 				item: "tfmg:machine_input"
 				type: "item"
 			}]
+			title: "Machine Input"
 			x: 16.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["08C023B7583B9161"]
+			description: ["&eFurther expands backpack capacity.&r"]
 			disable_toast: true
 			id: "32035A4118FD39B0"
 			shape: "diamond"
+			subtitle: "More Storage"
 			tasks: [{
 				id: "3D6F58049D081602"
 				item: "sophisticatedbackpacks:stack_upgrade_tier_3"
 				type: "item"
 			}]
+			title: "Stack Upgrade Tier 3"
 			x: 12.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["70556A32DA19E441"]
+			description: ["&eSeparates fluids into their components. Used for processing oil and other liquids.&r"]
 			disable_toast: true
 			id: "34F011FB69FB0B93"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Separation"
 			tasks: [{
 				id: "3629CC66B8D77B52"
 				item: "vintageimprovements:centrifuge"
 				type: "item"
 			}]
+			title: "Centrifuge"
 			x: 8.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["202D27DC120594C9"]
+			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eA cylinder for a diesel engine.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "45287FE5D913F14D"
+			subtitle: "Engine Component"
 			tasks: [{
 				id: "566ADBFFB2D9736B"
 				item: "kubejs:engine_cylinder"
 				type: "item"
 			}]
+			title: "Engine Cylinder"
 			x: 12.0d
 			y: -4.0d
 		}
@@ -800,57 +949,69 @@
 			dependencies: [
 				"45287FE5D913F14D"
 				"5FEBE3E71CBDBB0F"
-				"0B372411B5263246"
 			]
+			description: ["&eAn engine that runs on diesel. Provides powerful rotational force.&r"]
 			disable_toast: true
 			id: "6278A4EBD6EF8DE7"
 			shape: "octagon"
 			size: 2.0d
+			subtitle: "Fuel Power"
 			tasks: [{
 				id: "73EC8E446A8C2E6B"
 				item: "createdieselgenerators:diesel_engine"
 				type: "item"
 			}]
+			title: "Diesel Engine"
 			x: 14.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["6278A4EBD6EF8DE7"]
+			description: ["&eA larger diesel engine. More cylinders, more stress output.&r"]
 			disable_toast: true
 			id: "53E0446A29083D90"
 			shape: "octagon"
 			size: 2.0d
+			subtitle: "More Power"
 			tasks: [{
 				id: "3180B9A010A98905"
 				item: "createdieselgenerators:large_diesel_engine"
 				type: "item"
 			}]
+			title: "Large Diesel Engine"
 			x: 16.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["128293ACBBFC6D76"]
+			dependencies: ["7A0C6B3904C55546"]
+			description: ["&eA drill head made from steel. Upgrades the portable drill for faster mining.&r"]
 			disable_toast: true
-			hide_dependent_lines: true
+			hide_dependency_lines: true
 			id: "0B372411B5263246"
+			shape: "diamond"
+			subtitle: "Drill Upgrade"
 			tasks: [{
 				id: "644CE25A4BBD35FE"
 				item: "kubejs:steel_drill_head"
 				type: "item"
 			}]
+			title: "Steel Drill Head"
 			x: 10.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["69BA8B4A6B6C0D75"]
+			description: ["&eAttaches to an industrial crucible. Displays temperature and contents.&r"]
 			disable_toast: true
 			id: "75D002F673C6FBA1"
 			shape: "diamond"
+			subtitle: "Crucible Info"
 			tasks: [{
 				id: "11F596CEE755A0DE"
 				item: "createmetallurgy:gauge_attachment"
 				type: "item"
 			}]
+			title: "Gauge Attachment"
 			x: 8.0d
 			y: 6.0d
 		}

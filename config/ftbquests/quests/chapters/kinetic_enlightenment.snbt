@@ -52,6 +52,7 @@
 	quests: [
 		{
 			dependencies: ["661157F41CB9C876"]
+			description: [""]
 			hide_dependent_lines: true
 			id: "5E402C739E34B7D4"
 			invisible: true
@@ -72,6 +73,7 @@
 				"42229A4123AA3541"
 				"5E24F2344B85B318"
 			]
+			description: ["&eA simple blend of andesite and iron. It will serve as the backbone of every machine that follows.&r"]
 			disable_toast: true
 			id: "60E2563C494FB253"
 			shape: "square"
@@ -81,6 +83,7 @@
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
+			title: "Andesite Alloy"
 			x: 0.5d
 			y: -2.5d
 		}
@@ -90,13 +93,16 @@
 				"437113F4C591BBA5"
 				"476F895A01D30141"
 			]
+			description: ["&ePowdered andesite and clay blended together. The precursor to something stronger.&r"]
 			disable_toast: true
 			id: "42229A4123AA3541"
+			subtitle: "Mixed Ingredients"
 			tasks: [{
 				id: "76B728FDDEB6104A"
 				item: "kubejs:andesite_compound"
 				type: "item"
 			}]
+			title: "Andesite Compound"
 			x: 0.5d
 			y: -4.5d
 		}
@@ -105,45 +111,55 @@
 				"1266E8AE2713DF7E"
 				"701D21C32E77F5C7"
 			]
+			description: ["&eAn enclosure for moving parts. More than a box, it is the foundation of reliable machinery.&r"]
 			id: "6A11BA5D1C4D2924"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Housing for Mechanisms"
 			tasks: [{
 				id: "1A72D3EA0EC250E4"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
+			title: "Andesite Casing"
 			x: 4.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["417DC65C679BBF74"]
+			description: ["&eWood chips pressed into a dense block. It burns longer and steadier than loose scraps.&r"]
 			disable_toast: true
 			id: "1266E8AE2713DF7E"
+			subtitle: "Compressed Fuel"
 			tasks: [{
 				id: "3E4F84056AA52EA3"
 				item: "createdieselgenerators:chip_wood_block"
 				type: "item"
 			}]
+			title: "Wood Chips Block"
 			x: 4.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			description: ["&eApplies immense force. It can shape plates and compact materials.&r"]
 			disable_toast: true
 			id: "4C5689F8A2DBC8A7"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Pressure Application"
 			tasks: [{
 				id: "50FE3543D0720357"
 				item: "create:mechanical_press"
 				type: "item"
 			}]
+			title: "Mechanical Press"
 			x: 8.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eA sticky, pliable earth. Paltry on its own, but essential for binding powders into sturdy compounds.&r"]
 			disable_toast: true
 			id: "437113F4C591BBA5"
 			subtitle: "Adhesive Substance"
@@ -152,6 +168,7 @@
 				item: "minecraft:clay_ball"
 				type: "item"
 			}]
+			title: "Clay Ball"
 			x: 0.5d
 			y: -6.5d
 		}
@@ -160,24 +177,32 @@
 				"5E402C739E34B7D4"
 				"540EF2A79DD1C92C"
 			]
+			description: ["&eCrushed and ground andesite. Dusty and unremarkable, but indispensable once mixed with other ingredients.&r"]
 			disable_toast: true
 			id: "4C1F87459ED9C5F9"
-			subtitle: "The foundation of Mechanics"
+			subtitle: "The Foundation of Mechanics"
 			tasks: [{
 				id: "7F391AF5145C7B48"
 				item: "kubejs:andesite_powder"
 				type: "item"
 			}]
+			title: "Andesite Powder"
 			x: 2.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
-			description: [""]
+			description: [
+				"   &3----------&r   &bHold to Charge&r   &3----------&r"
+				"   &3----------&r   &bRelease to Use&r   &3----------&r"
+				""
+				"&eA simple tool, already corroded. Can break brittle stones and ores, flatten ingots into sheets, or strike animals.&r"
+			]
 			disable_toast: true
 			id: "540EF2A79DD1C92C"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Manual Crushing"
 			tasks: [{
 				id: "5A9F3D3814243B5B"
 				item: {
@@ -189,15 +214,22 @@
 				}
 				type: "item"
 			}]
+			title: "Rusted Iron Hammer"
 			x: 2.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			description: [
+				"     &3----------&r   &bHold to Use&r   &3----------&r"
+				""
+				"&eA chisel for engraving blocks and items. Used to carve patterns, shapes, or details that other tools cannot achieve.&r"
+			]
 			disable_toast: true
 			id: "7BDE7169C3C400BD"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Carving"
 			tasks: [{
 				id: "02CEFFA9C48CC91C"
 				item: {
@@ -209,6 +241,7 @@
 				}
 				type: "item"
 			}]
+			title: "Iron Chisel"
 			x: 2.5d
 			y: 1.5d
 		}
@@ -217,13 +250,16 @@
 				"60E2563C494FB253"
 				"540EF2A79DD1C92C"
 			]
+			description: ["&eThe alloy, flattened into a uniform sheet. Ready to be shaped into casings and machines.&r"]
 			disable_toast: true
 			id: "701D21C32E77F5C7"
+			subtitle: "Rolled and Ready"
 			tasks: [{
 				id: "6CD38E7B46524DEF"
 				item: "kubejs:andesite_alloy_sheet"
 				type: "item"
 			}]
+			title: "Andesite Alloy Sheet"
 			x: 2.5d
 			y: -2.5d
 		}
@@ -232,6 +268,7 @@
 				"6A11BA5D1C4D2924"
 				"6C479154F903BB77"
 			]
+			description: ["&eA fan within a casing. When spun by mechanical power, it can push air over substances in between to process items.&r"]
 			disable_toast: true
 			id: "3939A1FCB9D2E69D"
 			shape: "hexagon"
@@ -242,33 +279,41 @@
 				item: "create:encased_fan"
 				type: "item"
 			}]
+			title: "Encased Fan"
 			x: 4.5d
 			y: -0.5d
 		}
 		{
-			dependencies: ["49BC1E5BC8236CBD"]
+			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eA pair of heavy wheels that crush whatever passes between them. Far more efficient than swinging a hammer by hand.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "7FD48427B60C3E5A"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Constant Grinding"
 			tasks: [{
 				id: "06037BCB30C3223F"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
+			title: "Crushing Wheel"
 			x: 0.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["7FD48427B60C3E5A"]
+			description: ["&eA solid bar of iron. Smelted from ore, now ready to be worked into sheets, tools, and sturdier machines.&r"]
 			disable_toast: true
 			id: "40FA81C21DEF7A09"
 			shape: "square"
+			subtitle: "Refined Metal"
 			tasks: [{
 				id: "22EB66E1D1DAF556"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
+			title: "Iron Ingot"
 			x: 2.5d
 			y: -0.5d
 		}
@@ -277,21 +322,29 @@
 				"6C479154F903BB77"
 				"012664D784F5D09D"
 			]
+			description: ["&eSpins its internal blades to combine materials. Essential for making the alloys and compounds that will push technology further.&r"]
 			disable_toast: true
 			id: "3CAC1D168C730208"
 			ignore_reward_blocking: true
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Rotary Blending"
 			tasks: [{
 				id: "647924C4B0EE7333"
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
+			title: "Mechanical Mixer"
 			x: 6.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			description: [
+				"     &3----------&r   &bHold to Use&r   &3----------&r"
+				""
+				"&eThey cut materials into wires and rods. Also useful for adjusting the collected resources.&r"
+			]
 			disable_toast: true
 			id: "2103F1534EFA77A5"
 			shape: "hexagon"
@@ -308,14 +361,17 @@
 				}
 				type: "item"
 			}]
+			title: "Wire Cutters"
 			x: 2.5d
 			y: 3.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			description: ["&eBasic iron armor. The world may be barren, but sharp edges and falling debris do not care. Better to have it and not need it.&r"]
 			disable_toast: true
 			id: "235292F382A4C466"
 			shape: "diamond"
+			subtitle: "Plated Protection"
 			tasks: [
 				{
 					id: "26407595F93BE9C8"
@@ -362,35 +418,52 @@
 					type: "item"
 				}
 			]
+			title: "Iron Armor"
 			x: 6.5d
 			y: 3.5d
 		}
 		{
 			dependencies: ["40FA81C21DEF7A09"]
+			description: ["&eIron ingot flattened under pressure. Thinner, more versatile. The starting point for casings, gears, and countless other parts.&r"]
 			disable_toast: true
 			id: "6C479154F903BB77"
+			subtitle: "Pressed Flat"
 			tasks: [{
 				id: "522EF4A599008659"
 				item: "create:iron_sheet"
 				type: "item"
 			}]
+			title: "Iron Sheet"
 			x: 4.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["60E2563C494FB253"]
+			dependency_requirement: "one_completed"
 			disable_toast: true
 			id: "49BC1E5BC8236CBD"
-			tasks: [{
-				id: "382FBDA66BE1C09F"
-				item: "create:andesite_alloy_block"
-				type: "item"
-			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Factory Control"
+			tasks: [
+				{
+					id: "0DFF511CA520DE30"
+					item: "create:andesite_funnel"
+					type: "item"
+				}
+				{
+					id: "51D6DDEBDBECD235"
+					item: "create:andesite_tunnel"
+					type: "item"
+				}
+			]
+			title: "Simple Logistic"
 			x: 0.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["6A11BA5D1C4D2924"]
+			description: ["&eA moving chain that carries items from one place to another. The first step toward automation. Let the machines do the heavy lifting.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			icon: "create:chain_conveyor"
@@ -403,16 +476,18 @@
 				item: "create:chain_conveyor"
 				type: "item"
 			}]
-			title: "A Chained System"
+			title: "Chain Conveyor"
 			x: 12.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
+			description: ["&eA full set of iron tools. They will work faster and last longer than the rusted relics from the lab.&r"]
 			disable_toast: true
 			id: "621E7183CC10DDAC"
 			ignore_reward_blocking: true
 			shape: "diamond"
+			subtitle: "Proper Equipment"
 			tasks: [
 				{
 					id: "4FB850DFD1AF2EC0"
@@ -470,42 +545,49 @@
 					type: "item"
 				}
 			]
+			title: "Iron Tools"
 			x: 4.5d
 			y: 3.5d
 		}
 		{
 			dependencies: ["264672AB0C531345"]
+			description: ["&eLaunches packaged items between stations, enabling compact transport setups.&r"]
 			disable_toast: true
 			icon: "create:package_frogport"
 			id: "195710E5E6F5F3D5"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Package Delivery"
 			tasks: [{
 				id: "31BF94B55F809237"
 				item: "create:package_frogport"
 				type: "item"
 			}]
-			title: "Frog Logistic"
+			title: "Logistics"
 			x: 12.5d
 			y: 1.5d
 		}
 		{
-			dependencies: ["49BC1E5BC8236CBD"]
+			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eA stone wheel driven by mechanical power. It grinds grains, mills minerals into powder, and turns hard things into dust.&r"]
 			disable_toast: true
-			hide_dependency_lines: false
+			hide_dependency_lines: true
 			id: "285908C913E29547"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Rotary Grinding"
 			tasks: [{
 				id: "1A029323230A494A"
 				item: "create:millstone"
 				type: "item"
 			}]
+			title: "Millstone"
 			x: -1.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["1266E8AE2713DF7E"]
+			description: ["&eFlowing water makes it turn, and turning makes power. The simplest way to generate stress for your machines. Reliable as long as the current runs.&r"]
 			disable_toast: true
 			icon: "create:water_wheel"
 			id: "775DF78EB236C941"
@@ -517,11 +599,13 @@
 				item: "create:water_wheel"
 				type: "item"
 			}]
+			title: "Water Wheel"
 			x: 6.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["1266E8AE2713DF7E"]
+			description: ["&eThe skeleton of a wind-catching sail. Lightweight and modular, waiting for net to be attached.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "1E00920BBA587F26"
@@ -531,11 +615,13 @@
 				item: "create:sail_frame"
 				type: "item"
 			}]
+			title: "Sail Frame"
 			x: 12.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["1E00920BBA587F26"]
+			description: ["&eThe hub for a windmill. When fitted with sails and raised into the air, it converts the endless wind into steady mechanical force.&r"]
 			disable_toast: true
 			icon: "create:windmill_bearing"
 			id: "7CAFFE1A4C01CF47"
@@ -554,11 +640,13 @@
 					type: "item"
 				}
 			]
+			title: "Windmill Bearing"
 			x: 10.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["775DF78EB236C941"]
+			description: ["&eA bigger wheel, more power. Same principle, better output. When the stream is strong enough, this is the logical upgrade.&r"]
 			disable_toast: true
 			id: "242D3A2688376BA0"
 			ignore_reward_blocking: true
@@ -570,39 +658,47 @@
 				item: "create:large_water_wheel"
 				type: "item"
 			}]
+			title: "Large Water Wheel"
 			x: 8.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["27EBAF24944A2A20"]
+			description: ["&eWraps items into packages for transport via ports. A small machine for a niche purpose, but it opens up new logistics possibilities.&r"]
 			disable_toast: true
 			id: "264672AB0C531345"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Wrapping Up"
 			tasks: [{
 				id: "218DC4F36A442CD8"
 				item: "create:packager"
 				type: "item"
 			}]
+			title: "Packager"
 			x: 10.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["60E2563C494FB253"]
+			description: ["&eA mill that rolls materials into long rods and wires. It consumes stress but produces essential components for later machines.&r"]
 			disable_toast: true
 			id: "542B9C01C426BA3F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Continuous Shaping"
 			tasks: [{
 				id: "74ADAF94D6180577"
 				item: "createaddition:rolling_mill"
 				type: "item"
 			}]
+			title: "Rolling Mill"
 			x: -1.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eThe most basic smelting apparatus. It burns wood and coal to refine metals.&r"]
 			disable_toast: true
 			id: "5E24F2344B85B318"
 			shape: "hexagon"
@@ -613,11 +709,13 @@
 				item: "minecraft:furnace"
 				type: "item"
 			}]
+			title: "Furnace"
 			x: -1.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["4C5689F8A2DBC8A7"]
+			description: ["&eThe brass lockbox from the toolbox, placed under the press. The machine bears down until the seal breaks. What was inside has been waiting a long time.&r"]
 			disable_toast: true
 			hide_dependency_lines: false
 			icon_scale: 0.9d
@@ -630,14 +728,17 @@
 				item: "kubejs:brass_lockbox"
 				type: "item"
 			}]
+			title: "Open the Lockbox"
 			x: 11.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["285908C913E29547"]
+			description: ["&eThe millstone can process more than minerals. Can also be used to extract Arthropod meat and silverfish eggs.&r"]
 			disable_toast: true
 			id: "2CC58D6978615651"
 			shape: "diamond"
+			subtitle: "Alternative Sustenance"
 			tasks: [
 				{
 					id: "797CC00ADB8E5C5A"
@@ -650,6 +751,7 @@
 					type: "item"
 				}
 			]
+			title: "Arthropod Delicacies"
 			x: -1.5d
 			y: 3.5d
 		}
@@ -658,13 +760,7 @@
 				"6A11BA5D1C4D2924"
 				"173296B31B228A12"
 			]
-			description: [
-				"&eThe Mechanical Core you have just assembled is the silent heart of all progress.&r"
-				""
-				"&eEvery gear, every axle, every whirring machine that will one day reshape this barren world depends on this single component.&r"
-				""
-				"&eIt is the first true step toward reclaiming what we lost—even from scattered remnants, order can arise.&r"
-			]
+			description: ["&eThe first machine assembly. A compact nexus of gears, bearings, and casing. It does not do much on its own, but attach it to a power source and other components, and it becomes the heart of basic machinery.&r"]
 			id: "012664D784F5D09D"
 			shape: "rsquare"
 			size: 2.0d
@@ -674,25 +770,30 @@
 				item: "kubejs:andesite_machine"
 				type: "item"
 			}]
+			title: "Andesite Machine Core"
 			x: 6.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			description: ["&eLoad a schematic, supply materials, and it builds structures automatically. A tool for duplication, or for swiftly raising outposts in the wasteland.&r"]
 			disable_toast: true
 			id: "6B423AB39398252B"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Blueprint to Reality"
 			tasks: [{
 				id: "7B5FED24F26D21E3"
 				item: "create:schematicannon"
 				type: "item"
 			}]
+			title: "Schematicannon"
 			x: 8.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eSmall shreds of wood, the only reliable source of solid fuel for now. They burn fast, but compacted into blocks they become something useful.&r"]
 			disable_toast: true
 			id: "417DC65C679BBF74"
 			subtitle: "Only Supply for Wood"
@@ -701,49 +802,53 @@
 				item: "createdieselgenerators:wood_chip"
 				type: "item"
 			}]
+			title: "Wood Chips"
 			x: 4.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
-			description: [
-				"&eRightclick with fuel to burn&r"
-				""
-				"&eUses same fuel as furnace&r"
-			]
+			description: [" &3------&r &bRightclick with Fuel to Burn&r &3------&r"]
 			disable_toast: true
 			id: "1D5086DE41A5D46B"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Heating Platform"
 			tasks: [{
 				id: "1C598B08D327D546"
 				item: "create:blaze_burner"
 				type: "item"
 			}]
+			title: "Burner"
 			x: 6.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["701D21C32E77F5C7"]
+			description: ["&eBearings made from andesite alloy. They reduce friction in moving parts, essential for constructing more advanced machinery.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "173296B31B228A12"
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "Smooth Rotation"
 			tasks: [{
 				id: "53A30DEC0DB60852"
 				item: "kubejs:andesite_bearing"
 				type: "item"
 			}]
+			title: "Andesite Bearing"
 			x: 6.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["1D5086DE41A5D46B"]
+			description: ["&eThey form a vessel for melting liquid metal.&r"]
 			disable_toast: true
 			id: "2AD57CB06F484582"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Molten Metal Handling"
 			tasks: [
 				{
 					id: "56406577988924B1"
@@ -756,25 +861,30 @@
 					type: "item"
 				}
 			]
+			title: "Foundry Basin and Lid"
 			x: 8.5d
 			y: 3.5d
 		}
 		{
 			dependencies: ["2AD57CB06F484582"]
+			description: ["&eA table with slots for molds. Pour liquid metal in, let it cool, and retrieve shaped ingots, nuggets, or sheets.&r"]
 			disable_toast: true
 			id: "73B79BFBE4B0DC6F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Shape the Molten"
 			tasks: [{
 				id: "519DC640B9E27AAD"
 				item: "createmetallurgy:casting_table"
 				type: "item"
 			}]
+			title: "Casting Table"
 			x: 10.5d
 			y: 3.5d
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			description: ["&eA press that shapes materials into different forms. Making components that flat presses cannot make.&r"]
 			disable_toast: true
 			id: "1750081E47007EBC"
 			shape: "hexagon"
@@ -785,15 +895,18 @@
 				item: "vintageimprovements:curving_press"
 				type: "item"
 			}]
+			title: "Curving Press"
 			x: 8.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["1750081E47007EBC"]
+			description: ["&eMolds pressed from clay. They define the shape of cast metal. Ingot, nugget, sheet, rod.&r"]
 			disable_toast: true
 			id: "2DBB4544AB0C3F18"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Disposable Shapes"
 			tasks: [
 				{
 					id: "23DAC21A39B12C7B"
@@ -816,16 +929,18 @@
 					type: "item"
 				}
 			]
+			title: "Clay Molds"
 			x: 10.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["2DBB4544AB0C3F18"]
+			description: ["&eFired clay molds. Cannot handle extremely hot liquids.&r"]
 			disable_toast: true
 			id: "078E22FD664525E0"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "Simple Molds - Can't Handle Extremely Hot Items"
+			subtitle: "Heat-Resistant Upgrade"
 			tasks: [
 				{
 					id: "7258354FC9BB2EC0"
@@ -848,23 +963,28 @@
 					type: "item"
 				}
 			]
+			title: "Terracotta Molds"
 			x: 12.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["3CAC1D168C730208"]
+			description: ["&eMade from wood pulp and mixed in a mechanical mixer. Lightweight packaging material, essential for logistics.&r"]
 			disable_toast: true
 			id: "27EBAF24944A2A20"
+			subtitle: "Recycled Layers"
 			tasks: [{
 				id: "52BF99F138DABA15"
 				item: "create:cardboard"
 				type: "item"
 			}]
+			title: "Cardboard"
 			x: 8.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
+			description: ["&eA workbench for assembling components by hand.&r"]
 			disable_toast: true
 			id: "476F895A01D30141"
 			shape: "hexagon"
@@ -875,11 +995,13 @@
 				item: "minecraft:crafting_table"
 				type: "item"
 			}]
+			title: "Crafting Table"
 			x: -1.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			description: ["&eA tool for extracting resin from rubber trees. Automating this process will ensure a steady supply of rubber for future machines.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "07B2757EC96E4E09"
@@ -891,26 +1013,36 @@
 				item: "rubberworks:sapper"
 				type: "item"
 			}]
+			title: "Sapper"
 			x: 10.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["012664D784F5D09D"]
+			description: ["&eA device that keeps a chunk of the world loaded even when you are far away. Essential for factories that need to run unattended.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "623F4EF31A00940F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Keep the Machines Running"
 			tasks: [{
 				id: "15D6CACA95DF43DA"
 				item: "create_power_loader:andesite_chunk_loader"
 				type: "item"
 			}]
+			title: "Andesite Chunk Loader"
 			x: 12.5d
 			y: 3.5d
 		}
 		{
-			dependencies: ["6C479154F903BB77"]
+			dependencies: ["5E402C739E34B7D4"]
+			description: [
+				"   &3----------&r   &bHold to Charge&r   &3----------&r"
+				"   &3----------&r   &bRelease to Use&r   &3----------&r"
+				""
+				"&eAn iron hammer, more durable and efficient than the rusted one.&r"
+			]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "5FC63F5C6DC17A71"
@@ -928,6 +1060,7 @@
 				}
 				type: "item"
 			}]
+			title: "Iron Hammer"
 			x: 0.5d
 			y: 3.5d
 		}

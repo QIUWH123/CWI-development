@@ -1,1173 +1,533 @@
 {
-	default_hide_dependency_lines: false
-	default_quest_shape: ""
-	filename: "environment_note"
-	group: ""
-	icon: "kubejs:environmental_note"
-	id: "06D805E239F1619C"
-	order_index: 4
-	quest_links: [ ]
-	quests: [
-		{
-			dependencies: ["0EA786F00A19ADC6"]
-			hide_dependent_lines: true
-			hide_until_deps_complete: true
-			icon_scale: 0.9d
-			id: "3CECF5ADD3C91E4B"
-			shape: "gear"
-			size: 3.0d
-			subtitle: "Not Finished"
-			tasks: [{
-				id: "20CD82AF48E6B62A"
-				item: "kubejs:environmental_note"
-				type: "item"
-			}]
-			x: -8.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			description: ["&eThe surface layer is dry, compacted, and lifeless. Stripped of organic matter and moisture by decades of solar radiation. It crumbles to dust when handled and holds no capacity to support even the hardiest microbes.&r"]
-			hide_dependency_lines: true
-			id: "5787AF3D0A2E4728"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Powder and Dust"
-			tasks: [{
-				id: "23B347D0F2B68326"
-				item: "kubejs:depleted_dirt"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"5C856CCA4F078AA9"
-				"60BE07D84D003F04"
-				"761160110BAD09FD"
-			]
-			description: ["&eA basic ecosystem has taken root, plants can now survive. Nutrient cycles are still fragile, but the soil can sustain life without constant intervention.&r"]
-			disable_toast: true
-			id: "2DD3C94512042C0F"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Living Soil"
-			tasks: [{
-				id: "516B778143F5D72C"
-				item: "minecraft:dirt"
-				type: "item"
-			}]
-			x: 7.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["58E9697AC16F146C"]
-			description: ["&eDecomposition is complete, yielding a dark, crumbly medium teeming with active biology. This is the end goal, rich soil that can support agriculture and function as a self‑sustaining living system, promoting plat growth.&r"]
-			disable_toast: true
-			id: "5AE545956D2B2D20"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Faster Soil"
-			tasks: [{
-				id: "1D144224E3ADE9F4"
-				item: "farmersdelight:rich_soil"
-				type: "item"
-			}]
-			x: 13.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "3DCE698C59DE0C7C"
-			tasks: [{
-				id: "1E53AD09D723B82D"
-				item: "minecraft:glow_lichen"
-				type: "item"
-			}]
-			x: 2.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["5787AF3D0A2E4728"]
-			description: ["&eDepleted soil slowly absorbs water. Though still barren, saturation begins to break down the impervious crust and allows the first chemical exchanges to take place beneath the surface.&r"]
-			disable_toast: true
-			id: "14669168D99B9CA0"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Saturated Ground"
-			tasks: [{
-				id: "508795C263D0E494"
-				item: "kubejs:soaked_depleted_dirt"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"14669168D99B9CA0"
-				"3DCE698C59DE0C7C"
-			]
-			description: ["&eThe structure has loosened, and trapped air now moves through the pores. No living organisms are present yet, but the physical foundation is finally ready to accept organic input and microbial colonization.&r"]
-			disable_toast: true
-			id: "5C856CCA4F078AA9"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Awakening Earth"
-			tasks: [{
-				id: "4E1ABB921C950BEF"
-				item: "kubejs:raw_soil"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["5787AF3D0A2E4728"]
-			disable_toast: true
-			id: "5A983ABB2A279DFE"
-			tasks: [{
-				id: "4AC542FCDF413AA8"
-				item: "miners_delight:arthropod"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			description: ["&eCollect any available plant matter and sediment from oceans and riverbeds to form a crude compost pit. The resulting humus will enhance microbial activity and create a foundation for sustainable growth. Without it, even a recovering atmosphere cannot anchor lasting life.&r"]
-			disable_toast: true
-			id: "4095EF2352EAD14C"
-			tasks: [{
-				id: "4EEAB0B2047CC408"
-				item: "ratatouille:compost_mass"
-				type: "item"
-			}]
-			x: -9.5d
-			y: -7.0d
-		}
-		{
-			dependencies: ["4095EF2352EAD14C"]
-			description: ["&eThe products of composting. They are rich in nutrients.&r"]
-			disable_toast: true
-			id: "6A6DF9304AB7EA15"
-			subtitle: "Nutrient Rich"
-			tasks: [{
-				id: "7B0B56F81F9D64A1"
-				item: "ratatouille:compost_residue"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -8.0d
-		}
-		{
-			dependencies: ["5FFC1ABF7B74F16E"]
-			description: ["&eSugar is vital both for early nutrition and as a feedstock for more complex bioprocessing.&r"]
-			disable_toast: true
-			id: "645DB368A9D15AD7"
-			tasks: [{
-				id: "67F4F2A6921F4BD8"
-				item: "minecraft:sugar"
-				type: "item"
-			}]
-			x: -12.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["4095EF2352EAD14C"]
-			disable_toast: true
-			id: "31891D15D0EA187C"
-			tasks: [{
-				id: "0CB18B7FBD068C4F"
-				item: "ratatouille:bio_gas_bucket"
-				type: "item"
-			}]
-			x: -9.5d
-			y: -9.0d
-		}
-		{
-			dependencies: ["7DAB92C0947C10CB"]
-			disable_toast: true
-			id: "6F0159783AE33348"
-			tasks: [{
-				id: "5AC9117B4AEAD36A"
-				item: "createdieselgenerators:biodiesel_bucket"
-				type: "item"
-			}]
-			x: -14.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["645DB368A9D15AD7"]
-			disable_toast: true
-			id: "7B2AC3CE02DAA69C"
-			tasks: [{
-				id: "5B54932D01646ACC"
-				item: "createaddition:bioethanol_bucket"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["5787AF3D0A2E4728"]
-			disable_toast: true
-			id: "0402F7A20A3CF9ED"
-			tasks: [{
-				id: "2F7E3642C002434C"
-				item: "kubejs:ash"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["4095EF2352EAD14C"]
-			disable_toast: true
-			id: "0DD993D89E7FDA58"
-			tasks: [{
-				id: "39CF7FE1F9EDD473"
-				item: "ratatouille:compost_tea_bucket"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["645DB368A9D15AD7"]
-			disable_toast: true
-			id: "7DAB92C0947C10CB"
-			optional: true
-			tasks: [{
-				id: "7FC7257023D03D4D"
-				item: "createdieselgenerators:ethanol_bucket"
-				type: "item"
-			}]
-			x: -14.0d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"43A681E4759A3D71"
-				"2DD3C94512042C0F"
-			]
-			description: ["&eOrganic material has been incorporated but remains undecomposed. The mix is rich in carbon and nitrogen, waiting for microbial activity to break it down into forms plants can readily absorb.&r"]
-			disable_toast: true
-			id: "58E9697AC16F146C"
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "Raw Compost"
-			tasks: [{
-				id: "5F0CB18F51A2610D"
-				item: "farmersdelight:organic_compost"
-				type: "item"
-			}]
-			x: 10.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			description: ["&eTo revive them, you first have to crush them into powders.&r"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "0038547A05E5BB0A"
-			tasks: [{
-				id: "0E2D2AAB4812DBDD"
-				item: "kubejs:dry_fermento_mycetes"
-				type: "item"
-			}]
-			x: -5.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["0038547A05E5BB0A"]
-			description: ["&eSecondly, you have to rehydrate the material slowly in water at a stable, moderate temperature, agitation will help break up clumps without shocking the cells. &r"]
-			disable_toast: true
-			id: "2124F945CC19830F"
-			tasks: [{
-				id: "53943C2AAD8FC12C"
-				item: "kubejs:powdered_fermento_mycetes"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["2124F945CC19830F"]
-			description: [
-				"&eOnce metabolic activity resumes, transfer to a simple sugar solution to confirm viability and begin propagation. &r"
-				""
-				"&eThese cultures will serve as the foundation for fermentation. Handle the initial batches carefully; they are limited resources.&r"
-			]
-			disable_toast: true
-			id: "2886DC3B95FC59E8"
-			subtitle: "Most Important Microorganisms"
-			tasks: [{
-				id: "53702170B79F6F1A"
-				item: "kubejs:fermento_mycetes"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["6A6DF9304AB7EA15"]
-			disable_toast: true
-			id: "172963D5623889D6"
-			tasks: [{
-				id: "34E870276D77A01C"
-				item: "createaddition:biomass"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -10.0d
-		}
-		{
-			dependencies: ["721B0A23FFEC5265"]
-			disable_toast: true
-			id: "075E454A2C75D143"
-			tasks: [{
-				id: "2F8E5BD82020CC0B"
-				item: "ratatouille:ripen_matter"
-				type: "item"
-			}]
-			x: -14.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["3432EC274FFBCBDD"]
-			disable_toast: true
-			id: "0DBBCEEAD979BD5B"
-			tasks: [{
-				id: "3F6F46E252AE9B24"
-				item: "ratatouille:mature_matter"
-				type: "item"
-			}]
-			x: -14.0d
-			y: -10.0d
-		}
-		{
-			dependencies: ["6A6DF9304AB7EA15"]
-			disable_toast: true
-			id: "3432EC274FFBCBDD"
-			tasks: [{
-				id: "471E9B755529D5FA"
-				item: "ratatouille:mature_matter_fold"
-				type: "item"
-			}]
-			x: -12.5d
-			y: -9.0d
-		}
-		{
-			dependencies: ["6A6DF9304AB7EA15"]
-			disable_toast: true
-			id: "721B0A23FFEC5265"
-			tasks: [{
-				id: "2937857EDAFC031C"
-				item: "ratatouille:ripen_matter_fold"
-				type: "item"
-			}]
-			x: -12.5d
-			y: -7.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			description: [
-				"&eThe old seabeds and rivers are our best chance at reclaiming organic material.&r"
-				""
-				"&eWhen the atmosphere collapsed, most surface life was scoured away, but layers of biomass settled into waters.&r"
-				""
-				"&eIt contains preserved life that we can use for soil regeneration and early bio-culturing.&r"
-			]
-			hide_dependency_lines: true
-			id: "4F09B6C7A598452C"
-			size: 1.5d
-			subtitle: "Submerged Biomass Recovery"
-			tasks: [{
-				id: "3B44DBB0C05CFCD4"
-				item: "kubejs:wet_biological_sediment"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			description: [
-				"&eThe phosphorus component in bones, tricalcium phosphate, is a natural slow-release high-phosphorus organic fertilizer.&r"
-				""
-				"&eIt is crucial for healthy plant growth by promoting strong root development, increasing flowering and fruiting rates, transferring photosynthetic energy, and enhancing seedling vitality.&r"
-			]
-			disable_toast: true
-			id: "13B4B488109EA835"
-			tasks: [{
-				id: "7622C180DC016850"
-				item: "biomancy:bone_fragments"
-				type: "item"
-			}]
-			x: -6.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			disable_toast: true
-			id: "6C55B9E58C86102E"
-			tasks: [{
-				id: "651C0CFC6DF2ABA6"
-				item: "kubejs:nitrofix_rhizobium"
-				type: "item"
-			}]
-			x: -6.5d
-			y: -7.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			disable_toast: true
-			id: "05E6809D0816FD73"
-			tasks: [{
-				id: "68A30675BEE1422E"
-				item: "kubejs:muddy_bamboo"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -8.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			disable_toast: true
-			id: "42AE62A2A0976533"
-			tasks: [{
-				id: "0B0797D3586A65BE"
-				item: "kubejs:muddy_sugar_cane"
-				type: "item"
-			}]
-			x: -9.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["4F09B6C7A598452C"]
-			disable_toast: true
-			id: "21A04E72207405AF"
-			tasks: [{
-				id: "4477A6A84768F8D1"
-				item: "biomancy:stone_powder"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["6C55B9E58C86102E"]
-			description: ["&eNitrates are a core component of the nitrogen cycle in nature and are crucial for plant growth, industrial production, and human health.&r"]
-			disable_toast: true
-			icon: "tfmg:nitrate_dust"
-			id: "12F9EB602769BA20"
-			tasks: [{
-				id: "7827187BED26C0ED"
-				item: "kubejs:nitrate_solution_bucket"
-				type: "item"
-			}]
-			title: "Nitrate"
-			x: -5.0d
-			y: -8.0d
-		}
-		{
-			dependencies: ["13B4B488109EA835"]
-			disable_toast: true
-			id: "006AA70EA1916072"
-			tasks: [{
-				id: "7E99FDE8E3CDAAA0"
-				item: "kubejs:bone_powder"
-				type: "item"
-			}]
-			x: -5.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "4ACCA5D64B4F6533"
-			tasks: [{
-				id: "7441473B4617DC78"
-				item: "kubejs:dry_wheat_seeds"
-				type: "item"
-			}]
-			x: -12.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "0287E7B4D93AE3DC"
-			tasks: [{
-				id: "4691D84E297D28B8"
-				item: "kubejs:dry_melon_seeds"
-				type: "item"
-			}]
-			x: -11.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "42B7FB696E682E11"
-			tasks: [{
-				id: "280ED658430CD7A5"
-				item: "kubejs:dry_cabbage_seeds"
-				type: "item"
-			}]
-			x: -12.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "377CA90F7E982A02"
-			tasks: [{
-				id: "72B761E24CFD5F04"
-				item: "kubejs:dry_tomato_seeds"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "4D6AEAB5700A47E9"
-			tasks: [{
-				id: "0AC9C7D0040F380D"
-				item: "kubejs:dry_pumpkin_seeds"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			description: [
-				"&eSurface surveys indicate that while most organic matter was incinerated or swept away, pockets of desiccated biomass remain trapped in depleted soil layers. &r"
-				""
-				"&eLook for exposed sedimentary deposits on elevated ground. Excavating them should provide viable source of organic material for rebuilding the biosphere.&r"
-			]
-			hide_dependency_lines: true
-			id: "0D14A252C4D9955C"
-			shape: "circle"
-			size: 1.5d
-			subtitle: "Submerged Biomass Recovery"
-			tasks: [{
-				id: "3E6799AFA52DE67C"
-				item: "kubejs:dry_biological_sediment"
-				type: "item"
-			}]
-			title: "Ash"
-			x: -11.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["0C0473AAE983CA2E"]
-			disable_toast: true
-			id: "2E4198E131B2BB5B"
-			tasks: [{
-				id: "3B7A26C837ED8213"
-				item: "minecraft:beetroot_seeds"
-				type: "item"
-			}]
-			x: -11.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["4D6AEAB5700A47E9"]
-			disable_toast: true
-			id: "7D32088AF5AAE27F"
-			tasks: [{
-				id: "1321F245E1668631"
-				item: "minecraft:pumpkin_seeds"
-				type: "item"
-			}]
-			x: -8.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["377CA90F7E982A02"]
-			disable_toast: true
-			id: "77D5342F1FB3885B"
-			tasks: [{
-				id: "3ACC9C144F65D22C"
-				item: "farmersdelight:tomato_seeds"
-				type: "item"
-			}]
-			x: -8.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["0287E7B4D93AE3DC"]
-			disable_toast: true
-			id: "153B2DE93991BCD7"
-			tasks: [{
-				id: "048B9A9FADFB639F"
-				item: "minecraft:melon_seeds"
-				type: "item"
-			}]
-			x: -11.0d
-			y: 10.0d
-		}
-		{
-			dependencies: ["42B7FB696E682E11"]
-			disable_toast: true
-			id: "59F567AA29FE1F58"
-			tasks: [{
-				id: "7CB5372C167F9ECD"
-				item: "farmersdelight:cabbage_seeds"
-				type: "item"
-			}]
-			x: -14.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["4ACCA5D64B4F6533"]
-			disable_toast: true
-			id: "32E76B484D204790"
-			tasks: [{
-				id: "74BB97FCE9B89BCC"
-				item: "minecraft:wheat_seeds"
-				type: "item"
-			}]
-			x: -14.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["42AE62A2A0976533"]
-			disable_toast: true
-			id: "5FFC1ABF7B74F16E"
-			subtitle: "A Key Vegitation"
-			tasks: [{
-				id: "34073DB235888CE9"
-				item: "minecraft:sugar_cane"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["05E6809D0816FD73"]
-			disable_toast: true
-			id: "1E7BA22EFFD0FDB8"
-			subtitle: "Another Key Vegetation"
-			tasks: [{
-				id: "4120BF3ED9A38F8A"
-				item: "minecraft:bamboo"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -10.0d
-		}
-		{
-			dependencies: ["1E7BA22EFFD0FDB8"]
-			disable_toast: true
-			id: "53FE42548DBB97B6"
-			tasks: [{
-				id: "6F16534E8F9A6BF8"
-				item: "createdieselgenerators:wood_chip"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -12.0d
-		}
-		{
-			dependencies: ["006AA70EA1916072"]
-			disable_toast: true
-			id: "3C9EB6854C43EE3D"
-			tasks: [{
-				id: "62DCC03D2642E610"
-				item: "minecraft:bone_meal"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["6C55B9E58C86102E"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "60BE07D84D003F04"
-			tasks: [{
-				id: "79395C6BD3DC649D"
-				item: "kubejs:nitrofix_rhizobium"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["6A6DF9304AB7EA15"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "43A681E4759A3D71"
-			tasks: [{
-				id: "622479A7955D32F0"
-				item: "ratatouille:compost_residue"
-				type: "item"
-			}]
-			x: 8.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["5787AF3D0A2E4728"]
-			disable_toast: true
-			id: "3388A5B73DB7BAA5"
-			tasks: [{
-				id: "51CC1CC613569C65"
-				item: "miners_delight:silverfish_eggs"
-				type: "item"
-			}]
-			x: -0.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["0D14A252C4D9955C"]
-			disable_toast: true
-			id: "0C0473AAE983CA2E"
-			tasks: [{
-				id: "4CDCACC54CB0A5C3"
-				item: "kubejs:dry_beetroot_seeds"
-				type: "item"
-			}]
-			x: -11.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["3C9EB6854C43EE3D"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "761160110BAD09FD"
-			tasks: [{
-				id: "6A3497061ACFF476"
-				item: "minecraft:bone_meal"
-				type: "item"
-			}]
-			x: 5.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			hide_dependency_lines: true
-			icon: "miners_delight:wild_cave_carrots"
-			id: "7AD8E7DC7BB46C73"
-			size: 1.5d
-			tasks: [{
-				icon: "miners_delight:wild_cave_carrots"
-				id: "0E4F68989128A2F8"
-				observe_type: 0
-				timer: 0L
-				to_observe: "miners_delight:wild_cave_carrots"
-				type: "observation"
-			}]
-			title: "Wild Cave Carrot"
-			x: 1.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["7AD8E7DC7BB46C73"]
-			disable_toast: true
-			id: "25CA7683076A428F"
-			tasks: [{
-				id: "661DE1D15271B538"
-				item: "miners_delight:gossypium"
-				type: "item"
-			}]
-			x: 4.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["25CA7683076A428F"]
-			disable_toast: true
-			id: "19290BD4AAC5F63B"
-			tasks: [{
-				id: "43C783BC6A23A816"
-				item: "rusticdelight:cotton_seeds"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -6.0d
-		}
-		{
-			dependencies: [
-				"41933389CFE645C5"
-				"03789598F3A87A86"
-				"3F40E1672701FCE4"
-			]
-			dependency_requirement: "one_completed"
-			id: "19E5A9FCF4E7AC83"
-			shape: "circle"
-			size: 1.5d
-			tasks: [{
-				id: "19E9FDE7DD77F830"
-				item: "darkerdepths:porous_petrified_log"
-				type: "item"
-			}]
-			x: 7.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["19E5A9FCF4E7AC83"]
-			disable_toast: true
-			id: "4BD82A3FB052848F"
-			tasks: [{
-				id: "1AAA813AC4E750FC"
-				item: "darkerdepths:amber"
-				type: "item"
-			}]
-			x: 10.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["4BD82A3FB052848F"]
-			disable_toast: true
-			id: "61596650A79A6A7E"
-			tasks: [{
-				id: "1BF305CB1F21B094"
-				item: "kubejs:molten_sticky_resin_bucket"
-				type: "item"
-			}]
-			x: 13.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "3F40E1672701FCE4"
-			tasks: [{
-				id: "0B95F908194F6666"
-				item: "tfmg:sulfuric_acid_bucket"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "03789598F3A87A86"
-			tasks: [{
-				id: "5D633DB7B1FED2B6"
-				item: "tfmg:ethylene_bucket"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "41933389CFE645C5"
-			tasks: [{
-				id: "21FB838BEDFC4942"
-				item: "minecraft:water_bucket"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			description: [
-				"&eIn biomes of dryness and sandiness, layers of clay sealed two distinct carbon-based microorganisms, keeping them safe for hundreds of years.&r"
-				""
-				"&eThese ancient microbes, preserved in their earthen tomb, remain locked within the rock, waiting to be uncovered by your hands.&r"
-				""
-				"&eThough the world above turned to dust, these tiny survivors remind us that life finds a way to endure.&r"
-			]
-			hide_dependency_lines: true
-			id: "3EEC66CE7B96ECD5"
-			size: 1.5d
-			subtitle: "Dry claystone deposits"
-			tasks: [{
-				id: "7F9456555A9E99F5"
-				item: "kubejs:claystone_biological_sediment"
-				type: "item"
-			}]
-			x: -21.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			hide_dependency_lines: true
-			id: "03FD5DEDB1A74683"
-			size: 1.5d
-			subtitle: "In Glowshroom Caves"
-			tasks: [{
-				icon: "kubejs:crystalized_phyllite"
-				id: "1AF6D2CF379BFCC2"
-				observe_type: 0
-				timer: 0L
-				to_observe: "kubejs:crystalized_phyllite"
-				type: "observation"
-			}]
-			title: "Infected Phyllite"
-			x: -24.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["03FD5DEDB1A74683"]
-			disable_toast: true
-			id: "5182BDBC0B6D16AF"
-			subtitle: "Catalyze Crystal Growth"
-			tasks: [{
-				id: "1B13EC8811D159B2"
-				item: "kubejs:crystallum_coccus"
-				type: "item"
-			}]
-			x: -26.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["3EEC66CE7B96ECD5"]
-			disable_toast: true
-			id: "227D6E30C7143BCB"
-			tasks: [{
-				id: "113602BC7C5C48E9"
-				item: "kubejs:dry_carbofusor_spirillum"
-				type: "item"
-			}]
-			x: -23.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["227D6E30C7143BCB"]
-			disable_toast: true
-			id: "52452BBA9F49586A"
-			subtitle: "Carbon Fusing"
-			tasks: [{
-				id: "5C2182167EFA480A"
-				item: "kubejs:carbofusor_spirillum"
-				type: "item"
-			}]
-			x: -24.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["3EEC66CE7B96ECD5"]
-			disable_toast: true
-			id: "7CC8C2930A5D8598"
-			tasks: [{
-				id: "732ECC82E87F8AC5"
-				item: "biomancy:bone_fragments"
-				type: "item"
-			}]
-			x: -20.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "66E07B97EB6E41B9"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "003E33435007D4C3"
-				item: "kubejs:peat"
-				type: "item"
-			}]
-			x: -27.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["66E07B97EB6E41B9"]
-			disable_toast: true
-			id: "03C5FD608BA44B14"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "2A7BB7F22F408F92"
-				item: "kubejs:lignite"
-				type: "item"
-			}]
-			x: -24.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["03C5FD608BA44B14"]
-			disable_toast: true
-			id: "1135ECD7A3674B46"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "3D1ADB8E162409A6"
-				item: "kubejs:bituminous_coal"
-				type: "item"
-			}]
-			x: -21.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["1135ECD7A3674B46"]
-			disable_toast: true
-			id: "302D7A36FB1D3034"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "390A7D0433F98D72"
-				item: "minecraft:coal"
-				type: "item"
-			}]
-			x: -18.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["52452BBA9F49586A"]
-			disable_toast: true
-			id: "11D7AE36D5A92985"
-			tasks: [{
-				id: "740338ABF143935B"
-				item: "tfmg:crude_oil_bucket"
-				type: "item"
-			}]
-			x: -26.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["52452BBA9F49586A"]
-			disable_toast: true
-			id: "27A374095C25B7E0"
-			subtitle: "Faster Composting"
-			tasks: [{
-				id: "66A1BC3ABE337C9F"
-				item: "ratatouille:compost_residue"
-				type: "item"
-			}]
-			x: -24.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["3EEC66CE7B96ECD5"]
-			disable_toast: true
-			id: "0B04CA26E87AB968"
-			tasks: [{
-				id: "78AA522C15DA3239"
-				item: "kubejs:dry_putrelys_sporogenes"
-				type: "item"
-			}]
-			x: -20.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["0B04CA26E87AB968"]
-			disable_toast: true
-			id: "01D81AC34759CA01"
-			subtitle: "Decomposition"
-			tasks: [{
-				id: "00DEBC133E7C9A2B"
-				item: "kubejs:putrelys_sporogenes"
-				type: "item"
-			}]
-			x: -20.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["52452BBA9F49586A"]
-			disable_toast: true
-			id: "666E40867F521D15"
-			tasks: [{
-				id: "21AB4264B2A1F6AF"
-				item: "kubejs:methanol_bucket"
-				type: "item"
-			}]
-			x: -26.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["5182BDBC0B6D16AF"]
-			disable_toast: true
-			id: "1F25BD25A172E591"
-			subtitle: "Grows Faster"
-			tasks: [{
-				id: "21D157F669D5DAD4"
-				item: "kubejs:infected_budding_amethyst"
-				type: "item"
-			}]
-			x: -27.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["5182BDBC0B6D16AF"]
-			disable_toast: true
-			id: "096825DEE52A662C"
-			subtitle: "Grows Faster"
-			tasks: [{
-				id: "2834C3A2FC8DC57B"
-				item: "kubejs:infected_budding_quartz"
-				type: "item"
-			}]
-			x: -27.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["3CECF5ADD3C91E4B"]
-			hide_dependency_lines: true
-			id: "5F996DDE34E30FFE"
-			size: 1.5d
-			tasks: [{
-				id: "4B05660D6C736BFA"
-				item: "kubejs:acidified_darkslate"
-				type: "item"
-			}]
-			x: -18.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["5F996DDE34E30FFE"]
-			disable_toast: true
-			id: "2E77D91EAB2CD464"
-			tasks: [{
-				id: "20D39875A214D33B"
-				item: "kubejs:acidolys_bacillus"
-				type: "item"
-			}]
-			x: -20.0d
-			y: 8.0d
-		}
-		{
-			dependencies: ["2E77D91EAB2CD464"]
-			disable_toast: true
-			icon: {
-				Count: 1
-				id: "minecraft:iron_chestplate"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "28AAA52174010B75"
-			tasks: [{
-				id: "5AE93C5A6527DC10"
-				title: "Armor Dissolving"
-				type: "checkmark"
-			}]
-			x: -21.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["2E77D91EAB2CD464"]
-			disable_toast: true
-			icon: "minecraft:granite"
-			id: "5518C951F8D3EA0A"
-			tasks: [{
-				id: "563D463354EB9293"
-				title: "Stone Refining"
-				type: "checkmark"
-			}]
-			title: "Stone Refining"
-			x: -20.0d
-			y: 10.0d
-		}
-	]
-	title: "Environmental Note"
+    default_hide_dependency_lines: false,
+    default_quest_shape: "",
+    filename: "environment_note",
+    group: "",
+    icon: "kubejs:survival_note",
+    id: "60102DCD9C448A39",
+    order_index: 4,
+    quest_links: [],
+    quests: [
+        {
+            dependencies: ["0EA786F00A19ADC6"],
+            hide_dependent_lines: true,
+            hide_until_deps_complete: true,
+            icon_scale: 0.9,
+            id: "5733B6FE443F3A31",
+            shape: "gear",
+            size: 3.0,
+            tasks: [{
+                id: "1D492A4724A72E91",
+                item: "kubejs:survival_note",
+                type: "item"
+            }],
+            title: "Survival Note",
+            x: -8.0,
+            y: 0.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            description: [
+                "  &3--------&r  &bRight Click to Collect&r  &3--------&r"
+                ""
+                "&eContains materials left behind by those who came before.&r"
+            ],
+            hide_dependency_lines: true,
+            id: "771B7234DC99AC45",
+            size: 1.5,
+            subtitle: "Materials Left By Predecessors",
+            tasks: [{
+                icon: "kubejs:scrap_block",
+                id: "6C16CDE22AD419FB",
+                observe_type: 0,
+                timer: 0,
+                title: "Scraps",
+                to_observe: "minecraft:air",
+                type: "observation"
+            }],
+            title: "Scraps",
+            x: -3.5,
+            y: -3.0
+        },
+        {
+            dependencies: ["771B7234DC99AC45"],
+            disable_toast: true,
+            id: "0E8772CBC63F7D6D",
+            tasks: [{
+                id: "5BD7811C16176D8D",
+                item: "tfmg:synthetic_leather",
+                type: "item"
+            }],
+            title: "Synthetic Leather",
+            x: -2.0,
+            y: -4.0
+        },
+        {
+            dependencies: ["0E58512F3902F0F9"],
+            disable_toast: true,
+            id: "263A0574B7E0C0DC",
+            tasks: [{
+                id: "7E892ECCB2757553",
+                item: "tfmg:rebar",
+                type: "item"
+            }],
+            title: "Rebar",
+            x: 1.0,
+            y: -2.0
+        },
+        {
+            dependencies: ["0E58512F3902F0F9"],
+            dependency_requirement: "one_completed",
+            disable_toast: true,
+            id: "080FA7C3F386B9B8",
+            tasks: [
+                {
+                    id: "678126CA721835BE",
+                    item: "kubejs:rusted_iron_wire",
+                    type: "item"
+                },
+                {
+                    id: "3C4AF3CD7E620955",
+                    item: "kubejs:rusted_iron_rod",
+                    type: "item"
+                },
+                {
+                    id: "5BE50FC535A03FCE",
+                    item: "kubejs:rusted_iron_nugget",
+                    type: "item"
+                }
+            ],
+            title: "Rusted Iron Bits",
+            x: 1.0,
+            y: 0.0
+        },
+        {
+            dependencies: ["771B7234DC99AC45"],
+            disable_toast: true,
+            id: "444E20B159183D13",
+            tasks: [{
+                id: "593E43DB4EAD6A5E",
+                item: "tfmg:synthetic_string",
+                type: "item"
+            }],
+            title: "Synthetic String",
+            x: -3.5,
+            y: -5.0
+        },
+        {
+            dependencies: ["771B7234DC99AC45"],
+            disable_toast: true,
+            id: "0B1ECD95761E02BA",
+            tasks: [{
+                id: "6C5A4784B81DB339",
+                item: "kubejs:rubber",
+                type: "item"
+            }],
+            title: "Rubber",
+            x: -5.0,
+            y: -4.0
+        },
+        {
+            dependencies: ["771B7234DC99AC45"],
+            disable_toast: true,
+            id: "1A75CF6A6C2F2AE5",
+            tasks: [{
+                id: "36A37A454B0383AB",
+                item: "tfmg:screw",
+                type: "item"
+            }],
+            title: "Screw",
+            x: -5.0,
+            y: -2.0
+        },
+        {
+            dependencies: ["771B7234DC99AC45"],
+            disable_toast: true,
+            icon: "kubejs:small_scrap_block",
+            id: "0E58512F3902F0F9",
+            size: 1.5,
+            subtitle: "Heavy Materials In Scraps",
+            description: ["&eSmaller scrap blocks containing heavier materials. Sheets, ingots, and other dense remnants.&r"],
+            tasks: [{
+                id: "69F404CA0EE1CBEC",
+                title: "Small Scraps",
+                type: "checkmark"
+            }],
+            title: "Small Scraps",
+            x: -0.5,
+            y: -1.0
+        },
+        {
+            dependencies: ["0E58512F3902F0F9"],
+            dependency_requirement: "one_completed",
+            disable_toast: true,
+            id: "4ABFD18B3CCA0DF5",
+            subtitle: "Recovered Plates",
+            tasks: [
+                {
+                    id: "2609A4A738073E54",
+                    item: "kubejs:rusted_iron_sheet",
+                    type: "item"
+                },
+                {
+                    id: "450FE0414747589F",
+                    item: "kubejs:rusted_iron_ingot",
+                    type: "item"
+                }
+            ],
+            title: "Rusted Iron Plates",
+            x: -0.5,
+            y: 1.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            disable_toast: true,
+            hide_dependency_lines: true,
+            id: "108DC1287F75BF74",
+            subtitle: "Dead Trees",
+            description: ["&eAsh and burnt logs scattered across the wasteland. The only remaining wood sources.&r"],
+            tasks: [
+                {
+                    id: "3B0ED0431CA1E243",
+                    item: "kubejs:ash_log",
+                    type: "item"
+                },
+                {
+                    id: "58AA81299CFFA069",
+                    item: "kubejs:burnt_log",
+                    type: "item"
+                }
+            ],
+            title: "Logs",
+            x: -6.5,
+            y: 5.0
+        },
+        {
+            dependencies: ["108DC1287F75BF74"],
+            disable_toast: true,
+            id: "1DEDFF868BA0A8E5",
+            subtitle: "Bare Wood",
+            description: ["&eStrip the bark from dead logs to get clean wood.&r"],
+            tasks: [
+                {
+                    id: "516D3FD1026FDB9B",
+                    item: "kubejs:stripped_ash_log",
+                    type: "item"
+                },
+                {
+                    id: "44851F77226FFBEB",
+                    item: "kubejs:stripped_burnt_log",
+                    type: "item"
+                }
+            ],
+            title: "Stripped Logs",
+            x: -5.0,
+            y: 6.0
+        },
+        {
+            dependencies: ["1DEDFF868BA0A8E5"],
+            disable_toast: true,
+            id: "0725AF9EC929C5C6",
+            subtitle: "Cutted Wood",
+            description: ["&eBreak stripped logs into smaller pieces.&r"],
+            tasks: [
+                {
+                    id: "240E9371567294CB",
+                    item: "kubejs:stripped_broken_ash_log",
+                    type: "item"
+                },
+                {
+                    id: "5E1E6299B941234B",
+                    item: "kubejs:stripped_broken_burnt_log",
+                    type: "item"
+                }
+            ],
+            title: "Stripped Broken Logs",
+            x: -3.5,
+            y: 5.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            disable_toast: true,
+            hide_dependency_lines: true,
+            id: "61523773DA8A8372",
+            size: 1.5,
+            subtitle: "Wood Alternatives",
+            description: ["&ePetrified wood found underground. A stone-like alternative to wood.&r"],
+            tasks: [{
+                id: "420E946C6278CA51",
+                item: "darkerdepths:petrified_log",
+                type: "item"
+            }],
+            title: "Petrified Log",
+            x: -5.0,
+            y: 2.0
+        },
+        {
+            dependencies: ["0725AF9EC929C5C6"],
+            disable_toast: true,
+            id: "52CA338C1BB121C9",
+            size: 1.5,
+            subtitle: "Wood Supply",
+            description: ["&eProcess broken logs into wood chips. Can be used to make wood chip blocks, which act as wood planks.&r"],
+            tasks: [{
+                id: "0BDCB097BDC61AFD",
+                item: "createdieselgenerators:wood_chip",
+                type: "item"
+            }],
+            title: "Wood Chips",
+            x: -2.0,
+            y: 4.0
+        },
+        {
+            dependencies: ["61523773DA8A8372"],
+            disable_toast: true,
+            id: "3A35A3762C132C15",
+            subtitle: "Stone-Like Planks",
+            description: ["&ePetrified wood crafted into planks. Act as wood planks and a durable building material.&r"],
+            tasks: [{
+                id: "5C3D4259A040FD9D",
+                item: "darkerdepths:petrified_planks",
+                type: "item"
+            }],
+            title: "Petrified Planks",
+            x: -3.5,
+            y: 1.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            dependency_requirement: "one_completed",
+            disable_toast: true,
+            hide_dependency_lines: true,
+            icon: {
+                Count: 1,
+                id: "minecraft:rusted_iron_hammer",
+                tag: {
+                    Damage: 0
+                }
+            },
+            id: "52B0015D7D0E531F",
+            size: 1.5,
+            subtitle: "Important Tools",
+            description: ["&eHammers of all tiers. Used to crush ores, crush stones, and process items.&r"],
+            tasks: [
+                {
+                    id: "38CCC97DF417D319",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:rusted_iron_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "3B7E194858631C9B",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:zinc_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "093C363DC3779902",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:gold_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "22F44750E8BDBB16",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:iron_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "1745CA408D3CC898",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:stone_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "2F77D0216E3F6A66",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:brass_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "55361CF1EBA60A33",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:bronze_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "5113FB61F8F9A862",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:steel_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                },
+                {
+                    id: "2DF521752BE9866C",
+                    item: {
+                        Count: 1,
+                        id: "minecraft:netherite_hammer",
+                        tag: {
+                            Damage: 0
+                        }
+                    },
+                    type: "item"
+                }
+            ],
+            title: "Hammers",
+            x: -11.0,
+            y: -2.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            description: ["&eThe surface is covered in this lifeless, dry soil.&r"],
+            disable_toast: true,
+            hide_dependency_lines: true,
+            id: "033BB57BC19A2871",
+            size: 1.5,
+            subtitle: "Dead Surface",
+            tasks: [{
+                icon: "kubejs:depleted_dirt",
+                id: "592DBEBAF018FD49",
+                observe_type: 0,
+                timer: 0,
+                to_observe: "kubejs:depleted_dirt",
+                type: "observation"
+            }],
+            title: "Depleted Dirt",
+            x: -9.5,
+            y: 3.0
+        },
+        {
+            dependencies: ["5733B6FE443F3A31"],
+            description: [
+                "&eRusted iron is a cheap and accessible material at the start.&r",
+                "",
+                "&eIt can be obtained from scrap blocks scattered across the wasteland.&r"
+            ],
+            hide_dependency_lines: true,
+            icon: "minecraft:campfire",
+            id: "4A50B3F60E44489D",
+            subtitle: "Essential Tools for Survival",
+            tasks: [{
+                dimension: "minecraft:overworld",
+                icon: "minecraft:campfire",
+                id: "06E77EAC49BA7B1A",
+                type: "dimension"
+            }],
+            title: "Survival Tools",
+            x: -12.5,
+            y: 1.0
+        },
+        {
+            dependencies: ["4A50B3F60E44489D"],
+            id: "1B9E9B4590DF4D98",
+            tasks: [{
+                id: "0030B2D2F29BAF9B",
+                item: {
+                    Count: 1,
+                    id: "kubejs:rusted_iron_shovel",
+                    tag: {
+                        Damage: 0
+                    }
+                },
+                type: "item"
+            }],
+            title: "Rusted Iron Shovel",
+            x: -12.5,
+            y: 3.0
+        },
+        {
+            dependencies: ["4A50B3F60E44489D"],
+            id: "278267C48509B7F4",
+            tasks: [{
+                id: "5EF98BE344B53895",
+                item: {
+                    Count: 1,
+                    id: "kubejs:rusted_iron_pickaxe",
+                    tag: {
+                        Damage: 0
+                    }
+                },
+                type: "item"
+            }],
+            title: "Rusted Iron Pickaxe",
+            x: -14.0,
+            y: 2.5
+        },
+        {
+            dependencies: ["4A50B3F60E44489D"],
+            id: "10BC5553D9D78A57",
+            tasks: [{
+                id: "603B69AD8322B2C6",
+                item: {
+                    Count: 1,
+                    id: "kubejs:rusted_iron_axe",
+                    tag: {
+                        Damage: 0
+                    }
+                },
+                type: "item"
+            }],
+            title: "Rusted Iron Axe",
+            x: -14.5,
+            y: 1.0
+        },
+        {
+            dependencies: ["4A50B3F60E44489D"],
+            id: "19FB0E0AA89A3169",
+            tasks: [{
+                id: "54148E84516FBAB3",
+                item: {
+                    Count: 1,
+                    id: "kubejs:rusted_iron_sword",
+                    tag: {
+                        Damage: 0
+                    }
+                },
+                type: "item"
+            }],
+            title: "Rusted Iron Sword",
+            x: -14.0,
+            y: -0.5
+        }
+    ],
+    title: "Survival Note"
 }

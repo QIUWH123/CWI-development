@@ -43,14 +43,18 @@
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
+			description: ["&eThe workhorse of fluid systems. Used in pipes, casings, and fluid components.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "03B2E935BC80D280"
 			shape: "square"
+			subtitle: "Fluidic Metal"
 			tasks: [{
 				id: "45D2D1284232804E"
 				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
+			title: "Copper Ingot"
 			x: 0.5d
 			y: -2.5d
 		}
@@ -59,262 +63,317 @@
 				"0AB2714AE3675671"
 				"68EF942EB6D8901B"
 			]
+			description: ["&eA casing made from copper. Foundation for fluid machinery.&r"]
 			id: "5A05AF5F4360CBBC"
 			shape: "rsquare"
 			size: 1.75d
+			subtitle: "Fluid Enclosure"
 			tasks: [{
 				id: "3D72840214ADF626"
 				item: "create:copper_casing"
 				type: "item"
 			}]
+			title: "Copper Casing"
 			x: 4.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["03B2E935BC80D280"]
+			description: ["&eCopper pressed into a thin sheet. Used for fluid tanks and casings.&r"]
 			disable_toast: true
 			id: "68EF942EB6D8901B"
+			subtitle: "Thin Copper"
 			tasks: [{
 				id: "76D1320E3CCFAEDE"
 				item: "create:copper_sheet"
 				type: "item"
 			}]
+			title: "Copper Sheet"
 			x: 2.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
+			description: ["&eTransports fluids between machines and tanks. The backbone of any fluid system.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "4D08D43112F8E50A"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Transport"
 			tasks: [{
 				id: "4D8821EF07F7468C"
 				item: "create:fluid_pipe"
 				type: "item"
 			}]
+			title: "Fluid Pipe"
 			x: 0.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["4D08D43112F8E50A"]
+			description: ["&eMoves fluids through pipes. Requires rotational power to operate.&r"]
 			disable_toast: true
 			id: "5C630C455922A36A"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Powered Flow"
 			tasks: [{
 				id: "694D1C06AC826164"
 				item: "create:mechanical_pump"
 				type: "item"
 			}]
+			title: "Mechanical Pump"
 			x: 0.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["4D08D43112F8E50A"]
+			description: ["&eControls fluid flow through pipes. Can be toggled with redstone.&r"]
 			disable_toast: true
 			id: "358B15745F3F6A7B"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Flow Control"
 			tasks: [{
 				id: "0D59BFA21B1BD151"
 				item: "create:fluid_valve"
 				type: "item"
 			}]
+			title: "Fluid Valve"
 			x: -1.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["5A05AF5F4360CBBC"]
+			description: ["&eAllows portable transfer of fluids between inventories.&r"]
 			disable_toast: true
 			id: "1F205AA95D114BEB"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Portable Transfer"
 			tasks: [{
 				id: "413E3E3E6738D431"
 				item: "create:portable_fluid_interface"
 				type: "item"
 			}]
+			title: "Portable Fluid Interface"
 			x: 6.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["5A05AF5F4360CBBC"]
+			description: ["&ePours fluids onto items below. Used for filling and processing.&r"]
 			disable_toast: true
 			id: "0C856B27FEBCFD64"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Pouring"
 			tasks: [{
 				id: "6AD761659599D83D"
 				item: "create:spout"
 				type: "item"
 			}]
+			title: "Spout"
 			x: 6.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["5A05AF5F4360CBBC"]
+			description: ["&eLowers a hose to collect or deposit fluids at varying heights.&r"]
 			disable_toast: true
 			id: "7C12FC4C16CA0D9D"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Hose"
 			tasks: [{
 				id: "7F4EA407AEF8FFF0"
 				item: "create:hose_pulley"
 				type: "item"
 			}]
+			title: "Hose Pulley"
 			x: 6.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["68EF942EB6D8901B"]
+			description: ["&eStores fluids. Can be stacked and connected for larger capacity.&r"]
 			disable_toast: true
 			id: "3AD988D19BD12F19"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Storage"
 			tasks: [{
 				id: "1724D0FFAEF86BC8"
 				item: "create:fluid_tank"
 				type: "item"
 			}]
+			title: "Fluid Tank"
 			x: 2.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["3AD988D19BD12F19"]
+			description: ["&eConverts heat into rotational power.&r"]
 			disable_toast: true
 			id: "21516827F73BAC5C"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "Require Burner for Full Energy Output"
+			subtitle: "Efficient Energy"
 			tasks: [{
 				id: "6AFB50297017E74F"
 				item: "create:steam_engine"
 				type: "item"
 			}]
+			title: "Steam Engine"
 			x: 4.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["21516827F73BAC5C"]
+			description: ["&eEmits a loud whistle when steam passes through.&r"]
 			disable_toast: true
 			id: "280E95A4E8CF8E4F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Steam Signal"
 			tasks: [{
 				id: "69F26EFA9D66C18B"
 				item: "create:steam_whistle"
 				type: "item"
 			}]
+			title: "Steam Whistle"
 			x: 6.5d
 			y: -6.5d
 		}
 		{
-			dependencies: [
-				"4D08D43112F8E50A"
-				"0AB2714AE3675671"
-			]
+			dependencies: ["497B62C9B689DE39"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "51FCF9E1390C7557"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Filter"
 			tasks: [{
-				id: "111D230DC2D2E991"
-				item: "fluid:copper_tap"
+				id: "0B61281E27C00ED4"
+				item: "fluid:fluid_manifest"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 4.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["5A05AF5F4360CBBC"]
+			description: ["&eDrains fluids from items. Useful for emptying filled containers.&r"]
 			disable_toast: true
 			id: "7EBA164EE1EBC428"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Item Draining"
 			tasks: [{
 				id: "05EBB15E2A87395B"
 				item: "create:item_drain"
 				type: "item"
 			}]
+			title: "Item Drain"
 			x: 4.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["11F9A3AD93930BDD"]
+			description: ["&eA handheld tool for moving small amounts of fluid between containers.&r"]
 			disable_toast: true
 			id: "36A0A9049C7E3228"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Transfer Tool"
 			tasks: [{
 				id: "3B8155B7BDBED2EE"
 				item: "fluid:pipette"
 				type: "item"
 			}]
+			title: "Pipette"
 			x: -1.5d
 			y: -6.5d
 		}
 		{
-			dependencies: ["0AB2714AE3675671"]
+			dependencies: [
+				"0AB2714AE3675671"
+				"4D08D43112F8E50A"
+			]
+			description: ["&eBalances fluid levels between connected tanks.&r"]
 			disable_toast: true
 			id: "3D9C425E8993EE1D"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Level Balancing"
 			tasks: [{
 				id: "65092CE0EA2F3720"
 				item: "fluid:communicating_vessel"
 				type: "item"
 			}]
-			x: 4.5d
+			title: "Communicating Vessel"
+			x: 2.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["0AB2714AE3675671"]
+			description: ["&eFills cans with fluids automatically.&r"]
 			disable_toast: true
 			id: "49BB95B4D4287747"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Can Filling"
 			tasks: [{
 				id: "709A41ECBC8EEBB7"
 				item: "fluid:can_filler"
 				type: "item"
 			}]
+			title: "Can Filler"
 			x: 6.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
+			description: ["&eRubber recovered from scrap. Essential for fluid seals.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "0AB2714AE3675671"
+			subtitle: "Sealing Material"
 			tasks: [{
 				id: "156D7D2A51596198"
 				item: "kubejs:rubber"
 				type: "item"
 			}]
+			title: "Rubber"
 			x: 4.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
+			description: ["&eBrass is needed for more advanced fluid components.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "1B2BF2C10C4FEB9E"
 			shape: "square"
+			subtitle: "Advanced Fluid Material"
 			tasks: [{
 				id: "6FE8E94AF2C36F99"
 				item: "create:brass_ingot"
 				type: "item"
 			}]
+			title: "Brass Ingot"
 			x: 2.5d
 			y: -6.5d
 		}
 		{
 			dependencies: ["03B2E935BC80D280"]
+			description: ["&eChannels fluids along a line. Smart outlets can filter fluids.&r"]
 			disable_toast: true
 			id: "1BC0E9639F76FFE6"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Channels"
 			tasks: [
 				{
 					id: "72850DADB66A958F"
@@ -327,29 +386,35 @@
 					type: "item"
 				}
 			]
+			title: "Gutter Outlets"
 			x: 0.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["4D08D43112F8E50A"]
+			description: ["&eA pump that moves fluids at higher speed. Powered by rotational force.&r"]
 			disable_toast: true
 			id: "3FC61A5F2C151E4F"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "High Speed Pump"
 			tasks: [{
 				id: "204B8E4E8B1E0E6A"
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
+			title: "Centrifugal Pump"
 			x: -1.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["03B2E935BC80D280"]
+			description: ["&eInterfaces for moving fluids between machines. Smart versions can filter.&r"]
 			disable_toast: true
 			id: "634FC7A47FB767BA"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Fluid Connections"
 			tasks: [
 				{
 					id: "1B854E99FE14F623"
@@ -362,27 +427,33 @@
 					type: "item"
 				}
 			]
+			title: "Fluid Interfaces"
 			x: -1.5d
 			y: -4.5d
 		}
 		{
 			dependencies: ["68EF942EB6D8901B"]
+			description: ["&eStores fluids. Can be stacked and connected for larger capacity. But horizontal.&r"]
 			disable_toast: true
 			id: "35DCFF2700B3C97B"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Horizontal Fluid Storage"
 			tasks: [{
 				id: "7878CC5491265206"
 				item: "create_connected:fluid_vessel"
 				type: "item"
 			}]
+			title: "Fluid Vessel"
 			x: 2.5d
 			y: -0.5d
 		}
 		{
 			dependencies: ["1B2BF2C10C4FEB9E"]
+			description: ["&eRobotic arm with a pipette. Used for precise fluid handling in automation.&r"]
 			disable_toast: true
 			id: "11F9A3AD93930BDD"
+			subtitle: "Automated Fluid Handling"
 			tasks: [
 				{
 					id: "4A3492332D7B237F"
@@ -395,6 +466,7 @@
 					type: "item"
 				}
 			]
+			title: "Robot Pipette and Arm"
 			x: 0.5d
 			y: -6.5d
 		}
