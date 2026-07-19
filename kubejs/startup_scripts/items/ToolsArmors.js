@@ -63,3 +63,10 @@ ItemEvents.armorTierRegistry(event => {
         tier.knockbackResistance = 0.1
     })
 })
+
+const $ShieldItem = Java.loadClass('net.minecraft.world.item.ShieldItem');
+const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties');
+
+StartupEvents.registry('item', event => {
+    event.createCustom('bamboo_shield', () => { return new $ShieldItem(new $ItemProperties().durability(437))})
+})
