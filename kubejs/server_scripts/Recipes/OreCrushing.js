@@ -2,17 +2,22 @@
 
 LootJS.modifiers(event => {
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
-        const exp = isDeepslate ? 3 : 2
         const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
         const dropChance = isDeepslate ? 0.75 : 0.25
         const modifier = event.addBlockLootModifier(oreId)
         const dropCount = isMore ? 3 : 2
 
-        modifier.dropExperience(exp).removeLoot(oreId).removeLoot(dropOreId)
+        modifier.dropExperience(0).removeLoot(oreId).removeLoot(dropOreId)
         for (let i = 0; i < dropCount; i++) modifier.addLoot(dropOreId)
         modifier.randomChanceWithLooting(dropChance, 1).addLoot(dropOreId)
         modifier.randomChanceWithLooting(0.3, 1).addLoot(dustId)
     })
+
+// Additional Fix
+
+    event.addBlockLootModifier('minecraft:redstone_ore').removeLoot('minecraft:redstone')
+    event.addBlockLootModifier('minecraft:deepslate_redstone_ore').removeLoot('minecraft:redstone')
+
 })
 
 // OreProcessingRecipes
@@ -27,6 +32,10 @@ ServerEvents.recipes(event => {
         const dropCount = isMore ? 3 : 2
         const dropId = (crushedOreId === '') ? dropOreId : crushedOreId
         const processingTime = isDeepslate ? 300 : 200
+
+        if (crushedOreId !== '' && isDeepslate) {
+            event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
+        }
 
         if (crushedOreId === '') {
             event.recipes.create.crushing([
@@ -46,10 +55,6 @@ ServerEvents.recipes(event => {
                 Item.of(dustId).withChance(0.35), 
                 Item.of(dustId).withChance(0.25)
             ], oreId).processingTime(processingTime)
-        }
-
-        if (!crushedOreId === '') {
-            event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
         }
     })
 

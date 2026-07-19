@@ -52,6 +52,27 @@ ServerEvents.recipes(event => {
         })
     }
 
+    function customMelting(heat, input, amount, time, output) {
+        event.custom({
+            "type": "createmetallurgy:melting",
+            "heatRequirement": heat,
+            "ingredients": [input],
+            "processingTime": time,
+            "results": [{ "amount": amount, "fluid": output }]
+        })
+    }
+
+    function customBulkMelting(minHeat, maxHeat, input, amount, time, output) {
+        event.custom({
+            "type": "createmetallurgy:bulk_melting",
+            "ingredients": [input],
+            "maxHeatRequirement": maxHeat,
+            "minHeatRequirement": minHeat,
+            "processingTime": time,
+            "results": [{ "amount": amount, "fluid": output }]
+        })
+    }
+
 // Alloying Functions
 
     function alloying(time, input1, amount1, input2, amount2, output, outputAmount) {
@@ -83,11 +104,11 @@ ServerEvents.recipes(event => {
         })
     }
 
-    function itemAlloying(heat, time, input1, count1, input2, count2, output, outputAmount) {
+    function itemAlloying(heat, input, time, outputAmount, output) {
         event.custom({
             "type": "createmetallurgy:alloying",
             "heatRequirement": heat,
-            "ingredients": [{ "count": count1, "item": input1 }, { "count": count2, "item": input2 }],
+            "ingredients": input,
             "processingTime": time,
             "results": [{ "amount": outputAmount, "fluid": output }]
         })
@@ -172,6 +193,15 @@ ServerEvents.recipes(event => {
 
     melting('heated', 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
     bulkMelting(4, 50, 'darkerdepths:amber', 150, 55, 'kubejs:molten_sticky_resin')
+
+    itemAlloying('superheated', [{ "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }], 360, 300, 'kubejs:molten_andesite_alloy') 
+    itemAlloying('superheated', [{ "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "kubejs:andesite_powder" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }], 360, 300, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "kubejs:andesite_gravel" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }], 360, 350, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "kubejs:andesite_gravel" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }], 360, 350, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "kubejs:cobbled_andesite" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }], 360, 400, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "kubejs:cobbled_andesite" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }], 360, 400, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "minecraft:andesite" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }, { "item": "kubejs:clay_powder" }], 360, 400, 'kubejs:molten_andesite_alloy')
+    itemAlloying('superheated', [{ "item": "minecraft:andesite" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }, { "item": "minecraft:clay_ball" }], 360, 400, 'kubejs:molten_andesite_alloy')
 
     basinCasting('kubejs:molten_slime', 1000, 43, 'minecraft:slime_block')
     basinCasting('tfmg:molten_slag', 1000, 1482, 'tfmg:slag_block')

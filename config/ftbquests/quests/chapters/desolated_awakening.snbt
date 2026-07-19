@@ -93,7 +93,9 @@
 			subtitle: "Where Am I?"
 			tasks: [{
 				dimension: "minecraft:overworld"
+				icon: "kubejs:rusted_industrial_aluminum_casing"
 				id: "559365AE1AFEB82A"
+				title: "Where Am I"
 				type: "dimension"
 			}]
 			title: "A Derelict Laboratory"
@@ -130,6 +132,7 @@
 				id: "4421C5120E517A15"
 				observe_type: 0
 				timer: 0L
+				title: "The Stargate"
 				to_observe: "sgjourney:universe_stargate"
 				type: "observation"
 			}]
@@ -152,6 +155,7 @@
 						Damage: 0
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Rusted Iron Sword"
@@ -173,6 +177,7 @@
 						Damage: 0
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Rusted Iron Axe"
@@ -194,6 +199,7 @@
 						Damage: 0
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Rusted Iron Pickaxe"
@@ -215,6 +221,7 @@
 						Damage: 0
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Rusted Iron Shovel"
@@ -236,6 +243,7 @@
 						Damage: 0
 					}
 				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Rusted Iron Hoe"
@@ -310,8 +318,16 @@
 			id: "1DA273BCC6892499"
 			subtitle: "The Best Storage at the Beginning"
 			tasks: [{
-				id: "047936149C64040E"
-				item: "sophisticatedbackpacks:iron_backpack"
+				id: "01A8EA22815D7D9F"
+				item: {
+					Count: 1
+					id: "sophisticatedbackpacks:backpack"
+					tag: {
+						inventorySlots: 63
+						upgradeSlots: 3
+					}
+				}
+				match_nbt: false
 				type: "item"
 			}]
 			title: "Backpack"
@@ -341,6 +357,7 @@
 				"0ECB4F57C7E65627"
 			]
 			description: ["&eA suitcase, left near the Stargate. Inside, a manual – decayed, pages fallen apart. If the fragments can be gathered, the knowledge inside might explain what happened. Or how to start over.&r"]
+			disable_toast: true
 			id: "661157F41CB9C876"
 			shape: "square"
 			size: 1.25d
@@ -412,6 +429,7 @@
 				id: "2DE4E30622B92C04"
 				observe_type: 0
 				timer: 0L
+				title: "Armored"
 				to_observe: "kubejs:steel_armor_block"
 				type: "observation"
 			}]
@@ -431,6 +449,7 @@
 				id: "34284AC03C517D9F"
 				observe_type: 0
 				timer: 0L
+				title: "Important Boxes"
 				to_observe: "create:gray_toolbox"
 				type: "observation"
 			}]

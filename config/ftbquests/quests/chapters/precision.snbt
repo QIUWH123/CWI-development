@@ -552,6 +552,7 @@
 			subtitle: "Tougher Armor"
 			tasks: [
 				{
+					disable_toast: true
 					id: "077583A3707AA4B0"
 					item: {
 						Count: 1
@@ -560,9 +561,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "3D5853676D55EE84"
 					item: {
 						Count: 1
@@ -571,9 +574,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "671636E91AE56D93"
 					item: {
 						Count: 1
@@ -582,9 +587,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "0E8BB65ACD9ADB19"
 					item: {
 						Count: 1
@@ -593,6 +600,7 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -680,6 +688,7 @@
 			subtitle: "Durable Tools"
 			tasks: [
 				{
+					disable_toast: true
 					id: "7B5F334AFDE5BB7B"
 					item: {
 						Count: 1
@@ -688,9 +697,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "20213650AF22DCFC"
 					item: {
 						Count: 1
@@ -699,9 +710,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "4400D809A443A394"
 					item: {
 						Count: 1
@@ -710,9 +723,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "6642F9661FD4A6F2"
 					item: {
 						Count: 1
@@ -721,9 +736,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "3F2F6676C2B1DAFE"
 					item: {
 						Count: 1
@@ -732,6 +749,7 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -911,6 +929,7 @@
 			subtitle: "Press Profiles"
 			tasks: [
 				{
+					disable_toast: true
 					id: "357D6E710A556346"
 					item: {
 						Count: 1
@@ -919,9 +938,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "469F013B24657AEE"
 					item: {
 						Count: 1
@@ -930,9 +951,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "122154FE87972193"
 					item: {
 						Count: 1
@@ -941,9 +964,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "7BB6CF4FC01FF361"
 					item: {
 						Count: 1
@@ -952,6 +977,7 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 			]

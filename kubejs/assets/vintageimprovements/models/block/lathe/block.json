@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "vintageimprovements:block/lathe_casing",
+		"0": "kubejs:block/industrial_casing",
 		"3": "vintageimprovements:block/lathe",
 		"5": "vintageimprovements:block/lathe_gearbox",
-		"particle": "vintageimprovements:block/lathe_casing"
+		"particle": "kubejs:block/industrial_casing"
 	},
 	"elements": [
 		{

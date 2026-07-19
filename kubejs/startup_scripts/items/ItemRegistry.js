@@ -16,6 +16,8 @@ StartupEvents.registry('item', event => {
     event.create('muddy_sugar_cane')
         .texture('kubejs:item/plants/muddy_sugar_cane')
 
+    event.create('wood_sheet_mold')
+    event.create('filled_wood_sheet_mold')
     event.create('net')
     event.create('sponge_gemmule')
     event.create('synthetic_feather')

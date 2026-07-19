@@ -15,16 +15,8 @@
 			y: -2.5d
 		}
 		{
-			height: 1.33d
-			image: "createdeco:block/palettes/catwalks/iron_catwalk"
-			rotation: 0.0d
-			width: 1.33d
-			x: 2.5d
-			y: -0.5d
-		}
-		{
 			height: 0.9d
-			image: "createdeco:block/palettes/catwalks/iron_catwalk"
+			image: "minecraft:block/iron_block"
 			rotation: 45.0d
 			width: 0.9d
 			x: 4.5d
@@ -32,7 +24,7 @@
 		}
 		{
 			height: 0.9d
-			image: "createdeco:block/palettes/catwalks/iron_catwalk"
+			image: "minecraft:block/iron_block"
 			rotation: 45.0d
 			width: 0.9d
 			x: 6.5d
@@ -45,6 +37,14 @@
 			width: 1.0d
 			x: -1.5d
 			y: 3.5d
+		}
+		{
+			height: 1.33d
+			image: "minecraft:block/iron_block"
+			rotation: 0.0d
+			width: 1.33d
+			x: 2.5d
+			y: -0.5d
 		}
 	]
 	order_index: 7
@@ -161,6 +161,7 @@
 			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eA sticky, pliable earth. Paltry on its own, but essential for binding powders into sturdy compounds.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "437113F4C591BBA5"
 			subtitle: "Adhesive Substance"
 			tasks: [{
@@ -173,10 +174,7 @@
 			y: -6.5d
 		}
 		{
-			dependencies: [
-				"5E402C739E34B7D4"
-				"540EF2A79DD1C92C"
-			]
+			dependencies: ["540EF2A79DD1C92C"]
 			description: ["&eCrushed and ground andesite. Dusty and unremarkable, but indispensable once mixed with other ingredients.&r"]
 			disable_toast: true
 			id: "4C1F87459ED9C5F9"
@@ -188,7 +186,7 @@
 			}]
 			title: "Andesite Powder"
 			x: 2.5d
-			y: -6.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["5E402C739E34B7D4"]
@@ -199,6 +197,7 @@
 				"&eA simple tool, already corroded. Can break brittle stones and ores, flatten ingots into sheets, or strike animals.&r"
 			]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "540EF2A79DD1C92C"
 			shape: "hexagon"
 			size: 1.5d
@@ -216,7 +215,7 @@
 			}]
 			title: "Rusted Iron Hammer"
 			x: 2.5d
-			y: -4.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
@@ -246,14 +245,11 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"60E2563C494FB253"
-				"540EF2A79DD1C92C"
-			]
+			dependencies: ["42229A4123AA3541"]
 			description: ["&eThe alloy, flattened into a uniform sheet. Ready to be shaped into casings and machines.&r"]
 			disable_toast: true
 			id: "701D21C32E77F5C7"
-			subtitle: "Rolled and Ready"
+			subtitle: "Flat Andesite"
 			tasks: [{
 				id: "6CD38E7B46524DEF"
 				item: "kubejs:andesite_alloy_sheet"
@@ -374,6 +370,7 @@
 			subtitle: "Plated Protection"
 			tasks: [
 				{
+					disable_toast: true
 					id: "26407595F93BE9C8"
 					item: {
 						Count: 1
@@ -382,9 +379,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "774E473C609C4ACA"
 					item: {
 						Count: 1
@@ -393,9 +392,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "5B54C1A2C1D9EE20"
 					item: {
 						Count: 1
@@ -404,9 +405,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "38127DD0BBBCA911"
 					item: {
 						Count: 1
@@ -415,6 +418,7 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -447,11 +451,13 @@
 			subtitle: "Factory Control"
 			tasks: [
 				{
+					disable_toast: true
 					id: "0DFF511CA520DE30"
 					item: "create:andesite_funnel"
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "51D6DDEBDBECD235"
 					item: "create:andesite_tunnel"
 					type: "item"
@@ -462,7 +468,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["6A11BA5D1C4D2924"]
+			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eA moving chain that carries items from one place to another. The first step toward automation. Let the machines do the heavy lifting.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -490,6 +496,7 @@
 			subtitle: "Proper Equipment"
 			tasks: [
 				{
+					disable_toast: true
 					id: "4FB850DFD1AF2EC0"
 					item: {
 						Count: 1
@@ -498,9 +505,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "03301C65DCFA42B9"
 					item: {
 						Count: 1
@@ -509,9 +518,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "13A968EB61F1A0D3"
 					item: {
 						Count: 1
@@ -520,9 +531,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "2D1E243037067DF6"
 					item: {
 						Count: 1
@@ -531,9 +544,11 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "1E519F1F781CAA7D"
 					item: {
 						Count: 1
@@ -542,6 +557,7 @@
 							Damage: 0
 						}
 					}
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -604,7 +620,7 @@
 			y: -6.5d
 		}
 		{
-			dependencies: ["1266E8AE2713DF7E"]
+			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eThe skeleton of a wind-catching sail. Lightweight and modular, waiting for net to be attached.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -700,6 +716,7 @@
 			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eThe most basic smelting apparatus. It burns wood and coal to refine metals.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "5E24F2344B85B318"
 			shape: "hexagon"
 			size: 1.5d
@@ -715,20 +732,21 @@
 		}
 		{
 			dependencies: ["4C5689F8A2DBC8A7"]
-			description: ["&eThe brass lockbox from the toolbox, placed under the press. The machine bears down until the seal breaks. What was inside has been waiting a long time.&r"]
+			description: ["&eWhat was inside has been waiting for a long time.&r"]
 			disable_toast: true
 			hide_dependency_lines: false
+			icon: "kubejs:brass_lockbox"
 			icon_scale: 0.9d
 			id: "055007D72160EFC4"
 			shape: "gear"
 			size: 2.75d
 			subtitle: "Open The Lockbox With Mechanical Press"
 			tasks: [{
-				id: "43D4EC87EAF72FBA"
-				item: "kubejs:brass_lockbox"
-				type: "item"
+				id: "1BEE2C4D25FB6186"
+				title: "Open The Lockbox"
+				type: "checkmark"
 			}]
-			title: "Open the Lockbox"
+			title: "Open The Lockbox"
 			x: 11.5d
 			y: -2.5d
 		}
@@ -824,7 +842,7 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["701D21C32E77F5C7"]
+			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eBearings made from andesite alloy. They reduce friction in moving parts, essential for constructing more advanced machinery.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -909,23 +927,31 @@
 			subtitle: "Disposable Shapes"
 			tasks: [
 				{
+					disable_toast: true
 					id: "23DAC21A39B12C7B"
 					item: "kubejs:clay_ingot_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "11091A4CE72900E0"
 					item: "kubejs:clay_nugget_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "456EA43F1FA49967"
 					item: "kubejs:clay_sheet_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "6BFAAFA35BDE5B6A"
 					item: "kubejs:clay_rod_mold"
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -943,23 +969,31 @@
 			subtitle: "Heat-Resistant Upgrade"
 			tasks: [
 				{
+					disable_toast: true
 					id: "7258354FC9BB2EC0"
 					item: "kubejs:terracotta_ingot_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "191897AF7EAE7A48"
 					item: "kubejs:terracotta_nugget_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "13215DDFE52AACB5"
 					item: "kubejs:terracotta_sheet_mold"
+					optional_task: true
 					type: "item"
 				}
 				{
+					disable_toast: true
 					id: "0481C6CE5173D122"
 					item: "kubejs:terracotta_rod_mold"
+					optional_task: true
 					type: "item"
 				}
 			]
@@ -986,6 +1020,7 @@
 			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eA workbench for assembling components by hand.&r"]
 			disable_toast: true
+			hide_dependency_lines: true
 			id: "476F895A01D30141"
 			shape: "hexagon"
 			size: 1.5d
@@ -1000,7 +1035,7 @@
 			y: -6.5d
 		}
 		{
-			dependencies: ["012664D784F5D09D"]
+			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eA tool for extracting resin from rubber trees. Automating this process will ensure a steady supply of rubber for future machines.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -1018,7 +1053,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["012664D784F5D09D"]
+			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eA device that keeps a chunk of the world loaded even when you are far away. Essential for factories that need to run unattended.&r"]
 			disable_toast: true
 			hide_dependency_lines: true

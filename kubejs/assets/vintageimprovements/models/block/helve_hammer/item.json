@@ -4,13 +4,13 @@
 	"textures": {
 		"0": "create:block/axis",
 		"1": "create:block/axis_top",
-		"2": "vintageimprovements:block/hammer_gearbox",
+		"2": "tfmg:block/heavy_gearbox",
 		"3": "vintageimprovements:block/hammer_frame",
 		"5": "vintageimprovements:block/hammer_body",
-		"7": "vintageimprovements:block/hammer_casing",
+		"7": "tfmg:block/heavy_machinery_casing",
 		"11": "block/anvil_top",
 		"12": "block/anvil",
-		"particle": "vintageimprovements:block/hammer_casing"
+		"particle": "create:block/axis"
 	},
 	"elements": [
 		{

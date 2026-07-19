@@ -1,11 +1,11 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"2": "vintageimprovements:block/hammer_gearbox",
+		"2": "tfmg:block/heavy_gearbox",
 		"3": "vintageimprovements:block/hammer_frame",
-		"4": "vintageimprovements:block/hammer_casing",
+		"4": "tfmg:block/heavy_machinery_casing",
 		"5": "vintageimprovements:block/hammer_body",
-		"particle": "vintageimprovements:block/hammer_casing"
+		"particle": "tfmg:block/heavy_machinery_casing"
 	},
 	"elements": [
 		{

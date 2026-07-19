@@ -7,6 +7,7 @@ ServerEvents.recipes(event => {
 // Shapeless
 
     event.shapeless('2x minecraft:stick', 'minecraft:bamboo')
+    event.shapeless('createdieselgenerators:wood_chip', 'minecraft:stick')
     event.shapeless('2x rusticdelight:cotton_seeds', 'rusticdelight:cotton_boll')
     event.shapeless('3x rusticdelight:cotton_seeds', 'miners_delight:gossypium')
 
@@ -19,6 +20,12 @@ ServerEvents.recipes(event => {
 // Filling
 
     event.recipes.create.filling('minecraft:wet_sponge', [Fluid.of('minecraft:water', 1000), 'minecraft:sponge'])
+
+// Cooking
+
+    event.recipes.minecraft.campfire_cooking('kubejs:cooked_spider_meat', 'kubejs:spider_meat')
+    event.recipes.minecraft.smoking('kubejs:cooked_spider_meat', 'kubejs:spider_meat')
+    event.recipes.minecraft.smelting('kubejs:cooked_spider_meat', 'kubejs:spider_meat')
 
 // Mixing
 

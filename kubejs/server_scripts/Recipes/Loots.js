@@ -310,42 +310,42 @@ LootJS.modifiers((event) => {
 
 // Repeated block (original duplication)
 
-    event.addBlockLootModifier('kubejs:scrap_block')
-        .removeLoot("kubejs:scrap_block")
+    event.addBlockLootModifier('kubejs:small_scrap_block')
+        .removeLoot("kubejs:small_scrap_block")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.3, 1)
         .addLoot("kubejs:rusted_iron_sheet")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.3, 1)
         .addLoot("kubejs:rusted_iron_rod")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.3, 1)
         .addLoot("kubejs:rusted_iron_ingot")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.3, 1)
         .addLoot("kubejs:rusted_iron_wire")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.25, 1)
         .addLoot("tfmg:rebar")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.25, 1)
         .addLoot("tfmg:rebar")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.25, 1)
         .addLoot("tfmg:rebar")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.5, 1)
         .addLoot("kubejs:ash")
 
-    event.addBlockLootModifier('kubejs:scrap_block')
+    event.addBlockLootModifier('kubejs:small_scrap_block')
         .randomChanceWithLooting(0.5, 1)
         .addLoot("kubejs:ash")
 
@@ -388,6 +388,11 @@ LootJS.modifiers((event) => {
         .addLoot("kubejs:coal_powder")
         .randomChanceWithLooting(0.3, 1)
         .addLoot("kubejs:coal_powder")
+
+// Misc Modifications
+
+    event.addBlockLootModifier('darkerdepths:dry_sprouts')
+        .replaceLoot('minecraft:wheat_seeds', 'minecraft:stick')
 
 })
 

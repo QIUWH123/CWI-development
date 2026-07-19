@@ -114,15 +114,15 @@ global.colors = [
 ]
 
 global.hammers = [
-    ['bronze_hammer', 'bronze', 18, 2, 2],
-    ['brass_hammer', 'brass', 19, 2, 1],
-    ['steel_hammer', 'steel', 20, 3, 3],
-    ['iron_hammer', 'iron', 20, 2, 0],
-    ['rusted_iron_hammer', 'rusted_iron', 22, 2, 1],
-    ['stone_hammer', 'stone', 25, 1, 0],
-    ['gold_hammer', 'gold', 13, 1, 0],
-    ['zinc_hammer', 'zinc', 15, 1, 0],
-    ['netherite_hammer', 'netherite', 15, 3, 0]
+    ['bronze_hammer', 'bronze', 12, 2, 2],
+    ['brass_hammer', 'brass', 13, 2, 1],
+    ['steel_hammer', 'steel', 15, 3, 3],
+    ['iron_hammer', 'iron', 15, 2, 0],
+    ['rusted_iron_hammer', 'rusted_iron', 17, 2, 1],
+    ['stone_hammer', 'stone', 20, 1, 0],
+    ['gold_hammer', 'gold', 9, 1, 0],
+    ['zinc_hammer', 'zinc', 10, 1, 0],
+    ['netherite_hammer', 'netherite', 12, 3, 0]
 ]
 
 global.pipePileDefinitions = [

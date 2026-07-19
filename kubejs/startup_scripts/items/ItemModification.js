@@ -76,7 +76,7 @@ ItemEvents.modification(event => {
         })
     }
 
-// Seed Food Values
+// Food Values
 
     food_hungers('minecraft:wheat_seeds', 2, 1.0)
     food_fastToEat('minecraft:wheat_seeds')
@@ -96,7 +96,8 @@ ItemEvents.modification(event => {
     food_hungers('farmersdelight:tomato_seeds', 2, 1.0)
     food_fastToEat('farmersdelight:tomato_seeds')
 
-// Compost Food Values
+    food_hungers('vital_herbs:lichen_mite_carcass', 1, 1)
+    food_fastToEat('vital_herbs:lichen_mite_carcass')
 
     food_hungers('ratatouille:compost_mass', 4, 2.0)
     food_effects('ratatouille:compost_mass', 'minecraft:nausea', 5, 1, 0.3)

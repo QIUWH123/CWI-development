@@ -91,12 +91,12 @@ addBlockConversion('kubejs:small_scrap_block', 'air', 1, [
 
 // Depot Conversions
 
-addDepotConversion('minecraft:raw_iron', 'create:crushed_raw_iron', 2)
+addDepotConversion('minecraft:raw_iron', 'create:crushed_raw_iron', 3)
 addDepotConversion('minecraft:raw_gold', 'create:crushed_raw_gold', 3)
-addDepotConversion('minecraft:raw_copper', 'create:crushed_raw_copper', 3)
+addDepotConversion('tfmg:raw_nickel', 'create:crushed_raw_nickel', 3)
+addDepotConversion('minecraft:raw_copper', 'create:crushed_raw_copper', 2)
+addDepotConversion('kubejs:raw_silver', 'kubejs:crushed_raw_silver', 2)
+addDepotConversion('tfmg:raw_lead', 'create:crushed_raw_lead', 2)
+addDepotConversion('tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', 1)
 addDepotConversion('create:raw_zinc', 'create:crushed_raw_zinc', 1)
 addDepotConversion('kubejs:raw_tin', 'kubejs:crushed_raw_tin', 1)
-addDepotConversion('kubejs:raw_silver', 'kubejs:crushed_raw_silver', 1)
-addDepotConversion('tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', 1)
-addDepotConversion('tfmg:raw_lead', 'create:crushed_raw_lead', 1)
-addDepotConversion('tfmg:raw_nickel', 'create:crushed_raw_nickel', 3)

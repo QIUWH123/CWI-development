@@ -1,533 +1,609 @@
 {
-    default_hide_dependency_lines: false,
-    default_quest_shape: "",
-    filename: "environment_note",
-    group: "",
-    icon: "kubejs:survival_note",
-    id: "60102DCD9C448A39",
-    order_index: 4,
-    quest_links: [],
-    quests: [
-        {
-            dependencies: ["0EA786F00A19ADC6"],
-            hide_dependent_lines: true,
-            hide_until_deps_complete: true,
-            icon_scale: 0.9,
-            id: "5733B6FE443F3A31",
-            shape: "gear",
-            size: 3.0,
-            tasks: [{
-                id: "1D492A4724A72E91",
-                item: "kubejs:survival_note",
-                type: "item"
-            }],
-            title: "Survival Note",
-            x: -8.0,
-            y: 0.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            description: [
-                "  &3--------&r  &bRight Click to Collect&r  &3--------&r"
-                ""
-                "&eContains materials left behind by those who came before.&r"
-            ],
-            hide_dependency_lines: true,
-            id: "771B7234DC99AC45",
-            size: 1.5,
-            subtitle: "Materials Left By Predecessors",
-            tasks: [{
-                icon: "kubejs:scrap_block",
-                id: "6C16CDE22AD419FB",
-                observe_type: 0,
-                timer: 0,
-                title: "Scraps",
-                to_observe: "minecraft:air",
-                type: "observation"
-            }],
-            title: "Scraps",
-            x: -3.5,
-            y: -3.0
-        },
-        {
-            dependencies: ["771B7234DC99AC45"],
-            disable_toast: true,
-            id: "0E8772CBC63F7D6D",
-            tasks: [{
-                id: "5BD7811C16176D8D",
-                item: "tfmg:synthetic_leather",
-                type: "item"
-            }],
-            title: "Synthetic Leather",
-            x: -2.0,
-            y: -4.0
-        },
-        {
-            dependencies: ["0E58512F3902F0F9"],
-            disable_toast: true,
-            id: "263A0574B7E0C0DC",
-            tasks: [{
-                id: "7E892ECCB2757553",
-                item: "tfmg:rebar",
-                type: "item"
-            }],
-            title: "Rebar",
-            x: 1.0,
-            y: -2.0
-        },
-        {
-            dependencies: ["0E58512F3902F0F9"],
-            dependency_requirement: "one_completed",
-            disable_toast: true,
-            id: "080FA7C3F386B9B8",
-            tasks: [
-                {
-                    id: "678126CA721835BE",
-                    item: "kubejs:rusted_iron_wire",
-                    type: "item"
-                },
-                {
-                    id: "3C4AF3CD7E620955",
-                    item: "kubejs:rusted_iron_rod",
-                    type: "item"
-                },
-                {
-                    id: "5BE50FC535A03FCE",
-                    item: "kubejs:rusted_iron_nugget",
-                    type: "item"
-                }
-            ],
-            title: "Rusted Iron Bits",
-            x: 1.0,
-            y: 0.0
-        },
-        {
-            dependencies: ["771B7234DC99AC45"],
-            disable_toast: true,
-            id: "444E20B159183D13",
-            tasks: [{
-                id: "593E43DB4EAD6A5E",
-                item: "tfmg:synthetic_string",
-                type: "item"
-            }],
-            title: "Synthetic String",
-            x: -3.5,
-            y: -5.0
-        },
-        {
-            dependencies: ["771B7234DC99AC45"],
-            disable_toast: true,
-            id: "0B1ECD95761E02BA",
-            tasks: [{
-                id: "6C5A4784B81DB339",
-                item: "kubejs:rubber",
-                type: "item"
-            }],
-            title: "Rubber",
-            x: -5.0,
-            y: -4.0
-        },
-        {
-            dependencies: ["771B7234DC99AC45"],
-            disable_toast: true,
-            id: "1A75CF6A6C2F2AE5",
-            tasks: [{
-                id: "36A37A454B0383AB",
-                item: "tfmg:screw",
-                type: "item"
-            }],
-            title: "Screw",
-            x: -5.0,
-            y: -2.0
-        },
-        {
-            dependencies: ["771B7234DC99AC45"],
-            disable_toast: true,
-            icon: "kubejs:small_scrap_block",
-            id: "0E58512F3902F0F9",
-            size: 1.5,
-            subtitle: "Heavy Materials In Scraps",
-            description: ["&eSmaller scrap blocks containing heavier materials. Sheets, ingots, and other dense remnants.&r"],
-            tasks: [{
-                id: "69F404CA0EE1CBEC",
-                title: "Small Scraps",
-                type: "checkmark"
-            }],
-            title: "Small Scraps",
-            x: -0.5,
-            y: -1.0
-        },
-        {
-            dependencies: ["0E58512F3902F0F9"],
-            dependency_requirement: "one_completed",
-            disable_toast: true,
-            id: "4ABFD18B3CCA0DF5",
-            subtitle: "Recovered Plates",
-            tasks: [
-                {
-                    id: "2609A4A738073E54",
-                    item: "kubejs:rusted_iron_sheet",
-                    type: "item"
-                },
-                {
-                    id: "450FE0414747589F",
-                    item: "kubejs:rusted_iron_ingot",
-                    type: "item"
-                }
-            ],
-            title: "Rusted Iron Plates",
-            x: -0.5,
-            y: 1.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            disable_toast: true,
-            hide_dependency_lines: true,
-            id: "108DC1287F75BF74",
-            subtitle: "Dead Trees",
-            description: ["&eAsh and burnt logs scattered across the wasteland. The only remaining wood sources.&r"],
-            tasks: [
-                {
-                    id: "3B0ED0431CA1E243",
-                    item: "kubejs:ash_log",
-                    type: "item"
-                },
-                {
-                    id: "58AA81299CFFA069",
-                    item: "kubejs:burnt_log",
-                    type: "item"
-                }
-            ],
-            title: "Logs",
-            x: -6.5,
-            y: 5.0
-        },
-        {
-            dependencies: ["108DC1287F75BF74"],
-            disable_toast: true,
-            id: "1DEDFF868BA0A8E5",
-            subtitle: "Bare Wood",
-            description: ["&eStrip the bark from dead logs to get clean wood.&r"],
-            tasks: [
-                {
-                    id: "516D3FD1026FDB9B",
-                    item: "kubejs:stripped_ash_log",
-                    type: "item"
-                },
-                {
-                    id: "44851F77226FFBEB",
-                    item: "kubejs:stripped_burnt_log",
-                    type: "item"
-                }
-            ],
-            title: "Stripped Logs",
-            x: -5.0,
-            y: 6.0
-        },
-        {
-            dependencies: ["1DEDFF868BA0A8E5"],
-            disable_toast: true,
-            id: "0725AF9EC929C5C6",
-            subtitle: "Cutted Wood",
-            description: ["&eBreak stripped logs into smaller pieces.&r"],
-            tasks: [
-                {
-                    id: "240E9371567294CB",
-                    item: "kubejs:stripped_broken_ash_log",
-                    type: "item"
-                },
-                {
-                    id: "5E1E6299B941234B",
-                    item: "kubejs:stripped_broken_burnt_log",
-                    type: "item"
-                }
-            ],
-            title: "Stripped Broken Logs",
-            x: -3.5,
-            y: 5.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            disable_toast: true,
-            hide_dependency_lines: true,
-            id: "61523773DA8A8372",
-            size: 1.5,
-            subtitle: "Wood Alternatives",
-            description: ["&ePetrified wood found underground. A stone-like alternative to wood.&r"],
-            tasks: [{
-                id: "420E946C6278CA51",
-                item: "darkerdepths:petrified_log",
-                type: "item"
-            }],
-            title: "Petrified Log",
-            x: -5.0,
-            y: 2.0
-        },
-        {
-            dependencies: ["0725AF9EC929C5C6"],
-            disable_toast: true,
-            id: "52CA338C1BB121C9",
-            size: 1.5,
-            subtitle: "Wood Supply",
-            description: ["&eProcess broken logs into wood chips. Can be used to make wood chip blocks, which act as wood planks.&r"],
-            tasks: [{
-                id: "0BDCB097BDC61AFD",
-                item: "createdieselgenerators:wood_chip",
-                type: "item"
-            }],
-            title: "Wood Chips",
-            x: -2.0,
-            y: 4.0
-        },
-        {
-            dependencies: ["61523773DA8A8372"],
-            disable_toast: true,
-            id: "3A35A3762C132C15",
-            subtitle: "Stone-Like Planks",
-            description: ["&ePetrified wood crafted into planks. Act as wood planks and a durable building material.&r"],
-            tasks: [{
-                id: "5C3D4259A040FD9D",
-                item: "darkerdepths:petrified_planks",
-                type: "item"
-            }],
-            title: "Petrified Planks",
-            x: -3.5,
-            y: 1.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            dependency_requirement: "one_completed",
-            disable_toast: true,
-            hide_dependency_lines: true,
-            icon: {
-                Count: 1,
-                id: "minecraft:rusted_iron_hammer",
-                tag: {
-                    Damage: 0
-                }
-            },
-            id: "52B0015D7D0E531F",
-            size: 1.5,
-            subtitle: "Important Tools",
-            description: ["&eHammers of all tiers. Used to crush ores, crush stones, and process items.&r"],
-            tasks: [
-                {
-                    id: "38CCC97DF417D319",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:rusted_iron_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "3B7E194858631C9B",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:zinc_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "093C363DC3779902",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:gold_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "22F44750E8BDBB16",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:iron_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "1745CA408D3CC898",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:stone_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "2F77D0216E3F6A66",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:brass_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "55361CF1EBA60A33",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:bronze_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "5113FB61F8F9A862",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:steel_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                },
-                {
-                    id: "2DF521752BE9866C",
-                    item: {
-                        Count: 1,
-                        id: "minecraft:netherite_hammer",
-                        tag: {
-                            Damage: 0
-                        }
-                    },
-                    type: "item"
-                }
-            ],
-            title: "Hammers",
-            x: -11.0,
-            y: -2.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            description: ["&eThe surface is covered in this lifeless, dry soil.&r"],
-            disable_toast: true,
-            hide_dependency_lines: true,
-            id: "033BB57BC19A2871",
-            size: 1.5,
-            subtitle: "Dead Surface",
-            tasks: [{
-                icon: "kubejs:depleted_dirt",
-                id: "592DBEBAF018FD49",
-                observe_type: 0,
-                timer: 0,
-                to_observe: "kubejs:depleted_dirt",
-                type: "observation"
-            }],
-            title: "Depleted Dirt",
-            x: -9.5,
-            y: 3.0
-        },
-        {
-            dependencies: ["5733B6FE443F3A31"],
-            description: [
-                "&eRusted iron is a cheap and accessible material at the start.&r",
-                "",
-                "&eIt can be obtained from scrap blocks scattered across the wasteland.&r"
-            ],
-            hide_dependency_lines: true,
-            icon: "minecraft:campfire",
-            id: "4A50B3F60E44489D",
-            subtitle: "Essential Tools for Survival",
-            tasks: [{
-                dimension: "minecraft:overworld",
-                icon: "minecraft:campfire",
-                id: "06E77EAC49BA7B1A",
-                type: "dimension"
-            }],
-            title: "Survival Tools",
-            x: -12.5,
-            y: 1.0
-        },
-        {
-            dependencies: ["4A50B3F60E44489D"],
-            id: "1B9E9B4590DF4D98",
-            tasks: [{
-                id: "0030B2D2F29BAF9B",
-                item: {
-                    Count: 1,
-                    id: "kubejs:rusted_iron_shovel",
-                    tag: {
-                        Damage: 0
-                    }
-                },
-                type: "item"
-            }],
-            title: "Rusted Iron Shovel",
-            x: -12.5,
-            y: 3.0
-        },
-        {
-            dependencies: ["4A50B3F60E44489D"],
-            id: "278267C48509B7F4",
-            tasks: [{
-                id: "5EF98BE344B53895",
-                item: {
-                    Count: 1,
-                    id: "kubejs:rusted_iron_pickaxe",
-                    tag: {
-                        Damage: 0
-                    }
-                },
-                type: "item"
-            }],
-            title: "Rusted Iron Pickaxe",
-            x: -14.0,
-            y: 2.5
-        },
-        {
-            dependencies: ["4A50B3F60E44489D"],
-            id: "10BC5553D9D78A57",
-            tasks: [{
-                id: "603B69AD8322B2C6",
-                item: {
-                    Count: 1,
-                    id: "kubejs:rusted_iron_axe",
-                    tag: {
-                        Damage: 0
-                    }
-                },
-                type: "item"
-            }],
-            title: "Rusted Iron Axe",
-            x: -14.5,
-            y: 1.0
-        },
-        {
-            dependencies: ["4A50B3F60E44489D"],
-            id: "19FB0E0AA89A3169",
-            tasks: [{
-                id: "54148E84516FBAB3",
-                item: {
-                    Count: 1,
-                    id: "kubejs:rusted_iron_sword",
-                    tag: {
-                        Damage: 0
-                    }
-                },
-                type: "item"
-            }],
-            title: "Rusted Iron Sword",
-            x: -14.0,
-            y: -0.5
-        }
-    ],
-    title: "Survival Note"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "survival_note"
+	group: ""
+	icon: "kubejs:survival_note"
+	id: "60102DCD9C448A39"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0EA786F00A19ADC6"]
+			hide_dependent_lines: true
+			hide_until_deps_complete: true
+			icon_scale: 0.9d
+			id: "5733B6FE443F3A31"
+			shape: "gear"
+			size: 3.0d
+			tasks: [{
+				id: "1D492A4724A72E91"
+				item: "kubejs:survival_note"
+				type: "item"
+			}]
+			title: "Survival Note"
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: [
+				"  &3--------&r  &bRight Click to Collect&r  &3--------&r"
+				""
+				"&eContains materials left behind by those who came before.&r"
+			]
+			hide_dependency_lines: true
+			id: "771B7234DC99AC45"
+			size: 1.5d
+			subtitle: "Materials Left By Predecessors"
+			tasks: [{
+				icon: "kubejs:scrap_block"
+				id: "6A783FF8DB1AE63D"
+				observe_type: 0
+				timer: 0L
+				title: "Scrap Block"
+				to_observe: "kubejs:scrap_block"
+				type: "observation"
+			}]
+			title: "Scraps"
+			x: -3.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "0E8772CBC63F7D6D"
+			tasks: [{
+				id: "5BD7811C16176D8D"
+				item: "tfmg:synthetic_leather"
+				type: "item"
+			}]
+			title: "Synthetic Leather"
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			disable_toast: true
+			id: "263A0574B7E0C0DC"
+			tasks: [{
+				id: "7E892ECCB2757553"
+				item: "tfmg:rebar"
+				type: "item"
+			}]
+			title: "Rebar"
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			id: "080FA7C3F386B9B8"
+			tasks: [
+				{
+					disable_toast: true
+					id: "678126CA721835BE"
+					item: "kubejs:rusted_iron_wire"
+					optional_task: true
+					type: "item"
+				}
+				{
+					disable_toast: true
+					id: "3C4AF3CD7E620955"
+					item: "kubejs:rusted_iron_rod"
+					optional_task: true
+					type: "item"
+				}
+				{
+					disable_toast: true
+					id: "5BE50FC535A03FCE"
+					item: "kubejs:rusted_iron_nugget"
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Rusted Iron Bits"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "444E20B159183D13"
+			tasks: [{
+				id: "593E43DB4EAD6A5E"
+				item: "tfmg:synthetic_string"
+				type: "item"
+			}]
+			title: "Synthetic String"
+			x: -3.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "0B1ECD95761E02BA"
+			tasks: [{
+				id: "6C5A4784B81DB339"
+				item: "kubejs:rubber"
+				type: "item"
+			}]
+			title: "Rubber"
+			x: -5.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			disable_toast: true
+			id: "1A75CF6A6C2F2AE5"
+			tasks: [{
+				id: "36A37A454B0383AB"
+				item: "tfmg:screw"
+				type: "item"
+			}]
+			title: "Screw"
+			x: -5.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["771B7234DC99AC45"]
+			description: ["&eSmaller scrap blocks containing heavier materials. Sheets, ingots, and other dense remnants.&r"]
+			disable_toast: true
+			icon: "kubejs:small_scrap_block"
+			id: "0E58512F3902F0F9"
+			size: 1.5d
+			subtitle: "Heavy Materials In Scraps"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				icon: "kubejs:small_scrap_block"
+				id: "058C7EBC532D83F3"
+				title: "Small Scrap Block"
+				type: "dimension"
+			}]
+			title: "Small Scraps"
+			x: -0.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0E58512F3902F0F9"]
+			dependency_requirement: "one_completed"
+			disable_toast: true
+			id: "4ABFD18B3CCA0DF5"
+			subtitle: "Recovered Plates"
+			tasks: [
+				{
+					disable_toast: true
+					id: "2609A4A738073E54"
+					item: "kubejs:rusted_iron_sheet"
+					optional_task: true
+					type: "item"
+				}
+				{
+					disable_toast: true
+					id: "450FE0414747589F"
+					item: "kubejs:rusted_iron_ingot"
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Rusted Iron Plates"
+			x: -0.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&eAsh and burnt logs scattered across the wasteland. The only remaining wood sources.&r"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "108DC1287F75BF74"
+			subtitle: "Dead Trees"
+			tasks: [
+				{
+					disable_toast: true
+					icon: "kubejs:ash_log"
+					id: "419CFA5545D06C98"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Ash Log"
+					to_observe: "kubejs:ash_log"
+					type: "observation"
+				}
+				{
+					disable_toast: true
+					icon: "kubejs:burnt_log"
+					id: "65BCEAF1BEB53418"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Burnt Log"
+					to_observe: "kubejs:burnt_log"
+					type: "observation"
+				}
+			]
+			title: "Logs"
+			x: -6.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["108DC1287F75BF74"]
+			description: ["&eStrip the bark from dead logs to get clean wood.&r"]
+			disable_toast: true
+			id: "1DEDFF868BA0A8E5"
+			subtitle: "Bare Wood"
+			tasks: [
+				{
+					disable_toast: true
+					icon: "kubejs:stripped_ash_log"
+					id: "287B710C6E902FB2"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Stripped Ash Log"
+					to_observe: "kubejs:stripped_ash_log"
+					type: "observation"
+				}
+				{
+					icon: "kubejs:stripped_burnt_log"
+					id: "6D68D6712E29E24E"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Stripped Burnt Log"
+					to_observe: "kubejs:stripped_burnt_log"
+					type: "observation"
+				}
+			]
+			title: "Stripped Logs"
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1DEDFF868BA0A8E5"]
+			description: ["&eBreak stripped logs into smaller pieces.&r"]
+			disable_toast: true
+			id: "0725AF9EC929C5C6"
+			subtitle: "Cutted Wood"
+			tasks: [
+				{
+					disable_toast: true
+					icon: "kubejs:stripped_broken_ash_log"
+					id: "7B95DBA94C25579F"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Stripped Broken Ash Log"
+					to_observe: "kubejs:stripped_broken_ash_log"
+					type: "observation"
+				}
+				{
+					disable_toast: true
+					icon: "kubejs:stripped_broken_burnt_log"
+					id: "0255FFFB99300512"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					title: "Stripped Broken Burnt Log"
+					to_observe: "kubejs:stripped_broken_burnt_log"
+					type: "observation"
+				}
+			]
+			title: "Stripped Broken Logs"
+			x: -3.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&ePetrified wood found underground. A stone-like alternative to wood.&r"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "61523773DA8A8372"
+			size: 1.5d
+			subtitle: "Wood Alternatives"
+			tasks: [{
+				disable_toast: true
+				icon: "darkerdepths:petrified_log"
+				id: "4B1CD9A7136E30B6"
+				observe_type: 0
+				timer: 0L
+				title: "Petrified Log"
+				to_observe: "darkerdepths:petrified_log"
+				type: "observation"
+			}]
+			title: "Petrified Log"
+			x: -5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0725AF9EC929C5C6"]
+			description: ["&eProcess broken logs into wood chips. Can be used to make wood chip blocks, which act as wood planks.&r"]
+			disable_toast: true
+			id: "52CA338C1BB121C9"
+			size: 1.5d
+			subtitle: "Wood Supply"
+			tasks: [{
+				id: "0BDCB097BDC61AFD"
+				item: "createdieselgenerators:wood_chip"
+				type: "item"
+			}]
+			title: "Wood Chips"
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["61523773DA8A8372"]
+			description: ["&ePetrified wood crafted into planks. Act as wood planks and a durable building material.&r"]
+			disable_toast: true
+			id: "3A35A3762C132C15"
+			subtitle: "Stone-Like Planks"
+			tasks: [{
+				id: "5C3D4259A040FD9D"
+				item: "darkerdepths:petrified_planks"
+				type: "item"
+			}]
+			title: "Petrified Planks"
+			x: -3.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			dependency_requirement: "one_completed"
+			description: ["&eHammers of all tiers. Used to crush ores, crush stones, and process items.&r"]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "minecraft:rusted_iron_hammer"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "52B0015D7D0E531F"
+			size: 1.5d
+			subtitle: "Important Tools"
+			tasks: [
+				{
+					id: "38CCC97DF417D319"
+					item: {
+						Count: 1
+						id: "minecraft:rusted_iron_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "3B7E194858631C9B"
+					item: {
+						Count: 1
+						id: "minecraft:zinc_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "093C363DC3779902"
+					item: {
+						Count: 1
+						id: "minecraft:gold_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "22F44750E8BDBB16"
+					item: {
+						Count: 1
+						id: "minecraft:iron_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1745CA408D3CC898"
+					item: {
+						Count: 1
+						id: "minecraft:stone_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2F77D0216E3F6A66"
+					item: {
+						Count: 1
+						id: "minecraft:brass_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "55361CF1EBA60A33"
+					item: {
+						Count: 1
+						id: "minecraft:bronze_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "5113FB61F8F9A862"
+					item: {
+						Count: 1
+						id: "minecraft:steel_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2DF521752BE9866C"
+					item: {
+						Count: 1
+						id: "minecraft:netherite_hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Hammers"
+			x: -11.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&eThe surface is covered in this lifeless, dry soil.&r"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "033BB57BC19A2871"
+			size: 1.5d
+			subtitle: "Dead Surface"
+			tasks: [{
+				disable_toast: true
+				icon: "kubejs:depleted_dirt"
+				id: "592DBEBAF018FD49"
+				observe_type: 0
+				timer: 0L
+				title: "Depleted Dirt"
+				to_observe: "kubejs:depleted_dirt"
+				type: "observation"
+			}]
+			title: "Depleted Dirt"
+			x: -9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: [
+				"&eRusted iron is a cheap and accessible material at the start.&r"
+				""
+				"&eIt can be obtained from scrap blocks scattered across the wasteland.&r"
+			]
+			hide_dependency_lines: true
+			icon: "minecraft:campfire"
+			id: "4A50B3F60E44489D"
+			subtitle: "Essential Tools for Survival"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				icon: "minecraft:campfire"
+				id: "06E77EAC49BA7B1A"
+				type: "dimension"
+			}]
+			title: "Survival Tools"
+			x: -12.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "1B9E9B4590DF4D98"
+			tasks: [{
+				id: "0030B2D2F29BAF9B"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_shovel"
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			title: "Rusted Iron Shovel"
+			x: -12.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "278267C48509B7F4"
+			tasks: [{
+				id: "5EF98BE344B53895"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			title: "Rusted Iron Pickaxe"
+			x: -14.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "10BC5553D9D78A57"
+			tasks: [{
+				id: "603B69AD8322B2C6"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_axe"
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			title: "Rusted Iron Axe"
+			x: -14.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["4A50B3F60E44489D"]
+			id: "19FB0E0AA89A3169"
+			tasks: [{
+				id: "54148E84516FBAB3"
+				item: {
+					Count: 1
+					id: "kubejs:rusted_iron_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			title: "Rusted Iron Sword"
+			x: -14.0d
+			y: -0.5d
+		}
+	]
+	title: "Survival Note"
 }

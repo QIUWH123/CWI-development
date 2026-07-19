@@ -61,20 +61,6 @@ ServerEvents.recipes(event => {
 ServerEvents.recipes(event => {
 
     event.shaped(
-        'createdieselgenerators:wire_cutters',
-        [
-            ' A ',
-            'CBA',
-            ' C '
-        ],
-        {
-            A: 'create:iron_sheet',
-            B: 'create:andesite_alloy',
-            C: 'minecraft:stick',
-        }
-    )
-
-    event.shaped(
         'minecraft:shears',
         [
             ' A ',

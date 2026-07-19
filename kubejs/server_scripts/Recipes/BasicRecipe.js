@@ -20,17 +20,6 @@ ServerEvents.recipes(event => {
         })
     }
 
-    function cuttingTwo(input, output1, chance1, count1, output2, chance2, count2) {
-        event.custom({
-            "type": "createdieselgenerators:wire_cutting",
-            "ingredients": [{ "item": input }],
-            "results": [
-                { "item": output1, "chance": chance1, "count": count1 },
-                { "item": output2, "chance": chance2, "count": count2 }
-            ]
-        })
-    }
-
     function rolling(input, output) {
         event.custom({
             "type": "createaddition:rolling",
@@ -171,7 +160,8 @@ ServerEvents.recipes(event => {
 
 // Cutting
 
-    cuttingTwo('minecraft:dead_bush', 'minecraft:stick', 1, 2, 'farmersdelight:straw', 0.57, 1)
+    cutting('minecraft:dead_bush', 'minecraft:stick', 1, 2)
+    cutting('stick', 'createdieselgenerators:wood_chip', 1, 2)
 
 // Chiseling
 

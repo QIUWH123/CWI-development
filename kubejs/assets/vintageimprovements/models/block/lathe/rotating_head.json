@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"6": "create:block/mechanical_press_head",
-		"particle": "vintageimprovements:block/lathe_casing"
+		"particle": "kubejs:block/industrial_casing"
 	},
 	"elements": [
 		{

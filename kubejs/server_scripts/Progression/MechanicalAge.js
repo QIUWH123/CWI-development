@@ -3,6 +3,14 @@ ServerEvents.recipes(event => {
 // Shapeless
 
     event.shapeless(
+        'kubejs:filled_wood_sheet_mold',
+        [
+            'kubejs:andesite_compound',
+            'kubejs:wood_sheet_mold'
+        ]
+    )
+
+    event.shapeless(
         'kubejs:mechanic_manual',
         [
             'kubejs:mechanic_manual_scrap_top',
@@ -68,7 +76,39 @@ ServerEvents.recipes(event => {
         'kubejs:claystone_clump',
         [
             '2x kubejs:cobbled_claystone',
-            '2x minecraft:gravel'
+            '2x minecraft:cobblestone'
+        ]
+    )
+
+    event.shapeless(
+        'kubejs:claystone_clump',
+        [
+            '2x kubejs:cobbled_claystone',
+            '2x minecraft:cobbled_deepslate'
+        ]
+    )
+
+    event.shapeless(
+        'kubejs:claystone_clump',
+        [
+            '2x kubejs:cobbled_claystone',
+            '2x kubejs:cobbled_diorite'
+        ]
+    )
+
+    event.shapeless(
+        'kubejs:claystone_clump',
+        [
+            '2x kubejs:cobbled_claystone',
+            '2x kubejs:cobbled_andesite'
+        ]
+    )
+
+    event.shapeless(
+        'kubejs:claystone_clump',
+        [
+            '2x kubejs:cobbled_claystone',
+            '2x kubejs:cobbled_granite'
         ]
     )
 
@@ -85,14 +125,26 @@ ServerEvents.recipes(event => {
     event.shaped(
         'minecraft:blast_furnace',
         [
-            'BCB',
-            'CAC',
-            'BBB'
+            'BDB',
+            'DAD',
+            'CCC'
         ],
         {
-            A: '#cwi:cobbled_stones',
+            A: 'minecraft:furnace',
             B: 'create:iron_sheet',
-            C: 'kubejs:andesite_alloy_sheet'
+            C: 'create:andesite_alloy',
+            D: 'kubejs:andesite_alloy_sheet'
+        }
+    )
+
+    event.shaped(
+        'kubejs:wood_sheet_mold',
+        [
+            'A A',
+            'AAA'
+        ],
+        {
+            A: 'createdieselgenerators:wood_chip'
         }
     )
 
@@ -293,12 +345,13 @@ ServerEvents.recipes(event => {
         'createmetallurgy:foundry_lid',
         [
             ' B ',
-            'AAA',
+            'CCC',
             'A A'
         ],
         {
             A: 'kubejs:andesite_alloy_sheet',
-            B: 'minecraft:clock'
+            B: 'minecraft:clock',
+            C: 'create:andesite_alloy'
         }
     )
 
@@ -356,15 +409,16 @@ ServerEvents.recipes(event => {
     event.shaped(
         'kubejs:andesite_machine',
         [
-            'DAD',
-            'CBC',
-            'DAD'
+            'DCD',
+            'EAE',
+            'DBD'
         ],
         {
             A: 'kubejs:andesite_bearing',
             B: 'create:andesite_casing',
             C: 'create:large_cogwheel',
-            D: 'create:cogwheel'
+            D: 'create:cogwheel',
+            E: 'kubejs:andesite_alloy_rod'
         }
     )
 
@@ -460,7 +514,7 @@ ServerEvents.recipes(event => {
         {
             A: 'create:piston_extension_pole',
             B: 'kubejs:andesite_machine',
-            C: 'create:andesite_alloy_block'
+            C: 'minecraft:iron_block'
         }
     )
 
@@ -784,6 +838,9 @@ ServerEvents.recipes(event => {
     event.recipes.create.cutting(['kubejs:precision_manual', 'kubejs:the_precision_manufacturing_engineers_log'], 'kubejs:package')
 
 // Smelting And Blasting
+
+    event.smelting('kubejs:andesite_alloy_sheet', 'kubejs:filled_wood_sheet_mold')
+    event.blasting('kubejs:andesite_alloy_sheet', 'kubejs:filled_wood_sheet_mold')
 
     event.smelting('create:andesite_alloy', 'kubejs:andesite_compound')
     event.blasting('create:andesite_alloy', 'kubejs:andesite_compound')
