@@ -7,12 +7,14 @@ const catalysts = [
     ['chlorine_copper_catalyst', 'copper', chlorine],
     ['iron_catalyst', 'iron', sulfur],
     ['nickel_catalyst', 'nickel', sulfur],
-    ['vanadium_catalyst', 'vanadium', sulfur],
+    // ===== 新增 =====
     ['platinum_catalyst', 'platinum', sulfur],
-    ['silver_catalyst', 'silver', 0xD1FDFF]
+    ['silver_catalyst', 'silver', 0xD1FDFF],
+    ['zeolite_catalyst', 'clay', sulfur]  // 沸石催化剂，用于FCC和脱蜡
 ]
 
 const coloredCatalysts = [
+    // ===== 新增（无对应金属粉末，使用powder_middle作为基底）=====
     ['phosphoric_acid_catalyst', 0x4A2C2A, 0xA8E6CF],
     ['alkylation_catalyst', 0x2B2D42, 0xF4A261],
     ['dehydrogenation_catalyst', 0x1B3B22, 0xE9C46A],
