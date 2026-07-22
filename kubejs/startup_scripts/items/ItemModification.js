@@ -205,4 +205,6 @@ ItemEvents.modification(event => {
     maxDamage_change('minecraft:netherite_hoe', 3627)
     maxDamage_change('minecraft:netherite_hammer', 3627)
 
+    maxDamage_change('create:sand_paper', 24)
+    maxDamage_change('create:red_sand_paper', 24)
 })

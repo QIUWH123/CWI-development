@@ -173,23 +173,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'cwi:incubator',
-        [
-            'CDC',
-            'BAF',
-            'CEC'
-        ],
-        {
-            A: 'create:iron_sheet',
-            B: 'minecraft:clock',
-            C: 'create:brass_sheet',
-            D: 'minecraft:glass_pane',
-            E: 'kubejs:precise_machine',
-            F: 'create_connected:control_chip'
-        }
-    )
-
-    event.shaped(
         'create:elevator_pulley',
         [
             'A',
@@ -424,6 +407,24 @@ ServerEvents.recipes(event => {
     event.blasting('create:brass_ingot', 'kubejs:brass_powder')
 
 // Mechanical Crafting
+
+    event.recipes.create.mechanical_crafting(
+        'cwi:incubator',
+        [
+            'CDC',
+            'BAF',
+            'GEG'
+        ],
+        {
+            A: 'create:iron_sheet',
+            B: 'minecraft:clock',
+            C: 'create:brass_sheet',
+            D: 'minecraft:glass_pane',
+            E: 'kubejs:precise_machine',
+            F: 'create_connected:control_chip',
+            G: 'kubejs:industrial_iron_spring'
+        }
+    )
 
     event.recipes.create.mechanical_crafting(
         'create_power_loader:brass_chunk_loader',

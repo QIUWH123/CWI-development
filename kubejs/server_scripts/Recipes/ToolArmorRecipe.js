@@ -36,7 +36,7 @@ ServerEvents.recipes(event => {
         }
     }
 
-    addTools('#cwi:cobbled_stones', 'minecraft:stone')
+    addTools('minecraft:cobblestone', 'minecraft:stone')
 
     addTools('kubejs:rusted_iron_sheet', 'kubejs:rusted_iron')
 
@@ -59,6 +59,44 @@ ServerEvents.recipes(event => {
 })
 
 ServerEvents.recipes(event => {
+    
+    event.shaped(
+        'farmersdelight:iron_knife',
+        [
+            'A',
+            'B'
+        ],
+        {
+            A: 'create:iron_sheet',
+            B: 'minecraft:stick'
+        }
+    )
+
+    event.shaped(
+        'farmersdelight:golden_knife',
+        [
+            'A',
+            'B'
+        ],
+        {
+            A: 'create:golden_sheet',
+            B: 'minecraft:stick'
+        }
+    )
+
+    event.shaped(
+        'kubejs:small_hammer',
+        [
+            'BAB',
+            ' C ',
+            ' C '
+        ],
+        {
+            A: 'minecraft:iron_ingot',
+            B: 'minecraft:iron_nugget',
+            C: 'minecraft:stick'
+        }
+    )
 
     event.shaped(
         'minecraft:shears',
@@ -93,7 +131,7 @@ ServerEvents.recipes(event => {
             ' B '
         ],
         {
-            A: '#cwi:cobbled_stones',
+            A: 'minecraft:cobblestone',
             B: 'minecraft:stick',
         }
     )
@@ -183,7 +221,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'minecraft:gold_hammer',
+        'minecraft:golden_hammer',
         [
             'ABA',
             ' C ',
@@ -204,7 +242,7 @@ ServerEvents.recipes(event => {
             ' C '
         ],
         {
-            A: 'vintageimprovements:netherite_sheet',
+            A: 'kubejs:netherite_sheet',
             B: 'minecraft:netherite_block',
             C: 'minecraft:stick',
         }

@@ -10,11 +10,11 @@ StartupEvents.registry('item', event => {
             .tag('minecraft:breaks_decorated_pots')
             .modelJson({
                 parent: 'item/handheld',
-                textures: { layer0: `kubejs:item/tools/${tier}_hammer` },
+                textures: { layer0: `kubejs:item/tools/${name}` },
                 overrides: [
-                    { predicate: { custom_model_data: 1 }, model: `minecraft:item/charged_${tier}_hammer_1` },
-                    { predicate: { custom_model_data: 2 }, model: `minecraft:item/charged_${tier}_hammer_2` },
-                    { predicate: { custom_model_data: 3 }, model: `minecraft:item/charged_${tier}_hammer_3` }
+                    { predicate: { custom_model_data: 1 }, model: `minecraft:item/charged_${name}_1` },
+                    { predicate: { custom_model_data: 2 }, model: `minecraft:item/charged_${name}_2` },
+                    { predicate: { custom_model_data: 3 }, model: `minecraft:item/charged_${name}_3` }
                 ]
             })
             .useAnimation('spear')

@@ -50,6 +50,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing('createaddition:biomass', ['#minecraft:leaves', Fluid.of('createdieselgenerators:plant_oil', 100)]).heated()
     event.recipes.create.mixing('2x createaddition:biomass', ['#forge:crops', Fluid.of('createdieselgenerators:plant_oil', 100)]).heated()
     event.recipes.create.mixing('2x createaddition:biomass', ['#createaddition:plant_foods', Fluid.of('createdieselgenerators:plant_oil', 100)]).heated()
+    event.recipes.create.mixing('kubejs:carbon-sealed_quartzite_base', ['kubejs:lapped_quartzite_base', 'kubejs:coal_powder', { fluidTag: "cwi:water", amount: 100 }]).heated().processingTime(1200)
 
     event.recipes.create.mixing(Fluid.of('minecraft:lava', 100), '#cwi:cobbled_stones').superheated()
     event.recipes.create.mixing(Fluid.of('createaddition:bioethanol', 250), ['minecraft:sugar', 'createaddition:biomass', Fluid.of('kubejs:distilled_water', 250)])
@@ -155,6 +156,42 @@ ServerEvents.recipes(event => {
     })
 
 // Sequenced Assembly
+
+    event.recipes.create.sequenced_assembly(
+        'kubejs:whetstone',
+        'minecraft:tuff',
+        [
+            event.custom({ "type":"vintageimprovements:polishing", "speedLimits": 2, "ingredients": [{ "item": "kubejs:incomplete_whetstone" }], "results": [{ "item": "kubejs:incomplete_whetstone" }], "processingTime": 60 }),
+            event.recipes.create.pressing('kubejs:incomplete_whetstone', 'kubejs:incomplete_whetstone'),
+            event.recipes.create.pressing('kubejs:incomplete_whetstone', 'kubejs:incomplete_whetstone')
+        ]
+    )
+    .transitionalItem('kubejs:incomplete_whetstone')
+    .loops(3)
+
+    event.recipes.create.sequenced_assembly(
+        'kubejs:lapped_quartzite_base',
+        'kubejs:cobbled_quartzite',
+        [
+            event.recipes.create.pressing('kubejs:incomplete_quartzite_base', 'kubejs:incomplete_quartzite_base'),
+            event.recipes.create.cutting('kubejs:incomplete_quartzite_base', 'kubejs:incomplete_quartzite_base')
+        ]
+    )
+    .transitionalItem('kubejs:incomplete_quartzite_base')
+    .loops(1)
+
+    event.recipes.create.sequenced_assembly(
+        'kubejs:fine_whetstone',
+        'kubejs:carbon-sealed_quartzite_base',
+        [
+            event.recipes.create.pressing('kubejs:incomplete_fine_whetstone', 'kubejs:incomplete_fine_whetstone'),
+            event.recipes.create.filling('kubejs:incomplete_fine_whetstone', ['kubejs:incomplete_fine_whetstone', { fluidTag: "cwi:water", amount: 100 }]),
+            event.recipes.create.filling('kubejs:incomplete_fine_whetstone', ['kubejs:incomplete_fine_whetstone', { fluidTag: "cwi:water", amount: 100 }]),
+            event.custom({ "type":"vintageimprovements:polishing", "speedLimits": 2, "ingredients": [{ "item": "kubejs:incomplete_fine_whetstone" }], "results": [{ "item": "kubejs:incomplete_fine_whetstone" }], "processingTime": 60 })
+        ]
+    )
+    .transitionalItem('kubejs:incomplete_fine_whetstone')
+    .loops(3)
 
     event.recipes.create.sequenced_assembly(
         'kubejs:soaked_depleted_dirt',

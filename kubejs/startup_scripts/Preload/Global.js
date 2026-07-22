@@ -120,7 +120,7 @@ global.hammers = [
     ['iron_hammer', 'iron', 15, 2, 0],
     ['rusted_iron_hammer', 'rusted_iron', 17, 2, 1],
     ['stone_hammer', 'stone', 20, 1, 0],
-    ['gold_hammer', 'gold', 9, 1, 0],
+    ['golden_hammer', 'gold', 9, 1, 0],
     ['zinc_hammer', 'zinc', 10, 1, 0],
     ['netherite_hammer', 'netherite', 12, 3, 0]
 ]

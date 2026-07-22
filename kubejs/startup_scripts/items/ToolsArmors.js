@@ -64,9 +64,44 @@ ItemEvents.armorTierRegistry(event => {
     })
 })
 
+// Misc
 const $ShieldItem = Java.loadClass('net.minecraft.world.item.ShieldItem');
 const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties');
 
 StartupEvents.registry('item', event => {
     event.createCustom('bamboo_shield', () => { return new $ShieldItem(new $ItemProperties().durability(437))})
+
+    event.create('small_hammer')
+        .unstackable()
+        .maxDamage(143)
+
+    event.create('whetstone')
+        .unstackable()
+        .maxDamage(67)
+        .texture('kubejs:item/whetstone/whetstone')
+
+    event.create('fine_whetstone')
+        .unstackable()
+        .maxDamage(136)
+        .texture('kubejs:item/whetstone/fine_whetstone')
+
+    event.create('incomplete_whetstone')
+        .unstackable()
+        .texture('kubejs:item/whetstone/incomplete_whetstone')
+
+    event.create('incomplete_fine_whetstone')
+        .unstackable()
+        .texture('kubejs:item/whetstone/incomplete_fine_whetstone')
+
+    event.create('carbon-sealed_quartzite_base')
+        .unstackable()
+        .texture('kubejs:item/whetstone/carbon-sealed_quartzite_base')
+
+    event.create('incomplete_quartzite_base')
+        .unstackable()
+        .texture('kubejs:item/whetstone/incomplete_quartzite_base')
+
+    event.create('lapped_quartzite_base')
+        .unstackable()
+        .texture('kubejs:item/whetstone/lapped_quartzite_base')
 })

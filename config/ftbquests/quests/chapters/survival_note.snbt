@@ -393,7 +393,7 @@
 					id: "093C363DC3779902"
 					item: {
 						Count: 1
-						id: "minecraft:gold_hammer"
+						id: "minecraft:golden_hammer"
 						tag: {
 							Damage: 0
 						}

@@ -1,12 +1,12 @@
 global.debugUserName = [
-    //"QIUWH",
+    "QIUWH",
     "Liaux_awa"
 ]
 
 PlayerEvents.loggedIn(event => {
     const { player, server } = event
     if (player.username === "Liaux_awa") {
-        
+        player.tell('还记得那些东西不能用吗 ^w^')
     }
 })
 
@@ -68,8 +68,8 @@ BlockEvents.rightClicked((event) => {
             player.crouching &&
             player.username === global.debugUserName[i]
         ) {
-            player.tell(Text.of(`Hardness: ${blockHardness}`));
-            player.tell(Text.of(`Resistance: ${blockResistance}`));
+            player.tell(Text.of(`Hardness: ${blockHardness}`))
+            player.tell(Text.of(`Resistance: ${blockResistance}`))
         }
     }
-});
+})
