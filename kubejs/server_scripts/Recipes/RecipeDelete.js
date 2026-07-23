@@ -550,6 +550,7 @@ ServerEvents.recipes(event => {
         'minecraft:quartz_block',
         'minecraft:sandstone',
         'minecraft:shears',
+        'minecraft:netherite_upgrade_smithing_template',
         'minecraft:shield',
         'minecraft:smoker',
         'minecraft:stick_from_bamboo_item',

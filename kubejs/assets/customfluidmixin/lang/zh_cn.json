@@ -1,9 +1,0 @@
-{
-    "jei.category.fluid_mixin": "流体混合",
-    "jei.category.block_transformation": "方块流体变换",
-    "jei.flowing_into": "侧面流入",
-    "jei.flowing_onto": "上方流向",
-    "jei.when_near": "当靠近时",
-    "jei.result.explosion.tooltip": "爆炸威力: %.0f",
-    "jei.result.function.tooltip": "函数执行: %s"
-}

@@ -5,8 +5,8 @@
 	"textures": {
 		"0": "createdieselgenerators:block/engine_piston_block",
 		"1": "createdieselgenerators:block/cam_linkage_aluminum",
-		"2": "createdieselgenerators:block/axis_top",
-		"3": "createdieselgenerators:block/axis",
+		"2": "create:block/axis_top",
+		"3": "create:block/axis",
 		"particle": "createdieselgenerators:block/cam_linkage_aluminum"
 	},
 	"elements": [

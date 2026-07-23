@@ -1,3 +1,22 @@
+// RecipeInputReplacements
+ServerEvents.recipes(event => {
+    event.replaceInput({input: 'createdeco:industrial_iron_ingot'}, 'createdeco:industrial_iron_ingot', 'kubejs:industrial_iron_ingot')
+    event.replaceInput({input: 'createdeco:industrial_iron_sheet'}, 'createdeco:industrial_iron_sheet', 'kubejs:industrial_iron_sheet')
+    event.replaceInput({input: 'createdeco:industrial_iron_nugget'}, 'createdeco:industrial_iron_nugget', 'kubejs:industrial_iron_nugget')
+    event.replaceInput({input: 'createdeco:andesite_sheet'}, 'createdeco:andesite_sheet', 'kubejs:andesite_alloy_sheet')
+    event.replaceInput({input: 'createdeco:zinc_sheet'}, 'createdeco:zinc_sheet', 'createaddition:zinc_sheet')
+    event.replaceInput({input: 'minecraft:string'}, 'minecraft:string', '#cwi:string')
+    event.replaceInput({input: 'minecraft:leather'}, 'minecraft:leather', '#cwi:leathers')
+
+    global.materialTypes.forEach(mat => {
+        event.replaceInput({input: `#forge:ingots/${mat.id}`}, `#forge:ingots/${mat.id}`, mat.items.ingot)
+        event.replaceInput({input: `#forge:plates/${mat.id}`}, `#forge:plates/${mat.id}`, mat.items.sheet)
+        event.replaceInput({input: `#forge:nuggets/${mat.id}`}, `#forge:nuggets/${mat.id}`, mat.items.nugget)
+        event.replaceInput({input: `#forge:dusts/${mat.id}`}, `#forge:dusts/${mat.id}`, mat.items.powder)
+        event.replaceInput({input: `#forge:storage_blocks/${mat.id}`}, `#forge:storage_blocks/${mat.id}`, mat.items.block)
+    })
+})
+
 // ItemTagRemoval
 ServerEvents.tags('item', event => {
     event.removeAll('accessories:back')
@@ -481,15 +500,4 @@ ServerEvents.tags('fluid', event => {
         'kubejs:purified_natural_gas', 'kubejs:methane', 'kubejs:syngas',
         'kubejs:benzene', 'kubejs:toluene', 'kubejs:xylene'
     ])
-})
-
-// RecipeInputReplacements
-ServerEvents.recipes(event => {
-    event.replaceInput({input: 'createdeco:industrial_iron_ingot'}, 'createdeco:industrial_iron_ingot', 'kubejs:industrial_iron_ingot')
-    event.replaceInput({input: 'createdeco:industrial_iron_sheet'}, 'createdeco:industrial_iron_sheet', 'kubejs:industrial_iron_sheet')
-    event.replaceInput({input: 'createdeco:industrial_iron_nugget'}, 'createdeco:industrial_iron_nugget', 'kubejs:industrial_iron_nugget')
-    event.replaceInput({input: 'createdeco:andesite_sheet'}, 'createdeco:andesite_sheet', 'kubejs:andesite_alloy_sheet')
-    event.replaceInput({input: 'createdeco:zinc_sheet'}, 'createdeco:zinc_sheet', 'createaddition:zinc_sheet')
-    event.replaceInput({input: 'minecraft:string'}, 'minecraft:string', '#cwi:string')
-    event.replaceInput({input: 'minecraft:leather'}, 'minecraft:leather', '#cwi:leathers')
 })
