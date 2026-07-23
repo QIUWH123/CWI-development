@@ -52,7 +52,7 @@ JEIAddedEvents.registerCategories(event => {
         category.handleLookup((layoutBuilder, recipe, focuses) => {
             let recipeData = recipe.recipeData
 
-            const layoutSlots = (items, maxPerRow, baseY, centerX, role, itemBuilder, fluidBuilder) => {
+            const layoutSlots = (items, maxPerRow, baseY, centerX, role, builder) => {
                 if (!items || items.length === 0) return
                 const rows = []
                 for (let i = 0; i < items.length; i += maxPerRow) rows.push(items.slice(i, i + maxPerRow))
@@ -61,50 +61,57 @@ JEIAddedEvents.registerCategories(event => {
                     const startX = centerX - (row.length - 1) * 9
                     row.forEach((entry, i) => {
                         const slot = layoutBuilder.addSlot(role, startX + i * 18, y)
-                        if (itemBuilder) itemBuilder(slot, entry)
-                        else if (fluidBuilder) fluidBuilder(slot, entry)
+                        builder(slot, entry)
                     })
                 })
             }
 
-            let inputs = recipeData.inputs || []
-            layoutSlots(inputs, 2, 48, 18, $RecipeIngredientRole.INPUT,
-                (slot, stack) => {
-                    let item = Item.of(stack.item || stack, stack.count || 1)
-                    slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    slot.addItemStack(item)
-                }
-            )
+            // 合并输入（先物品后流体）
+            let allInputs = []
+            if (recipeData.inputs) {
+                recipeData.inputs.forEach(inp => allInputs.push({ type: 'item', data: inp }))
+            }
+            if (recipeData.inputFluids) {
+                recipeData.inputFluids.forEach(f => allInputs.push({ type: 'fluid', data: f }))
+            }
 
-            let inputFluids = recipeData.inputFluids || []
-            layoutSlots(inputFluids, 2, 9, 18, $RecipeIngredientRole.INPUT,
-                null,
-                (slot, f) => {
+            layoutSlots(allInputs, 2, 48, 18, $RecipeIngredientRole.INPUT, (slot, entry) => {
+                if (entry.type === 'item') {
+                    let inp = entry.data
+                    let inputItem = Item.of(inp.item || inp, inp.count || 1)
+                    slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
+                    slot.addItemStack(inputItem)
+                } else if (entry.type === 'fluid') {
+                    let f = entry.data
                     slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                         .setFluidRenderer(f.amount, false, 16, 16)
                         .addFluidStack(f.fluid, f.amount)
                 }
-            )
+            })
 
-            let outputs = recipeData.outputs || []
-            layoutSlots(outputs, 2, 48, 142, $RecipeIngredientRole.OUTPUT,
-                (slot, out) => {
-                    const stack = Item.of(out.item, out.count || 1)
+            // 合并输出（先物品后流体）
+            let allOutputs = []
+            if (recipeData.outputs) {
+                recipeData.outputs.forEach(out => allOutputs.push({ type: 'item', data: out }))
+            }
+            if (recipeData.outputFluids) {
+                recipeData.outputFluids.forEach(f => allOutputs.push({ type: 'fluid', data: f }))
+            }
+
+            layoutSlots(allOutputs, 2, 48, 142, $RecipeIngredientRole.OUTPUT, (slot, entry) => {
+                if (entry.type === 'item') {
+                    let out = entry.data
+                    let outputItem = Item.of(out.item, out.count || 1)
                     if (out.chance && out.chance < 1) {
-                        const po = new $ProcessingOutput(stack, out.chance)
+                        const po = new $ProcessingOutput(outputItem, out.chance)
                         slot.setBackground($CreateRecipeCategory.getRenderedSlot(po), -1, -1)
                             .addRichTooltipCallback($CreateRecipeCategory.addStochasticTooltip(po))
                     } else {
                         slot.setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
                     }
-                    slot.addItemStack(stack)
-                }
-            )
-
-            let outputFluids = recipeData.outputFluids || []
-            layoutSlots(outputFluids, 2, 9, 142, $RecipeIngredientRole.OUTPUT,
-                null,
-                (slot, f) => {
+                    slot.addItemStack(outputItem)
+                } else if (entry.type === 'fluid') {
+                    let f = entry.data
                     if (f.chance && f.chance < 1) {
                         slot.setBackground($CreateRecipeCategory.getRenderedSlot(f.chance), -1, -1)
                         slot.addRichTooltipCallback((view, tooltip) => {
@@ -116,7 +123,7 @@ JEIAddedEvents.registerCategories(event => {
                     slot.setFluidRenderer(f.amount, false, 16, 16)
                         .addFluidStack(f.fluid, f.amount)
                 }
-            )
+            })
         })
 
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {

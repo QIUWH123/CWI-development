@@ -1,7 +1,29 @@
+let upgradeRecipeList = []
+
 ServerEvents.recipes(event => {
+
+// Register Upgrade Recipe
 
     function registerUpgradeRecipe(inputItem, ingredients, enchantId, maxLevel, durabilityMultiplier, outputItem) {
         const finalOutput = outputItem || inputItem
+
+        const ingredientObjs = []
+        for (const ing of ingredients) {
+            let id = ing.item || ing.id
+            let count = ing.count || 1
+            let consume = ing.consume !== false
+            for (let i = 0; i < count; i++) {
+                ingredientObjs.push({ item: id, consume: consume })
+            }
+        }
+        upgradeRecipeList.push({
+            input: inputItem,
+            ingredients: ingredientObjs,
+            enchantId: enchantId,
+            maxLevel: maxLevel,
+            durabilityMultiplier: durabilityMultiplier,
+            output: outputItem || inputItem
+        })
 
         const inputs = [inputItem]
         for (const ing of ingredients) {
@@ -30,7 +52,7 @@ ServerEvents.recipes(event => {
             const curDmg = result.nbt?.Damage || 0
             const curDur = maxDmg - curDmg
             if (curDur > 0) {
-                const inc = Math.max(1, Math.floor(curDur * durabilityMultiplier * Math.sqrt(targetIndex + 2)))
+                const inc = Math.max(1, Math.floor(curDur * durabilityMultiplier * targetIndex))
                 result.nbt.merge({ Damage: Math.min(curDmg + inc, maxDmg - 1) })
             }
 
@@ -47,18 +69,19 @@ ServerEvents.recipes(event => {
         }
     }
 
-    // ==================== 材质与工具/护甲定义 ====================
+// Material And Tool Armor Definitions
+
     const MAT = {
-        stone:       { tier: 1, base: 0.25, tools: true, armor: false },
-        rusted_iron: { tier: 1, base: 0.25, tools: true, armor: false },
-        leather:     { tier: 1, base: 0.25, tools: false, armor: true },
-        iron:        { tier: 2, base: 0.20, tools: true, armor: true },
-        golden:      { tier: 2, base: 0.20, tools: true, armor: true },
-        zinc:        { tier: 2, base: 0.20, tools: true, armor: false },
-        bronze:      { tier: 3, base: 0.15, tools: true, armor: true },
-        brass:       { tier: 3, base: 0.15, tools: true, armor: true },
-        steel:       { tier: 4, base: 0.10, tools: true, armor: false },
-        netherite:   { tier: 4, base: 0.10, tools: true, armor: true }
+        stone:       { tier: 1, base: 0.20, tools: true, armor: false },
+        rusted_iron: { tier: 1, base: 0.18, tools: true, armor: false },
+        leather:     { tier: 1, base: 0.23, tools: false, armor: true },
+        iron:        { tier: 2, base: 0.10, tools: true, armor: true },
+        golden:      { tier: 2, base: 0.18, tools: true, armor: true },
+        zinc:        { tier: 2, base: 0.18, tools: true, armor: false },
+        bronze:      { tier: 3, base: 0.05, tools: true, armor: true },
+        brass:       { tier: 3, base: 0.08, tools: true, armor: true },
+        steel:       { tier: 4, base: 0.05, tools: true, armor: false },
+        netherite:   { tier: 4, base: 0.05, tools: true, armor: true }
     }
 
     const TOOLS = ['sword', 'pickaxe', 'axe', 'shovel', 'hoe', 'hammer']
@@ -78,6 +101,8 @@ ServerEvents.recipes(event => {
     function getArmorId(mat, part) {
         return (ARMOR_PREFIX[mat] || PREFIX[mat]) + part
     }
+
+// Material Component Functions
 
     function sheet(mat, synthetic) {
         if (synthetic) return 'tfmg:synthetic_leather'
@@ -130,7 +155,8 @@ ServerEvents.recipes(event => {
         }
     }
 
-    // ==================== 锋利 ====================
+// Sharpness Upgrade
+
     const SHARP_RECIPES = [
         { max: 1, inc: 0.20, ing: [{ item: 'create:sand_paper', consume: false }, { item: 'kubejs:flint_powder', consume: true }] },
         { max: 2, inc: 0.15, ing: [{ item: 'kubejs:whetstone', consume: false }, { item: 'kubejs:flint_powder', consume: true }] },
@@ -151,7 +177,8 @@ ServerEvents.recipes(event => {
         })
     }
 
-    // ==================== 效率 ====================
+// Efficiency Upgrade
+
     const EFF_RECIPES = [
         { max: 1, inc: 0.20, ing: [{ item: 'create:sand_paper', consume: false }, { item: 'kubejs:flint_powder', consume: true }] },
         { max: 2, inc: 0.15, ing: [{ item: 'kubejs:whetstone', consume: false }, { item: 'kubejs:flint_powder', consume: true }] },
@@ -172,7 +199,8 @@ ServerEvents.recipes(event => {
         })
     }
 
-    // ==================== 横扫之刃 ====================
+// Sweeping Edge Upgrade
+
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
         let d = MAT[mat]; if (!d.tools || d.tier < 2) continue
@@ -187,7 +215,8 @@ ServerEvents.recipes(event => {
         }
     }
 
-    // ==================== 击退 ====================
+// Knockback Upgrade
+
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
         let d = MAT[mat]; if (!d.tools) continue
@@ -202,7 +231,8 @@ ServerEvents.recipes(event => {
         }
     }
 
-    // ==================== 保护（杆×2 + 板×2 + 线×1） ====================
+// Protection Upgrade
+
     const LEATHER_STRINGS = ['minecraft:string', 'tfmg:synthetic_string']
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
@@ -241,7 +271,8 @@ ServerEvents.recipes(event => {
         })
     }
 
-    // ==================== 专项保护 ====================
+// Special Protection Upgrades
+
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
         let d = MAT[mat]; if (!d.armor) continue
@@ -268,24 +299,24 @@ ServerEvents.recipes(event => {
         })
     }
 
-    // ==================== 摔落保护（统一配方：belt_connector + 橡胶，上限2） ====================
+// Feather Falling Upgrade
+
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
         let d = MAT[mat]; if (!d.armor) continue
         let bootsId = getArmorId(mat, 'boots')
-        // 配方1：kubejs:rubber
         registerUpgradeRecipe(bootsId, [
             { item: 'create:belt_connector', consume: true },
             { item: 'kubejs:rubber', consume: true }
         ], 'minecraft:feather_falling', 2, d.base + 0.03)
-        // 配方2：tfmg:rubber_sheet
         registerUpgradeRecipe(bootsId, [
             { item: 'create:belt_connector', consume: true },
             { item: 'tfmg:rubber_sheet', consume: true }
         ], 'minecraft:feather_falling', 2, d.base + 0.03)
     }
 
-    // ==================== 耐久 ====================
+// Unbreaking Upgrade
+
     function regDur(itemId, mat) {
         let d = MAT[mat]; if (!d) return
         let maxLvl = Math.min(3, d.tier)
@@ -315,3 +346,5 @@ ServerEvents.recipes(event => {
     regDur('farmersdelight:golden_knife', 'golden')
     regDur('minecraft:shears', 'iron')
 })
+
+global.upgradeRecipes = upgradeRecipeList

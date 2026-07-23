@@ -10,6 +10,9 @@
   "ae2:pattern_provider": null,
   "ae2:power_storage": null,
   "ae2:server_data": null,
+  "ae2cs:jade/ender_broadcaster": null,
+  "ae2cs:jade/ender_emitter": null,
+  "ae2cs:jade/mirror_pattern_provider": null,
   "astages:block_component_provider": null,
   "compactcrafting:field_projector": null,
   "compactcrafting:field_proxy": null,
@@ -88,5 +91,9 @@
   "minecraft:villager_profession": null,
   "minecraft:waxed": null,
   "minecraft:zombie_villager": null,
-  "nebula_libs:common": null
+  "nebula_libs:common": null,
+  "neoecoae:eco_computation_system": null,
+  "neoecoae:eco_crafting_system": null,
+  "neoecoae:eco_crafting_worker": null,
+  "neoecoae:eco_drive": null
 }

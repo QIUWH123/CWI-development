@@ -61,6 +61,12 @@
   "jadeaddons": {
     "equipment_requirement": ""
   },
+  "neoecoae": {
+    "eco_computation_system": true,
+    "eco_drive": true,
+    "eco_crafting_worker": true,
+    "eco_crafting_system": true
+  },
   "jadeaddons.create": {
     "filter": true,
     "backtank_capacity": true,
@@ -83,12 +89,13 @@
     "jade_chamber": true,
     "jade_wireless": true
   },
+  "ae2cs": {
+    "jade/ender_broadcaster": true,
+    "jade/mirror_pattern_provider": true,
+    "jade/ender_emitter": true
+  },
   "functionalstorage": {
     "armory": true
-  },
-  "create_biotech": {
-    "experience_info": true,
-    "bionic_name": true
   },
   "ae2": {
     "part_icon": true,
