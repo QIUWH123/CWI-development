@@ -89,7 +89,7 @@ JEIAddedEvents.registerCategories(event => {
         category.setDrawHandler((recipe, slots, graphics, mx, my) => {
             const recipeData = recipe.recipeData
 
-            $AllGuiTextures.JEI_SHADOW.render(graphics, 63, 48)
+            $AllGuiTextures.JEI_SHADOW.render(graphics, 64, 48)
 
             const exampleItem = recipeData.exampleInput || 'minecraft:iron_sword'
             drawLargeItem(graphics, guiHelper, Item.of(exampleItem), 89, 38, 2.0)

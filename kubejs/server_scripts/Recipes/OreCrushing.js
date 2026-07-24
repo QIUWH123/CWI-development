@@ -1,6 +1,9 @@
 // OreLootModification
 
 LootJS.modifiers(event => {
+    
+// OreTypeLoot
+
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
         const dropChance = isDeepslate ? 0.75 : 0.25
@@ -24,7 +27,7 @@ LootJS.modifiers(event => {
 
 ServerEvents.recipes(event => {
 
-// OreTypeCrushingLoop
+// OreTypeCrushing
 
     global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
         const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'

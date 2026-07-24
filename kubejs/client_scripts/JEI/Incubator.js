@@ -16,7 +16,9 @@ JEIAddedEvents.registerRecipes(event => {
             const cultured = `kubejs:cultured_${variant.trait}_${microbe.name}_agar_plate`
             recipeBuilder.add({
                 input: sealed,
-                output: cultured
+                output: cultured,
+                time: variant.time,
+                microbeName: microbe.name
             })
         })
     })
@@ -32,18 +34,28 @@ JEIAddedEvents.registerCategories(event => {
         category.setHeight(72)
         category.background(guiHelper.createBlankDrawable(0, 0))
         category.iconSupplier(() => guiHelper.createDrawableItemStack(Item.of('cwi:incubator')))
+
         category.handleLookup((layoutBuilder, recipe, focuses) => {
+            const data = recipe.recipeData
+
+            layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.INPUT)
+                .addItemStack(Item.of('kubejs:' + data.microbeName))
+
             layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 21, 48)
                 .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                .addItemStack(recipe.recipeData.input)
+                .addItemStack(data.input)
 
             layoutBuilder.addSlot($RecipeIngredientRole.OUTPUT, 141, 48)
                 .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                .addItemStack(recipe.recipeData.output)
+                .addItemStack(data.output)
         })
+
         category.setDrawHandler((recipe, recipeSlotsView, graphics, mouseX, mouseY) => {
+            const data = recipe.recipeData
+
             $AllGuiTextures.JEI_SHADOW.render(graphics, 65, 39)
             $AllGuiTextures.JEI_LONG_ARROW.render(graphics, 54, 51)
+
             let matrixStack = graphics.pose()
             matrixStack.pushPose()
             matrixStack.translate(56, 33, 0)
@@ -56,6 +68,21 @@ JEIAddedEvents.registerCategories(event => {
                 .scale(24.0)
                 .render(graphics)
             matrixStack.popPose()
+
+            const microbeItem = Item.of('kubejs:' + data.microbeName)
+            const microbeDrawable = guiHelper.createDrawableItemStack(microbeItem)
+            const iconX = 10
+            const iconY = 10
+            let pose = graphics.pose()
+            pose.pushPose()
+            pose.translate(iconX, iconY, 0)
+            pose.scale(1.5, 1.5, 1.0)
+            microbeDrawable.draw(graphics, 0, 0)
+            pose.popPose()
+
+            const timeMin = (data.time / 1200).toFixed(1)
+            const timeText = `${timeMin} min`
+            drawWordWrap(graphics, Client.font, Component.literal(timeText).withStyle(ChatFormatting.GOLD), 133, 16, 60, 0xFFFFFF, true)
         })
     })
 })
