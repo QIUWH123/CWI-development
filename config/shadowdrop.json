@@ -1,0 +1,24 @@
+{
+  "modEnabled": true,
+  "shadowColor": "#000000",
+  "shadowAlpha": 99,
+  "shadowXOffset": 1,
+  "shadowYOffset": 1,
+  "hotbarShadows": true,
+  "slotShadows": true,
+  "hoverShadows": true,
+  "cursorShadows": true,
+  "elsewhereShadows": true,
+  "hotbarCropped": true,
+  "slotCropped": true,
+  "hoverCropped": true,
+  "translucentItems": [
+    "#c:glass_blocks",
+    "#c:glass_panes",
+    "#forge:glass",
+    "#forge:glass_panes",
+    "minecraft:beacon"
+  ],
+  "transparentItems": [],
+  "offsetItems": true
+}

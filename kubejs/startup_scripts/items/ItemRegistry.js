@@ -27,15 +27,8 @@ StartupEvents.registry('item', event => {
     event.create('nylon_salt')
     event.create('nylon_salt_crystal')
     event.create('carborundum')
-
-    event.create('cellulase_enzyme')
-
-    event.create('urea')
-
-    event.create('silica_gel')
-
-    event.create('gold_nanoparticle')
-
+    event.create('yeast_paste')
+    event.create('plant_fiber')
 })
 
 // Normal Ores

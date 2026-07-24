@@ -43,10 +43,12 @@ StartupEvents.registry('item', event => {
 // Microbe Petri Dish And Agar Plate Items
 
 StartupEvents.registry('item', event => {
+    global.microbes.forEach(microbe => {
+        const name = microbe.name
+        const colors = microbe.colors
 
-    global.microbes.forEach(([name, color1, color2, color3, variants, times]) => {
-
-        event.create(name).texture(`kubejs:item/microbes/${name}`)
+        event.create(name)
+            .texture(`kubejs:item/microbes/${name}`)
 
         event.create(`inoculated_${name}_petri_dish`)
             .texture('kubejs:item/petri_dish/petri_dish')
@@ -56,7 +58,7 @@ StartupEvents.registry('item', event => {
                 layer0: 'kubejs:item/bio/plate',
                 layer1: 'kubejs:item/bio/plate_glass'
             })
-            .color(1, color1)
+            .color(1, colors[0])
 
         event.create(`processing_${name}_petri_dish`)
             .texture('kubejs:item/petri_dish/petri_dish')
@@ -66,11 +68,12 @@ StartupEvents.registry('item', event => {
                 layer0: 'kubejs:item/bio/plate',
                 layer1: 'kubejs:item/bio/plate_glass'
             })
-            .color(1, color1)
+            .color(1, colors[0])
 
-        variants.forEach(variant => {
+        microbe.variants.forEach(variant => {
+            const trait = variant.trait;
 
-            event.create(`${variant}_${name}_agar_plate`)
+            event.create(`${trait}_${name}_agar_plate`)
                 .texture('kubejs:item/agar_plate/agar_plate')
                 .tag('cwi:petri_dish')
                 .tag('cwi:inoculated_agar_plate')
@@ -78,9 +81,9 @@ StartupEvents.registry('item', event => {
                     layer0: 'kubejs:item/bio/plate',
                     layer1: 'kubejs:item/bio/plate_glass'
                 })
-                .color(1, color2)
+                .color(1, colors[1])
 
-            event.create(`sealed_${variant}_${name}_agar_plate`)
+            event.create(`sealed_${trait}_${name}_agar_plate`)
                 .texture('kubejs:item/agar_plate/agar_plate')
                 .tag('cwi:petri_dish')
                 .tag('cwi:inoculated_agar_plate')
@@ -90,9 +93,9 @@ StartupEvents.registry('item', event => {
                     layer0: 'kubejs:item/bio/plate',
                     layer1: 'kubejs:item/bio/plate_lid'
                 })
-                .color(1, color2)
+                .color(1, colors[1])
 
-            event.create(`cultured_${variant}_${name}_agar_plate`)
+            event.create(`cultured_${trait}_${name}_agar_plate`)
                 .texture('kubejs:item/agar_plate/agar_plate')
                 .tag('cwi:petri_dish')
                 .tag('cwi:inoculated_agar_plate')
@@ -102,8 +105,7 @@ StartupEvents.registry('item', event => {
                     layer0: 'kubejs:item/bio/plate',
                     layer1: 'kubejs:item/bio/plate_lid'
                 })
-                .color(1, color3)
-
-        })
-    })
-})
+                .color(1, colors[1])
+        });
+    });
+});

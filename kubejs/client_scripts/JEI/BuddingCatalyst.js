@@ -59,13 +59,13 @@ function drawStaticSpout(graphics, fluidObj, fluidAmount) {
 
 JEIAddedEvents.registerRecipeCatalysts(event => {
     const { jeiHelpers } = event.data
-    const type = jeiHelpers.getRecipeType(ResourceLocation.fromNamespaceAndPath('kubejs', 'budding_atalyst')).get()
+    const type = jeiHelpers.getRecipeType(ResourceLocation.fromNamespaceAndPath('kubejs', 'budding_catalyst')).get()
     event.data["addRecipeCatalyst(net.minecraft.world.item.ItemStack,mezz.jei.api.recipe.RecipeType[])"]
         (Item.of('create:spout'), [type])
 })
 
 JEIAddedEvents.registerRecipes(event => {
-    const builder = event.custom(new ResourceLocation('kubejs', 'budding_atalyst'))
+    const builder = event.custom(new ResourceLocation('kubejs', 'budding_catalyst'))
     const recipes = global.buddingGrowRecipes
     if (recipes && Array.isArray(recipes)) {
         recipes.forEach(recipe => {
@@ -91,7 +91,7 @@ JEIAddedEvents.registerCategories(event => {
     const { jeiHelpers } = event.data
     const { guiHelper } = jeiHelpers
 
-    event.custom('budding_atalyst', category => {
+    event.custom('kubejs:budding_catalyst', category => {
         category.title(Component.translate('Budding Growth'))
             .setWidth(178)
             .setHeight(156)

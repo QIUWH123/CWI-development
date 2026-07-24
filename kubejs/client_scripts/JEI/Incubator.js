@@ -10,10 +10,10 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
 JEIAddedEvents.registerRecipes(event => {
     let typeId = new ResourceLocation('kubejs', 'incubator')
     let recipeBuilder = event.custom(typeId)
-    global.microbes.forEach(([name, color1, color2, color3, variants, times]) => {
-        variants.forEach(variant => {
-            const sealed = `kubejs:sealed_${variant}_${name}_agar_plate`
-            const cultured = `kubejs:cultured_${variant}_${name}_agar_plate`
+    global.microbes.forEach(microbe => {
+        microbe.variants.forEach(variant => {
+            const sealed = `kubejs:sealed_${variant.trait}_${microbe.name}_agar_plate`
+            const cultured = `kubejs:cultured_${variant.trait}_${microbe.name}_agar_plate`
             recipeBuilder.add({
                 input: sealed,
                 output: cultured

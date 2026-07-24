@@ -482,8 +482,8 @@
 				}
 			]
 			title: "Hammers"
-			x: -11.0d
-			y: -2.0d
+			x: -8.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["5733B6FE443F3A31"]
@@ -522,11 +522,12 @@
 				dimension: "minecraft:overworld"
 				icon: "minecraft:campfire"
 				id: "06E77EAC49BA7B1A"
+				title: "Survival Tools"
 				type: "dimension"
 			}]
 			title: "Survival Tools"
-			x: -12.5d
-			y: 1.0d
+			x: -11.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
@@ -545,7 +546,7 @@
 			}]
 			title: "Rusted Iron Shovel"
 			x: -12.5d
-			y: 3.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
@@ -563,8 +564,8 @@
 				type: "item"
 			}]
 			title: "Rusted Iron Pickaxe"
-			x: -14.0d
-			y: 2.5d
+			x: -13.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
@@ -582,8 +583,8 @@
 				type: "item"
 			}]
 			title: "Rusted Iron Axe"
-			x: -14.5d
-			y: 1.0d
+			x: -12.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
@@ -601,8 +602,86 @@
 				type: "item"
 			}]
 			title: "Rusted Iron Sword"
+			x: -11.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: ["&eArmors and Tools can be enhanced using the crafting table.&r"]
+			hide_dependency_lines: true
+			id: "42A753C2A80F604A"
+			size: 1.0d
+			subtitle: "Enhancement"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				icon: {
+					Count: 1
+					id: "minecraft:iron_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "05E7AB41697FAB2A"
+				title: "Equipment Upgrades"
+				type: "dimension"
+			}]
+			x: -12.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["42A753C2A80F604A"]
+			description: ["&eSimple but essential item used to improve the quality of your tools&r"]
+			id: "1797BC481AAF948E"
+			subtitle: "Sharpen Your Tools"
+			tasks: [{
+				id: "44E1D4B6203368CB"
+				item: {
+					Count: 1
+					id: "kubejs:whetstone"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -12.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["42A753C2A80F604A"]
+			id: "401F5CBD66ABACA6"
+			subtitle: "Better Whetstone"
+			tasks: [{
+				id: "45B2539D9D40BA38"
+				item: {
+					Count: 1
+					id: "kubejs:fine_whetstone"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			x: -14.0d
-			y: -0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["42A753C2A80F604A"]
+			id: "58AEE1F63EB7C8A8"
+			subtitle: "Another Useful Item"
+			tasks: [{
+				id: "6ACABBE9FAEC3180"
+				item: {
+					Count: 1
+					id: "kubejs:small_hammer"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.5d
+			y: 3.0d
 		}
 	]
 	title: "Survival Note"

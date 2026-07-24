@@ -19,10 +19,6 @@ function addFermentingRecipes(event, ingredients, results, processingTime, heatR
     })
 }
 
-ServerEvents.recipes(event => {
-    event.recipes.cwi.sterilzing('kubejs:sterile_petri_dish', 'kubejs:petri_dish')
-})
-
 // Fermenting Recipes
 
 ServerEvents.recipes(function(event) {

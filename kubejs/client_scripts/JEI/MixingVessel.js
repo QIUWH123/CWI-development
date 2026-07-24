@@ -66,7 +66,6 @@ JEIAddedEvents.registerCategories(event => {
                 })
             }
 
-            // 合并输入（先物品后流体）
             let allInputs = []
             if (recipeData.inputs) {
                 recipeData.inputs.forEach(inp => allInputs.push({ type: 'item', data: inp }))
@@ -89,7 +88,6 @@ JEIAddedEvents.registerCategories(event => {
                 }
             })
 
-            // 合并输出（先物品后流体）
             let allOutputs = []
             if (recipeData.outputs) {
                 recipeData.outputs.forEach(out => allOutputs.push({ type: 'item', data: out }))

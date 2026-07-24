@@ -42,7 +42,8 @@ StartupEvents.registry('item', event => {
         ['caustic_soda_powder', 0xF0F8FF],
         ['lignin_powder', 0xE8C396],
         ['soda_powder', 0xE0FEFF],
-        ['calcium_chloride_powder', 0xFFFFFF],
+        ['calcium_powder', 0xE0FEFF],
+        ['calcium_chloride_powder', 0xEDFFBA],
         ['alumina_powder', 0xF0F0F0],
         ['iron_oxide_powder', 0x8B4513],
         ['chromium_oxide_powder', 0x2E8B57],
@@ -69,7 +70,8 @@ StartupEvents.registry('item', event => {
         'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',
         'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder', 'glass_powder', 'borax_powder',
         'polyethylene_powder', 'polypropylene_powder', 'polyvinyl_chloride_powder', 'polybenzimidazole_powder',
-        
+        'mineral_mix', 'protein_powder',
+
         'petroleum_coke_powder',
         'bismuth_powder',
         'zeolite_powder',
