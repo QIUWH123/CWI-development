@@ -848,6 +848,19 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             {fluidTag: "cwi:water", amount: 100},
+            {item: "kubejs:amethyst_powder"},
+            {item: "kubejs:crystallum_coccus"}
+        ],
+        [
+            {item: "minecraft:amethyst"},
+            {item: "kubejs:crystallum_coccus"}
+        ],
+        300, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            {fluidTag: "cwi:water", amount: 100},
             {item: "kubejs:quartz_powder"},
             {item: "kubejs:crystallum_coccus"}
         ],
