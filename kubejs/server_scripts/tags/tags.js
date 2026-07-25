@@ -7,6 +7,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({input: 'createdeco:zinc_sheet'}, 'createdeco:zinc_sheet', 'createaddition:zinc_sheet')
     event.replaceInput({input: 'minecraft:string'}, 'minecraft:string', '#cwi:string')
     event.replaceInput({input: 'minecraft:leather'}, 'minecraft:leather', '#cwi:leathers')
+    event.replaceInput({input: 'minecraft:feather'}, 'minecraft:feather', '#cwi:feathers')
 
     global.materialTypes.forEach(mat => {
         event.replaceInput({input: `#forge:ingots/${mat.id}`}, `#forge:ingots/${mat.id}`, mat.items.ingot)
@@ -170,7 +171,7 @@ ServerEvents.tags('item', event => {
     event.add('cwi:rubbers', ['tfmg:rubber_sheet', 'kubejs:rubber'])
 
 // FeatherMaterials
-    event.add('cwi:feathers', ['kubejs:synthetic_leather', 'minecraft:feather'])
+    event.add('cwi:feathers', ['kubejs:synthetic_feather', 'minecraft:feather'])
 
 // LeatherMaterials
     event.add('cwi:leathers', ['tfmg:synthetic_leather', 'minecraft:leather'])
@@ -474,12 +475,12 @@ ServerEvents.tags('fluid', event => {
         'kubejs:xylene', 'kubejs:acrylonitrile', 'kubejs:epichlorohydrin',
         'kubejs:phenol', 'kubejs:cyclohexane', 'kubejs:cyclohexanol',
         'kubejs:paraffin_oil', 'kubejs:cracked_paraffin_oil', 'kubejs:reformate',
-        'kubejs:aromatic_mix', 'kubejs:platinum_catalyst_carrier',
+        'kubejs:aromatic_mix', 'kubejs:condensed_cracked_propane',
         'kubejs:synthetic_ester_base_oil', 'kubejs:epoxy_resin',
         'kubejs:vinyl_chloride_monomer', 'kubejs:pan_precursor',
         'kubejs:hexamethylenediamine_solution', 'kubejs:adipic_acid_solution',
         'kubejs:condensed_natural_gas', 'kubejs:condensed_cracked_naphtha',
-        'kubejs:condensed_cracked_ethane', 'kubejs:condensed_cracked_propane',
+        'kubejs:condensed_cracked_ethane',
         'kubejs:molten_polyethylene',
         'kubejs:molten_polypropylene',
         'kubejs:molten_polyvinyl_chloride'

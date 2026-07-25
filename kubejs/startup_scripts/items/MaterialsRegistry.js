@@ -70,9 +70,8 @@ StartupEvents.registry('item', event => {
         'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',
         'gneiss_powder', 'rhyolite_powder', 'shale_powder', 'quartzite_powder', 'glass_powder', 'borax_powder',
         'polyethylene_powder', 'polypropylene_powder', 'polyvinyl_chloride_powder', 'polybenzimidazole_powder',
-        'mineral_mix',
+        'mineral_mix', 'limestone_powder',
 
-        'petroleum_coke_powder',
         'bismuth_powder',
         'zeolite_powder',
         'manganese_powder',

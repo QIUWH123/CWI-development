@@ -21,7 +21,7 @@ modpackMode = false
   mode = "ADVANCED"
 
   # Accepted values are: [LEFT, CENTER, RIGHT]
-  align = "RIGHT"
+  align = "LEFT"
 
   # Accepted values are: [TOP, CENTER, BOTTOM]
   verticalAlign = "TOP"

@@ -185,7 +185,6 @@ global.normalFluids = [
     ['cracked_paraffin_oil', 0xE8B840, 'thin'],
     ['reformate', 0x4A6A80, 'thin'],
     ['aromatic_mix', 0x5A7A90, 'thin'],
-    ['platinum_catalyst_carrier', 0x3A5A70, 'thin'],
     ['hexamethylenediamine_solution', 0xD0D0B0, 'thin'],
     ['phenol', 0xC6F0F5, 'thin'],
     ['epichlorohydrin', 0xF3F5DA, 'thin'],

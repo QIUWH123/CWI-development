@@ -141,14 +141,14 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'minecraft:feather',
+        'kubejs:synthetic_feather',
         [
             ' A ',
             'AAA',
             'ABA'
         ],
         {
-            A: '#cwi:string',
+            A: 'tfmg:synthetic_string',
             B: 'minecraft:stick'
         }
     )

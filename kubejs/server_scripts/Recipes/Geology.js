@@ -6,6 +6,10 @@ ServerEvents.recipes(event => {
 
 // Shapeless
 
+    event.shapeless('2x minecraft:lime_dye', 'createaddition:biomass_pellet')
+    event.shapeless('2x minecraft:green_dye', 'ratatouille:compost_mass')
+    event.shapeless('2x minecraft:brown_dye', 'ratatouille:compost_residue')
+    event.shapeless('minecraft:white_dye', 'kubejs:bone_powder')
     event.shapeless('2x minecraft:stick', 'minecraft:bamboo')
     event.shapeless('createdieselgenerators:wood_chip', 'minecraft:stick')
     event.shapeless('2x rusticdelight:cotton_seeds', 'rusticdelight:cotton_boll')
@@ -63,6 +67,9 @@ ServerEvents.recipes(event => {
 
 // Milling
 
+    event.recipes.create.milling(['3x minecraft:lime_dye', Item.of('minecraft:light_gray_dye').withChance(0.1)], 'createaddition:biomass_pellet')
+    event.recipes.create.milling(['3x minecraft:green_dye', Item.of('minecraft:brown_dye').withChance(0.1)], 'ratatouille:compost_mass')
+    event.recipes.create.milling(['2x minecraft:white_dye', Item.of('minecraft:light_gray_dye').withChance(0.1)], 'kubejs:bone_powder')
     event.recipes.create.milling(['2x kubejs:ash', Item.of('kubejs:ash').withChance(0.75), Item.of('miners_delight:silverfish_eggs').withChance(0.03)], 'kubejs:depleted_dirt')
     event.recipes.create.milling('kubejs:powdered_fermento_mycetes', 'kubejs:dry_fermento_mycetes')
     event.recipes.create.milling('kubejs:bone_powder', 'biomancy:bone_fragments')

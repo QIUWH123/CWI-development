@@ -1047,7 +1047,7 @@ ServerEvents.recipes(event => {
         "minSize": 1,
         "processingTime": 300,
         "results": [
-            { "item": "kubejs:petroleum_coke_powder" },
+            { "item": "tfmg:coal_coke_dust" },
             { "fluid": "tfmg:diesel",         "amount": 125 },
             { "fluid": "tfmg:naphtha",        "amount": 125 },
             { "fluid": "kubejs:cracked_gas",  "amount": 250 }
@@ -1066,7 +1066,7 @@ ServerEvents.recipes(event => {
         "minSize": 1,
         "processingTime": 280,
         "results": [
-            { "item": "kubejs:petroleum_coke_powder" },
+            { "item": "tfmg:coal_coke_dust" },
             { "fluid": "tfmg:diesel",         "amount": 125 },
             { "fluid": "tfmg:naphtha",        "amount": 125 },
             { "fluid": "kubejs:cracked_gas",  "amount": 250 }
