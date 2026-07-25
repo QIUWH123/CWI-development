@@ -1,0 +1,7 @@
+{
+  "parent": "kubejs:block/frame",
+  "textures": { 
+	"0": "kubejs:block/model/building_blocks/frames/zinc_frame", 
+	"particle": "#0"
+  }
+}

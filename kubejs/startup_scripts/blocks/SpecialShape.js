@@ -38,35 +38,42 @@ StartupEvents.registry('block', event => {
 
 // Frame Material Data
 
-    const frameMaterials = [
-        'steel', 'cast_iron', 'lead', 'brass', 'nickel',
-        'copper', 'constantan', 'zinc', 'aluminum'
+    global.frameMaterials = [
+        'steel',
+        'cast_iron',
+        'lead',
+        'brass',
+        'nickel',
+        'copper',
+        'constantan',
+        'zinc',
+        'aluminum'
     ]
 
 // Panel Definitions
 
     const panelDefinitions = [
-        ['tfmg', 'slag_bricks', 'tfmg:block/slag_bricks', 'calcite', 3, 6, 'pickaxe', 'stone']
+        //['tfmg', 'slag_bricks', 'tfmg:block/slag_bricks', 'calcite', 3, 6, 'pickaxe', 'stone']
     ]
 
 // Special Upper Eave Definitions
 
     const specialUpperEaveDefinitions = [
-        ['tfmg', 'slag_bricks',    'tfmg:block/slag_bricks',    'calcite', 3,   6,    'pickaxe', 'stone'],
+        //['tfmg', 'slag_bricks',    'tfmg:block/slag_bricks',    'calcite', 3,   6,    'pickaxe', 'stone'],
         ['tfmg', 'concrete',       'tfmg:block/concrete',       'stone',   3.5, 3.5,  'pickaxe', 'stone'],
         ['tfmg', 'rebar_concrete', 'tfmg:block/rebar_concrete', 'stone',   12,  1200, 'pickaxe', 'stone']
     ]
 
 // Frame Blocks
 
-    frameMaterials.forEach(material => {
+    global.frameMaterials.forEach(material => {
         const blockTags = [
             'minecraft:mineable/pickaxe',
             'minecraft:needs_stone_tool',
             'create:fan_transparent'
         ]
-        const panelTexture = `kubejs:block/model/building_blocks/frame_panels/${material}`
-        const eaveTexture  = `kubejs:block/model/building_blocks/frame_eaves/${material}`
+        const panelTexture = `kubejs:block/model/building_blocks/frames/${material}_frame`
+        const eaveTexture  = `kubejs:block/model/building_blocks/frames/${material}_eave`
 
         // Frame Panel
         registerBlock(`tfmg:${material}_frame_panel`, {
@@ -75,7 +82,7 @@ StartupEvents.registry('block', event => {
             itemTags: ['cwi:frame_panel'],
             modelJson: {
                 parent: 'kubejs:block/frame_panel',
-                textures: { '0': panelTexture, particle: panelTexture }
+                textures: { '0': panelTexture, particle: '#0' }
             }
         })
 
@@ -87,7 +94,7 @@ StartupEvents.registry('block', event => {
             itemTags: ['cwi:upper_eaves', 'cwi:eaves'],
             modelJson: {
                 parent: 'kubejs:block/frame_upper_eaves',
-                textures: { '0': eaveTexture, particle: eaveTexture }
+                textures: { '0': eaveTexture, particle: '#0' }
             }
         })
 
@@ -99,7 +106,7 @@ StartupEvents.registry('block', event => {
             itemTags: ['cwi:lower_eaves', 'cwi:eaves'],
             modelJson: {
                 parent: 'kubejs:block/frame_lower_eaves',
-                textures: { '0': eaveTexture, particle: eaveTexture }
+                textures: { '0': eaveTexture, particle: '#0' }
             }
         })
     })

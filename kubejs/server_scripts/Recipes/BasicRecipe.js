@@ -203,6 +203,7 @@ ServerEvents.recipes(event => {
 
 // Conversion
 
+    addStoragePair('kubejs:industrial_rubber_block', 'tfmg:rubber_sheet', 9)
     addStoragePair('kubejs:rubber_block', 'kubejs:rubber', 9)
     addStoragePair('kubejs:polyethylene_block', 'kubejs:polyethylene', 9)
     addStoragePair('kubejs:polypropylene_block', 'kubejs:polypropylene', 9)

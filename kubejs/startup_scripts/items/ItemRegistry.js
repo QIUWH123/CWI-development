@@ -29,6 +29,7 @@ StartupEvents.registry('item', event => {
     event.create('carborundum')
     event.create('yeast_paste')
     event.create('plant_fiber')
+    event.create('backpack_extension')
 })
 
 // Normal Ores
@@ -204,6 +205,10 @@ StartupEvents.registry('item', event => {
 
 StartupEvents.registry('item', event => {
 
+// Curving Head
+
+    event.create('capping_head')
+    
 // Normal
 
     event.create('heated_iron_ingot')

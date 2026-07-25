@@ -1,5 +1,20 @@
 ServerEvents.recipes(event => {
 
+// Backpacks Extension Recipes
+
+    event.shaped(
+        'kubejs:backpack_extension',
+        [
+            'BA',
+            'CB'
+        ],
+        {
+            A: '#cwi:string',
+            B: '#cwi:leathers',
+            C: '#cwi:rubbers'
+        }
+    )
+
 // Backpacks Recipes
 
     event.shaped(
@@ -15,6 +30,23 @@ ServerEvents.recipes(event => {
             C: 'minecraft:chest',
             D: 'kubejs:andesite_alloy_sheet',
             E: 'create:andesite_alloy'
+        }
+    )
+
+    event.shaped(
+        'sophisticatedbackpacks:copper_backpack',
+        [
+            'AFA',
+            'BCB',
+            'DED'
+        ],
+        {
+            A: '#cwi:string',
+            B: 'kubejs:backpack_extension',
+            C: 'sophisticatedbackpacks:backpack',
+            D: 'create:brass_sheet',
+            E: 'create:brass_ingot',
+            F: '#cwi:leathers'
         }
     )
 

@@ -852,7 +852,7 @@ ServerEvents.recipes(function(event) {
             {item: "kubejs:crystallum_coccus"}
         ],
         [
-            {item: "minecraft:amethyst"},
+            {item: "minecraft:amethyst_shard"},
             {item: "kubejs:crystallum_coccus"}
         ],
         300, undefined, ['basin', 'bulk']
@@ -1067,7 +1067,7 @@ ServerEvents.recipes(function(event) {
             {item: "kubejs:vulcan_thermus"}
         ],
         [
-            {item: "ratatouille:salt", count: 8},
+            {item: "ratatouille:salt", count: 4},
             {fluid: "minecraft:water", amount: 500},
             {item: "kubejs:vulcan_thermus"}
         ],

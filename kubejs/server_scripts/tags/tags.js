@@ -157,6 +157,9 @@ ServerEvents.tags('item', event => {
         'biomancy:sinew'
     ])
 
+// RubberBlock
+    event.add('cwi:rubber_blocks', ['kubejs:rubber_block', 'kubejs:industrial_rubber_block'])
+
 // CharcoalItems
     event.add('cwi:charcoals', ['minecrft:charcoal', 'kubejs:charcoal_powder'])
 

@@ -111,7 +111,7 @@ global.microbes = [
         time: 7200,
         count: 2,
         steps: [
-          { type: 'deploying', item: 'kubejs:protein_powder' },
+          { type: 'deploying', item: 'tfmg:sulfur_dust' },
           { type: 'deploying', item: 'ratatouille:salt' },
           { type: 'filling', fluid: 'kubejs:distilled_water', amount: 500 }
         ]
@@ -121,7 +121,7 @@ global.microbes = [
         time: 4800,
         count: 3,
         steps: [
-          { type: 'deploying', item: 'kubejs:protein_powder' },
+          { type: 'deploying', item: 'tfmg:sulfur_dust' },
           { type: 'deploying', item: 'minecraft:sugar', count: 2 },
           { type: 'deploying', item: 'ratatouille:salt' },
           { type: 'filling', fluid: 'kubejs:distilled_water', amount: 500 }
@@ -132,7 +132,7 @@ global.microbes = [
         time: 4800,
         count: 4,
         steps: [
-          { type: 'deploying', item: 'kubejs:protein_powder', count: 1 },
+          { type: 'deploying', item: 'tfmg:sulfur_dust', count: 2 },
           { type: 'deploying', item: 'minecraft:sugar', count: 2 },
           { type: 'deploying', item: 'kubejs:magnesium_powder' },
           { type: 'filling', fluid: 'kubejs:distilled_water', amount: 500 }
@@ -144,7 +144,7 @@ global.microbes = [
         count: 5,
         steps: [
           { type: 'deploying', item: 'kubejs:yeast_paste' },
-          { type: 'deploying', item: 'kubejs:protein_powder', count: 1 },
+          { type: 'deploying', item: 'tfmg:sulfur_dust', count: 1 },
           { type: 'deploying', item: 'minecraft:sugar', count: 2 },
           { type: 'deploying', item: 'kubejs:magnesium_powder' },
           { type: 'filling', fluid: 'kubejs:distilled_water', amount: 500 }

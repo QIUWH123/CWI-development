@@ -155,6 +155,21 @@ ServerEvents.recipes(event => {
         "processingTime": 10
     })
 
+// Fermentation
+
+    addFermentingRecipes(event,
+        [
+            {item: "kubejs:fermento_mycetes"},
+            {item: "kubejs:fermento_mycetes"},
+            {item: "kubejs:fermento_mycetes"},
+            {fluid: "kubejs:distilled_water", amount: 250}
+        ],
+        [
+            {item: "kubejs:yeast_paste"}
+        ],
+        100, undefined, ['basin', 'bulk']
+    )
+
 // Sequenced Assembly
 
     event.recipes.create.sequenced_assembly(

@@ -90,7 +90,7 @@ ServerEvents.recipes(event => {
         ['tfmg:bauxite_powder', 'kubejs:bauxite'],
         ['kubejs:flint_powder', 'minecraft:flint'],
         ['kubejs:quartz_powder', 'minecraft:quartz'],
-        ['kubejs:amethyst_powder', 'minecraft:amethyst'],
+        ['kubejs:amethyst_powder', 'minecraft:amethyst_shard'],
         ['tfmg:sulfur_dust', 'kubejs:sulfur'],
         ['minecraft:redstone', 'kubejs:redstone'],
         ['kubejs:lapis_powder', 'minecraft:lapis_lazuli'],

@@ -615,7 +615,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'kubejs:industrial_iron_sheet',
-            B: 'create:brass_ingot',
+            B: 'createaddition:brass_rod',
             C: 'kubejs:industrial_iron_ingot',
             D: 'create_connected:control_chip'
         }

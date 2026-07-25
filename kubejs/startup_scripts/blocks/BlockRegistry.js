@@ -810,17 +810,4 @@ StartupEvents.registry('block', event => {
         .redstoneConductor(false)
         .suffocating(false)
         .defaultCutout()
-
-    event.create('capping_head')
-        .soundType('wool')
-        .hardness(1)
-        .resistance(1.5)
-        .requiresTool(true)
-        .tagBlock('minecraft:mineable/axe')
-        .mapColor('#FF5500')
-        .notSolid()
-        .redstoneConductor(false)
-        .suffocating(false)
-        .defaultCutout()
-    
 })

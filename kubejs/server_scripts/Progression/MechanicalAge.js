@@ -682,6 +682,18 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
+        'kubejs:capping_head',
+        [
+            'A',
+            'B'
+        ],
+        {
+            A: 'create:shaft',
+            B: '#cwi:rubber_blocks'
+        }
+    )
+
+    event.shaped(
         'vintageimprovements:belt_grinder',
         [
             'A',

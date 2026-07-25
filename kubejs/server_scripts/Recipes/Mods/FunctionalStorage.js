@@ -99,7 +99,6 @@ ServerEvents.recipes(event => {
         ['warped', 'minecraft:warped_planks'],
         ['mangrove', 'minecraft:mangrove_planks'],
         ['cherry', 'minecraft:cherry_planks'],
-        ['framed', 'createdeco:iron_mesh_fence'],
         ['framed', 'kubejs:industrial_iron_wire']
     ]
 
