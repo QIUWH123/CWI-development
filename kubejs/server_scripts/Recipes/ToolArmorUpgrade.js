@@ -4,6 +4,8 @@ ServerEvents.recipes(event => {
 
 // Register Upgrade Recipe
 
+    let idCount = 0
+
     function registerUpgradeRecipe(inputItem, ingredients, enchantId, maxLevel, durabilityMultiplier, outputItem) {
         const finalOutput = outputItem || inputItem
 
@@ -32,7 +34,8 @@ ServerEvents.recipes(event => {
             for (let i = 0; i < count; i++) inputs.push(ingId)
         }
 
-        let recipe = event.shapeless(finalOutput, inputs).modifyResult((stacks, output) => {
+        idCount++
+        let recipe = event.shapeless(finalOutput, inputs).id(`cwi:equipment_upgrade/${idCount}_manual_only`).modifyResult((stacks, output) => {
             const tool = stacks.find(inputItem)
             const result = Item.of(finalOutput, tool.nbt)
 
@@ -65,7 +68,9 @@ ServerEvents.recipes(event => {
 
         for (const ing of ingredients) {
             var damageId = ing.item || ing.id
-            if (ing.consume === false) recipe.damageIngredient(damageId, 1)
+            if (ing.consume === false) {
+                recipe.damageIngredient(damageId, 1)
+            }
         }
     }
 
@@ -280,6 +285,7 @@ ServerEvents.recipes(event => {
             let armorId = getArmorId(mat, part)
 
             registerUpgradeRecipe(armorId, [
+                { item: 'createdieselgenerators:hammer', consume: false },
                 { item: 'tfmg:fireclay_ball', consume: true, count: 3 },
                 { item: 'kubejs:sticky_resin', consume: true }
             ], 'minecraft:fire_protection', 1, d.base + 0.04)

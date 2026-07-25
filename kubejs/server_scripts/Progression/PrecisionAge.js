@@ -8,14 +8,14 @@ ServerEvents.recipes(event => {
             '2x farmersdelight:canvas',
             'createaddition:iron_rod'
         ]
-    )
+    ).id('cwi:crafting_table/quality_tool_handle_manual_only')
 
     event.shapeless(
         'create:nixie_tube',
         [
             '2x create:electron_tube'
         ]
-    )
+    ).id('cwi:crafting_table/nixie_tube_manual_only')
 
     event.shapeless(
         'kubejs:handle',
@@ -23,7 +23,7 @@ ServerEvents.recipes(event => {
             '2x #cwi:rubbers',
             '1x create_sa:zinc_handle'
         ]
-    )
+    ).id('cwi:crafting_table/handle_manual_only')
 
     event.shapeless(
         'createmetallurgy:foundry_basin',
@@ -31,7 +31,7 @@ ServerEvents.recipes(event => {
             'createmetallurgy:refractory_mortar',
             'create:basin'
         ]
-    )
+    ).id('cwi:crafting_table/foundry_basin_manual_only')
 
 // Shaped
 
@@ -224,6 +224,17 @@ ServerEvents.recipes(event => {
             A: 'kubejs:iron_spring',
             B: 'kubejs:andesite_bearing',
             C: 'kubejs:andesite_machine'
+        }
+    )
+
+    event.shaped(
+        'create_connected:inventory_bridge',
+        [
+            'ABA'
+        ],
+        {
+            A: 'create_connected:inventory_access_port',
+            B: 'create:brass_casing'
         }
     )
 

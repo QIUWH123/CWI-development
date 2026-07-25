@@ -8,7 +8,7 @@ ServerEvents.recipes(event => {
             'kubejs:andesite_compound',
             'kubejs:wood_sheet_mold'
         ]
-    )
+    ).id('cwi:crafting_table/filled_wood_sheet_mold_manual_only')
 
     event.shapeless(
         'kubejs:mechanic_manual',
@@ -17,27 +17,50 @@ ServerEvents.recipes(event => {
             'kubejs:mechanic_manual_scrap_middle',
             'kubejs:mechanic_manual_scrap_bottom'
         ]
-    )
+    ).id('cwi:crafting_table/fix_mechanic_manual_manual_only')
 
     event.shapeless(
         'darkerdepths:rope',
         [
             '3x farmersdelight:rope'
         ]
-    )
+    ).id('cwi:crafting_table/crafting_rope_manual_only')
 
     event.shapeless(
         'kubejs:net',
         [
             '6x #cwi:string'
         ]
-    )
+    ).id('cwi:crafting_table/weaving_net_manual_only')
 
     event.shapeless(
         'create:encased_chain_drive',
         [
             'create:andesite_casing',
             '#cwi:rubbers'
+        ]
+    ).id('cwi:crafting_table/encased_chain_drive_manual_only')
+
+    event.shapeless(
+        '2x kubejs:andesite_compound',
+        [
+            '3x minecraft:clay_ball',
+            '3x kubejs:andesite_powder'
+        ]
+    ).id('cwi:crafting_table/andesite_compound_mixing_manual_only')
+
+    event.shapeless(
+        'create:white_sail',
+        [
+            'create:sail_frame',
+            'kubejs:net'
+        ]
+    ).id('cwi:crafting_table/white_sail_manual_only')
+
+    event.shapeless(
+        '4x createdieselgenerators:wood_chip',
+        [
+            'createdieselgenerators:chip_wood_block'
         ]
     )
 
@@ -48,30 +71,7 @@ ServerEvents.recipes(event => {
             'minecraft:lime_dye'
         ]
     )
-
-    event.shapeless(
-        '2x kubejs:andesite_compound',
-        [
-            '3x minecraft:clay_ball',
-            '3x kubejs:andesite_powder'
-        ]
-    )
-
-    event.shapeless(
-        '4x createdieselgenerators:wood_chip',
-        [
-            'createdieselgenerators:chip_wood_block'
-        ]
-    )
-
-    event.shapeless(
-        'create:white_sail',
-        [
-            'create:sail_frame',
-            'kubejs:net'
-        ]
-    )
-
+    
     event.shapeless(
         'kubejs:claystone_clump',
         [
@@ -109,14 +109,6 @@ ServerEvents.recipes(event => {
         [
             '2x kubejs:cobbled_claystone',
             '2x kubejs:cobbled_granite'
-        ]
-    )
-
-    event.shapeless(
-        'create:portable_storage_interface',
-        [
-            'kubejs:andesite_machine',
-            'create:chute'
         ]
     )
 
@@ -207,6 +199,17 @@ ServerEvents.recipes(event => {
             A: 'kubejs:andesite_bearing',
             B: 'create:fluid_pipe',
             C: 'create:propeller'
+        }
+    )
+
+    event.shaped(
+        'create:portable_storage_interface',
+        [
+            'AB',
+        ],
+        {
+            A: 'kubejs:andesite_machine',
+            B: 'create:chute'
         }
     )
 

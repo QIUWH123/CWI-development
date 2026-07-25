@@ -11,6 +11,10 @@ ServerEvents.recipes(event => {
     event.remove({ type: 'createdieselgenerators:compression_molding' })
     event.remove({ type: 'createdieselgenerators:distillation' })
 
+// Output Remove
+
+    event.remove({ output: 'create_connected:empty_fan_catalyst' })
+
 // Whole Mod Remove
 
     const modsToRemove = [
@@ -21,6 +25,7 @@ ServerEvents.recipes(event => {
         'create_rns', 
         'rubberworks', 
         'ae2', 
+        'neoecoae', 
         'appflux', 
         'advanced_ae',
         'sculkcatalyticchamber', 
@@ -221,6 +226,7 @@ ServerEvents.recipes(event => {
         'create_connected:crafting/kinetics/fluid_vessel',
         'create_connected:crafting/kinetics/inventory_access_port',
         'create_connected:crafting/kinetics/kinetic_bridge',
+        'create_connected:crafting/kinetics/inventory_bridge',
         'create_connected:filling/fan_blasting_catalyst',
         'create_connected:filling/fan_splashing_catalyst',
         'create_connected:item_application/blasting_catalyst_from_empty',
