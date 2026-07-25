@@ -405,7 +405,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.mixing(Fluid.of('kubejs:redstone_acid', 500), [{ fluidTag: "cwi:water", amount: 500 }, '4x minecraft:redstone'])
     event.recipes.create.mixing('kubejs:heated_powdered_obsidian', [Fluid.of('minecraft:lava', 500), 'create:powdered_obsidian']).superheated()
-    event.recipes.create.mixing('3x createmetallurgy:refractory_mortar_ball', [{ fluidTag: "cwi:water", amount: 100 }, 'minecraft:sand', 'tfmg:limesand', 'minecraft:clay_ball']).heated()
+    event.recipes.create.mixing('3x createmetallurgy:refractory_mortar_ball', [{ fluidTag: "cwi:water", amount: 100 }, 'minecraft:sand', 'kubejs:limestone_powder', 'minecraft:clay_ball']).heated()
 
 // Compacting
 
@@ -637,12 +637,13 @@ ServerEvents.recipes(event => {
         [
             ' BA',
             ' CB',
-            'B  '
+            'D  '
         ],
         {
             A: 'create_connected:control_chip',
             B: 'create:copper_sheet',
-            C: '#cwi:rubbers'
+            C: '#cwi:rubbers',
+            D: 'create:fluid_pipe'
         }
     )
 

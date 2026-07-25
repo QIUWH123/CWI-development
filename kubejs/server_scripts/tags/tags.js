@@ -177,7 +177,7 @@ ServerEvents.tags('item', event => {
     event.add('cwi:leathers', ['tfmg:synthetic_leather', 'minecraft:leather'])
 
 // BasicMaterials
-    event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'tfmg:limesand', 'kubejs:caustic_soda_powder'])
+    event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'kubejs:limestone_powder', 'kubejs:caustic_soda_powder'])
 
 // DeoxidizerPowders
     event.add('cwi:deoxidizer', [
@@ -472,7 +472,7 @@ ServerEvents.tags('fluid', event => {
 // OrganicSolvents
     event.add('kubejs:organic_solvent', [
         'kubejs:methanol', 'kubejs:acetone', 'kubejs:benzene', 'kubejs:toluene',
-        'kubejs:xylene', 'kubejs:acrylonitrile', 'kubejs:epichlorohydrin',
+        'kubejs:xylene', 'kubejs:epichlorohydrin',
         'kubejs:phenol', 'kubejs:cyclohexane', 'kubejs:cyclohexanol',
         'kubejs:paraffin_oil', 'kubejs:cracked_paraffin_oil', 'kubejs:reformate',
         'kubejs:aromatic_mix', 'kubejs:condensed_cracked_propane',

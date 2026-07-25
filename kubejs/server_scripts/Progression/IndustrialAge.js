@@ -250,13 +250,14 @@ ServerEvents.recipes(event => {
 // Compacting
 
     event.recipes.create.compacting('kubejs:fireclay_disk', 'tfmg:fireclay_ball')
-    event.recipes.create.compacting('kubejs:heated_industrial_iron_ingot', ['kubejs:heated_iron_ingot', '3x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
+    event.recipes.create.compacting('kubejs:heated_industrial_iron_ingot', ['kubejs:heated_iron_ingot', '3x tfmg:coal_coke_dust', '2x kubejs:limestone_powder']).superheated()
 
 // Mixing
 
+    event.recipes.create.mixing('tfmg:cement', ['kubejs:limestone_powder', '3x minecraft:clay_ball'])
     event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:silicon_powder', 'kubejs:magnesite_powder', '2x tfmg:bauxite_powder', '3x minecraft:clay_ball']).superheated()
     event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:quartz_powder', 'kubejs:magnesite_powder', '2x tfmg:bauxite_powder', '3x minecraft:clay_ball']).superheated()
-    event.recipes.create.mixing(['2x kubejs:silicon_powder', Item.of('kubejs:silicon_powder').withChance(0.37)], ['4x kubejs:quartz_powder', '1x tfmg:coal_coke_dust', '2x tfmg:limesand']).superheated()
+    event.recipes.create.mixing(['2x kubejs:silicon_powder', Item.of('kubejs:silicon_powder').withChance(0.37)], ['4x kubejs:quartz_powder', '1x tfmg:coal_coke_dust', '2x kubejs:limestone_powder']).superheated()
 
 // Mechanical Crafting
 

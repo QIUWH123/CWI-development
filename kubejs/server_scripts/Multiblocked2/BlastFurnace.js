@@ -20,7 +20,7 @@ global.blastFurnaceRecipes = [
         duration: 50,
         inputItems: [
             { "item": "kubejs:magnetite" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [
@@ -33,7 +33,7 @@ global.blastFurnaceRecipes = [
         duration: 30,
         inputItems: [
             { "item": "kubejs:iron_powder" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [
@@ -46,7 +46,7 @@ global.blastFurnaceRecipes = [
         duration: 30,
         inputItems: [
             { "item": "minecraft:iron_ingot" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [
@@ -59,7 +59,7 @@ global.blastFurnaceRecipes = [
         duration: 30,
         inputItems: [
             { "item": "create:crushed_raw_iron" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [
@@ -72,7 +72,7 @@ global.blastFurnaceRecipes = [
         duration: 30,
         inputItems: [
             { "item": "minecraft:raw_iron" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [
@@ -85,7 +85,7 @@ global.blastFurnaceRecipes = [
         duration: 40,
         inputItems: [
             { "item": "kubejs:hematite" },
-            { "item": "tfmg:limesand" }
+            { "item": "kubejs:limestone_powder" }
         ],
         inputFluids: [],
         outputFluids: [

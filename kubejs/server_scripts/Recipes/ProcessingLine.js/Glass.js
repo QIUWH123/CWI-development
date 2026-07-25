@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
 
-    event.recipes.create.mixing('kubejs:glass_batch', ['2x minecraft:sand', 'kubejs:soda_powder', 'tfmg:limesand'])
+    event.recipes.create.mixing('kubejs:glass_batch', ['2x minecraft:sand', 'kubejs:soda_powder', 'kubejs:limestone_powder'])
 
     event.smelting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
     event.blasting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
@@ -12,9 +12,9 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.sequenced_assembly(
         [
-            Item.of('minecraft:glass').withChance(0.63),
-            Item.of('kubejs:devitrified_glass').withChance(0.24),
-            Item.of('kubejs:cracked_glass').withChance(0.13)
+            Item.of('minecraft:glass').withChance(0.76),
+            Item.of('kubejs:devitrified_glass').withChance(0.13),
+            Item.of('kubejs:cracked_glass').withChance(0.11)
         ],
         'kubejs:pressed_glass_blank', 
         [

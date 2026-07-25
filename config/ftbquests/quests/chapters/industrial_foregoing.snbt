@@ -495,7 +495,7 @@
 			subtitle: "Crushed Limestone"
 			tasks: [{
 				id: "43235D5BFDAF9C4F"
-				item: "tfmg:limesand"
+				item: "kubejs:limestone_powder"
 				type: "item"
 			}]
 			title: "Limesand"
