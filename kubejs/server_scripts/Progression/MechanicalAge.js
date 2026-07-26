@@ -58,6 +58,14 @@ ServerEvents.recipes(event => {
     ).id('cwi:crafting_table/white_sail_manual_only')
 
     event.shapeless(
+        'vintageimprovements:grinder_belt',
+        [
+            'create:belt_connector',
+            '2x minecraft:sand'
+        ]
+    )
+
+    event.shapeless(
         '4x createdieselgenerators:wood_chip',
         [
             'createdieselgenerators:chip_wood_block'

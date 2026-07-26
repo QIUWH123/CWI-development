@@ -18,33 +18,57 @@ function oreBlockstate(id, colored) {
     } 
 }
 
+function oreDepositModel(texture) {
+    return {
+        parent: 'kubejs:block/ore_deposit',
+        textures: { '1': texture }
+    }
+}
+
 StartupEvents.registry('block', event => {
+    global.compoundOreTypes.forEach(ore => {
+        const resistance = ore.resistance
+        const hardness = ore.hardness
+        const sound = ore.sound
+        event.create(`${ore.id}_deposit`)
+            .soundType(sound)
+            .hardness(hardness)
+            .resistance(resistance)
+            .requiresTool(true)
+            .tagBlock('minecraft:mineable/pickaxe')
+            .tagBlock(`minecraft:needs_diamond_tool`)
+            .tagBoth('cwi:ores')
+            .tagBoth('cwi:ore_deposit')
+            .tagBoth('create_rns:deposit_blocks')
+            .mapColor('#FFFFFF')
+            .defaultCutout()
+            .modelJson = oreDepositModel(ore.texture)
 
-    const ores = [
-        { id: 'cassiterite',  colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'stone' },
-        { id: 'cooperite',    colored: true,  hardness: 6,   resistance: 12, sound: 'ancient_debris', requiredTool: 'iron' },
-        { id: 'chalcocite',   colored: true,  hardness: 4.5, resistance: 8,  sound: 'stone',          requiredTool: 'stone' },
-        { id: 'magnesite',    colored: true,  hardness: 2.5, resistance: 5,  sound: 'stone',          requiredTool: 'stone' },
-        { id: 'magnetite',    colored: true,  hardness: 5,   resistance: 8,  sound: 'stone',          requiredTool: 'stone' },
-        { id: 'halite',       colored: false, hardness: 3,   resistance: 6,  sound: 'calcite',        requiredTool: 'wooden' },
-        { id: 'chromite',     colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'stone' },
-        { id: 'pentlandite',  colored: true,  hardness: 3,   resistance: 6,  sound: 'stone',          requiredTool: 'wooden' },
-        { id: 'sphalerite',   colored: true,  hardness: 3,   resistance: 6,  sound: 'stone',          requiredTool: 'wooden' },
-        { id: 'rutile',       colored: true,  hardness: 4,   resistance: 6,  sound: 'amethyst',       requiredTool: 'iron' },
-        { id: 'uraninite',    colored: false, hardness: 4,   resistance: 6,  sound: 'amethyst',       requiredTool: 'iron' },
-        { id: 'gravitite',    colored: false, hardness: 6,   resistance: 12, sound: 'amethyst',       requiredTool: 'diamond' }
-    ]
-
-    ores.forEach(ore => {
+        if( ore.mod !== 'kubejs') return
         event.create(`${ore.id}_ore`)
-            .soundType(ore.sound)
-            .hardness(ore.hardness)
-            .resistance(ore.resistance)
+            .soundType(sound)
+            .hardness(hardness)
+            .resistance(resistance)
             .requiresTool(true)
             .tagBlock('minecraft:mineable/pickaxe')
             .tagBlock(`minecraft:needs_${ore.requiredTool}_tool`)
             .tagBoth('cwi:ores')
             .mapColor('#FFFFFF')
             .blockstateJson = oreBlockstate(ore.id, ore.colored)
+    })
+})
+
+BlockEvents.modification(event => {
+    global.compoundOreTypes.forEach(ore => {
+        if( ore.mod === 'kubejs') return
+        const resistance = ore.resistance
+        const hardness = ore.hardness
+        const sound = ore.sound
+        event.modify(`${ore.mod}:${ore.realId}`, properties => {
+            properties.setDestroySpeed(hardness)
+            properties.setExplosionResistance(resistance)
+            properties.setSoundType(sound)
+            properties.setRequiresTool(true)
+        })
     })
 })

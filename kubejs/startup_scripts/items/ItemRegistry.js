@@ -225,6 +225,9 @@ StartupEvents.registry('item', event => {
 
 // Incomplete Items
 
+    event.create('incomplete_steel_mechanism')
+        .texture('kubejs:item/incomplete_items/incomplete_steel_mechanism')
+
     event.create('incomplete_voltaic_pile')
         .texture('kubejs:item/incomplete_items/incomplete_voltaic_pile')
 

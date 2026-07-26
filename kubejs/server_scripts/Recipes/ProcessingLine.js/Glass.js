@@ -1,6 +1,7 @@
 ServerEvents.recipes(event => {
 
     event.recipes.create.mixing('kubejs:glass_batch', ['2x minecraft:sand', 'kubejs:soda_powder', 'kubejs:limestone_powder'])
+    event.recipes.create.mixing(['kubejs:ion_exchanged_glass_blank', Fluid.of('kubejs:molten_potassium_sodium_nitrate', 100)], ['kubejs:heated_glass', Fluid.of('kubejs:molten_saltpeter', 100)]).processingTime(800)
 
     event.smelting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
     event.blasting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
@@ -51,7 +52,7 @@ ServerEvents.recipes(event => {
         ],
         "machines": [],
         "minSize": 1,
-        "processingTime": 1200,
+        "processingTime": 600,
         "results": [
             {"item": "kubejs:ion_exchanged_glass_blank"},
             {"fluid": "kubejs:molten_potassium_sodium_nitrate", "amount": 100}

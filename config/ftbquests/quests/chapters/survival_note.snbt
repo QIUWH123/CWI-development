@@ -9,7 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["0EA786F00A19ADC6"]
+			dependencies: ["36A9C92C5DCABC6B"]
 			hide_dependent_lines: true
 			hide_until_deps_complete: true
 			icon_scale: 0.9d

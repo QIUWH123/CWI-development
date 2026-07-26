@@ -5,7 +5,7 @@
 	group: ""
 	icon: "kubejs:galvanic_manual"
 	id: "7469C39791302DD1"
-	order_index: 12
+	order_index: 13
 	quest_links: [ ]
 	quests: [{
 		id: "448CEED7EF898AB1"

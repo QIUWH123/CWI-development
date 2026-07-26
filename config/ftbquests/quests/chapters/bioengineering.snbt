@@ -5,7 +5,7 @@
 	group: ""
 	icon: "kubejs:bioengineering_manual"
 	id: "347EE10EFFCA1769"
-	order_index: 13
+	order_index: 14
 	quest_links: [ ]
 	quests: [{
 		id: "0DFA888EA5975E50"

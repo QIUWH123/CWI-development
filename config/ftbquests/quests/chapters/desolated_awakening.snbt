@@ -110,9 +110,10 @@
 			subtitle: "Basic Tools and Food For Survival"
 			tasks: [{
 				icon: "minecraft:chest"
-				id: "1E5E40244B833B19"
+				id: "789C0595276C26EF"
 				observe_type: 0
 				timer: 0L
+				title: "Chest"
 				to_observe: "minecraft:chest"
 				type: "observation"
 			}]
@@ -515,6 +516,8 @@
 				"&eOres and Stones.&r"
 				""
 				"&eMetals, Alloys, and other things.&r"
+				""
+				"&eAnd How to Process Them.&r"
 			]
 			disable_toast: true
 			id: "01145B3810F3CA52"
@@ -530,8 +533,13 @@
 					item: "kubejs:material_note"
 					type: "item"
 				}
+				{
+					id: "19F4E621C77EC596"
+					item: "kubejs:processing_note"
+					type: "item"
+				}
 			]
-			title: "Geology and Material Notes"
+			title: "Geology, Processing and Material Notes"
 			x: 1.5d
 			y: 5.5d
 		}

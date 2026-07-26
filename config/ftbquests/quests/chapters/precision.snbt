@@ -103,7 +103,7 @@
 			y: 0.0d
 		}
 	]
-	order_index: 9
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
@@ -1163,7 +1163,10 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["3BE4C9ED2CFB6296"]
+			dependencies: [
+				"3BE4C9ED2CFB6296"
+				"7B2506C2B1F67B51"
+			]
 			description: ["&eA wand that places blocks from a large inventory. Useful for large-scale construction.&r"]
 			disable_toast: true
 			id: "699DDF861A8CE682"

@@ -6,7 +6,7 @@
 	group: ""
 	icon: "kubejs:geological_note"
 	id: "56B7C8C19B0855BD"
-	order_index: 5
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -804,7 +804,7 @@
 			y: 1.1d
 		}
 		{
-			dependencies: ["01145B3810F3CA52"]
+			dependencies: ["06ACDE2AA3D90380"]
 			hide_until_deps_complete: true
 			icon_scale: 0.9d
 			id: "77638D6698CCC725"

@@ -1,0 +1,98 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "processing_note"
+	group: ""
+	icon: "kubejs:processing_note"
+	id: "76A4FF744CB14528"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["19F4E621C77EC596"]
+			hide_until_deps_complete: true
+			id: "7EAD0C34B17014A4"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "Not Completed Yet"
+			tasks: [{
+				id: "71385303C15031A6"
+				item: "kubejs:processing_note"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "486EA6444B07AE9E"
+			tasks: [{
+				id: "0761F765DF37EFE1"
+				item: "minecraft:glass"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -5.0d
+		}
+		{
+			id: "6E14C5649AE916F6"
+			tasks: [{
+				id: "2E5F867596439252"
+				item: "kubejs:pressed_glass_blank"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -5.0d
+		}
+		{
+			id: "078BB9F9932F52D8"
+			tasks: [{
+				id: "2D8C63536E81E050"
+				item: "kubejs:sintered_glass_blank"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			id: "4F55DF87BD90F15D"
+			tasks: [{
+				id: "0CA791A187064EF1"
+				item: "kubejs:glass_batch"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -5.0d
+		}
+		{
+			id: "1294A6C6E1A12EFB"
+			tasks: [{
+				id: "7AD5ACAD8E0834CB"
+				item: "minecraft:sand"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -6.0d
+		}
+		{
+			id: "2B0465F2A53DB8ED"
+			tasks: [{
+				id: "4E97BBB9382513AE"
+				item: "kubejs:soda_powder"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -5.0d
+		}
+		{
+			id: "31D8AA7BD7F225D1"
+			tasks: [{
+				id: "7637381E521C8712"
+				item: "kubejs:limestone_powder"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -4.0d
+		}
+	]
+	title: "Processing Note"
+}

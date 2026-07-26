@@ -5,11 +5,11 @@
 	group: ""
 	icon: "kubejs:material_note"
 	id: "2B780E114CBB7C3C"
-	order_index: 6
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["01145B3810F3CA52"]
+			dependencies: ["616D088897D2FF8D"]
 			hide_dependent_lines: true
 			hide_until_deps_complete: true
 			id: "7D0C6F93C6FE1761"

@@ -493,14 +493,14 @@ ServerEvents.recipes(event => {
         'tfmg:steel_mechanism',
         'tfmg:heavy_plate',
         [
-            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:steel_cogwheel']),
-            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:large_steel_cogwheel']),
-            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'kubejs:steel_bearing']),
-            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screw']),
-            event.recipes.create.deploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screwdriver'])
+            event.recipes.create.deploying('kubejs:incomplete_steel_mechanism', ['kubejs:incomplete_steel_mechanism', 'tfmg:steel_cogwheel']),
+            event.recipes.create.deploying('kubejs:incomplete_steel_mechanism', ['kubejs:incomplete_steel_mechanism', 'tfmg:large_steel_cogwheel']),
+            event.recipes.create.deploying('kubejs:incomplete_steel_mechanism', ['kubejs:incomplete_steel_mechanism', 'kubejs:steel_bearing']),
+            event.recipes.create.deploying('kubejs:incomplete_steel_mechanism', ['kubejs:incomplete_steel_mechanism', 'tfmg:screw']),
+            event.recipes.create.deploying('kubejs:incomplete_steel_mechanism', ['kubejs:incomplete_steel_mechanism', 'tfmg:screwdriver'])
         ]
     )
-    .transitionalItem('tfmg:unfinished_steel_mechanism')
+    .transitionalItem('kubejs:incomplete_steel_mechanism')
     .loops(1)
 
     event.recipes.create.sequenced_assembly(

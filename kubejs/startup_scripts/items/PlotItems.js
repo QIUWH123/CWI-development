@@ -17,7 +17,7 @@ StartupEvents.registry('item', event => {
 
     event.create('environmental_note').texture('kubejs:item/plots/environmental_note').tag('cwi:plot_items')
 
-    event.create('chemical_note').texture('kubejs:item/plots/chemical_note').tag('cwi:plot_items')
+    event.create('processing_note').texture('kubejs:item/plots/processing_note').tag('cwi:plot_items')
 
     event.create('mechanic_manual').texture('kubejs:item/plots/mechanic_manual').tag('cwi:plot_items')
 

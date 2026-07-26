@@ -217,9 +217,9 @@ ServerEvents.tags('item', event => {
     ])
 
 // GlassTiers
-    event.add('cwi:glass1', ['minecraft:glass', 'kubejs:reinforced_glass', 'kubejs:annealed_glass'])
-    event.add('cwi:glass2', ['kubejs:reinforced_glass', 'kubejs:annealed_glass'])
-    event.add('cwi:glass3', 'kubejs:annealed_glass')
+    event.add('cwi:glass1', ['minecraft:glass', 'kubejs:tempered_glass'])
+    event.add('cwi:glass2', ['kubejs:tempered_glass'])
+    event.add('cwi:glass3', [])
 
 // FilteredLogs
     const itemLogs = event.get('minecraft:logs').getObjectIds()
