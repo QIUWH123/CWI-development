@@ -52,6 +52,8 @@ ServerEvents.recipes(event => {
     addTools('create:brass_sheet', 'kubejs:brass')
     addArmor('create:brass_sheet', 'create_sa:brass')
 
+    addTools('create:copper_sheet', 'kubejs:copper')
+
     addTools('createaddition:zinc_sheet', 'kubejs:zinc')
 
     addTools('tfmg:heavy_plate', 'kubejs:steel')
@@ -188,6 +190,20 @@ ServerEvents.recipes(event => {
         {
             A: 'createaddition:zinc_sheet',
             B: 'create:zinc_block',
+            C: 'minecraft:stick',
+        }
+    )
+
+    event.shaped(
+        'minecraft:copper_hammer',
+        [
+            'ABA',
+            ' C ',
+            ' C '
+        ],
+        {
+            A: 'create:copper_sheet',
+            B: 'minecraft:copper_block',
             C: 'minecraft:stick',
         }
     )

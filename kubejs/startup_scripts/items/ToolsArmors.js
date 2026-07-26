@@ -17,6 +17,7 @@ StartupEvents.registry('item', event => {
         bronze:{sword:7, axe:10, pickaxe:5, shovel:5.5, hoe:1},
         brass: {sword:6, axe:9, pickaxe:4, shovel:4.5, hoe:1},
         zinc:  {sword:5, axe:8, pickaxe:3.5, shovel:4, hoe:1},
+        copper:  {sword:5, axe:8, pickaxe:3.5, shovel:4, hoe:1},
         rusted_iron:{sword:4, axe:7, pickaxe:3, shovel:3.5, hoe:1}
     }
     Object.entries(stats).forEach(([material, tools]) => {
@@ -38,6 +39,7 @@ ItemEvents.toolTierRegistry(event => {
         bronze:[1361,8,2,'kubejs:bronze_ingot'],
         brass: [873,7,2,'create:brass_ingot'],
         zinc:  [423,5,1,'create:zinc_ingot'],
+        copper: [621,5,2,'create:copper_ingot'],
         rusted_iron:[437,4,2,'kubejs:rusted_iron_ingot']
     }
     Object.entries(tiers).forEach(([name,[uses,speed,level,repair]]) => {

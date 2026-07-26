@@ -77,16 +77,17 @@ ServerEvents.recipes(event => {
 // Material And Tool Armor Definitions
 
     const MAT = {
-        stone:       { tier: 1, base: 0.20, tools: true, armor: false },
-        rusted_iron: { tier: 1, base: 0.18, tools: true, armor: false },
-        leather:     { tier: 1, base: 0.23, tools: false, armor: true },
-        iron:        { tier: 2, base: 0.10, tools: true, armor: true },
-        golden:      { tier: 2, base: 0.18, tools: true, armor: true },
-        zinc:        { tier: 2, base: 0.18, tools: true, armor: false },
-        bronze:      { tier: 3, base: 0.05, tools: true, armor: true },
-        brass:       { tier: 3, base: 0.08, tools: true, armor: true },
-        steel:       { tier: 4, base: 0.05, tools: true, armor: false },
-        netherite:   { tier: 4, base: 0.05, tools: true, armor: true }
+        stone:       { tier: 1, base: 0.20, tools: true,  armor: false },
+        rusted_iron: { tier: 1, base: 0.18, tools: true,  armor: false },
+        leather:     { tier: 1, base: 0.23, tools: false, armor: true  },
+        iron:        { tier: 2, base: 0.10, tools: true,  armor: true  },
+        copper:      { tier: 2, base: 0.10, tools: true,  armor: false },
+        golden:      { tier: 2, base: 0.18, tools: true,  armor: true  },
+        zinc:        { tier: 2, base: 0.18, tools: true,  armor: false },
+        bronze:      { tier: 3, base: 0.05, tools: true,  armor: true  },
+        brass:       { tier: 3, base: 0.08, tools: true,  armor: true  },
+        steel:       { tier: 4, base: 0.05, tools: true,  armor: false },
+        netherite:   { tier: 4, base: 0.05, tools: true,  armor: true  }
     }
 
     const TOOLS = ['sword', 'pickaxe', 'axe', 'shovel', 'hoe', 'hammer']
@@ -94,7 +95,7 @@ ServerEvents.recipes(event => {
 
     const PREFIX = {
         stone: 'minecraft:stone_', rusted_iron: 'kubejs:rusted_iron_', leather: 'minecraft:leather_',
-        iron: 'minecraft:iron_', golden: 'minecraft:golden_', zinc: 'kubejs:zinc_',
+        iron: 'minecraft:iron_', golden: 'minecraft:golden_', zinc: 'kubejs:zinc_', copper: 'kubejs:copper_',
         bronze: 'kubejs:bronze_', brass: 'kubejs:brass_', steel: 'kubejs:steel_', netherite: 'minecraft:netherite_'
     }
     const ARMOR_PREFIX = { brass: 'create_sa:brass_' }
