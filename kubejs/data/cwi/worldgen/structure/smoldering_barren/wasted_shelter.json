@@ -4,7 +4,7 @@
     "step": "surface_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "beard_thin",
-    "start_pool": "cwi:wasted_shelter",
+    "start_pool": "cwi:smoldering_barren/wasted_shelter",
     "size": 1,
     "start_height": { 
         "absolute": 0 

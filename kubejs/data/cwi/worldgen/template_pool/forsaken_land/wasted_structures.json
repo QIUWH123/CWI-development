@@ -1,5 +1,5 @@
 {
-    "name": "cwi:fl_small_wasted_structures",
+    "name": "cwi:wasted_structures",
     "fallback": "minecraft:empty",
     "elements": [
         {
@@ -38,6 +38,46 @@
                 "element_type": "minecraft:single_pool_element",
                 "projection": "rigid",
                 "location": "cwi:forsaken_land/4x_4",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:forsaken_land/6x_1",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:forsaken_land/6x_2",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:forsaken_land/6x_3",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:forsaken_land/6x_4",
                 "processors": "minecraft:empty",
                 "override_liquid_settings": "apply_waterlogging"
             }

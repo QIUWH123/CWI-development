@@ -4,7 +4,7 @@
     "step": "surface_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "beard_thin",
-    "start_pool": "cwi:fl_small_wasted_structures",
+    "start_pool": "cwi:forsaken_land/wasted_structures",
     "size": 1,
     "start_height": { 
         "absolute": 0 
