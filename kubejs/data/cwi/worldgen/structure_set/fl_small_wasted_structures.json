@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "cwi:fl_small_wasted_structures",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 10,
+        "separation": 1,
+        "salt": 59372577
+    }
+}
