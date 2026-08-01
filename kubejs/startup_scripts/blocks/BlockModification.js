@@ -4,14 +4,14 @@ BlockEvents.modification(event => {
 
     event.modify('minecraft:crafting_table', block => {
         block.destroySpeed = 3
-        block.soundType = 'deepslate'
+        block.soundType = 'polished_deepslate'
         block.requiresTool = true
         block.explosionResistance = 5
     })
 
     event.modify('minecraft:furnace', block => {
         block.destroySpeed = 3
-        block.soundType = 'deepslate'
+        block.soundType = 'polished_deepslate'
         block.requiresTool = true
         block.explosionResistance = 5
     })

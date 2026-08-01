@@ -168,7 +168,7 @@ StartupEvents.registry('block', event => {
         .mapColor('#FF5500')
 
     event.create('scrap_block', 'cardinal')
-        .soundType('metal')
+        .soundType('copper')
         .hardness(2)
         .resistance(3)
         .requiresTool(true)
@@ -180,7 +180,7 @@ StartupEvents.registry('block', event => {
         .defaultCutout()
 
     event.create('small_scrap_block', 'cardinal')
-        .soundType('metal')
+        .soundType('copper')
         .hardness(2)
         .resistance(2)
         .requiresTool(true)
@@ -355,7 +355,7 @@ StartupEvents.registry('block', event => {
         .defaultCutout()
 
     event.create('small_pile_of_shafts', 'cardinal')
-        .soundType('metal')
+        .soundType('lodestone')
         .hardness(2)
         .resistance(2)
         .mapColor('#FF5500')
@@ -367,7 +367,7 @@ StartupEvents.registry('block', event => {
         .defaultCutout()
 
     event.create('pile_of_shafts', 'cardinal')
-        .soundType('metal')
+        .soundType('lodestone')
         .hardness(2)
         .resistance(2)
         .mapColor('#FF5500')
@@ -379,7 +379,7 @@ StartupEvents.registry('block', event => {
         .defaultCutout()
 
     event.create('large_pile_of_shafts', 'cardinal')
-        .soundType('metal')
+        .soundType('lodestone')
         .hardness(2)
         .resistance(2)
         .mapColor('#FF5500')
@@ -747,7 +747,7 @@ StartupEvents.registry('block', event => {
   
     event.create('claystone_clump')
         .textureAll('kubejs:block/claystone_base_bottom')
-        .soundType('deepslate')
+        .soundType('polished_deepslate')
         .hardness(3)
         .resistance(3)
         .requiresTool(true)
@@ -756,7 +756,7 @@ StartupEvents.registry('block', event => {
         .mapColor('#B0965F')
 
     event.create('claystone_base')
-        .soundType('deepslate')
+        .soundType('polished_deepslate')
         .hardness(3)
         .resistance(3)
         .requiresTool(true)
@@ -766,7 +766,7 @@ StartupEvents.registry('block', event => {
         .mapColor('#B0965F')
 
     event.create('incomplete_furnace')
-        .soundType('stone')
+        .soundType('polished_deepslate')
         .hardness(3)
         .resistance(3)
         .requiresTool(true)
@@ -775,7 +775,7 @@ StartupEvents.registry('block', event => {
         .mapColor('#B0965F')
   
     event.create('incomplete_crafting_table')
-        .soundType('stone')
+        .soundType('polished_deepslate')
         .hardness(3)
         .resistance(3)
         .requiresTool(true)
@@ -785,7 +785,7 @@ StartupEvents.registry('block', event => {
 
     event.create('mixer_head')
         .model('kubejs:block/mixer_head')
-        .soundType('metal')
+        .soundType('copper')
         .hardness(2)
         .resistance(2.5)
         .requiresTool(true)
@@ -798,7 +798,7 @@ StartupEvents.registry('block', event => {
         .defaultCutout()
 
     event.create('incomplete_mixing_vessel')
-        .soundType('metal')
+        .soundType('copper')
         .model('kubejs:block/mixing_vessel')
         .hardness(2)
         .resistance(2.5)

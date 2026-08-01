@@ -58,6 +58,8 @@ global.moltenMetals = [
     ['molten_tin', 0xC5E3FF],
     ['molten_silver', 0xD4FFF9],
     ['molten_molybdenum', 0xD4FFF9],
+    ['molten_titanium', 0xFFA29C],
+    ['molten_chromium', 0xE4E6EB],
     ['molten_andesite_alloy', 0xD4FFF9],
     ['molten_zinc', 0x71eba5],
     ['molten_gold', 0xFFF860],
