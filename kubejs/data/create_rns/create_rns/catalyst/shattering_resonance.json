@@ -1,0 +1,12 @@
+{
+  "name": "shattering_resonance",
+  "requirements": [
+    {
+      "type": "attachment",
+      "attachment": "create_rns:shattering_resonator",
+      "count": 4
+    }
+  ],
+  "display_priority": 1002,
+  "representative_items": ["create_rns:shattering_resonator"]
+}

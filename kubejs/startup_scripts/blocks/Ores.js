@@ -10,7 +10,7 @@ function oreBlockstate(id, colored) {
                 { model: `kubejs:block/ores/${id}3` }
             ]
         }
-    } 
+    }
     else return {
         variants: {
             "": { model: `kubejs:block/ores/${id}` }
