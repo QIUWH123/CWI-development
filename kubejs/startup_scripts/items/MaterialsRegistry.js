@@ -58,12 +58,12 @@ StartupEvents.registry('item', event => {
     const darkColorPowders = []
 
     const powders = [
-        'bone_powder', 'quartz_powder', 'fluorite_powder', 'diamond_powder', 'coal_powder',
+        'bone_powder', 'quartz_powder', 'fluorite_powder', 'diamond_powder', 'stainless_steel_powder',
         'gold_powder', 'iron_powder', 'lapis_powder', 'copper_powder', 'brass_powder', 'chromium_powder',
-        'cobalt_powder', 'magnesium_powder', 'zinc_powder', 'vanadium_powder', 'silicon_powder',
+        'cobalt_powder', 'magnesium_powder', 'zinc_powder', 'vanadium_powder', 'silicon_powder', 'platinum_powder',
         'charcoal_powder', 'andesite_alloy_powder', 'nickel_powder', 'lead_powder', 'amethyst_powder',
         'cast_iron_powder', 'lithium_powder', 'bronze_powder', 'electrum_powder', 'rusted_iron_powder',
-        'constantan_powder', 'silver_powder', 'tin_powder', 'aluminum_powder', 'molybdenum_powder',
+        'constantan_powder', 'silver_powder', 'tin_powder', 'aluminum_powder', 'molybdenum_powder', 'coal_powder',
         'industrial_iron_powder', 'steel_powder', 'halite_powder', 'magnesite_powder', 'titanium_powder',
         'lignite_powder', 'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
         'clay_powder', 'stone_powder', 'deepslate_powder', 'tuff_powder', 'claystone_powder', 'limestone_powder',
@@ -74,8 +74,7 @@ StartupEvents.registry('item', event => {
 
         'bismuth_powder',
         'zeolite_powder',
-        'manganese_powder',
-        'platinum_powder'
+        'manganese_powder'
     ]
 
     powders.forEach(powder => {
