@@ -29,6 +29,7 @@ StartupEvents.registry('item', event => {
     event.create('carborundum')
     event.create('yeast_paste')
     event.create('plant_fiber')
+    event.create('quality_tool_handle')
     event.create('backpack_extension')
 })
 

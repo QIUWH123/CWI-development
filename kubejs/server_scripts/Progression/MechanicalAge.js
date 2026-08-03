@@ -848,12 +848,6 @@ ServerEvents.recipes(event => {
 
 // Mixing
 
-    event.recipes.create.mixing('minecraft:wheat_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_wheat_seeds'])
-    event.recipes.create.mixing('minecraft:melon_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_melon_seeds'])
-    event.recipes.create.mixing('minecraft:pumpkin_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_pumpkin_seeds'])
-    event.recipes.create.mixing('minecraft:beetroot_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_beetroot_seeds'])
-    event.recipes.create.mixing('farmersdelight:tomato_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_tomato_seeds'])
-    event.recipes.create.mixing('farmersdelight:cabbage_seeds', [{fluidTag: "cwi:water", amount: 50}, 'kubejs:dry_cabbage_seeds'])
     event.recipes.create.mixing('kubejs:andesite_compound', ['minecraft:clay_ball', 'kubejs:andesite_powder'])
 
 // Cutting

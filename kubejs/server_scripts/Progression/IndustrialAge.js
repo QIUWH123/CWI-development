@@ -245,7 +245,7 @@ ServerEvents.recipes(event => {
 
 // Filling
 
-    event.recipes.create.filling('tfmg:rusted_blast_furnace_reinforcement', ['tfmg:blast_furnace_reinforcement', { fluidTag: "cwi:water", amount: 250 }])
+    event.recipes.create.filling('tfmg:rusted_blast_furnace_reinforcement', ['tfmg:blast_furnace_reinforcement', AddFluid('250 #cwi:water')])
 
 // Compacting
 
@@ -414,11 +414,11 @@ ServerEvents.recipes(event => {
         'tfmg:cast_iron_ingot',
         'kubejs:heated_industrial_iron_ingot',
         [
-            event.custom({ "type": "createaddition:rolling", "input": { "item": "kubejs:incomplete_cast_iron_ingot" }, "result": { "item": "kubejs:incomplete_cast_iron_ingot" } }),
+            rolling(event, AddItem('kubejs:incomplete_cast_iron_ingot'), AddItem('kubejs:incomplete_cast_iron_ingot')),
             event.recipes.create.pressing('kubejs:incomplete_cast_iron_ingot', 'kubejs:incomplete_cast_iron_ingot'),
             event.recipes.create.pressing('kubejs:incomplete_cast_iron_ingot', 'kubejs:incomplete_cast_iron_ingot'),
-            event.recipes.create.filling('kubejs:incomplete_cast_iron_ingot', ['kubejs:incomplete_cast_iron_ingot', { fluidTag: "cwi:water", amount: 500 }]),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_cast_iron_ingot" }], "results": [{ "item": "kubejs:incomplete_cast_iron_ingot" }], "processingTime": 20 })
+            event.recipes.create.filling('kubejs:incomplete_cast_iron_ingot', ['kubejs:incomplete_cast_iron_ingot', AddFluid('500 #cwi:water')]),
+            polishing(event, 3, AddItem('kubejs:incomplete_cast_iron_ingot'), [AddItem('kubejs:incomplete_cast_iron_ingot')], 20)
         ]
     )
     .transitionalItem('kubejs:incomplete_cast_iron_ingot')
@@ -430,7 +430,7 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.filling('kubejs:incomplete_harden_wood', ['kubejs:incomplete_harden_wood', Fluid.of('tfmg:creosote', 250)]),
             event.recipes.create.pressing('kubejs:incomplete_harden_wood', 'kubejs:incomplete_harden_wood'),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_harden_wood" }], "results": [{ "item": "kubejs:incomplete_harden_wood" }], "processingTime": 20 })
+            polishing(event, 3, AddItem('kubejs:incomplete_harden_wood'), [AddItem('kubejs:incomplete_harden_wood')], 20)
         ]
     )
     .transitionalItem('kubejs:incomplete_harden_wood')
@@ -444,7 +444,7 @@ ServerEvents.recipes(event => {
             event.recipes.create.filling('kubejs:incomplete_heavy_machinery_casing', ['kubejs:incomplete_heavy_machinery_casing', Fluid.of('kubejs:molten_steel', 100)]),
             event.recipes.create.pressing('kubejs:incomplete_heavy_machinery_casing', 'kubejs:incomplete_heavy_machinery_casing'),
             event.recipes.create.deploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'tfmg:screwdriver']),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }], "results": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }], "processingTime": 20 })
+            polishing(event, 3, AddItem('kubejs:incomplete_heavy_machinery_casing'), [AddItem('kubejs:incomplete_heavy_machinery_casing')], 20)
         ]
     )
     .transitionalItem('kubejs:incomplete_heavy_machinery_casing')
@@ -455,9 +455,9 @@ ServerEvents.recipes(event => {
         'tfmg:steel_casing',
         [
             event.recipes.create.filling('kubejs:incomplete_heavy_machinery_casing', ['kubejs:incomplete_heavy_machinery_casing', Fluid.of('kubejs:molten_steel', 500)]),
-            event.custom({ "type": "vintageimprovements:hammering", "hammerBlows": 3, "ingredients": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }], "results": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }] }),
+            hammering(event, 3, [AddItem('kubejs:incomplete_heavy_machinery_casing')], [AddItem('kubejs:incomplete_heavy_machinery_casing')]),
             event.recipes.create.deploying('kubejs:incomplete_heavy_machinery_casing', ['kubejs:incomplete_heavy_machinery_casing', 'tfmg:screwdriver']),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }], "results": [{ "item": "kubejs:incomplete_heavy_machinery_casing" }], "processingTime": 60 })
+            polishing(event, 3, AddItem('kubejs:incomplete_heavy_machinery_casing'), [AddItem('kubejs:incomplete_heavy_machinery_casing')], 20)
         ]
     )
     .transitionalItem('kubejs:incomplete_heavy_machinery_casing')
@@ -469,8 +469,8 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.filling('kubejs:incomplete_steel_drill_head', ['kubejs:incomplete_steel_drill_head', Fluid.of('kubejs:molten_steel', 100)]),
             event.recipes.create.deploying('kubejs:incomplete_steel_drill_head', ['kubejs:incomplete_steel_drill_head', 'tfmg:heavy_plate']),
-            event.custom({ "type": "vintageimprovements:hammering", "hammerBlows": 3, "ingredients": [{ "item": "kubejs:incomplete_steel_drill_head" }], "results": [{ "item": "kubejs:incomplete_steel_drill_head" }] }),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_steel_drill_head" }], "results": [{ "item": "kubejs:incomplete_steel_drill_head" }], "processingTime": 60 })
+            hammering(event, 3, [AddItem('kubejs:incomplete_steel_drill_head')], [AddItem('kubejs:incomplete_steel_drill_head')]),
+            polishing(event, 3, AddItem('kubejs:incomplete_steel_drill_head'), [AddItem('kubejs:incomplete_steel_drill_head')], 60)
         ]
     )
     .transitionalItem('kubejs:incomplete_steel_drill_head')
@@ -482,8 +482,8 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.deploying('kubejs:incomplete_blast_furnace_reinforcement', ['kubejs:incomplete_blast_furnace_reinforcement', 'tfmg:heavy_plate']),
             event.recipes.create.filling('kubejs:incomplete_blast_furnace_reinforcement', ['kubejs:incomplete_blast_furnace_reinforcement', Fluid.of('kubejs:molten_steel', 250)]),
-            event.custom({ "type": "vintageimprovements:hammering", "hammerBlows": 3, "ingredients": [{ "item": "kubejs:incomplete_blast_furnace_reinforcement" }], "results": [{ "item": "kubejs:incomplete_blast_furnace_reinforcement" }] }),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_blast_furnace_reinforcement" }], "results": [{ "item": "kubejs:incomplete_blast_furnace_reinforcement" }], "processingTime": 60 })
+            hammering(event, 3, [AddItem('kubejs:incomplete_blast_furnace_reinforcement')], [AddItem('kubejs:incomplete_blast_furnace_reinforcement')]),
+            polishing(event, 3, AddItem('kubejs:incomplete_blast_furnace_reinforcement'), [AddItem('kubejs:incomplete_blast_furnace_reinforcement')], 60)
         ]
     )
     .transitionalItem('kubejs:incomplete_blast_furnace_reinforcement')
@@ -508,8 +508,8 @@ ServerEvents.recipes(event => {
         'tfmg:heavy_plate',
         [
             event.recipes.create.cutting('kubejs:incomplete_steel_ring', 'kubejs:incomplete_steel_ring'),
-            event.custom({ "type": "vintageimprovements:curving", "mode": 1, "ingredients": [{ "item": "kubejs:incomplete_steel_ring" }], "results": [{ "item": "kubejs:incomplete_steel_ring" }] }),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "kubejs:incomplete_steel_ring" }], "results": [{ "item": "kubejs:incomplete_steel_ring" }], "processingTime": 20 })
+            curving(event, 'vintageimprovements:convex_curving_head', AddItem('kubejs:incomplete_steel_ring'), [AddItem('kubejs:incomplete_steel_ring')]),
+            polishing(event, 3, AddItem('kubejs:incomplete_steel_ring'), [AddItem('kubejs:incomplete_steel_ring')], 20)
         ]
     )
     .transitionalItem('kubejs:incomplete_steel_ring')
@@ -519,7 +519,7 @@ ServerEvents.recipes(event => {
         'kubejs:steel_bearing',
         'tfmg:heavy_plate',
         [
-            event.custom({ "type": "vintageimprovements:curving", "mode": 1, "ingredients": [{ "item": "kubejs:incomplete_steel_bearing" }], "results": [{ "item": "kubejs:incomplete_steel_bearing" }] }),
+            curving(event, 'vintageimprovements:convex_curving_head', AddItem('kubejs:incomplete_steel_bearing'), [AddItem('kubejs:incomplete_steel_bearing')]),
             event.recipes.create.deploying('kubejs:incomplete_steel_bearing', ['kubejs:incomplete_steel_bearing', 'kubejs:steel_ring']),
             event.recipes.create.deploying('kubejs:incomplete_steel_bearing', ['kubejs:incomplete_steel_bearing', 'tfmg:steel_nugget']),
             event.recipes.create.deploying('kubejs:incomplete_steel_bearing', ['kubejs:incomplete_steel_bearing', 'tfmg:steel_nugget']),
@@ -548,10 +548,10 @@ ServerEvents.recipes(event => {
         'tfmg:blast_furnace_reinforcement',
         [
             event.recipes.create.pressing('createmetallurgy:incomplete_industrial_crucible', 'createmetallurgy:incomplete_industrial_crucible'),
-            event.custom({ "type": "vintageimprovements:turning", "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }] }),
-            event.custom({ "type": "vintageimprovements:curving", "itemAsHead": "tfmg:steel_block", "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }] }),
+            turning(event, AddItem('createmetallurgy:incomplete_industrial_crucible'), AddItem('createmetallurgy:incomplete_industrial_crucible')),
+            curving(event, 'tfmg:steel_block', AddItem('createmetallurgy:incomplete_industrial_crucible'), [AddItem('createmetallurgy:incomplete_industrial_crucible')]),
             event.recipes.create.filling('createmetallurgy:incomplete_industrial_crucible', ['createmetallurgy:incomplete_industrial_crucible', Fluid.of('kubejs:molten_steel', 200)]),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "processingTime": 60 })
+            polishing(event, 3, AddItem('createmetallurgy:incomplete_industrial_crucible'), [AddItem('createmetallurgy:incomplete_industrial_crucible')], 60)
         ]
     )
     .transitionalItem('createmetallurgy:incomplete_industrial_crucible')
@@ -561,11 +561,11 @@ ServerEvents.recipes(event => {
         'createmetallurgy:industrial_crucible',
         'tfmg:blast_furnace_reinforcement',
         [
-            event.custom({ "type": "vintageimprovements:hammering", "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }] }),
-            event.custom({ "type": "vintageimprovements:turning", "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }] }),
-            event.custom({ "type": "vintageimprovements:curving", "itemAsHead": "tfmg:steel_block", "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }] }),
+            hammering(event, 3, [AddItem('createmetallurgy:incomplete_industrial_crucible')], [AddItem('createmetallurgy:incomplete_industrial_crucible')]),
+            turning(event, AddItem('createmetallurgy:incomplete_industrial_crucible'), AddItem('createmetallurgy:incomplete_industrial_crucible')),
+            curving(event, 'tfmg:steel_block', AddItem('createmetallurgy:incomplete_industrial_crucible'), [AddItem('createmetallurgy:incomplete_industrial_crucible')]),
             event.recipes.create.filling('createmetallurgy:incomplete_industrial_crucible', ['createmetallurgy:incomplete_industrial_crucible', Fluid.of('kubejs:molten_steel', 200)]),
-            event.custom({ "type": "vintageimprovements:polishing", "speedLimits": 3, "ingredients": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "results": [{ "item": "createmetallurgy:incomplete_industrial_crucible" }], "processingTime": 60 })
+            polishing(event, 3, AddItem('createmetallurgy:incomplete_industrial_crucible'), [AddItem('createmetallurgy:incomplete_industrial_crucible')], 60)
         ]
     )
     .transitionalItem('createmetallurgy:incomplete_industrial_crucible')
@@ -614,9 +614,9 @@ ServerEvents.recipes(event => {
         ],
         'kubejs:steel_armor_safe',
         [
-            event.custom({ "type": "vintageimprovements:hammering", "ingredients": [{ "item": "kubejs:steel_armor_safe" }], "results": [{ "item": "kubejs:steel_armor_safe" }] }),
-            event.custom({ "type": "vintageimprovements:hammering", "ingredients": [{ "item": "kubejs:steel_armor_safe" }], "results": [{ "item": "kubejs:steel_armor_safe" }] }),
-            event.custom({ "type": "vintageimprovements:hammering", "ingredients": [{ "item": "kubejs:steel_armor_safe" }], "results": [{ "item": "kubejs:steel_armor_safe" }] })
+            hammering(event, 3, [AddItem('kubejs:steel_armor_safe')], [AddItem('kubejs:steel_armor_safe')]),
+            hammering(event, 3, [AddItem('kubejs:steel_armor_safe')], [AddItem('kubejs:steel_armor_safe')]),
+            hammering(event, 3, [AddItem('kubejs:steel_armor_safe')], [AddItem('kubejs:steel_armor_safe')])
         ]
     )
     .transitionalItem('kubejs:steel_armor_safe')
@@ -626,7 +626,7 @@ ServerEvents.recipes(event => {
         'kubejs:engine_cylinder',
         'minecraft:iron_ingot',
         [
-            event.custom({ "type": "vintageimprovements:turning", "ingredients": [{ "item": "kubejs:incomplete_engine_cylinder" }], "results": [{ "item": "kubejs:incomplete_engine_cylinder" }] }),
+            turning(event, AddItem('kubejs:incomplete_engine_cylinder'), AddItem('kubejs:incomplete_engine_cylinder')),
             event.recipes.create.filling('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', Fluid.of('tfmg:lubrication_oil', 25)]),
             event.recipes.create.deploying('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', 'create:iron_sheet']),
             event.recipes.create.deploying('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', 'tfmg:screwdriver'])
@@ -639,7 +639,7 @@ ServerEvents.recipes(event => {
         'kubejs:steel_fuel_injector',
         'tfmg:steel_ingot',
         [
-            event.custom({ "type": "vintageimprovements:turning", "ingredients": [{ "item": "kubejs:incomplete_steel_fuel_injector" }], "results": [{ "item": "kubejs:incomplete_steel_fuel_injector" }] }),
+            turning(event, AddItem('kubejs:incomplete_steel_fuel_injector'), AddItem('kubejs:incomplete_steel_fuel_injector')),
             event.recipes.create.filling('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', Fluid.of('tfmg:lubrication_oil', 25)]),
             event.recipes.create.deploying('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', 'tfmg:steel_pipe']),
             event.recipes.create.deploying('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', 'kubejs:steel_ring']),
@@ -677,37 +677,8 @@ ServerEvents.recipes(event => {
 
 // Coking
 
-    event.custom({
-        "type": "tfmg:coking",
-        "ingredients": [{ "tag": "minecraft:logs_that_burn" }],
-        "processingTime": 600,
-        "results": [
-            { "item": "minecraft:charcoal" },
-            { "amount": 100, "fluid": "tfmg:creosote" },
-            { "amount": 20, "fluid": "tfmg:carbon_dioxide" }
-        ]
-    })
-
-    event.custom({
-        "type": "tfmg:coking",
-        "ingredients": [{ "item": "createdieselgenerators:chip_wood_block" }],
-        "processingTime": 300,
-        "results": [
-            { "item": "kubejs:dark_ash" },
-            { "amount": 50, "fluid": "tfmg:creosote" },
-            { "amount": 5, "fluid": "tfmg:carbon_dioxide" }
-        ]
-    })
-
-    event.custom({
-        "type": "tfmg:coking",
-        "ingredients": [{ "item": "minecraft:coal" }],
-        "processingTime": 900,
-        "results": [
-            { "item": "tfmg:coal_coke" },
-            { "amount": 25, "fluid": "tfmg:creosote" },
-            { "amount": 30, "fluid": "tfmg:carbon_dioxide" }
-        ]
-    })
+    coking(event, AddItem('createdieselgenerators:chip_wood_block'), [AddItem('kubejs:dark_ash'), AddFluid('50 tfmg:creosote'), AddFluid('5 tfmg:carbon_dioxide')], 300)
+    coking(event, AddItem('#minecraft:logs_that_burn'), [AddItem('minecraft:charcoal'), AddFluid('100 tfmg:creosote'), AddFluid('20 tfmg:carbon_dioxide')], 600)
+    coking(event, AddItem('minecraft:coal'), [AddItem('tfmg:coal_coke'), AddFluid('25 tfmg:creosote'), AddFluid('30 tfmg:carbon_dioxide')], 900)
 
 })

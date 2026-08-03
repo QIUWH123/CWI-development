@@ -2,36 +2,24 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {item: "createdieselgenerators:wood_chip"},
-            {fluidTag: "cwi:water", amount: 500}
+            AddItem('8 createdieselgenerators:wood_chip'),
+            AddFluid('500 #cwi:water')
         ],
         [
-            {item: "create:pulp"},
-            {item: "create:pulp"},
-            {item: "create:pulp", chance: 0.5}
+            AddItem('2 create:pulp'),
+            AddItem('create:pulp', 0.5)
         ],
         800, "heated", ['basin', 'bulk']
     )
 
     addFermentingRecipes(event,
         [
-            {tag: "create:pulpifiable"},
-            {tag: "create:pulpifiable"},
-            {tag: "create:pulpifiable"},
-            {tag: "create:pulpifiable"},
-            {fluidTag: "cwi:water", amount: 500}
+            AddItem('4 #create:pulpifiable'),
+            AddFluid('500 #cwi:water')
         ],
         [
-            {item: "create:pulp"},
-            {item: "create:pulp"},
-            {item: "create:pulp", chance: 0.5}
+            AddItem('2 create:pulp'),
+            AddItem('create:pulp', 0.5)
         ],
         800, "heated", ['basin', 'bulk']
     )
@@ -50,7 +38,7 @@ ServerEvents.recipes(function(event) {
         }
     )
 
-    event.recipes.create.mixing(Fluid.of('kubejs:pulp', 500), ['create:pulp', {fluidTag: "cwi:water", amount: 500}]).processingTime(200)
+    event.recipes.create.mixing(Fluid.of('kubejs:pulp', 500), ['create:pulp', AddFluid('500 #cwi:water')]).processingTime(200)
     event.recipes.create.mixing(Fluid.of('kubejs:fine_pulp', 500), Fluid.of('kubejs:pulp', 500)).processingTime(200)
 
     event.recipes.create.filling('kubejs:wet_web', ['kubejs:forming_fabric', Fluid.of('kubejs:fine_pulp', 100)])
@@ -59,13 +47,5 @@ ServerEvents.recipes(function(event) {
 
     event.recipes.minecraft.smoking('kubejs:dried_web', 'kubejs:pressed_wet_web')
 
-    event.custom({
-        "type": "ratatouille:demolding",
-        "ingredients": [{ "item": "kubejs:dried_web" }],
-        "results": [
-            { "item": "kubejs:forming_fabric" },
-            { "item": "minecraft:paper" }
-        ]
-    })
-
+    demolding(event, AddItem('kubejs:dried_web'), [AddItem('kubejs:forming_fabric'), AddItem('minecraft:paper')])
 })

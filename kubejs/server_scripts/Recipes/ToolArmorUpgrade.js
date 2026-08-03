@@ -110,55 +110,38 @@ ServerEvents.recipes(event => {
 
 // Material Component Functions
 
+    function getGlobalMaterialItem(mat, itemType) {
+        const globalId = { golden: 'gold' }[mat] || mat
+        const entry = global.materialTypes.find(e => e.id === globalId)
+        if (entry && entry.items && entry.items[itemType]) {
+            return entry.items[itemType]
+        }
+        return undefined
+    }
+
     function sheet(mat, synthetic) {
         if (synthetic) return 'tfmg:synthetic_leather'
-        switch(mat) {
-            case 'stone': return 'minecraft:cobblestone'; case 'rusted_iron': return 'kubejs:rusted_iron_sheet'
-            case 'leather': return 'minecraft:leather'; case 'iron': return 'create:iron_sheet'
-            case 'golden': return 'create:golden_sheet'; case 'zinc': return 'createaddition:zinc_sheet'
-            case 'bronze': return 'kubejs:bronze_sheet'; case 'brass': return 'create:brass_sheet'
-            case 'steel': return 'tfmg:heavy_plate'; case 'netherite': return 'kubejs:netherite_sheet'
-        }
+        if (mat === 'stone') return 'minecraft:cobblestone'
+        if (mat === 'leather') return 'minecraft:leather'
+        return getGlobalMaterialItem(mat, 'sheet')
     }
     function rod(mat) {
-        switch(mat) {
-            case 'stone': case 'leather': return 'minecraft:stick'
-            case 'rusted_iron': return 'kubejs:rusted_iron_rod'; case 'iron': return 'createaddition:iron_rod'
-            case 'golden': return 'createaddition:gold_rod'; case 'zinc': return 'kubejs:zinc_rod'
-            case 'bronze': return 'kubejs:bronze_rod'; case 'brass': return 'createaddition:brass_rod'
-            case 'steel': return 'kubejs:steel_rod'; case 'netherite': return 'kubejs:netherite_rod'
-        }
+        if (mat === 'stone' || mat === 'leather') return 'minecraft:stick'
+        return getGlobalMaterialItem(mat, 'rod')
     }
     function ingot(mat, synthetic) {
         if (synthetic) return 'tfmg:synthetic_leather'
-        switch(mat) {
-            case 'stone': return 'minecraft:cobblestone'; case 'rusted_iron': return 'kubejs:rusted_iron_ingot'
-            case 'leather': return 'minecraft:leather'; case 'iron': return 'minecraft:iron_ingot'
-            case 'golden': return 'minecraft:gold_ingot'; case 'zinc': return 'create:zinc_ingot'
-            case 'bronze': return 'kubejs:bronze_ingot'; case 'brass': return 'create:brass_ingot'
-            case 'steel': return 'tfmg:steel_ingot'; case 'netherite': return 'minecraft:netherite_ingot'
-        }
+        if (mat === 'stone') return 'minecraft:cobblestone'
+        if (mat === 'leather') return 'minecraft:leather'
+        return getGlobalMaterialItem(mat, 'ingot')
     }
     function block(mat) {
-        switch(mat) {
-            case 'stone': return 'minecraft:cobblestone'; case 'rusted_iron': return 'kubejs:rusted_iron_block'
-            case 'iron': return 'minecraft:iron_block'; case 'golden': return 'minecraft:gold_block'
-            case 'zinc': return 'create:zinc_block'; case 'bronze': return 'kubejs:bronze_block'
-            case 'brass': return 'create:brass_block'; case 'steel': return 'tfmg:steel_block'
-            case 'netherite': return 'minecraft:netherite_block'
-        }
+        if (mat === 'stone') return 'minecraft:cobblestone'
+        if (mat === 'leather') return 'minecraft:leather'
+        return getGlobalMaterialItem(mat, 'block')
     }
     function wire(mat) {
-        switch(mat) {
-            case 'iron': return 'createaddition:iron_wire'
-            case 'golden': return 'createaddition:gold_wire'
-            case 'zinc': return 'kubejs:zinc_wire'
-            case 'bronze': return 'kubejs:bronze_wire'
-            case 'brass': return 'kubejs:brass_wire'
-            case 'steel': return 'kubejs:steel_wire'
-            case 'netherite': return 'kubejs:netherite_wire'
-            case 'rusted_iron': return 'kubejs:rusted_iron_wire'
-        }
+        return getGlobalMaterialItem(mat, 'wire')
     }
 
 // Sharpness Upgrade

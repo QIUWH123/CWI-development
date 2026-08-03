@@ -30,7 +30,6 @@ ServerEvents.recipes(event => {
         'advanced_ae',
         'sculkcatalyticchamber', 
         'expatternprovider', 
-        'sgjourney',
         'sophisticatedbackpacks', 
         'createmetallurgy', 
         'biomancy',

@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'kubejs:integrated_electron_tube',
-            B: 'create_sa:zinc_handle',
+            B: 'kubejs:quality_tool_handle',
             C: 'create:polished_rose_quartz',
             D: 'create:mechanical_arm'
         }
@@ -24,7 +24,7 @@ ServerEvents.recipes(event => {
         ],
           {
             A: 'kubejs:andesite_bearing',
-            B: 'create_sa:zinc_handle',
+            B: 'kubejs:quality_tool_handle',
             C: 'create:andesite_alloy',
             D: 'kubejs:andesite_machine'
         }

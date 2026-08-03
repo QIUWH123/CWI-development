@@ -251,18 +251,6 @@
 		{
 			dependencies: ["009C96B36DFFDD5B"]
 			disable_toast: true
-			id: "743931EEF79771D1"
-			tasks: [{
-				id: "1BAAFD77F9D5EDD0"
-				item: "sgjourney:raw_naquadah"
-				type: "item"
-			}]
-			x: 22.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["009C96B36DFFDD5B"]
-			disable_toast: true
 			id: "424B057217E415F9"
 			tasks: [{
 				id: "265BB5411D3E288D"
@@ -830,18 +818,6 @@
 			}]
 			x: 19.0d
 			y: 3.0d
-		}
-		{
-			dependencies: ["3A1C6C2C5F5965E7"]
-			disable_toast: true
-			id: "7867DE61D423BBA8"
-			tasks: [{
-				id: "0E21E29DA3E0FCBF"
-				item: "sgjourney:raw_naquadah"
-				type: "item"
-			}]
-			x: 20.0d
-			y: 4.0d
 		}
 		{
 			dependencies: ["73F7C99EE4ABCE4F"]

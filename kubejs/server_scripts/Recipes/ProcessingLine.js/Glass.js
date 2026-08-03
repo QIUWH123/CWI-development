@@ -19,7 +19,7 @@ ServerEvents.recipes(event => {
         ],
         'kubejs:pressed_glass_blank', 
         [
-            event.recipes.create.filling('kubejs:quenched_glass_blank', ['kubejs:quenched_glass_blank', {fluidTag: "cwi:water", amount: 1000}])
+            event.recipes.create.filling('kubejs:quenched_glass_blank', ['kubejs:quenched_glass_blank', AddFluid('1000 #cwi:water')])
         ]
     )
     .transitionalItem('kubejs:quenched_glass_blank')
@@ -33,31 +33,23 @@ ServerEvents.recipes(event => {
         ],
         'kubejs:ion_exchanged_glass_blank', 
         [
-            event.recipes.create.filling('kubejs:quenched_tempered_glass_blank', ['kubejs:quenched_tempered_glass_blank', {fluidTag: "cwi:water", amount: 1000}])
+            event.recipes.create.filling('kubejs:quenched_tempered_glass_blank', ['kubejs:quenched_tempered_glass_blank', AddFluid('1000 #cwi:water')])
         ]
     )
     .transitionalItem('kubejs:quenched_tempered_glass_blank')
     .loops(1)
 
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [
-            "tfmg:cast_iron_vat",
-            "tfmg:steel_vat",
-            "tfmg:firebrick_lined_vat"
+    vatRecipe(event, null, [], ["tfmg:cast_iron_vat", "tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('kubejs:heated_glass'),
+            AddFluid('100 kubejs:molten_saltpeter')
         ],
-        "ingredients": [
-            {"item": "kubejs:heated_glass"},
-            {"fluid": "kubejs:molten_saltpeter", "amount": 100}
+        [
+            AddItem('kubejs:ion_exchanged_glass_blank'),
+            AddFluid('100 kubejs:molten_potassium_sodium_nitrate')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 600,
-        "results": [
-            {"item": "kubejs:ion_exchanged_glass_blank"},
-            {"fluid": "kubejs:molten_potassium_sodium_nitrate", "amount": 100}
-        ]
-    })
+        600
+    )
 
     event.recipes.create.milling(['2x kubejs:glass_powder', Item.of('kubejs:glass_powder').withChance(0.75), Item.of('kubejs:glass_powder').withChance(0.25)], 'minecraft:glass')
     event.recipes.create.milling(['2x kubejs:glass_powder', Item.of('kubejs:glass_powder').withChance(0.75), Item.of('kubejs:glass_powder').withChance(0.25)], 'kubejs:tempered_glass')

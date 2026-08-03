@@ -13,26 +13,81 @@
 //   其余流体/物品按命名规则推断，粉末/气体/液体形态唯一
 // ============================================================
 
+function distillation(event, heat, ingredients, results, processingTime) {
+    return event.custom({
+        "type": "createdieselgenerators:distillation",
+        "ingredients": ingredients,
+        "results": results,
+        "processingTime": processingTime,
+        "heatRequirement": heat
+    })
+}
+
+function advancedDistillation(event, ingredients, results) {
+    return event.custom({
+        "type": "tfmg:distillation",
+        "ingredients": ingredients,
+        "results": results
+    })
+}
+
+function coking(event, ingredients, results, processingTime) {
+    return event.custom({
+        "type": "tfmg:coking",
+        "ingredients": [ingredients],
+        "processingTime": processingTime,
+        "results": results
+    })
+}
+
+function vatRecipe(event, heatRequirement, machines, allowedVatTypes, minSize, ingredients, results, processingTime) {
+    function expandInput(arr) {
+        var out = []
+        arr.forEach(function(e) {
+            if (e.count && !e.chance) {
+                for (var i = 0; i < e.count; i++) {
+                    var copy = {}
+                    for (var k in e) {
+                        if (e.hasOwnProperty(k) && k !== 'count') copy[k] = e[k]
+                    }
+                    out.push(copy)
+                }
+            } else {
+                out.push(e)
+            }
+        })
+        return out
+    }
+    var expandedIngredients = expandInput(ingredients)
+    var recipe = {
+        "type": "tfmg:vat_machine_recipe",
+        "allowedVatTypes": allowedVatTypes,
+        "ingredients": expandedIngredients,
+        "machines": machines,
+        "minSize": minSize,
+        "processingTime": processingTime,
+        "results": results
+    }
+    if (heatRequirement) recipe.heatRequirement = heatRequirement
+    return event.custom(recipe)
+}
+
 ServerEvents.recipes(event => {
 
 // ============================================================
 // 第一部分：Create 混合
 // ============================================================
 
-    // --- 基础合成 ---
-    // 黄铁矿合成：Fe + 2S → FeS₂
     event.recipes.create.mixing('kubejs:pyrite_powder', [
         '2x tfmg:sulfur_dust',
         'kubejs:iron_powder'
     ]).heated()
 
-    // --- 结晶（溶液→固体，水逸散）---
     event.recipes.create.mixing('kubejs:caustic_soda_powder', Fluid.of('kubejs:caustic_soda', 125)).heated()
     event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:salt_solution', 125)).heated()
     event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
     event.recipes.create.mixing('tfmg:nitrate_dust', Fluid.of('kubejs:nitrate_solution', 125)).heated()
 
-    // --- 溶解（溶质+溶剂→溶液）---
     event.recipes.create.mixing(Fluid.of('kubejs:caustic_soda', 125), [
         'kubejs:caustic_soda_powder',
         Fluid.of('kubejs:distilled_water', 125)
@@ -46,7 +101,7 @@ ServerEvents.recipes(event => {
         'ratatouille:salt'
     ])
     event.recipes.create.mixing(Fluid.of('kubejs:raw_brine', 125), [
-        { fluidTag: "cwi:water", amount: 125 },
+        AddFluid('125 #cwi:water'),
         'kubejs:halite_powder'
     ])
     event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [
@@ -58,7 +113,6 @@ ServerEvents.recipes(event => {
         'tfmg:nitrate_dust'
     ])
 
-    // --- 催化剂合成（黑箱豁免）---
     event.recipes.create.mixing('kubejs:chlorine_copper_catalyst', [
         'kubejs:copper_powder',
         Fluid.of('kubejs:chlorine', 250)
@@ -85,7 +139,6 @@ ServerEvents.recipes(event => {
         'kubejs:zinc_powder',
         'tfmg:sulfur_dust'
     ]).heated()
-    // 注：ammoxidation_catalyst 与 alkylation_catalyst 已随 ABS/苯乙烯产线移除
     event.recipes.create.mixing('kubejs:dehydrogenation_catalyst', [
         'kubejs:iron_oxide_powder',
         'kubejs:chromium_oxide_powder'
@@ -107,7 +160,6 @@ ServerEvents.recipes(event => {
         'kubejs:alumina_powder'
     ]).heated()
 
-    // 氧化铝载体（2Al + 3O → Al₂O₃）
     event.recipes.create.mixing('kubejs:alumina_powder', [
         '2x kubejs:aluminum_powder',
         Fluid.of('kubejs:oxygen', 375)
@@ -117,1021 +169,713 @@ ServerEvents.recipes(event => {
 // 第二部分：柴油发电机蒸馏器（水 → 蒸汽）
 // ============================================================
 
-    event.custom({
-        "type": "createdieselgenerators:distillation",
-        "ingredients": [ { "fluid": "kubejs:distilled_water", "amount": 125 } ],
-        "heatRequirement": "heated",
-        "processingTime": 150,
-        "results": [ { "fluid": "kubejs:steam", "amount": 250 } ]
-    })
-    event.custom({
-        "type": "createdieselgenerators:distillation",
-        "ingredients": [ { "fluid": "kubejs:distilled_water", "amount": 125 } ],
-        "heatRequirement": "superheated",
-        "processingTime": 75,
-        "results": [ { "fluid": "kubejs:steam", "amount": 250 } ]
-    })
-    event.custom({
-        "type": "createdieselgenerators:distillation",
-        "ingredients": [ { "fluid": "minecraft:water", "amount": 125 } ],
-        "heatRequirement": "heated",
-        "processingTime": 200,
-        "results": [ { "fluid": "kubejs:steam", "amount": 250 } ]
-    })
-    event.custom({
-        "type": "createdieselgenerators:distillation",
-        "ingredients": [ { "fluid": "minecraft:water", "amount": 125 } ],
-        "heatRequirement": "superheated",
-        "processingTime": 100,
-        "results": [ { "fluid": "kubejs:steam", "amount": 250 } ]
-    })
+    distillation(event, "heated",
+        [ AddFluid('125 kubejs:distilled_water') ],
+        [ AddFluid('250 kubejs:steam') ],
+        150
+    )
+    distillation(event, "superheated",
+        [ AddFluid('125 kubejs:distilled_water') ],
+        [ AddFluid('250 kubejs:steam') ],
+        75
+    )
+    distillation(event, "heated",
+        [ AddFluid('125 minecraft:water') ],
+        [ AddFluid('250 kubejs:steam') ],
+        200
+    )
+    distillation(event, "superheated",
+        [ AddFluid('125 minecraft:water') ],
+        [ AddFluid('250 kubejs:steam') ],
+        100
+    )
 
 // ============================================================
 // 第三部分：tfmg 蒸馏塔（物理分离）
 // ============================================================
 
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "minecraft:water", "amount": 2000 } ],
-        "results": [ { "fluid": "kubejs:steam", "amount": 4000 } ]
-    })
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:distilled_water", "amount": 2000 } ],
-        "results": [ { "fluid": "kubejs:steam", "amount": 4000 } ]
-    })
+    advancedDistillation(event,
+        [ AddFluid('2000 minecraft:water') ],
+        [ AddFluid('4000 kubejs:steam') ]
+    )
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:distilled_water') ],
+        [ AddFluid('4000 kubejs:steam') ]
+    )
 
-    // 空气深冷分离
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:condensed_air", "amount": 2000 } ],
-        "results": [
-            { "fluid": "kubejs:oxygen", "amount": 800 },
-            { "fluid": "kubejs:argon", "amount": 125 },
-            { "fluid": "kubejs:nitrogen", "amount": 3075 }
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:condensed_air') ],
+        [
+            AddFluid('800 kubejs:oxygen'),
+            AddFluid('125 kubejs:argon'),
+            AddFluid('3075 kubejs:nitrogen')
         ]
-    })
+    )
 
-    // 天然气提氦
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:natural_gas", "amount": 2000 } ],
-        "results": [
-            { "fluid": "kubejs:natural_gas_depleted", "amount": 1925 },
-            { "fluid": "kubejs:helium", "amount": 75 }
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:natural_gas') ],
+        [
+            AddFluid('1925 kubejs:natural_gas_depleted'),
+            AddFluid('75 kubejs:helium')
         ]
-    })
+    )
 
-    // 天然气冷凝分离
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:condensed_natural_gas", "amount": 2000 } ],
-        "results": [
-            { "fluid": "tfmg:propane", "amount": 600 },
-            { "fluid": "kubejs:ethane", "amount": 1000 },
-            { "fluid": "kubejs:methane", "amount": 2400 }
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:condensed_natural_gas') ],
+        [
+            AddFluid('600 tfmg:propane'),
+            AddFluid('1000 kubejs:ethane'),
+            AddFluid('2400 kubejs:methane')
         ]
-    })
+    )
 
-    // 原油常压蒸馏
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "tfmg:crude_oil", "amount": 2000 } ],
-        "results": [
-            { "fluid": "kubejs:residual_oil", "amount": 950 },
-            { "fluid": "kubejs:wax_oil", "amount": 500 },
-            { "fluid": "tfmg:diesel", "amount": 250 },
-            { "fluid": "tfmg:kerosene", "amount": 200 },
-            { "fluid": "tfmg:naphtha", "amount": 100 }
+    advancedDistillation(event,
+        [ AddFluid('2000 tfmg:crude_oil') ],
+        [
+            AddFluid('950 kubejs:residual_oil'),
+            AddFluid('500 kubejs:wax_oil'),
+            AddFluid('250 tfmg:diesel'),
+            AddFluid('200 tfmg:kerosene'),
+            AddFluid('100 tfmg:naphtha')
         ]
-    })
+    )
 
-    // FCC 产物分离（LPG 为气体）
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:fcc_effluent", "amount": 2000 } ],
-        "results": [
-            { "fluid": "kubejs:slurry_oil", "amount": 700 },
-            { "fluid": "tfmg:diesel", "amount": 350 },
-            { "fluid": "tfmg:gasoline", "amount": 700 },
-            { "fluid": "tfmg:lpg", "amount": 150 },
-            { "fluid": "tfmg:propylene", "amount": 100 },
-            { "fluid": "kubejs:dry_gas", "amount": 250 }
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:fcc_effluent') ],
+        [
+            AddFluid('700 kubejs:slurry_oil'),
+            AddFluid('350 tfmg:diesel'),
+            AddFluid('700 tfmg:gasoline'),
+            AddFluid('150 tfmg:lpg'),
+            AddFluid('100 tfmg:propylene'),
+            AddFluid('250 kubejs:dry_gas')
         ]
-    })
+    )
 
-    // 减粘裂化产物分离
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:visbreaker_effluent", "amount": 2000 } ],
-        "results": [
-            { "fluid": "kubejs:visbreaker_residue", "amount": 1600 },
-            { "fluid": "kubejs:heavy_fuel_oil", "amount": 50 },
-            { "fluid": "tfmg:diesel", "amount": 200 },
-            { "fluid": "tfmg:naphtha", "amount": 100 },
-            { "fluid": "kubejs:cracked_gas", "amount": 100 }
+    advancedDistillation(event,
+        [ AddFluid('2000 kubejs:visbreaker_effluent') ],
+        [
+            AddFluid('1600 kubejs:visbreaker_residue'),
+            AddFluid('50 kubejs:heavy_fuel_oil'),
+            AddFluid('200 tfmg:diesel'),
+            AddFluid('100 tfmg:naphtha'),
+            AddFluid('100 kubejs:cracked_gas')
         ]
-    })
+    )
 
-    // 石脑油蒸汽裂解产物分离（丁二烯已移除，摩尔守恒修正）
-    // 输入：500 mB 液体 = 500 mol
-    // 输出：裂解汽油 250 mB（液，250mol）+ 丙烷 50 mB（气，25mol）
-    //      + 丙烯 100 mB（气，50mol）+ 乙烷 100 mB（气，50mol）
-    //      + 乙烯 250 mB（气，125mol）
-    // 总摩尔：250 + 25 + 50 + 50 + 125 = 500 mol ✅
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:condensed_cracked_naphtha", "amount": 500 } ],
-        "results": [
-            { "fluid": "kubejs:pyrolysis_gasoline", "amount": 250 },
-            { "fluid": "tfmg:propane", "amount": 50 },
-            { "fluid": "tfmg:propylene", "amount": 100 },
-            { "fluid": "kubejs:ethane", "amount": 100 },
-            { "fluid": "tfmg:ethylene", "amount": 250 }
+    advancedDistillation(event,
+        [ AddFluid('500 kubejs:condensed_cracked_naphtha') ],
+        [
+            AddFluid('250 kubejs:pyrolysis_gasoline'),
+            AddFluid('50 tfmg:propane'),
+            AddFluid('100 tfmg:propylene'),
+            AddFluid('100 kubejs:ethane'),
+            AddFluid('250 tfmg:ethylene')
         ]
-    })
+    )
 
-    // 芳烃混合物精馏
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:aromatic_mix", "amount": 600 } ],
-        "results": [
-            { "fluid": "kubejs:xylene", "amount": 200 },
-            { "fluid": "kubejs:toluene", "amount": 200 },
-            { "fluid": "kubejs:benzene", "amount": 200 }
+    advancedDistillation(event,
+        [ AddFluid('600 kubejs:aromatic_mix') ],
+        [
+            AddFluid('200 kubejs:xylene'),
+            AddFluid('200 kubejs:toluene'),
+            AddFluid('200 kubejs:benzene')
         ]
-    })
+    )
 
-    // 二甲苯分离
-    event.custom({
-        "type": "tfmg:distillation",
-        "ingredients": [ { "fluid": "kubejs:xylene", "amount": 200 } ],
-        "results": [
-            { "fluid": "kubejs:orthoxylene", "amount": 75 },
-            { "fluid": "kubejs:metaxylene", "amount": 50 },
-            { "fluid": "kubejs:paraxylene", "amount": 75 }
+    advancedDistillation(event,
+        [ AddFluid('200 kubejs:xylene') ],
+        [
+            AddFluid('75 kubejs:orthoxylene'),
+            AddFluid('50 kubejs:metaxylene'),
+            AddFluid('75 kubejs:paraxylene')
         ]
-    })
+    )
 
 // ============================================================
 // 第四部分：Vat 化学反应（主产线 + PVC）
 // ============================================================
 
-    // 蒸汽冷凝
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [ { "fluid": "kubejs:steam", "amount": 1000 } ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 400,
-        "results": [ { "fluid": "kubejs:distilled_water", "amount": 500 } ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:steam", "amount": 1000 },
-            { "item": "minecraft:blue_ice" }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('1000 kubejs:steam') ],
+        [ AddFluid('500 kubejs:distilled_water') ],
+        400
+    )
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:steam'),
+            AddItem('minecraft:blue_ice')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 150,
-        "results": [
-            { "fluid": "kubejs:distilled_water", "amount": 500 },
-            { "item": "minecraft:ice" }
-        ]
-    })
+        [
+            AddFluid('500 kubejs:distilled_water'),
+            AddItem('minecraft:ice')
+        ],
+        150
+    )
 
-    // 天然气脱硫
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:natural_gas", "amount": 1000 },
-            { "fluid": "kubejs:caustic_soda", "amount": 500 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:natural_gas'),
+            AddFluid('500 kubejs:caustic_soda')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:purified_natural_gas", "amount": 900 },
-            { "fluid": "tfmg:carbon_dioxide", "amount": 100 },
-            { "fluid": "kubejs:salt_solution", "amount": 500 }
-        ]
-    })
+        [
+            AddFluid('900 kubejs:purified_natural_gas'),
+            AddFluid('100 tfmg:carbon_dioxide'),
+            AddFluid('500 kubejs:salt_solution')
+        ],
+        200
+    )
 
-    // 天然气冷凝
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "minecraft:blue_ice" },
-            { "fluid": "kubejs:purified_natural_gas", "amount": 500 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('minecraft:blue_ice'),
+            AddFluid('500 kubejs:purified_natural_gas')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 100,
-        "results": [
-            { "fluid": "kubejs:condensed_natural_gas", "amount": 250 },
-            { "item": "minecraft:ice" }
-        ]
-    })
+        [
+            AddFluid('250 kubejs:condensed_natural_gas'),
+            AddItem('minecraft:ice')
+        ],
+        100
+    )
 
-    // 氯碱循环（muriatic_acid 为液体）
-    // 曼海姆法
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "ratatouille:salt" },
-            { "fluid": "kubejs:sulfuric_acid", "amount": 125 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('ratatouille:salt'),
+            AddFluid('125 kubejs:sulfuric_acid')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 90,
-        "results": [
-            { "fluid": "kubejs:muriatic_acid", "amount": 125 },
-            { "item": "kubejs:sodium_bisulfate_powder" }
-        ]
-    })
+        [
+            AddFluid('125 kubejs:muriatic_acid'),
+            AddItem('kubejs:sodium_bisulfate_powder')
+        ],
+        90
+    )
 
-    // Deacon 法
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "kubejs:chlorine_copper_catalyst" },
-            { "fluid": "kubejs:muriatic_acid", "amount": 1000 },
-            { "fluid": "kubejs:oxygen", "amount": 500 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('kubejs:chlorine_copper_catalyst'),
+            AddFluid('1000 kubejs:muriatic_acid'),
+            AddFluid('500 kubejs:oxygen')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 60,
-        "results": [
-            { "item": "kubejs:chlorine_copper_catalyst" },
-            { "fluid": "kubejs:chlorine", "amount": 1000 },
-            { "fluid": "minecraft:water", "amount": 500 }
-        ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "kubejs:chlorine_copper_catalyst" },
-            { "fluid": "kubejs:muriatic_acid", "amount": 4000 },
-            { "fluid": "kubejs:oxygen", "amount": 2000 }
+        [
+            AddItem('kubejs:chlorine_copper_catalyst'),
+            AddFluid('1000 kubejs:chlorine'),
+            AddFluid('500 minecraft:water')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 100,
-        "results": [
-            { "item": "kubejs:chlorine_copper_catalyst" },
-            { "fluid": "kubejs:chlorine", "amount": 4000 },
-            { "fluid": "minecraft:water", "amount": 2000 }
-        ]
-    })
+        60
+    )
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('kubejs:chlorine_copper_catalyst'),
+            AddFluid('4000 kubejs:muriatic_acid'),
+            AddFluid('2000 kubejs:oxygen')
+        ],
+        [
+            AddItem('kubejs:chlorine_copper_catalyst'),
+            AddFluid('4000 kubejs:chlorine'),
+            AddFluid('2000 minecraft:water')
+        ],
+        100
+    )
 
-    // 合成氨
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "kubejs:iron_catalyst" },
-            { "fluid": "kubejs:nitrogen", "amount": 200 },
-            { "fluid": "tfmg:hydrogen", "amount": 600 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('kubejs:iron_catalyst'),
+            AddFluid('200 kubejs:nitrogen'),
+            AddFluid('600 tfmg:hydrogen')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 240,
-        "results": [
-            { "fluid": "kubejs:ammonia", "amount": 400 },
-            { "item": "kubejs:iron_catalyst" }
-        ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "kubejs:iron_catalyst" },
-            { "item": "kubejs:iron_catalyst" },
-            { "fluid": "kubejs:nitrogen", "amount": 200 },
-            { "fluid": "tfmg:hydrogen", "amount": 600 }
+        [
+            AddFluid('400 kubejs:ammonia'),
+            AddItem('kubejs:iron_catalyst')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 120,
-        "results": [
-            { "fluid": "kubejs:ammonia", "amount": 400 },
-            { "item": "kubejs:iron_catalyst" },
-            { "item": "kubejs:iron_catalyst" }
-        ]
-    })
+        240
+    )
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('kubejs:iron_catalyst'),
+            AddItem('kubejs:iron_catalyst'),
+            AddFluid('200 kubejs:nitrogen'),
+            AddFluid('600 tfmg:hydrogen')
+        ],
+        [
+            AddFluid('400 kubejs:ammonia'),
+            AddItem('kubejs:iron_catalyst'),
+            AddItem('kubejs:iron_catalyst')
+        ],
+        120
+    )
 
-    // 硝酸
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:ammonia", "amount": 100 },
-            { "fluid": "kubejs:oxygen", "amount": 200 },
-            { "item": "kubejs:platinum_catalyst" }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('100 kubejs:ammonia'),
+            AddFluid('200 kubejs:oxygen'),
+            AddItem('kubejs:platinum_catalyst')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 100,
-        "results": [
-            { "fluid": "kubejs:nitric_acid", "amount": 50 },
-            { "fluid": "minecraft:water", "amount": 50 },
-            { "item": "kubejs:platinum_catalyst" }
-        ]
-    })
-
-    // 脱蜡
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "tfmg:kerosene", "amount": 200 },
-            { "fluid": "tfmg:diesel", "amount": 250 },
-            { "item": "kubejs:zeolite_catalyst" }
+        [
+            AddFluid('50 kubejs:nitric_acid'),
+            AddFluid('50 minecraft:water'),
+            AddItem('kubejs:platinum_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:paraffin_oil", "amount": 150 },
-            { "fluid": "kubejs:dewaxed_oil", "amount": 300 },
-            { "item": "kubejs:zeolite_catalyst" }
-        ]
-    })
+        100
+    )
 
-    // FCC 主反应（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:wax_oil", "amount": 1000 },
-            { "item": "kubejs:zeolite_catalyst" }
+    vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('200 tfmg:kerosene'),
+            AddFluid('250 tfmg:diesel'),
+            AddItem('kubejs:zeolite_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 240,
-        "results": [
-            { "fluid": "kubejs:fcc_effluent", "amount": 2000 },
-            { "item": "kubejs:zeolite_catalyst" }
-        ]
-    })
-
-    // 减粘裂化（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [ { "fluid": "kubejs:residual_oil", "amount": 2000 } ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [ { "fluid": "kubejs:visbreaker_effluent", "amount": 2000 } ]
-    })
-
-    // 催化重整
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "tfmg:naphtha", "amount": 1000 },
-            { "item": "kubejs:platinum_catalyst" }
+        [
+            AddFluid('150 kubejs:paraffin_oil'),
+            AddFluid('300 kubejs:dewaxed_oil'),
+            AddItem('kubejs:zeolite_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 350,
-        "results": [
-            { "fluid": "kubejs:reformate", "amount": 925 },
-            { "fluid": "tfmg:hydrogen", "amount": 50 },
-            { "fluid": "kubejs:coke_oil", "amount": 50 },
-            { "item": "kubejs:platinum_catalyst" }
-        ]
-    })
+        200
+    )
 
-    // 芳烃抽提
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:reformate", "amount": 925 },
-            { "fluid": "kubejs:ethylene_glycol", "amount": 100 }
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:wax_oil'),
+            AddItem('kubejs:zeolite_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 150,
-        "results": [
-            { "fluid": "kubejs:aromatic_mix", "amount": 600 },
-            { "fluid": "kubejs:raffinate", "amount": 325 },
-            { "fluid": "kubejs:ethylene_glycol", "amount": 100 }
-        ]
-    })
+        [
+            AddFluid('2000 kubejs:fcc_effluent'),
+            AddItem('kubejs:zeolite_catalyst')
+        ],
+        240
+    )
 
-    // 石脑油蒸汽裂解（cracked_naphtha 为气体）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "tfmg:naphtha", "amount": 500 },
-            { "fluid": "kubejs:steam", "amount": 200 }
-        ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 180,
-        "results": [
-            { "fluid": "kubejs:cracked_naphtha", "amount": 1000 },
-            { "fluid": "kubejs:steam", "amount": 200 }
-        ]
-    })
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('2000 kubejs:residual_oil') ],
+        [ AddFluid('2000 kubejs:visbreaker_effluent') ],
+        200
+    )
 
-    // 裂解气冷凝
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "minecraft:blue_ice" },
-            { "fluid": "kubejs:cracked_naphtha", "amount": 1000 }
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 tfmg:naphtha'),
+            AddItem('kubejs:platinum_catalyst')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 100,
-        "results": [
-            { "fluid": "kubejs:condensed_cracked_naphtha", "amount": 500 },
-            { "item": "minecraft:ice" }
-        ]
-    })
+        [
+            AddFluid('925 kubejs:reformate'),
+            AddFluid('50 tfmg:hydrogen'),
+            AddFluid('50 kubejs:coke_oil'),
+            AddItem('kubejs:platinum_catalyst')
+        ],
+        350
+    )
 
-    // 空气冷凝
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "minecraft:blue_ice" },
-            { "fluid": "tfmg:air", "amount": 1000 }
+    vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('925 kubejs:reformate'),
+            AddFluid('100 kubejs:ethylene_glycol')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:condensed_air", "amount": 500 },
-            { "item": "minecraft:ice" }
-        ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "minecraft:blue_ice" },
-            { "item": "minecraft:blue_ice" },
-            { "item": "minecraft:blue_ice" },
-            { "item": "minecraft:blue_ice" },
-            { "fluid": "tfmg:air", "amount": 1000 }
+        [
+            AddFluid('600 kubejs:aromatic_mix'),
+            AddFluid('325 kubejs:raffinate'),
+            AddFluid('100 kubejs:ethylene_glycol')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 80,
-        "results": [
-            { "fluid": "kubejs:condensed_air", "amount": 500 },
-            { "item": "minecraft:ice", "count": 4 }
-        ]
-    })
+        150
+    )
 
-    // 苯加氢 → 环己烷
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:benzene", "amount": 250 },
-            { "fluid": "tfmg:hydrogen", "amount": 1500 },
-            { "item": "kubejs:nickel_catalyst" }
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 tfmg:naphtha'),
+            AddFluid('200 kubejs:steam')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 250,
-        "results": [
-            { "fluid": "kubejs:cyclohexane", "amount": 250 },
-            { "item": "kubejs:nickel_catalyst" }
-        ]
-    })
-
-    // KA 油
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:cyclohexane", "amount": 1000 },
-            { "fluid": "kubejs:oxygen", "amount": 1500 },
-            { "item": "kubejs:cobalt_catalyst" }
+        [
+            AddFluid('1000 kubejs:cracked_naphtha'),
+            AddFluid('200 kubejs:steam')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 300,
-        "results": [
-            { "fluid": "kubejs:cyclohexanol", "amount": 500 },
-            { "fluid": "kubejs:cyclohexanone", "amount": 500 },
-            { "fluid": "minecraft:water", "amount": 500 },
-            { "item": "kubejs:cobalt_catalyst" }
-        ]
-    })
+        180
+    )
 
-    // 己二酸
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:cyclohexanol", "amount": 500 },
-            { "fluid": "kubejs:nitric_acid", "amount": 1000 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('minecraft:blue_ice'),
+            AddFluid('1000 kubejs:cracked_naphtha')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 100,
-        "results": [
-            { "fluid": "kubejs:adipic_acid_solution", "amount": 500 },
-            { "fluid": "kubejs:nitrous_oxide", "amount": 1000 },
-            { "fluid": "minecraft:water", "amount": 1000 }
-        ]
-    })
-
-    // 己二腈
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:adipic_acid_solution", "amount": 500 },
-            { "fluid": "kubejs:ammonia", "amount": 2000 }
+        [
+            AddFluid('500 kubejs:condensed_cracked_naphtha'),
+            AddItem('minecraft:ice')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:adiponitrile", "amount": 500 },
-            { "fluid": "minecraft:water", "amount": 2000 }
-        ]
-    })
+        100
+    )
 
-    // 己二胺
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:adiponitrile", "amount": 500 },
-            { "fluid": "tfmg:hydrogen", "amount": 4000 },
-            { "item": "kubejs:nickel_catalyst" }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('minecraft:blue_ice'),
+            AddFluid('1000 tfmg:air')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 250,
-        "results": [
-            { "fluid": "kubejs:hexamethylenediamine_solution", "amount": 500 },
-            { "item": "kubejs:nickel_catalyst" }
-        ]
-    })
-
-    // 尼龙 66 盐（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:hexamethylenediamine_solution", "amount": 500 },
-            { "fluid": "kubejs:adipic_acid_solution", "amount": 500 }
+        [
+            AddFluid('500 kubejs:condensed_air'),
+            AddItem('minecraft:ice')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 120,
-        "results": [
-            { "item": "kubejs:nylon_salt_crystal", "count": 4 }
-        ]
-    })
+        200
+    )
 
-    // 异丙苯法
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:benzene", "amount": 250 },
-            { "fluid": "tfmg:propylene", "amount": 500 },
-            { "fluid": "kubejs:oxygen", "amount": 500 },
-            { "fluid": "kubejs:sulfuric_acid", "amount": 50 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('4 minecraft:blue_ice'),
+            AddFluid('1000 tfmg:air')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 240,
-        "results": [
-            { "fluid": "kubejs:phenol", "amount": 250 },
-            { "fluid": "kubejs:acetone", "amount": 250 },
-            { "fluid": "kubejs:sulfuric_acid", "amount": 50 }
-        ]
-    })
-
-    // 双酚 A（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:phenol", "amount": 500 },
-            { "fluid": "kubejs:acetone", "amount": 250 },
-            { "fluid": "kubejs:sulfuric_acid", "amount": 50 }
+        [
+            AddFluid('500 kubejs:condensed_air'),
+            AddItem('4 minecraft:ice')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "item": "kubejs:bisphenol_a", "count": 2 },
-            { "fluid": "minecraft:water", "amount": 250 },
-            { "fluid": "kubejs:sulfuric_acid", "amount": 50 }
-        ]
-    })
+        80
+    )
 
-    // 环氧氯丙烷
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "fluid": "kubejs:caustic_soda", "amount": 375 },
-            { "fluid": "kubejs:chlorine", "amount": 500 },
-            { "fluid": "tfmg:propylene", "amount": 250 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('250 kubejs:benzene'),
+            AddFluid('1500 tfmg:hydrogen'),
+            AddItem('kubejs:nickel_catalyst')
         ],
-        "machines": [],
-        "minSize": 1,
-        "processingTime": 280,
-        "results": [
-            { "fluid": "kubejs:epichlorohydrin", "amount": 125 },
-            { "fluid": "kubejs:salt_solution", "amount": 375 },
-            { "fluid": "minecraft:water", "amount": 250 }
-        ]
-    })
-
-    // 环氧树脂（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "ingredients": [
-            { "item": "kubejs:bisphenol_a" },
-            { "item": "kubejs:bisphenol_a" },
-            { "fluid": "kubejs:epichlorohydrin", "amount": 250 },
-            { "fluid": "kubejs:caustic_soda", "amount": 250 }
+        [
+            AddFluid('250 kubejs:cyclohexane'),
+            AddItem('kubejs:nickel_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:epoxy_resin", "amount": 250 },
-            { "fluid": "kubejs:salt_solution", "amount": 250 },
-            { "fluid": "minecraft:water", "amount": 250 }
-        ]
-    })
+        250
+    )
 
-    // 聚合 PE
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [ { "fluid": "tfmg:ethylene", "amount": 200 } ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 80,
-        "results": [ { "fluid": "kubejs:molten_polyethylene", "amount": 100 } ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "tfmg:ethylene", "amount": 200 },
-            { "item": "kubejs:zinc_powder" }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:cyclohexane'),
+            AddFluid('1500 kubejs:oxygen'),
+            AddItem('kubejs:cobalt_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 50,
-        "results": [
-            { "fluid": "kubejs:molten_polyethylene", "amount": 100 },
-            { "item": "kubejs:zinc_powder" }
-        ]
-    })
-
-    // 聚合 PP
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [ { "fluid": "tfmg:propylene", "amount": 200 } ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 120,
-        "results": [ { "fluid": "kubejs:molten_polypropylene", "amount": 100 } ]
-    })
-
-    // ============================================================
-    // ==== 聚氯乙烯（PVC）产线 — 新增 ====
-    // 路径：乙烯 + 氯气 → 二氯乙烷（EDC）→ 氯乙烯单体（VCM）+ HCl → PVC
-    // ============================================================
-
-    // 步骤1：乙烯直接氯化 → EDC
-    // C₂H₄ + Cl₂ → C₂H₄Cl₂
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": ["tfmg:steel_vat","tfmg:firebrick_lined_vat"],
-        "heatRequirement": "heated",
-        "ingredients": [
-            {"fluid": "tfmg:ethylene", "amount": 1000},
-            {"fluid": "kubejs:chlorine", "amount": 1000},
-            {"item": "kubejs:iron_catalyst"}
+        [
+            AddFluid('500 kubejs:cyclohexanol'),
+            AddFluid('500 kubejs:cyclohexanone'),
+            AddFluid('500 minecraft:water'),
+            AddItem('kubejs:cobalt_catalyst')
         ],
-        "machines": ["tfmg:mixing"],
-        "minSize": 1,
-        "processingTime": 120,
-        "results": [
-            {"fluid": "kubejs:edc", "amount": 500},
-            {"item": "kubejs:iron_catalyst"}
-        ]
-    })
+        300
+    )
 
-    // 步骤2：EDC裂解 → VCM + HCl
-    // C₂H₄Cl₂ → C₂H₃Cl + HCl
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": ["tfmg:steel_vat","tfmg:firebrick_lined_vat"],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            {"fluid": "kubejs:edc", "amount": 500}
+    vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:cyclohexanol'),
+            AddFluid('1000 kubejs:nitric_acid')
         ],
-        "machines": ["tfmg:mixing"],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            {"fluid": "kubejs:vinyl_chloride_monomer", "amount": 500},
-            {"fluid": "kubejs:muriatic_acid", "amount": 500}
-        ]
-    })
+        [
+            AddFluid('500 kubejs:adipic_acid_solution'),
+            AddFluid('1000 kubejs:nitrous_oxide'),
+            AddFluid('1000 minecraft:water')
+        ],
+        100
+    )
 
-    // 步骤3：VCM聚合 → PVC（标准版）
-    // n C₂H₃Cl → (C₂H₃Cl)ₙ
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": ["tfmg:steel_vat","tfmg:firebrick_lined_vat"],
-        "heatRequirement": "heated",
-        "ingredients": [
-            {"fluid": "kubejs:vinyl_chloride_monomer", "amount": 1000},
-            {"item": "kubejs:sulfur_copper_catalyst"}
+    vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:adipic_acid_solution'),
+            AddFluid('2000 kubejs:ammonia')
         ],
-        "machines": ["tfmg:mixing"],
-        "minSize": 1,
-        "processingTime": 150,
-        "results": [
-            {"fluid": "kubejs:molten_polyvinyl_chloride", "amount": 1000},
-            {"item": "kubejs:sulfur_copper_catalyst"}
-        ]
-    })
+        [
+            AddFluid('500 kubejs:adiponitrile'),
+            AddFluid('2000 minecraft:water')
+        ],
+        200
+    )
 
-    // 步骤3快速版：VCM聚合 → PVC（锌助剂加速）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": ["tfmg:steel_vat","tfmg:firebrick_lined_vat"],
-        "heatRequirement": "heated",
-        "ingredients": [
-            {"fluid": "kubejs:vinyl_chloride_monomer", "amount": 1000},
-            {"item": "kubejs:sulfur_copper_catalyst"},
-            {"item": "kubejs:zinc_powder"}
+    vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:adiponitrile'),
+            AddFluid('4000 tfmg:hydrogen'),
+            AddItem('kubejs:nickel_catalyst')
         ],
-        "machines": ["tfmg:mixing"],
-        "minSize": 1,
-        "processingTime": 90,
-        "results": [
-            {"fluid": "kubejs:molten_polyvinyl_chloride", "amount": 1000},
-            {"item": "kubejs:sulfur_copper_catalyst"},
-            {"item": "kubejs:zinc_powder"}
-        ]
-    })
+        [
+            AddFluid('500 kubejs:hexamethylenediamine_solution'),
+            AddItem('kubejs:nickel_catalyst')
+        ],
+        250
+    )
 
-    // PTA
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:paraxylene", "amount": 125 },
-            { "fluid": "kubejs:oxygen", "amount": 750 },
-            { "item": "kubejs:oxidation_catalyst" }
+    vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:hexamethylenediamine_solution'),
+            AddFluid('500 kubejs:adipic_acid_solution')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "item": "kubejs:terephthalic_acid" },
-            { "fluid": "minecraft:water", "amount": 250 },
-            { "item": "kubejs:oxidation_catalyst" }
-        ]
-    })
+        [ AddItem('4 kubejs:nylon_salt_crystal') ],
+        120
+    )
 
-    // 乙二醇
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "tfmg:ethylene", "amount": 1000 },
-            { "fluid": "kubejs:oxygen", "amount": 500 },
-            { "fluid": "minecraft:water", "amount": 500 },
-            { "item": "kubejs:silver_catalyst" }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('250 kubejs:benzene'),
+            AddFluid('500 tfmg:propylene'),
+            AddFluid('500 kubejs:oxygen'),
+            AddFluid('50 kubejs:sulfuric_acid')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 180,
-        "results": [
-            { "fluid": "kubejs:ethylene_glycol", "amount": 500 },
-            { "item": "kubejs:silver_catalyst" }
-        ]
-    })
+        [
+            AddFluid('250 kubejs:phenol'),
+            AddFluid('250 kubejs:acetone'),
+            AddFluid('50 kubejs:sulfuric_acid')
+        ],
+        240
+    )
 
-    // PET（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "item": "kubejs:terephthalic_acid" },
-            { "item": "kubejs:terephthalic_acid" },
-            { "fluid": "kubejs:ethylene_glycol", "amount": 250 }
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:phenol'),
+            AddFluid('250 kubejs:acetone'),
+            AddFluid('50 kubejs:sulfuric_acid')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 350,
-        "results": [
-            { "fluid": "kubejs:molten_pet", "amount": 250 },
-            { "fluid": "minecraft:water", "amount": 500 }
-        ]
-    })
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "item": "kubejs:terephthalic_acid" },
-            { "item": "kubejs:terephthalic_acid" },
-            { "item": "kubejs:terephthalic_acid" },
-            { "item": "kubejs:terephthalic_acid" },
-            { "fluid": "kubejs:ethylene_glycol", "amount": 500 }
+        [
+            AddItem('2 kubejs:bisphenol_a'),
+            AddFluid('250 minecraft:water'),
+            AddFluid('50 kubejs:sulfuric_acid')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:molten_pet", "amount": 500 },
-            { "fluid": "minecraft:water", "amount": 1000 }
-        ]
-    })
+        200
+    )
+
+    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('375 kubejs:caustic_soda'),
+            AddFluid('500 kubejs:chlorine'),
+            AddFluid('250 tfmg:propylene')
+        ],
+        [
+            AddFluid('125 kubejs:epichlorohydrin'),
+            AddFluid('375 kubejs:salt_solution'),
+            AddFluid('250 minecraft:water')
+        ],
+        280
+    )
+
+    vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('2 kubejs:bisphenol_a'),
+            AddFluid('250 kubejs:epichlorohydrin'),
+            AddFluid('250 kubejs:caustic_soda')
+        ],
+        [
+            AddFluid('250 kubejs:epoxy_resin'),
+            AddFluid('250 kubejs:salt_solution'),
+            AddFluid('250 minecraft:water')
+        ],
+        200
+    )
+
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('200 tfmg:ethylene') ],
+        [ AddFluid('100 kubejs:molten_polyethylene') ],
+        80
+    )
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('200 tfmg:ethylene'),
+            AddItem('kubejs:zinc_powder')
+        ],
+        [
+            AddFluid('100 kubejs:molten_polyethylene'),
+            AddItem('kubejs:zinc_powder')
+        ],
+        50
+    )
+
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('200 tfmg:propylene') ],
+        [ AddFluid('100 kubejs:molten_polypropylene') ],
+        120
+    )
 
 // ============================================================
-// 第五部分：副产物化工利用（全部保留）
+// ==== 聚氯乙烯（PVC）产线 ====
 // ============================================================
 
-    // 路线1：油浆延迟焦化
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "kubejs:slurry_oil", "amount": 500 }
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 tfmg:ethylene'),
+            AddFluid('1000 kubejs:chlorine'),
+            AddItem('kubejs:iron_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 300,
-        "results": [
-            { "item": "tfmg:coal_coke_dust" },
-            { "fluid": "tfmg:diesel", "amount": 125 },
-            { "fluid": "tfmg:naphtha", "amount": 125 },
-            { "fluid": "kubejs:cracked_gas", "amount": 250 }
-        ]
-    })
-
-    // 路线2：减粘渣油延迟焦化
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "kubejs:visbreaker_residue", "amount": 500 }
+        [
+            AddFluid('500 kubejs:edc'),
+            AddItem('kubejs:iron_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 280,
-        "results": [
-            { "item": "tfmg:coal_coke_dust" },
-            { "fluid": "tfmg:diesel", "amount": 125 },
-            { "fluid": "tfmg:naphtha", "amount": 125 },
-            { "fluid": "kubejs:cracked_gas", "amount": 250 }
-        ]
-    })
+        120
+    )
 
-    // 路线3：裂解汽油加氢 → BTX（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "kubejs:pyrolysis_gasoline", "amount": 450 },
-            { "fluid": "tfmg:hydrogen", "amount": 100 },
-            { "item": "kubejs:nickel_catalyst" }
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('500 kubejs:edc') ],
+        [
+            AddFluid('500 kubejs:vinyl_chloride_monomer'),
+            AddFluid('500 kubejs:muriatic_acid')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:benzene", "amount": 150 },
-            { "fluid": "kubejs:toluene", "amount": 100 },
-            { "fluid": "kubejs:xylene", "amount": 100 },
-            { "fluid": "kubejs:raffinate", "amount": 150 },
-            { "item": "kubejs:nickel_catalyst" }
-        ]
-    })
+        200
+    )
 
-    // 路线4：乙烷蒸汽裂解 → 乙烯
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "kubejs:ethane", "amount": 500 },
-            { "fluid": "kubejs:steam", "amount": 100 }
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:vinyl_chloride_monomer'),
+            AddItem('kubejs:sulfur_copper_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 120,
-        "results": [
-            { "fluid": "tfmg:ethylene", "amount": 500 },
-            { "fluid": "tfmg:hydrogen", "amount": 500 },
-            { "fluid": "kubejs:steam", "amount": 100 }
-        ]
-    })
-
-    // 路线5：甲苯加氢脱烷基 → 苯
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "kubejs:toluene", "amount": 200 },
-            { "fluid": "tfmg:hydrogen", "amount": 400 },
-            { "item": "kubejs:dehydrogenation_catalyst" }
+        [
+            AddFluid('1000 kubejs:molten_polyvinyl_chloride'),
+            AddItem('kubejs:sulfur_copper_catalyst')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 200,
-        "results": [
-            { "fluid": "kubejs:benzene", "amount": 200 },
-            { "fluid": "kubejs:methane", "amount": 400 },
-            { "item": "kubejs:dehydrogenation_catalyst" }
-        ]
-    })
+        150
+    )
 
-    // 路线6：丙烷脱氢 → 丙烯
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "superheated",
-        "ingredients": [
-            { "fluid": "tfmg:propane", "amount": 500 },
-            { "item": "kubejs:dehydrogenation_catalyst" }
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 kubejs:vinyl_chloride_monomer'),
+            AddItem('kubejs:sulfur_copper_catalyst'),
+            AddItem('kubejs:zinc_powder')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 250,
-        "results": [
-            { "fluid": "tfmg:propylene", "amount": 500 },
-            { "fluid": "tfmg:hydrogen", "amount": 500 },
-            { "item": "kubejs:dehydrogenation_catalyst" }
-        ]
-    })
-
-    // 路线7：柴油加氢精制 → 芳烃溶剂（黑箱豁免）
-    event.custom({
-        "type": "tfmg:vat_machine_recipe",
-        "allowedVatTypes": [ "tfmg:steel_vat", "tfmg:firebrick_lined_vat" ],
-        "heatRequirement": "heated",
-        "ingredients": [
-            { "fluid": "tfmg:diesel", "amount": 500 },
-            { "fluid": "tfmg:hydrogen", "amount": 200 },
-            { "item": "kubejs:nickel_catalyst" }
+        [
+            AddFluid('1000 kubejs:molten_polyvinyl_chloride'),
+            AddItem('kubejs:sulfur_copper_catalyst'),
+            AddItem('kubejs:zinc_powder')
         ],
-        "machines": [ "tfmg:mixing" ],
-        "minSize": 1,
-        "processingTime": 220,
-        "results": [
-            { "fluid": "kubejs:aromatic_solvent", "amount": 300 },
-            { "fluid": "tfmg:naphtha", "amount": 100 },
-            { "item": "kubejs:nickel_catalyst" }
-        ]
-    })
+        90
+    )
 
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('125 kubejs:paraxylene'),
+            AddFluid('750 kubejs:oxygen'),
+            AddItem('kubejs:oxidation_catalyst')
+        ],
+        [
+            AddItem('kubejs:terephthalic_acid'),
+            AddFluid('250 minecraft:water'),
+            AddItem('kubejs:oxidation_catalyst')
+        ],
+        200
+    )
+
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('1000 tfmg:ethylene'),
+            AddFluid('500 kubejs:oxygen'),
+            AddFluid('500 minecraft:water'),
+            AddItem('kubejs:silver_catalyst')
+        ],
+        [
+            AddFluid('500 kubejs:ethylene_glycol'),
+            AddItem('kubejs:silver_catalyst')
+        ],
+        180
+    )
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('2 kubejs:terephthalic_acid'),
+            AddFluid('250 kubejs:ethylene_glycol')
+        ],
+        [
+            AddFluid('250 kubejs:molten_pet'),
+            AddFluid('500 minecraft:water')
+        ],
+        350
+    )
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddItem('4 kubejs:terephthalic_acid'),
+            AddFluid('500 kubejs:ethylene_glycol')
+        ],
+        [
+            AddFluid('500 kubejs:molten_pet'),
+            AddFluid('1000 minecraft:water')
+        ],
+        200
+    )
+
+// ============================================================
+// 第五部分：副产物化工利用
+// ============================================================
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('500 kubejs:slurry_oil') ],
+        [
+            AddItem('tfmg:coal_coke_dust'),
+            AddFluid('125 tfmg:diesel'),
+            AddFluid('125 tfmg:naphtha'),
+            AddFluid('250 kubejs:cracked_gas')
+        ],
+        300
+    )
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [ AddFluid('500 kubejs:visbreaker_residue') ],
+        [
+            AddItem('tfmg:coal_coke_dust'),
+            AddFluid('125 tfmg:diesel'),
+            AddFluid('125 tfmg:naphtha'),
+            AddFluid('250 kubejs:cracked_gas')
+        ],
+        280
+    )
+
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('450 kubejs:pyrolysis_gasoline'),
+            AddFluid('100 tfmg:hydrogen'),
+            AddItem('kubejs:nickel_catalyst')
+        ],
+        [
+            AddFluid('150 kubejs:benzene'),
+            AddFluid('100 kubejs:toluene'),
+            AddFluid('100 kubejs:xylene'),
+            AddFluid('150 kubejs:raffinate'),
+            AddItem('kubejs:nickel_catalyst')
+        ],
+        200
+    )
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 kubejs:ethane'),
+            AddFluid('100 kubejs:steam')
+        ],
+        [
+            AddFluid('500 tfmg:ethylene'),
+            AddFluid('500 tfmg:hydrogen'),
+            AddFluid('100 kubejs:steam')
+        ],
+        120
+    )
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('200 kubejs:toluene'),
+            AddFluid('400 tfmg:hydrogen'),
+            AddItem('kubejs:dehydrogenation_catalyst')
+        ],
+        [
+            AddFluid('200 kubejs:benzene'),
+            AddFluid('400 kubejs:methane'),
+            AddItem('kubejs:dehydrogenation_catalyst')
+        ],
+        200
+    )
+
+    vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 tfmg:propane'),
+            AddItem('kubejs:dehydrogenation_catalyst')
+        ],
+        [
+            AddFluid('500 tfmg:propylene'),
+            AddFluid('500 tfmg:hydrogen'),
+            AddItem('kubejs:dehydrogenation_catalyst')
+        ],
+        250
+    )
+
+    vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('500 tfmg:diesel'),
+            AddFluid('200 tfmg:hydrogen'),
+            AddItem('kubejs:nickel_catalyst')
+        ],
+        [
+            AddFluid('300 kubejs:aromatic_solvent'),
+            AddFluid('100 tfmg:naphtha'),
+            AddItem('kubejs:nickel_catalyst')
+        ],
+        220
+    )
 })
