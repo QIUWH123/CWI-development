@@ -1,4 +1,9 @@
 {
+  "block.create_new_age.copper_wire_block": "Electrum Coil Block",
+  "block.create_new_age.overcharged_diamond_wire_block": "Copper Coil Block",
+  "block.create_new_age.overcharged_golden_wire_block": "Silver Coil Block",
+  "block.create_new_age.overcharged_iron_wire_block": "Gold Coil Block",
+
   "item.create_new_age.copper_wire": "Electrum Coil",
   "item.create_new_age.overcharged_diamond_wire": "Copper Coil",
   "item.create_new_age.overcharged_golden_wire": "Silver Coil",

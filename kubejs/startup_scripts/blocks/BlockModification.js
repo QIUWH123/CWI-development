@@ -32,6 +32,23 @@ BlockEvents.modification(event => {
         })
     })
 
+// Wire Block
+
+    const wireBlock = [
+        'create_new_age:copper_wire_block',
+        'create_new_age:overcharged_iron_wire_block',
+        'create_new_age:overcharged_golden_wire_block',
+        'create_new_age:overcharged_diamond_wire_block'
+    ]
+    wireBlock.forEach(id => {
+        event.modify(id, block => {
+            block.requiresTool = true
+            block.destroySpeed = 4
+            block.explosionResistance = 6
+            block.soundType = 'metal'
+        })
+    })
+
 // Petrified Wooden Blocks
 
     const petrified = [

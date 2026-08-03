@@ -55,7 +55,7 @@ function registerGas(event, name, color) {
 global.moltenMetals = [
     ['molten_aluminum', 0xE8FAFF],
     ['molten_vanadium', 0xEDE8ED],
-    ['molten_tin', 0xC5E3FF],
+    ['molten_tin', 0xFFFAF0],
     ['molten_silver', 0xD4FFF9],
     ['molten_molybdenum', 0xD4FFF9],
     ['molten_titanium', 0xFFA29C],
