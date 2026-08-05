@@ -42,7 +42,7 @@ StartupEvents.registry('block', event => {
             .tagBoth('create_rns:deposit_blocks')
             .mapColor('#FFFFFF')
             .defaultCutout()
-            .modelJson = oreDepositModel(ore.texture)
+            .modelJson = oreDepositModel(ore.blockTexture)
 
         if( ore.mod !== 'kubejs') return
         event.create(`${ore.id}_ore`)

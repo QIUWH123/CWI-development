@@ -509,7 +509,7 @@ ServerEvents.recipes(function(event) {
             AddItem('kubejs:clay_powder', 0.97),
             AddItem('kubejs:clay_powder', 0.67),
             AddItem('kubejs:lithium_powder', 0.09),
-            AddItem('tfmg:bauxite_powder', 0.17),
+            AddItem('kubejs:bauxite_powder', 0.17),
             AddItem('kubejs:acidolys_bacillus')
         ],
         600, undefined, ['basin', 'bulk']
@@ -524,7 +524,7 @@ ServerEvents.recipes(function(event) {
             AddItem('kubejs:clay_powder', 0.97),
             AddItem('kubejs:clay_powder', 0.67),
             AddItem('kubejs:lithium_powder', 0.09),
-            AddItem('tfmg:bauxite_powder', 0.17),
+            AddItem('kubejs:bauxite_powder', 0.17),
             AddItem('kubejs:acidolys_bacillus')
         ],
         1500, undefined, ['basin', 'bulk']
@@ -537,7 +537,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddItem('kubejs:quartz_powder', 0.21),
-            AddItem('tfmg:sulfur_dust', 0.13),
+            AddItem('kubejs:sulfur_powder', 0.13),
             AddItem('kubejs:magnesite_powder', 0.13),
             AddItem('kubejs:vanadium_powder', 0.21),
             AddItem('kubejs:acidolys_bacillus')
@@ -552,7 +552,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddItem('kubejs:quartz_powder', 0.21),
-            AddItem('tfmg:sulfur_dust', 0.13),
+            AddItem('kubejs:sulfur_powder', 0.13),
             AddItem('kubejs:magnesite_powder', 0.13),
             AddItem('kubejs:vanadium_powder', 0.21),
             AddItem('kubejs:acidolys_bacillus')
@@ -567,7 +567,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddItem('kubejs:quartz_powder', 0.21),
-            AddItem('tfmg:sulfur_dust', 0.13),
+            AddItem('kubejs:sulfur_powder', 0.13),
             AddItem('kubejs:magnesite_powder', 0.13),
             AddItem('kubejs:vanadium_powder', 0.21),
             AddItem('kubejs:acidolys_bacillus')
@@ -582,7 +582,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddItem('kubejs:quartz_powder', 0.21),
-            AddItem('tfmg:sulfur_dust', 0.13),
+            AddItem('kubejs:sulfur_powder', 0.13),
             AddItem('kubejs:magnesite_powder', 0.13),
             AddItem('kubejs:vanadium_powder', 0.21),
             AddItem('kubejs:acidolys_bacillus')
@@ -842,7 +842,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 tfmg:sulfur_dust'),
+            AddItem('2 kubejs:sulfur_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -989,7 +989,7 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
-            AddItem('tfmg:sulfur_dust'),
+            AddItem('kubejs:sulfur_powder'),
             AddFluid('100 kubejs:oxygen'),
             AddItem('kubejs:vulcan_thermus')
         ],

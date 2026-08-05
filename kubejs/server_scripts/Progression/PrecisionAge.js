@@ -6,7 +6,8 @@ ServerEvents.recipes(event => {
         'kubejs:quality_tool_handle',
         [
             '2x farmersdelight:canvas',
-            'createaddition:iron_rod'
+            'createaddition:iron_wire',
+            'minecraft:stick'
         ]
     ).id('cwi:crafting_table/quality_tool_handle_manual_only')
 

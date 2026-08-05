@@ -140,7 +140,7 @@
 			id: "7BE37EB99A6D4CF7"
 			tasks: [{
 				id: "334C0B73D5B087BD"
-				item: "tfmg:sulfur_dust"
+				item: "kubejs:sulfur_powder"
 				type: "item"
 			}]
 			x: -3.3d
@@ -254,7 +254,7 @@
 			id: "424B057217E415F9"
 			tasks: [{
 				id: "265BB5411D3E288D"
-				item: "tfmg:sulfur_dust"
+				item: "kubejs:sulfur_powder"
 				type: "item"
 			}]
 			x: 20.0d
@@ -493,7 +493,7 @@
 			id: "46D938DC84518EF3"
 			tasks: [{
 				id: "33537F6C4AEF7C07"
-				item: "tfmg:sulfur_dust"
+				item: "kubejs:sulfur_powder"
 				type: "item"
 			}]
 			x: 18.0d

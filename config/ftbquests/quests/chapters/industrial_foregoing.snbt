@@ -319,7 +319,7 @@
 			subtitle: "Aluminum Ore"
 			tasks: [{
 				id: "65314E54C8FBBB97"
-				item: "tfmg:bauxite_powder"
+				item: "kubejs:bauxite_powder"
 				type: "item"
 			}]
 			title: "Bauxite Powder"

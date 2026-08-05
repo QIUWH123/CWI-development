@@ -177,7 +177,7 @@ ServerEvents.tags('item', event => {
     event.add('cwi:leathers', ['tfmg:synthetic_leather', 'minecraft:leather'])
 
 // BasicMaterials
-    event.add('cwi:basic_materials', ['tfmg:sulfur_dust', 'kubejs:limestone_powder', 'kubejs:caustic_soda_powder'])
+    event.add('cwi:basic_materials', ['kubejs:sulfur_powder', 'kubejs:limestone_powder', 'kubejs:caustic_soda_powder'])
 
 // DeoxidizerPowders
     event.add('cwi:deoxidizer', [

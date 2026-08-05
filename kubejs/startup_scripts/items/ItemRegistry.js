@@ -28,7 +28,6 @@ StartupEvents.registry('item', event => {
     event.create('nylon_salt_crystal')
     event.create('carborundum')
     event.create('yeast_paste')
-    event.create('plant_fiber')
     event.create('quality_tool_handle')
     event.create('backpack_extension')
 })
@@ -36,9 +35,6 @@ StartupEvents.registry('item', event => {
 // Normal Ores
 
 StartupEvents.registry('item', event => {
-
-    event.create('sulfur')
-        .texture('kubejs:item/ores/sulfur')
 
     event.create('redstone')
         .texture('kubejs:item/ores/redstone')
@@ -64,65 +60,11 @@ StartupEvents.registry('item', event => {
 
 StartupEvents.registry('item', event => {
 
-    event.create('azurite')
-        .texture('kubejs:item/ores/azurite')
-
-    event.create('bauxite')
-        .texture('kubejs:item/ores/bauxite')
-
-    event.create('chromite')
-        .texture('kubejs:item/ores/chromite')
-
-    event.create('galena')
-        .texture('kubejs:item/ores/galena')
-
-    event.create('pentlandite')
-        .texture('kubejs:item/ores/pentlandite')
-
-    event.create('cassiterite')
-        .texture('tfc:item/ore/rich_sphalerite')
-
-    event.create('sphalerite')
-        .texture('kubejs:item/ores/sphalerite')
-
-    event.create('chalcocite')
-        .texture('mekanism:item/raw_lead')
-
-    event.create('hematite')
-        .texture('kubejs:item/ores/hematite')
-
-    event.create('cooperite')
-        .texture('kubejs:item/ores/cooperite')
-
     event.create('peat')
         .texture('kubejs:item/ores/peat')
 
-    event.create('lignite')
-        .texture('tfc:item/ore/lignite')
-
     event.create('bituminous_coal')
         .texture('kubejs:item/ores/bituminous_coal')
-
-    event.create('malachite')
-        .texture('kubejs:item/ores/malachite')
-
-    event.create('magnetite')
-        .texture('kubejs:item/ores/magnetite')
-
-    event.create('magnesite')
-        .texture('kubejs:item/ores/magnesite')
-
-    event.create('halite')
-        .texture('tfc:item/ore/halite')
-
-    event.create('petzite')
-        .texture('kubejs:item/ores/petzite')
-
-    event.create('rutile')
-        .texture('kubejs:item/ores/rutile')
-
-    event.create('uraninite')
-        .texture('kubejs:item/ores/uraninite')
 
 })
 
@@ -356,10 +298,6 @@ StartupEvents.registry('item', event => {
     event.create('steel_bearing')
         .texture('kubejs:item/machine_parts/steel_bearing')
         .rarity('uncommon')
-
-    event.create('hydrogen_fuel_cell')
-        .texture('kubejs:item/machine_parts/hydrogen_fuel_cell')
-        .rarity('epic')
 
     event.create('industrial_iron_blade')
         .texture('kubejs:item/machine_parts/industrial_iron_blade')

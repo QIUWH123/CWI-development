@@ -56,7 +56,7 @@ global.microbes = [
                 "time": 7200,
                 "count": 2,
                 "steps": [
-                    { "type": "deploying", "item": "tfmg:sulfur_dust", "count": 3 },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 3 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
                     { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 50 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 400 }
@@ -80,7 +80,7 @@ global.microbes = [
                 "count": 5,
                 "steps": [
                     { "type": "deploying", "item": "kubejs:iron_powder", "count": 1 },
-                    { "type": "deploying", "item": "tfmg:sulfur_dust", "count": 1 },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 1 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
                     { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 100 },
                     { "type": "filling", "fluid": "kubejs:oxygen", "amount": 300 },
@@ -111,7 +111,7 @@ global.microbes = [
                 "time": 7200,
                 "count": 2,
                 "steps": [
-                    { "type": "deploying", "item": "tfmg:sulfur_dust" },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder" },
                     { "type": "deploying", "item": "ratatouille:salt" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
                 ]
@@ -121,7 +121,7 @@ global.microbes = [
                 "time": 4800,
                 "count": 3,
                 "steps": [
-                    { "type": "deploying", "item": "tfmg:sulfur_dust" },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder" },
                     { "type": "deploying", "item": "minecraft:sugar", "count": 2 },
                     { "type": "deploying", "item": "ratatouille:salt" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
@@ -132,7 +132,7 @@ global.microbes = [
                 "time": 4800,
                 "count": 4,
                 "steps": [
-                    { "type": "deploying", "item": "tfmg:sulfur_dust", "count": 2 },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 2 },
                     { "type": "deploying", "item": "minecraft:sugar", "count": 2 },
                     { "type": "deploying", "item": "kubejs:magnesium_powder" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
@@ -144,7 +144,7 @@ global.microbes = [
                 "count": 5,
                 "steps": [
                     { "type": "deploying", "item": "kubejs:yeast_paste" },
-                    { "type": "deploying", "item": "tfmg:sulfur_dust", "count": 1 },
+                    { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 1 },
                     { "type": "deploying", "item": "minecraft:sugar", "count": 2 },
                     { "type": "deploying", "item": "kubejs:magnesium_powder" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
@@ -231,7 +231,7 @@ global.microbes = [
                 "time": 4800,
                 "count": 4,
                 "steps": [
-                    { "type": "deploying", "item": "kubejs:plant_fiber", "count": 2 },
+                    { "type": "deploying", "item": "createaddition:biomass", "count": 2 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
                     { "type": "deploying", "item": "kubejs:yeast_paste" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
@@ -242,7 +242,7 @@ global.microbes = [
                 "time": 2400,
                 "count": 5,
                 "steps": [
-                    { "type": "deploying", "item": "kubejs:plant_fiber", "count": 2 },
+                    { "type": "deploying", "item": "createaddition:biomass", "count": 2 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
                     { "type": "deploying", "item": "kubejs:yeast_paste" },
                     { "type": "filling", "fluid": "kubejs:oxygen", "amount": 200 },

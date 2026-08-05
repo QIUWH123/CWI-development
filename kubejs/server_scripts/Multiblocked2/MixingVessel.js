@@ -6,7 +6,7 @@ global.mixingVesselRecipes = [
         priority: 1,
         duration: 20,
         inputs: [
-            { "item": "tfmg:sulfur_dust", "count": 2 },
+            { "item": "kubejs:sulfur_powder", "count": 2 },
             { "item": "kubejs:copper_powder" }
         ],
         outputs: [{ "item": "kubejs:sulfur_copper_catalyst" }]

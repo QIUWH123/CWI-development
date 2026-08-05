@@ -79,7 +79,7 @@ ServerEvents.recipes(event => {
 // ============================================================
 
     event.recipes.create.mixing('kubejs:pyrite_powder', [
-        '2x tfmg:sulfur_dust',
+        '2x kubejs:sulfur_powder',
         'kubejs:iron_powder'
     ]).heated()
 
@@ -137,7 +137,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing('kubejs:sulfur_copper_catalyst', [
         'kubejs:copper_powder',
         'kubejs:zinc_powder',
-        'tfmg:sulfur_dust'
+        'kubejs:sulfur_powder'
     ]).heated()
     event.recipes.create.mixing('kubejs:dehydrogenation_catalyst', [
         'kubejs:iron_oxide_powder',

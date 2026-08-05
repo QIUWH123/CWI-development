@@ -61,7 +61,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(Fluid.of('createaddition:bioethanol', 250), [Fluid.of('kubejs:syrup', 125), 'createaddition:biomass', Fluid.of('kubejs:distilled_water', 125)])
     event.recipes.create.mixing('createaddition:biomass', ['createaddition:biomass_pellet', Fluid.of('minecraft:water', 50)])
     event.recipes.create.mixing('minecraft:clay_ball', ['kubejs:clay_powder', Fluid.of('minecraft:water', 50)])
-    event.recipes.create.mixing('3x minecraft:gunpowder', ['3x tfmg:nitrate_dust', '2x tfmg:sulfur_dust', 'kubejs:charcoal_powder'])
+    event.recipes.create.mixing('3x minecraft:gunpowder', ['3x tfmg:nitrate_dust', '2x kubejs:sulfur_powder', 'kubejs:charcoal_powder'])
     event.recipes.create.mixing('minecraft:glow_ink_sac', ['darkerdepths:glow_grime', 'minecraft:ink_sac'])
     event.recipes.create.mixing('minecraft:sugar', Fluid.of("create:honey", 100)).heated()
 
