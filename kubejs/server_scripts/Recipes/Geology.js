@@ -143,7 +143,8 @@ ServerEvents.recipes(event => {
     addFermentingRecipes(event,
         [
             AddItem('3 kubejs:fermento_mycetes'),
-            AddFluid('250 kubejs:distilled_water')
+            AddFluid('250 kubejs:distilled_water'),
+            AddFluid('50 createdieselgenerators:ethanol')
         ],
         [
             AddItem('kubejs:yeast_paste')

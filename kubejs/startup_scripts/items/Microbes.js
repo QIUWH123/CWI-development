@@ -173,7 +173,7 @@ global.microbes = [
                 "steps": [
                     { "type": "filling", "fluid": "kubejs:syngas", "amount": 300 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "deploying", "item": "kubejs:mineral_mix" },
+                    { "type": "deploying", "item": "kubejs:iron_powder" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]
             },
@@ -185,7 +185,7 @@ global.microbes = [
                     { "type": "filling", "fluid": "tfmg:hydrogen", "amount": 300 },
                     { "type": "filling", "fluid": "tfmg:carbon_dioxide", "amount": 150 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "deploying", "item": "kubejs:mineral_mix" },
+                    { "type": "deploying", "item": "kubejs:platinum_powder" },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]
             },
@@ -197,7 +197,7 @@ global.microbes = [
                     { "type": "filling", "fluid": "kubejs:syngas", "amount": 400 },
                     { "type": "filling", "fluid": "tfmg:hydrogen", "amount": 200 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "deploying", "item": "kubejs:mineral_mix", "count": 1 },
+                    { "type": "deploying", "item": "kubejs:platinum_powder", "count": 1 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]
             }
