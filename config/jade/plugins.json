@@ -77,6 +77,10 @@
     "goggles.detailed": false,
     "placard": true
   },
+  "mbd2thread": {
+    "long_fe_energy_hud": true,
+    "recipe_thread_hud": true
+  },
   "jade": {
     "coordinates.rel": false,
     "distance": false,
@@ -88,11 +92,6 @@
   "expatternprovider": {
     "jade_chamber": true,
     "jade_wireless": true
-  },
-  "ae2cs": {
-    "jade/ender_broadcaster": true,
-    "jade/mirror_pattern_provider": true,
-    "jade/ender_emitter": true
   },
   "functionalstorage": {
     "armory": true

@@ -8,6 +8,7 @@ ServerEvents.recipes(event => {
             event.recipes.cwi.incubating()
                 .id(`cwi:incubating/${name}/${trait}`)
                 .duration(variant.time)
+                .inputRPM(64)
                 .inputItems(`kubejs:sealed_${trait}_${name}_agar_plate`)
                 .outputItems(`kubejs:cultured_${trait}_${name}_agar_plate`)
         })

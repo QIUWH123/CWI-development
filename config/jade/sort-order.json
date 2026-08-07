@@ -50,6 +50,8 @@
   "jadeaddons.lootr:inventory": null,
   "mbd2:multiblock_provider": null,
   "mbd2:recipe_logic_provider": null,
+  "mbd2thread:long_fe_energy_hud": null,
+  "mbd2thread:recipe_thread_hud": null,
   "minecraft:animal_owner": null,
   "minecraft:armor_stand": null,
   "minecraft:beehive": null,

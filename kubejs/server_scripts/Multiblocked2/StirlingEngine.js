@@ -33,9 +33,13 @@ function updateMachine(machine) {
     machine.recipeLogic.setWorkingEnabled(isWorking)
 
     const machineHolder = $IMachine.ofMachine(level, pos).orElse(null).machineHolder
-    if (machine.customData.getInt('rpm') === targetRPM) return
+    const RPM = machine.customData.getInt('rpm')
+    if (RPM === targetRPM) return
 
     isWorking ? machineHolder.scheduleWorkingRPM(targetRPM, false) : machineHolder.stopWorking()
+    
+    const sound = (targetRPM > RPM)? 'ad_astra:oxygen_intake' : 'ad_astra:oxygen_outtake'
+    level.playSound(null, pos.x + 0.5, pos.y + 0.5, pos.z + 0.5, sound, 'blocks', 0.5, 1)
 
     machine.customData.putBoolean('work', isWorking)
     machine.customData.putInt('rpm', targetRPM)

@@ -30,7 +30,7 @@ PlayerEvents.chat((event) => {
         if (player.username === global.debugUserName[i]) {
             if (message.trim().equalsIgnoreCase("-ki")) {
                 server.runCommandSilent("kill @e[type=item]")
-                server.runCommandSilent("tellraw @a 'Dropped items have been cleared'")
+                server.tell('All Dropped Items Have Been Cleared')
                 event.cancel()
             }
 
@@ -48,6 +48,7 @@ PlayerEvents.chat((event) => {
 
             if (message.trim().equalsIgnoreCase("-kla")) {
                 server.runCommandSilent("kill @e[type=!player]")
+                server.tell('All Players Have Been Cleared')
                 event.cancel()
             }
         }
@@ -55,10 +56,11 @@ PlayerEvents.chat((event) => {
 })
 
 BlockEvents.rightClicked((event) => {
-    let { player } = event;
+    let { player } = event
 
-    let blockState = event.getBlock().getBlockState();
-    let pos = event.getBlock().getPos();
+    let id = event.getBlock().getId()
+    let blockState = event.getBlock().getBlockState()
+    let pos = event.getBlock().getPos()
     let blockHardness = blockState.getDestroySpeed(event.getLevel(), pos)
     let blockResistance = blockState.getBlock().getExplosionResistance()
 
@@ -68,6 +70,8 @@ BlockEvents.rightClicked((event) => {
             player.crouching &&
             player.username === global.debugUserName[i]
         ) {
+            player.tell(Text.of(`ID: ${id}`))
+            player.tell(Text.of(`Pos: ${pos.getX()}, ${pos.getY()}, ${pos.getZ()}`))
             player.tell(Text.of(`Hardness: ${blockHardness}`))
             player.tell(Text.of(`Resistance: ${blockResistance}`))
         }
