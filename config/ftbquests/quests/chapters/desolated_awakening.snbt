@@ -124,18 +124,14 @@
 		{
 			dependencies: ["48FAA6DBC81EED3F"]
 			description: ["&eA ring of metal and silence. You remember standing here, but the memory slides away like water. It was important. It was terrible. What did it do?&r"]
-			icon: "sgjourney:universe_stargate"
+			icon: "create_connected:music_disc_interlude"
 			id: "1206CB23534B30CD"
 			size: 1.5d
 			subtitle: "Examine the Ancient Apparatus"
 			tasks: [{
-				icon: "sgjourney:universe_stargate"
-				id: "4421C5120E517A15"
-				observe_type: 0
-				timer: 0L
-				title: "The Stargate"
-				to_observe: "sgjourney:universe_stargate"
-				type: "observation"
+				id: "417448A9C37F1C8C"
+				title: "I'm So sorry, I didn't finish the STARGATE"
+				type: "checkmark"
 			}]
 			title: "The Stargate"
 			x: 3.5d

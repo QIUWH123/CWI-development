@@ -13,27 +13,49 @@ JEIAddedEvents.registerRecipes(event => {
 
     global.mixingVesselRecipes.forEach(recipe => {
         let cloned = JSON.parse(JSON.stringify(recipe))
-        if (cloned.outputs) {
-            cloned.outputs = cloned.outputs.map(out => ({
-                item: out.item,
-                count: out.count || 1,
-                chance: out.chance !== undefined ? out.chance : 1
-            }))
-        }
-        if (cloned.outputFluids) {
-            cloned.outputFluids = cloned.outputFluids.map(f => ({
-                fluid: f.fluid,
-                amount: f.amount,
-                chance: f.chance !== undefined ? f.chance : 1
-            }))
-        }
-        if (cloned.inputFluids) {
-            cloned.inputFluids = cloned.inputFluids.map(f => ({
-                fluid: f.fluid,
-                amount: f.amount,
-                chance: f.chance !== undefined ? f.chance : 1
-            }))
-        }
+
+        const rawInputs = cloned.inputs || []
+        const inputItems = []
+        const inputFluids = []
+        rawInputs.forEach(entry => {
+            if (entry.fluid) {
+                inputFluids.push({
+                    fluid: entry.fluid,
+                    amount: entry.amount,
+                    chance: entry.chance !== undefined ? entry.chance : 1
+                })
+            } else {
+                inputItems.push({
+                    item: entry.item,
+                    count: entry.count || 1,
+                    chance: entry.chance !== undefined ? entry.chance : 1
+                })
+            }
+        })
+        cloned.inputs = inputItems
+        cloned.inputFluids = inputFluids
+
+        const rawOutputs = cloned.outputs || []
+        const outputItems = []
+        const outputFluids = []
+        rawOutputs.forEach(entry => {
+            if (entry.fluid) {
+                outputFluids.push({
+                    fluid: entry.fluid,
+                    amount: entry.amount,
+                    chance: entry.chance !== undefined ? entry.chance : 1
+                })
+            } else {
+                outputItems.push({
+                    item: entry.item,
+                    count: entry.count || 1,
+                    chance: entry.chance !== undefined ? entry.chance : 1
+                })
+            }
+        })
+        cloned.outputs = outputItems
+        cloned.outputFluids = outputFluids
+
         recipeBuilder.add(cloned)
     })
 })

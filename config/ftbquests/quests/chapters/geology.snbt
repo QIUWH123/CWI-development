@@ -282,8 +282,8 @@
 			disable_toast: true
 			id: "5F134945AFC3583E"
 			tasks: [{
-				id: "63C13B1B01E5C984"
-				item: "kubejs:azurite"
+				id: "23F5354AFA361E3C"
+				item: "create:asurine"
 				type: "item"
 			}]
 			x: 1.0d
@@ -306,8 +306,8 @@
 			disable_toast: true
 			id: "51C86C8C68E48EA9"
 			tasks: [{
-				id: "3440339E4523FD30"
-				item: "kubejs:bauxite"
+				id: "67059949B9680936"
+				item: "tfmg:bauxite"
 				type: "item"
 			}]
 			x: 6.0d
@@ -318,8 +318,8 @@
 			disable_toast: true
 			id: "73FF6276224EBAB6"
 			tasks: [{
-				id: "009830F1DF08E26C"
-				item: "kubejs:galena"
+				id: "2B32AFB3ED3F1C90"
+				item: "tfmg:galena"
 				type: "item"
 			}]
 			x: 4.9d
@@ -378,8 +378,8 @@
 			disable_toast: true
 			id: "2285D4636ABBCF53"
 			tasks: [{
-				id: "2E008892DC6B6EAF"
-				item: "kubejs:hematite"
+				id: "392E5C4F52014550"
+				item: "create:crimsite"
 				type: "item"
 			}]
 			x: 6.8d
@@ -390,8 +390,8 @@
 			disable_toast: true
 			id: "4BBBB627F7AB501F"
 			tasks: [{
-				id: "7B0F509F8C00BD43"
-				item: "kubejs:lignite"
+				id: "6F6B47CAAC7BDE3A"
+				item: "tfmg:lignite"
 				type: "item"
 			}]
 			x: 0.2d
@@ -402,8 +402,8 @@
 			disable_toast: true
 			id: "07953215B5F0ABE7"
 			tasks: [{
-				id: "512A6D8BB54C56CF"
-				item: "minecraft:amethyst_shard"
+				id: "7E5D2BA0BBB77978"
+				item: "minecraft:amethyst_block"
 				type: "item"
 			}]
 			x: 7.0d
@@ -414,8 +414,8 @@
 			disable_toast: true
 			id: "3C495220D7F4ABD1"
 			tasks: [{
-				id: "3AA091AF027F2613"
-				item: "kubejs:petzite"
+				id: "7D5AC39D6C9CD84B"
+				item: "create:ochrum"
 				type: "item"
 			}]
 			x: 6.0d
@@ -426,7 +426,7 @@
 			disable_toast: true
 			id: "1F9C0D9632351F1F"
 			tasks: [{
-				id: "03F45974D02BD3FE"
+				id: "4770AB8F00A204EE"
 				item: "kubejs:halite"
 				type: "item"
 			}]
@@ -836,7 +836,7 @@
 			disable_toast: true
 			id: "21312E8A3700E4BE"
 			tasks: [{
-				id: "1AA41F880DEE9DD5"
+				id: "66BB9FE8EB608A71"
 				item: "kubejs:magnesite"
 				type: "item"
 			}]
@@ -860,8 +860,8 @@
 			disable_toast: true
 			id: "16F39EF6812B7239"
 			tasks: [{
-				id: "3DCBBD8A1026B875"
-				item: "kubejs:malachite"
+				id: "50310A21A3CBE0B3"
+				item: "create:veridium"
 				type: "item"
 			}]
 			x: 3.5d

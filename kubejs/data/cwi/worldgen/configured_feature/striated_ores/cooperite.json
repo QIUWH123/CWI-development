@@ -11,7 +11,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:cooperite_ore"
+                  "Name": "kubejs:cooperite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -20,7 +20,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:cooperite_ore"
+                  "Name": "kubejs:cooperite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",

@@ -61,33 +61,14 @@ ServerEvents.recipes(event => {
         }
     })
 
-// CompoundMineralCrushing
-
-    event.recipes.create.crushing(['2x kubejs:halite', Item.of('kubejs:halite').withChance(0.75)], 'kubejs:halite_ore')
-    event.recipes.create.crushing(['2x kubejs:azurite', Item.of('kubejs:azurite').withChance(0.75)], 'create:asurine')
-    event.recipes.create.crushing(['2x kubejs:petzite', Item.of('kubejs:petzite').withChance(0.75)], 'create:ochrum')
-    event.recipes.create.crushing(['2x kubejs:hematite', Item.of('kubejs:hematite').withChance(0.75)], 'create:crimsite')
-    event.recipes.create.crushing(['2x kubejs:malachite', Item.of('kubejs:malachite').withChance(0.75)], 'create:veridium')
-    event.recipes.create.crushing(['2x kubejs:bauxite', Item.of('kubejs:bauxite').withChance(0.75)], 'tfmg:bauxite')
-    event.recipes.create.crushing(['2x kubejs:lignite', Item.of('kubejs:lignite').withChance(0.75)], 'tfmg:lignite')
-    event.recipes.create.crushing(['2x kubejs:galena', Item.of('kubejs:galena').withChance(0.75)], 'tfmg:galena')
-    event.recipes.create.crushing(['2x kubejs:cassiterite', Item.of('kubejs:cassiterite').withChance(0.75)], 'kubejs:cassiterite_ore')
-    event.recipes.create.crushing(['2x kubejs:magnetite', Item.of('kubejs:magnetite').withChance(0.75)], 'kubejs:magnetite_ore')
-    event.recipes.create.crushing(['2x kubejs:chalcocite', Item.of('kubejs:chalcocite').withChance(0.75)], 'kubejs:chalcocite_ore')
-    event.recipes.create.crushing(['2x kubejs:chromite', Item.of('kubejs:chromite').withChance(0.75)], 'kubejs:chromite_ore')
-    event.recipes.create.crushing(['2x kubejs:cooperite', Item.of('kubejs:cooperite').withChance(0.75)], 'kubejs:cooperite_ore')
-    event.recipes.create.crushing(['2x kubejs:magnesite', Item.of('kubejs:magnesite').withChance(0.75)], 'kubejs:magnesite_ore')
-    event.recipes.create.crushing(['2x kubejs:pentlandite', Item.of('kubejs:pentlandite').withChance(0.75)], 'kubejs:pentlandite_ore')
-    event.recipes.create.crushing(['2x kubejs:sphalerite', Item.of('kubejs:sphalerite').withChance(0.75)], 'kubejs:sphalerite_ore')
-    event.recipes.create.crushing(['2x kubejs:uraninite', Item.of('kubejs:uraninite').withChance(0.75)], 'kubejs:uraninite_ore')
-    event.recipes.create.crushing(['2x kubejs:rutile', Item.of('kubejs:rutile').withChance(0.75)], 'kubejs:rutile_ore')
-
 // PowderCrushingPairs
 
     const ores = [
         ['kubejs:flint_powder', 'minecraft:flint'],
         ['kubejs:quartz_powder', 'minecraft:quartz'],
         ['kubejs:amethyst_powder', 'minecraft:amethyst_shard'],
+        ['kubejs:sulfur_powder', 'kubejs:sulfur_item'],
+        ['kubejs:lignite_powder', 'kubejs:lignite_item'],
         ['minecraft:redstone', 'kubejs:redstone'],
         ['kubejs:lapis_powder', 'minecraft:lapis_lazuli'],
         ['kubejs:charcoal_powder', 'minecraft:charcoal'],

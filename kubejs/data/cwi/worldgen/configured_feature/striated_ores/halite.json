@@ -11,7 +11,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:halite_ore"
+                  "Name": "kubejs:halite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -20,7 +20,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:halite_ore"
+                  "Name": "kubejs:halite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",

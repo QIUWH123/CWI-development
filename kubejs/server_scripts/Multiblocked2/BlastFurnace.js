@@ -21,13 +21,11 @@ MBDMachineEvents.onStructureFormed("cwi:blast_furnace", event => {
     machine.customData.putInt('parallel', parallel)
     machine.customData.putInt('armor', reinforcementTotal)
     machine.customData.putFloat('temperature', 0)
-    machine.customData.putString('heat', 'none')
+    machine.customData.putString('heat', 'smouldering')
     machine.customData.putInt('heaterHeats', 0)
     machine.customData.putFloat('processingTime', 1.0)
     machine.customData.putInt('lastHeaterHeats', -1)
     machine.customData.putInt('lastArmor', -1)
-
-    Utils.server.tell(`并行:${parallel} 保护值:${reinforcementTotal}`)
 })
 
 MBDMachineEvents.onTick('cwi:blast_furnace', event => {
@@ -42,8 +40,8 @@ MBDMachineEvents.onTick('cwi:blast_furnace', event => {
     let dx = 0, dz = 0
     if (backDir == Direction.NORTH) { dx = 0; dz = -1 }
     else if (backDir == Direction.SOUTH) { dx = 0; dz = 1 }
-    else if (backDir == Direction.EAST) { dx = -1; dz = 0 }
-    else if (backDir == Direction.WEST) { dx = 1; dz = 0 }
+    else if (backDir == Direction.EAST) { dx = 1; dz = 0 }
+    else if (backDir == Direction.WEST) { dx = -1; dz = 0 }
 
     const backX = pos.x + dx
     const backZ = pos.z + dz
@@ -58,20 +56,18 @@ MBDMachineEvents.onTick('cwi:blast_furnace', event => {
     ]
 
     let heaterHeats = 0
-    let burnerDetails = []
     for (let i = 0; i < checks.length; i++) {
         let cx = checks[i][0], cz = checks[i][1]
         let state = level.getBlockState(new BlockPos(cx, checkY, cz))
-        let heatVal = 0
-        let heatName = '无'
+
         if (state.hasProperty($BlazeBurnerBlock.HEAT_LEVEL)) {
-            heatName = state.getValue($BlazeBurnerBlock.HEAT_LEVEL).name()
-            if (heatName === 'SMOULDERING') heatVal = 1
-            else if (heatName === 'KINDLED') heatVal = 2
-            else if (heatName === 'SEETHING') heatVal = 3
+            let heatName = state.getValue($BlazeBurnerBlock.HEAT_LEVEL).name()
+            if (heatName === 'SMOULDERING') heaterHeats += 1
+            else if (heatName === 'KINDLED') heaterHeats += 2
+            else if (heatName === 'SEETHING') heaterHeats += 3
+        } else if (level.getBlock(new BlockPos(cx, checkY, cz)).hasTag('create:passive_boiler_heaters')) {
+            heaterHeats += 1
         }
-        heaterHeats += heatVal
-        burnerDetails.push(`(${cx},${checkY},${cz}) ${heatName}:${heatVal}`)
     }
 
     const armor = machine.customData.getInt('armor')
@@ -85,26 +81,30 @@ MBDMachineEvents.onTick('cwi:blast_furnace', event => {
     const lastHH = machine.customData.getInt('lastHeaterHeats')
     const lastArmor = machine.customData.getInt('lastArmor')
     if (heaterHeats === lastHH && armor === lastArmor && Math.abs(temperature - effectiveMax) < 1.5) {
-        temperature = effectiveMax
+        machine.customData.putFloat('temperature', effectiveMax)
+        Utils.server.tell(`Temp: ${effectiveMax}`)
         return
     }
 
-    let currentHeat = 'none'
-    if (temperature >= 1900) currentHeat = 'superheated'
-    else if (temperature >= 1200) currentHeat = 'heated'
-
-    temperature += (effectiveMax - temperature) * 0.075
+    temperature += (effectiveMax - temperature) * 0.05
 
     let newHeat = 'none'
     if (temperature >= 1900) newHeat = 'superheated'
     else if (temperature >= 1200) newHeat = 'heated'
+    else if (temperature >= 300) newHeat = 'smouldering'
 
     const processingTime = 1 - 0.75 * (temperature / 2400)
 
-    Utils.server.tell(`燃烧室: ${burnerDetails.join(' ')}`)
-    Utils.server.tell(`燃烧值:${heaterHeats} 保护值:${armor} (因子:${armorFactor.toFixed(3)})`)
-    Utils.server.tell(`目标温度:${targetTemp.toFixed(1)} 结构上限:${maxTemp.toFixed(1)} 有效上限:${effectiveMax.toFixed(1)}`)
-    Utils.server.tell(`温度:${temperature.toFixed(1)} 状态:${currentHeat}→${newHeat} 配方速度:${processingTime.toFixed(4)}`)
+    Utils.server.tell('')
+    Utils.server.tell('----------------------------------------')
+    Utils.server.tell('')
+    Utils.server.tell(`HeatingLevel: ${heaterHeats}`)
+    Utils.server.tell(`HeaterMaxTemp: ${targetTemp}`)
+    Utils.server.tell(`EffectiveMax: ${effectiveMax}`)
+    Utils.server.tell(`CurrentTemp: ${temperature}`)
+    Utils.server.tell(`MachineHeat: ${newHeat}`)
+    Utils.server.tell(`ProcessingTime: ${processingTime}`)
+    Utils.server.tell(`Reinforcement: ${armor}`)
 
     machine.customData.putInt('heaterHeats', heaterHeats)
     machine.customData.putFloat('temperature', temperature)
@@ -127,6 +127,7 @@ MBDMachineEvents.onBeforeRecipeModify("cwi:blast_furnace", event => {
 
 MBDMachineEvents.onRecipeWorking('cwi:blast_furnace', event => {
     if (globalTickCounter % 4) return
+
     const { machine } = event.getEvent()
     const level = machine.getLevel()
     const pos = machine.getPos()
@@ -134,26 +135,21 @@ MBDMachineEvents.onRecipeWorking('cwi:blast_furnace', event => {
     const temperature = machine.customData.getFloat('temperature')
     const heat = machine.customData.getString('heat')
     const effectMultiplier = Math.sqrt(temperature / 200)
+
     const dir = machine.getFrontFacing().get()
     let offsetX = 0, offsetZ = 0
     if (dir == Direction.NORTH) { offsetX = 0; offsetZ = 1 }
-    else if (dir == Direction.EAST) { offsetX = 1; offsetZ = 0 }
+    else if (dir == Direction.EAST) { offsetX = -1; offsetZ = 0 }
     else if (dir == Direction.SOUTH) { offsetX = 0; offsetZ = -1 }
-    else if (dir == Direction.WEST) { offsetX = -1; offsetZ = 0 }
+    else if (dir == Direction.WEST) { offsetX = 1; offsetZ = 0 }
+
     const y = pos.y + parallelCount / 2 - 2
     const x = pos.x + 0.5 + offsetX
     const z = pos.z + 0.5 + offsetZ
 
-    const flameParticle = (heat === 'none')? 'minecraft:smoke': (heat === 'heated')? 'clanginghowl:flamethrower_flame' : 'clanginghowl:flamethrower_soul_flame'
-    for (let i = 0; i < effectMultiplier; i++) {
-        level.spawnParticles(flameParticle, true, x, y, z,
-            -0.1 + Math.random() * 0.2,
-            0.1 + Math.random() * (0.4 * effectMultiplier - 0.1),
-            -0.1 + Math.random() * 0.2,
-            0, 0.3
-        )
-    }
-    level.spawnParticles('minecraft:campfire_cosy_smoke', true,
+    if (temperature < 60) return
+    level.spawnParticles(
+        'minecraft:campfire_cosy_smoke', true,
         x + (-0.2 + Math.random() * 0.4), y,
         z + (-0.2 + Math.random() * 0.4),
         -0.05 + Math.random() * 0.1,
@@ -161,6 +157,23 @@ MBDMachineEvents.onRecipeWorking('cwi:blast_furnace', event => {
         -0.05 + Math.random() * 0.1,
         0, 0.3
     )
+
+    if (temperature < 300) return
+
+    let flameParticle
+    if (heat === 'smouldering') flameParticle = 'minecraft:smoke'
+    else if (heat === 'heated') flameParticle = 'clanginghowl:flamethrower_flame'
+    else flameParticle = 'clanginghowl:flamethrower_soul_flame'
+
+    for (let i = 0; i < effectMultiplier; i++) {
+        level.spawnParticles(
+            flameParticle, true, x, y, z,
+            -0.1 + Math.random() * 0.2,
+            0.1 + Math.random() * (0.4 * effectMultiplier - 0.1),
+            -0.1 + Math.random() * 0.2,
+            0, 0.3
+        )
+    }
 })
 
 // Blast Furnace Recipes
@@ -169,123 +182,170 @@ global.blastFurnaceRecipes = [
     {
         id: 'cwi:industrial_blasting/quartz_to_silicon',
         duration: 300,
-        inputItems: [{ "item": "minecraft:quartz" }],
-        inputFluids: [],
-        outputFluids: [{ "fluid": "tfmg:liquid_silicon", "amount": 90 }]
+        heat: 'superheated',
+        inputs: [{ item: 'minecraft:quartz' }],
+        outputs: [{ fluid: 'tfmg:liquid_silicon', amount: 90 }]
     },
     {
         id: 'cwi:industrial_blasting/quartz_powder_to_silicon',
         duration: 200,
-        inputItems: [{ "item": "kubejs:quartz_powder" }],
-        inputFluids: [],
-        outputFluids: [{ "fluid": "tfmg:liquid_silicon", "amount": 90 }]
+        heat: 'superheated',
+        inputs: [{ item: 'kubejs:quartz_powder' }],
+        outputs: [{ fluid: 'tfmg:liquid_silicon', amount: 90 }]
     },
     {
         id: 'cwi:industrial_blasting/magnetite_to_pig_iron',
         duration: 500,
-        inputItems: [
-            { "item": "kubejs:magnetite" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'kubejs:magnetite' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 180 },
-            { "fluid": "tfmg:molten_slag", "amount": 200 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 180 },
+            { fluid: 'tfmg:molten_slag', amount: 200 }
         ]
     },
     {
         id: 'cwi:industrial_blasting/iron_powder_to_pig_iron',
         duration: 300,
-        inputItems: [
-            { "item": "kubejs:iron_powder" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'kubejs:iron_powder' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 90 },
-            { "fluid": "tfmg:molten_slag", "amount": 20 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 90 },
+            { fluid: 'tfmg:molten_slag', amount: 20 }
         ]
     },
     {
         id: 'cwi:industrial_blasting/iron_ingot_to_pig_iron',
         duration: 300,
-        inputItems: [
-            { "item": "minecraft:iron_ingot" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'minecraft:iron_ingot' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 90 },
-            { "fluid": "tfmg:molten_slag", "amount": 20 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 90 },
+            { fluid: 'tfmg:molten_slag', amount: 20 }
         ]
     },
     {
         id: 'cwi:industrial_blasting/crushed_iron_to_pig_iron',
         duration: 300,
-        inputItems: [
-            { "item": "create:crushed_raw_iron" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'create:crushed_raw_iron' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 90 },
-            { "fluid": "tfmg:molten_slag", "amount": 100 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 90 },
+            { fluid: 'tfmg:molten_slag', amount: 100 }
         ]
     },
     {
         id: 'cwi:industrial_blasting/raw_iron_to_pig_iron',
         duration: 300,
-        inputItems: [
-            { "item": "minecraft:raw_iron" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'minecraft:raw_iron' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 180 },
-            { "fluid": "tfmg:molten_slag", "amount": 200 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 180 },
+            { fluid: 'tfmg:molten_slag', amount: 200 }
         ]
     },
     {
         id: 'cwi:industrial_blasting/hematite_to_pig_iron',
         duration: 400,
-        inputItems: [
-            { "item": "kubejs:hematite" },
-            { "item": "kubejs:limestone_powder" }
+        heat: 'superheated',
+        inputs: [
+            { item: 'kubejs:hematite' },
+            { item: 'kubejs:limestone_powder' }
         ],
-        inputFluids: [],
-        outputFluids: [
-            { "fluid": "kubejs:molten_pig_iron", "amount": 180 },
-            { "fluid": "tfmg:molten_slag", "amount": 200 }
+        outputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 180 },
+            { fluid: 'tfmg:molten_slag', amount: 200 }
         ]
     }
 ]
 
-// Blast Furnace Recipe Registration
-
 ServerEvents.recipes(event => {
+    const applyConditional = (builder, ingredientString, chance, perTick, setter) => {
+        if (perTick) {
+            builder.perTick(tickBuilder => applyConditional(tickBuilder, ingredientString, chance, false, setter))
+        } else if (chance) {
+            builder.chance(chance, chanceBuilder => setter(chanceBuilder, ingredientString))
+        } else {
+            setter(builder, ingredientString)
+        }
+    }
+
+    const heatLevels = ['smouldering', 'heated', 'superheated']
+
     global.blastFurnaceRecipes.forEach(recipe => {
-        let builder = event.recipes.cwi.blast_furnace_processing()
-            .id(recipe.id)
-            .duration(recipe.duration)
-
-        if (recipe.inputItems) {
-            recipe.inputItems.forEach(inp => {
-                let str = inp.item
-                if (inp.count && inp.count > 1) str = `${inp.count}x ${str}`
-                builder.inputItems(str)
-            })
+        const startIndex = heatLevels.indexOf(recipe.heat)
+        if (startIndex === -1) {
+            console.warn(`[Blast Furnace] 配方 ${recipe.id} 的 heat 值无效: ${recipe.heat}，跳过注册`)
+            return
         }
 
-        if (recipe.inputFluids && recipe.inputFluids.length > 0) {
-            recipe.inputFluids.forEach(f => {
-                builder.inputFluids(`${f.fluid} ${f.amount}`)
-            })
-        }
+        const levelsToRegister = heatLevels.slice(startIndex)
 
-        if (recipe.outputFluids) {
-            recipe.outputFluids.forEach(f => {
-                builder.outputFluids(`${f.fluid} ${f.amount}`)
-            })
-        }
+        levelsToRegister.forEach(level => {
+            const recipeId = `${recipe.id}_${level}`
+            let builder = event.recipes.cwi.blast_furnace_processing()
+                .id(recipeId)
+                .duration(recipe.duration)
+
+            builder.machineData(NBT.toTag({ heat: level }), true)
+
+            if (recipe.inputs) {
+                recipe.inputs.forEach(entry => {
+                    if (entry.item) {
+                        applyConditional(
+                            builder,
+                            entry.count > 1 ? `${entry.count}x ${entry.item}` : entry.item,
+                            entry.chance,
+                            entry.perTick,
+                            (target, ingredient) => target.inputItems(ingredient)
+                        )
+                    } else if (entry.fluid) {
+                        applyConditional(
+                            builder,
+                            `${entry.fluid} ${entry.amount}`,
+                            entry.chance,
+                            entry.perTick,
+                            (target, ingredient) => target.inputFluids(ingredient)
+                        )
+                    }
+                })
+            }
+
+            if (recipe.outputs) {
+                recipe.outputs.forEach(entry => {
+                    if (entry.item) {
+                        applyConditional(
+                            builder,
+                            entry.count > 1 ? `${entry.count}x ${entry.item}` : entry.item,
+                            entry.chance,
+                            entry.perTick,
+                            (target, ingredient) => target.outputItems(ingredient)
+                        )
+                    } else if (entry.fluid) {
+                        applyConditional(
+                            builder,
+                            `${entry.fluid} ${entry.amount}`,
+                            entry.chance,
+                            entry.perTick,
+                            (target, ingredient) => target.outputFluids(ingredient)
+                        )
+                    }
+                })
+            }
+        })
     })
 })

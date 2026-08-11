@@ -11,7 +11,7 @@
             [
               {
                 "state": {
-                  "Name": "kubejs:magnesite_ore"
+                  "Name": "kubejs:magnesite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",
@@ -20,7 +20,7 @@
               },
               {
                 "state": {
-                  "Name": "kubejs:magnesite_ore"
+                  "Name": "kubejs:magnesite"
                 },
                 "target": {
                   "predicate_type": "minecraft:tag_match",

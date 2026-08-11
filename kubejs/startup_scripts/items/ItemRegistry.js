@@ -18,7 +18,7 @@ StartupEvents.registry('item', event => {
 
     event.create('wood_sheet_mold')
     event.create('filled_wood_sheet_mold')
-    event.create('net')
+    event.create('net').texture('tfc:item/jute_net')
     event.create('sponge_gemmule')
     event.create('synthetic_feather')
     event.create('sticky_resin')
@@ -27,7 +27,7 @@ StartupEvents.registry('item', event => {
     event.create('nylon_salt')
     event.create('nylon_salt_crystal')
     event.create('carborundum')
-    event.create('yeast_paste')
+    event.create('yeast_paste').texture('tfc:item/canola_paste')
     event.create('quality_tool_handle')
     event.create('backpack_extension')
 })

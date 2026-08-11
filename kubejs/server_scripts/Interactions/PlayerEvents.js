@@ -1,6 +1,6 @@
 PlayerEvents.tick(event => {
     const player = event.player
-    if (globalTickCounter % 10 != 0) return
+    if (globalTickCounter % 10) return
 
     // Hot Item Effect
         if (player.inventory.count("#cwi:hot_items") > 0) {
@@ -10,7 +10,7 @@ PlayerEvents.tick(event => {
 
 MEJSEvents.standOnFluid(event=>{
     const entity = event.entity
-    if (globalTickCounter % 10 != 0) return
+    if (globalTickCounter % 10) return
 
     const moltenHotFluids = [
         'kubejs:molten_aluminum',
