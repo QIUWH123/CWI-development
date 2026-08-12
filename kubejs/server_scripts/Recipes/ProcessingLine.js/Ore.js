@@ -1,4 +1,13 @@
+// ============================================================
+// 矿石处理配方脚本 · 最终完美版
+// 所有数据来源：global.productionMaps
+// 使用 global.materialTypes 获取金属粉/粒 ID
+// 无分号风格，无多余通用石粉，无独立熔炼配方
+// 震动重选、高级离心只产出概率最高的岩粉
+// ============================================================
+
 ServerEvents.recipes(event => {
+    // ----- 辅助函数 -----
     function getItemId(matId, type) {
         const mat = global.materialTypes.find(m => m.id === matId)
         return mat ? mat.items[type] : null
@@ -6,14 +15,15 @@ ServerEvents.recipes(event => {
 
     function getPowderFromRock(rockId) {
         const stone = global.stoneTypes.find(s => s.id === rockId)
-        return stone ? stone.types[3] : 'kubejs:stone_powder'
+        return stone ? stone.types[3] : null
     }
 
+    // ----- 遍历全部矿石 -----
     global.compoundOreTypes.forEach(ore => {
         if (ore.process !== 'true') return
         const id = ore.id
-        const map = ore.productionMap || (global.productionMaps ? global.productionMaps[id] : null)
-        if (!map) return
+        if (!global.productionMaps || !global.productionMaps[id]) return
+        const map = global.productionMaps[id]
 
         const main = map.main
         const by = map.by || []
@@ -21,6 +31,7 @@ ServerEvents.recipes(event => {
         const canLeach = map.leachable
         const hostRocks = map.hostRocks || []
 
+        // 基础 ID
         const oreBlock = `${ore.mod}:${ore.realId}`
         const crushed = `kubejs:crushed_${id}`
         const powder = `kubejs:${id}_powder`
@@ -31,72 +42,88 @@ ServerEvents.recipes(event => {
         const purifiedSol = `kubejs:purified_${id}_solution`
         const refinedMain = `kubejs:refined_${main}`
 
+        // 从 materialTypes 获取金属粉末、粒 ID
         const mainPowder = getItemId(main, 'powder') || `kubejs:${main}_powder`
         const mainNugget = getItemId(main, 'nugget') || `kubejs:${main}_nugget`
         const mainCrystal = `kubejs:${main}_crystal`
 
-        // 1. 粗碎
+        // ================= 1. 粗碎 =================
         let crushOut = [
             Item.of(crushed, 2),
-            Item.of(crushed, 1).withChance(0.75),
-            Item.of('kubejs:stone_dust', 2),
-            Item.of('kubejs:stone_dust', 1).withChance(0.50)
+            Item.of(crushed, 1).withChance(0.75)
         ]
-        hostRocks.forEach(([rock, chance]) => crushOut.push(Item.of(getPowderFromRock(rock)).withChance(chance)))
+        hostRocks.forEach(([rock, chance]) => {
+            let rockPowder = getPowderFromRock(rock)
+            if (rockPowder) crushOut.push(Item.of(rockPowder).withChance(chance))
+        })
         event.recipes.create.crushing(crushOut, oreBlock)
 
-        // 2. 研磨 (原矿 → 矿粉)
+        // ================= 2. 研磨 (原矿 → 矿粉) =================
         let millOutOre = [
             Item.of(powder, 2),
-            Item.of(powder, 1).withChance(0.75),
-            Item.of('kubejs:stone_dust', 2),
-            Item.of('kubejs:stone_dust', 1).withChance(0.50)
+            Item.of(powder, 1).withChance(0.75)
         ]
-        hostRocks.forEach(([rock, chance]) => millOutOre.push(Item.of(getPowderFromRock(rock)).withChance(chance)))
+        hostRocks.forEach(([rock, chance]) => {
+            let rockPowder = getPowderFromRock(rock)
+            if (rockPowder) millOutOre.push(Item.of(rockPowder).withChance(chance))
+        })
         event.recipes.create.milling(millOutOre, oreBlock)
 
-        // 2.5 粉碎矿 → 矿粉
+        // ================= 2.5 粉碎矿 → 矿粉 =================
         event.recipes.create.milling(
             [Item.of(powder, 1)],
             crushed
         ).processingTime(80)
 
-        // 3. 高级粉碎机 (占位)
+        // ================= 3. 高级粉碎机 (占位) =================
         // TODO
 
-        // 4. 再磨 (顽固尾矿 → 矿粉)
+        // ================= 4. 再磨 (顽固尾矿 → 矿粉) =================
         event.recipes.create.milling(
             [Item.of(powder).withChance(0.3)],
             stubborn
         ).processingTime(200)
 
-        // 5. 震动重选
+        // ================= 5. 震动重选 (只产概率最高的岩粉) =================
         let vibOut = [
             AddItem(refinedMain, 0.32),
             AddItem(tailings, 1.0)
         ]
         if (sulfur) vibOut.push(AddItem('tfmg:sulfur_dust', 0.32))
         by.forEach(([metal, chance]) => vibOut.push(AddItem(`kubejs:refined_${metal}`, chance)))
+
+        // 选出调整后概率最高的岩粉
         if (hostRocks.length > 0) {
-            let [rock, chance] = hostRocks[0]
-            vibOut.push(AddItem(getPowderFromRock(rock), chance * 0.9))
+            let best = hostRocks.reduce((prev, curr) => {
+                let prevChance = prev[1] * 0.9
+                let currChance = curr[1] * 0.9
+                return currChance > prevChance ? curr : prev
+            })
+            let rockPowder = getPowderFromRock(best[0])
+            if (rockPowder) vibOut.push(AddItem(rockPowder, best[1] * 0.9))
         }
         vibrating(event, AddItem(powder), vibOut, 120)
 
-        // 6. 高级离心
+        // ================= 6. 高级离心 (只产概率最高的岩粉) =================
         let centOut = [
             AddItem(refinedMain, 0.42),
             AddItem(tailings, 1.0)
         ]
         if (sulfur) centOut.push(AddItem('tfmg:sulfur_dust', 0.42))
         by.forEach(([metal, chance]) => centOut.push(AddItem(`kubejs:refined_${metal}`, chance * 1.4)))
+
         if (hostRocks.length > 0) {
-            let [rock, chance] = hostRocks[0]
-            centOut.push(AddItem(getPowderFromRock(rock), chance * 1.3))
+            let best = hostRocks.reduce((prev, curr) => {
+                let prevChance = prev[1] * 1.3
+                let currChance = curr[1] * 1.3
+                return currChance > prevChance ? curr : prev
+            })
+            let rockPowder = getPowderFromRock(best[0])
+            if (rockPowder) centOut.push(AddItem(rockPowder, best[1] * 1.3))
         }
         centrifuging(event, [AddItem(powder)], centOut, 100)
 
-        // 7. 浮选
+        // ================= 7. 浮选 =================
         let flotationOut = [
             AddItem(refinedMain, 0.37),
             AddItem(stubborn, 1.0)
@@ -114,7 +141,7 @@ ServerEvents.recipes(event => {
 
         if (!canLeach) return
 
-        // 8. 简易鼓风浸出
+        // ================= 8. 简易鼓风浸出 =================
         event.recipes.cwi.corroding(
             [
                 Item.of(mainPowder).withChance(0.32),
@@ -123,21 +150,21 @@ ServerEvents.recipes(event => {
             [powder, 'kubejs:sulfuric_acid_bucket']
         )
 
-        // 9. 正式浸出 (矿粉)
+        // ================= 9. 正式浸出 =================
+        // 矿粉浸出
         vatRecipe(event, 'heated', ['tfmg:mixing'], ['tfmg:steel_vat'], 1,
             [AddItem(powder), AddFluid('250 kubejs:sulfuric_acid')],
             [AddFluid(`100 ${leachSol}`), AddItem(leachRes, 1.0)],
             200
         )
-
-        // 顽固尾矿浸出：酸量↑，时间↑，浸出液↓
+        // 顽固尾矿浸出 (更难)
         vatRecipe(event, 'heated', ['tfmg:mixing'], ['tfmg:steel_vat'], 1,
             [AddItem(stubborn), AddFluid('300 kubejs:sulfuric_acid')],
             [AddFluid(`80 ${leachSol}`), AddItem(leachRes, 1.0)],
             300
         )
 
-        // 10. 浸出渣洗涤
+        // ================= 10. 浸出渣洗涤 =================
         event.recipes.create.splashing(
             [
                 Item.of('kubejs:silicate_residue').withChance(0.37),
@@ -147,7 +174,7 @@ ServerEvents.recipes(event => {
             leachRes
         )
 
-        // 11. 溶液净化
+        // ================= 11. 溶液净化 =================
         vatRecipe(event, null, [], ['tfmg:steel_vat'], 1,
             [AddFluid(`100 ${leachSol}`), AddFluid('50 #cwi:water')],
             [
@@ -157,7 +184,7 @@ ServerEvents.recipes(event => {
             120
         )
 
-        // 12. 结晶 (主副产物合并)
+        // ================= 12. 结晶 (主/副合并) =================
         let crystalOut = [
             AddItem(mainCrystal, 0.95),
             AddFluid('10 kubejs:mother_liquor')
@@ -171,7 +198,7 @@ ServerEvents.recipes(event => {
             160
         )
 
-        // 13. 电解精炼 (占位)
+        // ================= 13. 电解精炼 (占位) =================
         // TODO
     })
 })

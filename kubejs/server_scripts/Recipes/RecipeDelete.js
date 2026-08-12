@@ -756,6 +756,7 @@ ServerEvents.recipes(event => {
         'tfmg:mixing/gunpowder',
         'tfmg:mixing/thermite',
         'tfmg:mixing/cement',
+        'tfmg:mixing/copper_sulfate',
         'tfmg:rebar_from_ingots_steel_stonecutting',
         'tfmg:screw_from_ingots_steel_stonecutting',
         'tfmg:empty_spool_from_hardened_planks_stonecutting',

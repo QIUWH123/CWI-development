@@ -204,6 +204,12 @@ ServerEvents.tags('item', event => {
 // CobbledStonesTag
     event.add('cwi:cobbled_stones', cobbledStones)
 
+    event.removeAll('minecraft:stone_crafting_materials')
+    event.add('minecraft:stone_crafting_materials', cobbledStones)
+
+    event.removeAll('minecraft:stone_tool_materials')
+    event.add('minecraft:stone_tool_materials', cobbledStones)
+
 // HotItems
     event.add('cwi:hot_items', [
         'minecraft:lava_bucket',

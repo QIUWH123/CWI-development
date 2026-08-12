@@ -2,9 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "tfmg:item/lithium_torch_on",
-		"1": "tfmg:item/lithium_torch_fire",
-		"particle": "tfmg:item/lithium_torch_on"
+		"0": "block/torch/redstone_torch_on",
+		"particle": "block/torch/redstone_torch_on"
 	},
 	"elements": [
 		{
@@ -35,8 +34,7 @@
 				"east": {"uv": [4, 7, 2, 9], "texture": "#0"},
 				"south": {"uv": [2, 7, 4, 9], "texture": "#0"},
 				"west": {"uv": [4, 7, 2, 9], "texture": "#0"},
-				"up": {"uv": [2, 7, 4, 9], "texture": "#0"},
-				"down": {"uv": [2, 7, 4, 9], "texture": "#0"}
+				"up": {"uv": [2, 7, 4, 9], "texture": "#0"}
 			}
 		},
 		{
@@ -50,18 +48,6 @@
 				"south": {"uv": [7, 8.325, 9, 16], "texture": "#0"},
 				"west": {"uv": [7, 8.325, 9, 16], "texture": "#0"},
 				"down": {"uv": [9, 14, 7, 16], "texture": "#0", "cullface": "down"}
-			}
-		},
-		{
-			"name": "flame",
-			"from": [5.6, 9, 6],
-			"to": [5.6, 18, 10],
-			"shade": false,
-			"light_emission": 15,
-			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 16, 8], "rescale": true},
-			"faces": {
-				"east": {"uv": [6, 6, 10, 16], "texture": "#1"},
-				"west": {"uv": [6, 6, 10, 16], "texture": "#1"}
 			}
 		}
 	],

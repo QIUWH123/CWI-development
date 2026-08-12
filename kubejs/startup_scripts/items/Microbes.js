@@ -58,7 +58,7 @@ global.microbes = [
                 "steps": [
                     { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 3 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 50 },
+                    { "type": "filling", "fluid": "kubejs:sulfuric_acid", "amount": 50 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 400 }
                 ]
             },
@@ -69,7 +69,7 @@ global.microbes = [
                 "steps": [
                     { "type": "deploying", "item": "kubejs:iron_powder", "count": 1 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 100 },
+                    { "type": "filling", "fluid": "kubejs:sulfuric_acid", "amount": 100 },
                     { "type": "filling", "fluid": "kubejs:oxygen", "amount": 200 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]
@@ -82,7 +82,7 @@ global.microbes = [
                     { "type": "deploying", "item": "kubejs:iron_powder", "count": 1 },
                     { "type": "deploying", "item": "kubejs:sulfur_powder", "count": 1 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
-                    { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 100 },
+                    { "type": "filling", "fluid": "kubejs:sulfuric_acid", "amount": 100 },
                     { "type": "filling", "fluid": "kubejs:oxygen", "amount": 300 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]
@@ -95,7 +95,7 @@ global.microbes = [
                     { "type": "deploying", "item": "kubejs:iron_powder", "count": 1 },
                     { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
                     { "type": "deploying", "item": "kubejs:magnesium_powder" },
-                    { "type": "filling", "fluid": "tfmg:sulfuric_acid", "amount": 100 },
+                    { "type": "filling", "fluid": "kubejs:sulfuric_acid", "amount": 100 },
                     { "type": "filling", "fluid": "kubejs:oxygen", "amount": 400 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 300 }
                 ]

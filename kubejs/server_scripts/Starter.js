@@ -9,7 +9,7 @@ ServerEvents.loaded((event) => {
     server.gameRules.set('doPatrolSpawning', 'false')
     server.gameRules.set('showDeathMessages', 'false')
     server.gameRules.set('announceAdvancements', 'false')
-    server.getLevel('minecraft:overworld').setDayTime(6000)
+    server.getLevel('minecraft:overworld').setDayTime(22000)
 })
 
 PlayerEvents.loggedIn(event => {

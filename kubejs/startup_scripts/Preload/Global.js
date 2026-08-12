@@ -42,21 +42,21 @@ global.compoundOreTypes = [
 ]
 
 global.productionMaps = {
-    cassiterite:    { main: 'tin',       sulfur: false, leachable: false, hostRocks: [['granite', 0.035], ['rhyolite', 0.015]],     by: [['molybdenum', 0.02], ['copper', 0.02]] },
-    cooperite:      { main: 'platinum',  sulfur: true,  leachable: false, hostRocks: [['darkslate', 0.04], ['phyllite', 0.01]],     by: [['nickel', 0.04], ['copper', 0.03]] },
-    chalcocite:     { main: 'copper',    sulfur: true,  leachable: true,  hostRocks: [['diorite', 0.03], ['granite', 0.02]],        by: [['molybdenum', 0.05], ['gold', 0.02]] },
-    magnesite:      { main: 'magnesium', sulfur: false, leachable: true,  hostRocks: [['quartzite', 0.025], ['shale', 0.025]],      by: [] },
-    magnetite:      { main: 'iron',      sulfur: false, leachable: false, hostRocks: [['quartzite', 0.03], ['gneiss', 0.02]],       by: [['vanadium', 0.06], ['titanium', 0.03]] },
-    chromite:       { main: 'chromium',  sulfur: false, leachable: false, hostRocks: [['darkslate', 0.04], ['phyllite', 0.01]],     by: [['iron', 0.08], ['platinum', 0.04]] },
-    pentlandite:    { main: 'nickel',    sulfur: true,  leachable: true,  hostRocks: [['darkslate', 0.04], ['phyllite', 0.01]],     by: [['cobalt', 0.07], ['platinum', 0.03]] },
-    sphalerite:     { main: 'zinc',      sulfur: true,  leachable: true,  hostRocks: [['shale', 0.03], ['quartzite', 0.02]],        by: [['iron', 0.06], ['lead', 0.03]] },
-    rutile:         { main: 'titanium',  sulfur: false, leachable: false, hostRocks: [['gneiss', 0.03], ['schist', 0.02]],          by: [] },
-    hematite:       { main: 'iron',      sulfur: false, leachable: false, hostRocks: [['quartzite', 0.03], ['gneiss', 0.02]],       by: [] },
-    azurite:        { main: 'copper',    sulfur: false, leachable: true,  hostRocks: [['granite', 0.03], ['diorite', 0.02]],        by: [['silver', 0.02]] },
-    malachite:      { main: 'copper',    sulfur: false, leachable: true,  hostRocks: [['granite', 0.03], ['diorite', 0.02]],        by: [['silver', 0.02]] },
-    petzite:        { main: 'gold',      sulfur: false, leachable: false, hostRocks: [['rhyolite', 0.03], ['andesite', 0.02]],      by: [['silver', 0.10]] },
-    bauxite:        { main: 'aluminum',  sulfur: false, leachable: false, hostRocks: [['claystone', 0.04], ['conglomerate', 0.01]], by: [] },
-    galena:         { main: 'lead',      sulfur: true,  leachable: true,  hostRocks: [['shale', 0.03], ['quartzite', 0.02]],        by: [['silver', 0.06], ['zinc', 0.04]] }
+    cassiterite:    { main: 'tin',       sulfur: false, leachable: false, hostRocks: [['granite', 0.71], ['rhyolite', 0.32]],       by: [['molybdenum', 0.019], ['copper', 0.021], ['iron', 0.067]] },
+    cooperite:      { main: 'platinum',  sulfur: true,  leachable: false, hostRocks: [['darkslate', 0.79], ['phyllite', 0.22]],     by: [['nickel', 0.031]] },
+    chalcocite:     { main: 'copper',    sulfur: true,  leachable: true,  hostRocks: [['diorite', 0.61], ['granite', 0.39]],        by: [['molybdenum', 0.049], ['gold', 0.021]] },
+    magnesite:      { main: 'magnesium', sulfur: false, leachable: true,  hostRocks: [['quartzite', 0.51], ['shale', 0.49]],        by: [] },
+    magnetite:      { main: 'iron',      sulfur: false, leachable: false, hostRocks: [['quartzite', 0.62], ['gneiss', 0.41]],       by: [['vanadium', 0.061], ['titanium', 0.029]] },
+    chromite:       { main: 'chromium',  sulfur: false, leachable: false, hostRocks: [['darkslate', 0.78], ['phyllite', 0.19]],     by: [['magnesium', 0.18], ['iron', 0.101], ['aluminum', 0.051]] },
+    pentlandite:    { main: 'nickel',    sulfur: true,  leachable: true,  hostRocks: [['darkslate', 0.79], ['phyllite', 0.22]],     by: [['cobalt', 0.049], ['iron', 0.298]] },
+    sphalerite:     { main: 'zinc',      sulfur: true,  leachable: true,  hostRocks: [['shale', 0.58], ['quartzite', 0.42]],        by: [['iron', 0.097], ['lead', 0.021]] },
+    rutile:         { main: 'titanium',  sulfur: false, leachable: false, hostRocks: [['gneiss', 0.63], ['schist', 0.37]],          by: [] },
+    hematite:       { main: 'iron',      sulfur: false, leachable: false, hostRocks: [['quartzite', 0.61], ['gneiss', 0.43]],       by: [] },
+    azurite:        { main: 'copper',    sulfur: false, leachable: true,  hostRocks: [['granite', 0.59], ['diorite', 0.38]],        by: [['silver', 0.011]] },
+    malachite:      { main: 'copper',    sulfur: false, leachable: true,  hostRocks: [['granite', 0.57], ['diorite', 0.36]],        by: [['silver', 0.009]] },
+    petzite:        { main: 'gold',      sulfur: false, leachable: false, hostRocks: [['rhyolite', 0.64], ['andesite', 0.33]],      by: [['silver', 0.101]] },
+    bauxite:        { main: 'aluminum',  sulfur: false, leachable: false, hostRocks: [['claystone', 0.76], ['conglomerate', 0.18]], by: [] },
+    galena:         { main: 'lead',      sulfur: true,  leachable: true,  hostRocks: [['shale', 0.55], ['quartzite', 0.44]],        by: [['zinc', 0.061], ['silver', 0.008]] }
 }
 
 //₀₁₂₃₄₅₆₇₈₉
@@ -64,7 +64,7 @@ global.materialTypes = [
     // alloys
     { id: 'andesite_alloy', type: 'alloy', formula: '?', mp: 1198, stiffness: 156, fluid: 'kubejs:molten_andesite_alloy', items: { powder: 'kubejs:andesite_alloy_powder', nugget: 'kubejs:andesite_alloy_nugget', ingot: 'create:andesite_alloy', rod: 'kubejs:andesite_alloy_rod', wire: 'kubejs:andesite_alloy_wire', sheet: 'kubejs:andesite_alloy_sheet', spring: 'kubejs:andesite_alloy_spring', block: 'create:andesite_alloy_block' } },
     { id: 'brass', type: 'alloy', formula: 'CuZn', mp: 1153, stiffness: 108, fluid: 'kubejs:molten_brass', items: { powder: 'kubejs:brass_powder', ingot: 'create:brass_ingot', nugget: 'create:brass_nugget', sheet: 'create:brass_sheet', rod: 'createaddition:brass_rod', wire: 'kubejs:brass_wire', spring: 'kubejs:brass_spring', block: 'create:brass_block' } },
-    { id: 'bronze', type: 'alloy', formula: 'Cu₄Sn', mp: 1217, stiffness: 113, fluid: 'kubejs:molten_bronze', items: { powder: 'kubejs:bronze_powder', ingot: 'kubejs:bronze_ingot', nugget: 'kubejs:bronze_nugget', sheet: 'kubejs:bronze_sheet', rod: 'kubejs:bronze_rod', wire: 'kubejs:bronze_wire', spring: 'kubejs:bronze_spring', block: 'kubejs:bronze_block' } },
+    { id: 'bronze', type: 'alloy', formula: 'Cu₃Sn', mp: 1217, stiffness: 113, fluid: 'kubejs:molten_bronze', items: { powder: 'kubejs:bronze_powder', ingot: 'kubejs:bronze_ingot', nugget: 'kubejs:bronze_nugget', sheet: 'kubejs:bronze_sheet', rod: 'kubejs:bronze_rod', wire: 'kubejs:bronze_wire', spring: 'kubejs:bronze_spring', block: 'kubejs:bronze_block' } },
     { id: 'stainless_steel', type: 'alloy', formula: 'Fe₃₂Cr₈Ni₄Mo', mp: 1783, stiffness: 208, fluid: 'kubejs:molten_stainless_steel', items: { powder: 'kubejs:stainless_steel_powder', ingot: 'kubejs:stainless_steel_ingot', nugget: 'kubejs:stainless_steel_nugget', sheet: 'kubejs:stainless_steel_sheet', rod: 'kubejs:stainless_steel_rod', wire: 'kubejs:stainless_steel_wire', spring: 'kubejs:stainless_steel_spring', block: 'kubejs:stainless_steel_block' } },
     { id: 'constantan', type: 'alloy', formula: 'Cu₃Ni', mp: 1525, stiffness: 160, fluid: 'kubejs:molten_constantan', items: { powder: 'kubejs:constantan_powder', ingot: 'tfmg:constantan_ingot', nugget: 'tfmg:constantan_nugget', sheet: 'kubejs:constantan_sheet', rod: 'kubejs:constantan_rod', wire: 'kubejs:constantan_wire', spring: 'kubejs:constantan_spring', block: 'tfmg:constantan_block' } },
     { id: 'electrum', type: 'alloy', formula: 'Au₃Ag', mp: 1213, stiffness: 75, fluid: 'kubejs:molten_electrum', items: { powder: 'kubejs:electrum_powder', ingot: 'createaddition:electrum_ingot', nugget: 'createaddition:electrum_nugget', sheet: 'createaddition:electrum_sheet', rod: 'createaddition:electrum_rod', wire: 'createaddition:electrum_wire', spring: 'kubejs:electrum_spring', block: 'createaddition:electrum_block' } },

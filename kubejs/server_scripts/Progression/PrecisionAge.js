@@ -413,11 +413,6 @@ ServerEvents.recipes(event => {
     event.recipes.create.compacting('kubejs:clay_disk', 'minecraft:clay_ball')
     event.recipes.create.compacting('kubejs:heated_iron_ingot', 'minecraft:iron_ingot').superheated()
 
-// Smelting And Blasting
-
-    event.smelting('create:brass_ingot', 'kubejs:brass_powder')
-    event.blasting('create:brass_ingot', 'kubejs:brass_powder')
-
 // Mechanical Crafting
 
     event.recipes.create.mechanical_crafting(

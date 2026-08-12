@@ -515,18 +515,6 @@ ServerEvents.recipes(event => {
 
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddItem('4 minecraft:blue_ice'),
-            AddFluid('1000 tfmg:air')
-        ],
-        [
-            AddFluid('500 kubejs:condensed_air'),
-            AddItem('4 minecraft:ice')
-        ],
-        80
-    )
-
-    vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
-        [
             AddFluid('250 kubejs:benzene'),
             AddFluid('1500 tfmg:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
