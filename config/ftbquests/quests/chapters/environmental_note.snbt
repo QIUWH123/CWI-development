@@ -1079,8 +1079,8 @@
 			size: 1.5d
 			subtitle: "Brown Coal"
 			tasks: [{
-				id: "2A7BB7F22F408F92"
-				item: "kubejs:lignite"
+				id: "4EFC10A4830505CE"
+				item: "kubejs:lignite_item"
 				type: "item"
 			}]
 			x: -24.5d
