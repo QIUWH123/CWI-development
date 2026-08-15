@@ -15,7 +15,7 @@ const lockPickConfigs = {
 
 BlockEvents.rightClicked(e => {
     const { player, block, level } = e
-
+    return
     // Skip Crate Blocks
     if (block.id.endsWith("_crate")) return
 

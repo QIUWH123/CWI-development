@@ -22,7 +22,10 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
 
         if (hit && hit.type === 'entity') {
             let damage = entity.getAttributeValue('minecraft:generic.attack_damage') * stage
-            hit.entity.attack(entity.damageSources().playerAttack(entity), damage)
+            let target = hit.entity
+            target.attack(entity.damageSources().playerAttack(entity), damage)
+            target.potionEffects.add('minecraft:slowness', 5 * stage, 255, true, true)
+            if (entity.getItemInHand(hand) === 'minecraft:lead_hammer') target.potionEffects.add('clanginghowl:neurotoxin', Math.round(random(100, 200)), Math.round(random(0, 0.7)), true, true)
             let multiplier = Math.sqrt(stage)
             level.playSound(null, hit.entity.x, hit.entity.y + entity.getBbHeight() / 2, hit.entity.z, 'block.anvil.place', 'neutral', 1, 1)
             level.spawnParticles('minecraft:crit', true, hit.entity.x, hit.entity.y + entity.getBbHeight() / 2, hit.entity.z, 0.2, 0.2, 0.2, 16 * stage, 0.6 * multiplier)

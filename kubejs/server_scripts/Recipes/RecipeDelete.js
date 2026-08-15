@@ -295,6 +295,8 @@ ServerEvents.recipes(event => {
         'createaddition:mixing/biomass_from_saplings',
         'createaddition:mixing/biomass_from_sticks',
         'createaddition:rolling/straw',
+        'createaddition:crafting/modular_accumulator_electrum',
+        'createaddition:crafting/modular_accumulator_gold',
 
     // Create Deco
 
@@ -504,6 +506,7 @@ ServerEvents.recipes(event => {
         'minecraft:diamond_sword',
         'minecraft:diorite',
         'minecraft:dispenser',
+        'minecraft:lightning_rod',
         'minecraft:dropper',
         'minecraft:enchanting_table',
         'minecraft:ender_eye',

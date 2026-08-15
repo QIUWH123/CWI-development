@@ -221,6 +221,33 @@ ServerEvents.tags('item', event => {
         'kubejs:heated_iron_ingot',
         'kubejs:heated_industrial_iron_ingot'
     ])
+    
+// Neurotoxin
+
+    event.add('cwi:neurotoxin', [
+        'tfmg:lead_ingot',
+        'tfmg:lead_sheet',
+        'tfmg:lead_nugget',
+        'kubejs:lead_rod',
+        'kubejs:lead_powder',
+        'kubejs:lead_spring',
+        'kubejs:lead_wire',
+        'kubejs:lead_sword',
+        'kubejs:lead_axe',
+        'kubejs:lead_pickaxe',
+        'kubejs:lead_shovel',
+        'kubejs:lead_hoe',
+        'minecraft:lead_hammer'
+    ])
+
+    event.add('cwi:neurotoxin_lv2', [
+        'kubejs:lead_sword',
+        'kubejs:lead_axe',
+        'kubejs:lead_pickaxe',
+        'kubejs:lead_shovel',
+        'kubejs:lead_hoe',
+        'minecraft:lead_hammer'
+    ])
 
 // GlassTiers
     event.add('cwi:glass1', ['minecraft:glass', 'kubejs:tempered_glass'])

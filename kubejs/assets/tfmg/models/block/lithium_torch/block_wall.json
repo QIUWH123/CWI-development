@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/template_torch_wall",
 	"textures": {
-		"0": "tfmg:item/lithium_torch_on",
+		"0": "tfmg:item/lithium_torch",
 		"1": "tfmg:item/lithium_torch_fire",
-		"particle": "tfmg:item/lithium_torch_on"
+		"particle": "tfmg:item/lithium_torch"
 	},
 	"elements": [
 		{

@@ -158,15 +158,16 @@ global.allTiers = [
 ]
 
 global.hammers = [
-    ['bronze_hammer', 'bronze', 12, 2, 2],
-    ['brass_hammer', 'brass', 13, 2, 1],
-    ['steel_hammer', 'steel', 15, 3, 3],
+    ['bronze_hammer', 'bronze', 12, 2, 4],
+    ['brass_hammer', 'brass', 13, 2, 3],
+    ['steel_hammer', 'steel', 15, 3, 5],
     ['iron_hammer', 'iron', 15, 2, 0],
     ['rusted_iron_hammer', 'rusted_iron', 18, 2, 1],
     ['stone_hammer', 'stone', 20, 1, 0],
     ['golden_hammer', 'gold', 9, 1, 0],
-    ['zinc_hammer', 'zinc', 10, 1, 0],
-    ['copper_hammer', 'copper', 17, 2, 1],
+    ['zinc_hammer', 'zinc', 10, 1, 2],
+    ['copper_hammer', 'copper', 17, 2, 2],
+    ['lead_hammer', 'lead', 23, 1, 5],
     ['netherite_hammer', 'netherite', 12, 3, 0]
 ]
 

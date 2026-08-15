@@ -2,9 +2,9 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "tfmg:item/lithium_torch_on",
+		"0": "tfmg:item/lithium_torch",
 		"1": "tfmg:item/lithium_torch_fire",
-		"particle": "tfmg:item/lithium_torch_on"
+		"particle": "tfmg:item/lithium_torch"
 	},
 	"elements": [
 		{

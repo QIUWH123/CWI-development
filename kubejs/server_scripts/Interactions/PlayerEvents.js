@@ -3,9 +3,19 @@ PlayerEvents.tick(event => {
     if (globalTickCounter % 10) return
 
     // Hot Item Effect
-        if (player.inventory.count("#cwi:hot_items") > 0) {
-            player.attack(player.damageSources().inFire(), 1)
-        }
+    if (player.inventory.count("#cwi:hot_items") > 0) {
+        player.attack(player.damageSources().inFire(), 1)
+    }
+
+    // Neurotoxin
+    const neurotoxinCount = player.inventory.count("#cwi:neurotoxin") + 9 * player.inventory.count("#cwi:neurotoxin_lv2")
+    const currentNeurotoxinAmount = player.persistentData.neurotoxinAmount? player.persistentData.neurotoxinAmount : 0
+    const nextNeurotoxinAmount = 0.85 * (currentNeurotoxinAmount + Math.sqrt(neurotoxinCount) / 50)
+    const neurotoxinLevel = Math.floor(currentNeurotoxinAmount - 1.5)
+    if (neurotoxinLevel >= 0) player.potionEffects.add('clanginghowl:neurotoxin', 11, neurotoxinLevel, true, true)
+    if (neurotoxinCount === player.persistentData.neurotoxinCount && Math.abs(currentNeurotoxinAmount - nextNeurotoxinAmount) < 0.001) return
+    player.persistentData.neurotoxinCount = neurotoxinCount
+    player.persistentData.neurotoxinAmount = nextNeurotoxinAmount
 })
 
 MEJSEvents.standOnFluid(event=>{

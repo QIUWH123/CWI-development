@@ -52,9 +52,9 @@ ItemEvents.modification(event => {
 
 // Item Property Changes
 
-    let maxDamage_change = function (item, maxDamage) {
+    let burnTime_change = (item, burnTime) => {
         event.modify(item, item => {
-            item.maxDamage = maxDamage
+            item.burnTime = burnTime
         })
     }
 
@@ -64,15 +64,21 @@ ItemEvents.modification(event => {
         })
     }
 
-    let burnTime_change = (id, value) => {
-        event.modify(id, item => {
-            item.burnTime = value
+    let maxDamage_change = function (item, maxDamage) {
+        event.modify(item, item => {
+            item.maxDamage = maxDamage
         })
     }
 
-    let maxDamage_multiply = (id, factor) => {
-        event.modify(id, item => {
+    let maxDamage_multiply = (item, factor) => {
+        event.modify(item, item => {
             item.maxDamage = item.maxDamage * factor
+        })
+    }
+
+    let attackSpeed_change = (item, attackSpeed) => {
+        event.modify(item, item => {
+            item.attackSpeed = attackSpeed - 4
         })
     }
 
@@ -207,4 +213,18 @@ ItemEvents.modification(event => {
 
     maxDamage_change('create:sand_paper', 24)
     maxDamage_change('create:red_sand_paper', 24)
+
+// Attack Speed Changes
+
+    global.hammers.forEach(([name]) => {
+        attackSpeed_change(`minecraft:${name}`, 0.8)
+    })  
+
+    attackSpeed_change('kubejs:lead_sword', 0.8)
+    attackSpeed_change('kubejs:lead_axe', 0.45)
+    attackSpeed_change('kubejs:lead_pickaxe', 0.6)
+    attackSpeed_change('kubejs:lead_shovel', 0.5)
+    attackSpeed_change('kubejs:lead_hoe', 1.5)
+    attackSpeed_change('minecraft:lead_hammer', 0.3)
+
 })

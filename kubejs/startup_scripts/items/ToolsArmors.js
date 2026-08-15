@@ -13,12 +13,13 @@ StartupEvents.registry('item', event => {
 // Tools
 StartupEvents.registry('item', event => {
     const stats = {
-        steel: {sword:8, axe:11, pickaxe:6, shovel:6.5, hoe:1},
-        bronze:{sword:7, axe:10, pickaxe:5, shovel:5.5, hoe:1},
-        brass: {sword:6, axe:9, pickaxe:4, shovel:4.5, hoe:1},
-        zinc:  {sword:5, axe:8, pickaxe:3.5, shovel:4, hoe:1},
-        copper:  {sword:5, axe:8, pickaxe:3.5, shovel:4, hoe:1},
-        rusted_iron:{sword:4, axe:7, pickaxe:3, shovel:3.5, hoe:1}
+        steel:       {sword:8, axe:11, pickaxe:6,   shovel:6.5, hoe:1},
+        bronze:      {sword:7, axe:10, pickaxe:5,   shovel:5.5, hoe:1},
+        brass:       {sword:6, axe:9,  pickaxe:4,   shovel:4.5, hoe:1},
+        zinc:        {sword:5, axe:8,  pickaxe:3.5, shovel:4,   hoe:1},
+        copper:      {sword:5, axe:8,  pickaxe:3.5, shovel:4,   hoe:1},
+        lead:        {sword:8, axe:11, pickaxe:6,   shovel:6.5, hoe:1},
+        rusted_iron: {sword:4, axe:7,  pickaxe:3,   shovel:3.5, hoe:1}
     }
     Object.entries(stats).forEach(([material, tools]) => {
         Object.entries(tools).forEach(([tool, dmg]) => {
@@ -35,18 +36,19 @@ StartupEvents.registry('item', event => {
 // ToolTiers
 ItemEvents.toolTierRegistry(event => {
     const tiers = {
-        steel: [2587,10,3,'tfmg:steel_ingot'],
-        bronze:[1361,8,2,'kubejs:bronze_ingot'],
-        brass: [873,7,2,'create:brass_ingot'],
-        zinc:  [423,5,1,'create:zinc_ingot'],
-        copper: [621,5,2,'create:copper_ingot'],
-        rusted_iron:[437,4,2,'kubejs:rusted_iron_ingot']
+        steel:       [2587, 10, 3, 0, 'tfmg:steel_ingot'],
+        bronze:      [1361, 8,  2, 0, 'kubejs:bronze_ingot'],
+        brass:       [873,  7,  2, 0, 'create:brass_ingot'],
+        zinc:        [323,  5,  1, 0, 'create:zinc_ingot'],
+        copper:      [621,  5,  2, 0, 'create:copper_ingot'],
+        lead:        [367,  1,  2, 0, 'tfmg:lead_ingot'],
+        rusted_iron: [437,  4,  2, 0, 'kubejs:rusted_iron_ingot']
     }
-    Object.entries(tiers).forEach(([name,[uses,speed,level,repair]]) => {
+    Object.entries(tiers).forEach(([name,[uses,speed,level,bonus,repair]]) => {
         event.add(name, tier => {
             tier.uses = uses
             tier.speed = speed
-            tier.attackDamageBonus = 0
+            tier.attackDamageBonus = bonus
             tier.level = level
             tier.enchantmentValue = 0
             tier.repairIngredient = repair

@@ -55,7 +55,7 @@ ServerEvents.recipes(event => {
             const curDmg = result.nbt?.Damage || 0
             const curDur = maxDmg - curDmg
             if (curDur > 0) {
-                const inc = Math.max(1, Math.floor(curDur * durabilityMultiplier * targetIndex))
+                const inc = Math.max(1, Math.floor(curDur * durabilityMultiplier * Math.sqrt(targetIndex + 2)))
                 result.nbt.merge({ Damage: Math.min(curDmg + inc, maxDmg - 1) })
             }
 
@@ -82,6 +82,7 @@ ServerEvents.recipes(event => {
         leather:     { tier: 1, base: 0.23, tools: false, armor: true  },
         iron:        { tier: 2, base: 0.10, tools: true,  armor: true  },
         copper:      { tier: 2, base: 0.10, tools: true,  armor: false },
+        lead:        { tier: 2, base: 0.16, tools: true,  armor: false },
         golden:      { tier: 2, base: 0.18, tools: true,  armor: true  },
         zinc:        { tier: 2, base: 0.18, tools: true,  armor: false },
         bronze:      { tier: 3, base: 0.05, tools: true,  armor: true  },
@@ -95,7 +96,7 @@ ServerEvents.recipes(event => {
 
     const PREFIX = {
         stone: 'minecraft:stone_', rusted_iron: 'kubejs:rusted_iron_', leather: 'minecraft:leather_',
-        iron: 'minecraft:iron_', golden: 'minecraft:golden_', zinc: 'kubejs:zinc_', copper: 'kubejs:copper_',
+        iron: 'minecraft:iron_', golden: 'minecraft:golden_', zinc: 'kubejs:zinc_', copper: 'kubejs:copper_', lead: 'kubejs:lead_',
         bronze: 'kubejs:bronze_', brass: 'kubejs:brass_', steel: 'kubejs:steel_', netherite: 'minecraft:netherite_'
     }
     const ARMOR_PREFIX = { brass: 'create_sa:brass_' }
