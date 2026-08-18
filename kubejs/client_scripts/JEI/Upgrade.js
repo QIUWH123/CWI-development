@@ -41,7 +41,7 @@ JEIAddedEvents.registerRecipes(event => {
             enchantId: recipe.enchantId,
             maxLevel: recipe.maxLevel,
             durabilityMultiplier: recipe.durabilityMultiplier,
-            exampleInput: recipe.input
+            input: recipe.input
         })
     })
 })
@@ -66,22 +66,22 @@ JEIAddedEvents.registerCategories(event => {
             layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.INPUT)
                 .addIngredients(data.inputs)
 
-            const nonConsumeList = data.nonConsumeIngredients || []
+            const nonConsumeList = data.nonConsumeIngredients
             nonConsumeList.forEach((ing, index) => {
                 const x = 10
                 const y = 10 + index * 18
                 layoutBuilder.addSlot($RecipeIngredientRole.INPUT, x, y)
                     .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addItemStack(Item.of(ing.item, ing.count || 1))
+                    .addItemStack(Item.of(ing.item, ing.count))
             })
 
-            const consumeList = data.consumeIngredients || []
+            const consumeList = data.consumeIngredients
             consumeList.forEach((ing, index) => {
                 const x = 32
                 const y = 10 + index * 18
                 layoutBuilder.addSlot($RecipeIngredientRole.INPUT, x, y)
                     .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)
-                    .addItemStack(Item.of(ing.item, ing.count || 1))
+                    .addItemStack(Item.of(ing.item, ing.count))
             })
         })
 
@@ -90,8 +90,8 @@ JEIAddedEvents.registerCategories(event => {
 
             $AllGuiTextures.JEI_SHADOW.render(graphics, 63, 48)
 
-            const exampleItem = recipeData.exampleInput || 'minecraft:iron_sword'
-            drawLargeItem(graphics, guiHelper, Item.of(exampleItem), 89, 38, 2.0)
+            const inputItem = recipeData.input
+            drawLargeItem(graphics, guiHelper, Item.of(inputItem), 89, 38, 2.0)
 
             const enchantName = getEnchantName(recipeData.enchantId)
             const levelText = `Max lv: ${recipeData.maxLevel}`

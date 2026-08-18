@@ -90,3 +90,15 @@ JEIEvents.hideFluids(event => {
     fluidToHide.forEach(id => event.hide(id))
 
 })
+
+JEIEvents.removeCategories(event => {
+  
+    const categoryToHide = [
+        'fluid:fan_freezing',
+        'fluid:fan_glueing',
+        'fluid:fan_sandblasting'
+    ]
+
+    categoryToHide.forEach(id => event.remove(id))
+
+})

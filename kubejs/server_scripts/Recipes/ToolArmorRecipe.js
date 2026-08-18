@@ -92,8 +92,8 @@ ServerEvents.recipes(event => {
     event.shaped(
         'kubejs:small_hammer',
         [
-            ' BA',
-            ' CB',
+            ' AB',
+            ' CA',
             'C  '
         ],
         {

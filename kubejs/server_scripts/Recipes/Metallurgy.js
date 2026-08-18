@@ -75,8 +75,8 @@ ServerEvents.recipes(event => {
         if (items.ingot && items.rod && mat.stiffness < 100) cutting(event, AddItem(items.ingot), AddItem('2 ' + items.rod))
         if (items.sheet && items.wire && mat.stiffness < 100) cutting(event, AddItem(items.sheet), AddItem('2 ' + items.wire))
         if (items.ingot && items.sheet && mat.stiffness < 250) addDepotConversion(items.ingot, items.sheet, (mat.stiffness < 150) ? 1 : (mat.stiffness < 200) ? 2 : 3)
-        if (items.ingot && items.block && (items.ingot.startsWith('kubejs:') || items.block.startsWith('kubejs:'))) addStoragePair(event, items.block, items.ingot, 9)
-        if (items.ingot && items.nugget && (items.ingot.startsWith('kubejs:') || items.nugget.startsWith('kubejs:'))) addStoragePair(event, items.ingot, items.nugget, 9)
+        if (items.ingot && items.block && (items.ingot.startsWith('kubejs:') || items.block.startsWith('kubejs:') || items.ingot.startsWith('vintageimprovements:') || items.block.startsWith('vintageimprovements:'))) addStoragePair(event, items.block, items.ingot, 9)
+        if (items.ingot && items.nugget && (items.ingot.startsWith('kubejs:') || items.nugget.startsWith('kubejs:') || items.ingot.startsWith('vintageimprovements:') || items.nugget.startsWith('vintageimprovements:'))) addStoragePair(event, items.ingot, items.nugget, 9)
     })
 
 })

@@ -4,11 +4,11 @@ ServerEvents.recipes(event => {
 
 // ==================== 核心注册函数 ====================
 
-    let idCount = 0
+    let idCount = 1
 
     function registerUpgradeRecipe(inputItem, ingredients, enchantId, maxLevel, durabilityMultiplier, outputItem) {
         const finalOutput = outputItem || inputItem
-
+        const id  = `cwi:equipment_upgrade/${idCount}_manual_only`
         const ingredientObjs = []
         for (const ing of ingredients) {
             let id = ing.item || ing.id
@@ -22,7 +22,7 @@ ServerEvents.recipes(event => {
             enchantId: enchantId,
             maxLevel: maxLevel,
             durabilityMultiplier: durabilityMultiplier,
-            output: outputItem || inputItem
+            id: id.toString()
         })
 
         const inputs = [inputItem]
@@ -33,7 +33,7 @@ ServerEvents.recipes(event => {
         }
 
         idCount++
-        let recipe = event.shapeless(finalOutput, inputs).id(`cwi:equipment_upgrade/${idCount}_manual_only`).modifyResult((stacks, output) => {
+        let recipe = event.shapeless(finalOutput, inputs).id(id).modifyResult((stacks, output) => {
             const tool = stacks.find(inputItem)
             const result = Item.of(finalOutput, tool.nbt)
 
