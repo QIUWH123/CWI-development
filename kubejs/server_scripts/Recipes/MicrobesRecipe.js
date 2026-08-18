@@ -972,19 +972,6 @@ ServerEvents.recipes(function(event) {
         300, undefined, ['basin', 'bulk']
     )
 
-    addFermentingRecipes(event,
-        [
-            AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:magnesite_powder'),
-            AddItem('kubejs:crystallum_coccus')
-        ],
-        [
-            AddItem('kubejs:magnesite'),
-            AddItem('kubejs:crystallum_coccus')
-        ],
-        300, undefined, ['basin', 'bulk']
-    )
-
 // Putrelys Sporogenes
     addFermentingRecipes(event,
         [

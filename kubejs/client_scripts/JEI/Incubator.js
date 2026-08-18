@@ -29,7 +29,7 @@ JEIAddedEvents.registerCategories(event => {
     const { jeiHelpers } = data
     const { guiHelper } = jeiHelpers
     event.custom('kubejs:incubator', category => {
-        category.title(Component.translate('Incubating'))
+        category.title(Component.translate('cwi.recipe.incubating'))
         category.setWidth(178)
         category.setHeight(72)
         category.background(guiHelper.createBlankDrawable(0, 0))

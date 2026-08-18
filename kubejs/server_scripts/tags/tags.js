@@ -249,6 +249,11 @@ ServerEvents.tags('item', event => {
         'minecraft:lead_hammer'
     ])
 
+    event.add('cwi:waxes', [
+        'minecraft:honeycomb',
+        'kubejs:lead_axe'
+    ])
+
 // GlassTiers
     event.add('cwi:glass1', ['minecraft:glass', 'kubejs:tempered_glass'])
     event.add('cwi:glass2', ['kubejs:tempered_glass'])

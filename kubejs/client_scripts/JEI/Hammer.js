@@ -14,7 +14,7 @@ JEIAddedEvents.registerCategories(event => {
     const defaultHammerDrawable = guiHelper.createDrawableItemStack(Item.of('minecraft:iron_hammer'))
 
     const buildBlockConversion = category => {
-        category.title(Component.translate('Block Conversion')).setWidth(178).setHeight(72).background(guiHelper.createBlankDrawable(0, 0)).iconSupplier(() => defaultHammerDrawable)
+        category.title(Component.translate('cwi.recipe.block_conversion')).setWidth(178).setHeight(72).background(guiHelper.createBlankDrawable(0, 0)).iconSupplier(() => defaultHammerDrawable)
         category.handleLookup((layoutBuilder, recipe, focuses) => {
             const recipeData = recipe.recipeData
             layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18, 48).setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1).addItemStack(recipeData.input)
@@ -48,7 +48,7 @@ JEIAddedEvents.registerCategories(event => {
     }
 
     const buildDepotConversion = category => {
-        category.title(Component.translate('Depot Conversion')).setWidth(178).setHeight(72).background(guiHelper.createBlankDrawable(0, 0)).iconSupplier(() => defaultHammerDrawable)
+        category.title(Component.translate('cwi.recipe.depot_conversion')).setWidth(178).setHeight(72).background(guiHelper.createBlankDrawable(0, 0)).iconSupplier(() => defaultHammerDrawable)
         category.handleLookup((layoutBuilder, recipe, focuses) => {
             const recipeData = recipe.recipeData
             layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 18, 48).setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1).addItemStack(recipeData.input)

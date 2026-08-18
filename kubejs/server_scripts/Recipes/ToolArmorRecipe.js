@@ -50,13 +50,16 @@ ServerEvents.recipes(event => {
     addArmor('kubejs:bronze_sheet', 'kubejs:bronze')
 
     addTools('create:brass_sheet', 'kubejs:brass')
-    addArmor('create:brass_sheet', 'create_sa:brass')
 
     addTools('create:copper_sheet', 'kubejs:copper')
 
     addTools('createaddition:zinc_sheet', 'kubejs:zinc')
 
     addTools('tfmg:heavy_plate', 'kubejs:steel')
+    addArmor('tfmg:heavy_plate', 'kubejs:steel')
+
+    addTools('kubejs:stainless_steel_sheet', 'kubejs:stainless_steel')
+    addArmor('kubejs:stainless_steel_sheet', 'kubejs:stainless_steel')
 
 })
 
@@ -89,9 +92,9 @@ ServerEvents.recipes(event => {
     event.shaped(
         'kubejs:small_hammer',
         [
-            'BAB',
-            ' C ',
-            ' C '
+            ' BA',
+            ' CB',
+            'C  '
         ],
         {
             A: 'minecraft:iron_ingot',

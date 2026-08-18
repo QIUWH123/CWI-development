@@ -4,7 +4,7 @@ EntityEvents.hurt(event => {
     if (!player) return
     const item = player.mainHandItem
     if (item.id !== 'clanginghowl:industrial_adjustable_wrench' && !item.hasTag('cwi:neurotoxin')) return
-    let level = entity.level
+    const level = entity.level
 
     if (item.id === 'clanginghowl:industrial_adjustable_wrench') {
         entity.potionEffects.add('createaddition:shocking', 30, 0, true, true)

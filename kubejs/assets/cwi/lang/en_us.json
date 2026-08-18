@@ -8,5 +8,16 @@
   "block.cwi.dride_algae": "Dried Algae",
 
   "cwi.blast_furnace_processing": "Blast Furnace Smelting",
-  "cwi.arc_furnace_processing": "Arc Furnace Smelting"
+  "cwi.arc_furnace_processing": "Arc Furnace Smelting",
+
+  "cwi.recipe.budding_growth": "Budding Growth",
+  "cwi.recipe.block_conversion": "Block Conversion",
+  "cwi.recipe.depot_conversion": "Depot Conversion",
+  "cwi.recipe.incubating": "Incubating",
+  "cwi.recipe.mixing_vessel": "Mixing Vessel",
+  "cwi.recipe.equipment_upgrades": "Equipment Upgrades",
+
+  "message.cwi.no_lockpick": "No Lockpick",
+  "message.cwi.lockpick_success": "Lockpick Success",
+  "message.cwi.lockpick_failure": "Lockpick Failure"
 }

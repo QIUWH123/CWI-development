@@ -92,7 +92,7 @@ JEIAddedEvents.registerCategories(event => {
     const { guiHelper } = jeiHelpers
 
     event.custom('kubejs:budding_catalyst', category => {
-        category.title(Component.translate('Budding Growth'))
+        category.title(Component.translate('cwi.recipe.budding_growth'))
             .setWidth(178)
             .setHeight(156)
             .background(guiHelper.createBlankDrawable(0, 0))

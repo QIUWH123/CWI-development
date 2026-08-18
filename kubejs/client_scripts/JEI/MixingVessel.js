@@ -65,7 +65,7 @@ JEIAddedEvents.registerCategories(event => {
     const { jeiHelpers } = data
     const { guiHelper } = jeiHelpers
     event.custom('kubejs:mixing_vessel', category => {
-        category.title(Component.translate('Mixing Vessel'))
+        category.title(Component.translate('cwi.recipe.mixing_vessel'))
         category.setWidth(178)
         category.setHeight(72)
         category.background(guiHelper.createBlankDrawable(0, 0))

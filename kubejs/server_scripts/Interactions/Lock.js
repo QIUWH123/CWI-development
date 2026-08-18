@@ -15,7 +15,7 @@ const lockPickConfigs = {
 
 BlockEvents.rightClicked(e => {
     const { player, block, level } = e
-    return
+    if (player.isCreative()) return
     // Skip Crate Blocks
     if (block.id.endsWith("_crate")) return
 
@@ -48,7 +48,7 @@ BlockEvents.rightClicked(e => {
     // Invalid Tool Prompt And Block
     const config = lockPickConfigs[mainHand.id]
     if (!config) {
-        player.setStatusMessage(Component.translate("message.kubejs.no_lockpick"))
+        player.setStatusMessage(Component.translate("message.cwi.no_lockpick"))
         level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.chain.break", "neutral", 1.0, 0.8)
         e.cancel()
         return
@@ -60,10 +60,10 @@ BlockEvents.rightClicked(e => {
     if (success) {
         // Unlock Success
         chestData.putInt("Lock", UNLOCKED)
-        player.setStatusMessage(Component.translate("message.kubejs.lockpick_success"))
+        player.setStatusMessage(Component.translate("message.cwi.lockpick_success"))
         level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.note_block.bell", "neutral", 2.0, 1.2)
     } else {
-        player.setStatusMessage(Component.translate("message.kubejs.lockpick_failure"))
+        player.setStatusMessage(Component.translate("message.cwi.lockpick_failure"))
     }
 
     // Common Operations: Durability Cost, Trapdoor Sound, Item Cooldown, Cancel Event

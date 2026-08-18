@@ -1,4 +1,5 @@
 StartupEvents.registry("enchantment", event => {
+
     event.create("health_stealing")
         .weapon()
         .minLevel(1)
