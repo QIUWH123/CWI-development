@@ -4,7 +4,24 @@ StartupEvents.registry("enchantment", event => {
         .weapon()
         .minLevel(1)
         .maxLevel(5)
-        .postAttack((living, entity, level) => {
-            if (entity.isLiving()) living.health += level
+        .postAttack((user, target, lvl) => {
+            if (target.isLiving()) user.health += lvl
         })
+
+    event.create("antigravity")
+        .weapon()
+        .minLevel(1)
+        .maxLevel(5)
+        .postAttack((user, target, lvl) => {
+            if (target.isLiving()) target.setNoGravity(true)
+        })
+
+    event.create("fluorescence")
+        .weapon()
+        .minLevel(1)
+        .maxLevel(5)
+        .postAttack((user, target, lvl) => {
+            if (target.isLiving()) target.setGlowing(true)
+        })
+
 })

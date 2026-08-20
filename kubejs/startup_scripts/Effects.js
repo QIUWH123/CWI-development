@@ -1,21 +1,5 @@
 StartupEvents.registry('mob_effect', event => {
 
-    event.create('sand_erosion')
-        .color(0x00FF00)
-        .category('harmful')
-
-    event.create('radiation_poisoning')
-        .color(0x00FF00)
-        .category('harmful')
-
-    event.create('toxic_atmosphere')
-        .color(0x8B4513)
-        .category('harmful')
-
-    event.create('abyssal_drain')
-        .color(0x8B4513)
-        .category('harmful')
-
     event.create('reach')
         .color(0x000000)
         .beneficial()
