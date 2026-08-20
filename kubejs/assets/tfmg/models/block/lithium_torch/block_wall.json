@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "tfmg:item/lithium_torch",
 		"1": "tfmg:item/lithium_torch_fire",
-		"particle": "tfmg:item/lithium_torch"
+		"particle": "#0"
 	},
 	"elements": [
 		{

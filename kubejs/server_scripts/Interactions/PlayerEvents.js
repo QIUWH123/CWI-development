@@ -70,20 +70,3 @@ MEJSEvents.standOnFluid(event=>{
             entity.potionEffects.add('biomancy:corrosive', 20, 1, true, true)
     })
 })
-
-ItemEvents.canPickUp('minecraft:gunpowder', event => {
-    if (event.player.isCreative()) return
-    if (random(0,1) > 0.7) return
-    
-    let { itemEntity, level } = event
-    let { x, y, z } = itemEntity
-
-    let explosion = level.createExplosion(x, y, z)
-    explosion.explosionMode = 'NONE',
-    explosion.causesFire = false
-    explosion.strength = 1
-    explosion.explode()
-
-    itemEntity.remove("discarded")
-    event.cancel()
-})

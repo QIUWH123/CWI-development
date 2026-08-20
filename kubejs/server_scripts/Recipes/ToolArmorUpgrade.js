@@ -186,8 +186,8 @@ ServerEvents.recipes(event => {
     ]
 
     const RESPIRATION_RECIPES = [
-        { max: 1, inc: 0.03, ing: [{ item: 'minecraft:bottle', consume: true, count: 3 }, { item: 'kubejs:rubber', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:small_hammer', consume: false }] },
-        { max: 1, inc: 0.02, ing: [{ item: 'minecraft:bottle', consume: true, count: 3 }, { item: 'tfmg:rubber_sheet', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
+        { max: 1, inc: 0.03, ing: [{ item: 'minecraft:glass_bottle', consume: true, count: 3 }, { item: 'kubejs:rubber', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:small_hammer', consume: false }] },
+        { max: 1, inc: 0.02, ing: [{ item: 'minecraft:glass_bottle', consume: true, count: 3 }, { item: 'tfmg:rubber_sheet', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
     ]
 
     const AQUA_AFFINITY_RECIPES = [
