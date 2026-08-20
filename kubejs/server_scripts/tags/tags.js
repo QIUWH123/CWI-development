@@ -305,6 +305,8 @@ ServerEvents.tags('block', event => {
         'kubejs:incomplete_quality_sealed_wood',
         'kubejs:andesite_machine',
         'kubejs:precise_machine',
+        'kubejs:industrial_casing',
+        'kubejs:stainless_steel_casing',
         'kubejs:incomplete_precise_machine',
         'kubejs:incomplete_mechanical_arm',
         'kubejs:incomplete_mechanical_pipette',

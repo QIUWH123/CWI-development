@@ -43,14 +43,14 @@ StartupEvents.registry('item', event => {
 // ToolTiers
 ItemEvents.toolTierRegistry(event => {
     const tiers = {
-        steel:           [1857, 10, 3, 0, 'tfmg:steel_ingot'],
-        stainless_steel: [2593, 11, 4, 0, 'kubejs:stainless_steel_ingot'],
-        bronze:          [1361, 8,  2, 0, 'kubejs:bronze_ingot'],
-        brass:           [873,  7,  2, 0, 'create:brass_ingot'],
-        zinc:            [323,  5,  1, 0, 'create:zinc_ingot'],
-        copper:          [621,  5,  2, 0, 'create:copper_ingot'],
-        lead:            [367,  1,  2, 0, 'tfmg:lead_ingot'],
-        rusted_iron:     [437,  4,  2, 0, 'kubejs:rusted_iron_ingot']
+        steel:           [1257, 10, 3, 0, 'tfmg:steel_ingot'],
+        stainless_steel: [1593, 11, 4, 0, 'kubejs:stainless_steel_ingot'],
+        bronze:          [861, 8,  2, 0, 'kubejs:bronze_ingot'],
+        brass:           [673,  7,  2, 0, 'create:brass_ingot'],
+        zinc:            [187,  5,  1, 0, 'create:zinc_ingot'],
+        copper:          [381,  5,  2, 0, 'create:copper_ingot'],
+        lead:            [154,  1,  2, 0, 'tfmg:lead_ingot'],
+        rusted_iron:     [287,  4,  2, 0, 'kubejs:rusted_iron_ingot']
     }
     Object.entries(tiers).forEach(([name,[uses,speed,level,bonus,repair]]) => {
         event.add(name, tier => {
@@ -67,7 +67,7 @@ ItemEvents.toolTierRegistry(event => {
 // ArmorTier
 ItemEvents.armorTierRegistry(event => {
     event.add('bronze', tier => {
-        tier.durabilityMultiplier = 97
+        tier.durabilityMultiplier = 51
         tier.slotProtections = [3,6,8,3]
         tier.enchantmentValue = 0
         tier.repairIngredient = 'kubejs:bronze_ingot'
@@ -75,7 +75,7 @@ ItemEvents.armorTierRegistry(event => {
         tier.knockbackResistance = 0.05
     })
     event.add('steel', tier => {
-        tier.durabilityMultiplier = 143
+        tier.durabilityMultiplier = 78
         tier.slotProtections = [4,8,10,4]
         tier.enchantmentValue = 0
         tier.repairIngredient = 'tfmg:steel_ingot'
@@ -83,7 +83,7 @@ ItemEvents.armorTierRegistry(event => {
         tier.knockbackResistance = 0.15
     })
     event.add('stainless_steel', tier => {
-        tier.durabilityMultiplier = 203
+        tier.durabilityMultiplier = 97
         tier.slotProtections = [5,9,11,5]
         tier.enchantmentValue = 0
         tier.repairIngredient = 'kubejs:stainless_steel_ingot'
@@ -97,7 +97,9 @@ const $ShieldItem = Java.loadClass('net.minecraft.world.item.ShieldItem')
 const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties')
 
 StartupEvents.registry('item', event => {
-    event.createCustom('steel_shield', () => { return new $ShieldItem(new $ItemProperties().durability(1857))})
+
+    event.createCustom('steel_shield', () => { return new $ShieldItem(new $ItemProperties().durability(1257))})
+    event.createCustom('stainless_steel_shield', () => { return new $ShieldItem(new $ItemProperties().durability(1593))})
 
     event.create('small_hammer')
         .unstackable()

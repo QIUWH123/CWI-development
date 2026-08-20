@@ -152,6 +152,34 @@ ServerEvents.recipes(event => {
         }
     )
 
+    event.recipes.create.mechanical_crafting(
+        'kubejs:steel_shield', 
+        [
+            'ABA',
+            'ACA',
+            'ABA'
+        ], 
+        {
+            A: 'tfmg:heavy_plate',
+            B: 'tfmg:steel_casing',
+            C: 'kubejs:quality_tool_handle'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'kubejs:stainless_steel_shield', 
+        [
+            'ABA',
+            'ACA',
+            'ABA'
+        ], 
+        {
+            A: 'kubejs:stainless_steel_sheet',
+            B: 'tfmg:steel_casing',
+            C: 'kubejs:quality_tool_handle'
+        }
+    )
+
     global.pipePileDefinitions.forEach(([pipeId, texturePath, hardness, resistance, soundType, miningType, toolLevel, pipes]) => {
 
         event.shapeless(

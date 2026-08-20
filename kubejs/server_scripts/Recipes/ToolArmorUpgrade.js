@@ -2,7 +2,7 @@ let upgradeRecipeList = []
 
 ServerEvents.recipes(event => {
 
-// ==================== 核心注册函数 ====================
+// Core Register Function
 
     let idCount = 1
 
@@ -72,22 +72,22 @@ ServerEvents.recipes(event => {
         }
     }
 
-// ==================== 材质与工具/护甲定义 ====================
+// Material And Tool Armor Definitions
 
     const MAT = {
-        leather:         { tier: 1, multiplier: 1.8, tools: false, armor: true,  prefix: 'minecraft:leather_',         sheet: 'minecraft:leather', rod: 'minecraft:stick', ingot: 'minecraft:leather', block: 'minecraft:leather' },
-        stone:           { tier: 1, multiplier: 1.5, tools: true,  armor: false, prefix: 'minecraft:stone_',           sheet: 'minecraft:cobblestone', rod: 'minecraft:stick', ingot: 'minecraft:cobblestone', block: 'minecraft:cobblestone' },
-        rusted_iron:     { tier: 1, multiplier: 1.4, tools: true,  armor: false, prefix: 'kubejs:rusted_iron_' },
-        golden:          { tier: 2, multiplier: 0.8, tools: true,  armor: true,  prefix: 'minecraft:golden_' },
-        zinc:            { tier: 2, multiplier: 1.1, tools: true,  armor: false, prefix: 'kubejs:zinc_' },
-        iron:            { tier: 2, multiplier: 1.0, tools: true,  armor: true,  prefix: 'minecraft:iron_' },
-        lead:            { tier: 2, multiplier: 1.1, tools: true,  armor: false, prefix: 'kubejs:lead_' },
-        copper:          { tier: 2, multiplier: 1.0, tools: true,  armor: false, prefix: 'kubejs:copper_' },
-        brass:           { tier: 3, multiplier: 0.8, tools: true,  armor: false, prefix: 'kubejs:brass_' },
-        bronze:          { tier: 3, multiplier: 0.7, tools: true,  armor: true,  prefix: 'kubejs:bronze_' },
-        steel:           { tier: 4, multiplier: 0.4, tools: true,  armor: true,  prefix: 'kubejs:steel_' },
-        stainless_steel: { tier: 4, multiplier: 0.3, tools: true,  armor: true,  prefix: 'kubejs:stainless_steel_' },
-        netherite:       { tier: 4, multiplier: 0.2, tools: true,  armor: true,  prefix: 'minecraft:netherite_' }
+        leather:         { tier: 1, multiplier: 1.65, tools: false, armor: true,  prefix: 'minecraft:leather_',         sheet: 'minecraft:leather', rod: 'minecraft:stick', ingot: 'minecraft:leather', block: 'minecraft:leather' },
+        stone:           { tier: 1, multiplier: 1.40, tools: true,  armor: false, prefix: 'minecraft:stone_',           sheet: 'minecraft:cobblestone', rod: 'minecraft:stick', ingot: 'minecraft:cobblestone', block: 'minecraft:cobblestone' },
+        rusted_iron:     { tier: 1, multiplier: 1.25, tools: true,  armor: false, prefix: 'kubejs:rusted_iron_' },
+        golden:          { tier: 2, multiplier: 0.80, tools: true,  armor: true,  prefix: 'minecraft:golden_' },
+        zinc:            { tier: 2, multiplier: 1.10, tools: true,  armor: false, prefix: 'kubejs:zinc_' },
+        iron:            { tier: 2, multiplier: 1.00, tools: true,  armor: true,  prefix: 'minecraft:iron_' },
+        lead:            { tier: 2, multiplier: 1.10, tools: true,  armor: false, prefix: 'kubejs:lead_' },
+        copper:          { tier: 2, multiplier: 0.90, tools: true,  armor: false, prefix: 'kubejs:copper_' },
+        brass:           { tier: 3, multiplier: 0.70, tools: true,  armor: false, prefix: 'kubejs:brass_' },
+        bronze:          { tier: 3, multiplier: 0.45, tools: true,  armor: true,  prefix: 'kubejs:bronze_' },
+        steel:           { tier: 4, multiplier: 0.35, tools: true,  armor: true,  prefix: 'kubejs:steel_' },
+        stainless_steel: { tier: 4, multiplier: 0.25, tools: true,  armor: true,  prefix: 'kubejs:stainless_steel_' },
+        netherite:       { tier: 4, multiplier: 0.15, tools: true,  armor: true,  prefix: 'minecraft:netherite_' }
     }
 
     const TOOLS = ['sword', 'pickaxe', 'axe', 'shovel', 'hoe', 'hammer']
@@ -101,7 +101,7 @@ ServerEvents.recipes(event => {
         return MAT[mat].prefix + part
     }
 
-// ==================== 材料部件映射 ====================
+// Material Component Functions
 
     function getGlobalMaterialItem(mat, itemType) {
         const globalId = { golden: 'gold' }[mat] || mat
@@ -135,7 +135,7 @@ ServerEvents.recipes(event => {
         return getGlobalMaterialItem(mat, 'wire')
     }
 
-// ==================== 配方定义（数组） ====================
+// Recipe Definition Arrays
 
     const SHARP_RECIPES = [
         { max: 1, inc: 0.20, ing: [{ item: 'create:sand_paper', consume: false }, { item: 'kubejs:flint_powder', consume: true }] },
@@ -168,8 +168,8 @@ ServerEvents.recipes(event => {
     ]
 
     const FEATHER_FALLING_RECIPES = [
-        { max: 2, inc: 0.03, ing: [{ item: 'create:belt_connector', consume: true }, { item: 'kubejs:rubber', consume: true }] },
-        { max: 2, inc: 0.03, ing: [{ item: 'create:belt_connector', consume: true }, { item: 'tfmg:rubber_sheet', consume: true }] }
+        { max: 2, inc: 0.03, fixedMax: true, ing: [{ item: 'create:belt_connector', consume: true }, { item: 'kubejs:rubber', consume: true }] },
+        { max: 2, inc: 0.03, fixedMax: true, ing: [{ item: 'create:belt_connector', consume: true }, { item: 'tfmg:rubber_sheet', consume: true }] }
     ]
 
     const UNBREAKING_RECIPES = [
@@ -181,8 +181,8 @@ ServerEvents.recipes(event => {
     ]
 
     const DEPTH_STRIDER_RECIPES = [
-        { max: 2, inc: 0.05, ing: [{ item: 'minecraft:leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] },
-        { max: 2, inc: 0.05, ing: [{ item: 'tfmg:synthetic_leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
+        { max: 2, inc: 0.05, fixedMax: true, ing: [{ item: 'minecraft:leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] },
+        { max: 2, inc: 0.05, fixedMax: true, ing: [{ item: 'tfmg:synthetic_leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
     ]
 
     const RESPIRATION_RECIPES = [
@@ -194,7 +194,7 @@ ServerEvents.recipes(event => {
         { max: 1, inc: 0.03, ing: [{ item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true, count: 2 }, { item: 'kubejs:small_hammer', consume: false }] }
     ]
 
-// ==================== 通用注册函数 ====================
+// General Apply Functions
 
     function applyToolRecipes(recipes, toolTypes, enchantId) {
         for (let mat in MAT) {
@@ -232,22 +232,49 @@ ServerEvents.recipes(event => {
         }
     }
 
-// ==================== 注册所有配方 ====================
+// Register All Recipes
 
-    // 锋利：剑、锤子（锤子锋利上限2）
     applyToolRecipes(SHARP_RECIPES, ['sword'], 'minecraft:sharpness')
     applyToolRecipes(SHARP_RECIPES.slice(0, 2), ['hammer'], 'minecraft:sharpness')
 
-    // 效率：镐、斧、锹、锄
     applyToolRecipes(EFF_RECIPES, ['pickaxe', 'axe', 'shovel', 'hoe'], 'minecraft:efficiency')
 
-    // 横扫之刃：剑
     applyToolRecipes(SWEEP_RECIPES, ['sword'], 'minecraft:sweeping')
 
-    // 击退：锤子
     applyToolRecipes(KNOCKBACK_RECIPES, ['hammer'], 'minecraft:knockback')
 
-    // 保护：护甲（皮革单独处理）
+    applyArmorRecipes(FEATHER_FALLING_RECIPES, ['boots'], 'minecraft:feather_falling')
+
+    applyToolRecipes(UNBREAKING_RECIPES, TOOLS, 'minecraft:unbreaking')
+    applyArmorRecipes(UNBREAKING_RECIPES, ARMOR, 'minecraft:unbreaking')
+
+    applyToolRecipes(SMITE_RECIPES, ['sword', 'hammer'], 'minecraft:smite')
+
+    applyArmorRecipes(DEPTH_STRIDER_RECIPES, ['boots'], 'minecraft:depth_strider')
+
+    applyArmorRecipes(RESPIRATION_RECIPES, ['helmet'], 'minecraft:respiration')
+
+    applyToolRecipes(AQUA_AFFINITY_RECIPES, ['axe', 'pickaxe', 'sword', 'shovel'], 'minecraft:aqua_affinity')
+
+    const SPECIAL_DURABILITY_ITEMS = [
+        { item: 'farmersdelight:iron_knife', mat: 'iron' },
+        { item: 'farmersdelight:golden_knife', mat: 'golden' },
+        { item: 'minecraft:shears', mat: 'iron' },
+        { item: 'minecraft:shield', mat: 'iron' },
+        { item: 'kubejs:steel_shield', mat: 'steel' },
+        { item: 'kubejs:stainless_steel_shield', mat: 'stainless_steel' }
+    ]
+
+    SPECIAL_DURABILITY_ITEMS.forEach(entry => {
+        let d = MAT[entry.mat]
+        registerUpgradeRecipe(entry.item, [
+            { item: 'kubejs:small_hammer', consume: false },
+            { item: ingot(entry.mat, false), consume: true }
+        ], 'minecraft:unbreaking', Math.min(3, d.tier), d.multiplier * 0.02)
+    })
+
+    SPECIAL_PROTECTION_RECIPES.forEach(r => applyArmorRecipes([r], ARMOR, r.enchant))
+
     const LEATHER_STRINGS = ['minecraft:string', 'tfmg:synthetic_string']
     for (let mat in MAT) {
         if (!MAT.hasOwnProperty(mat)) continue
@@ -286,38 +313,6 @@ ServerEvents.recipes(event => {
             }
         })
     }
-
-    // 特殊保护：火焰/弹射/爆炸保护
-    SPECIAL_PROTECTION_RECIPES.forEach(r => applyArmorRecipes([r], ARMOR, r.enchant))
-
-    // 摔落保护：靴子
-    applyArmorRecipes(FEATHER_FALLING_RECIPES, ['boots'], 'minecraft:feather_falling')
-
-    // 耐久：所有工具和护甲
-    applyToolRecipes(UNBREAKING_RECIPES, TOOLS, 'minecraft:unbreaking')
-    applyArmorRecipes(UNBREAKING_RECIPES, ARMOR, 'minecraft:unbreaking')
-
-    // 特殊物品耐久
-    ;['farmersdelight:iron_knife', 'farmersdelight:golden_knife', 'minecraft:shears'].forEach(itemId => {
-        let mat = itemId.includes('golden') ? 'golden' : 'iron'
-        registerUpgradeRecipe(itemId, [
-            { item: 'kubejs:small_hammer', consume: false },
-            { item: ingot(mat, false), consume: true }
-        ], 'minecraft:unbreaking', Math.min(3, MAT[mat].tier), MAT[mat].multiplier * 0.02)
-    })
-
-    // 亡灵杀手：剑和锤子，1级
-    applyToolRecipes(SMITE_RECIPES, ['sword', 'hammer'], 'minecraft:smite')
-
-    // 深海探索者：靴子，2级（固定上限）
-    applyArmorRecipes(DEPTH_STRIDER_RECIPES, ['boots'], 'minecraft:depth_strider')
-
-    // 水下呼吸：头盔，1级
-    applyArmorRecipes(RESPIRATION_RECIPES, ['helmet'], 'minecraft:respiration')
-
-    // 水下速掘：斧、镐、剑、铲，1级
-    applyToolRecipes(AQUA_AFFINITY_RECIPES, ['axe', 'pickaxe', 'sword', 'shovel'], 'minecraft:aqua_affinity')
-
 })
 
 global.upgradeRecipes = upgradeRecipeList

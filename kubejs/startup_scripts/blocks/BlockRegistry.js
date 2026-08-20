@@ -744,6 +744,15 @@ StartupEvents.registry('block', event => {
         .tagBlock('minecraft:mineable/pickaxe')
         .tagBlock('minecraft:needs_stone_tool')
         .mapColor('#FF5500')
+
+    event.create('stainless_steel_casing')
+        .soundType('metal')
+        .hardness(6)
+        .resistance(12)
+        .requiresTool(true)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .mapColor('#FF5500')
   
     event.create('claystone_clump')
         .textureAll('kubejs:block/claystone_base_bottom')

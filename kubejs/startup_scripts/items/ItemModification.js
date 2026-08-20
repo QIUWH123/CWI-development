@@ -190,19 +190,21 @@ ItemEvents.modification(event => {
 
 // Max Damage Changes
 
-    maxDamage_change('minecraft:iron_sword', 983)
-    maxDamage_change('minecraft:iron_axe', 983)
-    maxDamage_change('minecraft:iron_pickaxe', 983)
-    maxDamage_change('minecraft:iron_shovel', 983)
-    maxDamage_change('minecraft:iron_hoe', 983)
-    maxDamage_change('minecraft:iron_hammer', 983)
+    maxDamage_change('minecraft:iron_sword', 683)
+    maxDamage_change('minecraft:iron_axe', 683)
+    maxDamage_change('minecraft:iron_pickaxe', 683)
+    maxDamage_change('minecraft:iron_shovel', 683)
+    maxDamage_change('minecraft:iron_hoe', 683)
+    maxDamage_change('minecraft:iron_hammer', 683)
+    maxDamage_change('farmersdelight:iron_knife', 687)
 
-    maxDamage_change('minecraft:golden_sword', 273)
-    maxDamage_change('minecraft:golden_axe', 273)
-    maxDamage_change('minecraft:golden_pickaxe', 273)
-    maxDamage_change('minecraft:golden_shovel', 273)
-    maxDamage_change('minecraft:golden_hoe', 273)
-    maxDamage_change('minecraft:golden_hammer', 273)
+    maxDamage_change('minecraft:golden_sword', 173)
+    maxDamage_change('minecraft:golden_axe', 173)
+    maxDamage_change('minecraft:golden_pickaxe', 173)
+    maxDamage_change('minecraft:golden_shovel', 173)
+    maxDamage_change('minecraft:golden_hoe', 173)
+    maxDamage_change('minecraft:golden_hammer', 173)
+    maxDamage_change('farmersdelight:goldeb_knife', 173)
 
     maxDamage_change('minecraft:netherite_sword', 3627)
     maxDamage_change('minecraft:netherite_axe', 3627)
@@ -210,14 +212,40 @@ ItemEvents.modification(event => {
     maxDamage_change('minecraft:netherite_shovel', 3627)
     maxDamage_change('minecraft:netherite_hoe', 3627)
     maxDamage_change('minecraft:netherite_hammer', 3627)
+    maxDamage_change('farmersdelight:netherite_knife', 3627)
 
     maxDamage_change('create:sand_paper', 24)
     maxDamage_change('create:red_sand_paper', 24)
 
+    maxDamage_multiply('minecraft:leather_helmet', 2)
+    maxDamage_multiply('minecraft:leather_chestplate', 2)
+    maxDamage_multiply('minecraft:leather_leggings', 2)
+    maxDamage_multiply('minecraft:leather_boots', 2)
+
+    maxDamage_multiply('minecraft:chainmail_helmet', 1.5)
+    maxDamage_multiply('minecraft:chainmail_chestplate', 1.5)
+    maxDamage_multiply('minecraft:chainmail_leggings', 1.5)
+    maxDamage_multiply('minecraft:chainmail_boots', 1.5)
+
+    maxDamage_multiply('minecraft:golden_helmet', 1.5)
+    maxDamage_multiply('minecraft:golden_chestplate', 1.5)
+    maxDamage_multiply('minecraft:golden_leggings', 1.5)
+    maxDamage_multiply('minecraft:golden_boots', 1.5)
+
+    maxDamage_multiply('minecraft:iron_helmet', 2.4)
+    maxDamage_multiply('minecraft:iron_chestplate', 2.4)
+    maxDamage_multiply('minecraft:iron_leggings', 2.4)
+    maxDamage_multiply('minecraft:iron_boots', 2.4)
+
+    maxDamage_multiply('minecraft:netherite_helmet', 5)
+    maxDamage_multiply('minecraft:netherite_chestplate', 5)
+    maxDamage_multiply('minecraft:netherite_leggings', 5)
+    maxDamage_multiply('minecraft:netherite_boots', 5)
+
 // Attack Speed Changes
 
     global.hammers.forEach(([name]) => {
-        attackSpeed_change(`minecraft:${name}`, 0.8)
+        attackSpeed_change(`minecraft:${name}`, 1)
     })  
 
     attackSpeed_change('kubejs:lead_sword', 0.8)

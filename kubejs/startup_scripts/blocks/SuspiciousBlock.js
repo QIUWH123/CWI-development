@@ -1,9 +1,9 @@
-const $BlockItem = Java.loadClass("net.minecraft.world.item.BlockItem");
-const $Properties = Java.loadClass("net.minecraft.world.level.block.state.BlockBehaviour$Properties");
-const $IProperties = Java.loadClass("net.minecraft.world.item.Item$Properties");
-const $BrushableBlock = Java.loadClass("net.minecraft.world.level.block.BrushableBlock");
-const $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation");
-const $BuiltInRegistries = Java.loadClass("net.minecraft.core.registries.BuiltInRegistries");
+const $BlockItem = Java.loadClass("net.minecraft.world.item.BlockItem")
+const $Properties = Java.loadClass("net.minecraft.world.level.block.state.BlockBehaviour$Properties")
+const $IProperties = Java.loadClass("net.minecraft.world.item.Item$Properties")
+const $BrushableBlock = Java.loadClass("net.minecraft.world.level.block.BrushableBlock")
+const $ResourceLocation = Java.loadClass("net.minecraft.resources.ResourceLocation")
+const $BuiltInRegistries = Java.loadClass("net.minecraft.core.registries.BuiltInRegistries")
 
 const suspiciousBlocks = [
     {
