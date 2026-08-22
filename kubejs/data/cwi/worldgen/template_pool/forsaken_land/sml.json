@@ -1,0 +1,86 @@
+{
+    "name": "cwi:wasted_structures",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_1",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_2",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_3",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_4",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_5",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_6",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_7",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/sml_8",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        }
+    ]
+}

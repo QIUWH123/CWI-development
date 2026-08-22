@@ -1,10 +1,10 @@
 {
     "type": "minecraft:jigsaw",
-    "biomes": ["cwi:forsaken_land"],
+    "biomes": ["cwi:smoldering_barren"],
     "step": "surface_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "beard_thin",
-    "start_pool": "cwi:forsaken_land/wasted_structures",
+    "start_pool": "cwi:smoldering_barren/lrg",
     "size": 1,
     "start_height": { 
         "absolute": 0 

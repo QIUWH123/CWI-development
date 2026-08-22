@@ -1,13 +1,13 @@
 {
     "structures": [
         {
-            "structure": "cwi:forsaken_land/wasted_structures",
+            "structure": "cwi:forsaken_land/mid",
             "weight": 1
         }
     ],
     "placement": {
         "type": "minecraft:random_spread",
-        "spacing": 10,
+        "spacing": 30,
         "separation": 1,
         "salt": 59372577
     }
