@@ -11,16 +11,21 @@ const suspiciousBlocks = [
         turns_into: "kubejs:depleted_dirt",
         brushing_sound: SoundType.SUSPICIOUS_GRAVEL.getStepSound(),
         brushingFinishedSound: SoundType.ANVIL.getHitSound()
+    },
+    {
+        block_name: "kubejs:suspicious_ash_dirt",
+        turns_into: "kubejs:ash_dirt",
+        brushing_sound: SoundType.SUSPICIOUS_GRAVEL.getStepSound(),
+        brushingFinishedSound: SoundType.ANVIL.getHitSound()
     }
 ]
 
 suspiciousBlocks.forEach((susBlock) => {
     StartupEvents.registry("block", (event) => {
         event.createCustom(susBlock.block_name, () => {
-            let turnIntoBlock = $BuiltInRegistries.BLOCK.get(new $ResourceLocation(susBlock.turns_into))
             return new $BrushableBlock(
-                turnIntoBlock,
-                $Properties.copy(Blocks.SUSPICIOUS_SAND),
+                $BuiltInRegistries.BLOCK.get(new $ResourceLocation(susBlock.turns_into)),
+                $Properties.copy(Blocks.SUSPICIOUS_GRAVEL),
                 susBlock.brushing_sound,
                 susBlock.brushingFinishedSound
             )

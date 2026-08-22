@@ -6,6 +6,12 @@
             })
         })
 
+    const GRENADE = [
+        Item.of("tfmg:copper_grenade").withChance(1),
+        Item.of("tfmg:zinc_grenade").withChance(1),
+        Item.of("tfmg:thermite_grenade").withChance(1)
+    ]
+
     const BANNER_PATTERNS = [
         Item.of("minecraft:flower_banner_pattern").withChance(1),
         Item.of("minecraft:creeper_banner_pattern").withChance(1),
@@ -448,6 +454,271 @@ LootJS.modifiers((event) => {
             pool.rolls(1)
             pool.randomChance(0.1)
             pool.addLoot("kubejs:net")
+            pool.limitCount([1, 1])
+        })
+
+    // ======================= 材料 =======================
+    event.addLootTableModifier("cwi:chests/material/rich")
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addAlternativesLoot(darkAsh, ash)
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addLoot("createdieselgenerators:wood_chip")
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.addLoot("minecraft:stick")
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.8)
+            pool.addLoot('tfmg:rebar')
+            pool.limitCount([4, 8])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.8)
+            pool.addLoot('tfmg:synthetic_string')
+            pool.limitCount([3, 7])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.6)
+            pool.addLoot('kubejs:rubber')
+            pool.limitCount([3, 7])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.4)
+            pool.addLoot('create:shaft')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.4)
+            pool.addLoot('darkerdepths:rope')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.3)
+            pool.addLoot('kubejs:synthetic_feather')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('create:belt_connector')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('tfmg:steel_pipe')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.1)
+            pool.addLoot('tfmg:slag')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.1)
+            pool.addLoot('tfmg:cinderblock')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.1)
+            pool.addWeightedLoot(GRENADE)
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.003)
+            pool.addWeightedLoot(POTTERY_SHERDS)
+            pool.limitCount([1, 1])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.005)
+            pool.addWeightedLoot(SMITHING_TEMPLATES)
+            pool.limitCount([1, 1])
+        })
+
+    event.addLootTableModifier("cwi:chests/material/normal")
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addAlternativesLoot(darkAsh, ash)
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addLoot("createdieselgenerators:wood_chip")
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.addLoot("minecraft:stick")
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.6)
+            pool.addLoot('tfmg:rebar')
+            pool.limitCount([3, 6])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('tfmg:synthetic_string')
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('kubejs:rubber')
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.4)
+            pool.addLoot('create:shaft')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.4)
+            pool.addLoot('darkerdepths:rope')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.3)
+            pool.addLoot('kubejs:net')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.3)
+            pool.addLoot('kubejs:synthetic_feather')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.1)
+            pool.addLoot('create:belt_connector')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.2)
+            pool.addLoot('tfmg:steel_pipe')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.2)
+            pool.addLoot('tfmg:slag')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.2)
+            pool.addLoot('tfmg:cinderblock')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.003)
+            pool.addWeightedLoot(POTTERY_SHERDS)
+            pool.limitCount([1, 1])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.005)
+            pool.addWeightedLoot(SMITHING_TEMPLATES)
+            pool.limitCount([1, 1])
+        })
+
+    event.addLootTableModifier("cwi:chests/material/poor")
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addAlternativesLoot(darkAsh, ash)
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(2)
+            pool.addLoot("createdieselgenerators:wood_chip")
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.addLoot("minecraft:stick")
+            pool.limitCount([2, 5])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('tfmg:rebar')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.5)
+            pool.addLoot('tfmg:synthetic_string')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.4)
+            pool.addLoot('kubejs:rubber')
+            pool.limitCount([1, 2])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.3)
+            pool.addLoot('create:shaft')
+            pool.limitCount([1, 2])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.3)
+            pool.addLoot('darkerdepths:rope')
+            pool.limitCount([1, 2])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.2)
+            pool.addLoot('tfmg:cinderblock')
+            pool.limitCount([1, 2])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.2)
+            pool.addLoot('tfmg:slag')
+            pool.limitCount([1, 3])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.05)
+            pool.addLoot('miners_delight:silverfish_eggs')
+            pool.limitCount([1, 2])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.003)
+            pool.addWeightedLoot(POTTERY_SHERDS)
+            pool.limitCount([1, 1])
+        })
+        .pool(pool => {
+            pool.rolls(1)
+            pool.randomChance(0.001)
+            pool.addWeightedLoot(SMITHING_TEMPLATES)
             pool.limitCount([1, 1])
         })
 
