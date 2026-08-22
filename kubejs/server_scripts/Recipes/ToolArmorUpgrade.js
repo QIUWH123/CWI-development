@@ -180,6 +180,10 @@ ServerEvents.recipes(event => {
         { max: 1, inc: 0.03, ing: [{ item: 'kubejs:silver_sheet', consume: true, count: 2 }, { item: 'kubejs:silver_rod', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
     ]
 
+    const FIRE_ASPECT_RECIPES = [
+        { max: 1, inc: 0.03, ing: [{ item: 'kubejs:lithium_powder', consume: true, count: 2 }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
+    ]
+
     const DEPTH_STRIDER_RECIPES = [
         { max: 2, inc: 0.05, fixedMax: true, ing: [{ item: 'minecraft:leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] },
         { max: 2, inc: 0.05, fixedMax: true, ing: [{ item: 'tfmg:synthetic_leather', consume: true }, { item: 'kubejs:sticky_resin', consume: true }, { item: 'kubejs:fat', consume: true }, { item: 'kubejs:small_hammer', consume: false }] }
@@ -249,6 +253,8 @@ ServerEvents.recipes(event => {
     applyArmorRecipes(UNBREAKING_RECIPES, ARMOR, 'minecraft:unbreaking')
 
     applyToolRecipes(SMITE_RECIPES, ['sword', 'hammer'], 'minecraft:smite')
+
+    applyToolRecipes(FIRE_ASPECT_RECIPES, ['sword'], 'minecraft:fire_aspect')
 
     applyArmorRecipes(DEPTH_STRIDER_RECIPES, ['boots'], 'minecraft:depth_strider')
 

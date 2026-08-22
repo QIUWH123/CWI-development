@@ -644,6 +644,7 @@ ServerEvents.recipes(event => {
         'tfmg:crafting/kinetics/casting_basin',
         'tfmg:crafting/kinetics/circular_light',
         'tfmg:crafting/kinetics/coke_oven',
+        'tfmg:crafting/kinetics/lithium_torch',
         'tfmg:crafting/kinetics/concrete_hose',
         'tfmg:crafting/kinetics/converter',
         'tfmg:crafting/kinetics/cyan_multimeter',

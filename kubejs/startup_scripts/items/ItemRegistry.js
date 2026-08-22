@@ -178,9 +178,6 @@ StartupEvents.registry('item', event => {
     event.create('incomplete_control_chip')
         .texture('kubejs:item/incomplete_items/incomplete_control_chip')
 
-    event.create('incomplete_generator_coil')
-        .texture('kubejs:item/incomplete_items/incomplete_generator_coil')
-
     event.create('incomplete_distillation_controller')
         .texture('kubejs:item/incomplete_items/incomplete_distillation_controller')
         .rarity('epic')
@@ -239,10 +236,6 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/machine_parts/voltaic_pile')
     event.create('brass_circuit_board')
         .texture('kubejs:item/machine_parts/brass_circuit_board')
-
-    event.create('generator_coil')
-        .texture('kubejs:item/machine_parts/generator_coil')
-        .rarity('rare')
 
     event.create('industrial_iron_drill_head')
         .texture('kubejs:item/machine_parts/industrial_iron_drill_head')

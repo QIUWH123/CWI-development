@@ -6,6 +6,18 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
+        'tfmg:lithium_torch',
+        [
+            'A',
+            'B'
+        ],
+        {
+            A: 'kubejs:lithium_powder',
+            B: 'kubejs:aluminum_rod'
+        }
+    )
+
+    event.shaped(
         'create:filter',
         [
             'ABA'
