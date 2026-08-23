@@ -1,11 +1,11 @@
 // Mixing Vessel Speed Modifier
 
 MBDMachineEvents.onBeforeRecipeModify("cwi:mixing_vessel", (event) => {
-    let { machine, recipe } = event.getEvent()
-    let partmachine = $IMachine.ofMachine(machine.level, machine.pos).orElse(null)
-    let holder = partmachine.machineHolder
+    const { machine, recipe } = event.getEvent()
+    const partmachine = $IMachine.ofMachine(machine.level, machine.pos).orElse(null)
+    const holder = partmachine.machineHolder
     if (holder.speed === 0) return
-    let copyRecipe = recipe.copy()
+    const copyRecipe = recipe.copy()
     copyRecipe.duration = Math.max(1, Math.floor(recipe.duration * Math.abs(256 / holder.speed)))
     event.getEvent().setRecipe(copyRecipe)
 })

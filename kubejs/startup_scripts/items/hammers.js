@@ -1,6 +1,5 @@
 StartupEvents.registry('item', event => {
     global.hammers.forEach(([name, tier, requiredCharge, maxStage, attackDamageBaseline]) => {
-        const effectiveMax = maxStage || 3
         event.create('minecraft:' + name, 'sword')
             .tier(tier)
             .attackDamageBaseline(3 + attackDamageBaseline)
@@ -23,12 +22,29 @@ StartupEvents.registry('item', event => {
                 player.persistentData.chargedHammer_charging = true
                 return true
             })
-            .releaseUsing((itemStack, level, entity, durationLeft) => {
-                return global.releaseHammer(itemStack, level, entity, durationLeft, requiredCharge, effectiveMax)
+            .releaseUsing((itemStack, level, player, durationLeft) => {
+                return global.releaseHammer(itemStack, level, player, durationLeft, requiredCharge, maxStage)
             })
             .finishUsing(itemStack => itemStack)
     })  
     event.create('minecraft:hammer_1')
     event.create('minecraft:hammer_2')
     event.create('minecraft:hammer_3')
+
+    event.create('steel_pipe', 'sword')
+            .tier('steel')
+            .attackDamageBaseline(3)
+            .unstackable()
+            .tag('forge:tools')
+            .tag('minecraft:breaks_decorated_pots')
+            .useAnimation('spear')
+            .useDuration(() => 100000)
+            .use((_, player) => {
+                player.persistentData.chargedHammer_charging = true
+                return true
+            })
+            .releaseUsing((itemStack, level, player, durationLeft) => {
+                return global.releaseHammer(itemStack, level, player, durationLeft, 40, 3)
+            })
+            .finishUsing(itemStack => itemStack)
 })

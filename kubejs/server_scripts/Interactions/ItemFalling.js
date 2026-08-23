@@ -141,7 +141,7 @@ const fallItemsConfig = [
         inputItem: "minecraft:tnt",
         effects: [
             {
-                spaceBetween: 5,
+                spaceBetween: 6,
                 events: [
                     { type: 'sound', id: "minecraft:entity.generic.explode", volume: 1, pitch: 1 },
                     { type: 'particle', particleType: "minecraft:explosion", dx: 0.5, dy: 0.5, dz: 0.5, speed: 0.1, count: 10 },
@@ -155,7 +155,7 @@ const fallItemsConfig = [
         inputItem: "ae2:tiny_tnt",
         effects: [
             {
-                spaceBetween: 5,
+                spaceBetween: 6,
                 events: [
                     { type: 'sound', id: "minecraft:entity.generic.explode", volume: 0.5, pitch: 1 },
                     { type: 'particle', particleType: "minecraft:explosion", dx: 0.0, dy: 0.0, dz: 0.0, speed: 0.0, count: 1 },
@@ -203,19 +203,6 @@ const fallItemsConfig = [
                     { type: 'particle', particleType: "minecraft:block", data: "kubejs:pebbles", dx: 0.3, dy: 0.3, dz: 0.3, speed: 0.1, count: 8 },
                     { type: 'setBlock', block: "kubejs:pebbles" },
                     { type: 'discard' }
-                ]
-            }
-        ]
-    },
-    {
-        inputItem: "minecraft:water_bucket",
-        effects: [
-            {
-                spaceBetween: 0,
-                events: [
-                    { type: 'particle', particleType: "minecraft:splash", dx: 0.3, dy: 0.3, dz: 0.3, speed: 0.1, count: 20 },
-                    { type: 'setBlock', block: "minecraft:water" },
-                    { type: 'replaceItem', item: 'minecraft:bucket' }
                 ]
             }
         ]

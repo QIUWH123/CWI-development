@@ -263,6 +263,7 @@ ServerEvents.recipes(event => {
     applyToolRecipes(AQUA_AFFINITY_RECIPES, ['axe', 'pickaxe', 'sword', 'shovel'], 'minecraft:aqua_affinity')
 
     const SPECIAL_DURABILITY_ITEMS = [
+        { item: 'kubejs:steel_pipe', mat: 'steel' },
         { item: 'farmersdelight:iron_knife', mat: 'iron' },
         { item: 'farmersdelight:golden_knife', mat: 'golden' },
         { item: 'minecraft:shears', mat: 'iron' },

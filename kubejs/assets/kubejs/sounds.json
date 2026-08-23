@@ -6,5 +6,10 @@
       "kubejs:player_spawn3",
       "kubejs:player_spawn4"
     ]
+  },
+  "steel_pipe": {
+    "sounds": [
+      "kubejs:steel_pipe"
+    ]
   }
 }

@@ -5,8 +5,11 @@ let HAMMER_MAX_STAGE = {}
 
 global.hammers.forEach(function(arr) {
     HAMMER_REQUIREMENTS['minecraft:' + arr[0]] = arr[2]
-    HAMMER_MAX_STAGE['minecraft:' + arr[0]] = arr[3] || 3
+    HAMMER_MAX_STAGE['minecraft:' + arr[0]] = arr[3]
 })
+
+HAMMER_REQUIREMENTS['kubejs:steel_pipe'] = 40
+HAMMER_MAX_STAGE['kubejs:steel_pipe'] = 3
 
 // Player Tick For Hammer Charge Display
 
@@ -14,10 +17,10 @@ PlayerEvents.tick(function(event) {
     let player = event.player
     let data = player.persistentData
     let mainHand = player.getItemInHand('main_hand')
-
+    
     if (!data.chargedHammer_charging || mainHand.id === 'minecraft:air' || !(mainHand.id in HAMMER_REQUIREMENTS)) {
         if (data.chargedHammer_charging) data.chargedHammer_charging = false
-        if (mainHand.id in HAMMER_REQUIREMENTS && mainHand.nbt && mainHand.nbt.CustomModelData !== 0) {
+        if (mainHand.nbt && mainHand.nbt.CustomModelData !== 0) {
             mainHand.nbt = Object.assign({}, mainHand.nbt, { CustomModelData: 0 })
             player.setItemInHand('main_hand', mainHand)
         }

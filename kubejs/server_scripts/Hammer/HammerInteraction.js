@@ -1,34 +1,40 @@
 // Release Hammer
 
-global.releaseHammer = function(itemStack, level, entity, durationLeft, requiredCharge, effectiveMax) {
-    if (!entity.persistentData.chargedHammer_charging) return itemStack
-    entity.persistentData.chargedHammer_charging = false
-    let hand = entity.getUsedItemHand()
+global.releaseHammer = function(itemStack, level, player, durationLeft, requiredCharge, effectiveMax) {
+    if (!player.persistentData.chargedHammer_charging) return itemStack
+    player.persistentData.chargedHammer_charging = false
+    let hand = player.getUsedItemHand()
     let stage = Math.min(Math.floor((100000 - durationLeft) / requiredCharge), effectiveMax)
     let success = false
 
     if (stage < 1) {
-        let it = entity.getItemInHand(hand)
+        let it = player.getItemInHand(hand)
         if (it.nbt && it.nbt.CustomModelData !== 0) {
             it.nbt = Object.assign({}, it.nbt, { CustomModelData: 0 })
-            entity.setItemInHand(hand, it)
+            player.setItemInHand(hand, it)
         }
         return itemStack
     }
 
     if (!level.isClientSide()) {
-        level.playSound(null, entity.x, entity.y, entity.z, 'minecraft:item.trident.throw', 'players', 1, 1)
-        let hit = entity.rayTrace(5)
+        level.playSound(null, player.x, player.y, player.z, 'minecraft:item.trident.throw', 'players', 1, 1)
+        let hit = player.rayTrace(5)
 
         if (hit && hit.type === 'entity') {
-            let damage = entity.getAttributeValue('minecraft:generic.attack_damage') * stage
+            let damage = player.getAttributeValue('minecraft:generic.attack_damage') * stage
             let target = hit.entity
-            target.attack(entity.damageSources().playerAttack(entity), damage)
+
+            target.attack(player.damageSources().playerAttack(player), damage)
             target.potionEffects.add('minecraft:slowness', 5 * stage, 255, true, true)
-            if (entity.getItemInHand(hand) === 'minecraft:lead_hammer') target.potionEffects.add('clanginghowl:neurotoxin', Math.round(random(100, 200)), Math.round(random(0, 0.7)), true, true)
             let multiplier = Math.sqrt(stage)
-            level.playSound(null, hit.entity.x, hit.entity.y + entity.getBbHeight() / 2, hit.entity.z, 'block.anvil.place', 'neutral', 1, 1)
-            level.spawnParticles('minecraft:crit', true, hit.entity.x, hit.entity.y + entity.getBbHeight() / 2, hit.entity.z, 0.2, 0.2, 0.2, 16 * stage, 0.6 * multiplier)
+            if (player.getItemInHand(hand) === 'minecraft:lead_hammer') target.potionEffects.add('clanginghowl:neurotoxin', Math.round(multiplier * random(100, 200)), Math.round(random(0, 0.7)), true, true)
+            if (player.getItemInHand(hand) === 'kubejs:steel_pipe') {
+                target.addMotion(0, multiplier, 0)
+                level.server.runCommandSilent(`playsound kubejs:steel_pipe neutral @a ${target.x} ${target.y + target.getBbHeight() / 2} ${target.z} ${0.8 * multiplier} 1`)
+            } else {
+                level.playSound(null, target.x, target.y + target.getBbHeight() / 2, target.z, 'block.anvil.place', 'neutral', 1, 1)
+            }
+            level.spawnParticles('minecraft:crit', true, target.x, target.y + target.getBbHeight() / 2, target.z, 0.2, 0.2, 0.2, 16 * stage, 0.6 * multiplier)
             success = true
 
         } else if (hit && hit.type === 'block') {
@@ -90,15 +96,15 @@ global.releaseHammer = function(itemStack, level, entity, durationLeft, required
         }
 
         if (success) {
-            entity.addItemCooldown(itemStack.item, Math.floor(20 * Math.sqrt(stage)))
-            itemStack.hurtAndBreak(stage, entity, function() {})
+            player.addItemCooldown(itemStack.item, Math.floor(20 * Math.sqrt(stage)))
+            itemStack.hurtAndBreak(stage, player, function() {})
         }
     }
 
-    let item = entity.getItemInHand(hand)
+    let item = player.getItemInHand(hand)
     if (item.nbt && item.nbt.CustomModelData !== 0) {
         item.nbt = Object.assign({}, item.nbt, { CustomModelData: 0 })
-        entity.setItemInHand(hand, item)
+        player.setItemInHand(hand, item)
     }
 
     return itemStack

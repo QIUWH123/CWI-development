@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'tfmg:lithium_torch',
+       'tfmg:lithium_torch',
         [
             'A',
             'B'
@@ -161,6 +161,22 @@ ServerEvents.recipes(event => {
         {
             A: 'create:display_board',
             B: 'kubejs:precise_machine'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'kubejs:steel_pipe', 
+        [
+            'CBC',
+            'ABA',
+            'ABA',
+            'ABA',
+            'CBC'
+        ], 
+        {
+            A: 'tfmg:rebar',
+            B: 'tfmg:rebar_block',
+            C: '#cwi:rubbers'
         }
     )
 
