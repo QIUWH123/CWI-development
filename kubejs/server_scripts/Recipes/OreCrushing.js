@@ -1,40 +1,15 @@
-// OreLootModification
-
-LootJS.modifiers(event => {
-    
-// OreTypeLoot
-
-    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
-        const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
-        const dropChance = isDeepslate ? 0.75 : 0.25
-        const modifier = event.addBlockLootModifier(oreId)
-        const dropCount = isMore ? 3 : 2
-
-        modifier.dropExperience(0).removeLoot(oreId).removeLoot(dropOreId)
-        for (let i = 0; i < dropCount; i++) modifier.addLoot(dropOreId)
-        modifier.randomChanceWithLooting(dropChance, 1).addLoot(dropOreId)
-        modifier.randomChanceWithLooting(0.3, 1).addLoot(dustId)
-    })
-
-// Additional Fix
-
-    event.addBlockLootModifier('minecraft:redstone_ore').removeLoot('minecraft:redstone')
-    event.addBlockLootModifier('minecraft:deepslate_redstone_ore').removeLoot('minecraft:redstone')
-
-})
-
 // OreProcessingRecipes
 
 ServerEvents.recipes(event => {
-
 // OreTypeCrushing
 
-    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
-        const dustId = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
-        const dropChance = isDeepslate ? 0.75 : 0.25
+    function processCrushing(oreId, settings, dropOreId, crushedOreId, isMore) {
         const dropCount = isMore ? 3 : 2
         const dropId = (crushedOreId === '') ? dropOreId : crushedOreId
-        const processingTime = isDeepslate ? 300 : 200
+        const dropChance = settings.dropChance
+        const dustId = settings.dust
+        const processingTime = settings.processingTime
+        const isDeepslate = settings.isDeepslate
 
         if (crushedOreId !== '' && isDeepslate) {
             event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
@@ -42,22 +17,29 @@ ServerEvents.recipes(event => {
 
         if (crushedOreId === '') {
             event.recipes.create.crushing([
-                `${dropCount}x ${dropId}`, 
-                Item.of(dropId).withChance(dropChance), 
-                Item.of(dustId).withChance(0.35), 
+                `${dropCount}x ${dropId}`,
+                Item.of(dropId).withChance(dropChance),
+                Item.of(dustId).withChance(0.35),
+                Item.of(dustId).withChance(0.25)
+            ], oreId).processingTime(processingTime)
+        } else {
+            event.recipes.create.crushing([
+                `${dropCount + 1}x ${dropId}`,
+                `${dropCount - 1}x ${dropId}`,
+                Item.of(dropId).withChance(dropChance + 0.1),
+                Item.of(dropId).withChance(dropChance - 0.1),
+                Item.of(dustId).withChance(0.35),
                 Item.of(dustId).withChance(0.25)
             ], oreId).processingTime(processingTime)
         }
+    }
 
-        else {
-            event.recipes.create.crushing([
-                `${dropCount + 1}x ${dropId}`, 
-                `${dropCount - 1}x ${dropId}`, 
-                Item.of(dropId).withChance(dropChance + 0.1), 
-                Item.of(dropId).withChance(dropChance - 0.1), 
-                Item.of(dustId).withChance(0.35), 
-                Item.of(dustId).withChance(0.25)
-            ], oreId).processingTime(processingTime)
+    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
+        if (oreVariants.normal) {
+            processCrushing(oreVariants.normal, global.variantSettings.normal, dropOreId, crushedOreId, isMore)
+        }
+        if (oreVariants.deepslate) {
+            processCrushing(oreVariants.deepslate, global.variantSettings.deepslate, dropOreId, crushedOreId, isMore)
         }
     })
 
@@ -67,7 +49,9 @@ ServerEvents.recipes(event => {
         ['kubejs:flint_powder', 'minecraft:flint'],
         ['kubejs:quartz_powder', 'minecraft:quartz'],
         ['kubejs:amethyst_powder', 'minecraft:amethyst_shard'],
+        ['minecraft:redstone', 'kubejs:redstone'],
         ['kubejs:sulfur_powder', 'kubejs:sulfur_item'],
+        ['kubejs:halite_powder', 'kubejs:halite_item'],
         ['kubejs:lignite_powder', 'kubejs:lignite_item'],
         ['minecraft:redstone', 'kubejs:redstone'],
         ['kubejs:lapis_powder', 'minecraft:lapis_lazuli'],
@@ -76,7 +60,7 @@ ServerEvents.recipes(event => {
     ]
 
     ores.forEach(([crushedOreId, oreId]) => {
-        event.recipes.create.milling([crushedOreId, Item.of(crushedOreId).withChance(0.75)], oreId)
+        event.recipes.create.milling(crushedOreId, oreId)
     })
 })
 

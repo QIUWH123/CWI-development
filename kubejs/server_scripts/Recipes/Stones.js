@@ -5,6 +5,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.crushing(['minecraft:cobbled_deepslate', Item.of('kubejs:quartzite_powder').withChance(0.75)], 'darkerdepths:arid_deepslate')
     event.recipes.create.milling(['3x kubejs:deepslate_powder', Item.of('kubejs:deepslate_powder').withChance(0.75), Item.of('kubejs:quartzite_powder').withChance(0.75)], 'darkerdepths:arid_deepslate')
     event.recipes.create.milling(['3x kubejs:tuff_powder', Item.of('kubejs:tuff_powder').withChance(0.75)], 'minecraft:tuff')
+    event.recipes.create.milling(['3x kubejs:calcite_powder', Item.of('kubejs:calcite_powder').withChance(0.75)], 'minecraft:calcite')
     event.recipes.create.milling(['3x kubejs:limestone_powder', Item.of('kubejs:limestone_powder').withChance(0.75)], 'create:limestone')
     event.recipes.create.crushing('kubejs:cobbled_basalt', 'minecraft:smooth_basalt')
     event.recipes.create.milling(['3x kubejs:basalt_powder', Item.of('kubejs:basalt_powder').withChance(0.75)], 'minecraft:smooth_basalt')

@@ -1,11 +1,3 @@
-// ============================================================
-// 矿石处理配方脚本 · 最终完美版
-// 所有数据来源：global.productionMaps
-// 使用 global.materialTypes 获取金属粉/粒 ID
-// 无分号风格，无多余通用石粉，无独立熔炼配方
-// 震动重选、高级离心只产出概率最高的岩粉
-// ============================================================
-
 ServerEvents.recipes(event => {
     // ----- 辅助函数 -----
     function getItemId(matId, type) {
@@ -201,4 +193,11 @@ ServerEvents.recipes(event => {
         // ================= 13. 电解精炼 (占位) =================
         // TODO
     })
+})
+
+ServerEvents.recipes(event => {
+    event.recipes.create.crushing(['2x kubejs:lignite_item', Item.of('kubejs:lignite_item').withChance(0.75), Item.of('kubejs:claystone_powder').withChance(0.63), Item.of('kubejs:shale_powder').withChance(0.37)], 'tfmg:lignite')
+    event.recipes.create.milling(['2x kubejs:lignite_powder', Item.of('kubejs:lignite_powder').withChance(0.75), Item.of('kubejs:claystone_powder').withChance(0.63), Item.of('kubejs:shale_powder').withChance(0.37)], 'tfmg:lignite')
+    event.recipes.create.crushing(['2x kubejs:halite_item', Item.of('kubejs:halite_item').withChance(0.75), Item.of('kubejs:calcite_powder').withChance(0.73), Item.of('kubejs:shale_powder').withChance(0.27)], 'kubejs:halite')
+    event.recipes.create.milling(['2x kubejs:halite_powder', Item.of('kubejs:halite_powder').withChance(0.75), Item.of('kubejs:calcite_powder').withChance(0.73), Item.of('kubejs:shale_powder').withChance(0.27)], 'kubejs:halite')
 })

@@ -38,16 +38,24 @@ global.stoneTypes.forEach(function(stone) {
 
 // Ore Type Conversions
 
-global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
-    const cobbleTarget = isDeepslate ? 'minecraft:cobbled_deepslate' : 'minecraft:cobblestone'
-    const mainChance = isDeepslate ? 0.75 : 0.5
+global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
     const dropCounts = isMore ? 3 : 2
-    const totalEntries = dropCounts + 1
-    const totalExpectation = dropCounts * 0.75 + mainChance
-    const mergedChance = totalExpectation / totalEntries
-    addBlockConversion(oreId, cobbleTarget, 1, [
-        { item: dropOreId, chance: mergedChance, count: totalEntries }
-    ])
+
+    if (oreVariants.normal) {
+        const settings = global.variantSettings.normal
+        addBlockConversion(oreVariants.normal, settings.cobble, 1, [
+            { item: dropOreId, chance: 1, count: dropCounts },
+            { item: dropOreId, chance: settings.dropChance, count: 1 }
+        ])
+    }
+
+    if (oreVariants.deepslate) {
+        const settings = global.variantSettings.deepslate
+        addBlockConversion(oreVariants.deepslate, settings.cobble, 1, [
+            { item: dropOreId, chance: 1, count: dropCounts },
+            { item: dropOreId, chance: settings.dropChance, count: 1 }
+        ])
+    }
 })
 
 // Special Block Conversions

@@ -1,0 +1,26 @@
+{
+    "name": "cwi:wasted_structures",
+    "fallback": "minecraft:empty",
+    "elements": [
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/lrg_1",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/lrg_2",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        }
+    ]
+}

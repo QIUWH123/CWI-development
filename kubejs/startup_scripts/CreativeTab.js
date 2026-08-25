@@ -45,7 +45,7 @@ StartupEvents.registry("creative_mode_tab", (event) => {
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
 
     event.setIcon("kubejs:rusted_industrial_aluminum_casing")
-    event.setDisplayName(CWI)
+    event.setDisplayName('CWI')
 
 	event.remove(
 		Ingredient.of("#cwi:fan_catalysts").itemIds

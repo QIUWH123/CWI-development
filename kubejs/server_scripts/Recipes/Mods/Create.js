@@ -175,7 +175,7 @@ ServerEvents.recipes(event => {
         ], 
         {
             A: 'tfmg:rebar',
-            B: 'tfmg:rebar_block',
+            B: 'tfmg:rebar_pile',
             C: '#cwi:rubbers'
         }
     )

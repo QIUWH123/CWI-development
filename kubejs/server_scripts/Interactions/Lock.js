@@ -6,18 +6,102 @@ const LOCKED = 1
 // Basic Weapon Lockpicking Configs
 
 const lockPickConfigs = {
-    "minecraft:iron_sword":       { successChance: 0.02, durabilityCost: 3 },
-    "minecraft:diamond_sword":    { successChance: 0.20, durabilityCost: 2 },
-    "minecraft:netherite_sword":  { successChance: 0.30, durabilityCost: 1 }
+    "minecraft:wooden_sword":           { successChance: 0.2, durabilityCost: 3 },
+    "minecraft:stone_sword":            { successChance: 0.2, durabilityCost: 3 },
+    "minecraft:iron_sword":             { successChance: 0.2, durabilityCost: 3 },
+    "minecraft:golden_sword":           { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:rusted_iron_sword":         { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:lead_sword":                { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:copper_sword":              { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:zinc_sword":                { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:brass_sword":               { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:bronze_sword":              { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:steel_sword":               { successChance: 0.2, durabilityCost: 3 },
+    "kubejs:stainless_steel_sword":     { successChance: 0.2, durabilityCost: 3 },
+    "minecraft:diamond_sword":          { successChance: 0.2, durabilityCost: 3 },
+    "minecraft:netherite_sword":        { successChance: 0.2, durabilityCost: 3 },
+    "ae2:nether_quartz_sword":          { successChance: 0.2, durabilityCost: 3 },
+    "ae2:certus_quartz_sword":          { successChance: 0.2, durabilityCost: 3 },
+    "ae2:fluix_sword":                  { successChance: 0.2, durabilityCost: 3 },
+    "clanginghowl:advanced_chainsword": { successChance: 1.0, durabilityCost: 3 },
+
+    "minecraft:wooden_axe":             { successChance: 0.4, durabilityCost: 3 },
+    "minecraft:stone_axe":              { successChance: 0.4, durabilityCost: 3 },
+    "minecraft:iron_axe":               { successChance: 0.4, durabilityCost: 3 },
+    "minecraft:golden_axe":             { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:rusted_iron_axe":           { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:lead_axe":                  { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:copper_axe":                { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:zinc_axe":                  { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:brass_axe":                 { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:bronze_axe":                { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:steel_axe":                 { successChance: 0.4, durabilityCost: 3 },
+    "kubejs:stainless_steel_axe":       { successChance: 0.4, durabilityCost: 3 },
+    "minecraft:diamond_axe":            { successChance: 0.4, durabilityCost: 3 },
+    "minecraft:netherite_axe":          { successChance: 0.4, durabilityCost: 3 },
+    "ae2:nether_quartz_axe":            { successChance: 0.4, durabilityCost: 3 },
+    "ae2:certus_quartz_axe":            { successChance: 0.4, durabilityCost: 3 },
+    "ae2:fluix_axe":                    { successChance: 0.4, durabilityCost: 3 },
+
+    "minecraft:wooden_pickaxe":         { successChance: 0.5, durabilityCost: 3 },
+    "minecraft:stone_pickaxe":          { successChance: 0.5, durabilityCost: 3 },
+    "minecraft:iron_pickaxe":           { successChance: 0.5, durabilityCost: 3 },
+    "minecraft:golden_pickaxe":         { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:rusted_iron_pickaxe":       { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:lead_pickaxe":              { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:copper_pickaxe":            { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:zinc_pickaxe":              { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:brass_pickaxe":             { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:bronze_pickaxe":            { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:steel_pickaxe":             { successChance: 0.5, durabilityCost: 3 },
+    "kubejs:stainless_steel_pickaxe":   { successChance: 0.5, durabilityCost: 3 },
+    "minecraft:diamond_pickaxe":        { successChance: 0.5, durabilityCost: 3 },
+    "minecraft:netherite_pickaxe":      { successChance: 0.5, durabilityCost: 3 },
+    "ae2:nether_quartz_pickaxe":        { successChance: 0.5, durabilityCost: 3 },
+    "ae2:certus_quartz_pickaxe":        { successChance: 0.5, durabilityCost: 3 },
+    "ae2:fluix_pickaxe":                { successChance: 0.5, durabilityCost: 3 },
+
+    "minecraft:wooden_shovel":          { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:stone_shovel":           { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:iron_shovel":            { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:golden_shovel":          { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:rusted_iron_shovel":        { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:lead_shovel":               { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:copper_shovel":             { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:zinc_shovel":               { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:brass_shovel":              { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:bronze_shovel":             { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:steel_shovel":              { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:stainless_steel_shovel":    { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:diamond_shovel":         { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:netherite_shovel":       { successChance: 0.3, durabilityCost: 3 },
+    "ae2:nether_quartz_shovel":         { successChance: 0.3, durabilityCost: 3 },
+    "ae2:certus_quartz_shovel":         { successChance: 0.3, durabilityCost: 3 },
+    "ae2:fluix_shovel":                 { successChance: 0.3, durabilityCost: 3 },
+
+    "minecraft:wooden_hoe":             { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:stone_hoe":              { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:iron_hoe":               { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:golden_hoe":             { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:rusted_iron_hoe":           { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:lead_hoe":                  { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:copper_hoe":                { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:zinc_hoe":                  { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:brass_hoe":                 { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:bronze_hoe":                { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:steel_hoe":                 { successChance: 0.3, durabilityCost: 3 },
+    "kubejs:stainless_steel_hoe":       { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:diamond_hoe":            { successChance: 0.3, durabilityCost: 3 },
+    "minecraft:netherite_hoe":          { successChance: 0.3, durabilityCost: 3 },
+    "ae2:nether_quartz_hoe":            { successChance: 0.3, durabilityCost: 3 },
+    "ae2:certus_quartz_hoe":            { successChance: 0.3, durabilityCost: 3 },
+    "ae2:fluix_hoe":                    { successChance: 0.3, durabilityCost: 3 }
 }
 
 // Core Lockpicking Event
 
 BlockEvents.rightClicked(e => {
     const { player, block, level } = e
-    if (player.isCreative()) return
-    // Skip Crate Blocks
-    if (block.id.endsWith("_crate")) return
 
     // Only Handle Blocks With Loot Table And Not Yet Opened
     if (!block.entityData?.LootTable) return

@@ -64,7 +64,7 @@ StartupEvents.registry('item', event => {
         'charcoal_powder', 'andesite_alloy_powder', 'nickel_powder', 'lead_powder', 'amethyst_powder',
         'cast_iron_powder', 'lithium_powder', 'bronze_powder', 'electrum_powder', 'rusted_iron_powder',
         'constantan_powder', 'silver_powder', 'tin_powder', 'aluminum_powder', 'molybdenum_powder', 'coal_powder',
-        'industrial_iron_powder', 'steel_powder', 'titanium_powder',
+        'industrial_iron_powder', 'steel_powder', 'titanium_powder', 'calcite_powder',
         'flint_powder', 'conglomerate_powder', 'phyllite_powder', 'darkslate_powder',
         'clay_powder', 'stone_powder', 'deepslate_powder', 'tuff_powder', 'claystone_powder', 'limestone_powder',
         'granite_powder', 'diorite_powder', 'andesite_powder', 'basalt_powder', 'schist_powder',

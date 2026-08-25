@@ -36,7 +36,8 @@ global.releaseHammer = function(itemStack, level, player, durationLeft, required
             }
             level.spawnParticles('minecraft:crit', true, target.x, target.y + target.getBbHeight() / 2, target.z, 0.2, 0.2, 0.2, 16 * stage, 0.6 * multiplier)
             success = true
-
+        } else if (player.getItemInHand(hand) === 'kubejs:steel_pipe') {
+            return
         } else if (hit && hit.type === 'block') {
             let pos = hit.block.pos
             let block = level.getBlock(pos)

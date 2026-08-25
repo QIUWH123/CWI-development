@@ -1,7 +1,8 @@
 ServerEvents.recipes(event => {
 
-    event.recipes.create.mixing('kubejs:glass_batch', ['2x minecraft:sand', 'kubejs:soda_powder', 'kubejs:limestone_powder'])
+    event.recipes.create.mixing(['kubejs:glass_batch', 'kubejs:soda_powder', 'kubejs:limestone_powder'], ['2x minecraft:sand', 'kubejs:soda_powder', 'kubejs:limestone_powder'])
     event.recipes.create.mixing(['kubejs:ion_exchanged_glass_blank', Fluid.of('kubejs:molten_potassium_sodium_nitrate', 100)], ['kubejs:heated_glass', Fluid.of('kubejs:molten_saltpeter', 100)]).processingTime(800)
+    event.recipes.create.mixing(Fluid.of('kubejs:molten_saltpeter', 100), Fluid.of('kubejs:molten_potassium_sodium_nitrate', 100)).processingTime(800).heatRequirement('superheated')
 
     event.smelting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
     event.blasting('kubejs:sintered_glass_blank', 'kubejs:glass_batch')
@@ -47,6 +48,16 @@ ServerEvents.recipes(event => {
         [
             AddItem('kubejs:ion_exchanged_glass_blank'),
             AddFluid('100 kubejs:molten_potassium_sodium_nitrate')
+        ],
+        600
+    )
+
+    vatRecipe(event, 'superheated', [], ["tfmg:cast_iron_vat", "tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
+        [
+            AddFluid('100 kubejs:molten_potassium_sodium_nitrate')
+        ],
+        [
+            AddFluid('100 kubejs:molten_saltpeter')
         ],
         600
     )

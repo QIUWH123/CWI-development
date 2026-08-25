@@ -1,4 +1,5 @@
 {
+	autofocus_id: "31D8AA7BD7F225D1"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "processing_note"
@@ -10,6 +11,7 @@
 	quests: [
 		{
 			dependencies: ["19F4E621C77EC596"]
+			hide_dependent_lines: true
 			hide_until_deps_complete: true
 			id: "7EAD0C34B17014A4"
 			shape: "gear"
@@ -24,74 +26,486 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6E14C5649AE916F6"]
+			disable_toast: true
 			id: "486EA6444B07AE9E"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
-				id: "0761F765DF37EFE1"
+				id: "1882244D0B7ED9A4"
 				item: "minecraft:glass"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -5.0d
+			x: 3.0d
+			y: -4.0d
 		}
 		{
+			dependencies: ["078BB9F9932F52D8"]
+			disable_toast: true
+			icon: "kubejs:pressed_glass_blank"
 			id: "6E14C5649AE916F6"
 			tasks: [{
-				id: "2E5F867596439252"
-				item: "kubejs:pressed_glass_blank"
-				type: "item"
-			}]
-			x: 1.5d
-			y: -5.0d
-		}
-		{
-			id: "078BB9F9932F52D8"
-			tasks: [{
-				id: "2D8C63536E81E050"
-				item: "kubejs:sintered_glass_blank"
-				type: "item"
+				id: "34F8EC64F878F183"
+				title: "Pressed Glass Blank"
+				type: "checkmark"
 			}]
 			x: 0.0d
-			y: -6.0d
+			y: -4.0d
 		}
 		{
-			id: "4F55DF87BD90F15D"
+			dependencies: ["4F55DF87BD90F15D"]
+			disable_toast: true
+			icon: "kubejs:sintered_glass_blank"
+			id: "078BB9F9932F52D8"
 			tasks: [{
-				id: "0CA791A187064EF1"
-				item: "kubejs:glass_batch"
-				type: "item"
+				id: "5B9CAF6EDF6853D9"
+				title: "Sintered Glass Blank"
+				type: "checkmark"
 			}]
 			x: -1.5d
 			y: -5.0d
 		}
 		{
-			id: "1294A6C6E1A12EFB"
+			dependencies: [
+				"1294A6C6E1A12EFB"
+				"2B0465F2A53DB8ED"
+				"31D8AA7BD7F225D1"
+			]
+			disable_toast: true
+			icon: "kubejs:glass_batch"
+			id: "4F55DF87BD90F15D"
 			tasks: [{
-				id: "7AD5ACAD8E0834CB"
-				item: "minecraft:sand"
-				type: "item"
+				id: "0FE4B8B11B516CD8"
+				title: "Glass Batch"
+				type: "checkmark"
 			}]
 			x: -3.0d
-			y: -6.0d
+			y: -4.0d
 		}
 		{
-			id: "2B0465F2A53DB8ED"
+			dependencies: ["7EAD0C34B17014A4"]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: "minecraft:sand"
+			id: "1294A6C6E1A12EFB"
 			tasks: [{
-				id: "4E97BBB9382513AE"
-				item: "kubejs:soda_powder"
-				type: "item"
+				id: "1181107E9F3D9C4E"
+				title: "Sand"
+				type: "checkmark"
 			}]
 			x: -4.5d
 			y: -5.0d
 		}
 		{
+			dependencies: ["7EAD0C34B17014A4"]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: "kubejs:soda_powder"
+			id: "2B0465F2A53DB8ED"
+			tasks: [{
+				id: "4B6131D6C33ACB92"
+				title: "Soda Powder"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7EAD0C34B17014A4"]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: "kubejs:limestone_powder"
 			id: "31D8AA7BD7F225D1"
 			tasks: [{
-				id: "7637381E521C8712"
-				item: "kubejs:limestone_powder"
+				id: "5BB685DD9A51BF50"
+				title: "Limestone Powder"
+				type: "checkmark"
+			}]
+			x: -4.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["486EA6444B07AE9E"]
+			disable_toast: true
+			icon: "kubejs:heated_glass"
+			id: "3A3EEC1B9D937AEF"
+			tasks: [{
+				id: "491C7ED8A4E258DF"
+				title: "Heated Glass"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["3A3EEC1B9D937AEF"]
+			disable_toast: true
+			icon: "kubejs:ion_exchanged_glass_blank"
+			id: "3A991DA7FC5F6E12"
+			tasks: [{
+				id: "3238CA3E846D8204"
+				title: "Ion Exchanged Glass Blank"
+				type: "checkmark"
+			}]
+			x: 6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["3A991DA7FC5F6E12"]
+			disable_toast: true
+			id: "67A10FC69686A727"
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "3B4818E356032AA3"
+				item: "kubejs:tempered_glass"
+				type: "item"
+			}]
+			x: 9.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["70631EBCEC3BA87D"]
+			disable_toast: true
+			icon: "kubejs:crushed_chalcocite"
+			id: "68EDC7F8F372E4EC"
+			tasks: [{
+				id: "4B19E8A0D5B80613"
+				title: "Crushed Ore"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["31B2117B6DC8C595"]
+			disable_toast: true
+			icon: "kubejs:stubborn_chalcocite_tailings"
+			id: "2EF97B44F3C871A6"
+			tasks: [{
+				id: "319F506306A72F0F"
+				title: "Stubborn Ore Tailings"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["19B51F96FEE5A2E1"]
+			disable_toast: true
+			icon: "kubejs:leach_chalcocite_residue"
+			id: "1626665799ED7DC7"
+			tasks: [{
+				id: "570643370064D342"
+				title: "Leach Ore Residue"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"6E509F0E28483D5B"
+				"5FA2456D613EC7BF"
+			]
+			disable_toast: true
+			icon: "kubejs:chalcocite_powder"
+			id: "325A4EA2A4390C9C"
+			tasks: [{
+				id: "69E956B17190EF25"
+				title: "Ore Powder"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 7.0d
+		}
+		{
+			disable_toast: true
+			icon: "kubejs:chalcocite"
+			id: "3C615E4515459663"
+			tasks: [{
+				id: "11425278484C38CF"
+				title: "Ore Block"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"3968023285949226"
+				"175DCD25317BDC00"
+			]
+			disable_toast: true
+			icon: "kubejs:chalcocite_tailings"
+			id: "2A5727AD26A217EB"
+			tasks: [{
+				id: "26DD5A803BC27A54"
+				title: "Ore Tailings"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["3C615E4515459663"]
+			disable_toast: true
+			id: "70631EBCEC3BA87D"
+			tasks: [{
+				id: "68AB5FBF12DBCEC5"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3C615E4515459663"]
+			disable_toast: true
+			id: "6E509F0E28483D5B"
+			tasks: [{
+				id: "49B77DA4563384F8"
+				item: "create:millstone"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["325A4EA2A4390C9C"]
+			disable_toast: true
+			id: "1D747D35EA0AB142"
+			tasks: [{
+				id: "1B0ABBEEFA0ACF76"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["325A4EA2A4390C9C"]
+			disable_toast: true
+			id: "175DCD25317BDC00"
+			tasks: [{
+				id: "7626F2DDCD6EE3C9"
+				item: "vintageimprovements:vibrating_table"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["325A4EA2A4390C9C"]
+			disable_toast: true
+			id: "3968023285949226"
+			tasks: [{
+				id: "35D2F31B609BD829"
+				item: "vintageimprovements:centrifuge"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["68EDC7F8F372E4EC"]
+			disable_toast: true
+			id: "5FA2456D613EC7BF"
+			tasks: [{
+				id: "1570CC321FD56C07"
+				item: "create:millstone"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["1D747D35EA0AB142"]
+			disable_toast: true
+			icon: "kubejs:copper_powder"
+			id: "5D84F6BA00FE1F33"
+			tasks: [{
+				id: "07B11FE6C575A2A0"
+				title: "Material Powder"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["1D747D35EA0AB142"]
+			disable_toast: true
+			icon: "create:copper_nugget"
+			id: "6EE13B4821311122"
+			tasks: [{
+				id: "7F20C1475449A485"
+				title: "Material Nugget"
+				type: "checkmark"
+			}]
+			x: 6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["2A5727AD26A217EB"]
+			disable_toast: true
+			id: "31B2117B6DC8C595"
+			tasks: [{
+				id: "42DACE0009B57BC0"
+				item: "tfmg:steel_chemical_vat"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["19B51F96FEE5A2E1"]
+			disable_toast: true
+			icon: "kubejs:leach_chalcocite_solution_bucket"
+			id: "134A15D609997F50"
+			tasks: [{
+				id: "4CD3A1F2E1306CD5"
+				title: "Leach Ore Solution"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["2EF97B44F3C871A6"]
+			disable_toast: true
+			id: "19B51F96FEE5A2E1"
+			tasks: [{
+				id: "40E7B2D187CEFC8B"
+				item: "tfmg:steel_chemical_vat"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["1626665799ED7DC7"]
+			disable_toast: true
+			id: "1CCD1ABA317C5BC9"
+			tasks: [{
+				id: "7E41E75096CB233C"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["134A15D609997F50"]
+			disable_toast: true
+			icon: "kubejs:purified_chalcocite_solution_bucket"
+			id: "2F86EA68D986A8F0"
+			tasks: [{
+				id: "39D07F3F14D513F7"
+				title: "Purified Ore Solution"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 17.0d
+		}
+		{
+			dependencies: ["1CCD1ABA317C5BC9"]
+			disable_toast: true
+			id: "00378F90D469BA6D"
+			tasks: [{
+				id: "5A2AC70A158E6544"
+				item: "kubejs:copper_powder"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["2EF97B44F3C871A6"]
+			disable_toast: true
+			id: "62C41AC444B3C7A4"
+			tasks: [{
+				id: "07CDE6E7C1AABA41"
+				item: "create:millstone"
 				type: "item"
 			}]
 			x: -3.0d
-			y: -4.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["62C41AC444B3C7A4"]
+			disable_toast: true
+			icon: "kubejs:chalcocite_powder"
+			id: "4A1E650E8310F38D"
+			tasks: [{
+				id: "79C6FF07182A2E16"
+				title: "Ore Powder"
+				type: "checkmark"
+			}]
+			x: -4.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["175DCD25317BDC00"]
+			disable_toast: true
+			icon: "kubejs:refined_copper"
+			id: "774B30482C504976"
+			tasks: [{
+				id: "489EA759507CBD9F"
+				title: "Refined Material"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["3968023285949226"]
+			disable_toast: true
+			icon: "kubejs:refined_copper"
+			id: "7E94F4D3E57C9E1D"
+			tasks: [{
+				id: "0E28FCE9A959A2DD"
+				title: "Refined Material"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["31B2117B6DC8C595"]
+			disable_toast: true
+			icon: "kubejs:refined_copper"
+			id: "753ABE805BF061CE"
+			tasks: [{
+				id: "2B57AB62F2D26811"
+				title: "Refined Material"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["2F86EA68D986A8F0"]
+			disable_toast: true
+			icon: "kubejs:copper_crystal"
+			id: "75C706ECEEC5B87C"
+			tasks: [{
+				id: "4383F002E61A3561"
+				title: "Material Crystal"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 19.0d
+		}
+		{
+			dependencies: ["325A4EA2A4390C9C"]
+			id: "4272A4EB7852D7B4"
+			tasks: [{
+				id: "3366362B5A123617"
+				item: "tfmg:steel_chemical_vat"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
 		}
 	]
 	title: "Processing Note"

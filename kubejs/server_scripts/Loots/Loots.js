@@ -443,19 +443,52 @@ LootJS.modifiers((event) => {
         .addLoot(pipes)
         .addLoot(pipes)
     })
+    
+// OreTypeLoot
 
-    global.oreTypes.forEach(([oreId, dropOreId, crushedOreId, isDeepslate, isMore]) => {
-        const exp = isDeepslate ? 5 : 3
-        const dust = isDeepslate ? 'kubejs:deepslate_powder' : 'kubejs:stone_powder'
-        const mainChance = isDeepslate ? 0.75 : 0.5
-        const modifier = event.addBlockLootModifier(oreId)
-        const extraDrops = isMore ? 3 : 2
+    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
+        const dropCounts = isMore ? 3 : 2
 
-        modifier.dropExperience(exp).removeLoot(oreId).removeLoot(dropOreId)
-        for (let i = 0; i < extraDrops; i++) {
-            modifier.addLoot(dropOreId)
+        if (oreVariants.normal) {
+            const settings = global.variantSettings.normal
+            const exp = settings.isDeepslate ? 5 : 3
+            const builder = event.addBlockLootModifier(oreVariants.normal)
+
+            builder.dropExperience(exp)
+            builder.removeLoot(oreVariants.normal)
+            builder.removeLoot(dropOreId)
+
+            for (let i = 0; i < dropCounts; i++) {
+                builder.addLoot(dropOreId)
+            }
+
+            builder.randomChanceWithLooting(settings.dropChance, 1).addLoot(dropOreId)
+            builder.randomChanceWithLooting(0.35, 1).addLoot(settings.dust)
+            builder.randomChanceWithLooting(0.25, 1).addLoot(settings.dust)
         }
-        modifier.randomChanceWithLooting(mainChance, 1).addLoot(dropOreId)
-        modifier.randomChanceWithLooting(0.3, 1).addLoot(dust)
+
+        if (oreVariants.deepslate) {
+            const settings = global.variantSettings.deepslate
+            const exp = settings.isDeepslate ? 5 : 3
+            const builder = event.addBlockLootModifier(oreVariants.deepslate)
+
+            builder.dropExperience(exp)
+            builder.removeLoot(oreVariants.deepslate)
+            builder.removeLoot(dropOreId)
+
+            for (let i = 0; i < dropCounts; i++) {
+                builder.addLoot(dropOreId)
+            }
+
+            builder.randomChanceWithLooting(settings.dropChance, 1).addLoot(dropOreId)
+            builder.randomChanceWithLooting(0.35, 1).addLoot(settings.dust)
+            builder.randomChanceWithLooting(0.25, 1).addLoot(settings.dust)
+        }
     })
+
+// Additional Fix
+
+    event.addBlockLootModifier('minecraft:redstone_ore').removeLoot('minecraft:redstone')
+    event.addBlockLootModifier('minecraft:deepslate_redstone_ore').removeLoot('minecraft:redstone')
+    
 })

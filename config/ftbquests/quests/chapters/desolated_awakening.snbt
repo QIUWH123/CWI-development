@@ -123,7 +123,7 @@
 		}
 		{
 			dependencies: ["48FAA6DBC81EED3F"]
-			description: ["&eA ring of metal and silence. You remember standing here, but the memory slides away like water. It was important. It was terrible. What did it do?&r"]
+			description: ["&eA ring of metal and silence. You remember standing here, but the memory slides away like water. What did it do?&r"]
 			icon: "create_connected:music_disc_interlude"
 			id: "1206CB23534B30CD"
 			size: 1.5d
