@@ -87,6 +87,18 @@ ServerEvents.recipes(function(event) {
 
     addFermentingRecipes(event,
         [
+            AddFluid('500 kubejs:alkaline_brine')
+        ],
+        [
+            AddItem('2 ratatouille:salt'),
+            AddItem('1 kubejs:soda_powder'),
+            AddItem('biomancy:stone_powder')
+        ],
+        300, "heated", ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
             AddFluid('500 minecraft:water')
         ],
         [
@@ -1088,6 +1100,20 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddItem('4 ratatouille:salt'),
+            AddFluid('500 minecraft:water'),
+            AddItem('kubejs:vulcan_thermus')
+        ],
+        200, "heated", ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddFluid('500 kubejs:alkaline_brine'),
+            AddItem('kubejs:vulcan_thermus')
+        ],
+        [
+            AddItem('3 ratatouille:salt'),
+            AddItem('1 kubejs:soda_powder'),
             AddFluid('500 minecraft:water'),
             AddItem('kubejs:vulcan_thermus')
         ],
