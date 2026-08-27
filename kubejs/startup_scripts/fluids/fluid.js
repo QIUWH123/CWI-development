@@ -73,7 +73,7 @@ global.moltenMetals = [
     ['molten_industrial_iron', 0xFF8A8A],
     ['molten_pig_iron', 0xFFABAB],
     ['molten_cast_iron', 0xFF9191],
-    ['molten_copper', 0xFF6C40],
+    ['molten_copper', 0xFF8864],
     ['molten_brass', 0xFFC800],
     ['molten_lead', 0x95A1FF],
     ['molten_cobalt', 0xA7C9E8],

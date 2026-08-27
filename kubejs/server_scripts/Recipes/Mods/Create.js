@@ -167,11 +167,11 @@ ServerEvents.recipes(event => {
     event.recipes.create.mechanical_crafting(
         'kubejs:steel_pipe', 
         [
-            'CBC',
-            'ABA',
-            'ABA',
-            'ABA',
-            'CBC'
+            '   CB',
+            '  ABC',
+            ' ABA ',
+            'CBA  ',
+            'BC   '
         ], 
         {
             A: 'tfmg:rebar',

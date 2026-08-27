@@ -451,10 +451,9 @@ LootJS.modifiers((event) => {
 
         if (oreVariants.normal) {
             const settings = global.variantSettings.normal
-            const exp = settings.isDeepslate ? 5 : 3
             const builder = event.addBlockLootModifier(oreVariants.normal)
 
-            builder.dropExperience(exp)
+            builder.dropExperience(0)
             builder.removeLoot(oreVariants.normal)
             builder.removeLoot(dropOreId)
 
@@ -469,10 +468,9 @@ LootJS.modifiers((event) => {
 
         if (oreVariants.deepslate) {
             const settings = global.variantSettings.deepslate
-            const exp = settings.isDeepslate ? 5 : 3
             const builder = event.addBlockLootModifier(oreVariants.deepslate)
 
-            builder.dropExperience(exp)
+            builder.dropExperience(0)
             builder.removeLoot(oreVariants.deepslate)
             builder.removeLoot(dropOreId)
 

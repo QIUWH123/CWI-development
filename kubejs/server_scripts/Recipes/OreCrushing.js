@@ -1,6 +1,19 @@
 // OreProcessingRecipes
 
 ServerEvents.recipes(event => {
+    for (let key in global.variantSettings) {
+        if (global.variantSettings.hasOwnProperty(key)) {
+            const setting = global.variantSettings[key];
+            if (key === 'normal') {
+                Utils.server.tell('normal')
+            } else if (key === 'deepslate') {
+                Utils.server.tell('deepslate')
+            }
+        }
+    }
+})
+
+ServerEvents.recipes(event => {
 // OreTypeCrushing
 
     function processCrushing(oreId, settings, dropOreId, crushedOreId, isMore) {
@@ -9,37 +22,23 @@ ServerEvents.recipes(event => {
         const dropChance = settings.dropChance
         const dustId = settings.dust
         const processingTime = settings.processingTime
-        const isDeepslate = settings.isDeepslate
 
-        if (crushedOreId !== '' && isDeepslate) {
-            event.recipes.create.crushing([crushedOreId, Item.of(crushedOreId).withChance(0.75)], dropOreId)
-        }
-
-        if (crushedOreId === '') {
-            event.recipes.create.crushing([
-                `${dropCount}x ${dropId}`,
-                Item.of(dropId).withChance(dropChance),
-                Item.of(dustId).withChance(0.35),
-                Item.of(dustId).withChance(0.25)
-            ], oreId).processingTime(processingTime)
-        } else {
-            event.recipes.create.crushing([
-                `${dropCount + 1}x ${dropId}`,
-                `${dropCount - 1}x ${dropId}`,
-                Item.of(dropId).withChance(dropChance + 0.1),
-                Item.of(dropId).withChance(dropChance - 0.1),
-                Item.of(dustId).withChance(0.35),
-                Item.of(dustId).withChance(0.25)
-            ], oreId).processingTime(processingTime)
-        }
+        event.recipes.create.crushing([
+            `${dropCount}x ${dropId}`,
+            Item.of(dropId).withChance(dropChance),
+            Item.of(dustId).withChance(0.35),
+            Item.of(dustId).withChance(0.25)
+        ], oreId).processingTime(processingTime)
     }
 
     global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
-        if (oreVariants.normal) {
-            processCrushing(oreVariants.normal, global.variantSettings.normal, dropOreId, crushedOreId, isMore)
+        for (let key in global.variantSettings) {
+            if (oreVariants[key]) {
+                processCrushing(oreVariants[key], global.variantSettings[key], dropOreId, crushedOreId, isMore)
+            }
         }
-        if (oreVariants.deepslate) {
-            processCrushing(oreVariants.deepslate, global.variantSettings.deepslate, dropOreId, crushedOreId, isMore)
+        if (crushedOreId !== '') {
+            event.recipes.create.crushing(crushedOreId, dropOreId)
         }
     })
 

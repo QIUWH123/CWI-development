@@ -169,6 +169,8 @@
 			disable_toast: true
 			icon: "kubejs:crushed_chalcocite"
 			id: "68EDC7F8F372E4EC"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "4B19E8A0D5B80613"
 				title: "Crushed Ore"
@@ -182,6 +184,8 @@
 			disable_toast: true
 			icon: "kubejs:stubborn_chalcocite_tailings"
 			id: "2EF97B44F3C871A6"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "319F506306A72F0F"
 				title: "Stubborn Ore Tailings"
@@ -195,6 +199,8 @@
 			disable_toast: true
 			icon: "kubejs:leach_chalcocite_residue"
 			id: "1626665799ED7DC7"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "570643370064D342"
 				title: "Leach Ore Residue"
@@ -211,6 +217,8 @@
 			disable_toast: true
 			icon: "kubejs:chalcocite_powder"
 			id: "325A4EA2A4390C9C"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "69E956B17190EF25"
 				title: "Ore Powder"
@@ -220,9 +228,13 @@
 			y: 7.0d
 		}
 		{
+			dependencies: ["7EAD0C34B17014A4"]
 			disable_toast: true
+			hide_dependency_lines: true
 			icon: "kubejs:chalcocite"
 			id: "3C615E4515459663"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "11425278484C38CF"
 				title: "Ore Block"
@@ -239,6 +251,8 @@
 			disable_toast: true
 			icon: "kubejs:chalcocite_tailings"
 			id: "2A5727AD26A217EB"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "26DD5A803BC27A54"
 				title: "Ore Tailings"
@@ -251,6 +265,8 @@
 			dependencies: ["3C615E4515459663"]
 			disable_toast: true
 			id: "70631EBCEC3BA87D"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "68AB5FBF12DBCEC5"
 				item: "create:crushing_wheel"
@@ -263,6 +279,8 @@
 			dependencies: ["3C615E4515459663"]
 			disable_toast: true
 			id: "6E509F0E28483D5B"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "49B77DA4563384F8"
 				item: "create:millstone"
@@ -275,6 +293,8 @@
 			dependencies: ["325A4EA2A4390C9C"]
 			disable_toast: true
 			id: "1D747D35EA0AB142"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "1B0ABBEEFA0ACF76"
 				item: "create:encased_fan"
@@ -287,6 +307,8 @@
 			dependencies: ["325A4EA2A4390C9C"]
 			disable_toast: true
 			id: "175DCD25317BDC00"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "7626F2DDCD6EE3C9"
 				item: "vintageimprovements:vibrating_table"
@@ -299,6 +321,8 @@
 			dependencies: ["325A4EA2A4390C9C"]
 			disable_toast: true
 			id: "3968023285949226"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "35D2F31B609BD829"
 				item: "vintageimprovements:centrifuge"
@@ -311,6 +335,8 @@
 			dependencies: ["68EDC7F8F372E4EC"]
 			disable_toast: true
 			id: "5FA2456D613EC7BF"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "1570CC321FD56C07"
 				item: "create:millstone"
@@ -349,6 +375,8 @@
 			dependencies: ["2A5727AD26A217EB"]
 			disable_toast: true
 			id: "31B2117B6DC8C595"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "42DACE0009B57BC0"
 				item: "tfmg:steel_chemical_vat"
@@ -362,6 +390,8 @@
 			disable_toast: true
 			icon: "kubejs:leach_chalcocite_solution_bucket"
 			id: "134A15D609997F50"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "4CD3A1F2E1306CD5"
 				title: "Leach Ore Solution"
@@ -374,6 +404,8 @@
 			dependencies: ["2EF97B44F3C871A6"]
 			disable_toast: true
 			id: "19B51F96FEE5A2E1"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "40E7B2D187CEFC8B"
 				item: "tfmg:steel_chemical_vat"
@@ -386,6 +418,8 @@
 			dependencies: ["1626665799ED7DC7"]
 			disable_toast: true
 			id: "1CCD1ABA317C5BC9"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "7E41E75096CB233C"
 				item: "create:encased_fan"
@@ -395,26 +429,29 @@
 			y: 16.0d
 		}
 		{
-			dependencies: ["134A15D609997F50"]
+			dependencies: ["2ADE88E9213632E5"]
 			disable_toast: true
 			icon: "kubejs:purified_chalcocite_solution_bucket"
 			id: "2F86EA68D986A8F0"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "39D07F3F14D513F7"
 				title: "Purified Ore Solution"
 				type: "checkmark"
 			}]
-			x: -1.5d
-			y: 17.0d
+			x: -3.0d
+			y: 18.0d
 		}
 		{
 			dependencies: ["1CCD1ABA317C5BC9"]
 			disable_toast: true
+			icon: "kubejs:copper_powder"
 			id: "00378F90D469BA6D"
 			tasks: [{
-				id: "5A2AC70A158E6544"
-				item: "kubejs:copper_powder"
-				type: "item"
+				id: "634F99254C0EE804"
+				title: "Material Powder"
+				type: "checkmark"
 			}]
 			x: 3.0d
 			y: 18.0d
@@ -423,6 +460,8 @@
 			dependencies: ["2EF97B44F3C871A6"]
 			disable_toast: true
 			id: "62C41AC444B3C7A4"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "07CDE6E7C1AABA41"
 				item: "create:millstone"
@@ -436,6 +475,8 @@
 			disable_toast: true
 			icon: "kubejs:chalcocite_powder"
 			id: "4A1E650E8310F38D"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "79C6FF07182A2E16"
 				title: "Ore Powder"
@@ -493,12 +534,14 @@
 				title: "Material Crystal"
 				type: "checkmark"
 			}]
-			x: -1.5d
-			y: 19.0d
+			x: -3.0d
+			y: 20.0d
 		}
 		{
 			dependencies: ["325A4EA2A4390C9C"]
 			id: "4272A4EB7852D7B4"
+			shape: "hexagon"
+			size: 1.25d
 			tasks: [{
 				id: "3366362B5A123617"
 				item: "tfmg:steel_chemical_vat"
@@ -506,6 +549,20 @@
 			}]
 			x: 3.0d
 			y: 6.0d
+		}
+		{
+			dependencies: ["134A15D609997F50"]
+			disable_toast: true
+			id: "2ADE88E9213632E5"
+			shape: "hexagon"
+			size: 1.25d
+			tasks: [{
+				id: "4864BA01B9AD146D"
+				item: "tfmg:steel_chemical_vat"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 17.0d
 		}
 	]
 	title: "Processing Note"

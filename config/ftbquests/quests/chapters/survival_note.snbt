@@ -514,6 +514,7 @@
 				""
 				"&eIt can be obtained from scrap blocks scattered across the wasteland.&r"
 			]
+			disable_toast: true
 			hide_dependency_lines: true
 			icon: "minecraft:campfire"
 			id: "4A50B3F60E44489D"
@@ -531,6 +532,7 @@
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
+			disable_toast: true
 			id: "1B9E9B4590DF4D98"
 			tasks: [{
 				id: "0030B2D2F29BAF9B"
@@ -550,6 +552,7 @@
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
+			disable_toast: true
 			id: "278267C48509B7F4"
 			tasks: [{
 				id: "5EF98BE344B53895"
@@ -569,6 +572,7 @@
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
+			disable_toast: true
 			id: "10BC5553D9D78A57"
 			tasks: [{
 				id: "603B69AD8322B2C6"
@@ -588,6 +592,7 @@
 		}
 		{
 			dependencies: ["4A50B3F60E44489D"]
+			disable_toast: true
 			id: "19FB0E0AA89A3169"
 			tasks: [{
 				id: "54148E84516FBAB3"
@@ -608,6 +613,7 @@
 		{
 			dependencies: ["5733B6FE443F3A31"]
 			description: ["&eArmors and Tools can be enhanced using the crafting table.&r"]
+			disable_toast: true
 			hide_dependency_lines: true
 			id: "42A753C2A80F604A"
 			size: 1.0d
@@ -631,6 +637,7 @@
 		{
 			dependencies: ["42A753C2A80F604A"]
 			description: ["&eSimple but essential item used to improve the quality of your tools&r"]
+			disable_toast: true
 			id: "1797BC481AAF948E"
 			subtitle: "Sharpen Your Tools"
 			tasks: [{
@@ -649,6 +656,7 @@
 		}
 		{
 			dependencies: ["42A753C2A80F604A"]
+			disable_toast: true
 			id: "401F5CBD66ABACA6"
 			subtitle: "Better Whetstone"
 			tasks: [{
@@ -667,6 +675,7 @@
 		}
 		{
 			dependencies: ["42A753C2A80F604A"]
+			disable_toast: true
 			id: "58AEE1F63EB7C8A8"
 			subtitle: "Another Useful Item"
 			tasks: [{

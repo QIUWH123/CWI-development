@@ -40,21 +40,13 @@ global.stoneTypes.forEach(function(stone) {
 
 global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
     const dropCounts = isMore ? 3 : 2
-
-    if (oreVariants.normal) {
-        const settings = global.variantSettings.normal
-        addBlockConversion(oreVariants.normal, settings.cobble, 1, [
-            { item: dropOreId, chance: 1, count: dropCounts },
-            { item: dropOreId, chance: settings.dropChance, count: 1 }
-        ])
-    }
-
-    if (oreVariants.deepslate) {
-        const settings = global.variantSettings.deepslate
-        addBlockConversion(oreVariants.deepslate, settings.cobble, 1, [
-            { item: dropOreId, chance: 1, count: dropCounts },
-            { item: dropOreId, chance: settings.dropChance, count: 1 }
-        ])
+    for (let key in global.variantSettings) {
+        if (oreVariants[key]) {
+            addBlockConversion(oreVariants[key], global.variantSettings[key].cobble, 1, [
+                { item: dropOreId, chance: 1, count: dropCounts },
+                { item: dropOreId, chance: global.variantSettings[key].dropChance, count: 1 }
+            ])
+        }
     }
 })
 

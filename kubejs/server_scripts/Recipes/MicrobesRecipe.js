@@ -871,7 +871,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:amethyst_powder'),
+            AddItem('kubejs:amethyst_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -884,7 +884,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:quartz_powder'),
+            AddItem('kubejs:quartz_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -897,7 +897,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:lapis_powder'),
+            AddItem('kubejs:lapis_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -910,7 +910,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:sulfur_powder'),
+            AddItem('kubejs:sulfur_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -923,7 +923,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 minecraft:redstone'),
+            AddItem('minecraft:redstone'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -936,7 +936,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:fluorite_powder'),
+            AddItem('kubejs:fluorite_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -949,7 +949,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:flint_powder'),
+            AddItem('kubejs:flint_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
@@ -962,7 +962,7 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddFluid('100 #cwi:water'),
-            AddItem('2 kubejs:halite_powder'),
+            AddItem('kubejs:halite_powder'),
             AddItem('kubejs:crystallum_coccus')
         ],
         [
