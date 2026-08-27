@@ -158,22 +158,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'cwi:mixing_vessel',
-        [
-            'CEC',
-            'BAB',
-            'CDC'
-        ],
-        {
-            A: 'create:whisk',
-            B: '#cwi:rubbers',
-            C: 'create:copper_sheet',
-            D: 'kubejs:precise_machine',
-            E: 'create:copper_casing'
-        }
-    )
-
-    event.shaped(
         'create:elevator_pulley',
         [
             'A',
@@ -430,6 +414,22 @@ ServerEvents.recipes(event => {
             E: 'kubejs:precise_machine',
             F: 'create_connected:control_chip',
             G: 'kubejs:industrial_iron_spring'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'cwi:mixing_vessel',
+        [
+            'CEC',
+            'BAB',
+            'CDC'
+        ],
+        {
+            A: 'create:whisk',
+            B: '#cwi:rubbers',
+            C: 'create:copper_sheet',
+            D: 'kubejs:precise_machine',
+            E: 'create:copper_casing'
         }
     )
 

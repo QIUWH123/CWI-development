@@ -100,23 +100,18 @@ const lockPickConfigs = {
 
 // Core Lockpicking Event
 
-BlockEvents.rightClicked(e => {
-    const { player, block, level } = e
-
-    // Only Handle Blocks With Loot Table And Not Yet Opened
+function lockpickingFunction(player, block, level, event) {
     if (!block.entityData?.LootTable) return
 
     const mainHand = player.getMainHandItem()
     const chestData = block.getEntity().persistentData
 
-    // Initialize Lock State
     if (!chestData.contains("Lock")) {
         chestData.putInt("Lock", LOCKED)
     }
 
     const lockValue = chestData.getInt("Lock")
 
-    // Unlocked Allow Normal Opening
     if (lockValue === UNLOCKED) {
         level.spawnParticles('minecraft:falling_dust minecraft:gravel', true, block.x + 0.5, block.y + 0.8, block.z + 0.5, 0.25, 0.1, 0.25, 12, 0)
         level.spawnParticles('minecraft:campfire_cosy_smoke', true, block.x + 0.5, block.y + 0.8, block.z + 0.5, 0.25, 0.1, 0.25, 3, 0)
@@ -129,20 +124,17 @@ BlockEvents.rightClicked(e => {
         return
     }
 
-    // Invalid Tool Prompt And Block
     const config = lockPickConfigs[mainHand.id]
     if (!config) {
         player.setStatusMessage(Component.translate("message.cwi.no_lockpick"))
         level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.chain.break", "neutral", 1.0, 0.8)
-        e.cancel()
+        event.cancel()
         return
     }
 
-    // Probability Check
     const success = Math.random() < config.successChance
 
     if (success) {
-        // Unlock Success
         chestData.putInt("Lock", UNLOCKED)
         player.setStatusMessage(Component.translate("message.cwi.lockpick_success"))
         level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.note_block.bell", "neutral", 2.0, 1.2)
@@ -150,8 +142,32 @@ BlockEvents.rightClicked(e => {
         player.setStatusMessage(Component.translate("message.cwi.lockpick_failure"))
     }
 
-    // Common Operations: Durability Cost, Trapdoor Sound, Item Cooldown, Cancel Event
     player.damageHeldItem("main_hand", config.durabilityCost)
     level.playSound(null, block.x + 0.5, block.y + 0.5, block.z + 0.5, "minecraft:block.iron_trapdoor.close", "neutral", 2.0, 1.2)
-    e.cancel()
+    event.cancel()
+}
+
+BlockEvents.rightClicked('minecraft:chest', event => {
+    const { player, block, level } = event
+    lockpickingFunction(player, block, level, event)
+})
+
+BlockEvents.rightClicked('minecraft:barrel', event => {
+    const { player, block, level } = event
+    lockpickingFunction(player, block, level, event)
+})
+
+BlockEvents.rightClicked('farmersdelight:bamboo_basket', event => {
+    const { player, block, level } = event
+    lockpickingFunction(player, block, level, event)
+})
+
+BlockEvents.rightClicked('farmersdelight:wooden_basket', event => {
+    const { player, block, level } = event
+    lockpickingFunction(player, block, level, event)
+})
+
+BlockEvents.rightClicked('miners_delight:sticky_basket', event => {
+    const { player, block, level } = event
+    lockpickingFunction(player, block, level, event)
 })

@@ -1,5 +1,5 @@
 const Direction = Java.loadClass('net.minecraft.core.Direction')
-const DIRECTIONS = Direction.values();
+const DIRECTIONS = Direction.values()
 
 function growthHandler(chance, map) {
     return (tick) => {

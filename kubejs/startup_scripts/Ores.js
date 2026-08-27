@@ -79,7 +79,6 @@ StartupEvents.registry('item', event => {
     event.create('precipitant')
     event.create('washing_residue')
     event.create('silicate_residue')
-    event.create('anode_slime')
     global.compoundOreTypes.forEach(ore => {
         if (ore.process === 'true') {
             event.create(`crushed_${ore.id}`).texture(`kubejs:item/ores/crushed_${ore.id}`)

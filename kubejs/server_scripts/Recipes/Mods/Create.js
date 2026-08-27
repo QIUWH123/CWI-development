@@ -109,13 +109,14 @@ ServerEvents.recipes(event => {
         'fluid:communicating_vessel',
         [
             'BCB',
-            'AAA',
+            'ADA',
             'BCB'
         ],
         {
             A: '#cwi:rubbers',
             B: 'createaddition:iron_rod',
-            C: 'create:copper_sheet'
+            C: 'create:copper_sheet',
+            D: 'create:fluid_pipe'
         }
     )
 

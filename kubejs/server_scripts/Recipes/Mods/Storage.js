@@ -50,6 +50,23 @@ ServerEvents.recipes(event => {
         }
     )
 
+    event.shaped(
+        'sophisticatedbackpacks:iron_backpack',
+        [
+            'AFA',
+            'BCB',
+            'DED'
+        ],
+        {
+            A: '#cwi:string',
+            B: 'kubejs:backpack_extension',
+            C: 'sophisticatedbackpacks:copper_backpack',
+            D: 'tfmg:heavy_plate',
+            E: 'tfmg:steel_ingot',
+            F: '#cwi:leathers'
+        }
+    )
+
 // Upgrades Recipes
 
     event.shaped(
@@ -76,8 +93,8 @@ ServerEvents.recipes(event => {
         {
             A: 'sophisticatedbackpacks:upgrade_base',
             B: 'create:filter',
-            C: 'minecraft:iron_nugget',
-            D: 'create:iron_sheet'
+            C: 'kubejs:andesite_alloy_nugget',
+            D: 'create:andesite_alloy'
         }
     )
 
@@ -93,6 +110,38 @@ ServerEvents.recipes(event => {
             B: 'create:attribute_filter',
             C: 'create:brass_nugget',
             D: 'create:brass_sheet'
+        }
+    )
+
+    event.shaped(
+        'sophisticatedbackpacks:refill_upgrade',
+        [
+            'CDC',
+            'EAE',
+            'CBC'
+        ],
+        {
+            A: 'sophisticatedbackpacks:upgrade_base',
+            B: 'create:filter',
+            C: 'kubejs:andesite_alloy_sheet',
+            D: 'create:andesite_alloy',
+            E: 'create:mechanical_arm'
+        }
+    )
+
+    event.shaped(
+        'sophisticatedbackpacks:advanced_refill_upgrade',
+        [
+            'CDC',
+            'EAE',
+            'CBC'
+        ],
+        {
+            A: 'sophisticatedbackpacks:filter_upgrade',
+            B: 'create:attribute_filter',
+            C: 'create:brass_sheet',
+            D: 'create:brass_ingot',
+            E: 'create:mechanical_arm'
         }
     )
 
@@ -165,8 +214,8 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'sophisticatedbackpacks:upgrade_base',
-            B: 'minecraft:iron_ingot',
-            C: 'create:iron_sheet',
+            B: 'create:andesite_alloy',
+            C: 'kubejs:andesite_alloy_sheet',
             D: 'minecraft:jukebox',
             E: 'sophisticatedbackpacks:filter_upgrade'
         }
@@ -197,8 +246,8 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'sophisticatedbackpacks:upgrade_base',
-            B: 'minecraft:iron_ingot',
-            C: 'create:iron_sheet',
+            B: 'create:andesite_alloy',
+            C: 'kubejs:andesite_alloy_sheet',
             D: 'create:chute',
             E: 'sophisticatedbackpacks:filter_upgrade'
         }
@@ -229,8 +278,8 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'sophisticatedbackpacks:upgrade_base',
-            B: 'minecraft:iron_ingot',
-            C: 'create:iron_sheet',
+            B: 'create:andesite_alloy',
+            C: 'kubejs:andesite_alloy_sheet',
             D: 'create:chute',
             E: 'sophisticatedbackpacks:filter_upgrade'
         }
@@ -248,6 +297,22 @@ ServerEvents.recipes(event => {
             B: 'create:electron_tube',
             C: 'create:brass_sheet',
             D: 'create:smart_chute',
+            E: 'sophisticatedbackpacks:advanced_filter_upgrade'
+        }
+    )
+
+    event.shaped(
+        'sophisticatedbackpacks:feeding_upgrade',
+        [
+            'CBC',
+            'DAD',
+            'CEC'
+        ],
+        {
+            A: 'sophisticatedbackpacks:upgrade_base',
+            B: 'kubejs:integrated_electron_tube',
+            C: 'kubejs:andesite_alloy_sheet',
+            D: 'create:deployer',
             E: 'sophisticatedbackpacks:advanced_filter_upgrade'
         }
     )
@@ -278,7 +343,7 @@ ServerEvents.recipes(event => {
         {
             A: 'sophisticatedbackpacks:upgrade_base',
             B: 'kubejs:integrated_electron_tube',
-            C: 'create:brass_sheet',
+            C: 'create:precision_mechanism',
             D: 'create:mechanical_arm',
             E: 'sophisticatedbackpacks:advanced_filter_upgrade'
         }
@@ -294,7 +359,7 @@ ServerEvents.recipes(event => {
         {
             A: 'sophisticatedbackpacks:upgrade_base',
             B: 'kubejs:integrated_electron_tube',
-            C: 'create:brass_sheet',
+            C: 'create:precision_mechanism',
             D: 'fluid:pipette',
             E: 'sophisticatedbackpacks:advanced_filter_upgrade'
         }

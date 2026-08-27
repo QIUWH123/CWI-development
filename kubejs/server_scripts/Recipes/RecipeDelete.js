@@ -18,6 +18,7 @@ ServerEvents.recipes(event => {
 // Whole Mod Remove
 
     const modsToRemove = [
+        'createaddon',
         'create_sa',
         'constructionwand',
         'ad_astra',
@@ -272,6 +273,8 @@ ServerEvents.recipes(event => {
         'createaddition:crafting/electrum_spool',
         'createaddition:crafting/festive_spool',
         'createaddition:crafting/gold_spool',
+        'createaddition:crafting/redstone_relay',
+        'createaddition:crafting/small_light_connector',
         'createaddition:crafting/large_connector_electrum',
         'createaddition:crafting/large_connector_gold',
         'createaddition:crafting/rolling_mill',

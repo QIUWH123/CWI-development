@@ -12,6 +12,6 @@ JEIEvents.information(event => {
     RemoveConversion('create_power_loader:brass_chunk_loader')
     RemoveConversion('create_power_loader:andesite_chunk_loader')
     RemoveConversion('create:blaze_burner')
-    RemoveConversion('create:peculiar_bell')
+    RemoveConversion('create:haunted_bell')
 
 })
