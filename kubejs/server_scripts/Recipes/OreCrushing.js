@@ -1,19 +1,6 @@
 // OreProcessingRecipes
 
 ServerEvents.recipes(event => {
-    for (let key in global.variantSettings) {
-        if (global.variantSettings.hasOwnProperty(key)) {
-            const setting = global.variantSettings[key];
-            if (key === 'normal') {
-                Utils.server.tell('normal')
-            } else if (key === 'deepslate') {
-                Utils.server.tell('deepslate')
-            }
-        }
-    }
-})
-
-ServerEvents.recipes(event => {
 // OreTypeCrushing
 
     function processCrushing(oreId, settings, dropOreId, crushedOreId, isMore) {

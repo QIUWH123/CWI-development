@@ -123,15 +123,11 @@ StartupEvents.registry('item', event => {
 })
 
 StartupEvents.registry('fluid', event => {
-    event.create('mother_liquor')
-        .thickTexture(0xb0bec5)
-        .bucketColor(0xb0bec5)
-        .noBlock()
     global.compoundOreTypes.forEach(ore => {
         if (ore.process === 'false') return
-        event.create(`leach_${ore.id}_solution`)
-        .thickTexture(0x00000)
-        event.create(`purified_${ore.id}_solution`)
-        .thickTexture(0x00000)
+
+        registerHeavyFLuid(event, `leach_${ore.id}_solution`, ore.color)
+        registerHeavyFLuid(event, `purified_${ore.id}_solution`, ore.color)
+
     })
 })

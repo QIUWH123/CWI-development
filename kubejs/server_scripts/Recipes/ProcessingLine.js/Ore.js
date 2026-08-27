@@ -178,8 +178,7 @@ ServerEvents.recipes(event => {
 
         // ================= 12. 结晶 (主/副合并) =================
         let crystalOut = [
-            AddItem(mainCrystal, 0.95),
-            AddFluid('10 kubejs:mother_liquor')
+            AddItem(mainCrystal, 0.95)
         ]
         by.forEach(([metal, chance]) => {
             crystalOut.push(AddItem(`kubejs:${metal}_crystal`, chance * 0.9))

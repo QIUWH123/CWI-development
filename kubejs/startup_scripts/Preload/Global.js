@@ -21,24 +21,24 @@ global.stoneTypes = [
 global.compoundOreTypes = [
     //{ id: 'uraninite',   realId: 'uraninite',   mod: 'kubejs', colored: false, hardness: 4,   resistance: 6,  sound: 'amethyst',       requiredTool: 'iron',    process: 'false', itemTexture: 'kubejs:item/ores/uraninite',   blockTexture: 'kubejs:block/ores/uraninite_side' },
     //{ id: 'gravitite',   realId: 'gravitite',   mod: 'kubejs', colored: false, hardness: 6,   resistance: 12, sound: 'amethyst',       requiredTool: 'diamond', process: 'false', itemTexture: 'kubejs:item/ores/gravitite',   blockTexture: 'kubejs:block/ores/gravitite_side' },
-    { id: 'cassiterite', realId: 'cassiterite', mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/cassiterite' },
-    { id: 'cooperite',   realId: 'cooperite',   mod: 'kubejs', colored: true,  hardness: 6,   resistance: 12, sound: 'ancient_debris', requiredTool: 'iron',    process: 'true',  texture: 'kubejs:block/ores/cooperite' },
-    { id: 'chalcocite',  realId: 'chalcocite',  mod: 'kubejs', colored: true,  hardness: 4.5, resistance: 8,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/chalcocite' },
-    { id: 'magnesite',   realId: 'magnesite',   mod: 'kubejs', colored: true,  hardness: 2.5, resistance: 5,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/magnesite' },
-    { id: 'magnetite',   realId: 'magnetite',   mod: 'kubejs', colored: true,  hardness: 6,   resistance: 8,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/magnetite' },
-    { id: 'halite',      realId: 'halite',      mod: 'kubejs', colored: false, hardness: 3,   resistance: 5,  sound: 'calcite',        requiredTool: 'wooden',  process: 'false', texture: 'kubejs:block/ores/halite', itemTexture: 'tfc:item/ore/halite' },
-    { id: 'chromite',    realId: 'chromite',    mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/chromite' },
-    { id: 'pentlandite', realId: 'pentlandite', mod: 'kubejs', colored: true,  hardness: 3,   resistance: 6,  sound: 'calcite',        requiredTool: 'wooden',  process: 'true',  texture: 'kubejs:block/ores/pentlandite' },
-    { id: 'sphalerite',  realId: 'sphalerite',  mod: 'kubejs', colored: true,  hardness: 3,   resistance: 6,  sound: 'stone',          requiredTool: 'wooden',  process: 'true',  texture: 'kubejs:block/ores/sphalerite' },
-    { id: 'rutile',      realId: 'rutile',      mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'iron',    process: 'true',  texture: 'kubejs:block/ores/rutile_side' },
-    { id: 'hematite',    realId: 'crimsite',    mod: 'create', colored: true,  hardness: 6,   resistance: 8,  sound: 'stone',          requiredTool: 'iron',    process: 'true',  texture: 'create:block/palettes/stone_types/natural/crimsite_0' },
-    { id: 'azurite',     realId: 'asurine',     mod: 'create', colored: true,  hardness: 3,   resistance: 4,  sound: 'amethyst',       requiredTool: 'stone',   process: 'true',  texture: 'create:block/palettes/stone_types/natural/asurine_0' },
-    { id: 'malachite',   realId: 'veridium',    mod: 'create', colored: true,  hardness: 3,   resistance: 4,  sound: 'amethyst',       requiredTool: 'stone',   process: 'true',  texture: 'create:block/palettes/stone_types/natural/veridium_0' },
-    { id: 'petzite',     realId: 'ochrum',      mod: 'create', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          requiredTool: 'iron',    process: 'true',  texture: 'create:block/palettes/stone_types/natural/ochrum_0' },
-    { id: 'lignite',     realId: 'lignite',     mod: 'tfmg',   colored: true,  hardness: 1,   resistance: 1.5,sound: 'mud',            requiredTool: 'wooden',  process: 'false', texture: 'tfmg:block/lignite', itemTexture: 'tfc:item/ore/lignite' },
-    { id: 'sulfur',      realId: 'sulfur',      mod: 'tfmg',   colored: true,  hardness: 1.5, resistance: 2,  sound: 'ancient_debris', requiredTool: 'wooden',  process: 'false', texture: 'tfmg:block/sulfur', itemTexture: 'kubejs:item/ores/sulfur' },
-    { id: 'bauxite',     realId: 'bauxite',     mod: 'tfmg',   colored: true,  hardness: 3,   resistance: 4,  sound: 'deepslate',      requiredTool: 'stone',   process: 'true',  texture: 'tfmg:block/palettes/stone_types/natural/bauxite_0' },
-    { id: 'galena',      realId: 'galena',      mod: 'tfmg',   colored: true,  hardness: 3,   resistance: 5,  sound: 'stone',          requiredTool: 'stone',   process: 'true',  texture: 'tfmg:block/palettes/stone_types/natural/galena_0' }
+    { id: 'cassiterite', realId: 'cassiterite', mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          color: '#5c5c54', requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/cassiterite' },
+    { id: 'cooperite',   realId: 'cooperite',   mod: 'kubejs', colored: true,  hardness: 6,   resistance: 12, sound: 'ancient_debris', color: '#b5b4a5', requiredTool: 'iron',    process: 'true',  texture: 'kubejs:block/ores/cooperite' },
+    { id: 'chalcocite',  realId: 'chalcocite',  mod: 'kubejs', colored: true,  hardness: 4.5, resistance: 8,  sound: 'stone',          color: '#444d5d', requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/chalcocite' },
+    { id: 'magnesite',   realId: 'magnesite',   mod: 'kubejs', colored: true,  hardness: 2.5, resistance: 5,  sound: 'stone',          color: '#d79552', requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/magnesite' },
+    { id: 'magnetite',   realId: 'magnetite',   mod: 'kubejs', colored: true,  hardness: 6,   resistance: 8,  sound: 'stone',          color: '#5c5d66', requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/magnetite' },
+    { id: 'halite',      realId: 'halite',      mod: 'kubejs', colored: false, hardness: 3,   resistance: 5,  sound: 'calcite',        color: '#000000', requiredTool: 'wooden',  process: 'false', texture: 'kubejs:block/ores/halite', itemTexture: 'tfc:item/ore/halite' },
+    { id: 'chromite',    realId: 'chromite',    mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          color: '#a66c5b', requiredTool: 'stone',   process: 'true',  texture: 'kubejs:block/ores/chromite' },
+    { id: 'pentlandite', realId: 'pentlandite', mod: 'kubejs', colored: true,  hardness: 3,   resistance: 6,  sound: 'calcite',        color: '#867c72', requiredTool: 'wooden',  process: 'true',  texture: 'kubejs:block/ores/pentlandite' },
+    { id: 'sphalerite',  realId: 'sphalerite',  mod: 'kubejs', colored: true,  hardness: 3,   resistance: 6,  sound: 'stone',          color: '#95968d', requiredTool: 'wooden',  process: 'true',  texture: 'kubejs:block/ores/sphalerite' },
+    { id: 'rutile',      realId: 'rutile',      mod: 'kubejs', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          color: '#c3434c', requiredTool: 'iron',    process: 'true',  texture: 'kubejs:block/ores/rutile_side' },
+    { id: 'hematite',    realId: 'crimsite',    mod: 'create', colored: true,  hardness: 6,   resistance: 8,  sound: 'stone',          color: '#923c44', requiredTool: 'iron',    process: 'true',  texture: 'create:block/palettes/stone_types/natural/crimsite_0' },
+    { id: 'azurite',     realId: 'asurine',     mod: 'create', colored: true,  hardness: 3,   resistance: 4,  sound: 'amethyst',       color: '#6b98b4', requiredTool: 'stone',   process: 'true',  texture: 'create:block/palettes/stone_types/natural/asurine_0' },
+    { id: 'malachite',   realId: 'veridium',    mod: 'create', colored: true,  hardness: 3,   resistance: 4,  sound: 'amethyst',       color: '#407e6d', requiredTool: 'stone',   process: 'true',  texture: 'create:block/palettes/stone_types/natural/veridium_0' },
+    { id: 'petzite',     realId: 'ochrum',      mod: 'create', colored: true,  hardness: 4,   resistance: 6,  sound: 'stone',          color: '#b89b5f', requiredTool: 'iron',    process: 'true',  texture: 'create:block/palettes/stone_types/natural/ochrum_0' },
+    { id: 'lignite',     realId: 'lignite',     mod: 'tfmg',   colored: true,  hardness: 1,   resistance: 1.5,sound: 'mud',            color: '#000000', requiredTool: 'wooden',  process: 'false', texture: 'tfmg:block/lignite', itemTexture: 'tfc:item/ore/lignite' },
+    { id: 'sulfur',      realId: 'sulfur',      mod: 'tfmg',   colored: true,  hardness: 1.5, resistance: 2,  sound: 'ancient_debris', color: '#000000', requiredTool: 'wooden',  process: 'false', texture: 'tfmg:block/sulfur', itemTexture: 'kubejs:item/ores/sulfur' },
+    { id: 'bauxite',     realId: 'bauxite',     mod: 'tfmg',   colored: true,  hardness: 3,   resistance: 4,  sound: 'deepslate',      color: '#5f3938', requiredTool: 'stone',   process: 'true',  texture: 'tfmg:block/palettes/stone_types/natural/bauxite_0' },
+    { id: 'galena',      realId: 'galena',      mod: 'tfmg',   colored: true,  hardness: 3,   resistance: 5,  sound: 'stone',          color: '#413d74', requiredTool: 'stone',   process: 'true',  texture: 'tfmg:block/palettes/stone_types/natural/galena_0' }
 ]
 
 global.productionMaps = {
@@ -131,15 +131,13 @@ global.variantSettings = {
         cobble: 'minecraft:cobblestone',
         dropChance: 0.25,
         dust: 'kubejs:stone_powder',
-        processingTime: 200,
-        isDeepslate: false
+        processingTime: 200
     },
     deepslate: {
         cobble: 'minecraft:cobbled_deepslate',
         dropChance: 0.75,
         dust: 'kubejs:deepslate_powder',
-        processingTime: 300,
-        isDeepslate: true
+        processingTime: 300
     }
 }
 

@@ -15,6 +15,21 @@ function registerMoltenMetal(event, name, color) {
         .tag('cwi:moltens')
 }
 
+function registerHeavyFLuid(event, name, color) {
+    event.create(name)
+        .stillTexture('kubejs:fluid/heavy_still')
+        .flowingTexture('kubejs:fluid/heavy_flow')
+        .color(color)
+        .tag('cwi:heavy_fluids')
+        .bucketItem
+        .textureJson({
+            layer0: 'kubejs:item/fluid_container',
+            layer1: 'kubejs:item/fluids/fluids'
+        })
+        .tag('cwi:containers')
+        .tag('cwi:heavy_fluids')
+}
+
 function registerFluid(event, name, color, type, overrides) {
     if (!type) type = 'thin'
     if (!overrides) overrides = {}
