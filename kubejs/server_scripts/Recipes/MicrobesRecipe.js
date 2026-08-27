@@ -972,6 +972,18 @@ ServerEvents.recipes(function(event) {
         300, undefined, ['basin', 'bulk']
     )
 
+    addFermentingRecipes(event,
+        [
+            AddFluid('125 kubejs:raw_brine'),
+            AddItem('kubejs:crystallum_coccus')
+        ],
+        [
+            AddItem('kubejs:halite_item'),
+            AddItem('kubejs:crystallum_coccus')
+        ],
+        300, undefined, ['basin', 'bulk']
+    )
+
 // Putrelys Sporogenes
     addFermentingRecipes(event,
         [
