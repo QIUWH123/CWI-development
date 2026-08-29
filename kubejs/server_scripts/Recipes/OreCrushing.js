@@ -3,33 +3,54 @@
 ServerEvents.recipes(event => {
 // OreTypeCrushing
 
-    function processCrushing(oreId, settings, dropOreId, crushedOreId, isMore) {
+    function processCrushing(oreId, settings, dropOreId, output, isMore) {
         const dropCount = isMore ? 3 : 2
-        const dropId = (crushedOreId === '') ? dropOreId : crushedOreId
         const dropChance = settings.dropChance
         const dustId = settings.dust
         const processingTime = settings.processingTime
 
         event.recipes.create.crushing([
-            `${dropCount}x ${dropId}`,
-            Item.of(dropId).withChance(dropChance),
+            `${dropCount}x ${output}`,
+            Item.of(output).withChance(dropChance),
             Item.of(dustId).withChance(0.35),
             Item.of(dustId).withChance(0.25)
         ], oreId).processingTime(processingTime)
     }
 
-    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
+    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
+        const output = crushedOreId? crushedOreId : powderOreId? powderOreId : dropOreId
         for (let key in global.variantSettings) {
             if (oreVariants[key]) {
-                processCrushing(oreVariants[key], global.variantSettings[key], dropOreId, crushedOreId, isMore)
+                processCrushing(oreVariants[key], global.variantSettings[key], dropOreId, output, isMore)
             }
         }
-        if (crushedOreId !== '') {
-            event.recipes.create.crushing(crushedOreId, dropOreId)
+        if (powderOreId !== '') {
+            event.recipes.create.crushing(output, dropOreId)
+            event.recipes.create.milling(powderOreId, dropOreId)
+            if (crushedOreId !== '') {
+                event.recipes.create.crushing(powderOreId, crushedOreId)
+            }
         }
     })
 
 // PowderCrushingPairs
+
+    const orePowders = [
+        ['minecraft:iron_ingot', 'kubejs:raw_iron_powder'],
+        ['minecraft:gold_ingot', 'kubejs:raw_gold_powder'],
+        ['minecraft:copper_ingot', 'kubejs:raw_copper_powder'],
+        ['tfmg:lithium_ingot', 'kubejs:raw_lithium_powder'],
+        ['tfmg:lead_ingot', 'kubejs:raw_lead_powder'],
+        ['tfmg:nickel_ingot', 'kubejs:raw_nickel_powder'],
+        ['create:zinc_ingot', 'kubejs:raw_zinc_powder'],
+        ['kubejs:tin_ingot', 'kubejs:raw_tin_powder'],
+        ['kubejs:silver_ingot', 'kubejs:raw_silver_powder']
+    ]
+
+    orePowders.forEach(([outputItem, inputItem]) => {
+        event.smelting(outputItem, inputItem)
+        event.blasting(outputItem, inputItem)
+    })
 
     const ores = [
         ['kubejs:flint_powder', 'minecraft:flint'],

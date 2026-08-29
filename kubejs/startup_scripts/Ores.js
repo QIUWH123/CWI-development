@@ -130,3 +130,9 @@ StartupEvents.registry('fluid', event => {
 
     })
 })
+
+StartupEvents.registry('item', event => {
+    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
+        if(crushedOreId) event.create(powderOreId.split(':')[1]).texture(`kubejs:item/ores/${powderOreId.split(':')[1]}`)
+    })
+})

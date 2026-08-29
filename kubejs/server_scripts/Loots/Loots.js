@@ -446,7 +446,7 @@ LootJS.modifiers((event) => {
     
 // OreTypeLoot
 
-    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
+    global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
         const dropCounts = isMore ? 3 : 2
 
         if (oreVariants.normal) {

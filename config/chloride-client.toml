@@ -157,7 +157,7 @@ modpackMode = false
 
   # Value must be less than '256' and greater than '0'
   entityDistanceY = 32
-  monsters = false
+  monsters = true
 
   # Squared horizontal distance in blocks
   # Value must be less than '16384' and greater than '0'

@@ -3,14 +3,6 @@ ServerEvents.recipes(event => {
 // Shapeless
 
     event.shapeless(
-        'kubejs:filled_wood_sheet_mold',
-        [
-            'kubejs:andesite_compound',
-            'kubejs:wood_sheet_mold'
-        ]
-    ).id('cwi:crafting_table/filled_wood_sheet_mold_manual_only')
-
-    event.shapeless(
         'kubejs:mechanic_manual',
         [
             'kubejs:mechanic_manual_scrap_top',
@@ -18,6 +10,14 @@ ServerEvents.recipes(event => {
             'kubejs:mechanic_manual_scrap_bottom'
         ]
     ).id('cwi:crafting_table/fix_mechanic_manual_manual_only')
+
+    event.shapeless(
+        'kubejs:filled_wood_sheet_mold',
+        [
+            'kubejs:andesite_compound',
+            'kubejs:wood_sheet_mold'
+        ]
+    ).id('cwi:crafting_table/filled_wood_sheet_mold_manual_only')
 
     event.shapeless(
         'darkerdepths:rope',
@@ -134,6 +134,17 @@ ServerEvents.recipes(event => {
             B: 'create:iron_sheet',
             C: 'create:andesite_alloy',
             D: 'kubejs:andesite_alloy_sheet'
+        }
+    )
+
+    event.shaped(
+        'minecraft:stick',
+        [
+            'A',
+            'A'
+        ],
+        {
+            A: 'createdieselgenerators:wood_chip'
         }
     )
 
@@ -852,7 +863,7 @@ ServerEvents.recipes(event => {
 
 // Cutting
 
-    event.recipes.create.cutting(['kubejs:precision_manual', 'kubejs:the_precision_manufacturing_engineers_log'], 'kubejs:package')
+    event.recipes.create.cutting(['kubejs:precision_manual', 'kubejs:processing_note', 'kubejs:the_precision_manufacturing_engineers_log'], 'kubejs:package')
 
 // Smelting And Blasting
 
@@ -889,16 +900,8 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.sequenced_assembly(
         [
-            Item.of('kubejs:brass_lockbox').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1),
-            Item.of('kubejs:package').withChance(0.1)
+            Item.of('kubejs:brass_lockbox').withChance(0.5),
+            Item.of('kubejs:package').withChance(0.5)
         ],
         'kubejs:brass_lockbox',
         [

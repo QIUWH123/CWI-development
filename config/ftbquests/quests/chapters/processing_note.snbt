@@ -10,10 +10,9 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["19F4E621C77EC596"]
 			hide_dependent_lines: true
-			hide_until_deps_complete: true
 			id: "7EAD0C34B17014A4"
+			invisible: true
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Not Completed Yet"

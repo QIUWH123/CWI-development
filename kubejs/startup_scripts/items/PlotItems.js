@@ -31,6 +31,8 @@ StartupEvents.registry('item', event => {
     
     event.create('petroleum_manual').texture('kubejs:item/plots/petroleum_manual').tag('cwi:plot_items')
 
+    event.create('computation_manual').texture('kubejs:item/plots/computation_manual').tag('cwi:plot_items')
+
     event.create('bioengineering_manual').texture('kubejs:item/plots/bioengineering_manual').tag('cwi:plot_items')
 
     event.create('the_cleaners_log').texture('kubejs:item/plots/log').tag('cwi:plot_items')

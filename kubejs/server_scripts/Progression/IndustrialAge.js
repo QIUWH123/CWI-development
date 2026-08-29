@@ -601,16 +601,8 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.sequenced_assembly(
         [
-            Item.of('kubejs:steel_armor_safe').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1),
-            Item.of('kubejs:second_package').withChance(0.1)
+            Item.of('kubejs:steel_armor_safe').withChance(0.5),
+            Item.of('kubejs:second_package').withChance(0.5)
         ],
         'kubejs:steel_armor_safe',
         [

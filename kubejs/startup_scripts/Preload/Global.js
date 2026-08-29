@@ -107,23 +107,23 @@ global.materialTypes = [
 ]
 
 global.oreTypes = [
-    [ { normal: 'kubejs:sulfur_ore', deepslate: 'kubejs:deepslate_sulfur_ore' }, 'kubejs:sulfur_item', 'kubejs:sulfur_powder', true ],
-    [ { normal: 'kubejs:quartz_ore', deepslate: 'kubejs:deepslate_quartz_ore' }, 'minecraft:quartz', 'kubejs:quartz_powder', true ],
-    [ { normal: 'minecraft:copper_ore', deepslate: 'minecraft:deepslate_copper_ore' }, 'minecraft:raw_copper', 'create:crushed_raw_copper', true ],
-    [ { normal: 'minecraft:coal_ore', deepslate: 'minecraft:deepslate_coal_ore' }, 'minecraft:coal', 'kubejs:coal_powder', true ],
-    [ { normal: 'minecraft:iron_ore', deepslate: 'minecraft:deepslate_iron_ore' }, 'minecraft:raw_iron', 'create:crushed_raw_iron', true ],
-    [ { normal: 'kubejs:fluorite_ore', deepslate: 'kubejs:deepslate_fluorite_ore' }, 'kubejs:fluorite', 'kubejs:fluorite_powder', false ],
-    [ { normal: 'minecraft:redstone_ore', deepslate: 'minecraft:deepslate_redstone_ore' }, 'kubejs:redstone', 'minecraft:redstone', false ],
-    [ { normal: 'kubejs:silver_ore', deepslate: 'kubejs:deepslate_silver_ore' }, 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', false ],
-    [ { normal: 'kubejs:tin_ore', deepslate: 'kubejs:deepslate_tin_ore' }, 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', false ],
-    [ { normal: 'minecraft:gold_ore', deepslate: 'minecraft:deepslate_gold_ore' }, 'minecraft:raw_gold', 'create:crushed_raw_gold', false ],
-    [ { normal: 'minecraft:diamond_ore', deepslate: 'minecraft:deepslate_diamond_ore' }, 'minecraft:diamond', '', false ],
-    [ { normal: 'minecraft:emerald_ore', deepslate: 'minecraft:deepslate_emerald_ore' }, 'minecraft:emerald', '', false ],
-    [ { normal: 'minecraft:lapis_ore', deepslate: 'minecraft:deepslate_lapis_ore' }, 'minecraft:lapis_lazuli', 'kubejs:lapis_powder', false ],
-    [ { normal: 'create:zinc_ore', deepslate: 'create:deepslate_zinc_ore' }, 'create:raw_zinc', 'create:crushed_raw_zinc', false ],
-    [ { normal: 'tfmg:lead_ore', deepslate: 'tfmg:deepslate_lead_ore' }, 'tfmg:raw_lead', 'create:crushed_raw_lead', false ],
-    [ { normal: 'tfmg:nickel_ore', deepslate: 'tfmg:deepslate_nickel_ore' }, 'tfmg:raw_nickel', 'create:crushed_raw_nickel', false ],
-    [ { normal: 'tfmg:lithium_ore', deepslate: 'tfmg:deepslate_lithium_ore' }, 'tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', false ]
+    [ { normal: 'kubejs:sulfur_ore', deepslate: 'kubejs:deepslate_sulfur_ore' }, 'kubejs:sulfur_item', '', 'kubejs:sulfur_powder', true ],
+    [ { normal: 'kubejs:quartz_ore', deepslate: 'kubejs:deepslate_quartz_ore' }, 'minecraft:quartz', '', 'kubejs:quartz_powder', true ],
+    [ { normal: 'minecraft:copper_ore', deepslate: 'minecraft:deepslate_copper_ore' }, 'minecraft:raw_copper', 'create:crushed_raw_copper', 'kubejs:raw_copper_powder', true ],
+    [ { normal: 'minecraft:coal_ore', deepslate: 'minecraft:deepslate_coal_ore' }, 'minecraft:coal', '', 'kubejs:coal_powder', true ],
+    [ { normal: 'minecraft:iron_ore', deepslate: 'minecraft:deepslate_iron_ore' }, 'minecraft:raw_iron', 'create:crushed_raw_iron', 'kubejs:raw_iron_powder', true ],
+    [ { normal: 'kubejs:fluorite_ore', deepslate: 'kubejs:deepslate_fluorite_ore' }, 'kubejs:fluorite', '', 'kubejs:fluorite_powder', false ],
+    [ { normal: 'minecraft:redstone_ore', deepslate: 'minecraft:deepslate_redstone_ore' }, 'kubejs:redstone', '', 'minecraft:redstone', false ],
+    [ { normal: 'kubejs:silver_ore', deepslate: 'kubejs:deepslate_silver_ore' }, 'kubejs:raw_silver', 'kubejs:crushed_raw_silver', 'kubejs:raw_silver_powder', false ],
+    [ { normal: 'kubejs:tin_ore', deepslate: 'kubejs:deepslate_tin_ore' }, 'kubejs:raw_tin', 'kubejs:crushed_raw_tin', 'kubejs:raw_tin_powder', false ],
+    [ { normal: 'minecraft:gold_ore', deepslate: 'minecraft:deepslate_gold_ore' }, 'minecraft:raw_gold', 'create:crushed_raw_gold', 'kubejs:raw_gold_powder', false ],
+    [ { normal: 'minecraft:diamond_ore', deepslate: 'minecraft:deepslate_diamond_ore' }, 'minecraft:diamond', '', '', false ],
+    [ { normal: 'minecraft:emerald_ore', deepslate: 'minecraft:deepslate_emerald_ore' }, 'minecraft:emerald', '', '', false ],
+    [ { normal: 'minecraft:lapis_ore', deepslate: 'minecraft:deepslate_lapis_ore' }, 'minecraft:lapis_lazuli', '', 'kubejs:lapis_powder', false ],
+    [ { normal: 'create:zinc_ore', deepslate: 'create:deepslate_zinc_ore' }, 'create:raw_zinc', 'create:crushed_raw_zinc', 'kubejs:raw_zinc_powder', false ],
+    [ { normal: 'tfmg:lead_ore', deepslate: 'tfmg:deepslate_lead_ore' }, 'tfmg:raw_lead', 'create:crushed_raw_lead', 'kubejs:raw_lead_powder', false ],
+    [ { normal: 'tfmg:nickel_ore', deepslate: 'tfmg:deepslate_nickel_ore' }, 'tfmg:raw_nickel', 'create:crushed_raw_nickel', 'kubejs:raw_nickel_powder', false ],
+    [ { normal: 'tfmg:lithium_ore', deepslate: 'tfmg:deepslate_lithium_ore' }, 'tfmg:raw_lithium', 'tfmg:crushed_raw_lithium', 'kubejs:raw_lithium_powder', false ]
 ]
 
 global.variantSettings = {

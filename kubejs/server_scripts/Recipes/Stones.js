@@ -38,7 +38,15 @@ ServerEvents.recipes(event => {
     event.recipes.create.filling('kubejs:diorite_powder', ['kubejs:andesite_powder', Fluid.of('tfmg:liquid_silicon', 20)])
     event.recipes.create.mixing('2x kubejs:diorite_powder', ['kubejs:stone_powder', 'kubejs:quartz_powder'])
 
-    event.recipes.create.mixing('2x kubejs:andesite_powder', ['kubejs:stone_powder', 'kubejs:diorite_powder'])
+    event.shapeless(
+        Item.of('kubejs:andesite_powder', 3),
+        [
+            '2x kubejs:stone_powder',
+            '2x kubejs:diorite_powder'
+        ]
+    ).id('cwi:crafting_table/andesite_powder_mixing_manual_only')
+
+    event.recipes.create.mixing('2x kubejs:andesite_powder', ['kubejs:stone_powder', 'kubejs:diorite_powder']).processingTime(50)
 
     event.recipes.create.compacting(['kubejs:rhyolite_gravel', Item.of('kubejs:rhyolite_powder').withChance(0.37)], ['kubejs:granite_gravel', 'minecraft:flint', Fluid.of('minecraft:lava', 250)]).superheated()
 

@@ -21,7 +21,7 @@ modpackMode = false
   mode = "ADVANCED"
 
   # Accepted values are: [LEFT, CENTER, RIGHT]
-  align = "CENTER"
+  align = "RIGHT"
 
   # Accepted values are: [TOP, CENTER, BOTTOM]
   verticalAlign = "TOP"
@@ -137,7 +137,7 @@ modpackMode = false
 
 [culling]
   # Entity and tile-entity distance culling
-  tileEntities = true
+  tileEntities = false
 
   # Squared horizontal distance in blocks
   # Value must be less than '16384' and greater than '0'
@@ -145,7 +145,7 @@ modpackMode = false
 
   # Value must be less than '256' and greater than '0'
   tileEntityDistanceY = 32
-  entities = true
+  entities = false
 
   # Maximum rendered entities; 512 disables the limit
   # Value must be less than '512' and greater than '0'
@@ -157,7 +157,7 @@ modpackMode = false
 
   # Value must be less than '256' and greater than '0'
   entityDistanceY = 32
-  monsters = false
+  monsters = true
 
   # Squared horizontal distance in blocks
   # Value must be less than '16384' and greater than '0'

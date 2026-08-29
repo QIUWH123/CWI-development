@@ -692,6 +692,29 @@
 			x: -14.5d
 			y: 3.0d
 		}
+		{
+			dependencies: ["5733B6FE443F3A31"]
+			description: [
+				"   &eTools used as Lockpicks:&r"
+				"      &6Sword: 20%&r"
+				"      &6Axe: 40%&r"
+				"      &6Pickaxe: 50%&r"
+				"      &6Shovel: 30%&r"
+				"      &6Hoe: 30%&r"
+			]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: "minecraft:chest"
+			id: "49286854E1C7149C"
+			subtitle: "Explore the Locked Boxes"
+			tasks: [{
+				id: "2EB93C54D4840BE2"
+				title: "Chests and Lockpicks"
+				type: "checkmark"
+			}]
+			x: -11.0d
+			y: 1.0d
+		}
 	]
 	title: "Survival Note"
 }

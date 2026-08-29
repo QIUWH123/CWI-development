@@ -156,18 +156,3 @@ BlockEvents.rightClicked('minecraft:barrel', event => {
     const { player, block, level } = event
     lockpickingFunction(player, block, level, event)
 })
-
-BlockEvents.rightClicked('farmersdelight:bamboo_basket', event => {
-    const { player, block, level } = event
-    lockpickingFunction(player, block, level, event)
-})
-
-BlockEvents.rightClicked('farmersdelight:wooden_basket', event => {
-    const { player, block, level } = event
-    lockpickingFunction(player, block, level, event)
-})
-
-BlockEvents.rightClicked('miners_delight:sticky_basket', event => {
-    const { player, block, level } = event
-    lockpickingFunction(player, block, level, event)
-})

@@ -11,6 +11,26 @@
                 "processors": "minecraft:empty",
                 "override_liquid_settings": "apply_waterlogging"
             }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/mid_2",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "minecraft:single_pool_element",
+                "projection": "rigid",
+                "location": "cwi:fl/mid_3",
+                "processors": "minecraft:empty",
+                "override_liquid_settings": "apply_waterlogging"
+            }
         }
     ]
 }

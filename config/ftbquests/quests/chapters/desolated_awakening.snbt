@@ -416,7 +416,7 @@
 		}
 		{
 			dependencies: ["48FAA6DBC81EED3F"]
-			description: ["&eThere are armored doors here – more than one. Both sealed, both reinforced. Whatever's behind them was worth protecting. It won't open with simple tools.&r"]
+			description: ["&eThere are armored doors here. Whatever's behind them was worth protecting. It won't open with simple tools.&r"]
 			icon: "kubejs:steel_armor_penetrated"
 			id: "2C66266D37EC7F2F"
 			size: 1.5d
@@ -512,8 +512,6 @@
 				"&eOres and Stones.&r"
 				""
 				"&eMetals, Alloys, and other things.&r"
-				""
-				"&eAnd How to Process Them.&r"
 			]
 			disable_toast: true
 			id: "01145B3810F3CA52"
@@ -529,13 +527,8 @@
 					item: "kubejs:material_note"
 					type: "item"
 				}
-				{
-					id: "19F4E621C77EC596"
-					item: "kubejs:processing_note"
-					type: "item"
-				}
 			]
-			title: "Geology, Processing and Material Notes"
+			title: "Geology and Material Notes"
 			x: 1.5d
 			y: 5.5d
 		}

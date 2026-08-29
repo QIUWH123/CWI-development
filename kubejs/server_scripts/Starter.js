@@ -19,11 +19,12 @@ PlayerEvents.loggedIn(event => {
         const x = Math.floor(player.x)
         const y = Math.floor(player.y)
         const z = Math.floor(player.z)
-        server.persistentData.putInt("starter_x", x + 34)
+        server.persistentData.putInt("starter_x", x + 65)
         server.persistentData.putInt("starter_y", y - 56)
         server.persistentData.putInt("starter_z", z + 22)
         server.runCommandSilent(`place template cwi:filled_starter_bunker ${x} ${y - 58} ${z}`)
         server.runCommandSilent(`place template cwi:starter_bunker ${x} ${y - 58} ${z}`)
+        server.runCommandSilent('kill @e[type=item]')
     }
     if (!player.persistentData.contains("first_enter")) {
         player.persistentData.putBoolean("first_enter", true)

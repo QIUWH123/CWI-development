@@ -315,7 +315,7 @@ ServerEvents.recipes(event => {
     turning(event, AddItem('kubejs:terracotta_disk'), AddItem('kubejs:terracotta_rod_mold'))
 
     // Cutting
-    cutting(event, AddItem('minecraft:dead_bush'), AddItem('2 minecraft:stick', 1))
+    cutting(event, AddItem('minecraft:dead_bush'), AddItem('2 minecraft:stick'))
     cutting(event, AddItem('stick'), AddItem('2 createdieselgenerators:wood_chip', 0.75))
 
     // Chiseling

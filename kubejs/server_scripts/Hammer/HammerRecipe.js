@@ -38,7 +38,7 @@ global.stoneTypes.forEach(function(stone) {
 
 // Ore Type Conversions
 
-global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, isMore]) => {
+global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
     const dropCounts = isMore ? 3 : 2
     for (let key in global.variantSettings) {
         if (oreVariants[key]) {
