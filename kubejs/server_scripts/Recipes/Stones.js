@@ -26,17 +26,25 @@ ServerEvents.recipes(event => {
 
 // Recipes
 
-    event.recipes.create.mixing(['kubejs:granite_gravel'], ['kubejs:quartz_powder', 'minecraft:gravel', Fluid.of('minecraft:lava', 250)]).heated()
-    event.recipes.create.compacting(['kubejs:granite_gravel'], ['kubejs:quartz_powder', 'minecraft:gravel']).superheated()
-    event.recipes.create.mixing(['3x kubejs:granite_powder', Item.of('kubejs:granite_powder').withChance(0.37)], ['kubejs:quartz_powder', Fluid.of('minecraft:lava', 250)]).superheated()
-    event.recipes.create.filling(['kubejs:granite_powder'], ['kubejs:quartz_powder', Fluid.of('minecraft:lava', 20)])
-    event.recipes.create.mixing('2x kubejs:granite_powder', ['kubejs:quartz_powder', 'kubejs:diorite_powder'])
+    event.shapeless(
+        Item.of('kubejs:granite_powder', 3),
+        [
+            '2x kubejs:diorite_powder',
+            '2x kubejs:quartz_powder'
+        ]
+    ).id('cwi:crafting_table/granite_powder_mixing_manual_only')
+    
+    event.recipes.create.mixing('2x kubejs:granite_powder', ['kubejs:quartz_powder', 'kubejs:diorite_powder']).processingTime(50)
 
-    event.recipes.create.filling('kubejs:diorite_gravel', ['kubejs:basalt_gravel', Fluid.of('tfmg:liquid_silicon', 125)])
-    event.recipes.create.filling('kubejs:diorite_powder', ['kubejs:basalt_powder', Fluid.of('tfmg:liquid_silicon', 20)])
-    event.recipes.create.filling('kubejs:diorite_gravel', ['kubejs:andesite_gravel', Fluid.of('tfmg:liquid_silicon', 125)])
-    event.recipes.create.filling('kubejs:diorite_powder', ['kubejs:andesite_powder', Fluid.of('tfmg:liquid_silicon', 20)])
-    event.recipes.create.mixing('2x kubejs:diorite_powder', ['kubejs:stone_powder', 'kubejs:quartz_powder'])
+    event.shapeless(
+        Item.of('kubejs:diorite_powder', 3),
+        [
+            '2x kubejs:stone_powder',
+            '2x kubejs:quartz_powder'
+        ]
+    ).id('cwi:crafting_table/diorite_powder_mixing_manual_only')
+
+    event.recipes.create.mixing('2x kubejs:diorite_powder', ['kubejs:stone_powder', 'kubejs:quartz_powder']).processingTime(50)
 
     event.shapeless(
         Item.of('kubejs:andesite_powder', 3),

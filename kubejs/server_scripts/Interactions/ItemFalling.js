@@ -324,9 +324,6 @@ function applyEffect(entity, effect, fallDistance) {
     for (let i = 0; i < effect.events.length; i++) {
         applyEvent(entity, effect.events[i], fallDistance)
     }
-    if (entity.isAlive()) {
-        entity.pickUpDelay = 20
-    }
 }
 
 let trackedItems = []
@@ -336,7 +333,6 @@ EntityEvents.spawned('item', function (event) {
     let effects = fallItemsMap[entity.item.id]
     if (!effects) return
 
-    entity.pickUpDelay = 32767
     trackedItems.push({
         entity: entity,
         startY: entity.y,
@@ -363,9 +359,7 @@ LevelEvents.tick(function (event) {
         let fallDistance = Math.abs(data.startY - entity.y)
         let effect = selectBestEffect(data.effects, fallDistance)
 
-        if (!effect) {
-            entity.pickUpDelay = 20
-        } else {
+        if (effect) {
             applyEffect(entity, effect, fallDistance)
         }
 

@@ -113,7 +113,7 @@ ServerEvents.recipes(event => {
             let rockPowder = getPowderFromRock(best[0])
             if (rockPowder) centOut.push(AddItem(rockPowder, best[1] * 1.3))
         }
-        centrifuging(event, [AddItem(powder)], centOut, 100)
+        centrifuging(event, [AddItem(powder)], centOut, 200)
 
         // ================= 7. 浮选 =================
         let flotationOut = [

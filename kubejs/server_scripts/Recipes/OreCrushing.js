@@ -54,16 +54,10 @@ ServerEvents.recipes(event => {
 
     const ores = [
         ['kubejs:flint_powder', 'minecraft:flint'],
-        ['kubejs:quartz_powder', 'minecraft:quartz'],
         ['kubejs:amethyst_powder', 'minecraft:amethyst_shard'],
-        ['minecraft:redstone', 'kubejs:redstone'],
-        ['kubejs:sulfur_powder', 'kubejs:sulfur_item'],
         ['kubejs:halite_powder', 'kubejs:halite_item'],
         ['kubejs:lignite_powder', 'kubejs:lignite_item'],
-        ['minecraft:redstone', 'kubejs:redstone'],
-        ['kubejs:lapis_powder', 'minecraft:lapis_lazuli'],
-        ['kubejs:charcoal_powder', 'minecraft:charcoal'],
-        ['kubejs:coal_powder', 'minecraft:coal']
+        ['kubejs:charcoal_powder', 'minecraft:charcoal']
     ]
 
     ores.forEach(([crushedOreId, oreId]) => {

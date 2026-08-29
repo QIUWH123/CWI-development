@@ -136,7 +136,10 @@ ServerEvents.recipes(event => {
 
 // Centrifugation
 
-    centrifuging(event, [AddItem('kubejs:claystone_powder'), AddItem('kubejs:claystone_powder')], [AddItem('kubejs:stone_powder'), AddItem('kubejs:clay_powder')], 10)
+    centrifuging(event, [AddItem('kubejs:claystone_powder'), AddItem('kubejs:claystone_powder')], [AddItem('kubejs:stone_powder'), AddItem('kubejs:clay_powder')], 80)
+    centrifuging(event, [AddItem('kubejs:diorite_powder'), AddItem('kubejs:diorite_powder')], [AddItem('kubejs:quartz_powder'), AddItem('kubejs:stone_powder')], 80)
+    centrifuging(event, [AddItem('kubejs:andesite_powder'), AddItem('kubejs:andesite_powder')], [AddItem('kubejs:diorite_powder'), AddItem('kubejs:stone_powder')], 80)
+    centrifuging(event, [AddItem('minecraft:clay_ball')], [AddItem('kubejs:clay_powder'), AddFluid('50x minecraft:water')], 300)
 
 // Fermentation
 

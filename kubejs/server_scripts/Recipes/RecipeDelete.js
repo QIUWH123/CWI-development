@@ -125,6 +125,7 @@ ServerEvents.recipes(event => {
         'create:crushing/gravel',
         'create:crushing/tuff',
         'create:crushing/tuff_recycling',
+        'create:crushing/prismarine_crystals',
         'create:filling/blaze_cake',
         'create:filling/cake',
         'create:filling/cake_mold_filled',
