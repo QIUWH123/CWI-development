@@ -1,0 +1,13 @@
+name = "mbd2thread"
+filename = "mbd2thread-1.1.47-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cec85bba79898ba4c45e21d12553f80a8e8f80ee"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8149662
+project-id = 1469260

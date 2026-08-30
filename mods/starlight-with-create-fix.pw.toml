@@ -1,0 +1,13 @@
+name = "Starlight with Create Fix"
+filename = "starlight-1.1.5+forge.c562a3a.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9f4b9804f2d168f61fa10b5b0cc3284cb16eb474"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7501699
+project-id = 1438426

@@ -1,0 +1,13 @@
+name = "MoreEventsJS"
+filename = "more_events_js-1.1.0-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "744c320c2a1f52b754e108ed2e5600e45afd63ed"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7583222
+project-id = 1388507

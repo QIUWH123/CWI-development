@@ -1,0 +1,13 @@
+name = "Vital Herbs"
+filename = "vital_herbs-6.1.1-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "61725b6f19420d49bf0ae5c4c49f279714b7cb38"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6774483
+project-id = 1257545

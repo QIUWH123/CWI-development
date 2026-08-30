@@ -1,0 +1,13 @@
+name = "Geode+"
+filename = "geode_plus-forge-1.2.5-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "981d016f94cae4b5435ca4000dda553d05027304"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5407755
+project-id = 620784

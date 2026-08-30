@@ -1,0 +1,13 @@
+name = "Shadow Drop"
+filename = "shadowdrop-forge-1.20.1-2.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e4113c2cc3b8413b14e95c3df4c42f3a03b7b094"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8554433
+project-id = 1490601

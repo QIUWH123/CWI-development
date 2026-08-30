@@ -1,0 +1,13 @@
+name = "Thulium"
+filename = "thulium-1.0.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f5153f1fa4fc2f5167a7b82e19a1f96ddc2738b2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8406011
+project-id = 1462886
