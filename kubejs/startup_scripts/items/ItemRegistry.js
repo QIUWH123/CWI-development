@@ -178,6 +178,9 @@ StartupEvents.registry('item', event => {
     event.create('incomplete_control_chip')
         .texture('kubejs:item/incomplete_items/incomplete_control_chip')
 
+    event.create('unfinished_control_chip')
+        .texture('kubejs:item/incomplete_items/incomplete_control_chip')
+
     event.create('incomplete_distillation_controller')
         .texture('kubejs:item/incomplete_items/incomplete_distillation_controller')
         .rarity('epic')

@@ -34,6 +34,22 @@ ServerEvents.recipes(event => {
         ]
     ).id('cwi:crafting_table/foundry_basin_manual_only')
 
+    event.shapeless(
+        'kubejs:unfinished_control_chip',
+        [
+            'tfmg:screwdriver',
+            'createdieselgenerators:hammer',
+            'kubejs:small_hammer',
+            'kubejs:sticky_resin',
+            'kubejs:brass_circuit_board',
+            'create:electron_tube'
+        ]
+    )
+    .damageIngredient('createdieselgenerators:hammer', 1)
+    .damageIngredient('tfmg:screwdriver', 3)
+    .damageIngredient('kubejs:small_hammer', 3)
+    .id('cwi:crafting_table/unfinished_control_chip_manual_only')
+
 // Shaped
 
     event.shaped(
@@ -83,22 +99,6 @@ ServerEvents.recipes(event => {
             B: 'create:brass_sheet',
             C: 'kubejs:precise_machine',
             D: 'create:brass_funnel'
-        }
-    )
-
-    event.shaped(
-        'kubejs:incomplete_control_chip',
-        [
-            'DEF',
-            'ABC'
-        ],
-        {
-            A: 'kubejs:sticky_resin',
-            B: 'kubejs:brass_circuit_board',
-            C: 'create:electron_tube',
-            D: 'tfmg:screwdriver',
-            E: 'createdieselgenerators:hammer',
-            F: 'farmersdelight:iron_knife'
         }
     )
 
@@ -384,7 +384,7 @@ ServerEvents.recipes(event => {
 // Filling
 
     event.recipes.create.filling('create:rose_quartz', [Fluid.of('kubejs:redstone_acid', 500), 'minecraft:quartz']).heated()
-    event.recipes.create.filling('create_connected:control_chip', [Fluid.of('kubejs:redstone_acid', 125), 'kubejs:incomplete_control_chip']).heated()
+    event.recipes.create.filling('create_connected:control_chip', [Fluid.of('kubejs:redstone_acid', 125), 'kubejs:unfinished_control_chip']).heated()
 
 // Mixing
 

@@ -293,6 +293,10 @@ ServerEvents.tags('block', event => {
         'minecraft:sculk_catalyst'
     ])
 
+// PassiveBoilerHeaters
+
+    event.remove('create:passive_boiler_heaters', 'create:blaze_burner')
+
 // WindmillSails
     event.removeAll('create:windmill_sails')
     event.add('create:windmill_sails', 'create:white_sail')
