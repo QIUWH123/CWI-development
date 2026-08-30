@@ -206,8 +206,8 @@ StartupEvents.registry('item', event => {
     event.create('incomplete_steel_ring')
         .texture('kubejs:item/incomplete_items/incomplete_steel_ring')
 
-    event.create('incomplete_steam_mechanism')
-        .texture('kubejs:item/incomplete_items/incomplete_steam_mechanism')
+    event.create('incomplete_steam_apparatus')
+        .texture('kubejs:item/incomplete_items/incomplete_steam_apparatus')
 
     event.create('incomplete_steel_bearing')
         .texture('kubejs:item/incomplete_items/incomplete_steel_bearing')
@@ -282,8 +282,8 @@ StartupEvents.registry('item', event => {
     event.create('rubber_hand')
         .texture('kubejs:item/machine_parts/rubber_hand')
 
-    event.create('steam_mechanism')
-        .texture('kubejs:item/machine_parts/steam_mechanism')
+    event.create('steam_apparatus')
+        .texture('kubejs:item/machine_parts/steam_apparatus')
         .rarity('uncommon')
 
     event.create('andesite_bearing')

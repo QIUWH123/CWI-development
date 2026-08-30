@@ -481,7 +481,7 @@ ServerEvents.recipes(event => {
         ], {
             A: 'kubejs:handle',
             B: 'kubejs:industrial_iron_drill_head',
-            C: 'kubejs:steam_mechanism',
+            C: 'kubejs:steam_apparatus',
             D: 'kubejs:industrial_casing',
             E: 'kubejs:precise_machine',
             F: 'createdieselgenerators:engine_piston'
@@ -523,7 +523,7 @@ ServerEvents.recipes(event => {
             ' BGB '
         ], 
         {
-            A: 'kubejs:steam_mechanism',
+            A: 'kubejs:steam_apparatus',
             B: 'kubejs:bronze_ingot',
             C: 'create_connected:control_chip',
             D: 'create:encased_fan',
@@ -544,7 +544,7 @@ ServerEvents.recipes(event => {
             A: 'kubejs:bronze_ingot',
             B: 'create:flywheel',
             C: 'kubejs:industrial_iron_ingot',
-            D: 'kubejs:steam_mechanism',
+            D: 'kubejs:steam_apparatus',
             E: 'kubejs:precise_machine',
             F: 'kubejs:andesite_machine',
             G: 'createdieselgenerators:engine_piston'
@@ -561,7 +561,7 @@ ServerEvents.recipes(event => {
         {
             A: 'kubejs:industrial_iron_sheet',
             B: 'createdieselgenerators:engine_piston',
-            C: 'kubejs:steam_mechanism',
+            C: 'kubejs:steam_apparatus',
             D: 'kubejs:industrial_iron_ingot',
             E: 'minecraft:copper_block'
         }
@@ -726,20 +726,20 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.sequenced_assembly(
         [
-            Item.of('kubejs:steam_mechanism').withChance(0.9),
+            Item.of('kubejs:steam_apparatus').withChance(0.9),
             Item.of('kubejs:bronze_ingot').withChance(0.05),
             Item.of('kubejs:bronze_powder').withChance(0.02),
             Item.of('kubejs:bronze_nugget').withChance(0.03)
         ],
         'kubejs:bronze_sheet',
         [
-            event.recipes.create.deploying('kubejs:incomplete_steam_mechanism', ['kubejs:incomplete_steam_mechanism', 'kubejs:bronze_wire']),
-            event.recipes.create.deploying('kubejs:incomplete_steam_mechanism', ['kubejs:incomplete_steam_mechanism', 'kubejs:bronze_rod']),
-            event.recipes.create.deploying('kubejs:incomplete_steam_mechanism', ['kubejs:incomplete_steam_mechanism', 'createdieselgenerators:engine_piston']),
-            event.recipes.create.deploying('kubejs:incomplete_steam_mechanism', ['kubejs:incomplete_steam_mechanism', 'tfmg:screwdriver'])
+            event.recipes.create.deploying('kubejs:incomplete_steam_apparatus', ['kubejs:incomplete_steam_apparatus', 'kubejs:bronze_wire']),
+            event.recipes.create.deploying('kubejs:incomplete_steam_apparatus', ['kubejs:incomplete_steam_apparatus', 'kubejs:bronze_rod']),
+            event.recipes.create.deploying('kubejs:incomplete_steam_apparatus', ['kubejs:incomplete_steam_apparatus', 'createdieselgenerators:engine_piston']),
+            event.recipes.create.deploying('kubejs:incomplete_steam_apparatus', ['kubejs:incomplete_steam_apparatus', 'tfmg:screwdriver'])
         ]
     )
-    .transitionalItem('kubejs:incomplete_steam_mechanism')
+    .transitionalItem('kubejs:incomplete_steam_apparatus')
     .loops(2)
 
     event.recipes.create.sequenced_assembly(

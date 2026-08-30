@@ -269,22 +269,22 @@
 		}
 		{
 			dependencies: ["61B2E0C63F00A944"]
-			description: ["&eA mechanism that harnesses steam pressure to generate mechanical power. Used for engines and advanced tools.&r"]
+			description: ["&eAn apparatus that harnesses steam pressure to generate mechanical power. Used for engines and advanced tools.&r"]
 			disable_toast: true
 			id: "3CC959E1243E962E"
 			subtitle: "Steam Power"
 			tasks: [{
 				id: "2086A44BD5849958"
-				item: "kubejs:steam_mechanism"
+				item: "kubejs:steam_apparatus"
 				type: "item"
 			}]
-			title: "Steam Mechanism"
+			title: "Steam Apparatus"
 			x: 12.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["612A2B07C4F613E6"]
-			description: ["&eA precision-machined piston. Used in stirling engines, steam mechanisms, and jetpacks.&r"]
+			description: ["&eA precision-machined piston. Used in stirling engines, steam apparatus, and jetpacks.&r"]
 			disable_toast: true
 			id: "61B2E0C63F00A944"
 			subtitle: "Precision Machined"

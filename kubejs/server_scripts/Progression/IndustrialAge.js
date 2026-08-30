@@ -401,7 +401,7 @@ ServerEvents.recipes(event => {
         {
             A: 'kubejs:handle',
             B: 'kubejs:steel_drill_head',
-            C: 'kubejs:steam_mechanism',
+            C: 'kubejs:steam_apparatus',
             D: 'tfmg:heavy_machinery_casing',
             E: 'kubejs:heavy_machine',
             F: 'createdieselgenerators:engine_piston'
