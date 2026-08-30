@@ -1,10 +1,25 @@
 global.debugUserName = [
     "QIUWH",
-    "Liaux_awa"
+    "Liaux_awa",
+    "Leaf_LiZhanyu"
 ]
 
 PlayerEvents.loggedIn(event => {
     const { player, server } = event
+    for (let i = 0; i < global.debugUserName.length; i++) {
+        if (player.username === global.debugUserName[i]) {
+            player.tell('------------------------')
+            player.tell('交互:')
+            player.tell('物品右键 => 显示手上物品信息')
+            player.tell('方块右键 => 显示指向方块信息')
+            player.tell('------------------------')
+            player.tell('聊天栏:')
+            player.tell('-ki => 清除所有世界中掉落物')
+            player.tell('-ke => 清除玩家以外所有实体')
+            player.tell('-eg => 给予玩家常用药水效果')
+            player.tell('-ec => 清除玩家所有药水效果')
+        }
+    }
     if (player.username === "Liaux_awa") {
         player.tell('还记得那些东西不能用吗 ^w^')
     }
@@ -34,19 +49,21 @@ PlayerEvents.chat((event) => {
                 event.cancel()
             }
 
-            if (message.trim().equalsIgnoreCase("-kf")) {
+            if (message.trim().equalsIgnoreCase("-eg")) {
                 player.runCommandSilent("effect give @s minecraft:night_vision infinite 255 true")
                 player.runCommandSilent("effect give @s minecraft:strength infinite 255 true")
                 player.runCommandSilent("effect give @s minecraft:resistance infinite 255 true")
+                server.tell('Effect Give')
                 event.cancel()
             }
 
-            if (message.trim().equalsIgnoreCase("-efc")) {
+            if (message.trim().equalsIgnoreCase("-ec")) {
                 player.runCommandSilent("effect clear")
+                server.tell('Effect Clear')
                 event.cancel()
             }
 
-            if (message.trim().equalsIgnoreCase("-kla")) {
+            if (message.trim().equalsIgnoreCase("-ke")) {
                 server.runCommandSilent("kill @e[type=!player]")
                 server.tell('All Players Have Been Cleared')
                 event.cancel()

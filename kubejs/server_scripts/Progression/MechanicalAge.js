@@ -384,7 +384,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'kubejs:andesite_alloy_sheet'
+            A: 'create:andesite_alloy'
         }
     )
 
@@ -813,6 +813,23 @@ ServerEvents.recipes(event => {
             A: '#cwi:sticky_materials',
             B: 'create:iron_sheet',
             C: 'minecraft:iron_nugget'
+        }
+    )
+
+    event.shaped(
+        'create:blaze_burner',
+        [
+            'ABA',
+            'CFC',
+            'DED'
+        ],
+        {
+            A: 'create:iron_sheet',
+            B: '#cwi:coal_powders',
+            C: 'createaddition:iron_rod',
+            D: 'create:iron_sheet',
+            E: '#cwi:cobbled_stones',
+            F: 'kubejs:andesite_alloy_sheet'
         }
     )
 

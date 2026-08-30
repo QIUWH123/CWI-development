@@ -850,7 +850,7 @@ ServerEvents.recipes(function(event) {
             AddFluid('1 kubejs:nitrate_solution'),
             AddItem('kubejs:nitrofix_rhizobium')
         ],
-        20, "heated", ['basin', 'bulk']
+        20, undefined, ['basin', 'bulk']
     )
 
 // Crystallum Coccus

@@ -161,6 +161,9 @@ ServerEvents.tags('item', event => {
 // RubberBlock
     event.add('cwi:rubber_blocks', ['kubejs:rubber_block', 'kubejs:industrial_rubber_block'])
 
+// CoalPowders
+    event.add('cwi:coal_powders', ['kubejs:charcoal_powder', 'kubejs:coal_powder', 'tfmg:coal_coke_dust'])
+
 // CharcoalItems
     event.add('cwi:charcoals', ['minecrft:charcoal', 'kubejs:charcoal_powder'])
 

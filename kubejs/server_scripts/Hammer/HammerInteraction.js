@@ -97,7 +97,7 @@ global.releaseHammer = function(itemStack, level, player, durationLeft, required
         }
 
         if (success) {
-            player.addItemCooldown(itemStack.item, Math.floor(20 * Math.sqrt(stage)))
+            player.addItemCooldown(itemStack.item, Math.floor(requiredCharge * Math.sqrt(stage)))
             itemStack.hurtAndBreak(stage, player, function() {})
         }
     }

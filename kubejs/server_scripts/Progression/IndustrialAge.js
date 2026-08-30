@@ -216,7 +216,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'kubejs:andesite_alloy_sheet',
+            A: 'create:andesite_alloy',
             B: 'tfmg:fireproof_bricks'
         }
     )

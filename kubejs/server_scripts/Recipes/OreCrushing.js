@@ -28,7 +28,7 @@ ServerEvents.recipes(event => {
             event.recipes.create.crushing(output, dropOreId)
             event.recipes.create.milling(powderOreId, dropOreId)
             if (crushedOreId !== '') {
-                event.recipes.create.crushing(powderOreId, crushedOreId)
+                event.recipes.create.milling(powderOreId, crushedOreId)
             }
         }
     })

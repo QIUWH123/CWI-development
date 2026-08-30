@@ -336,7 +336,7 @@ ServerEvents.recipes(event => {
             'AAA'
         ],
         {
-            A: 'kubejs:andesite_alloy_sheet',
+            A: 'create:andesite_alloy',
             B: 'createmetallurgy:refractory_mortar'
         }
     )

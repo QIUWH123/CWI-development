@@ -157,18 +157,18 @@ global.allTiers = [
 ]
 
 global.hammers = [
-    ['bronze_hammer', 'bronze', 12, 2, 4],
+    ['bronze_hammer', 'bronze', 12, 3, 4],
     ['brass_hammer', 'brass', 13, 2, 3],
-    ['steel_hammer', 'steel', 15, 3, 5],
-    ['stainless_steel_hammer', 'stainless_steel', 13, 3, 6],
-    ['iron_hammer', 'iron', 15, 2, 0],
-    ['rusted_iron_hammer', 'rusted_iron', 18, 2, 1],
-    ['stone_hammer', 'stone', 20, 1, 0],
-    ['golden_hammer', 'gold', 9, 1, 0],
-    ['zinc_hammer', 'zinc', 10, 1, 2],
-    ['copper_hammer', 'copper', 17, 2, 2],
-    ['lead_hammer', 'lead', 23, 1, 5],
-    ['netherite_hammer', 'netherite', 12, 3, 0]
+    ['steel_hammer', 'steel', 11, 3, 5],
+    ['stainless_steel_hammer', 'stainless_steel', 10, 3, 6],
+    ['iron_hammer', 'iron', 14, 3, 0],
+    ['rusted_iron_hammer', 'rusted_iron', 16, 2, 1],
+    ['stone_hammer', 'stone', 18, 1, 0],
+    ['golden_hammer', 'gold', 8, 1, 0],
+    ['zinc_hammer', 'zinc', 9, 1, 2],
+    ['copper_hammer', 'copper', 15, 2, 2],
+    ['lead_hammer', 'lead', 21, 1, 5],
+    ['netherite_hammer', 'netherite', 9, 3, 0]
 ]
 
 global.pipePileDefinitions = [
