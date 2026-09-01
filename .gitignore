@@ -2,14 +2,7 @@
 
 /*
 !.gitignore
-!pack.toml
-!index.toml
-!mods/
 !/config/
 !/ldlib/
 !/defaultconfigs/
 !/kubejs/
-
-mods/*.jar
-!mods/*.pw.toml
-!mods/CWI-Core.jar
