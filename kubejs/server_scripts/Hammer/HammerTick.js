@@ -8,7 +8,7 @@ global.hammers.forEach(function(arr) {
     HAMMER_MAX_STAGE['minecraft:' + arr[0]] = arr[3]
 })
 
-HAMMER_REQUIREMENTS['kubejs:steel_pipe'] = 40
+HAMMER_REQUIREMENTS['kubejs:steel_pipe'] = 35
 HAMMER_MAX_STAGE['kubejs:steel_pipe'] = 3
 
 // Player Tick For Hammer Charge Display
