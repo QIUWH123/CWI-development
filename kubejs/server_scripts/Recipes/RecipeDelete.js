@@ -268,6 +268,7 @@ ServerEvents.recipes(event => {
         'create_new_age:pressing/overcharged_golden_sheet',
         'create_new_age:pressing/overcharged_iron_sheet',
         'create_new_age:sequenced_assembly/overcharged_diamond_wire',
+        'create_new_age:sequenced_assembly/enchanted_golden_apple',
         'create_new_age:shaped/electrical_connector',
         'create_new_age:shaped/electrical_connector_mirrored',
 
@@ -504,6 +505,7 @@ ServerEvents.recipes(event => {
         'minecraft:cauldron',
         'minecraft:chain',
         'minecraft:charcoal',
+        'minecraft:golden_apple',
         'minecraft:coarse_dirt',
         'minecraft:copper_ingot_from_waxed_copper_block',
         'minecraft:crafting_table',
