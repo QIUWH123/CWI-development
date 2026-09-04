@@ -17,6 +17,7 @@ StartupEvents.registry('block', event => {
         .soundType('stone')
         .hardness(0.3)
         .resistance(0.3)
+        .tagBlock('minecraft:mineable/pickaxe')
         .mapColor('#FF5500')
         .suffocating(false)
         .redstoneConductor(false)

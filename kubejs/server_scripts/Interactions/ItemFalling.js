@@ -178,34 +178,6 @@ const fallItemsConfig = [
                 ]
             }
         ]
-    },
-    {
-        inputItem: "clanginghowl:extraterrestrial_pebble",
-        effects: [
-            {
-                spaceBetween: 0,
-                events: [
-                    { type: 'sound', id: "minecraft:block.stone.place", volume: 1, pitch: 1 },
-                    { type: 'particle', particleType: "minecraft:block", data: "clanginghowl:extraterrestrial_pebble", dx: 0.3, dy: 0.3, dz: 0.3, speed: 0.1, count: 8 },
-                    { type: 'setBlock', block: "clanginghowl:extraterrestrial_pebble" },
-                    { type: 'discard' }
-                ]
-            }
-        ]
-    },
-    {
-        inputItem: "kubejs:pebbles",
-        effects: [
-            {
-                spaceBetween: 0,
-                events: [
-                    { type: 'sound', id: "minecraft:block.stone.place", volume: 1, pitch: 1 },
-                    { type: 'particle', particleType: "minecraft:block", data: "kubejs:pebbles", dx: 0.3, dy: 0.3, dz: 0.3, speed: 0.1, count: 8 },
-                    { type: 'setBlock', block: "kubejs:pebbles" },
-                    { type: 'discard' }
-                ]
-            }
-        ]
     }
 ]
 

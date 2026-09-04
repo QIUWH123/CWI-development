@@ -1,0 +1,6 @@
+[
+  {"version":1},
+  {"type":"item_stack","value":"{Count:1b,id:\"kubejs:andesite_powder\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"minecraft:clay_ball\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"kubejs:clay_powder\"}"}
+]

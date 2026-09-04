@@ -165,7 +165,7 @@ StartupEvents.registry('item', event => {
       .saturation(0.5)
       .alwaysEdible()
       .effect('minecraft:strength', 200, 1, 1)
-      .effect('minecraft:resistance', 200, 3, 1)
+      .effect('minecraft:resistance', 200, 2, 1)
       .effect('minecraft:fire_resistance', 200, 1, 1)
       .effect('minecraft:regeneration', 200, 1, 1)
     })

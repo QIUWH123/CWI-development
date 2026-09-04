@@ -239,6 +239,48 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddItem('kubejs:acidolys_bacillus'),
+            AddItem('4 kubejs:stone_powder')
+        ],
+        [
+            AddItem('kubejs:clay_powder', 0.47),
+            AddItem('kubejs:flint_powder', 0.23),
+            AddItem('biomancy:stone_powder', 0.13),
+            AddItem('kubejs:acidolys_bacillus')
+        ],
+        500, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:acidolys_bacillus'),
+            AddItem('minecraft:gravel')
+        ],
+        [
+            AddItem('kubejs:clay_powder', 0.47),
+            AddItem('kubejs:flint_powder', 0.23),
+            AddItem('biomancy:stone_powder', 0.13),
+            AddItem('kubejs:acidolys_bacillus')
+        ],
+        750, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:acidolys_bacillus'),
+            AddItem('minecraft:cobblestone')
+        ],
+        [
+            AddItem('kubejs:clay_powder', 0.47),
+            AddItem('kubejs:flint_powder', 0.23),
+            AddItem('biomancy:stone_powder', 0.13),
+            AddItem('kubejs:acidolys_bacillus')
+        ],
+        1000, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:acidolys_bacillus'),
             AddItem('4 kubejs:deepslate_powder')
         ],
         [

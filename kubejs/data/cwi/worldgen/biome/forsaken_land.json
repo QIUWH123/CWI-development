@@ -28,6 +28,7 @@
       "cwi:structures/dry_biological_sediment",
       "cwi:structures/wet_biological_sediment",
       "cwi:structures/wet_biological_sediment_dirt",
+      "cwi:surfaces/stones",
       "minecraft:fossil_upper",
       "minecraft:fossil_lower"
     ],
@@ -89,9 +90,9 @@
       "miners_delight:patch_cave_carrots",
       "cwi:natures/ash_log_place",
       "cwi:natures/fallen_ash_log",
+      "cwi:natures/pebbles",
       "cwi:natures/dead_bush",
-      "cwi:natures/dead_leaves",
-      "cwi:surfaces/stones"
+      "cwi:natures/dead_leaves"
     ]
   ],
   "has_precipitation": true,
