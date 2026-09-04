@@ -115,11 +115,11 @@ StartupEvents.registry('item', event => {
         .maxDamage(73)
         .texture('kubejs:item/whetstone/fine_whetstone')
 
-    event.create('incomplete_whetstone')
+    event.create('incomplete_whetstone', 'create:sequenced_assembly')
         .unstackable()
         .texture('kubejs:item/whetstone/incomplete_whetstone')
 
-    event.create('incomplete_fine_whetstone')
+    event.create('incomplete_fine_whetstone', 'create:sequenced_assembly')
         .unstackable()
         .texture('kubejs:item/whetstone/incomplete_fine_whetstone')
 
@@ -127,7 +127,7 @@ StartupEvents.registry('item', event => {
         .unstackable()
         .texture('kubejs:item/whetstone/carbon-sealed_quartzite_base')
 
-    event.create('incomplete_quartzite_base')
+    event.create('incomplete_quartzite_base', 'create:sequenced_assembly')
         .unstackable()
         .texture('kubejs:item/whetstone/incomplete_quartzite_base')
 

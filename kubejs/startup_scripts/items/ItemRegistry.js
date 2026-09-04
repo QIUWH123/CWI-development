@@ -169,59 +169,56 @@ StartupEvents.registry('item', event => {
 
 // Incomplete Items
 
-    event.create('incomplete_steel_mechanism')
+    event.create('incomplete_steel_mechanism', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steel_mechanism')
 
-    event.create('incomplete_voltaic_pile')
-        .texture('kubejs:item/incomplete_items/incomplete_voltaic_pile')
-
-    event.create('incomplete_control_chip')
+    event.create('incomplete_control_chip', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_control_chip')
 
-    event.create('unfinished_control_chip')
+    event.create('unfinished_control_chip', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_control_chip')
 
-    event.create('incomplete_distillation_controller')
+    event.create('incomplete_distillation_controller', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_distillation_controller')
         .rarity('epic')
 
-    event.create('incomplete_steel_drill_head')
+    event.create('incomplete_steel_drill_head', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steel_drill_head')
         .maxStackSize(16)
         .rarity('uncommon')
 
-    event.create('incomplete_fluid_combustion_module')
+    event.create('incomplete_fluid_combustion_module', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_fluid_combustion_module')
         .rarity('uncommon')
 
-    event.create('incomplete_industrial_pump')
+    event.create('incomplete_industrial_pump', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_industrial_pump')
 
-    event.create('incomplete_steel_fuel_injector')
+    event.create('incomplete_steel_fuel_injector', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steel_fuel_injector')
 
-    event.create('incomplete_integrated_electron_tube')
+    event.create('incomplete_integrated_electron_tube', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_integrated_electron_tube')
 
-    event.create('incomplete_engine_cylinder')
+    event.create('incomplete_engine_cylinder', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_engine_cylinder')
 
-    event.create('incomplete_steel_ring')
+    event.create('incomplete_steel_ring', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steel_ring')
 
-    event.create('incomplete_steam_apparatus')
+    event.create('incomplete_steam_apparatus', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steam_apparatus')
 
-    event.create('incomplete_steel_bearing')
+    event.create('incomplete_steel_bearing', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_steel_bearing')
 
-    event.create('incomplete_industrial_iron_ingot')
+    event.create('incomplete_industrial_iron_ingot', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_industrial_iron_ingot')
 
-    event.create('incomplete_cast_iron_ingot')
+    event.create('incomplete_cast_iron_ingot', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_cast_iron_ingot')
 
-    event.create('incomplete_industrial_iron_blade')
+    event.create('incomplete_industrial_iron_blade', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_industrial_iron_blade')
 
 // Machine Parts
@@ -231,14 +228,6 @@ StartupEvents.registry('item', event => {
 
     event.create('handle')
         .texture('kubejs:item/machine_parts/handle')
-
-    event.create('uncharged_voltaic_pile')
-        .texture('kubejs:item/machine_parts/uncharged_voltaic_pile')
-
-    event.create('voltaic_pile')
-        .texture('kubejs:item/machine_parts/voltaic_pile')
-    event.create('brass_circuit_board')
-        .texture('kubejs:item/machine_parts/brass_circuit_board')
 
     event.create('industrial_iron_drill_head')
         .texture('kubejs:item/machine_parts/industrial_iron_drill_head')
