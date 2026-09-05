@@ -1,4 +1,4 @@
-// ==================== 流体注册函数 ====================
+// Fluid Registration Functions
 
 function registerMoltenMetal(event, name, color) {
     event.create(name)
@@ -117,7 +117,8 @@ function registerGas(event, name, color) {
         .tag('cwi:gasses')
 }
 
-// 统一注册入口
+// Unified Fluid Registration Entry
+
 function registerFluids(event, name, color, type, overrides) {
     if (type === 'thick') registerThickFLuid(event, name, color)
     if (type === 'thin') registerThinFLuid(event, name, color)
@@ -129,7 +130,7 @@ function registerFluids(event, name, color, type, overrides) {
     if (type === 'gas') registerGas(event, name, color)
 }
 
-// ==================== 数据定义 ====================
+// Fluid Data Definitions
 
 global.moltenMetals = [
     ['molten_aluminum', 0xE8FAFF],
@@ -306,15 +307,15 @@ global.gases = [
     ['syngas', 0xB09070]
 ]
 
-// ==================== 统一注册 ====================
+// Unified Fluid Registration
 
 StartupEvents.registry('fluid', function (event) {
-    // molten metals
+    // Molten Metals
     global.moltenMetals.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'molten')
     })
 
-    // special fluids
+    // Special Fluids
     global.specialFluids.forEach(function (entry) {
         const still = entry[3][0]
         const flowing = entry[3][1]
@@ -329,31 +330,33 @@ StartupEvents.registry('fluid', function (event) {
         })
     })
 
-    // thick fluids
+    // Thick Fluids
     global.thickFluids.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'thick')
     })
 
-    // thin fluids
+    // Thin Fluids
     global.thinFluids.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'thin')
     })
 
-    // thin fluids
+    // Normal Fluids
     global.normalFluids.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'normal')
     })
 
-    // chemical fluids
+    // Chemical Fluids
     global.chemicalFluids.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'chemical')
     })
 
-    // gases
+    // Gases
     global.gases.forEach(function (entry) {
         registerFluids(event, entry[0], entry[1], 'gas')
     })
 })
+
+// Block Light Emission Modification
 
 BlockEvents.modification(event => {
     global.moltenMetals.forEach(([id,_]) => {
