@@ -171,6 +171,60 @@ global.hammers = [
     ['netherite_hammer', 'netherite', 9, 3, 0]
 ]
 
+global.apples = [
+    ['gold', 5, 0.5, [
+        ['minecraft:haste', 100, 2, 1],
+        ['minecraft:haste', 200, 1, 1],
+        ['minecraft:haste', 300, 0, 1],
+        ['minecraft:speed', 100, 2, 1],
+        ['minecraft:speed', 200, 1, 1],
+        ['minecraft:speed', 300, 0, 1],
+        ['minecraft:glowing', 300, 0, 1]
+    ]],
+    ['brass', 5, 0.5, [
+        ['minecraft:regeneration', 600, 0, 1],
+        ['minecraft:speed', 600, 0, 1]
+    ]],
+    ['bronze', 5, 0.5, [
+        ['minecraft:regeneration', 800, 0, 1],
+        ['minecraft:speed', 800, 0, 1]
+    ]],
+    ['copper', 5, 0.5, [
+        ['minecraft:absorption', 600, 1, 1],
+        ['minecraft:resistance', 120, 0, 1],
+        ['minecraft:slowness', 120, 0, 1]
+    ]],
+    ['iron', 5, 0.5, [
+        ['minecraft:absorption', 800, 2, 1],
+        ['minecraft:resistance', 160, 0, 1],
+        ['minecraft:slowness', 160, 0, 1]
+    ]],
+    ['andesite_alloy', 5, 0.5, [
+        ['minecraft:resistance', 80, 1, 1],
+        ['minecraft:slowness', 80, 1, 1]
+    ]],
+    ['lithium', 5, 0.5, [
+        ['tfmg:hellfire', 400, 1, 1]
+    ]],
+    ['lead', 5, 0.5, [
+        ['clanginghowl:neurotoxin', 400, 2, 1]
+    ]],
+    ['steel', 5, 0.5, [
+        ['minecraft:strength', 200, 1, 1],
+        ['minecraft:resistance', 200, 1, 1],
+        ['minecraft:fire_resistance', 200, 1, 1]
+    ]],
+    ['stainless_steel', 5, 0.5, [
+        ['minecraft:strength', 200, 1, 1],
+        ['minecraft:resistance', 200, 2, 1],
+        ['minecraft:fire_resistance', 200, 1, 1],
+        ['minecraft:regeneration', 200, 1, 1]
+    ]],
+    ['titanium', 5, 0.5, [
+        ['minecraft:resistance', 40, 4, 1]
+    ]]
+]
+
 global.pipePileDefinitions = [
     ['steel',     'tfmg:block/steel_pipes',     6, 7, 'metal', 'pickaxe', 'stone', 'tfmg:steel_pipe'],
     ['cast_iron', 'tfmg:block/cast_iron_pipes', 4, 6, 'metal', 'pickaxe', 'stone', 'tfmg:cast_iron_pipe'],

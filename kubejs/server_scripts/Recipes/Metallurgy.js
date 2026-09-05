@@ -29,12 +29,12 @@ ServerEvents.recipes(event => {
                 const outputItem = mat.items[shape]
                 if (!outputItem) return
                 const amount = (shape === 'sheet' || shape === 'ingot') ? 90 : (shape === 'rod' ? 45 : 10)
-                tableCasting(event, moldItem, AddFluid(amount + ' ' + mat.fluid), calcTime(event, mat, shape), AddItem(outputItem))
+                tableCasting(event, false, [AddItem(moldItem), AddFluid(amount + ' ' + mat.fluid)], calcTime(event, mat, shape), AddItem(outputItem))
             })
         })
 
         if (mat.items.block) {
-            basinCasting(event, [AddFluid('810 ' + mat.fluid)], calcTime(event, mat, 'block'), AddItem(mat.items.block))
+            basinCasting(event, false, [AddFluid('810 ' + mat.fluid)], calcTime(event, mat, 'block'), AddItem(mat.items.block))
         }
 
         if (mat.mp > 2400) return

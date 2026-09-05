@@ -214,18 +214,20 @@ function threshing(event, ingredients, results, processingTime) {
     })
 }
 
-function tableCasting(event, mold, ingredients, processingTime, results) {
+function tableCasting(event, moldConsumed, ingredients, processingTime, results) {
     return event.custom({
         "type": "createmetallurgy:casting_in_table",
-        "ingredients": [ AddItem(mold), ingredients ],
+        "mold_consumed": moldConsumed,
+        "ingredients": ingredients,
         "processingTime": processingTime,
         "result": results
     })
 }
 
-function basinCasting(event, ingredients, processingTime, results) {
+function basinCasting(event, moldConsumed, ingredients, processingTime, results) {
     return event.custom({
         "type": "createmetallurgy:casting_in_basin",
+        "mold_consumed": moldConsumed,
         "ingredients": ingredients,
         "processingTime": processingTime,
         "result": results
@@ -405,8 +407,8 @@ ServerEvents.recipes(event => {
         AddItem('minecraft:clay_ball'), AddItem('minecraft:clay_ball'), AddItem('minecraft:clay_ball'), AddItem('minecraft:clay_ball')
     ], 360, AddFluid('400 kubejs:molten_andesite_alloy'))
 
-    basinCasting(event, [AddFluid('1000 kubejs:molten_slime')], 43, AddItem('minecraft:slime_block'))
-    basinCasting(event, [AddFluid('1000 tfmg:molten_slag')], 1482, AddItem('tfmg:slag_block'))
+    basinCasting(event, false, [AddFluid('1000 kubejs:molten_slime')], 43, AddItem('minecraft:slime_block'))
+    basinCasting(event, false, [AddFluid('1000 tfmg:molten_slag')], 1482, AddItem('tfmg:slag_block'))
 
     // Alloying Recipes
     alloying(event, null, [AddFluid('30 kubejs:molten_gold'), AddFluid('10 kubejs:molten_silver')], 4, AddFluid('40 kubejs:molten_electrum'))

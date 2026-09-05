@@ -563,6 +563,8 @@
   "tfmg:lime_multimeter",
   "tfmg:magenta_multimeter",
   "tfmg:molten_plastic_bucket",
+  "tfmg:molten_slag_bucket",
+  "tfmg:molten_steel_bucket",
   "tfmg:multimeter",
   "tfmg:oil_deposit",
   "tfmg:orange_multimeter",
