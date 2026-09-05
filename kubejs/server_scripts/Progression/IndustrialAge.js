@@ -125,24 +125,6 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'tfmg:concrete_hose',
-        [
-            'AEA',
-            'BCF',
-            'GDG'
-        ],
-        {
-            A: 'tfmg:heavy_plate',
-            B: 'tfmg:large_steel_cogwheel',
-            C: 'kubejs:rubber_block',
-            D: 'kubejs:steel_bearing',
-            E: 'tfmg:heavy_machinery_casing',
-            F: 'tfmg:steel_pipe',
-            G: 'tfmg:rubber_sheet'
-        }
-    )
-
-    event.shaped(
         'tfmg:steel_chemical_vat',
         [
             'AAA',
@@ -257,7 +239,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing('tfmg:cement', ['kubejs:limestone_powder', '3x minecraft:clay_ball'])
     event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:silicon_powder', 'kubejs:magnesite_powder', '2x kubejs:bauxite_powder', '3x minecraft:clay_ball']).superheated()
     event.recipes.create.mixing('4x tfmg:fireclay_ball', ['kubejs:quartz_powder', 'kubejs:magnesite_powder', '2x kubejs:bauxite_powder', '3x minecraft:clay_ball']).superheated()
-    event.recipes.create.mixing(['2x kubejs:silicon_powder', Item.of('kubejs:silicon_powder').withChance(0.37)], ['4x kubejs:quartz_powder', '1x tfmg:coal_coke_dust', '2x kubejs:limestone_powder']).superheated()
+    event.recipes.create.mixing(['3x kubejs:silicon_powder'], ['4x kubejs:quartz_powder', '1x tfmg:coal_coke_dust', '2x kubejs:limestone_powder']).superheated()
 
 // Mechanical Crafting
 

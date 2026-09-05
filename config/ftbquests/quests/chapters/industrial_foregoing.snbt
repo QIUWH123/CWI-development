@@ -51,8 +51,8 @@
 			image: "createmetallurgy:block/industrial_crucible/crucible_inner"
 			rotation: 45.0d
 			width: 1.0d
-			x: 8.0d
-			y: 6.0d
+			x: 12.0d
+			y: 4.0d
 		}
 		{
 			height: 1.0d
@@ -67,24 +67,24 @@
 			image: "tfmg:block/steel_casing"
 			rotation: 45.0d
 			width: 1.0d
-			x: 10.0d
-			y: 6.0d
-		}
-		{
-			height: 1.0d
-			image: "tfmg:block/steel_casing"
-			rotation: 45.0d
-			width: 1.0d
-			x: 12.0d
-			y: 6.0d
-		}
-		{
-			height: 1.0d
-			image: "tfmg:block/steel_casing"
-			rotation: 45.0d
-			width: 1.0d
-			x: 12.0d
+			x: 8.0d
 			y: 4.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 8.0d
+			y: 6.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 12.0d
+			y: 6.0d
 		}
 		{
 			height: 1.0d
@@ -101,6 +101,14 @@
 			width: 1.0d
 			x: 16.0d
 			y: 2.0d
+		}
+		{
+			height: 1.0d
+			image: "tfmg:block/steel_casing"
+			rotation: 45.0d
+			width: 1.0d
+			x: 10.0d
+			y: 6.0d
 		}
 	]
 	order_index: 11
@@ -620,23 +628,6 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["5531421570274E82"]
-			description: ["&ePours and shapes concrete. Used with the concrete recipe.&r"]
-			disable_toast: true
-			id: "25A473E67B1697E0"
-			shape: "hexagon"
-			size: 1.5d
-			subtitle: "Concrete Production"
-			tasks: [{
-				id: "0F53995BB1004383"
-				item: "tfmg:concrete_hose"
-				type: "item"
-			}]
-			title: "Concrete Hose"
-			x: 10.0d
-			y: 4.0d
-		}
-		{
 			dependencies: ["08C023B7583B9161"]
 			description: ["&eA vat for chemical reactions. Different attachments enable various processes.&r"]
 			disable_toast: true
@@ -654,19 +645,19 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["25A473E67B1697E0"]
-			description: ["&eLiquid concrete. Pours like water, hardens into solid blocks.&r"]
+			dependencies: ["5C5628BB82D53C81"]
+			description: ["&eA tough building material. It starts as a soft mixture that you can pour into shapes, but it hardens into a strong, solid block.&r"]
 			disable_toast: true
+			hide_dependency_lines: false
 			id: "168029E07C5CA042"
 			shape: "diamond"
-			subtitle: "Wet Concrete"
 			tasks: [{
 				id: "4B3516DC2346C052"
 				item: "tfmg:concrete"
 				type: "item"
 			}]
 			title: "Concrete"
-			x: 12.0d
+			x: 8.0d
 			y: 6.0d
 		}
 		{
@@ -766,12 +757,12 @@
 				type: "item"
 			}]
 			title: "Industrial Crucible"
-			x: 8.0d
+			x: 10.0d
 			y: 4.0d
 		}
 		{
-			dependencies: ["25A473E67B1697E0"]
-			description: ["&eAsphalt for paving roads.&r"]
+			dependencies: ["5C5628BB82D53C81"]
+			description: ["&eA dark, sticky, and heavy mixture of bitumen and stone aggregates. People use this durable material to pave smooth surfaces for roads, driveways, and airport runways back in the past.&r"]
 			disable_toast: true
 			id: "2E0453F54E312FDB"
 			shape: "diamond"
@@ -782,8 +773,8 @@
 				type: "item"
 			}]
 			title: "Asphalt Block"
-			x: 10.0d
-			y: 6.0d
+			x: 8.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["38C3399F3559D720"]
@@ -897,22 +888,6 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["08C023B7583B9161"]
-			description: ["&eFurther expands backpack capacity.&r"]
-			disable_toast: true
-			id: "32035A4118FD39B0"
-			shape: "diamond"
-			subtitle: "More Storage"
-			tasks: [{
-				id: "3D6F58049D081602"
-				item: "sophisticatedbackpacks:stack_upgrade_tier_3"
-				type: "item"
-			}]
-			title: "Stack Upgrade Tier 3"
-			x: 12.0d
-			y: 4.0d
-		}
-		{
 			dependencies: ["70556A32DA19E441"]
 			description: ["&eSeparates fluids into their components. Used for processing oil and other liquids.&r"]
 			disable_toast: true
@@ -1012,7 +987,141 @@
 				type: "item"
 			}]
 			title: "Gauge Attachment"
-			x: 8.0d
+			x: 12.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "037EE7423A735019"
+			shape: "diamond"
+			subtitle: "Sturdy"
+			tasks: [
+				{
+					id: "43ACD198D4668154"
+					item: {
+						Count: 1
+						id: "kubejs:steel_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "5426D13FDA6058CC"
+					item: {
+						Count: 1
+						id: "kubejs:steel_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7099F98D25C2E3C3"
+					item: {
+						Count: 1
+						id: "kubejs:steel_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4C23D2903BDC7E68"
+					item: {
+						Count: 1
+						id: "kubejs:steel_shovel"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1FF4BB00E1B54E02"
+					item: {
+						Count: 1
+						id: "kubejs:steel_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Steel Tools"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7A0C6B3904C55546"]
+			disable_toast: true
+			hide_dependency_lines: true
+			id: "4274439D1FCFA4D7"
+			shape: "diamond"
+			subtitle: "Sturdy"
+			tasks: [
+				{
+					id: "08BBAF09B5432ED4"
+					item: {
+						Count: 1
+						id: "kubejs:steel_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "22DFD4C478EFEE25"
+					item: {
+						Count: 1
+						id: "kubejs:steel_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "3169B9147BCDA73F"
+					item: {
+						Count: 1
+						id: "kubejs:steel_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "507C3952E34554B0"
+					item: {
+						Count: 1
+						id: "kubejs:steel_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					optional_task: true
+					type: "item"
+				}
+			]
+			title: "Steel Armor"
+			x: 12.0d
 			y: 6.0d
 		}
 	]

@@ -204,7 +204,7 @@ ServerEvents.recipes(event => {
         ], 
         {
             A: 'kubejs:stainless_steel_sheet',
-            B: 'tfmg:steel_casing',
+            B: 'kubejs:stainless_steel_casing',
             C: 'kubejs:quality_tool_handle'
         }
     )

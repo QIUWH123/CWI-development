@@ -280,10 +280,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"6E443BA43458D311"
-				"21452C657A24CE17"
-			]
+			dependencies: ["6E443BA43458D311"]
 			disable_toast: true
 			id: "6182694F6CB2E60A"
 			tasks: [{
@@ -291,7 +288,7 @@
 				item: "tfmg:asphalt"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 0.0d
 			y: 4.0d
 		}
 		{
@@ -342,21 +339,6 @@
 			}]
 			x: 4.0d
 			y: 2.0d
-		}
-		{
-			dependencies: ["301441864FC92B6B"]
-			disable_toast: true
-			hide_dependency_lines: true
-			id: "21452C657A24CE17"
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [{
-				id: "33D691AC76DE63D7"
-				item: "tfmg:concrete_hose"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 4.0d
 		}
 		{
 			dependencies: ["307A621A21A3E63C"]
@@ -483,6 +465,24 @@
 				type: "item"
 			}]
 			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7E496F23593AA01F"]
+			description: [
+				"&eThe lubricating effect of lubrication oil is far greater than that of ordinary plant oil.&r"
+				""
+				"&eUsing lubrication oil can significantly reduce the amount of lubricant consumed.&r"
+			]
+			icon: "kubejs:incomplete_heavy_machine"
+			id: "572404482C0E55DE"
+			subtitle: "Less Lubrication"
+			tasks: [{
+				id: "09BC0F68C8033C32"
+				title: "Better Recipe"
+				type: "checkmark"
+			}]
+			x: 2.0d
 			y: 4.0d
 		}
 	]

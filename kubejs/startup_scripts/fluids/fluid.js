@@ -1,4 +1,4 @@
-// Fluid Registration Helpers
+// ==================== 流体注册函数 ====================
 
 function registerMoltenMetal(event, name, color) {
     event.create(name)
@@ -30,22 +30,74 @@ function registerHeavyFLuid(event, name, color) {
         .tag('cwi:heavy_fluids')
 }
 
-function registerFluid(event, name, color, type, overrides) {
-    if (!type) type = 'thin'
-    if (!overrides) overrides = {}
-    var builder = event.create(name)
-    if (overrides.still) {
-        builder = builder.stillTexture(overrides.still).flowingTexture(overrides.flowing)
-    } else {
-        builder = builder[type === 'thick' ? 'thickTexture' : 'thinTexture'](color)
-    }
-    builder
+function registerChemicalFLuid(event, name, color) {
+    event.create(name)
+        .stillTexture('kubejs:fluid/chemical_still')
+        .flowingTexture('kubejs:fluid/chemical_flow')
+        .color(color)
+        .tag('cwi:chemical_fluids')
+        .bucketItem
+        .textureJson({
+            layer0: 'kubejs:item/fluid_container',
+            layer1: 'kubejs:item/fluids/fluids'
+        })
+        .tag('cwi:containers')
+        .tag('cwi:chemical_fluids')
+}
+
+function registerNormalFLuid(event, name, color) {
+    event.create(name)
+        .stillTexture('kubejs:fluid/normal_still')
+        .flowingTexture('kubejs:fluid/normal_flow')
+        .color(color)
+        .tag('cwi:normal_fluids')
+        .bucketItem
+        .textureJson({
+            layer0: 'kubejs:item/fluid_container',
+            layer1: 'kubejs:item/fluids/fluids'
+        })
+        .tag('cwi:containers')
+        .tag('cwi:normal_fluids')
+}
+
+function registerThickFLuid(event, name, color) {
+    event.create(name)
+        .thickTexture(color)
+        .tag('cwi:thick_fluids')
+        .bucketItem
+        .textureJson({
+            layer0: 'kubejs:item/fluid_container',
+            layer1: 'kubejs:item/fluids/fluids'
+        })
+        .tag('cwi:containers')
+        .tag('cwi:thick_fluids')
+}
+
+function registerThinFLuid(event, name, color) {
+    event.create(name)
+        .thinTexture(color)
+        .tag('cwi:thin_fluids')
+        .bucketItem
+        .textureJson({
+            layer0: 'kubejs:item/fluid_container',
+            layer1: 'kubejs:item/fluids/fluids'
+        })
+        .tag('cwi:containers')
+        .tag('cwi:thin_fluids')
+}
+
+function registerSpecialFLuid(event, name, overrides) {
+    event.create(name)
+        .stillTexture(overrides.still)
+        .flowingTexture(overrides.flowing)
+        .tag('cwi:special_fluids')
         .bucketItem
         .textureJson(overrides.textureJson || {
             layer0: 'kubejs:item/fluid_container',
             layer1: 'kubejs:item/fluids/fluids'
         })
         .tag('cwi:containers')
+        .tag('cwi:special_fluids')
 }
 
 function registerGas(event, name, color) {
@@ -65,7 +117,19 @@ function registerGas(event, name, color) {
         .tag('cwi:gasses')
 }
 
-// Molten Metals Data
+// 统一注册入口
+function registerFluids(event, name, color, type, overrides) {
+    if (type === 'thick') registerThickFLuid(event, name, color)
+    if (type === 'thin') registerThinFLuid(event, name, color)
+    if (type === 'chemical') registerChemicalFLuid(event, name, color)
+    if (type === 'molten') registerMoltenMetal(event, name, color)
+    if (type === 'heavy') registerHeavyFLuid(event, name, color)
+    if (type === 'normal') registerNormalFLuid(event, name, color)
+    if (type === 'special') registerSpecialFLuid(event, name, overrides)
+    if (type === 'gas') registerGas(event, name, color)
+}
+
+// ==================== 数据定义 ====================
 
 global.moltenMetals = [
     ['molten_aluminum', 0xE8FAFF],
@@ -100,121 +164,118 @@ global.moltenMetals = [
     ['molten_potassium_sodium_nitrate', 0xFFFBBF]
 ]
 
-// Special Fluids Data
-
 global.specialFluids = [
-    ['redstone_acid', null, null, 'kubejs:fluid/redstone_acid_still', 'kubejs:fluid/redstone_acid_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/redstone_acid'
+    ['redstone_acid', null, 'special', ['kubejs:fluid/redstone_acid_still', 'kubejs:fluid/redstone_acid_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/redstone_acid'
     }],
-    ['molten_sticky_resin', null, null, 'kubejs:fluid/molten_sticky_resin_still', 'kubejs:fluid/molten_sticky_resin_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/sticky_resin'
+    ['molten_sticky_resin', null, 'special', ['kubejs:fluid/molten_sticky_resin_still', 'kubejs:fluid/molten_sticky_resin_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/sticky_resin'
     }],
-    ['pulp', null, null, 'kubejs:fluid/pulp_still', 'kubejs:fluid/pulp_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/pulp'
+    ['pulp', null, 'special', ['kubejs:fluid/pulp_still', 'kubejs:fluid/pulp_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/pulp'
     }],
-    ['fine_pulp', null, null, 'kubejs:fluid/fine_pulp_still', 'kubejs:fluid/fine_pulp_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/fine_pulp'
+    ['fine_pulp', null, 'special', ['kubejs:fluid/fine_pulp_still', 'kubejs:fluid/fine_pulp_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/fine_pulp'
     }],
-    ['kubejs:concentrated_sulfuric_acid', null, null, 'kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/concentrated_sulfuric_acid'
+    ['kubejs:concentrated_sulfuric_acid', null, 'special', ['kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow'], {
+       container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/concentrated_sulfuric_acid'
     }],
-    ['kubejs:sulfuric_acid', null, null, 'kubejs:fluid/sulfuric_acid_still', 'kubejs:fluid/sulfuric_acid_flow', {
-        layer0: 'kubejs:item/fluid_container',
-        layer1: 'kubejs:item/_',
-        layer2: 'kubejs:item/fluids/sulfuric_acid'
+    ['kubejs:sulfuric_acid', null, 'special', ['kubejs:fluid/sulfuric_acid_still', 'kubejs:fluid/sulfuric_acid_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'kubejs:item/fluids/sulfuric_acid'
     }]
 ]
 
-// Normal Fluids Data
-
-global.normalFluids = [
-    ['condensed_air', 0xFFFFFF, 'thick'],
-    ['syrup', 0xD4BE5D, 'thick'],
-    ['wheat_juice', 0xD4BE5D, 'thick'],
-    ['molten_slime', 0xA5FF3A, 'thick'],
-    ['molten_rubber', 0xE5A020, 'thick'],
-    ['chromatic_waste', 0xC800A0, 'thick'],
-    ['wood_vinegar', 0x9C7B60, 'thick'],
-    ['humic_acid_slurry', 0x6B4226, 'thick'],
-    ['thermophile_broth', 0xA64324, 'thick'],
-    ['ammonia_solution', 0xFFD5AC, 'thick'],
-    ['calcium_chloride_solution', 0xF5F4DF, 'thick'],
-    ['nitrate_solution', 0xF8FFEE, 'thick'],
-    ['molten_polyethylene', 0xE4E8EB, 'thick'],
-    ['molten_polypropylene', 0xD0EEF7, 'thick'],
-    ['molten_polyvinyl_chloride', 0xE8E8CA, 'thick'],
-    ['molten_polybenzimidazole', 0x48484F, 'thick'],
-    ['ethylene_glycol', 0x9CCCCC, 'thin'],
-    ['cyclohexanone', 0xC8C8C8, 'thin'],
-    ['magnesium_chloride_solution', 0xA8D0D0, 'thin'],
-    ['wax_oil', 0x6B4226, 'thick'],
-    ['residual_oil', 0x3A1A0A, 'thick'],
-    ['visbreaker_residue', 0x5A2A1A, 'thick'],
-    ['heavy_fuel_oil', 0x4A2A1A, 'thick'],
-    ['slurry_oil', 0x3A2A1A, 'thick'],
-    ['dewaxed_oil', 0xC8B080, 'thin'],
-    ['ammonium_solution', 0xFFFFFF, 'thin'],
-    ['calcium_solution', 0xFFF7BA, 'thin'],
-    ['urea_solution', 0xE5E8d3, 'thin'],
-    ['pyrolysis_gasoline', 0xD4A040, 'thin'],
-    ['raffinate', 0x8A8A70, 'thin'],
-    ['coke_oil', 0x2A1A0A, 'thick'],
-    ['fcc_effluent', 0x8A6A3A, 'thin'],
-    ['visbreaker_effluent', 0x6A3A1A, 'thin'],
-    ['adiponitrile', 0xB0C8C8, 'thin'],
-    ['paraxylene', 0xC8D8E0, 'thin'],
-    ['orthoxylene', 0xC8D0D8, 'thin'],
-    ['metaxylene', 0xC8D0D8, 'thin'],
-    ['molten_pet', 0xC8C8B8, 'thick'],
-    ['ferric_chloride', 0x6B4226, 'thin'],
-    ['aromatic_solvent', 0xD4C8A0, 'thin'],
-    ['nitrogen_fertilizer', 0xFFEB63, 'thin'],
-    ['nitric_acid', 0xC25A34, 'thin'],
-    ['caustic_soda', 0xFFD6C4, 'thin'],
-    ['muriatic_acid', 0xC0E030, 'thin'],
-    ['acetic_acid', 0xF0E68C, 'thin'],
-    ['propionic_acid', 0xFFDAB9, 'thin'],
-    ['lactic_acid', 0xFFCBA4, 'thin'],
-    ['salt_solution', 0x62DEFF, 'thin'],
-    ['raw_brine', 0x2A5DA8, 'thin'],
-    ['edc', 0x90B8B0, 'thin'],
-    ['alkaline_brine', 0x5957DE, 'thin'],
-    ['distilled_water', 0xB0EEFF, 'thin'],
-    ['pan_precursor', 0x8B6B50, 'thin'],
-    ['acetone', 0x90A0A0, 'thin'],
-    ['potassium_solution', 0x88AADD, 'thin'],
-    ['silicate_solution', 0xC0D0D0, 'thin'],
-    ['methanol', 0xE0B040, 'thin'],
-    ['synthetic_ester_base_oil', 0xF0C060, 'thin'],
-    ['epoxy_resin', 0xD0A050, 'thin'],
-    ['paraffin_oil', 0xFFD070, 'thin'],
-    ['cracked_paraffin_oil', 0xE8B840, 'thin'],
-    ['reformate', 0x4A6A80, 'thin'],
-    ['aromatic_mix', 0x5A7A90, 'thin'],
-    ['hexamethylenediamine_solution', 0xD0D0B0, 'thin'],
-    ['phenol', 0xC6F0F5, 'thin'],
-    ['epichlorohydrin', 0xF3F5DA, 'thin'],
-    ['adipic_acid_solution', 0xE0F0FF, 'thin'],
-    ['cyclohexanol', 0x6080A0, 'thin'],
-    ['cyclohexane', 0x8098B0, 'thin'],
-    ['condensed_natural_gas', 0xC7FFFA, 'thin'],
-    ['vinyl_chloride_monomer', 0xA0A090, 'thin'],
-    ['condensed_cracked_naphtha', 0xC25A34, 'thin'],
-    ['condensed_cracked_ethane', 0xD2E6AA, 'thin'],
-    ['condensed_cracked_propane', 0x97C2A1, 'thin']
+global.thickFluids = [
+    ['condensed_air', 0xFFFFFF],
+    ['syrup', 0xD4BE5D],
+    ['wheat_juice', 0xD4BE5D],
+    ['molten_slime', 0xA5FF3A],
+    ['molten_rubber', 0xE5A020],
+    ['chromatic_waste', 0xC800A0],
+    ['wood_vinegar', 0x9C7B60],
+    ['humic_acid_slurry', 0x6B4226],
+    ['thermophile_broth', 0xA64324],
+    ['ammonia_solution', 0xFFD5AC],
+    ['calcium_chloride_solution', 0xF5F4DF],
+    ['nitrate_solution', 0xF8FFEE],
+    ['molten_polyethylene', 0xE4E8EB],
+    ['molten_polypropylene', 0xD0EEF7],
+    ['molten_polyvinyl_chloride', 0xE8E8CA],
+    ['molten_polybenzimidazole', 0x48484F],
+    ['wax_oil', 0x6B4226],
+    ['residual_oil', 0x3A1A0A],
+    ['visbreaker_residue', 0x5A2A1A],
+    ['heavy_fuel_oil', 0x4A2A1A],
+    ['slurry_oil', 0x3A2A1A],
+    ['coke_oil', 0x2A1A0A],
+    ['molten_pet', 0xC8C8B8],
+    ['ferric_chloride', 0x6B4226]
 ]
 
-// Gases Data
+global.thinFluids = [
+    ['calcium_solution', 0xFFF7BA],
+    ['salt_solution', 0x62DEFF],
+    ['adipic_acid_solution', 0xE0F0FF],
+    ['potassium_solution', 0x88AADD],
+    ['silicate_solution', 0xC0D0D0],
+    ['hexamethylenediamine_solution', 0xD0D0B0],
+    ['distilled_water', 0xB0EEFF]
+]
+
+global.normalFluids = [
+    ['ethylene_glycol', 0x9CCCCC],
+    ['cyclohexanone', 0xC8C8C8],
+    ['magnesium_chloride_solution', 0xA8D0D0],
+    ['urea_solution', 0xE5E8d3],
+    ['visbreaker_effluent', 0x6A3A1A],
+    ['adiponitrile', 0xB0C8C8],
+    ['paraxylene', 0xC8D8E0],
+    ['orthoxylene', 0xC8D0D8],
+    ['metaxylene', 0xC8D0D8],
+    ['nitrogen_fertilizer', 0xFFEB63],
+    ['nitric_acid', 0xC25A34],
+    ['caustic_soda', 0xFFD6C4],
+    ['muriatic_acid', 0xC0E030],
+    ['acetic_acid', 0xF0E68C],
+    ['propionic_acid', 0xFFDAB9],
+    ['lactic_acid', 0xFFCBA4],
+    ['raw_brine', 0x2A5DA8],
+    ['edc', 0x90B8B0],
+    ['alkaline_brine', 0x5957DE],
+    ['pan_precursor', 0x8B6B50],
+    ['acetone', 0x90A0A0],
+    ['phenol', 0xC6F0F5],
+    ['epichlorohydrin', 0xF3F5DA],
+    ['cyclohexanol', 0x6080A0],
+    ['cyclohexane', 0x8098B0],
+    ['condensed_natural_gas', 0xC7FFFA],
+    ['vinyl_chloride_monomer', 0xA0A090],
+    ['condensed_cracked_naphtha', 0xC25A34],
+    ['condensed_cracked_ethane', 0xD2E6AA],
+    ['condensed_cracked_propane', 0x97C2A1]
+]
+
+global.chemicalFluids = [
+    ['dewaxed_oil', 0xC8B080],
+    ['ammonium_solution', 0xFFFFFF],
+    ['pyrolysis_gasoline', 0xD4A040],
+    ['raffinate', 0x8A8A70],
+    ['fcc_effluent', 0x8A6A3A],
+    ['aromatic_solvent', 0xD4C8A0],
+    ['methanol', 0xE0B040],
+    ['synthetic_ester_base_oil', 0xF0C060],
+    ['epoxy_resin', 0xD0A050],
+    ['paraffin_oil', 0xFFD070],
+    ['cracked_paraffin_oil', 0xE8B840],
+    ['reformate', 0x4A6A80],
+    ['aromatic_mix', 0x5A7A90]
+]
 
 global.gases = [
     ['oxygen', 0xFAFFFA],
@@ -245,27 +306,52 @@ global.gases = [
     ['syngas', 0xB09070]
 ]
 
-// Fluid Registry
+// ==================== 统一注册 ====================
 
 StartupEvents.registry('fluid', function (event) {
+    // molten metals
     global.moltenMetals.forEach(function (entry) {
-        registerMoltenMetal(event, entry[0], entry[1])
+        registerFluids(event, entry[0], entry[1], 'molten')
     })
 
+    // special fluids
     global.specialFluids.forEach(function (entry) {
-        registerFluid(event, entry[0], null, null, {
-            still: entry[3],
-            flowing: entry[4],
-            textureJson: entry[5]
+        const still = entry[3][0]
+        const flowing = entry[3][1]
+        const textureJson = {
+            layer0: entry[4].container,
+            layer1: entry[4].overlay
+        }
+        registerFluids(event, entry[0], null, 'special', {
+            still: still,
+            flowing: flowing,
+            textureJson: textureJson
         })
     })
 
-    global.normalFluids.forEach(function (entry) {
-        registerFluid(event, entry[0], entry[1], entry[2])
+    // thick fluids
+    global.thickFluids.forEach(function (entry) {
+        registerFluids(event, entry[0], entry[1], 'thick')
     })
 
+    // thin fluids
+    global.thinFluids.forEach(function (entry) {
+        registerFluids(event, entry[0], entry[1], 'thin')
+    })
+
+    // thin fluids
+    global.normalFluids.forEach(function (entry) {
+        registerFluids(event, entry[0], entry[1], 'normal')
+    })
+
+    // chemical fluids
+    global.chemicalFluids.forEach(function (entry) {
+        registerFluids(event, entry[0], entry[1], 'chemical')
+    })
+
+    // gases
     global.gases.forEach(function (entry) {
-        registerGas(event, entry[0], entry[1])
+        registerFluids(event, entry[0], entry[1], 'gas')
     })
 })
 
