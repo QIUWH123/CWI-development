@@ -262,9 +262,6 @@ StartupEvents.registry('item', event => {
         .texture('kubejs:item/machine_parts/precise_optical_lens')
         .rarity('epic')
 
-    event.create('robot_arm')
-        .texture('kubejs:item/machine_parts/robot_arm')
-
     event.create('robot_hand')
         .texture('kubejs:item/machine_parts/robot_hand')
 

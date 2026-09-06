@@ -1,0 +1,10 @@
+[
+  {"version":1},
+  {"type":"item_stack","value":"{Count:1b,id:\"tfmg:steel_mechanism\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"kubejs:industrial_pump\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tfmg:steel_distillation_output\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"kubejs:heavy_machine\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tfmg:steel_chemical_vat\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tfmg:heavy_machinery_casing\"}"},
+  {"type":"item_stack","value":"{Count:1b,id:\"tfmg:steel_casing\"}"}
+]

@@ -454,19 +454,12 @@
 			disable_toast: true
 			id: "11F9A3AD93930BDD"
 			subtitle: "Automated Fluid Handling"
-			tasks: [
-				{
-					id: "4A3492332D7B237F"
-					item: "kubejs:robot_pipette"
-					type: "item"
-				}
-				{
-					id: "1D0610A290E40F42"
-					item: "kubejs:robot_arm"
-					type: "item"
-				}
-			]
-			title: "Robot Pipette and Arm"
+			tasks: [{
+				id: "4A3492332D7B237F"
+				item: "kubejs:robot_pipette"
+				type: "item"
+			}]
+			title: "Robot Pipette"
 			x: 0.5d
 			y: -6.5d
 		}

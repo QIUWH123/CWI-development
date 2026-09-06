@@ -431,16 +431,16 @@ ServerEvents.recipes(event => {
     event.shaped(
         'kubejs:andesite_machine',
         [
-            'DCD',
-            'EAE',
-            'DBD'
+            'ECE',
+            'DAD',
+            'EBE'
         ],
         {
             A: 'kubejs:andesite_bearing',
             B: 'create:andesite_casing',
             C: 'create:large_cogwheel',
             D: 'create:cogwheel',
-            E: 'kubejs:andesite_alloy_rod'
+            E: 'create:shaft'
         }
     )
 
@@ -659,8 +659,8 @@ ServerEvents.recipes(event => {
             'DCD'
         ],
         {
-            A: 'kubejs:andesite_alloy_sheet',
-            B: 'kubejs:andesite_bearing',
+            A: 'create:iron_sheet',
+            B: 'minecraft:iron_ingot',
             C: 'create:fluid_tank',
             D: 'create:copper_sheet',
             E: '#cwi:rubbers'
@@ -674,7 +674,7 @@ ServerEvents.recipes(event => {
             'B'
         ],
         {
-            A: 'createdeco:iron_catwalk',
+            A: '#cwi:rubbers',
             B: 'create:copper_casing'
         }
     )
@@ -748,7 +748,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:copper_casing',
-            B: 'kubejs:rubber_block',
+            B: '#cwi:rubber_blocks',
             C: 'create:copper_sheet'
         }
     )

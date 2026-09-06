@@ -59,7 +59,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'create:copper_sheet',
-            B: 'kubejs:rubber_block',
+            B: '#cwi:rubber_blocks',
             C: 'kubejs:andesite_machine',
             D: 'minecraft:redstone'
         }

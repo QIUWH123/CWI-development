@@ -166,7 +166,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'kubejs:precise_machine',
-            B: 'kubejs:rubber_block',
+            B: '#cwi:rubber_blocks',
             C: 'create:sturdy_sheet'
         }
     )
@@ -577,7 +577,7 @@ ServerEvents.recipes(event => {
         {
             A: 'create:sturdy_sheet',
             B: 'kubejs:industrial_iron_ingot',
-            C: 'create:fluid_tank'
+            C: '#cwi:glass1'
         }
     )
 
@@ -596,20 +596,6 @@ ServerEvents.recipes(event => {
             E: 'kubejs:industrial_casing',
             F: 'create:brass_sheet',
             G: 'create_connected:control_chip'
-        }
-    )
-
-    event.recipes.create.mechanical_crafting(
-        'kubejs:robot_arm',
-        [
-            'ABA',
-            ' CB',
-            ' A '
-        ],
-        {
-            A: 'kubejs:industrial_iron_ingot',
-            B: 'createaddition:brass_rod',
-            C: 'create_connected:control_chip'
         }
     )
 
@@ -787,7 +773,6 @@ ServerEvents.recipes(event => {
         [
             event.recipes.create.deploying('kubejs:incomplete_mechanical_arm_base', ['kubejs:incomplete_mechanical_arm_base', 'create_connected:control_chip']),
             event.recipes.create.deploying('kubejs:incomplete_mechanical_arm_base', ['kubejs:incomplete_mechanical_arm_base', 'kubejs:integrated_electron_tube']),
-            event.recipes.create.deploying('kubejs:incomplete_mechanical_arm_base', ['kubejs:incomplete_mechanical_arm_base', 'kubejs:robot_arm']),
             event.recipes.create.deploying('kubejs:incomplete_mechanical_arm_base', ['kubejs:incomplete_mechanical_arm_base', 'tfmg:screwdriver']),
             event.recipes.create.filling('kubejs:incomplete_mechanical_arm_base', ['kubejs:incomplete_mechanical_arm_base', Fluid.of('kubejs:molten_sticky_resin', 100)])
         ]

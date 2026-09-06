@@ -429,23 +429,16 @@
 		}
 		{
 			dependencies: ["00C03DD3A3903E7C"]
-			description: ["&eRobotic components used to assemble a full mechanical arm.&r"]
+			description: ["&eRobotic component used to assemble mechanical arm.&r"]
 			disable_toast: true
 			id: "3CD9A2ACE4B55909"
 			subtitle: "Mechanical Parts"
-			tasks: [
-				{
-					id: "3E90D9CF5FF5250C"
-					item: "kubejs:robot_hand"
-					type: "item"
-				}
-				{
-					id: "0B2FFF4D76E47052"
-					item: "kubejs:robot_arm"
-					type: "item"
-				}
-			]
-			title: "Robot Hand and Arm"
+			tasks: [{
+				id: "3E90D9CF5FF5250C"
+				item: "kubejs:robot_hand"
+				type: "item"
+			}]
+			title: "Robot Hand"
 			x: 4.0d
 			y: 4.0d
 		}
