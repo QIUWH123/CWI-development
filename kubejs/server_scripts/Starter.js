@@ -28,42 +28,53 @@ PlayerEvents.loggedIn(event => {
     }
     if (!player.persistentData.contains("first_enter")) {
         player.persistentData.putBoolean("first_enter", true)
+
         const playerX = server.persistentData.getInt("starter_x")
         const playerY = server.persistentData.getInt("starter_y")
         const playerZ = server.persistentData.getInt("starter_z")
-        player.runCommandSilent(`tp @s ${playerX} ${playerY} ${playerZ} 90 50`)
-        player.runCommandSilent(`effect give @s minecraft:nausea 5 0 true`)
-        player.runCommandSilent(`effect give @s minecraft:blindness 2 0 true`)
-        player.runCommandSilent(`effect give @s minecraft:slowness 1 5 true`)
-        player.runCommandSilent(`effect give @s minecraft:slowness 2 2 true`)
-        player.runCommandSilent(`effect give @s minecraft:slowness 3 1 true`)
-        player.runCommandSilent(`effect give @s minecraft:slowness 5 0 true`)
-        player.runCommandSilent(`effect give @s minecraft:weakness 5 0 true`)
-        player.runCommandSilent(`playsound clanginghowl:electric_shock player @a ${playerX} ${playerY} ${playerZ} 2 2`)
-        player.runCommandSilent(`playsound minecraft:entity.generic.extinguish_fire player @a ${playerX} ${playerY} ${playerZ} 2 1`)
-        player.runCommandSilent(`playsound kubejs:player_spawn player @s ${playerX} ${playerY} ${playerZ} 2 1`)
-        player.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${playerX} ${playerY} ${playerZ} 0.3 0.1 0.3 0 10`)
-        player.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${playerX} ${playerY + 1.7} ${playerZ} 0.4 0.3 0.4 0.03 30`)
-        player.runCommandSilent(`particle minecraft:smoke ${playerX} ${playerY + 0.3} ${playerZ} 0.3 0.3 0.3 0.05 5`)
+
+        player.setX(playerX + 1)
+        player.setY(playerY)
+        player.setZ(playerZ + 1)
+        player.setRotation(90, 0)
+
+        player.potionEffects.add('minecraft:nausea', 100, 0, false, false)
+        player.potionEffects.add('minecraft:blindness', 40, 0, false, false)
+        player.potionEffects.add('minecraft:slowness', 20, 5, false, false)
+        player.potionEffects.add('minecraft:slowness', 40, 3, false, false)
+        player.potionEffects.add('minecraft:slowness', 60, 2, false, false)
+        player.potionEffects.add('minecraft:slowness', 80, 2, false, false)
+        player.potionEffects.add('minecraft:slowness', 100, 0, false, false)
+        player.potionEffects.add('minecraft:weakness', 100, 0, false, false)
+
+        server.runCommandSilent(`playsound clanginghowl:electric_shock player @a ${playerX} ${playerY} ${playerZ} 2 2`)
+        server.runCommandSilent(`playsound minecraft:entity.generic.extinguish_fire player @a ${playerX} ${playerY} ${playerZ} 2 1`)
+        server.runCommandSilent(`playsound kubejs:player_spawn player @a ${playerX} ${playerY} ${playerZ} 2 1`)
+        server.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${playerX} ${playerY} ${playerZ} 0.3 0.1 0.3 0 10`)
+        server.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${playerX} ${playerY + 1.7} ${playerZ} 0.4 0.3 0.4 0.03 30`)
+        server.runCommandSilent(`particle minecraft:smoke ${playerX} ${playerY + 0.3} ${playerZ} 0.3 0.3 0.3 0.05 5`)
     }
 })
 
 PlayerEvents.respawned(event => {
-    const { player } = event
+    const { player, server } = event
+
     const x = Math.floor(player.x)
     const y = Math.floor(player.y)
     const z = Math.floor(player.z)
-      
-    player.runCommandSilent(`effect give @s minecraft:nausea 5 0 true`)
-    player.runCommandSilent(`effect give @s minecraft:blindness 2 0 true`)
-    player.runCommandSilent(`effect give @s minecraft:slowness 1 5 true`)
-    player.runCommandSilent(`effect give @s minecraft:slowness 2 2 true`)
-    player.runCommandSilent(`effect give @s minecraft:slowness 3 1 true`)
-    player.runCommandSilent(`effect give @s minecraft:slowness 5 0 true`)
-    player.runCommandSilent(`effect give @s minecraft:weakness 5 0 true`)
-    player.runCommandSilent(`playsound block.sand.place block @s ${x} ${y + 1} ${z} 2 0.8`)
-    player.runCommandSilent(`playsound kubejs:player_spawn player @s ${x} ${y + 1} ${z} 2 1`)
-    player.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${x} ${y + 0.2} ${z} 0.6 0.3 0.6 0 20`)
-    player.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${x} ${y} ${z} 0.4 0.3 0.4 0.03 30`)
-    player.runCommandSilent(`particle minecraft:smoke ${x} ${y} ${z} 0.3 0.3 0.3 0.05 5`)
+
+    player.potionEffects.add('minecraft:nausea', 100, 0, false, false)
+    player.potionEffects.add('minecraft:blindness', 40, 0, false, false)
+    player.potionEffects.add('minecraft:slowness', 20, 5, false, false)
+    player.potionEffects.add('minecraft:slowness', 40, 3, false, false)
+    player.potionEffects.add('minecraft:slowness', 60, 2, false, false)
+    player.potionEffects.add('minecraft:slowness', 80, 2, false, false)
+    player.potionEffects.add('minecraft:slowness', 100, 0, false, false)
+    player.potionEffects.add('minecraft:weakness', 100, 0, false, false)
+
+    server.runCommandSilent(`playsound block.sand.place block @a ${x} ${y + 1} ${z} 2 0.8`)
+    server.runCommandSilent(`playsound kubejs:player_spawn player @a ${x} ${y + 1} ${z} 2 1`)
+    server.runCommandSilent(`particle minecraft:campfire_cosy_smoke ${x} ${y + 0.2} ${z} 0.6 0.3 0.6 0 20`)
+    server.runCommandSilent(`particle minecraft:falling_dust minecraft:gravel ${x} ${y} ${z} 0.4 0.3 0.4 0.03 30`)
+    server.runCommandSilent(`particle minecraft:smoke ${x} ${y} ${z} 0.3 0.3 0.3 0.05 5`)
 })
