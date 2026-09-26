@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
 
     function catalystsRecipe(material) {
-        let mat = global.materialTypes.find(m => m.id === material)
+        let mat = global.materialTypes[material]
         event.shaped( `kubejs:${material}_fan_catalyst_frame`, [ 'ABA', 'B B', 'ABA' ], { A: mat.items.sheet, B: mat.items.rod } )
         
         event.recipes.create.deploying(`kubejs:${material}_fan_splashing_catalyst`, [`kubejs:${material}_fan_catalyst_frame`, 'kubejs:distilled_water_bucket'])

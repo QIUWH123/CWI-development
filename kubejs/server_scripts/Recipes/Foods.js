@@ -3,7 +3,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(Fluid.of('create:tea', 500), ['#minecraft:leaves', Fluid.of('minecraft:milk', 100), Fluid.of('kubejs:distilled_water', 400)]).heated()
 
     global.apples.forEach(([material, hunger, saturation, effects]) => {
-        const mat = global.materialTypes.find(m => m.id === material)
+        const mat = global.materialTypes[material]
         if (!mat) return
 
         const appleItem = `kubejs:${material}_apple`

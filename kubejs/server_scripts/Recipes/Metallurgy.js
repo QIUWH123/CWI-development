@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
 
 // Material Data And Mold Setup
 
-    const materials = global.materialTypes
+    const materials = Object.values(global.materialTypes)
     const moldTypes = ['terracotta', 'fireproof_brick']
     const shapes = ['sheet', 'rod', 'nugget', 'ingot']
 

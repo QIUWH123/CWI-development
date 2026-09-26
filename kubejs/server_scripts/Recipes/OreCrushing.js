@@ -19,11 +19,13 @@ ServerEvents.recipes(event => {
 
     global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
         const output = crushedOreId? crushedOreId : powderOreId? powderOreId : dropOreId
-        for (let key in global.variantSettings) {
-            if (oreVariants[key]) {
-                processCrushing(oreVariants[key], global.variantSettings[key], dropOreId, output, isMore)
+
+        Object.values(global.variantSettings).forEach(ore => {
+            if (oreVariants[ore.type]) {
+                processCrushing(oreVariants[ore.type], global.variantSettings[ore.type], dropOreId, output, isMore)
             }
-        }
+        })
+
         if (powderOreId !== '') {
             event.recipes.create.crushing(output, dropOreId)
             event.recipes.create.milling(powderOreId, dropOreId)

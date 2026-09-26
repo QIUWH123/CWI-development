@@ -7,13 +7,13 @@ const SPECIAL_TEXTURES = {
 }
 
 StartupEvents.registry('item', event => {
-    
-    global.materialTypes.forEach(material => {
-        if (!material.items) return;
+
+    Object.values(global.materialTypes).forEach(material => {
+        if (!material.items) return
 
         TARGET_TYPES.forEach(type => {
             let fullId = material.items[type]
-            if (!fullId || !fullId.startsWith('kubejs:')) return
+            if (!fullId || !fullId.startsWith('kubejs:')) return;
 
             let itemID = fullId.substring(7)
 

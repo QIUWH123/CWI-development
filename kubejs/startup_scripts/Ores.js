@@ -26,7 +26,7 @@ function oreDepositModel(texture) {
 }
 
 StartupEvents.registry('block', event => {
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         const resistance = ore.resistance
         const hardness = ore.hardness
         const sound = ore.sound
@@ -48,8 +48,8 @@ StartupEvents.registry('block', event => {
         event.create(ore.id)
             .model(`kubejs:block/ores/${ore.colored? ore.id + '0' : ore.id}`)
             .soundType(sound)
-            .hardness(hardness)
-            .resistance(resistance)
+            .hardness(hardness * 2)
+            .resistance(resistance * 3)
             .requiresTool(true)
             .tagBlock('minecraft:mineable/pickaxe')
             .tagBlock(`minecraft:needs_${ore.requiredTool}_tool`)
@@ -60,7 +60,7 @@ StartupEvents.registry('block', event => {
 })
 
 BlockEvents.modification(event => {
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         if( ore.mod === 'kubejs') return
         const resistance = ore.resistance
         const hardness = ore.hardness
@@ -79,7 +79,7 @@ StartupEvents.registry('item', event => {
     event.create('precipitant')
     event.create('washing_residue')
     event.create('silicate_residue')
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         if (ore.process === 'true') {
             event.create(`crushed_${ore.id}`).texture(`kubejs:item/ores/crushed_${ore.id}`)
         } else {
@@ -102,27 +102,17 @@ StartupEvents.registry('item', event => {
                     layer0: `kubejs:item/ores/small_${ore.id}_powder`,
                     layer1: 'kubejs:item/ores/leach_residue_overlay'
                 })
-        } else {
-            
         }
     })
 
-    const materials = [
-        'aluminum', 'chromium', 'zinc',
-        'cobalt', 'copper', 'gold',
-        'iron', 'lead',  'magnesium',
-        'molybdenum', 'nickel', 'tin',
-        'platinum', 'silver', 'titanium'
-    ]
-
-    materials.forEach(id => {
+    global.outPutMaterial.forEach(([id, _]) => {
         event.create(`${id}_crystal`).texture(`kubejs:item/ores/${id}_crystal`)
         event.create(`refined_${id}`).texture(`kubejs:item/ores/refined_${id}`)
     })
 })
 
 StartupEvents.registry('fluid', event => {
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         if (ore.process === 'false') return
 
         registerHeavyFLuid(event, `leach_${ore.id}_solution`, ore.color)

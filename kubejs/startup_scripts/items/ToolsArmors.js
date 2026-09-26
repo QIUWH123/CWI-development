@@ -94,24 +94,6 @@ ItemEvents.armorTierRegistry(event => {
     })
 })
 
-// Hammers
-
-global.hammers = [
-    ['bronze_hammer', 'bronze', 12, 3, 4],
-    ['industrial_iron_hammer', 'industrial_iron', 13, 3, 4],
-    ['brass_hammer', 'brass', 13, 2, 3],
-    ['steel_hammer', 'steel', 11, 3, 5],
-    ['stainless_steel_hammer', 'stainless_steel', 10, 3, 6],
-    ['iron_hammer', 'iron', 14, 3, 2],
-    ['rusted_iron_hammer', 'rusted_iron', 16, 2, 1],
-    ['stone_hammer', 'stone', 18, 1, 0],
-    ['golden_hammer', 'gold', 8, 1, 0],
-    ['zinc_hammer', 'zinc', 9, 1, 2],
-    ['copper_hammer', 'copper', 15, 2, 1],
-    ['lead_hammer', 'lead', 21, 1, 5],
-    ['netherite_hammer', 'netherite', 9, 3, 0]
-]
-
 // Misc
 const $ShieldItem = Java.loadClass('net.minecraft.world.item.ShieldItem')
 const $ItemProperties = Java.loadClass('net.minecraft.world.item.Item$Properties')

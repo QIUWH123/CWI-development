@@ -1,5 +1,5 @@
 ItemEvents.entityInteracted('biomancy:injector', e => {
-    let {item, player, level, target} = e
+    let { item, player, level, target } = event
     let serum = item.nbt.inventory.Item
     let fac = player.facing
     //checks block above deployer
@@ -14,9 +14,9 @@ ItemEvents.entityInteracted('biomancy:injector', e => {
                 let Pot = item.getNbt()
                 BLOCK.getInventory().extractItem(1, 1, false)
                 if(!Pot){
-                    e.item.nbt.merge({inventory:{Item:{Count:1,id:item.id},ItemAmount:1}})
+                    event.item.nbt.merge({inventory:{Item:{Count:1,id:item.id},ItemAmount:1}})
                 } else {
-                    e.item.nbt.merge({inventory:{Item:{Count:1,id:item.id,tag:Pot},ItemAmount:1}})
+                    event.item.nbt.merge({inventory:{Item:{Count:1,id:item.id,tag:Pot},ItemAmount:1}})
                 }
             })
         }
@@ -30,9 +30,9 @@ ItemEvents.entityInteracted('biomancy:injector', e => {
                     let Pot = item.getNbt()
                     BLOCK.getInventory().extractItem(BLOCK.getInventory().find(serum.id), 1, false)
                     if(!Pot){
-                        e.item.nbt.merge({inventory:{Item:{Count:plus1,id:item.id},ItemAmount:plus1}})
+                        event.item.nbt.merge({inventory:{Item:{Count:plus1,id:item.id},ItemAmount:plus1}})
                     } else {
-                        e.item.nbt.merge({inventory:{Item:{Count:plus1,id:item.id,tag:Pot},ItemAmount:plus1}})
+                        event.item.nbt.merge({inventory:{Item:{Count:plus1,id:item.id,tag:Pot},ItemAmount:plus1}})
                     }
                 }
             })

@@ -15,8 +15,8 @@ ServerEvents.tags('block', event => {
 
 // Assign Correct Mineable And Tier Tags Based On Hardness
 
-    global.stoneTypes.forEach(stone => {
-        const [rawId, cobId, gravId] = stone.types
+    Object.values(global.stoneTypes).forEach(stone => {
+        const { block: rawId, cobblestone: cobId, gravel: gravId } = stone.items
         const base = stone.hardness
         const rawTier = toolTier(base)
         const cobTier = rawTier
@@ -45,7 +45,7 @@ ServerEvents.tags('block', event => {
 })
 
 ServerEvents.tags('block', event => {
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         const oreId = `${ore.mod}:${ore.realId}`
         global.allTiers.forEach(tier => event.remove(tier, oreId))
         event.add(`minecraft:needs_${ore.requiredTool}_tool`, oreId)
@@ -54,8 +54,8 @@ ServerEvents.tags('block', event => {
 })
 
 ServerEvents.tags('item', event => {
-    global.materialTypes.forEach(mat => {
-        const items = mat.items
+    Object.values(global.materialTypes).forEach(material => {
+        const items = material.items
         if (items.ingot) event.add('cwi:ingots', items.ingot)
         if (items.sheet) event.add('cwi:sheets', items.sheet)
         if (items.nugget) event.add('cwi:nuggets', items.nugget)

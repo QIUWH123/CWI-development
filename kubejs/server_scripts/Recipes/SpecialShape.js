@@ -9,7 +9,7 @@ ServerEvents.recipes(event => {
     })
 
     global.frameMaterials.forEach(material => {
-        let mat = global.materialTypes.find(m => m.id === material)
+        let mat = global.materialTypes[material]
         event.shaped(`tfmg:${material}_frame`, [ 'ABA', 'B B', 'ABA' ], { A: mat.items.rod, B: mat.items.wire } )
 
         event.recipes.minecraft.stonecutting(`3x tfmg:${material}_frame_panel`, `tfmg:${material}_frame`)

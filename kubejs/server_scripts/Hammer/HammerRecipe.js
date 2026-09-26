@@ -27,12 +27,12 @@ addBlockConversion('minecraft:obsidian', 'minecraft:obsidian')
 
 // Stone Type Conversions
 
-global.stoneTypes.forEach(function(stone) {
-    const types = stone.types
-    addBlockConversion(types[0], types[1])
-    addBlockConversion(types[1], types[2])
-    addBlockConversion(types[2], 'air', 1, [
-        { item: types[3], chance: 0.75, count: 4 }
+Object.values(global.stoneTypes).forEach(stone => {
+    const it = stone.items
+    addBlockConversion(it.block, it.cobblestone)
+    addBlockConversion(it.cobblestone, it.gravel)
+    addBlockConversion(it.gravel, 'air', 1, [
+        { item: it.powder, chance: 0.75, count: 4 }
     ])
 })
 
@@ -40,15 +40,16 @@ global.stoneTypes.forEach(function(stone) {
 
 global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
     const dropCounts = isMore ? 3 : 2
-    for (let key in global.variantSettings) {
-        if (oreVariants[key]) {
-            addBlockConversion(oreVariants[key], global.variantSettings[key].cobble, 1, [
+    Object.values(global.variantSettings).forEach(ore => {
+        if (oreVariants[ore.type]) {
+            addBlockConversion(oreVariants[ore.type], ore.cobble, 1, [
                 { item: dropOreId, chance: 1, count: dropCounts },
-                { item: dropOreId, chance: global.variantSettings[key].dropChance, count: 1 }
+                { item: dropOreId, chance: ore.dropChance, count: 1 }
             ])
         }
-    }
+    })
 })
+
 
 // Special Block Conversions
 

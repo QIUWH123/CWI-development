@@ -9,12 +9,12 @@ ServerEvents.recipes(event => {
     event.replaceInput({input: 'minecraft:leather'}, 'minecraft:leather', '#cwi:leathers')
     event.replaceInput({input: 'minecraft:feather'}, 'minecraft:feather', '#cwi:feathers')
 
-    global.materialTypes.forEach(mat => {
-        event.replaceInput({input: `#forge:ingots/${mat.id}`}, `#forge:ingots/${mat.id}`, mat.items.ingot)
-        event.replaceInput({input: `#forge:plates/${mat.id}`}, `#forge:plates/${mat.id}`, mat.items.sheet)
-        event.replaceInput({input: `#forge:nuggets/${mat.id}`}, `#forge:nuggets/${mat.id}`, mat.items.nugget)
-        event.replaceInput({input: `#forge:dusts/${mat.id}`}, `#forge:dusts/${mat.id}`, mat.items.powder)
-        event.replaceInput({input: `#forge:storage_blocks/${mat.id}`}, `#forge:storage_blocks/${mat.id}`, mat.items.block)
+    Object.values(global.materialTypes).forEach(material => {
+        event.replaceInput({input: `#forge:ingots/${material.id}`}, `#forge:ingots/${material.id}`, material.items.ingot)
+        event.replaceInput({input: `#forge:plates/${material.id}`}, `#forge:plates/${material.id}`, material.items.sheet)
+        event.replaceInput({input: `#forge:nuggets/${material.id}`}, `#forge:nuggets/${material.id}`, material.items.nugget)
+        event.replaceInput({input: `#forge:dusts/${material.id}`}, `#forge:dusts/${material.id}`, material.items.powder)
+        event.replaceInput({input: `#forge:storage_blocks/${material.id}`}, `#forge:storage_blocks/${material.id}`, material.items.block)
     })
 })
 

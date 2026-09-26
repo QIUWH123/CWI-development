@@ -1,17 +1,18 @@
-ServerEvents.recipes(event => {
-    // ----- 辅助函数 -----
-    function getItemId(matId, type) {
-        const mat = global.materialTypes.find(m => m.id === matId)
-        return mat ? mat.items[type] : null
-    }
+function getItemId(matId, type) {
+    const mat = global.materialTypes[matId]
+    return mat ? mat.items[type] : null
+}
 
-    function getPowderFromRock(rockId) {
-        const stone = global.stoneTypes.find(s => s.id === rockId)
-        return stone ? stone.types[3] : null
-    }
+function getPowderFromRock(rockId, type) {
+    const stone = global.stoneTypes[rockId]
+    return stone ? stone.items[type] : null
+}
+
+
+ServerEvents.recipes(event => {
 
     // ----- 遍历全部矿石 -----
-    global.compoundOreTypes.forEach(ore => {
+    Object.values(global.compoundOreTypes).forEach(ore => {
         if (ore.process !== 'true') return
         const id = ore.id
         if (!global.productionMaps || !global.productionMaps[id]) return
@@ -195,6 +196,15 @@ ServerEvents.recipes(event => {
 })
 
 ServerEvents.recipes(event => {
+
+    global.outPutMaterial.forEach(([material, canProcess]) => {
+        if (!canProcess) return
+        event.smelting(getItemId(material, 'ingot'), `kubejs:refined_${material}`)
+        event.blasting(getItemId(material, 'ingot'), `kubejs:refined_${material}`)
+        event.smelting(getItemId(material, 'ingot'), `kubejs:${material}_crystal`)
+        event.blasting(getItemId(material, 'ingot'), `kubejs:${material}_crystal`)
+    })
+
     event.recipes.create.crushing(['2x kubejs:lignite_item', Item.of('kubejs:lignite_item').withChance(0.75), Item.of('kubejs:claystone_powder').withChance(0.63), Item.of('kubejs:shale_powder').withChance(0.37)], 'tfmg:lignite')
     event.recipes.create.milling(['2x kubejs:lignite_powder', Item.of('kubejs:lignite_powder').withChance(0.75), Item.of('kubejs:claystone_powder').withChance(0.63), Item.of('kubejs:shale_powder').withChance(0.37)], 'tfmg:lignite')
     event.recipes.create.crushing(['2x kubejs:halite_item', Item.of('kubejs:halite_item').withChance(0.75), Item.of('kubejs:calcite_powder').withChance(0.73), Item.of('kubejs:shale_powder').withChance(0.27)], 'kubejs:halite')

@@ -29,7 +29,7 @@ JEIAddedEvents.registerRecipeCatalysts(event => {
 JEIAddedEvents.registerRecipes(event => {
     const builder = event.custom(new ResourceLocation('kubejs', 'equipment_upgrades'))
 
-    global.upgradeRecipes.forEach(function (recipe) {
+    global.upgradeRecipes.forEach(recipe => {
 
         const consumeIngredients = recipe.ingredients.filter(ing => ing.consume !== false)
         const nonConsumeIngredients = recipe.ingredients.filter(ing => ing.consume === false)

@@ -56,10 +56,8 @@ global.stoneTextures = {
 
 // Stone Configurations
 
-const stoneConfigs = global.stoneTypes.map(stone => {
-    const rawId = stone.types[0]
-    const cobId = stone.types[1]
-    const gravId = stone.types[2]
+const stoneConfigs = Object.values(global.stoneTypes).map(stone => {
+    const { block: rawId, cobblestone: cobId, gravel: gravId } = stone.items
     const base = stone.hardness
     const sound = stone.sound
     const color = stone.color
@@ -68,7 +66,7 @@ const stoneConfigs = global.stoneTypes.map(stone => {
     const rawTier = toolTier(base)
     const cobTier = rawTier
     const gravTier = downgradeTier(rawTier)
-    return { 
+    return {
         rawId: rawId, cobId: cobId, gravId: gravId, base: base, sound: sound, color: color,
         cobH: cobH, gravH: gravH, rawTier: rawTier, cobTier: cobTier, gravTier: gravTier
     }

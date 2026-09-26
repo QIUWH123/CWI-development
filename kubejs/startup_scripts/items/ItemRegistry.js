@@ -27,6 +27,7 @@ StartupEvents.registry('item', event => {
     event.create('nylon_salt')
     event.create('nylon_salt_crystal')
     event.create('carborundum')
+    event.create('ash_brick')
     event.create('fat')
     event.create('yeast_paste')
     event.create('quality_tool_handle')
@@ -175,9 +176,6 @@ StartupEvents.registry('item', event => {
     event.create('incomplete_control_chip', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_control_chip')
 
-    event.create('unfinished_control_chip', 'create:sequenced_assembly')
-        .texture('kubejs:item/incomplete_items/incomplete_control_chip')
-
     event.create('incomplete_distillation_controller', 'create:sequenced_assembly')
         .texture('kubejs:item/incomplete_items/incomplete_distillation_controller')
         .rarity('epic')
@@ -284,6 +282,12 @@ StartupEvents.registry('item', event => {
 
     event.create('industrial_iron_blade')
         .texture('kubejs:item/machine_parts/industrial_iron_blade')
+
+    event.create('unfinished_control_chip')
+        .texture('kubejs:item/incomplete_items/incomplete_control_chip')
+
+    event.create('brass_circuit_board')
+        .texture('kubejs:item/incomplete_items/brass_circuit_board')
 
 // Damaged
 

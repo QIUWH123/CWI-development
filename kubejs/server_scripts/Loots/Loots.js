@@ -449,39 +449,36 @@ LootJS.modifiers((event) => {
     global.oreTypes.forEach(([oreVariants, dropOreId, crushedOreId, powderOreId, isMore]) => {
         const dropCounts = isMore ? 3 : 2
 
-        if (oreVariants.normal) {
-            const settings = global.variantSettings.normal
-            const builder = event.addBlockLootModifier(oreVariants.normal)
+        Object.values(global.variantSettings).forEach(ore => {
+            const type = ore.type
+            if (oreVariants[type]) {
+                const builder = event.addBlockLootModifier(oreVariants[type])
 
-            builder.dropExperience(0)
-            builder.removeLoot(oreVariants.normal)
-            builder.removeLoot(dropOreId)
+                builder.dropExperience(0)
+                builder.removeLoot(oreVariants[type])
+                builder.removeLoot(dropOreId)
 
-            for (let i = 0; i < dropCounts; i++) {
-                builder.addLoot(dropOreId)
+                for (let i = 0; i < dropCounts; i++) {
+                    builder.addLoot(dropOreId)
+                }
+
+                builder.randomChanceWithLooting(ore.dropChance, 1).addLoot(dropOreId)
+                builder.randomChanceWithLooting(0.35, 1).addLoot(ore.dust)
+                builder.randomChanceWithLooting(0.25, 1).addLoot(ore.dust)
             }
+        })
+    })
 
-            builder.randomChanceWithLooting(settings.dropChance, 1).addLoot(dropOreId)
-            builder.randomChanceWithLooting(0.35, 1).addLoot(settings.dust)
-            builder.randomChanceWithLooting(0.25, 1).addLoot(settings.dust)
-        }
+    Object.values(global.compoundOreTypes).forEach(ore => {
+        const oreId = `${ore.mod}:${ore.realId}`
+        const depositOreId = `kubejs:${ore.id}_deposit`
 
-        if (oreVariants.deepslate) {
-            const settings = global.variantSettings.deepslate
-            const builder = event.addBlockLootModifier(oreVariants.deepslate)
-
-            builder.dropExperience(0)
-            builder.removeLoot(oreVariants.deepslate)
-            builder.removeLoot(dropOreId)
-
-            for (let i = 0; i < dropCounts; i++) {
-                builder.addLoot(dropOreId)
-            }
-
-            builder.randomChanceWithLooting(settings.dropChance, 1).addLoot(dropOreId)
-            builder.randomChanceWithLooting(0.35, 1).addLoot(settings.dust)
-            builder.randomChanceWithLooting(0.25, 1).addLoot(settings.dust)
-        }
+        event.addBlockLootModifier(depositOreId)
+        .replaceLoot(depositOreId, oreId)
+        .addLoot(oreId)
+        .addLoot(oreId)
+        .randomChanceWithLooting(0.5, 1)
+        .addLoot(oreId)
     })
 
 // Additional Fix

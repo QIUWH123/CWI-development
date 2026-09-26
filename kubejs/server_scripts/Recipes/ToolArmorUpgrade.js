@@ -106,7 +106,7 @@ ServerEvents.recipes(event => {
 
     function getGlobalMaterialItem(mat, itemType) {
         const globalId = { golden: 'gold' }[mat] || mat
-        const entry = global.materialTypes.find(e => e.id === globalId)
+        const entry = global.materialTypes[globalId]
         if (entry && entry.items && entry.items[itemType]) {
             return entry.items[itemType]
         }

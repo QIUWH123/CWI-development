@@ -1,10 +1,10 @@
 ItemEvents.tooltip(event => {
 
-    global.materialTypes.forEach(mat => {
-        if (!mat.items || !mat.formula) return
-        Object.values(mat.items).forEach(itemId => {
+    Object.values(global.materialTypes).forEach(material => {
+        if (!material.items || !material.formula) return
+        Object.values(material.items).forEach(itemId => {
             if (itemId) {
-                event.add(itemId, Text.of(mat.formula).yellow())
+                event.add(itemId, Text.of(material.formula).yellow())
             }
         })
     })

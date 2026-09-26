@@ -109,7 +109,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-       'tfmg:lithium_torch',
+        'tfmg:lithium_torch',
         [
             'A',
             'B'
@@ -265,6 +265,73 @@ ServerEvents.recipes(event => {
         {
             A: 'create:display_board',
             B: 'kubejs:precise_machine'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'kubejs:steel_pipe', 
+        [
+            '   CB',
+            '  ABC',
+            ' ABA ',
+            'CBA  ',
+            'BC   '
+        ], 
+        {
+            A: 'tfmg:rebar',
+            B: 'tfmg:rebar_pile',
+            C: '#cwi:rubbers'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'kubejs:steel_shield', 
+        [
+            'ABA',
+            'ACA',
+            'ABA'
+        ], 
+        {
+            A: 'tfmg:heavy_plate',
+            B: 'tfmg:steel_casing',
+            C: 'kubejs:quality_tool_handle'
+        }
+    )
+
+    event.recipes.create.mechanical_crafting(
+        'kubejs:stainless_steel_shield', 
+        [
+            'ABA',
+            'ACA',
+            'ABA'
+        ], 
+        {
+            A: 'kubejs:stainless_steel_sheet',
+            B: 'kubejs:stainless_steel_casing',
+            C: 'kubejs:quality_tool_handle'
+        }
+    )
+
+    // Ash Brick
+
+    event.recipes.create.mixing('kubejs:ash_brick', ['kubejs:ash', 'minecraft:clay_ball'])
+
+    event.shapeless(
+        'kubejs:ash_brick',
+        [
+            '2x kubejs:ash',
+            'minecraft:clay_ball'
+        ]
+    ).id('cwi:crafting_table/ash_brick_manual_only')
+
+    event.shaped(
+        'kubejs:ash_bricks',
+        [
+            'AA',
+            'AA'
+        ],
+        {
+            A: 'kubejs:ash_brick'
         }
     )
 })

@@ -168,6 +168,15 @@ StartupEvents.registry('block', event => {
         .tagBlock('minecraft:needs_wooden_tool')
         .mapColor('#FF5500')
 
+    event.create('ash_bricks')
+        .soundType('deepslate')
+        .hardness(3)
+        .resistance(5)
+        .requiresTool(true)
+        .tagBlock('minecraft:mineable/pickaxe')
+        .tagBlock('minecraft:needs_wooden_tool')
+        .mapColor('#FF5500')
+
     event.create('scrap_block', 'cardinal')
         .soundType('copper')
         .hardness(2)
