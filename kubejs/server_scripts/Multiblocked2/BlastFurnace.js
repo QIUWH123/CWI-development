@@ -272,6 +272,43 @@ global.blastFurnaceRecipes = [
             { fluid: 'kubejs:molten_pig_iron', amount: 180 },
             { fluid: 'tfmg:molten_slag', amount: 200 }
         ]
+    },
+    {
+        // Refining mode reuses this multiblock as a heated steelmaking vessel.
+        // Air removes excess carbon; limestone abstracts the slag-forming flux.
+        // Silicon represents the deoxidising trim AFTER blowing. A single batch
+        // abstracts that order; this is not the chemistry of a reducing blast
+        // furnace. Off-gas is vented, leaving the two existing molten outputs.
+        id: 'cwi:industrial_blasting/pig_iron_to_steel_air',
+        duration: 600,
+        heat: 'superheated',
+        inputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 900 },
+            { item: 'kubejs:limestone_powder' },
+            { fluid: 'tfmg:air', amount: 1500 },
+            { fluid: 'tfmg:liquid_silicon', amount: 5 }
+        ],
+        outputs: [
+            { fluid: 'kubejs:molten_steel', amount: 810 },
+            { fluid: 'tfmg:molten_slag', amount: 180 }
+        ]
+    },
+    {
+        // Oxygen separation requires steel equipment, so this is a later
+        // efficiency upgrade; the air recipe supplies the first steel.
+        id: 'cwi:industrial_blasting/pig_iron_to_steel_oxygen',
+        duration: 400,
+        heat: 'superheated',
+        inputs: [
+            { fluid: 'kubejs:molten_pig_iron', amount: 1800 },
+            { item: 'kubejs:limestone_powder' },
+            { fluid: 'kubejs:oxygen', amount: 600 },
+            { fluid: 'tfmg:liquid_silicon', amount: 10 }
+        ],
+        outputs: [
+            { fluid: 'kubejs:molten_steel', amount: 1710 },
+            { fluid: 'tfmg:molten_slag', amount: 180 }
+        ]
     }
 ]
 

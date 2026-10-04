@@ -122,7 +122,7 @@
 			description: [
 				"&eNatural lapis lazuli is a blue rock containing lazurite, often with calcite and flecks of pyrite. Powdered lapis was historically the source of ultramarine pigment.&r"
 				""
-				"&eLapis ore here spans Y -63 to 160. The blue mineral is used for dye and enchanting, and its powder supports Crystallum Coccus crystal reconstruction.&r"
+				"&eLapis ore here spans Y -63 to 160. The blue mineral is used for dye, and its powder supports Crystallum Coccus crystal reconstruction.&r"
 			]
 			disable_toast: true
 			id: "7D513F2990AAD38B"
@@ -395,7 +395,7 @@
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
 			description: [
-				"&eAzurite is a deep-blue copper carbonate mineral, Cu3(CO3)2(OH)2. It forms in oxidized copper deposits and may occur alongside green malachite.&r"
+				"&eThe azurite here is mottled blue, with pale highlights and darker patches. Azurite is a copper carbonate mineral, Cu3(CO3)2(OH)2, that forms in oxidized copper deposits and may occur alongside malachite.&r"
 				""
 				"&eOrdinary azurite bands begin at Y 0-70. They are more frequent in Glowshroom Caves, where bands begin at Y -63 to 50.&r"
 				""
@@ -507,7 +507,7 @@
 		{
 			dependencies: ["450EC9FCCFB49FA9"]
 			description: [
-				"&eSphalerite, ZnS, is the main ore mineral of zinc. Iron impurities influence its color, which can range from pale yellow to nearly black.&r"
+				"&eThe sphalerite here is gray with pale gray and off-white flecks. Sphalerite, ZnS, is the main ore mineral of zinc.&r"
 				""
 				"&eOverworld bands begin at Y -30 to 70. Separation or leaching supplies zinc with iron and lead byproducts; vibration and centrifugation also recover sulfur.&r"
 			]
@@ -1159,15 +1159,14 @@
 			y: 1.1d
 		}
 		{
-			dependencies: ["06ACDE2AA3D90380"]
 			description: [
 				"&eA mineral has a characteristic crystal structure and composition; a rock may contain several minerals. An ore is material from which a useful substance can be recovered.&r"
 				""
 				"&eThese deposits vary by biome, depth and associated rock. Small ore pockets and extensive mineral bands are different geological bodies, even when they supply the same metal.&r"
 			]
-			hide_until_deps_complete: true
 			icon_scale: 0.9d
 			id: "77638D6698CCC725"
+			invisible: true
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Ores, Minerals and Rocks"
@@ -1203,7 +1202,7 @@
 			description: [
 				"&eEmerald is the green gem variety of beryl. Chromium or vanadium commonly produces its natural color; inclusions are frequent in real emeralds.&r"
 				""
-				"&eLocal emerald deposits begin at Y 0-128. Emeralds serve as trading currency and as mineral specimens.&r"
+				"&eLocal emerald deposits begin at Y 0-128. Emeralds were once used as trading currency.&r"
 			]
 			disable_toast: true
 			id: "3209C4128550BBD3"

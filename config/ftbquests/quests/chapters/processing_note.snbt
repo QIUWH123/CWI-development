@@ -138,9 +138,7 @@
 		}
 		{
 			dependencies: ["7EAD0C34B17014A4"]
-			description: [
-				"&eLimestone supplies lime during conventional glass firing. Lime stabilizes soda-containing glass, helping it resist water instead of gradually dissolving at the surface.&r"
-			]
+			description: ["&eLimestone supplies lime during conventional glass firing. Lime stabilizes soda-containing glass, helping it resist water instead of gradually dissolving at the surface.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			icon: "kubejs:limestone_powder"
@@ -232,9 +230,7 @@
 		}
 		{
 			dependencies: ["31B2117B6DC8C595"]
-			description: [
-				"&eFlotation leaves stubborn tailings after its recoverable concentrate has been separated. Some useful mineral remains mixed with the residue: further grinding can expose it, while a compatible acid treatment provides another recovery route.&r"
-			]
+			description: ["&eFlotation leaves stubborn tailings after its recoverable concentrate has been separated. Some useful mineral remains mixed with the residue: further grinding can expose it, while a compatible acid treatment provides another recovery route.&r"]
 			disable_toast: true
 			icon: "kubejs:stubborn_chalcocite_tailings"
 			id: "2EF97B44F3C871A6"
@@ -273,9 +269,7 @@
 				"6E509F0E28483D5B"
 				"5FA2456D613EC7BF"
 			]
-			description: [
-				"&eGrinding exposes mineral grains locked together in larger rock fragments, preparing them for separation. The fine particles also present more surface area to an acid treatment.&r"
-			]
+			description: ["&eGrinding exposes mineral grains locked together in larger rock fragments, preparing them for separation. The fine particles also present more surface area to an acid treatment.&r"]
 			disable_toast: true
 			icon: "kubejs:chalcocite_powder"
 			id: "325A4EA2A4390C9C"
@@ -504,9 +498,7 @@
 		}
 		{
 			dependencies: ["19B51F96FEE5A2E1"]
-			description: [
-				"&eThe leach solution carries material recovered by acid in liquid form. Dissolved metal compounds can be treated and precipitated as crystals, providing a chemical route to material that physical separation leaves mixed with the rock.&r"
-			]
+			description: ["&eThe leach solution carries material recovered by acid in liquid form. Dissolved metal compounds can be treated and precipitated as crystals, providing a chemical route to material that physical separation leaves mixed with the rock.&r"]
 			disable_toast: true
 			icon: "kubejs:leach_chalcocite_solution_bucket"
 			id: "134A15D609997F50"
@@ -524,9 +516,7 @@
 		}
 		{
 			dependencies: ["2EF97B44F3C871A6"]
-			description: [
-				"&eFor tailings with a compatible leaching treatment, acid provides another recovery route after flotation. Susceptible material leaves the stubborn residue in solution; the remaining solid still has a washing stage.&r"
-			]
+			description: ["&eFor tailings with a compatible leaching treatment, acid provides another recovery route after flotation. Susceptible material leaves the stubborn residue in solution; the remaining solid still has a washing stage.&r"]
 			disable_toast: true
 			id: "19B51F96FEE5A2E1"
 			shape: "hexagon"

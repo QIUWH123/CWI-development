@@ -1,185 +1,119 @@
-# Steel production design
+# Steel production
 
-This document describes the proposed steel line. It is a design record, not a
-recipe export. Existing quest and recipe changes in the worktree are unrelated
-and are left untouched.
+Steel is produced by the existing `cwi:blast_furnace`. The recipes are in
+`server_scripts/Multiblocked2/BlastFurnace.js`, alongside the existing pig-iron
+and silicon recipes.
 
-## Design goals
-
-- Keep the blast furnace as the ironmaking stage.
-- Use pig iron as the feed to steelmaking. Do not smelt ore directly into steel.
-- Make the first route available before steel tanks, steel vats, the distillation
-  tower, or the industrial crucible.
-- Follow the real process at the level that affects play: reduction, carbon
-  removal, basic slag, air versus oxygen, and casting losses.
-- Keep the existing 90 mB casting unit: one ingot or heavy plate is 90 mB.
-- Avoid a material loop where steel is required to make the machine that makes
-  the first steel.
-
-## Existing starting point
-
-The current `cwi:blast_furnace` already makes `kubejs:molten_pig_iron` and
-`tfmg:molten_slag` from iron feed and limestone powder. Its recipes require the
-`superheated` state. The furnace has a dedicated coke fuel inventory and a hot
-air inventory in its MBD2 definition, while the JavaScript heat model supplies
-the visible temperature and speed effect.
-
-The intended bootstrap is salvage from the starter bunker: fresh and rusted
-blast-furnace reinforcements provide the armor needed to reach the 1900 heat
-threshold. Five kindled burners are insufficient by themselves; the practical
-minimum is 11 heater points and about 33 armor points. Biodiesel is already a
-pre-steel superheating fuel. This keeps the bunker and the furnace meaningful.
-
-The existing metallurgy script already casts `kubejs:molten_steel` with a
-fireproof mold. Oxygen production is currently behind steel distillation
-equipment, so oxygen cannot be a prerequisite for the first steel batch.
-
-## Recommended line
+## Production flow
 
 ```text
-iron ore / iron feed
+iron feed + limestone
         |
         v
-blast furnace + coke fuel + limestone flux + hot blast (optional input)
-        |
-        +--> molten pig iron + molten slag
-                         |
-                         v
-cast-iron converter vat + mechanical mixing + air + lime flux
-                         |
-                         +--> molten steel + slag + mixed converter exhaust
-                         |
-                         v
-                 fireproof mold / basin casting
-                         |
-                         v
-                   steel ingots / plates
+superheated blast furnace -> molten pig iron + slag
+                                    |
+air + limestone + liquid silicon ---+
+                                    v
+                   superheated blast furnace, refining batch
+                                    |
+                                    +--> molten steel + slag
+                                    |
+                                    v
+                   existing fireproof casting -> steel parts
 ```
 
-### Stage 1: blast furnace
+An installation can switch between ironmaking and refining, or use separate
+furnaces for continuous production. Drain its pig iron and slag before switching
+to refining: these share the furnace's two output tanks with steel and refining
+slag. Return the collected pig iron through a furnace hatch as an input.
 
-Keep the current ore-to-pig-iron recipes and their yields for the first
-implementation. The machine's fuel slot should be filled with the coke forms it
-already accepts. If hot blast is made mandatory later, use `tfmg:hot_air` in the
-existing air hatch and restore a useful `tfmg:blast_stove_fuel` tag rather than
-silently treating ambient air as hot blast.
+## Batches
 
-Do not add a direct ore-to-steel recipe. It would bypass the pack's reduction
-stage and make pig iron, limestone, coke, and the blast furnace optional.
+Both recipes require the existing `superheated` state (temperature at least
+1900), and inherit the furnace's parallel capacity and temperature-based speed.
+Each batch also consumes one `kubejs:limestone_powder`.
 
-### Stage 2: air converter
+| Route | Pig iron | Gas | Liquid silicon | Steel | Slag | Base duration |
+| --- | ---: | --- | ---: | ---: | ---: | ---: |
+| Air | 900 mB | 1,500 mB `tfmg:air` | 5 mB | 810 mB | 180 mB | 600 ticks |
+| Oxygen | 1,800 mB | 600 mB `kubejs:oxygen` | 10 mB | 1,710 mB | 180 mB | 400 ticks |
 
-Represent the first converter with the existing pre-steel
-`tfmg:cast_iron_chemical_vat` controller, forming the
-`tfmg:cast_iron_vat` structure (or its firebrick-lined equivalent), fitted with
-the existing `tfmg:mixing` machine. The vat is the refractory vessel; the
-mixing attachment represents the lance and agitation. This is an implementation
-abstraction, but the inputs and outputs remain those of an air-blown converter.
-A dedicated MBD2 converter block can replace this representation later without
-changing the material flow.
+Registered IDs:
 
-Proposed batch recipe:
+- `cwi:industrial_blasting/pig_iron_to_steel_air_superheated`
+- `cwi:industrial_blasting/pig_iron_to_steel_oxygen_superheated`
 
-| Input | Amount | Reason |
-| --- | ---: | --- |
-| `kubejs:molten_pig_iron` | 900 mB | Ten 90 mB iron units; enough carbon-rich metal for a useful batch |
-| `kubejs:limestone_powder` (flux abstraction) | 1 item | Basic slag former; see the quicklime note below |
-| `tfmg:air` | 1,500 mB | Air blast for carbon and impurity oxidation |
-| `tfmg:liquid_silicon` | 5 mB | Small deoxidizing trim after blowing |
+The quantities and durations are balance values. They represent 90% and 95%
+metal recovery; they do not define an exact composition or chemical mass balance.
+The two steel outputs cast into nine or nineteen ingots at the pack's existing
+90 mB per ingot.
 
-| Output | Amount | Reason |
-| --- | ---: | --- |
-| `kubejs:molten_steel` | 810 mB | 90% metal yield, or nine ingot units |
-| `tfmg:molten_slag` | 180 mB | Flux plus oxidized impurities and metal loss |
-| mixed converter exhaust | about 1,700 mB | Air-blowing produces a nitrogen-rich gas mixture; it is not pure CO or nitrogen |
+## First steel and progression
 
-Use a duration around 600 ticks for the initial route. This is a balancing value,
-not a claimed industrial time. The recipe should be available in the cast-iron
-or firebrick vat and should require the mixing attachment. It must not require
-`tfmg:steel_vat`, `tfmg:steel_chemical_vat`, a steel mechanism, or the oxygen
-distillation controller.
+The furnace controller and hatch use cast iron and fireproof bricks. Existing
+cast-iron production, air-intake construction, limestone milling, and fireproof
+mold machining require no steel. A powered `tfmg:air_intake` produces the air
+for the first refining batch. Quartz or quartz powder processed in the same
+superheated blast furnace supplies `tfmg:liquid_silicon`.
 
-The recipe can initially output `kubejs:molten_steel` directly. If process order
-needs to be visible in gameplay, split it into two recipes: converter output
-`kubejs:molten_crude_steel`, followed by a short silicon-trim recipe that makes
-`kubejs:molten_steel`. The split is more faithful but adds a new fluid, texture,
-localisation, and tank-routing burden. The direct output is the recommended first
-implementation.
+Reinforcement for the first furnace can be salvaged from the starter bunker.
+Both fresh and rusted reinforcement blocks drop themselves and require a
+stone-tier pickaxe. The existing heat model needs at least 11 heater points and
+33 armor points to exceed the superheated threshold. Pre-steel biodiesel can
+superheat burners; reinforcement alone does not supply heat.
 
-### Stage 3: casting
+The industrial mixer and mixer blade retain their native steel recipes. The
+oxygen route becomes available after steel vats and air-distillation equipment
+can be constructed. It improves recovery and processing rate without being a
+prerequisite for first steel.
 
-Use the existing metallurgy casting rules. The player casts 90 mB into one
-`tfmg:steel_ingot` or one `tfmg:heavy_plate`, 45 mB into a rod, and 810 mB into a
-steel block. Steel uses fireproof molds because its registered melting point is
-above the terracotta-mold limit. No new steel casting rule is needed.
+## Furnace inputs and outputs
 
-## Flux and lining
+The multiblock definition is `ldlib/assets/mbd2/multiblock/blast_furnace.mb`.
+The existing furnace hatches proxy its input traits.
 
-Real converters use calcined lime rather than raw limestone. The least invasive
-first implementation uses the existing `kubejs:limestone_powder` as a flux
-abstraction, because it already appears in the blast-furnace line and requires
-no new item or texture.
+- The liquid input now has two 3,000 mB tanks for pig iron and liquid silicon.
+  A supplied fluid fills only one tank, preserving room for the other ingredient.
+- The separate 6,000 mB gas tank accepts air and oxygen, alongside its existing
+  hot-air allowance. These gases are excluded from the liquid input tanks.
+- The two existing 3,000 mB molten output tanks hold steel and slag.
+- The recipe display now shows all three fluid inputs and both outputs.
 
-If the chemistry should be explicit, add `kubejs:quicklime_powder` and a heated
-calcination recipe:
+Use separate input pipes for pig iron, silicon, and the selected gas. Filter
+steel and slag extraction into their own lines. When switching between air and
+oxygen, empty the previous gas from the gas tank first. Existing hot air is
+accepted by the machine but does not satisfy either steel recipe.
 
-```text
-1 kubejs:limestone_powder -> 1 kubejs:quicklime_powder + 250 mB kubejs:carbon_dioxide
-```
+Off-gas is treated as vented, represented by the furnace's existing smoke.
+There is no stored exhaust fluid or third output tank. The previous converter
+recipes, cast-iron mixer shortcuts, and converter-exhaust registration have been
+removed.
 
-Then replace the converter's limestone input with one quicklime powder. The
-converter working lining should be magnesia-based (`kubejs:magnesite_powder` as
-the precursor), not ordinary acid fireclay. The existing blast furnace may keep
-its fireclay lining; the two vessels have different slag chemistry.
+## Metallurgical abstraction
 
-## Oxygen upgrade
+Real blast furnaces make carbon-rich pig iron in a reducing atmosphere.
+Steelmaking subsequently oxidises excess carbon and impurities. Here the same
+multiblock represents both operations through different batches: ore reduction
+first, then an oxidising refining batch with an explicit air or oxygen input.
+It is a shared machine abstraction, not a claim that an ordinary reducing blast
+furnace directly refines steel.
 
-After the first steel is made, the player can build the existing steel-gated
-distillation equipment and separate condensed air. Add a second converter recipe
-using the same vessel:
+Limestone stands in for slag-forming flux. Silicon represents a deoxidising
+addition after blowing, although all inputs are consumed in a single recipe.
+The implementation does not add quicklime, a separate converter, carbon grades,
+or a refractory-lining chemistry model. The existing ironmaking recipes and
+external heater model remain as implemented; no new coke or hot-blast
+consumption is added to them.
 
-| Input | Amount | Output | Amount |
-| --- | ---: | --- | ---: |
-| `kubejs:molten_pig_iron` | 1,800 mB | `kubejs:molten_steel` | 1,710 mB |
-| quicklime or limestone powder | 1 item | `tfmg:molten_slag` | 180 mB |
-| `kubejs:oxygen` | 600 mB | mixed exhaust | about 1,000 mB |
-| `tfmg:liquid_silicon` | 10 mB |  |  |
+## Validation and playtest
 
-Use about 400 ticks. The 95% yield and shorter time reward oxygen without
-invalidating the air route. Air remains useful for the first furnace and as a
-lower-cost fallback. Do not call the exhaust pure nitrogen, pure carbon
-monoxide, or pure carbon dioxide; it is a mixed off-gas abstraction.
+Static checks cover script parsing and recipe registration, ingredient IDs,
+heat requirements, casting compatibility, input filters and capacities, output
+count, and recipe-display slots. The NBT editor roundtrips the original machine
+files byte for byte and verifies only the intended fields changed.
 
-## Balance and failure checks
-
-- Nine steel ingots per 900 mB pig iron leaves a clear conversion loss and keeps
-  slag valuable for existing asphalt/concrete lines.
-- Silicon is a trim input, not a substitute for carbon removal. Do not make
-  manganese mandatory: it is registered but has no reliable early production
-  route in the pack.
-- Do not copy the existing three-coke-dust-per-ingot industrial-iron cost into
-  the converter. The blast furnace's coke is a fuel/reducing-agent cost; the
-  converter consumes air or oxygen and flux instead.
-- Do not require pure oxygen for the first steel batch. That would create a
-  circular dependency through the steel distillation controller.
-- Do not add a third fluid output to the current blast-furnace hatch without
-  adding a separate exhaust trait/port. The current blast-furnace definition
-  has two molten-output tanks.
-- Keep the existing removed native TFMG, Ad Astra, and Create Metallurgy steel
-  routes removed so the converter is the single intended steel source.
-
-## Implementation order
-
-1. Add the converter recipe to a new focused script using the existing TFMG vat
-   recipe serializer and cast-iron/firebrick vat allowance.
-2. Verify the cast-iron vat, mixing attachment, air fluid, silicon fluid, and
-   molten slag output in a clean recipe dump.
-3. Test one complete batch from bunker reinforcement through pig iron, steel
-   casting, and a steel mechanism.
-4. Only after that, add the optional quicklime item or a dedicated MBD2
-   converter structure.
-5. Add the oxygen recipe after the steel distillation line is playable.
-
-The design deliberately separates verified pack behavior from proposed balance
-values. The amounts above should be tuned through a real playtest rather than
-presented as exact chemical mass balances.
+Restart Minecraft to reload the MBD2 machine and recipe-display definitions.
+In-game verification remains necessary: feed one complete air batch through
+formed furnace hatches, extract steel and slag, and cast an ingot. Then verify
+continuous liquid supply, parallel batches, blocked output tanks, gas switching,
+and the oxygen upgrade.

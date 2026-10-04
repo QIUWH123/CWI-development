@@ -84,9 +84,9 @@
 	quests: [
 		{
 			description: [
-				"&eCold. Then the hum of machinery beyond the room. You wake in a derelict laboratory. You cannot remember how long you have been here.&r"
+				"&eCold. You wake in a derelict laboratory. You cannot remember how long you have been here.&r"
 				""
-				"&eThere are supplies to find before you leave, and rooms that are still closed. Some equipment still runs, but no one is tending it.&r"
+				"&eThere are supplies to find before you leave, and rooms that are still closed.&r"
 			]
 			disable_toast: true
 			hide_until_deps_complete: true
@@ -480,9 +480,7 @@
 		}
 		{
 			dependencies: ["7A4768D007A9209B"]
-			description: [
-				"&ePipes, pumps, tanks, steam. The fluid manual shows how to carry water and fuel through a working workshop.&r"
-			]
+			description: ["&ePipes, pumps, tanks, steam. The fluid manual shows how to carry water and fuel through a working workshop.&r"]
 			disable_toast: true
 			id: "456814B0836CE2D6"
 			tasks: [{
@@ -540,7 +538,7 @@
 		}
 		{
 			dependencies: ["7A4768D007A9209B"]
-			description: ["&eTwo reference books: geological notes on rocks and ores, and material notes on the substances a workshop can make from them. Identification marks and properties have survived better than the bindings.&r"]
+			description: ["&eTwo reference books: geological notes on rocks and ores, and material notes on the substances a workshop can make from them.&r"]
 			disable_toast: true
 			id: "01145B3810F3CA52"
 			subtitle: "Rocks and Materials"

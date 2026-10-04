@@ -226,9 +226,7 @@
 				"6B70EE9075BB5385"
 				"25D0B69D3F5EBC20"
 			]
-			description: [
-				"&eCrude oil contains hydrocarbons with different chain lengths and boiling behavior. The pumpjack recovers this mixed resource; the steel distillation tower separates it into fuels and chemical feedstocks.&r"
-			]
+			description: ["&eCrude oil contains hydrocarbons with different chain lengths and boiling behavior. The pumpjack recovers this mixed resource; the steel distillation tower separates it into fuels and chemical feedstocks.&r"]
 			disable_toast: true
 			id: "2BB7B30F3B59D458"
 			tasks: [{
@@ -395,7 +393,7 @@
 		{
 			dependencies: ["2BB7B30F3B59D458"]
 			description: [
-				"&eGasoline is a volatile petroleum fuel used by compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement; it also supplies the fuel base for napalm.&r"
+				"&eTFMG gasoline is the pack's volatile petroleum fuel for compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement; it also supplies the fuel base for napalm.&r"
 				""
 				"&eCracking wax oil produces a mixture from which gasoline can be separated, turning heavier refinery stock into a lighter fuel.&r"
 			]

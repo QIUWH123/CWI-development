@@ -59,6 +59,9 @@ ServerEvents.tags('fluid', event => {
     event.removeAll('forge:plantoil')
     event.removeAll('forge:diesel')
     event.removeAll('forge:gasoline')
+    // Keep the pack's TFMG gasoline as engine fuel while excluding
+    // Create Diesel Generators' separate gasoline fluid.
+    event.add('forge:gasoline', ['tfmg:gasoline', 'tfmg:flowing_gasoline'])
     event.removeAll('c:water')
     event.removeAll('minecraft:water')
 })

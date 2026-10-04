@@ -27,9 +27,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r"
-			]
+			description: ["&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r"]
 			hide_dependent_lines: true
 			id: "497B62C9B689DE39"
 			invisible: true

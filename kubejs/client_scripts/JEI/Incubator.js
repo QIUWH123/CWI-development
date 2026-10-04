@@ -18,6 +18,7 @@ JEIAddedEvents.registerRecipes(event => {
                 input: sealed,
                 output: cultured,
                 time: variant.time,
+                inoculum: variant.inoculum || `kubejs:${microbe.name}`,
                 microbeName: microbe.name
             })
         })
@@ -40,6 +41,11 @@ JEIAddedEvents.registerCategories(event => {
 
             layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.INPUT)
                 .addItemStack(Item.of('kubejs:' + data.microbeName))
+
+            if (data.inoculum !== 'kubejs:' + data.microbeName) {
+                layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.INPUT)
+                    .addItemStack(Item.of(data.inoculum))
+            }
 
             layoutBuilder.addSlot($RecipeIngredientRole.INPUT, 21, 48)
                 .setBackground($CreateRecipeCategory.getRenderedSlot(), -1, -1)

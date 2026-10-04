@@ -139,7 +139,7 @@ ServerEvents.recipes(event => {
         'create:crushing/iron_horse_armor',
         'create:crushing/golden_horse_armor',
         'create:crushing/diamond_horse_armor',
-        '',
+        'create:crushing/leather_horse_armor',
         'create:filling/blaze_cake',
         'create:filling/cake',
         'create:filling/cake_mold_filled',
@@ -423,6 +423,7 @@ ServerEvents.recipes(event => {
         'darkerdepths:magma_pad',
         'darkerdepths:porous_petrified_log',
         'darkerdepths:rope',
+        'darkerdepths:scorched_remains',
         'darkerdepths:scorched_remains_block',
         'darkerdepths:void_soul_torch',
 
@@ -443,6 +444,7 @@ ServerEvents.recipes(event => {
         'farmersdelight:diamond_knife',
         'farmersdelight:gold_nugget_from_blasting_knife',
         'farmersdelight:gold_nugget_from_smelting_knife',
+        'farmersdelight:salvaging/leather_horse_armor',
         'farmersdelight:golden_knife',
         'farmersdelight:iron_knife',
         'farmersdelight:iron_nugget_from_blasting_knife',
@@ -495,6 +497,7 @@ ServerEvents.recipes(event => {
 
         'miners_delight:copper_pot',
         'miners_delight:string_from_gossypium',
+        'miners_delight:cutting/bat_wing',
 
     // Minecraft
 
@@ -595,6 +598,12 @@ ServerEvents.recipes(event => {
         'minecraft:stone_pickaxe',
         'minecraft:stone_shovel',
         'minecraft:stone_sword',
+        'minecraft:ender_chest',
+        'minecraft:end_crystal',
+        'minecraft:lantern',
+        'minecraft:soul_lantern',
+        'minecraft:conduit',
+        'minecraft:respawn_anchor',
         'minecraft:stonecutter',
         'minecraft:sugar_from_honey_bottle',
         'minecraft:tinted_glass',

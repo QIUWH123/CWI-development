@@ -9,15 +9,14 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["616D088897D2FF8D"]
 			description: [
 				"&eMaterial selection depends on the job: a structural part needs stiffness and strength, a conductor needs suitable electrical properties, and a vessel must tolerate its contents and temperature.&r"
 				""
 				"&eMetals, alloys, minerals and polymers each offer different combinations of these properties. The same substance may be supplied as an ingot, sheet, rod, wire or powder.&r"
 			]
 			hide_dependent_lines: true
-			hide_until_deps_complete: true
 			id: "7D0C6F93C6FE1761"
+			invisible: true
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Properties and Applications"
@@ -324,9 +323,7 @@
 		}
 		{
 			dependencies: ["7D0C6F93C6FE1761"]
-			description: [
-				"&ePolybenzimidazole, PBI, has a rigid, ring-rich molecular structure that remains stable at temperatures where many ordinary polymers lose their useful properties. Its fibers serve in heat-protective clothing; solid grades can be used for demanding seals and insulating parts.&r"
-			]
+			description: ["&ePolybenzimidazole, PBI, has a rigid, ring-rich molecular structure that remains stable at temperatures where many ordinary polymers lose their useful properties. Its fibers serve in heat-protective clothing; solid grades can be used for demanding seals and insulating parts.&r"]
 			hide_dependency_lines: true
 			id: "58324EBEC63B3718"
 			tasks: [{

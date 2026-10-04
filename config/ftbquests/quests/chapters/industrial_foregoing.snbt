@@ -115,9 +115,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"&eHeavy industry brings higher furnace temperatures, stronger metal stock, and machinery built to handle sustained loads. These notes explain how the furnace and its supporting workshops make those conditions possible.&r"
-			]
+			description: ["&eHeavy industry brings higher furnace temperatures, stronger metal stock, and machinery built to handle sustained loads. These notes explain how the furnace and its supporting workshops make those conditions possible.&r"]
 			hide_dependent_lines: true
 			id: "7A0C6B3904C55546"
 			invisible: true
@@ -501,9 +499,7 @@
 		}
 		{
 			dependencies: ["09E6FDDC7DCCD8E3"]
-			description: [
-				"&eCreosote is an oily mixture recovered during coking, historically used to preserve timber against decay. The workshop uses it on ordinary planks and quality sealed wood, supplying treated stock for the centrifuge and steel casings.&r"
-			]
+			description: ["&eCreosote is an oily mixture recovered during coking, historically used to preserve timber against decay. The workshop uses it on ordinary planks and quality sealed wood, supplying treated stock for the centrifuge and steel casings.&r"]
 			disable_toast: true
 			id: "72BBEB2B8E9363AB"
 			subtitle: "Keep the Coking Byproduct"
@@ -756,9 +752,7 @@
 		}
 		{
 			dependencies: ["2D1180C9EC2DE6E2"]
-			description: [
-				"&eThe armored safe protects a packet containing the galvanic manual and the electrical engineer's log. Its steel enclosure is harder to recover than ordinary storage; a portable drill is needed to remove it from the laboratory.&r"
-			]
+			description: ["&eThe armored safe protects a packet containing the galvanic manual and the electrical engineer's log. Its steel enclosure is harder to recover than ordinary storage; a portable drill is needed to remove it from the laboratory.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "4A57AE1DCC0BFE11"
@@ -860,9 +854,7 @@
 		}
 		{
 			dependencies: ["38C3399F3559D720"]
-			description: [
-				"&eA powerful potato launcher. For fun.&r"
-			]
+			description: ["&eA powerful potato launcher. For fun.&r"]
 			disable_toast: true
 			id: "4BB8F26DFBE7AFCD"
 			shape: "diamond"

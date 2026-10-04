@@ -6,9 +6,19 @@ global.microbes = [
         "colors": [0xbfb16d, 0xfce992],
         "variants": [
             {
-                "trait": "frugal",
+                "trait": "revival",
+                "inoculum": "kubejs:dry_fermento_mycetes",
                 "time": 7200,
                 "count": 1,
+                "steps": [
+                    { "type": "deploying", "item": "minecraft:sugar", "count": 4 },
+                    { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
+                ]
+            },
+            {
+                "trait": "frugal",
+                "time": 7200,
+                "count": 2,
                 "steps": [
                     { "type": "deploying", "item": "minecraft:sugar", "count": 4 },
                     { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
@@ -157,6 +167,17 @@ global.microbes = [
         "colors": [0x85571c, 0xd69036],
         "variants": [
             {
+                "trait": "revival",
+                "inoculum": "kubejs:dry_carbofusor_spirillum",
+                "time": 9600,
+                "count": 1,
+                "steps": [
+                    { "type": "filling", "fluid": "kubejs:syngas", "amount": 400 },
+                    { "type": "filling", "fluid": "kubejs:ammonium_solution", "amount": 100 },
+                    { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 400 }
+                ]
+            },
+            {
                 "trait": "syngas_basic",
                 "time": 9600,
                 "count": 2,
@@ -207,6 +228,16 @@ global.microbes = [
         "name": "putrelys_sporogenes",
         "colors": [0x8a535b, 0xe08794],
         "variants": [
+            {
+                "trait": "revival",
+                "inoculum": "kubejs:dry_putrelys_sporogenes",
+                "time": 4800,
+                "count": 1,
+                "steps": [
+                    { "type": "deploying", "item": "ratatouille:compost_mass", "count": 4 },
+                    { "type": "filling", "fluid": "kubejs:distilled_water", "amount": 500 }
+                ]
+            },
             {
                 "trait": "compost_basic",
                 "time": 4800,
@@ -432,6 +463,19 @@ StartupEvents.registry('item', event => {
 
         microbe.variants.forEach(variant => {
             const trait = variant.trait;
+
+            if (variant.inoculum) {
+                [`inoculated_${trait}_${name}_petri_dish`, `processing_${trait}_${name}_petri_dish`].forEach(id => {
+                    event.create(id)
+                        .tag('cwi:petri_dish')
+                        .tag('cwi:inoculated_petri_dish')
+                        .textureJson({
+                            layer0: 'kubejs:item/bio/plate',
+                            layer1: 'kubejs:item/bio/plate_glass'
+                        })
+                        .color(1, colors[0])
+                })
+            }
 
             event.create(`${trait}_${name}_agar_plate`)
                 .texture('kubejs:item/agar_plate/agar_plate')

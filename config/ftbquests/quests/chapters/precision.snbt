@@ -129,9 +129,7 @@
 		}
 		{
 			dependencies: ["32BA01C17B48E245"]
-			description: [
-				"&eBrass is a copper-zinc alloy. Its machinability suits small fittings and gear parts, while its conductivity suits electrical contacts. In this workshop, brass sheets, wire, and nuggets serve both the moving assemblies and their control circuits.&r"
-			]
+			description: ["&eBrass is a copper-zinc alloy. Its machinability suits small fittings and gear parts, while its conductivity suits electrical contacts. In this workshop, brass sheets, wire, and nuggets serve both the moving assemblies and their control circuits.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "51B224D51AE9FFAD"
@@ -217,9 +215,7 @@
 				"1D16D3568A4B56AC"
 				"00C03DD3A3903E7C"
 			]
-			description: [
-				"&eThe precise machine core combines the workshop's moving mechanism with its basic circuit control. It is used in mechanical crafters, lathes, and incubators: machines that repeat a controlled operation, whether assembling a workpiece, shaping a part, or developing a sealed culture.&r"
-			]
+			description: ["&eThe precise machine core combines the workshop's moving mechanism with its basic circuit control. It is used in mechanical crafters, lathes, and incubators: machines that repeat a controlled operation, whether assembling a workpiece, shaping a part, or developing a sealed culture.&r"]
 			id: "53BF409251D93EE1"
 			shape: "rsquare"
 			size: 2.0d
@@ -1201,9 +1197,7 @@
 		}
 		{
 			dependencies: ["5518FD26FF090152"]
-			description: [
-				"&eThe arm base holds the drive and control parts for an articulated arm. A robot hand equips the finished arm to handle items; a robot pipette equips it to handle fluids. The completed arm works between selected transfer points.&r"
-			]
+			description: ["&eThe arm base holds the drive and control parts for an articulated arm. A robot hand equips the finished arm to handle items; a robot pipette equips it to handle fluids. The completed arm works between selected transfer points.&r"]
 			disable_toast: true
 			id: "7D38C4D9ED31E904"
 			tasks: [{

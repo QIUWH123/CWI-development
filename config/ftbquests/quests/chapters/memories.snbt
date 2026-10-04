@@ -11,9 +11,7 @@
 	quests: [
 		{
 			dependency_requirement: "one_completed"
-			description: [
-				"&eLogs recovered from the laboratory staff. Most of the pages concern ordinary work.&r"
-			]
+			description: ["&eLogs recovered from the laboratory staff. Most of the pages concern ordinary work.&r"]
 			icon: "minecraft:writable_book"
 			id: "207E2F3729E91CEC"
 			invisible: true

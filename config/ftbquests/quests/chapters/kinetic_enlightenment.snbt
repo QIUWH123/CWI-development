@@ -51,7 +51,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["661157F41CB9C876"]
 			description: [
 				"&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"
 				""

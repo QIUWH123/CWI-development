@@ -160,7 +160,7 @@
 			description: [
 				"&eQuests are hidden until you reach the corresponding stage.&r"
 				""
-				"&eYou need to complete quests to advance to the next stage.&r"
+				"&eQuests record your progress through each stage.&r"
 				""
 				"&eThe manual items themselves do not contain instructions. Their information is shown in the quests unlocked by those manuals.&r"
 			]

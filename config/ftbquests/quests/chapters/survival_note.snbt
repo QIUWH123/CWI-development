@@ -9,16 +9,15 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["36A9C92C5DCABC6B"]
 			description: [
 				"&eEmergency field notes: begin with loose scrap, dead timber, and stone. These can supply a first set of tools and a small workshop.&r"
 				""
 				"&eThe procedures below use salvaged materials. We cannot yet say how long someone could live on those reserves, or how far they would need to travel for replacements.&r"
 			]
 			hide_dependent_lines: true
-			hide_until_deps_complete: true
 			icon_scale: 0.9d
 			id: "5733B6FE443F3A31"
+			invisible: true
 			shape: "gear"
 			size: 3.0d
 			tasks: [{
@@ -86,9 +85,7 @@
 		{
 			dependencies: ["0E58512F3902F0F9"]
 			dependency_requirement: "one_completed"
-			description: [
-				"&eSort the rusted iron into rods, wire, and nuggets. A rod provides rigid support, wire can follow a narrow path or wrap around a joint, and nuggets provide small portions of metal stock.&r"
-			]
+			description: ["&eSort the rusted iron into rods, wire, and nuggets. A rod provides rigid support, wire can follow a narrow path or wrap around a joint, and nuggets provide small portions of metal stock.&r"]
 			disable_toast: true
 			id: "080FA7C3F386B9B8"
 			tasks: [
@@ -162,9 +159,7 @@
 		}
 		{
 			dependencies: ["771B7234DC99AC45"]
-			description: [
-				"&eStrip the loose material from a pile before breaking its compact core. The small scrap block holds heavier metal stock, including sheets and rebar.&r"
-			]
+			description: ["&eStrip the loose material from a pile before breaking its compact core. The small scrap block holds heavier metal stock, including sheets and rebar.&r"]
 			disable_toast: true
 			icon: "kubejs:small_scrap_block"
 			id: "0E58512F3902F0F9"
@@ -184,9 +179,7 @@
 		{
 			dependencies: ["0E58512F3902F0F9"]
 			dependency_requirement: "one_completed"
-			description: [
-				"&eSheets recovered from small scraps are ready for the rusted tool patterns. Ingots provide stock for further processing.&r"
-			]
+			description: ["&eSheets recovered from small scraps are ready for the rusted tool patterns. Ingots provide stock for further processing.&r"]
 			disable_toast: true
 			id: "4ABFD18B3CCA0DF5"
 			subtitle: "Sheets and Ingots"
@@ -212,9 +205,7 @@
 		}
 		{
 			dependencies: ["5733B6FE443F3A31"]
-			description: [
-				"&eAsh and burnt logs still hold usable wood. Work them in place with an axe; stripping exposes timber that can be split for chips.&r"
-			]
+			description: ["&eAsh and burnt logs still hold usable wood. Work them in place with an axe; stripping exposes timber that can be split for chips.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "108DC1287F75BF74"
@@ -324,9 +315,7 @@
 		}
 		{
 			dependencies: ["5733B6FE443F3A31"]
-			description: [
-				"&ePetrified timber occurs underground. Its stone-like appearance makes it easy to pass by while looking for ore, but it offers another source of planks.&r"
-			]
+			description: ["&ePetrified timber occurs underground. Its stone-like appearance makes it easy to pass by while looking for ore, but it offers another source of planks.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "61523773DA8A8372"
