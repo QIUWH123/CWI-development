@@ -66,7 +66,7 @@ StartupEvents.registry('item', event => {
 
     global.apples.forEach(([material, hunger, saturation, effects]) => {
         const itemName = `${material}_apple`
-        const baseTexture = `kubejs:item/foods/${itemName}`
+        const baseTexture = `kubejs:item/foods/apples/${itemName}`
         
         const applyFood = (food, hungerMul, satMul, durMul) => {
             food.hunger(hunger * hungerMul)
@@ -84,14 +84,14 @@ StartupEvents.registry('item', event => {
         event.create(`charged_${itemName}`)
             .textureJson({
                 layer0: baseTexture,
-                layer1: 'kubejs:item/foods/apple_charged_overlay'
+                layer1: 'kubejs:item/foods/apples/apple_charged_overlay'
             })
             .food(food => applyFood(food, 1.5, 1, 1.25))
 
         event.create(`enchanted_${itemName}`)
             .textureJson({
                 layer0: baseTexture,
-                layer1: 'kubejs:item/foods/apple_enchanted_overlay'
+                layer1: 'kubejs:item/foods/apples/apple_enchanted_overlay'
             })
             .food(food => applyFood(food, 2, 1.5, 1.5))
     })
