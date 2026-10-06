@@ -330,7 +330,7 @@
 				"6DFB21A13808280F"
 			]
 			description: [
-				"&eFireclay blends workable clay with bauxite, magnesite, and quartz or silicon powder. The clay allows the unfired stock to be shaped; the mineral blend supplies the refractory material needed around intense heat.&r"
+				"&eFireclay is a workable mineral blend for refractory masonry. Clay gives the unfired stock its shaping properties; the mineral additives prepare it for use around intense heat.&r"
 				""
 				"&eThe same stock becomes furnace bricks or casting molds, depending on how it is shaped before firing.&r"
 			]
@@ -367,7 +367,7 @@
 			description: [
 				"&eSilicon is a metalloid widely used in alloys and semiconductor electronics. Quartz contains silicon bound to oxygen; carbon reduction provides a route to separate silicon-bearing stock from that mineral.&r"
 				""
-				"&eHere silicon powder can replace quartz powder in the fireclay blend. This powder is refractory stock, rather than a finished electronic component.&r"
+				"&eThe workshop uses silicon powder as an alternative to quartz powder in fireclay.&r"
 			]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -384,7 +384,7 @@
 		}
 		{
 			dependencies: ["7A0C6B3904C55546"]
-			description: ["&eMagnesite is magnesium carbonate. Magnesium-bearing refractories have long served furnace linings exposed to severe heat. Here its powder joins bauxite, clay, and quartz or silicon in the fireclay blend.&r"]
+			description: ["&eMagnesite is magnesium carbonate. Magnesium-bearing refractories have long served furnace linings exposed to severe heat; the workshop uses magnesite powder as a fireclay additive.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "09A16A54841462D0"
@@ -771,7 +771,7 @@
 		{
 			dependencies: ["202D27DC120594C9"]
 			description: [
-				"&eThe helve hammer converts rotation into repeated blows. Its swinging head concentrates force on a workpiece, forming metal that needs heavier treatment than ordinary pressing.&r"
+				"&eThe helve hammer converts rotation into repeated blows. Its swinging head forms a metal workpiece through successive impacts.&r"
 				""
 				"&eReinforced casings, crucibles, and steel drill heads use this forming method. It can also break open a recovered armored safe.&r"
 			]

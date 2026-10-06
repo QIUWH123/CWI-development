@@ -1,6 +1,6 @@
 # Recipe and process realism audit
 
-Date: 2026-10-05. Review only: no recipes, material definitions, machine definitions, or progression gates changed.
+Baseline: 2026-10-05; first correction proposals and glass-supply checks refined 2026-10-06. Review only: no recipes, material definitions, machine definitions, or progression gates changed.
 
 ## Scope and standard
 
@@ -9,6 +9,23 @@ The detailed review covers the custom recipe scripts in `server_scripts/Recipes`
 This is a source audit, not a Minecraft runtime audit or a guarantee that every retained native recipe is active. A loaded recipe export would be needed to settle that last boundary. The report distinguishes established process errors, internal data conflicts, and cases that depend on design intent. Simplified yields, shared intermediate components, accelerated processing, omitted ancillary equipment, and fictional materials are not automatically mistakes.
 
 Local links below use the CWI workspace path. Native evidence is in [native_recipe_evidence.json](audit/native_recipe_evidence.json), with the original recipe IDs and jar names.
+
+## First Correction Batch For Review
+
+These proposals follow the owner's request to review simple corrections before changing production lines. They were checked against current source on 6 October 2026. **Proposed, not implemented.**
+
+| Finding | Exact Proposed Change | Reason And Gameplay Effect |
+| --- | --- | --- |
+| D01: Benzene hydrogenation | In [Chemistry.js:501](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/Chemistry.js:501), increase benzene input from 250 to **500 mB**. The full batch becomes 500 mB benzene + 1,500 mB hydrogen → 250 mB cyclohexane. | Benzene and hydrogen use gas accounting, while cyclohexane uses liquid accounting. This gives 250 mol benzene + 750 mol hydrogen → 250 mol cyclohexane, matching C₆H₆ + 3H₂ → C₆H₁₂. Benzene consumption doubles. |
+| D02: Cumene aggregate route | In [Chemistry.js:576](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/Chemistry.js:576), increase benzene input from 250 to **500 mB**. Keep 500 mB propylene, 500 mB oxygen, 250 mB phenol, and 250 mB acetone. | Each reacting gas represents 250 mol; each liquid product represents 250 mol. This balances C₆H₆ + C₃H₆ + O₂ → C₆H₆O + C₃H₆O. Benzene consumption doubles. |
+| D03: Toluene hydrodealkylation | In [Chemistry.js:815](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/Chemistry.js:815), reduce hydrogen from 400 to **200 mB**; at line 820, reduce methane from 400 to **200 mB**. Keep toluene and benzene at 200 mB each. | All four fluids use gas accounting. Equal mole amounts match C₇H₈ + H₂ → C₆H₆ + CH₄. Hydrogen demand and methane output halve. Catalyst selection remains a separate design question. |
+| Spring material duplication | In [Metallurgy.js:51](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/Metallurgy.js:51), include springs with rods and wires in the **45 mB** melt-output branch. | One wire or rod contains 45 mB and makes one spring, which currently remelts for 90 mB. Updating the shared amount fixes both ordinary and bulk melting. Spring assembly cost stays as implemented. |
+
+The three chemical proposals preserve the existing fluid registrations, equipment, output products, processing times, and catalyst return. They correct quantities under the pack's stated mole convention; they do not certify every part of those processes. Existing added-recipe exports corroborate the three current vat recipes, and no current removal filter targets their recipe type. Exports remain snapshots; verify the loaded recipes after implementation. Preserve or deliberately migrate their generated IDs when changing recipe contents.
+
+Glass supply is a separate coordinated change, detailed below. Consuming the additives by itself would make ordinary glass harder to sustain. The initial mineral route is verified from recipes; the renewable dripstone layout still needs a working harvest design and playtest.
+
+Do not include iron `mp`, alloy ratios, polymer catalysts, wet ore extraction, or glass annealing in this first batch. Those require progression, material-identity, or production-line decisions. In particular, changing iron `mp` from 1443 to 1811 would change generated processing times even though no current tooltip presents that field as a physical melting point.
 
 ## Established process errors
 
@@ -102,14 +119,15 @@ These five resources were not caught by the approximate static exclusion filter.
 
 ## Proposed early soda and carbonate supply
 
-Design requested 5 October 2026. **Proposed, not implemented or runtime-tested.** The objective is a short mechanical-stage supply route for ordinary glass, with renewable operation and no dependency on glass tanks, precision machinery, cultures, or industrial chemical synthesis.
+Design requested 5 October 2026; dependency and growth checks refined 6 October 2026. **Proposed, not implemented or runtime-tested.** The objective is a short mechanical-stage supply route for ordinary glass, with renewable operation and no dependency on glass tanks, precision machinery, cultures, or industrial chemical synthesis.
 
 ### Existing resources and progression
 
 - Soda already has a worldgen source. [Alkaline lakes](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/data/cwi/worldgen/configured_feature/structures/alkaline_lake.json) contain `kubejs:alkaline_brine` and have calcite barriers. A previous conversational answer missed this source by looking for recipe producers.
 - [Surface placement](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/data/cwi/worldgen/placed_feature/structures/alkaline_lake_surface.json) uses rarity 300; [underground placement](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/data/cwi/worldgen/placed_feature/structures/alkaline_lake_underground.json) uses rarity 40 and additional terrain filters. Neither number guarantees a lake in the corresponding number of chunks.
 - [Existing evaporation](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/MicrobesRecipe.js:71) consumes 500 mB alkaline brine and produces one soda powder, two salt, and stone powder at ordinary heat. Its basin variant needs a basin lid, not a mechanical mixer or culture. This abstracts separation and drying of the mixed dissolved salts.
-- The [basin lid](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Progression/MechanicalAge.js:363), basin, and [burner](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Progression/MechanicalAge.js:828) use early mechanical materials. The bulk fermenter needs a fluid tank containing glass, so it is an expansion option after the first glass has been made.
+- The [basin lid](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Progression/MechanicalAge.js:363) uses three andesite-alloy sheets and a clock. The clock needs gold and redstone, so this is mechanical-stage access rather than immediate starter access. Basin, burner, pump, pipes, bearings, and the required iron-rod rolling equipment have routes without glass or steel. The bulk fermenter needs a fluid tank containing glass, so it is an expansion option after the first glass has been made.
+- Installed Create Diesel Generators bytecode confirms that the closed lid operates directly above a basin without rotational drive and enforces the recipe's heat through Create's basin matcher. Pipes can feed the basin; arrange item extraction from its side because the burner occupies the space underneath. The complete setup still needs a live test.
 - [Existing milling](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/Stones.js:8) gives both limestone and calcite three corresponding powders plus a 75% chance of a fourth. Limestone is a host rock in numerous ore deposits; calcite is also obtainable around the brine lakes.
 - The [pack's dripstone caves](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/data/cwi/worldgen/biome/dripstone_caves.json) include vanilla dripstone features. The precision-stage drill and deployer should not be required for the initial renewable carbonate route.
 
@@ -119,7 +137,7 @@ Design requested 5 October 2026. **Proposed, not implemented or runtime-tested.*
 | --- | --- | --- |
 | Soda | Keep 500 mB alkaline brine → 1 soda + existing byproducts, at ordinary heat. | Bucket initially; then pump/pipe feed to a heated basin with lid and automatic item extraction. A glass tank is optional. |
 | Initial carbonate | Keep the existing limestone and calcite milling yields. | Mine a small stock and feed an early millstone. |
-| Renewable carbonate | Add pointed dripstone → 1 calcite powder; dripstone block → 4 calcite powder. | A water-fed dripstone farm supplies an early millstone. Four pointed dripstone already craft into one block, so both proposed milling forms have the same total yield. |
+| Renewable carbonate | Add pointed dripstone → 1 calcite powder; dripstone block → 4 calcite powder. | A water-fed farm must control both upper and lower growth; its harvest layout is provisional. Four pointed dripstone already craft into one block, so both milling forms have the same total yield. |
 | Glass batch | 16 sand + 2 soda powder + 1 calcium-carbonate powder → 8 glass batches, consuming the additives. | Existing unheated mechanical mixing; retain the current downstream processing and success chance for this proposal. |
 
 Use a narrowly scoped glass ingredient tag, such as `cwi:glass_calcium_carbonate_powders`, containing `kubejs:limestone_powder` and `kubejs:calcite_powder`. Calcite supplies the same required calcium-carbonate constituent without pretending it is geological limestone. Do not expand unrelated limestone recipes automatically; examine their mineral/purity requirements separately.
@@ -132,13 +150,26 @@ Reduce the surface alkaline-lake rarity setting from 300 to **24 as an initial b
 
 For a simple renewable soda supply, make **only alkaline brine regenerate source blocks like water**, allowing a small replenishing intake pool after the player obtains two buckets. This is an explicit gameplay abstraction of an accessible mineral-brine reservoir. Source regeneration does not simulate chemical synthesis or prove that an arbitrary puddle is a real aquifer. Keep the actual production step as extraction/evaporation of sodium-carbonate-bearing brine. Do not produce soda from ordinary wood ash, salt alone, calcite plus water, or ordinary water.
 
-Installed KubeJS/Architectury bytecode exposes the per-fluid setting through `builder.createAttributes().convertToSource(true)`; there is no `FluidBuilder.canConvertToSource(...)` setter in this installed version. Apply that setting only to the alkaline-brine builder. Installed Create's open pipe checks whether draining a source would allow it to regenerate, which supports a small renewing intake pool. The actual fluid and intake still need an in-game test. Source renewal is distinct from Create's hose-pulley bottomless setting: the current default requires 10,000 connected source blocks and uses `ALLOW_BY_TAG`. Adding a fluid to that tag alone does not make a small lake inexhaustible. Do not lower the global threshold or make every chemical fluid renewable as part of this change.
+Installed KubeJS/Architectury bytecode exposes the per-fluid setting through `builder.createAttributes().convertToSource(true)`; there is no `FluidBuilder.canConvertToSource(...)` setter in this installed version. Apply that setting only to the alkaline-brine builder, after its existing textures, color, and other fluid settings: `createAttributes()` builds and caches attributes from those settings. Keep the fluid builder separate from its `.bucketItem` builder when making this call. Installed Create's open pipe checks whether draining a source would allow it to regenerate, which supports a small renewing intake pool. The actual fluid and intake still need an in-game test. Source renewal is distinct from Create's hose-pulley bottomless setting: the current default requires 10,000 connected source blocks and uses `ALLOW_BY_TAG`. Adding a fluid to that tag alone does not make a small lake inexhaustible. Do not lower the global threshold or make every chemical fluid renewable as part of this change.
 
 ### Early dripstone harvesting
 
-Use a fixed upper stalactite under a water-fed dripstone block. Leave a suitable floor below for stalagmite growth. Mount the lower floor on an early mechanical piston so it can retract horizontally. Removing that floor takes away the lower stalagmite's support; collect the drops with a hopper, return the floor, and mill the harvested pointed dripstone. The upper growing seed stays fixed. Leave the floor's upper surface unglued and avoid slime blocks that would carry the growth with the support.
+The earlier floor-only harvesting proposal is incomplete. Installed vanilla 1.20.1 bytecode requires the upper tip to be able to grow before attempting either branch. The upper stalactite can eventually become obstructed, merge with lower growth, or exceed the tip-search range; retracting only the floor does not clear that condition. A sustainable farm must preserve its upper root seed while periodically clearing new hanging growth as well as harvesting lower growth.
 
-Installed Create 6.0.8 resources give the mechanical piston a retained recipe of wooden slab + andesite casing + piston extension pole. The pole costs planks and andesite alloy. Source inspection supports the harvest concept: ordinary pointed dripstone is not automatically attached to the floor in contraption assembly, and removing the floor sends neighbor updates. **An in-game test remains necessary** to confirm the complete retract/restore/collect cycle, growth clearance, and control timing. Do not substitute an unverified claim that a moving saw cuts dripstone or a solid platform can push through it.
+An early Create support-removal layout is a candidate, subject to the checks below. The mechanical piston has a retained recipe of wooden slab + andesite casing + piston extension pole; the pole costs planks and andesite alloy. Ordinary pointed dripstone is not automatically attached to the floor in contraption assembly, and removing its support sends neighbor updates. These facts support harvesting by moving supports, but do not prove a complete repeating farm. **Do not present the layout as working until seed preservation, upper clearing, water containment, lower harvest, and item collection have been tested together.** Vanilla pistons are explicitly removed by the pack, so a vanilla piston farm is not an available fallback.
+
+For the test layout, move the upper dripstone support block and its original hanging seed sideways together, with glue confined to that pair. New hanging growth must remain outside glue volumes and chassis ranges. Removing its connection should make the added segments fall; installed vanilla schedules that fall after two ticks, so allow them to clear before returning the seed. A separate horizontally retracting floor harvests lower growth. Confine the water above the moving support and keep the harvest shaft dry. Installed Create movement checks support this separation, but water containment, restored seed orientation/thickness, collection, and control timing remain experimental. Two moving supports add complexity; if the test is awkward or unreliable, revise the renewable route instead of describing it as easy automation.
+
+Vanilla growth is slow. At default `randomTickSpeed = 3` and 20 TPS, each eligible upper root receives about 52.7 random ticks per hour, each with growth-attempt probability `0.011377778`. That yields about 0.6 attempts per root per hour. The two branches are equally likely, so collecting only lower growth has an ideal ceiling of about 0.3 pointed dripstone per root per hour while all growth conditions remain satisfied.
+
+| Eligible Roots | Ideal Lower-Only Powder Per Hour | Expected Glass Supported Per Hour |
+| --- | ---: | ---: |
+| 16 | 4.8 | 29.2 |
+| 32 | 9.6 | 58.4 |
+
+These are estimates before travel, collection losses, harvest downtime, and growth obstruction; they are not measured farm rates. The glass column uses the proposed eight batches per carbonate powder and current 76% glass success chance. Eleven carbonate powder would take about 138 minutes from 16 roots or 69 minutes from 32 roots at those ideal lower-only rates. Successfully collecting both branches gives theoretical ceilings of about 9.6 and 19.2 powders per hour respectively, supporting about 58 and 117 expected glass per hour. The complete mechanism remains untested. Use mined limestone/calcite for initial stock and evaluate renewable farming as replenishment.
+
+The root needs a dripstone block directly above and source water above that. The upper tip search has a seven-block limit; the lower growth search checks up to ten positions. Clearance, suitable floor, non-merged tips, and absence of obstructing fluid matter. Vanilla random ticks also require appropriate chunk ticking and a nearby non-spectator player within 128 horizontal blocks of the chunk centre. Forced loading alone does not guarantee growth; leaving the area or pausing can stop production.
 
 Real stalactites and stalagmites commonly deposit calcium carbonate from mineral-bearing water. Milling their material is a reasonable carbonate extraction route. Minecraft's renewable dripstone growth abstracts the dissolved-mineral supply and geological timescale; water itself supplies no calcium. Existing vanilla growth is slow, so the low carbonate demand is deliberate. More parallel growth points provide more throughput without speeding up every random-tick process.
 
@@ -148,8 +179,8 @@ Optional later convenience: Ratatouille's retained egg-emptying recipe supplies 
 
 - Confirm basin evaporation and item extraction work before any glass has been made; confirm each required machine's complete ingredient chain.
 - Test the renewable brine intake, bucket collection, and pump throughput without a glass tank.
-- Test dripstone support harvesting with the installed Create version; if it fails, revise that mechanism before consuming additives in glass production.
-- Compare dripstone-farm throughput against actual early glass demand; quantities above establish consumption, not a tested production rate.
+- Test a dripstone mechanism that controls both upper and lower growth with the installed Create version, including seed preservation and water containment. Revise it before making additive consumption rely on its operation.
+- Measure dripstone-farm throughput against actual early glass demand. The estimates above assume default random ticks and fully eligible roots; they do not verify a farm's production rate.
 - Check fresh-world lake accessibility and record observed placement, without turning rarity settings into player-facing guarantees.
 - Validate ingredient counts, tag matching, and the eight-batch output in JEI and a running basin. Maintain the full evaporation byproducts in both the initial and optional culture-assisted variants.
 

@@ -84,9 +84,13 @@
 	quests: [
 		{
 			description: [
-				"&eCold. You wake in a derelict laboratory. You cannot remember how long you have been here.&r"
+				"&eCold. You wake in a derelict laboratory. The equipment is silent. You cannot remember how long you have been here.&r"
 				""
-				"&eThere are supplies to find before you leave, and rooms that are still closed.&r"
+				"&eThe first page of this recovery memo is in handwriting you recognize:&r"
+				""
+				"&7Find water and food first. Search the gray toolboxes for the workshop notes. Leave the gate alone until you can check the replacement parts.&r"
+				""
+				"&eYou know how to follow the instructions. You do not remember writing them.&r"
 			]
 			disable_toast: true
 			hide_until_deps_complete: true
@@ -130,7 +134,9 @@
 			description: [
 				"&eYou know this ring. You remember standing here, though you cannot recall what you were waiting for.&r"
 				""
-				"&eThe memory passes before the rest of it returns.&r"
+				"&eBeyond that, only fragments: a voice from the control room, your hand resting on a drawing. The rest will not come.&r"
+				""
+				"&eWhatever happened here left the gate unusable. Familiarity will not put it back together.&r"
 			]
 			icon: "create_connected:music_disc_interlude"
 			id: "1206CB23534B30CD"
@@ -460,7 +466,9 @@
 		}
 		{
 			dependencies: ["48FAA6DBC81EED3F"]
-			description: ["&eThe laboratory's gray toolboxes hold surviving manuals, notes, and engineers' logs.&r"]
+			description: [
+				"&eThe gray toolboxes hold manuals, notes, and engineers' logs. Workshop instructions and personal records have been stored together.&r"
+			]
 			icon: "create:gray_toolbox"
 			id: "7A4768D007A9209B"
 			size: 1.5d
@@ -513,9 +521,9 @@
 		{
 			dependencies: ["7A4768D007A9209B"]
 			description: [
-				"&eThe survival note lists salvage and improvised equipment. The environmental note goes further: soil, seeds, cultures, a source of food that might last.&r"
+				"&eThe survival note covers salvage and improvised equipment. The environmental note follows with soil, seeds, and cultures: ways to replace dwindling supplies with something that can grow.&r"
 				""
-				"&eThere is no account here of anyone living on these methods for years.&r"
+				"&eThe writers distinguish what they tested from what they hoped would keep working. There is no record here of anyone living on these methods for years.&r"
 			]
 			disable_toast: true
 			id: "0EA786F00A19ADC6"

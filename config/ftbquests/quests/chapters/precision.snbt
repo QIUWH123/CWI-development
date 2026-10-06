@@ -111,6 +111,8 @@
 				"&eThe package from the brass lockbox contains the precision manual, processing notes, and a manufacturing engineer's log. Cut the wrapping open before separating the documents.&r"
 				""
 				"&eThese pages explain how to reproduce components without their original makers. A working assembly line can then supply its own replacements.&r"
+				""
+				"&eA note on the cover reads: 'Restoration copy — project engineering.' Beneath it, the initials look familiar.&r"
 			]
 			hide_dependent_lines: true
 			id: "32BA01C17B48E245"
@@ -375,9 +377,9 @@
 		{
 			dependencies: ["00206C2F04A626DB"]
 			description: [
-				"&eThe electron tube is a circuit component for control chips and precise machine cores. The one-way design described in these notes follows the principle of a vacuum diode: current can pass in one direction while the reverse path is blocked.&r"
+				"&eIn conventional electronics, a vacuum tube controls current between electrodes inside an evacuated enclosure. A diode passes current in one direction; tubes with additional electrodes can regulate or amplify a signal.&r"
 				""
-				"&eIn electronics, additional control electrodes allow tubes to regulate or switch current. Here, chips assembled with tubes are used in deployers that repeat hand operations and transport blocks that select passing items.&r"
+				"&eThe workshop uses electron tubes in control chips and precise machine cores. These assemblies give machines controlled actions: deployers repeat tool operations, and filtered transport selects which materials pass.&r"
 				""
 				"&cHandle it carefully, could be factured if it falls on the ground.&r"
 			]
@@ -463,7 +465,7 @@
 			]
 			disable_toast: true
 			id: "3CD9A2ACE4B55909"
-			subtitle: "Interchangeable Arm Attachment"
+			subtitle: "Attachment for Solid Items"
 			tasks: [{
 				id: "3E90D9CF5FF5250C"
 				item: "kubejs:robot_hand"
@@ -891,7 +893,7 @@
 				"233D8C38E18799CF"
 				"3A8590545AC9E328"
 			]
-			description: ["&eThe compressor applies pressure to fluids in a processing chamber and recovers solid products. In this workshop, lava supplies mineral powders and honey supplies sugar, giving it a role in recovering materials from a liquid feed.&r"]
+			description: ["&eThe compressor recovers solid products from liquid feedstocks. The workshop uses it to obtain mineral powders from lava and sugar from honey.&r"]
 			disable_toast: true
 			id: "64100A05BE92A991"
 			shape: "hexagon"

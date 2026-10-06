@@ -11,7 +11,9 @@
 	quests: [
 		{
 			dependency_requirement: "one_completed"
-			description: ["&eLogs recovered from the laboratory staff. Most of the pages concern ordinary work.&r"]
+			description: [
+				"&ePages recovered from the laboratory staff: repairs, requests, tests, complaints.&r"
+			]
 			icon: "minecraft:writable_book"
 			id: "207E2F3729E91CEC"
 			invisible: true
@@ -33,7 +35,14 @@
 				""
 				"&eMoved the exit chest out from under the bench again. Leave it where someone can see it.&r"
 				""
-				"&eThe preparation room is clean. The observation room will have to wait.&r"
+				"&eThe preparation room is clean. The observation room will have to wait. They have covered the glass and asked me not to take the cloth down. No replacement window has been ordered.&r"
+				""
+				"{@pagebreak}"
+				"&eNew list for the exit chest. Tools, rations, backpack. There is a hoe on it. I asked whether that was a mistake. It stays.&r"
+				""
+				"&eThey are keeping the empty food tins now. I have stopped throwing them out.&r"
+				""
+				"&eThe chest is still in plain view. Whoever comes out of preservation will not have to search for it.&r"
 			]
 			id: "7C3299CBACBDAE0F"
 			tasks: [{
@@ -53,6 +62,13 @@
 				"&eRedrew the first sheet mold. The old drawing assumed a working press; the press drawing assumed a supply of sheets. That was an embarrassing pair of instructions.&r"
 				""
 				"&eThe wooden mold is crude, but it breaks the circle.&r"
+				""
+				"{@pagebreak}"
+				"&eThere are no deliveries to wait for. I have gone through the repair list and removed every part we used to order from another factory.&r"
+				""
+				"&eThat makes the list longer, not shorter. Someone will have to make the tools for making the replacements.&r"
+				""
+				"&eThree replacements for the ring assembly looked right. None passed the fit checks. Keep the rejected measurements with the drawing; a clean copy would make this look easy.&r"
 			]
 			id: "74B858ACAA29F9D8"
 			tasks: [{
@@ -72,6 +88,10 @@
 				"&eThe return line was connected correctly. The pump was turning the wrong way.&r"
 				""
 				"&eAdded rotation arrows to the drawing. Whoever reads it next may never have seen this installation running.&r"
+				""
+				"&eThey asked how long the water would last if we reused it. I can measure the losses and give them a rate. They still have to tell me how long they expect to wait.&r"
+				""
+				"&eMark the direction on the paper before switching off. It is much harder to explain once nothing is moving.&r"
 			]
 			id: "11993D43DAEFB516"
 			tasks: [{
@@ -89,6 +109,10 @@
 				"&7From the precision manufacturing engineer's log:&r"
 				""
 				"&eThe document packet fits in the brass box. Opening sequence tested before sealing the final copy; the pages can be removed intact.&r"
+				""
+				"&eOne sheet came back with a request to preserve the crossed-out figures as well as the corrections. I had nearly recopied it clean.&r"
+				""
+				"&eThe old readings were not copying errors. I have left them legible.&r"
 			]
 			id: "29D5C51D5B2A259F"
 			tasks: [{
@@ -108,6 +132,10 @@
 				"&eThey asked which material would last longest. I asked where it would be stored, at what temperature, and in contact with what.&r"
 				""
 				"&eCompatibility notes complete. Storage conditions still unspecified.&r"
+				""
+				"&eThe latest request gives the service life as 'until return'. That is not a duration I can put through a test.&r"
+				""
+				"&eThey used to ask about wear while the equipment was running. Now most of the questions concern what happens after we turn it off.&r"
 			]
 			id: "0EE2743FF6D048DD"
 			tasks: [{
@@ -125,6 +153,15 @@
 				"&7From the electrical engineer's log:&r"
 				""
 				"&eCopied the restart procedure onto paper. Keep this copy with the electrical notes in case the console fails.&r"
+				""
+				"&eThe astronomical group asked us to check their supply twice. We changed the measuring equipment. The readings did not change.&r"
+				""
+				"&eKeep both sets of observations. Do not replace a reading with the value we expected.&r"
+				""
+				"{@pagebreak}"
+				"&eI was about to copy the old destination coordinates into the restart sheet. They told me to leave the space blank. The figures are still legible; it is their reference that needs checking.&r"
+				""
+				"&eWorkshop circuits isolated. I have marked them OFF in the paper copy as well.&r"
 			]
 			id: "3E0DD88A307809D4"
 			tasks: [{

@@ -2,7 +2,7 @@
 
 Audit date: 4 October 2026. All 504 quest descriptions in all 15 chapters were read. Claims were compared with KubeJS, configuration, structure contents, installed mod implementations, and configured resource packs. This document is for maintaining the pack; its author notes contain story spoilers.
 
-Most questions from the initial audit are now settled. The Stargate cause and chronology are being derived separately from the quest text. Static file/parser checks do not establish every interaction or generation result in a running world.
+Most questions from the initial audit are settled. The 6 October quest revision implements the accepted planetary-displacement story in prose; detailed gate and ending mechanics remain separate design work. Static file/parser checks do not establish every interaction or generation result in a running world.
 
 ## Confirmed writing constraints and applied corrections
 
@@ -22,7 +22,7 @@ Most questions from the initial audit are now settled. The Stargate cause and ch
 
 ### Gasoline engine use — resolved
 
-`tfmg:gasoline` is intended to power compatible engines and fluid-fed burners. The separate Create Diesel Generators fluid, `createdieselgenerators:gasoline`, is intentionally excluded from the pack's `forge:gasoline` fuel tag. [tags.js](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/tags/tags.js:64) now restores only TFMG's source and flowing fluids after clearing the inherited tag. The [gasoline quest](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quests/chapters/petroleum.snbt:398) names TFMG gasoline explicitly. The [fluid combustion recipe](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/BasicRecipe.js:348) and napalm feedstock remain implemented.
+`tfmg:gasoline` is intended to power compatible engines and fluid-fed burners. The separate Create Diesel Generators fluid, `createdieselgenerators:gasoline`, is intentionally excluded from the pack's `forge:gasoline` fuel tag. [tags.js](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Tags/tags.js:64) now restores only TFMG's source and flowing fluids after clearing the inherited tag. The [gasoline quest](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quests/chapters/petroleum.snbt:398) names TFMG gasoline explicitly. The [fluid combustion recipe](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/BasicRecipe.js:348) and napalm feedstock remain implemented.
 
 ### Stargate cause and chronology — updated 6 October 2026
 
@@ -30,11 +30,11 @@ The author accepted planetary displacement: an uncontrolled expansion transports
 
 [Stargate story](STARGATE_STORY.md) records the accepted direction, retained engineer/memo/log background, and remaining decisions. The preceding time-travel rescue and temporal-preservation draft is superseded.
 
-The magnetic explanation remains a recommendation: Earth can retain its internally generated field while stronger stellar wind compresses and disturbs its magnetosphere. A permanent weakening of the geodynamo would require a separate fictional mechanism. Relocation alone does not establish it.
+The current quest prose uses this magnetic explanation: Earth can retain its internally generated field while stronger stellar wind compresses and disturbs its magnetosphere. A permanent weakening of the geodynamo would require a separate fictional mechanism. Relocation alone does not establish it.
 
 ### Narrative agreement and implementation
 
-This update records story decisions, not quest or gameplay implementation. Cascade boundaries, the safe return orbit, preservation duration and release, astronomical clues, and ending mechanics still need design. Keep proposals distinct from accepted facts, and verify implementation before describing a functioning system to players.
+The 6 October update implements the story in quest prose. It does not implement gate, preservation, astronomical, or ending mechanics. Cascade boundaries, the safe return orbit, preservation duration and release, astronomical clues, and ending mechanics still need design. Keep proposals distinct from accepted facts, and verify implementation before describing a functioning system to players.
 
 ## Verification sources for resolved questions
 
@@ -45,6 +45,9 @@ This update records story decisions, not quest or gameplay implementation. Casca
 - **Trading, equipment, books (7–9):** resolved by author confirmation or removal of unnecessary added detail.
 - **Hidden logs (10):** [always-invisible flag](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quests/chapters/memories.snbt:2) preserved according to author intent.
 - **Progression (11):** [preface wording](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quests/chapters/preface.snbt:163) corrected to progress tracking; gameplay code and quest dependencies were preserved.
+
+- **Fermento revival update (6 October):** the [dried inoculum variant](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/startup_scripts/Items/Microbes.js:9), [dedicated culture recipes](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/MicrobesCulture.js:21), and [incubation](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Multiblocked2/Incubator.js:8) establish the new route. [Powdered fermentation](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/MicrobesRecipe.js:170) remains an earlier route. The quest now covers both without listing recipes.
+- **Lead inventory exposure (6 October):** [Neurotoxin tags](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Tags/tags.js:233) and [inventory exposure calculation](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Interactions/PlayerEvents.js:11) support the quantity-dependent handling limitation added to the lead entry. This is an implemented pack effect, not a claim that merely carrying solid lead causes that effect in real life.
 
 ## Earlier corrections established without questions
 

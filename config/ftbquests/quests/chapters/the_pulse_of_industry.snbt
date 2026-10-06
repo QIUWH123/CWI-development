@@ -27,7 +27,11 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r"]
+			description: [
+				"&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r"
+				""
+				"&eIf fluid stops moving, trace the line from source to outlet. Check the supply, pump direction, closed valves, and room in the receiving tank.&r"
+			]
 			hide_dependent_lines: true
 			id: "497B62C9B689DE39"
 			invisible: true
@@ -489,7 +493,7 @@
 		}
 		{
 			dependencies: ["1B2BF2C10C4FEB9E"]
-			description: ["&eThe robot pipette equips a mechanical arm for fluid transfer and item filling. It is a component of the mechanical pipette, not a pump by itself.&r"]
+			description: ["&eThe robot pipette is the fluid-handling attachment fitted to a mechanical arm base. The completed mechanical pipette transfers fluid and fills items within its reach.&r"]
 			disable_toast: true
 			id: "11F9A3AD93930BDD"
 			subtitle: "The Fluid-Handling End of an Arm"

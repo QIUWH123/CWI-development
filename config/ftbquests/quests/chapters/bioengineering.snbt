@@ -9,9 +9,11 @@
 	quest_links: [ ]
 	quests: [{
 		description: [
-			"&eIncubation develops sealed agar plates into cultures for fermentation, biomass, and renewable-fuel production.&r"
+			"&eSealed agar plates let a small working sample be grown into a culture supply. Dedicated revival media can start certain cultures from dried samples; other media propagate cultures that are already active.&r"
 			""
-			"&7Successful growth in a sealed plate gives us a culture to work with. We have no field record showing how long it could persist in the damaged ground.&r"
+			"&eIncubation supports the cultures used in fermentation, mineral recovery and renewable-fuel production.&r"
+			""
+			"&7A sealed plate is a controlled environment. We can describe how to grow a culture there; we cannot promise that it will persist in exposed ground.&r"
 		]
 		id: "0DFA888EA5975E50"
 		invisible: true

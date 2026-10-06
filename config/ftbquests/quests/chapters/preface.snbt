@@ -197,7 +197,11 @@
 			y: -3.0d
 		}
 		{
-			description: ["&eIf you do not know what to do next, read the quests carefully, especially their descriptions.&r"]
+			description: [
+				"&eIf you do not know what to do next, read the quest descriptions and check which manuals you have recovered. They explain the equipment and where further records can be found.&r"
+				""
+				"&eUse JEI for recipes. The relevant quests explain controls and operating limits that a recipe cannot show.&r"
+			]
 			disable_toast: true
 			icon: "create:schematic_and_quill"
 			id: "5137F04F4288DA8F"
@@ -207,7 +211,7 @@
 				id: "2AD17BF6EC67EA17"
 				type: "checkmark"
 			}]
-			title: "Confusing Quests"
+			title: "What Next?"
 			x: -3.0d
 			y: 3.0d
 		}

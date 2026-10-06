@@ -54,7 +54,7 @@
 			description: [
 				"&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"
 				""
-				"&7The hand tools come first. The drawings for a powered workshop assume that someone has already made the first casing and drive parts.&r"
+				"&7The hand-tool methods are included for a workshop that has lost its machines. I cannot assume that any powered equipment will still be usable when these drawings are needed.&r"
 			]
 			hide_dependent_lines: true
 			id: "5E402C739E34B7D4"
@@ -382,7 +382,7 @@
 		}
 		{
 			dependencies: ["6C479154F903BB77"]
-			description: ["&eIron armor provides protection for exploration and close combat. Its separate plates cover the head, torso, and limbs while leaving room at the joints for movement.&r"]
+			description: ["&eIron armor provides protection against blows during exploration and close combat.&r"]
 			disable_toast: true
 			id: "235292F382A4C466"
 			shape: "diamond"
@@ -447,7 +447,7 @@
 		}
 		{
 			dependencies: ["40FA81C21DEF7A09"]
-			description: ["&eIron sheets provide stock for armor plates, cutting tools, and fan blades. One flat form serves both protective surfaces and shaped working parts.&r"]
+			description: ["&eIron sheets provide flat stock for armor plates, cutting tools, and fan blades.&r"]
 			disable_toast: true
 			id: "6C479154F903BB77"
 			tasks: [{
@@ -758,7 +758,7 @@
 		}
 		{
 			dependencies: ["4C5689F8A2DBC8A7"]
-			description: ["&eThe brass lockbox protects a package containing the precision manual, processing note, and manufacturing engineer's log. These records carry the workshop beyond basic mechanical equipment into finer manufacturing and material processing.&r"]
+			description: ["&eA press can force the brass lockbox open. The package inside holds the precision manual, processing note, and manufacturing engineer's log: the records needed for finer manufacturing and ore recovery.&r"]
 			disable_toast: true
 			hide_dependency_lines: false
 			icon: "kubejs:brass_lockbox"

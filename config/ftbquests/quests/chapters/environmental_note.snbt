@@ -10,9 +10,9 @@
 	quests: [
 		{
 			description: [
-				"&eRestoration working notes. The immediate aim is a plot that produces food; rebuilding a lasting ecosystem is a separate question. The soil treatments and culture procedures below give us a place to begin.&r"
+				"&eRestoration working notes. Begin with viable planting stock and a plot that can produce food. Soil treatment and culture recovery offer practical ways to build that first supply.&r"
 				""
-				"&eThese plans join laboratory processes to materials that may still be recovered outside. We have no long-term survival record for a person depending on such a farm.&r"
+				"&eWe are writing these plans for conditions we may never see. A culture growing under controlled conditions does not tell us how the surrounding land will respond, or which parts of its former ecosystem can return.&r"
 			]
 			hide_dependent_lines: true
 			icon_scale: 0.9d
@@ -342,7 +342,11 @@
 		}
 		{
 			dependencies: ["0D14A252C4D9955C"]
-			description: ["&eDried Fermento Mycetes is preserved starter material for an ethanol-producing culture, rarely recovered from dry biological sediment. Dry storage can slow biological activity, but the appearance of a sample does not by itself establish whether it remains viable.&r"]
+			description: [
+				"&eDried Fermento Mycetes is preserved starter material for an ethanol-producing culture, rarely recovered from dry biological sediment. Dry storage can slow biological activity, but a sample's appearance does not establish whether it remains viable.&r"
+				""
+				"&eThe dried sample can seed a dedicated revival plate for incubation. Its powdered form offers an earlier fermentation-based revival route.&r"
+			]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "0038547A05E5BB0A"

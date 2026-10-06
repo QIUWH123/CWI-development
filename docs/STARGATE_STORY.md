@@ -1,6 +1,6 @@
 # Stargate backstory
 
-Author-facing writing reference, updated 6 October 2026. The author accepted the planetary-displacement direction and the supporting corrections discussed with it. This document distinguishes agreement from recommended explanations and remaining design choices. It records narrative decisions, not implemented Stargate, preservation, astronomical, or ending mechanics.
+Author-facing writing reference, updated 6 October 2026. The author accepted the planetary-displacement direction and the supporting corrections discussed with it. This document distinguishes agreement from recommended explanations and remaining design choices. The accepted direction is now reflected in quest prose. This distinguishes implemented writing from Stargate, preservation, astronomical, or ending mechanics, which this revision does not implement.
 
 ## Accepted story direction
 
@@ -27,13 +27,13 @@ Staff records can cover ordinary work before, during, and after the incident. Th
 
 Mechanical manual scraps are scattered among toolboxes. Essential identity, cause, and objective information must be discoverable through visible progression; hidden Lost Logs provide optional side evidence.
 
-## Magnetic protection: science and recommended explanation
+## Magnetic protection: science and current writing choice
 
 Earth generates its main magnetic field internally. Electrically conducting liquid iron circulates in the outer core, and rotation helps organize the flows sustaining the geodynamo. The Sun does not supply this field. Relocating Earth alone would not stop the core's flow or rotation.
 
 The magnetosphere is the surrounding region where Earth's field interacts with stellar wind. Stronger wind pressure compresses its outer boundary. Storms and changes in the wind's magnetic field can increase disturbances and transfer energy into Earth's magnetic environment without permanently weakening the field generated in the core.
 
-The recommended explanation is that the new star's stronger, more variable wind makes Earth's magnetic protection less effective there. A genuinely weaker internal field would require an additional fictional transfer effect on the geodynamo; no such mechanism has been chosen.
+The current quest prose uses the new star's stronger wind compressing and disturbing Earth's magnetosphere while the planet retains its internally generated field. This is the adopted writing explanation; it does not assert a simulated magnetic system. A genuinely weaker internal field would require an additional fictional transfer effect on the geodynamo; no such mechanism has been chosen.
 
 Magnetic protection and ozone protection are different. The field influences charged particles; ozone absorbs much of the harmful ultraviolet radiation. A more active star can increase radiation exposure, and energetic particle events can alter atmospheric chemistry. Do not describe ozone as held in place by magnetism or claim that relocation inevitably strips Earth's atmosphere.
 
@@ -60,6 +60,17 @@ Discovery should progress from a ruined laboratory, through evidence of a wider 
 Technical entries explain actual function. Geography and material entries remain reference writing. Do not turn every machine or material into a Stargate metaphor or repeat the catastrophe in every manual.
 
 Repair should depend on capabilities developed through play: controlled power, precision manufacture, replacement components, and reliable operation. The ending preserves restored land and factories because the planet travels with them.
+
+## Quest prose implemented 6 October 2026
+
+- The awakening entry introduces a recognizable recovery memo and silent equipment.
+- The gate entry retains the uncertain waiting memory and identifies unusable remains.
+- The precision manual introduces familiar project initials without stating the catastrophe.
+- The electrical manual's recovered memo establishes Earth displacement, gate destruction, the player's role, cryogenic preservation, long decline, and returning the planet home.
+- Staff logs remain hidden optional records. Their ordinary work details support the main account without being required to understand it.
+- Reference and machine entries remain practical. No new quests, tasks, gameplay gates, or ending actions were added.
+
+The memoir and observed astronomical readings are narrative documents, not proof of a changed in-game sky. Detailed implementation choices below remain open. See [quest writing review](QUEST_WRITING_REVIEW.md) and [validation evidence](audit/quest_story_validation.json).
 
 ## Remaining consequential decisions
 

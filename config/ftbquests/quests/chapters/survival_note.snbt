@@ -10,9 +10,9 @@
 	quests: [
 		{
 			description: [
-				"&eEmergency field notes: begin with loose scrap, dead timber, and stone. These can supply a first set of tools and a small workshop.&r"
+				"&eEmergency field notes for an improvised workshop. Loose scrap, dead timber and stone can supply the first tools without relying on an intact machine.&r"
 				""
-				"&eThe procedures below use salvaged materials. We cannot yet say how long someone could live on those reserves, or how far they would need to travel for replacements.&r"
+				"&eThese procedures cover recovery from wreckage. We have no experience of living on salvage for as long as these notes may be needed. Food production will have to follow before the reserves are exhausted.&r"
 			]
 			hide_dependent_lines: true
 			icon_scale: 0.9d
@@ -516,7 +516,7 @@
 			description: [
 				"&eDepleted dirt is abundant, but it is not ready farmland. Water can soften it; restoring usable soil also needs the biological and nutrient treatments described in the environmental notes.&r"
 				""
-				"&eSet aside a small test plot. It is still uncertain whether a first crop would be the beginning of recovery or a brief use of the nutrients we supplied.&r"
+				"&eSet aside a small test plot. We can describe how to prepare growing ground; we cannot yet predict how much of the damaged landscape could be restored from it.&r"
 			]
 			disable_toast: true
 			hide_dependency_lines: true

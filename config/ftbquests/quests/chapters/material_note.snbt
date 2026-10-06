@@ -160,7 +160,7 @@
 		{
 			dependencies: ["7D0C6F93C6FE1761"]
 			description: [
-				"&eElectrum is a gold-silver alloy that can also occur naturally. Its color ranges from yellow to pale gold as the silver content changes; it was used for some of the earliest coins.&r"
+				"&eElectrum is a gold-silver alloy that can also occur naturally. Natural electrum ranges from yellow to pale gold as its silver content changes; it was used for some of the earliest coins.&r"
 				""
 				"&eAlloying silver with gold can increase hardness while retaining useful conductivity and resistance to corrosion. Gold-silver alloys have served in jewelry and electrical contacts, where a stable contact surface matters as much as carrying current.&r"
 			]
@@ -270,7 +270,7 @@
 			description: [
 				"&eLead is a dense, soft metal with a comparatively low melting point. Its density makes it useful in radiation shielding and weights; its toxicity limits many uses.&r"
 				""
-				"&eLead ore and galena supply the local metal. It has sheet, rod, wire and powder forms. Lead ingots can also repair recovered lead tools.&r"
+				"&eLead ore and galena supply the local metal. It has sheet, rod, wire and powder forms. Lead ingots can also repair recovered lead tools. Carrying enough lead stock can cause Neurotoxin; keep surplus material in storage.&r"
 			]
 			hide_dependency_lines: true
 			id: "5993E08C4DDDF021"

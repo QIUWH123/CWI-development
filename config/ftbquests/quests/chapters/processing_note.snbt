@@ -13,7 +13,7 @@
 			description: [
 				"&eGlassmaking turns a loose mineral batch into a shaped, transparent solid. Ore processing has a different aim: separate useful material from the rock around it and recover what remains after the first pass.&r"
 				""
-				"&ePhysical separation uses differences between particles. Chemical recovery changes the mineral compounds themselves. The appropriate treatment depends on what the ore contains and how that material responds.&r"
+				"&ePhysical separation sorts particles; chemical recovery changes the mineral compounds themselves. Choose a treatment compatible with the ore, and follow the tailings as well as the concentrate. The first separation does not recover everything.&r"
 			]
 			hide_dependent_lines: true
 			id: "7EAD0C34B17014A4"
@@ -35,7 +35,7 @@
 			description: [
 				"&eGlass provides a hard, transparent barrier for windows, vessels and fluid equipment. Unlike a crystal, its atoms have no repeating long-range arrangement.&r"
 				""
-				"&eIn conventional glassmaking, uneven cooling can cause cracking, while unwanted crystallization causes devitrification. These are different defects: one breaks the barrier, the other disrupts its clear structure.&r"
+				"&eIn conventional glassmaking, uneven cooling can cause cracking. Devitrification is a different defect: unwanted crystals form within the glass and can cloud it.&r"
 			]
 			disable_toast: true
 			id: "486EA6444B07AE9E"
@@ -53,7 +53,7 @@
 		}
 		{
 			dependencies: ["078BB9F9932F52D8"]
-			description: ["&ePressing gives the fired blank a defined form. Uniform shape and thickness matter when a glass piece must fit a frame or vessel; cooling fixes the shape after it has been worked.&r"]
+			description: ["&ePressing shapes the fired blank before its final cooling treatment. A regular shape is important for glass fitted into frames and vessels.&r"]
 			disable_toast: true
 			icon: "kubejs:pressed_glass_blank"
 			id: "6E14C5649AE916F6"
@@ -155,7 +155,7 @@
 		}
 		{
 			dependencies: ["486EA6444B07AE9E"]
-			description: ["&eHeat allows ions near the glass surface to move and exchange with ions in the molten salt. This mobility is needed for surface strengthening: a cold, rigid glass structure does not exchange those ions readily.&r"]
+			description: ["&eChemical strengthening needs enough heat for ions near the glass surface to exchange with those in a molten salt bath. Heating prepares the glass for that treatment.&r"]
 			disable_toast: true
 			icon: "kubejs:heated_glass"
 			id: "3A3EEC1B9D937AEF"
@@ -172,9 +172,7 @@
 		{
 			dependencies: ["3A3EEC1B9D937AEF"]
 			description: [
-				"&eThe nitrate bath exchanges sodium ions near the glass surface for larger potassium ions. The crowded surface layer is left under compression, making it harder for cracks to open.&r"
-				""
-				"&eStrengthening acts at the surface because small surface defects are common starting points for glass fracture. The interior remains glass; the treatment changes how readily those defects can grow into cracks.&r"
+				"&eIn chemical strengthening, larger potassium ions replace sodium ions near the glass surface. The crowded surface layer is put under compression, resisting the opening of small cracks.&r"
 			]
 			disable_toast: true
 			icon: "kubejs:ion_exchanged_glass_blank"
@@ -192,9 +190,9 @@
 		{
 			dependencies: ["3A991DA7FC5F6E12"]
 			description: [
-				"&eThis strengthened glass is required for the lava-extractor pump. Surface compression helps glass resist the opening of small cracks; it does not make a glass part indestructible.&r"
+				"&eThis strengthened grade supplies the lava-extractor pump. The workshop combines ion exchange with a cooling treatment.&r"
 				""
-				"&eIon exchange and thermal tempering are different ways of producing a compressed surface. This workshop's strengthened grade combines a salt treatment with cooling, rather than relying on untreated glass alone.&r"
+				"&eConventional thermal tempering creates surface compression by controlled cooling, without an ion-exchange bath. The two methods should not be confused simply because both strengthen glass.&r"
 			]
 			disable_toast: true
 			id: "67A10FC69686A727"

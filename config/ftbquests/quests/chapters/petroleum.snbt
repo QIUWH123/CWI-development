@@ -54,7 +54,7 @@
 			description: [
 				"&eThe petroleum manual covers surveying, pumpjack construction, fractionation, and reactions that turn crude oil into fuels and chemical feedstocks.&r"
 				""
-				"&eRefining separates the mixed resource into useful streams. Some supply combustion engines; others provide the small molecules from which plastics, rubber stock, and further chemicals can be made.&r"
+				"&eRefining separates the mixed resource into useful streams. Some supply combustion engines; others become feedstocks for plastics, rubber, and chemical manufacture.&r"
 			]
 			id: "23BC2F1468912FE3"
 			invisible: true
@@ -75,7 +75,7 @@
 			description: [
 				"&eDistillation separates a mixture using differences in volatility. In a tower, vapor cools as it rises, allowing different petroleum fractions to be recovered through separate outlets.&r"
 				""
-				"&eCrude processing recovers residual oil, wax oil, diesel, kerosene, and naphtha. The tower also separates mixtures produced by later cracking reactions; distillation separates compounds, while cracking changes them chemically.&r"
+				"&eThe tower handles crude oil and mixtures from later cracking reactions. Distillation separates their components; cracking changes the molecules chemically.&r"
 				""
 				"&ePlace the heat source beneath the tower's steel tanks and feed the mixture into the controller. Each outlet can stop distillation when full or void excess fluid; choose its mode according to whether that stream must be preserved.&r"
 			]
@@ -264,9 +264,9 @@
 				"71A1E5FE72C80780"
 			]
 			description: [
-				"&eHeavy oil provides hydrocarbon-rich stock for rubber sheets and bitumen, giving the petroleum line material uses beyond combustion fuel.&r"
+				"&eHeavy oil is a viscous petroleum stock used for rubber sheets and bitumen.&r"
 				""
-				"&eThis stock is distinct from the residual oil and wax oil recovered by the current crude-distillation process.&r"
+				"&eIt is a separate stock from residual oil and wax oil.&r"
 			]
 			disable_toast: true
 			id: "21FEFC379E961856"
@@ -377,7 +377,7 @@
 		}
 		{
 			dependencies: ["6B3B0E0C4983791F"]
-			description: ["&eNapalm is a thickened incendiary fuel used in napalm bombs. Thickening makes burning fuel remain where it lands instead of behaving like a freely flowing engine fuel.&r"]
+			description: ["&eNapalm is a thickened incendiary fuel, used as the filling for napalm bombs.&r"]
 			disable_toast: true
 			id: "3DB9E5F294FAFF09"
 			subtitle: "Separate Incendiary Fluid"
@@ -393,9 +393,11 @@
 		{
 			dependencies: ["2BB7B30F3B59D458"]
 			description: [
-				"&eTFMG gasoline is the pack's volatile petroleum fuel for compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement; it also supplies the fuel base for napalm.&r"
+				"&eUse TFMG gasoline for compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement. This gasoline also supplies the fuel base for napalm.&r"
 				""
 				"&eCracking wax oil produces a mixture from which gasoline can be separated, turning heavier refinery stock into a lighter fuel.&r"
+				""
+				"&eThe separate gasoline from Create Diesel Generators is not accepted as engine fuel here.&r"
 			]
 			disable_toast: true
 			id: "6B3B0E0C4983791F"
@@ -509,13 +511,13 @@
 		{
 			dependencies: ["49ACE7B6A81987AA"]
 			description: [
-				"&ePVC is made by polymerizing vinyl chloride, so its chlorine must be incorporated before the long chains are formed. Ethylene first becomes a chlorinated intermediate; that intermediate supplies the monomer used by the polymerization process.&r"
+				"&ePVC's chains are built from vinyl chloride, which already contains chlorine. Polymerization links those units into a thermoplastic that can be cast into solid stock and sheets.&r"
 				""
-				"&eThe molten polymer can be shaped into solid stock and sheets. Muriatic acid is recovered separately during monomer production, giving the process another useful chemical output.&r"
+				"&eMaking the monomer also recovers muriatic acid as a separate chemical output.&r"
 			]
 			disable_toast: true
 			id: "56CD87E991F1847E"
-			subtitle: "PVC Reaction Sequence"
+			subtitle: "Chlorinated Polymer Stock"
 			tasks: [{
 				id: "04F087015BC8C95A"
 				item: "kubejs:molten_polyvinyl_chloride_bucket"

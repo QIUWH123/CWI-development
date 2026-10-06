@@ -1,0 +1,1453 @@
+{
+  "date": "2026-10-06",
+  "baselineCommit": "6a660f3054af26941c8c45a72aa3e15ac57323df",
+  "scope": "All 15 chapter files; 504 quests and all non-chapter quest configuration preserved.",
+  "checks": {
+    "allChapterFilesParsedWithLocalStructuralParser": true,
+    "questCount": 504,
+    "taskCount": 569,
+    "unchangedNonPresentationData": true,
+    "taskDataIdentical": true,
+    "nonChapterQuestFilesByteIdentical": true,
+    "uniqueChapterQuestTaskIds": true,
+    "validDependencies": true,
+    "noQuestDependencyCycles": true,
+    "allDescriptionsPresent": true,
+    "exactProtectedWarningCount": 5,
+    "exactProtectedControlBannerCount": 23,
+    "hiddenLostLogsPreserved": true,
+    "acceptedStoryStatementsPresentOnMainManualRoute": true,
+    "installedFtbSnbtAndTextParser": {
+      "passed": true,
+      "version": "FTB Library 2001.2.13",
+      "output": "Installed FTB parser accepted 2066 presentation strings and 15 chapter files; malformed control was rejected.",
+      "malformedControlRejected": true
+    },
+    "formatting": {
+      "passed": true,
+      "output": "Checked 2066 presentation strings and 1870 formatting codes: no invalid codes, unescaped ampersands, or malformed substitutes."
+    },
+    "mainRevealVisibility": {
+      "quest": "448CEED7EF898AB1",
+      "chapter": "electrical_engineering.snbt",
+      "item": "kubejs:galvanic_manual",
+      "sources": [
+        "FTB Quests 2001.4.22 Quest.readData and Quest.isVisible bytecode",
+        "kubejs/server_scripts/Progression/IndustrialAge.js:221",
+        "kubejs/server_scripts/Progression/IndustrialAge.js:584"
+      ],
+      "finding": "The invisible field maps to invisibleUntilCompleted. The electrical introduction has no dependencies and becomes visible once its manual-item quest completes. The manual is recovered from the second package; Lost Logs is not required."
+    }
+  },
+  "chapters": [
+    {
+      "file": "chapters/bioengineering.snbt",
+      "quests": 1,
+      "tasks": 1,
+      "changed": 1,
+      "beforeSha256": "0a0ecf3133a1d63aaad23068b2446788c223c4e7cdfc04cc5c03b37a6d175d68",
+      "afterSha256": "0a5e5df8b0f3246a117f0206c66dfd0f7790ca253fd6cd2b117e42afcd8b7276"
+    },
+    {
+      "file": "chapters/desolated_awakening.snbt",
+      "quests": 22,
+      "tasks": 29,
+      "changed": 4,
+      "beforeSha256": "86c09d52954bb72e52866e1092337f555c5fb11ee3cb327f153bebade2e12bea",
+      "afterSha256": "469eb3bf3625884743fa719677ccce4870a94ff500332e22ce591ad39e55cca0"
+    },
+    {
+      "file": "chapters/electrical_engineering.snbt",
+      "quests": 1,
+      "tasks": 1,
+      "changed": 1,
+      "beforeSha256": "c8abf0e79d289df9c77d0e8bd783267e9387e972c1f9aea0c07b0e2a478111eb",
+      "afterSha256": "d994c8403eae379e946ece0afd6c067673f610812a4f7845c1fa89dd6723e9a8"
+    },
+    {
+      "file": "chapters/environmental_note.snbt",
+      "quests": 85,
+      "tasks": 85,
+      "changed": 2,
+      "beforeSha256": "c50e78292f858713139f87041cb82627090f3d2e495f06e1a2b32e6f18bfc201",
+      "afterSha256": "f73f6ae96a682ab0d3c61b41ee3ebc6b711101700b6ec65265f6130922caf4a7"
+    },
+    {
+      "file": "chapters/geology.snbt",
+      "quests": 69,
+      "tasks": 69,
+      "changed": 1,
+      "beforeSha256": "8c148cb3a8adc8fd2a3f3fdea8e3acd78cd0c01c620245044e91f52c250591db",
+      "afterSha256": "2773872273936e257865fa5e77f26cf90d327d9da8023687739f01afc65dda13"
+    },
+    {
+      "file": "chapters/industrial_foregoing.snbt",
+      "quests": 53,
+      "tasks": 61,
+      "changed": 4,
+      "beforeSha256": "bfc15f605ae5756e98f4d48bb16862a49fb82805f4828875b1dd6d1b0a2bf182",
+      "afterSha256": "2dbd5afc21510b6ad2babc49d89d2997f55945dc97b1be2dd9be13a8193be60c"
+    },
+    {
+      "file": "chapters/kinetic_enlightenment.snbt",
+      "quests": 47,
+      "tasks": 64,
+      "changed": 4,
+      "beforeSha256": "c7aa12aa08370c114b93336569bfde7eee33d1e74b3a07cc82e24b0553c46d2b",
+      "afterSha256": "685b85d2357e9188a55bf55c7a1704c2691a1ffc6dbcafadf9b8709c17fc379b"
+    },
+    {
+      "file": "chapters/material_note.snbt",
+      "quests": 29,
+      "tasks": 29,
+      "changed": 2,
+      "beforeSha256": "fa9a5c749f78f38cafc3e7118678d8619f6cfabacc3d208127e0f7c62e923215",
+      "afterSha256": "57f43b45f7c4a99bcf04045ac1f3249cc7942b33813aa858d612987b6e906ecc"
+    },
+    {
+      "file": "chapters/memories.snbt",
+      "quests": 7,
+      "tasks": 7,
+      "changed": 7,
+      "beforeSha256": "ac10cd0abe39d9035ae8a79e79f4d003157d1cd74136428b7e42f76c8859252f",
+      "afterSha256": "9f4e646c7da58df2a439456beeff1f99a93e820f51ede555b791eb2932ee9c1b"
+    },
+    {
+      "file": "chapters/petroleum.snbt",
+      "quests": 30,
+      "tasks": 35,
+      "changed": 6,
+      "beforeSha256": "70438b0ebc33b78a379e9643a7175f5695c843e607bc69a14d4061beb98137ad",
+      "afterSha256": "262dcfff50675f6509a3a0a354e86325859e198cb87d378386ccd28a3332a1cc"
+    },
+    {
+      "file": "chapters/precision.snbt",
+      "quests": 59,
+      "tasks": 71,
+      "changed": 4,
+      "beforeSha256": "eaca878cce92fc88c315617795804e927342ecceda7cef574960a494aa6cc70c",
+      "afterSha256": "fd2ac1ad8f976ceb9743098aaafd5f6e67a2260488f767f3ecdac44f769801f7"
+    },
+    {
+      "file": "chapters/preface.snbt",
+      "quests": 9,
+      "tasks": 9,
+      "changed": 1,
+      "beforeSha256": "da385fd512d4e548a8864d9aeba18572074eb6d78a637afd6d2cd7880c0e1842",
+      "afterSha256": "b4875d5ac70c879e3421f1fdee5ca8f235be146efd5d95395bba553b5a812190"
+    },
+    {
+      "file": "chapters/processing_note.snbt",
+      "quests": 39,
+      "tasks": 39,
+      "changed": 6,
+      "beforeSha256": "c0d666a57044b6a7e738f5e659df184535dbc898689ee0c983fbd7b73475fac0",
+      "afterSha256": "5f32f679aac3feae9945b35fd35c765dd5029c2567a2bfd24204b7d340f60b75"
+    },
+    {
+      "file": "chapters/survival_note.snbt",
+      "quests": 28,
+      "tasks": 42,
+      "changed": 2,
+      "beforeSha256": "c041fbd9e1a1c40b7ada02dbe122abe064b0e9417e83101b64d8b645af8e638a",
+      "afterSha256": "19b246356c2c5f4a5cd78fbee55724d58296082baf7ee7357371b4a9c4bf90bb"
+    },
+    {
+      "file": "chapters/the_pulse_of_industry.snbt",
+      "quests": 25,
+      "tasks": 27,
+      "changed": 2,
+      "beforeSha256": "77f5864ee418f36acad2206ae35fdbdb3060380b4f4bdcc9fd8fbbd4e6e94595",
+      "afterSha256": "6b2cf4e33f1a65a470d8543c7aebf03acb073e537ef90a4aa97adc2625be5b5e"
+    }
+  ],
+  "changes": [
+    {
+      "chapter": "bioengineering.snbt",
+      "id": "0DFA888EA5975E50",
+      "title": "Bioengineering",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Bioengineering",
+        "subtitle": "Cultures and Restoration",
+        "description": [
+          "&eIncubation develops sealed agar plates into cultures for fermentation, biomass, and renewable-fuel production.&r",
+          "",
+          "&7Successful growth in a sealed plate gives us a culture to work with. We have no field record showing how long it could persist in the damaged ground.&r"
+        ]
+      },
+      "after": {
+        "title": "Bioengineering",
+        "subtitle": "Cultures and Restoration",
+        "description": [
+          "&eSealed agar plates let a small working sample be grown into a culture supply. Dedicated revival media can start certain cultures from dried samples; other media propagate cultures that are already active.&r",
+          "",
+          "&eIncubation supports the cultures used in fermentation, mineral recovery and renewable-fuel production.&r",
+          "",
+          "&7A sealed plate is a controlled environment. We can describe how to grow a culture there; we cannot promise that it will persist in exposed ground.&r"
+        ]
+      },
+      "rationale": "Distinguishes dried-sample revival from propagation of an active culture. Uncertainty applies to persistence in exposed ground, not to dependable incubation recipes."
+    },
+    {
+      "chapter": "desolated_awakening.snbt",
+      "id": "48FAA6DBC81EED3F",
+      "title": "A Derelict Laboratory",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "A Derelict Laboratory",
+        "subtitle": "Where Am I?",
+        "description": [
+          "&eCold. You wake in a derelict laboratory. You cannot remember how long you have been here.&r",
+          "",
+          "&eThere are supplies to find before you leave, and rooms that are still closed.&r"
+        ]
+      },
+      "after": {
+        "title": "A Derelict Laboratory",
+        "subtitle": "Where Am I?",
+        "description": [
+          "&eCold. You wake in a derelict laboratory. The equipment is silent. You cannot remember how long you have been here.&r",
+          "",
+          "&eThe first page of this recovery memo is in handwriting you recognize:&r",
+          "",
+          "&7Find water and food first. Search the gray toolboxes for the workshop notes. Leave the gate alone until you can check the replacement parts.&r",
+          "",
+          "&eYou know how to follow the instructions. You do not remember writing them.&r"
+        ]
+      },
+      "rationale": "Introduces the self-authored recovery memo through practical instructions and recognizable handwriting. Silent equipment retains the confirmed awakening condition. Recognition establishes a personal connection without explaining the catastrophe immediately."
+    },
+    {
+      "chapter": "desolated_awakening.snbt",
+      "id": "1206CB23534B30CD",
+      "title": "The Stargate",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Stargate",
+        "description": [
+          "&eYou know this ring. You remember standing here, though you cannot recall what you were waiting for.&r",
+          "",
+          "&eThe memory passes before the rest of it returns.&r"
+        ]
+      },
+      "after": {
+        "title": "The Stargate",
+        "description": [
+          "&eYou know this ring. You remember standing here, though you cannot recall what you were waiting for.&r",
+          "",
+          "&eBeyond that, only fragments: a voice from the control room, your hand resting on a drawing. The rest will not come.&r",
+          "",
+          "&eWhatever happened here left the gate unusable. Familiarity will not put it back together.&r"
+        ]
+      },
+      "rationale": "Preserves the uncertain memory of waiting while making the gate unusable, consistent with destruction during the transfer. The memory does not specify an unapproved date or reveal the planetary event early."
+    },
+    {
+      "chapter": "desolated_awakening.snbt",
+      "id": "7A4768D007A9209B",
+      "title": "Recover the Documents",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Recover the Documents",
+        "subtitle": "Search the gray toolboxes",
+        "description": [
+          "&eThe laboratory's gray toolboxes hold surviving manuals, notes, and engineers' logs.&r"
+        ]
+      },
+      "after": {
+        "title": "Recover the Documents",
+        "subtitle": "Search the gray toolboxes",
+        "description": [
+          "&eThe gray toolboxes hold manuals, notes, and engineers' logs. Workshop instructions and personal records have been stored together.&r"
+        ]
+      },
+      "rationale": "Identifies the actual toolbox contents and separates workshop instructions from staff records. It avoids invented dates, storage locations, and directions telling the reader how to interpret the clues."
+    },
+    {
+      "chapter": "desolated_awakening.snbt",
+      "id": "0EA786F00A19ADC6",
+      "title": "Environmental and Survival Notes",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Environmental and Survival Notes",
+        "subtitle": "Scavenge, Then Restore",
+        "description": [
+          "&eThe survival note lists salvage and improvised equipment. The environmental note goes further: soil, seeds, cultures, a source of food that might last.&r",
+          "",
+          "&eThere is no account here of anyone living on these methods for years.&r"
+        ]
+      },
+      "after": {
+        "title": "Environmental and Survival Notes",
+        "subtitle": "Scavenge, Then Restore",
+        "description": [
+          "&eThe survival note covers salvage and improvised equipment. The environmental note follows with soil, seeds, and cultures: ways to replace dwindling supplies with something that can grow.&r",
+          "",
+          "&eThe writers distinguish what they tested from what they hoped would keep working. There is no record here of anyone living on these methods for years.&r"
+        ]
+      },
+      "rationale": "Connects salvage to renewable food production. Uncertainty concerns whether the authors proved long-term survival, while procedures remain usable. It does not imply a hidden nutrient-exhaustion mechanic."
+    },
+    {
+      "chapter": "electrical_engineering.snbt",
+      "id": "448CEED7EF898AB1",
+      "title": "Electrical Engineering",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Electrical Engineering",
+        "subtitle": "Electrical Records from the Safe",
+        "description": [
+          "&eThe second package from the armored safe contains the galvanic manual and the electrical engineer's log.&r",
+          "",
+          "&eElectrical equipment carries energy through conductors between connected devices. Insulation keeps those paths separate, allowing the supply to reach the intended load. Generators and motors connect this form of power to the workshop's mechanical drives.&r"
+        ]
+      },
+      "after": {
+        "title": "Electrical Engineering",
+        "subtitle": "Electrical Records from the Safe",
+        "description": [
+          "&eThe second package from the armored safe contains the galvanic manual and the electrical engineer's log.&r",
+          "",
+          "&eElectrical equipment carries energy through conductors. Insulation separates the paths, allowing the supply to reach the intended load. Generators and motors connect electrical power to the workshop's mechanical drives.&r",
+          "",
+          "{@pagebreak}",
+          "&7Recovery memo — project record:&r",
+          "",
+          "&eWe intended to open a passage between two small regions. The connection was designed to spread into neighboring material; the ring was supposed to limit its reach.&r",
+          "",
+          "&eIt did not hold that limit. The test moved the entire Earth. The gate was destroyed by the transfer.&r",
+          "",
+          "&eAt first we blamed the instruments. The observations disagreed with our old sky charts, but they agreed with one another. This is another star. We are no longer in the Solar System.&r",
+          "",
+          "&eEarth still generates a magnetic field, but the new star's stronger winds compress its magnetosphere and drive severe disturbances. Radiation and the changed climate damage the surface. We cannot count on the old conditions returning.&r",
+          "",
+          "{@pagebreak}",
+          "&7Recovery memo — before preservation:&r",
+          "",
+          "&eI helped build the gate. I have been assigned to rebuild it, but we no longer have the factories or supplies needed to reproduce its intricate parts. The workshop notes start from what can still be recovered.&r",
+          "",
+          "&eI do not know how long I will remain in cryogenic preservation. If I wake, the first work will be food, water, and a functioning workshop. The drawings cannot substitute for any of those.&r",
+          "",
+          "&eThe next transfer must be controlled at planetary scale, with a safe orbit around our own Sun as the destination. Returning Earth will not undo the deaths or repair the land by itself. It will give what survives a place to recover.&r",
+          "",
+          "&eBring the world home.&r",
+          "",
+          "&eThe handwriting matches the opening page of your memo. You recognize the signature.&r",
+          "",
+          "&eDuring your long sleep, the land deteriorated and the laboratory corroded. The people who prepared these pages never saw you wake.&r",
+          "",
+          "&eFor a while, you leave the book open.&r"
+        ]
+      },
+      "rationale": "Keeps the electrical introduction, then presents two memo pages on the normal manual-recovery route. They establish planetary displacement, the destroyed gate, the engineer's identity, cryogenic survival and long decline, and the objective of returning Earth to a safe solar orbit. Magnetic protection is distinguished from internal field generation. The ending preserves restoration work and acknowledges that returning cannot undo deaths."
+    },
+    {
+      "chapter": "environmental_note.snbt",
+      "id": "3CECF5ADD3C91E4B",
+      "title": "Environmental Notes",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Environmental Notes",
+        "description": [
+          "&eRestoration working notes. The immediate aim is a plot that produces food; rebuilding a lasting ecosystem is a separate question. The soil treatments and culture procedures below give us a place to begin.&r",
+          "",
+          "&eThese plans join laboratory processes to materials that may still be recovered outside. We have no long-term survival record for a person depending on such a farm.&r"
+        ]
+      },
+      "after": {
+        "title": "Environmental Notes",
+        "description": [
+          "&eRestoration working notes. Begin with viable planting stock and a plot that can produce food. Soil treatment and culture recovery offer practical ways to build that first supply.&r",
+          "",
+          "&eWe are writing these plans for conditions we may never see. A culture growing under controlled conditions does not tell us how the surrounding land will respond, or which parts of its former ecosystem can return.&r"
+        ]
+      },
+      "rationale": "Gives the earlier authors a bounded uncertainty about conditions they may never see. The first plot is practical; restoring a former ecosystem remains a separate question."
+    },
+    {
+      "chapter": "environmental_note.snbt",
+      "id": "0038547A05E5BB0A",
+      "title": "Dried Fermento Mycetes",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Dried Fermento Mycetes",
+        "description": [
+          "&eDried Fermento Mycetes is preserved starter material for an ethanol-producing culture, rarely recovered from dry biological sediment. Dry storage can slow biological activity, but the appearance of a sample does not by itself establish whether it remains viable.&r"
+        ]
+      },
+      "after": {
+        "title": "Dried Fermento Mycetes",
+        "description": [
+          "&eDried Fermento Mycetes is preserved starter material for an ethanol-producing culture, rarely recovered from dry biological sediment. Dry storage can slow biological activity, but a sample's appearance does not establish whether it remains viable.&r",
+          "",
+          "&eThe dried sample can seed a dedicated revival plate for incubation. Its powdered form offers an earlier fermentation-based revival route.&r"
+        ]
+      },
+      "rationale": "Documents the current dried Fermento incubation-revival route alongside the earlier powdered fermentation route. The distinction is useful progression information without an ingredient list."
+    },
+    {
+      "chapter": "geology.snbt",
+      "id": "1A6BEA4E485D5F19",
+      "title": "Rutile",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Rutile",
+        "description": [
+          "&eRutile is titanium dioxide, TiO2. Its crystals can be reddish-brown, dark or metallic; fine needle-like inclusions also occur inside quartz.&r",
+          "",
+          "&eRutile powder supplies refined titanium by physical separation. In real industry, titanium dioxide is widely used as a white pigment as well as a titanium-bearing raw material.&r"
+        ]
+      },
+      "after": {
+        "title": "Rutile",
+        "description": [
+          "&eRutile is titanium dioxide, TiO2. In natural specimens its crystals can be reddish-brown, dark or metallic; fine needle-like inclusions also occur inside quartz.&r",
+          "",
+          "&eRutile powder supplies refined titanium by physical separation. In real industry, titanium dioxide is widely used as a white pigment as well as a titanium-bearing raw material.&r"
+        ]
+      },
+      "rationale": "Labels rutile colors as natural specimens so readers do not mistake real mineral variability for the pack texture."
+    },
+    {
+      "chapter": "industrial_foregoing.snbt",
+      "id": "14B9150E857D89D3",
+      "title": "Fireclay Ball",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Fireclay Ball",
+        "subtitle": "Fireclay Blend",
+        "description": [
+          "&eFireclay blends workable clay with bauxite, magnesite, and quartz or silicon powder. The clay allows the unfired stock to be shaped; the mineral blend supplies the refractory material needed around intense heat.&r",
+          "",
+          "&eThe same stock becomes furnace bricks or casting molds, depending on how it is shaped before firing.&r"
+        ]
+      },
+      "after": {
+        "title": "Fireclay Ball",
+        "subtitle": "Fireclay Blend",
+        "description": [
+          "&eFireclay is a workable mineral blend for refractory masonry. Clay gives the unfired stock its shaping properties; the mineral additives prepare it for use around intense heat.&r",
+          "",
+          "&eThe same stock becomes furnace bricks or casting molds, depending on how it is shaped before firing.&r"
+        ]
+      },
+      "rationale": "Explains fireclay shaping and refractory purpose without an ingredient inventory that JEI already provides."
+    },
+    {
+      "chapter": "industrial_foregoing.snbt",
+      "id": "5CB3035210A39A5F",
+      "title": "Silicon Powder",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Silicon Powder",
+        "subtitle": "Silicon and Refractories",
+        "description": [
+          "&eSilicon is a metalloid widely used in alloys and semiconductor electronics. Quartz contains silicon bound to oxygen; carbon reduction provides a route to separate silicon-bearing stock from that mineral.&r",
+          "",
+          "&eHere silicon powder can replace quartz powder in the fireclay blend. This powder is refractory stock, rather than a finished electronic component.&r"
+        ]
+      },
+      "after": {
+        "title": "Silicon Powder",
+        "subtitle": "Silicon and Refractories",
+        "description": [
+          "&eSilicon is a metalloid widely used in alloys and semiconductor electronics. Quartz contains silicon bound to oxygen; carbon reduction provides a route to separate silicon-bearing stock from that mineral.&r",
+          "",
+          "&eThe workshop uses silicon powder as an alternative to quartz powder in fireclay.&r"
+        ]
+      },
+      "rationale": "Retains the silicon substitution in fireclay and removes an unnecessary comparison with finished electronics."
+    },
+    {
+      "chapter": "industrial_foregoing.snbt",
+      "id": "09A16A54841462D0",
+      "title": "Magnesite Powder",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Magnesite Powder",
+        "subtitle": "Magnesite Additive",
+        "description": [
+          "&eMagnesite is magnesium carbonate. Magnesium-bearing refractories have long served furnace linings exposed to severe heat. Here its powder joins bauxite, clay, and quartz or silicon in the fireclay blend.&r"
+        ]
+      },
+      "after": {
+        "title": "Magnesite Powder",
+        "subtitle": "Magnesite Additive",
+        "description": [
+          "&eMagnesite is magnesium carbonate. Magnesium-bearing refractories have long served furnace linings exposed to severe heat; the workshop uses magnesite powder as a fireclay additive.&r"
+        ]
+      },
+      "rationale": "Keeps magnesite identity and refractory use without repeating the fireclay recipe list."
+    },
+    {
+      "chapter": "industrial_foregoing.snbt",
+      "id": "2D1180C9EC2DE6E2",
+      "title": "Helve Hammer",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Helve Hammer",
+        "subtitle": "Heavy Forming",
+        "description": [
+          "&eThe helve hammer converts rotation into repeated blows. Its swinging head concentrates force on a workpiece, forming metal that needs heavier treatment than ordinary pressing.&r",
+          "",
+          "&eReinforced casings, crucibles, and steel drill heads use this forming method. It can also break open a recovered armored safe.&r"
+        ]
+      },
+      "after": {
+        "title": "Helve Hammer",
+        "subtitle": "Heavy Forming",
+        "description": [
+          "&eThe helve hammer converts rotation into repeated blows. Its swinging head forms a metal workpiece through successive impacts.&r",
+          "",
+          "&eReinforced casings, crucibles, and steel drill heads use this forming method. It can also break open a recovered armored safe.&r"
+        ]
+      },
+      "rationale": "Explains the hammer's repeated impacts and actual uses without claiming that its treatment is categorically heavier or superior to pressing."
+    },
+    {
+      "chapter": "kinetic_enlightenment.snbt",
+      "id": "5E402C739E34B7D4",
+      "title": "The Mechanical Workshop",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Mechanical Workshop",
+        "subtitle": "Building the First Workshop",
+        "description": [
+          "&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r",
+          "",
+          "&7The hand tools come first. The drawings for a powered workshop assume that someone has already made the first casing and drive parts.&r"
+        ]
+      },
+      "after": {
+        "title": "The Mechanical Workshop",
+        "subtitle": "Building the First Workshop",
+        "description": [
+          "&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r",
+          "",
+          "&7The hand-tool methods are included for a workshop that has lost its machines. I cannot assume that any powered equipment will still be usable when these drawings are needed.&r"
+        ]
+      },
+      "rationale": "Makes hand-tool methods part of a workshop-recovery document. The author is uncertain whether old equipment will survive; the described machine functions remain dependable."
+    },
+    {
+      "chapter": "kinetic_enlightenment.snbt",
+      "id": "235292F382A4C466",
+      "title": "Iron Armor",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Iron Armor",
+        "subtitle": "Plated Protection",
+        "description": [
+          "&eIron armor provides protection for exploration and close combat. Its separate plates cover the head, torso, and limbs while leaving room at the joints for movement.&r"
+        ]
+      },
+      "after": {
+        "title": "Iron Armor",
+        "subtitle": "Plated Protection",
+        "description": [
+          "&eIron armor provides protection against blows during exploration and close combat.&r"
+        ]
+      },
+      "rationale": "Removes obvious anatomy and joint-movement padding; the protection function is sufficient."
+    },
+    {
+      "chapter": "kinetic_enlightenment.snbt",
+      "id": "6C479154F903BB77",
+      "title": "Iron Sheets",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Iron Sheets",
+        "description": [
+          "&eIron sheets provide stock for armor plates, cutting tools, and fan blades. One flat form serves both protective surfaces and shaped working parts.&r"
+        ]
+      },
+      "after": {
+        "title": "Iron Sheets",
+        "description": [
+          "&eIron sheets provide flat stock for armor plates, cutting tools, and fan blades.&r"
+        ]
+      },
+      "rationale": "Retains useful stock applications and removes a sentence that restated the versatility of a sheet."
+    },
+    {
+      "chapter": "kinetic_enlightenment.snbt",
+      "id": "055007D72160EFC4",
+      "title": "Open the Brass Lockbox",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Open the Brass Lockbox",
+        "subtitle": "Put the Press to Work",
+        "description": [
+          "&eThe brass lockbox protects a package containing the precision manual, processing note, and manufacturing engineer's log. These records carry the workshop beyond basic mechanical equipment into finer manufacturing and material processing.&r"
+        ]
+      },
+      "after": {
+        "title": "Open the Brass Lockbox",
+        "subtitle": "Put the Press to Work",
+        "description": [
+          "&eA press can force the brass lockbox open. The package inside holds the precision manual, processing note, and manufacturing engineer's log: the records needed for finer manufacturing and ore recovery.&r"
+        ]
+      },
+      "rationale": "Clarifies the lockbox opening function and its actual document package. The information supports recovery rather than a generic statement of advancement."
+    },
+    {
+      "chapter": "material_note.snbt",
+      "id": "7D240FC1B3726CB7",
+      "title": "Electrum",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Electrum",
+        "description": [
+          "&eElectrum is a gold-silver alloy that can also occur naturally. Its color ranges from yellow to pale gold as the silver content changes; it was used for some of the earliest coins.&r",
+          "",
+          "&eAlloying silver with gold can increase hardness while retaining useful conductivity and resistance to corrosion. Gold-silver alloys have served in jewelry and electrical contacts, where a stable contact surface matters as much as carrying current.&r"
+        ]
+      },
+      "after": {
+        "title": "Electrum",
+        "description": [
+          "&eElectrum is a gold-silver alloy that can also occur naturally. Natural electrum ranges from yellow to pale gold as its silver content changes; it was used for some of the earliest coins.&r",
+          "",
+          "&eAlloying silver with gold can increase hardness while retaining useful conductivity and resistance to corrosion. Gold-silver alloys have served in jewelry and electrical contacts, where a stable contact surface matters as much as carrying current.&r"
+        ]
+      },
+      "rationale": "Labels electrum color variation as a natural-material fact rather than claiming dynamic or texture-based color behavior in the pack."
+    },
+    {
+      "chapter": "material_note.snbt",
+      "id": "5993E08C4DDDF021",
+      "title": "Lead",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Lead",
+        "description": [
+          "&eLead is a dense, soft metal with a comparatively low melting point. Its density makes it useful in radiation shielding and weights; its toxicity limits many uses.&r",
+          "",
+          "&eLead ore and galena supply the local metal. It has sheet, rod, wire and powder forms. Lead ingots can also repair recovered lead tools.&r"
+        ]
+      },
+      "after": {
+        "title": "Lead",
+        "description": [
+          "&eLead is a dense, soft metal with a comparatively low melting point. Its density makes it useful in radiation shielding and weights; its toxicity limits many uses.&r",
+          "",
+          "&eLead ore and galena supply the local metal. It has sheet, rod, wire and powder forms. Lead ingots can also repair recovered lead tools. Carrying enough lead stock can cause Neurotoxin; keep surplus material in storage.&r"
+        ]
+      },
+      "rationale": "Adds the implemented inventory Neurotoxin limitation for sufficient carried lead stock. The operating warning belongs with local uses and does not present the inventory effect as ordinary real-world contact exposure."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "207E2F3729E91CEC",
+      "title": "The Recovered Archive",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Recovered Archive",
+        "description": [
+          "&eLogs recovered from the laboratory staff. Most of the pages concern ordinary work.&r"
+        ]
+      },
+      "after": {
+        "title": "The Recovered Archive",
+        "description": [
+          "&ePages recovered from the laboratory staff: repairs, requests, tests, complaints.&r"
+        ]
+      },
+      "rationale": "Identifies the archive briefly and lets the records establish their own character. Removed explanations of the intended literary technique and instructions to reconstruct the plot."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "7C3299CBACBDAE0F",
+      "title": "The Cleaner's Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Cleaner's Log",
+        "description": [
+          "&7From the cleaner's log:&r",
+          "",
+          "&eMoved the exit chest out from under the bench again. Leave it where someone can see it.&r",
+          "",
+          "&eThe preparation room is clean. The observation room will have to wait.&r"
+        ]
+      },
+      "after": {
+        "title": "The Cleaner's Log",
+        "description": [
+          "&7From the cleaner's log:&r",
+          "",
+          "&eMoved the exit chest out from under the bench again. Leave it where someone can see it.&r",
+          "",
+          "&eThe preparation room is clean. The observation room will have to wait. They have covered the glass and asked me not to take the cloth down. No replacement window has been ordered.&r",
+          "",
+          "{@pagebreak}",
+          "&eNew list for the exit chest. Tools, rations, backpack. There is a hoe on it. I asked whether that was a mistake. It stays.&r",
+          "",
+          "&eThey are keeping the empty food tins now. I have stopped throwing them out.&r",
+          "",
+          "&eThe chest is still in plain view. Whoever comes out of preservation will not have to search for it.&r"
+        ]
+      },
+      "rationale": "Retains the moved chest and ordinary cleaning work. The covered observation glass, retained tins, and hoe on the supply list suggest changing conditions through the cleaner's practical concerns; the later chest preparation connects to the awakening without explaining displacement."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "74B858ACAA29F9D8",
+      "title": "The Mechanical Engineer's Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Mechanical Engineer's Log",
+        "description": [
+          "&7From the mechanical engineer's log:&r",
+          "",
+          "&eRedrew the first sheet mold. The old drawing assumed a working press; the press drawing assumed a supply of sheets. That was an embarrassing pair of instructions.&r",
+          "",
+          "&eThe wooden mold is crude, but it breaks the circle.&r"
+        ]
+      },
+      "after": {
+        "title": "The Mechanical Engineer's Log",
+        "description": [
+          "&7From the mechanical engineer's log:&r",
+          "",
+          "&eRedrew the first sheet mold. The old drawing assumed a working press; the press drawing assumed a supply of sheets. That was an embarrassing pair of instructions.&r",
+          "",
+          "&eThe wooden mold is crude, but it breaks the circle.&r",
+          "",
+          "{@pagebreak}",
+          "&eThere are no deliveries to wait for. I have gone through the repair list and removed every part we used to order from another factory.&r",
+          "",
+          "&eThat makes the list longer, not shorter. Someone will have to make the tools for making the replacements.&r",
+          "",
+          "&eThree replacements for the ring assembly looked right. None passed the fit checks. Keep the rejected measurements with the drawing; a clean copy would make this look easy.&r"
+        ]
+      },
+      "rationale": "Retains the real manufacturing bootstrap problem. The lost suppliers and failed fit checks make industrial reconstruction and the gate's intricacy tangible without turning the circle into a compulsory moral symbol."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "11993D43DAEFB516",
+      "title": "The Fluid Engineer's Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Fluid Engineer's Log",
+        "description": [
+          "&7From the fluid engineer's log:&r",
+          "",
+          "&eThe return line was connected correctly. The pump was turning the wrong way.&r",
+          "",
+          "&eAdded rotation arrows to the drawing. Whoever reads it next may never have seen this installation running.&r"
+        ]
+      },
+      "after": {
+        "title": "The Fluid Engineer's Log",
+        "description": [
+          "&7From the fluid engineer's log:&r",
+          "",
+          "&eThe return line was connected correctly. The pump was turning the wrong way.&r",
+          "",
+          "&eAdded rotation arrows to the drawing. Whoever reads it next may never have seen this installation running.&r",
+          "",
+          "&eThey asked how long the water would last if we reused it. I can measure the losses and give them a rate. They still have to tell me how long they expect to wait.&r",
+          "",
+          "&eMark the direction on the paper before switching off. It is much harder to explain once nothing is moving.&r"
+        ]
+      },
+      "rationale": "Retains the reversed pump and arrows. Water-loss estimates leave the unknown waiting duration unresolved; a paper direction mark remains useful after shutdown. The voice stays concerned with fluid work."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "29D5C51D5B2A259F",
+      "title": "Precision Manufacturing Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Precision Manufacturing Log",
+        "description": [
+          "&7From the precision manufacturing engineer's log:&r",
+          "",
+          "&eThe document packet fits in the brass box. Opening sequence tested before sealing the final copy; the pages can be removed intact.&r"
+        ]
+      },
+      "after": {
+        "title": "Precision Manufacturing Log",
+        "description": [
+          "&7From the precision manufacturing engineer's log:&r",
+          "",
+          "&eThe document packet fits in the brass box. Opening sequence tested before sealing the final copy; the pages can be removed intact.&r",
+          "",
+          "&eOne sheet came back with a request to preserve the crossed-out figures as well as the corrections. I had nearly recopied it clean.&r",
+          "",
+          "&eThe old readings were not copying errors. I have left them legible.&r"
+        ]
+      },
+      "rationale": "Keeps the retrieval test and adds the decision to preserve crossed-out readings. The clue concerns evidence that almost disappeared during copying rather than a narrator announcing the mystery."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "0EE2743FF6D048DD",
+      "title": "The Material Engineer's Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Material Engineer's Log",
+        "description": [
+          "&7From the material engineer's log:&r",
+          "",
+          "&eThey asked which material would last longest. I asked where it would be stored, at what temperature, and in contact with what.&r",
+          "",
+          "&eCompatibility notes complete. Storage conditions still unspecified.&r"
+        ]
+      },
+      "after": {
+        "title": "The Material Engineer's Log",
+        "description": [
+          "&7From the material engineer's log:&r",
+          "",
+          "&eThey asked which material would last longest. I asked where it would be stored, at what temperature, and in contact with what.&r",
+          "",
+          "&eCompatibility notes complete. Storage conditions still unspecified.&r",
+          "",
+          "&eThe latest request gives the service life as 'until return'. That is not a duration I can put through a test.&r",
+          "",
+          "&eThey used to ask about wear while the equipment was running. Now most of the questions concern what happens after we turn it off.&r"
+        ]
+      },
+      "rationale": "Preserves the material specialist's insistence on storage conditions. An unspecified service life and questions about shutdown suggest prolonged preservation without assigning an exact duration or promising permanent materials."
+    },
+    {
+      "chapter": "memories.snbt",
+      "id": "3E0DD88A307809D4",
+      "title": "The Electrical Engineer's Log",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "The Electrical Engineer's Log",
+        "description": [
+          "&7From the electrical engineer's log:&r",
+          "",
+          "&eCopied the restart procedure onto paper. Keep this copy with the electrical notes in case the console fails.&r"
+        ]
+      },
+      "after": {
+        "title": "The Electrical Engineer's Log",
+        "description": [
+          "&7From the electrical engineer's log:&r",
+          "",
+          "&eCopied the restart procedure onto paper. Keep this copy with the electrical notes in case the console fails.&r",
+          "",
+          "&eThe astronomical group asked us to check their supply twice. We changed the measuring equipment. The readings did not change.&r",
+          "",
+          "&eKeep both sets of observations. Do not replace a reading with the value we expected.&r",
+          "",
+          "{@pagebreak}",
+          "&eI was about to copy the old destination coordinates into the restart sheet. They told me to leave the space blank. The figures are still legible; it is their reference that needs checking.&r",
+          "",
+          "&eWorkshop circuits isolated. I have marked them OFF in the paper copy as well.&r"
+        ]
+      },
+      "rationale": "Retains the paper restart copy. Repeated instrument checks and an unchecked coordinate reference hint at the displacement; isolated workshop circuits support the inactive laboratory. These remain optional side evidence."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "23BC2F1468912FE3",
+      "title": "Petroleum Engineering",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Petroleum Engineering",
+        "subtitle": "Refinery Operating Copy",
+        "description": [
+          "&eThe petroleum manual covers surveying, pumpjack construction, fractionation, and reactions that turn crude oil into fuels and chemical feedstocks.&r",
+          "",
+          "&eRefining separates the mixed resource into useful streams. Some supply combustion engines; others provide the small molecules from which plastics, rubber stock, and further chemicals can be made.&r"
+        ]
+      },
+      "after": {
+        "title": "Petroleum Engineering",
+        "subtitle": "Refinery Operating Copy",
+        "description": [
+          "&eThe petroleum manual covers surveying, pumpjack construction, fractionation, and reactions that turn crude oil into fuels and chemical feedstocks.&r",
+          "",
+          "&eRefining separates the mixed resource into useful streams. Some supply combustion engines; others become feedstocks for plastics, rubber, and chemical manufacture.&r"
+        ]
+      },
+      "rationale": "Identifies refinery streams as fuels and manufacturing feedstocks, avoiding the overly broad claim that all are small molecules."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "71A1E5FE72C80780",
+      "title": "Steel Distillation Tower",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Steel Distillation Tower",
+        "description": [
+          "&eDistillation separates a mixture using differences in volatility. In a tower, vapor cools as it rises, allowing different petroleum fractions to be recovered through separate outlets.&r",
+          "",
+          "&eCrude processing recovers residual oil, wax oil, diesel, kerosene, and naphtha. The tower also separates mixtures produced by later cracking reactions; distillation separates compounds, while cracking changes them chemically.&r",
+          "",
+          "&ePlace the heat source beneath the tower's steel tanks and feed the mixture into the controller. Each outlet can stop distillation when full or void excess fluid; choose its mode according to whether that stream must be preserved.&r"
+        ]
+      },
+      "after": {
+        "title": "Steel Distillation Tower",
+        "description": [
+          "&eDistillation separates a mixture using differences in volatility. In a tower, vapor cools as it rises, allowing different petroleum fractions to be recovered through separate outlets.&r",
+          "",
+          "&eThe tower handles crude oil and mixtures from later cracking reactions. Distillation separates their components; cracking changes the molecules chemically.&r",
+          "",
+          "&ePlace the heat source beneath the tower's steel tanks and feed the mixture into the controller. Each outlet can stop distillation when full or void excess fluid; choose its mode according to whether that stream must be preserved.&r"
+        ]
+      },
+      "rationale": "Removes the output catalogue while retaining distillation versus cracking and necessary tower operation and outlet-mode instructions."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "21FEFC379E961856",
+      "title": "Heavy Oil",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Heavy Oil",
+        "description": [
+          "&eHeavy oil provides hydrocarbon-rich stock for rubber sheets and bitumen, giving the petroleum line material uses beyond combustion fuel.&r",
+          "",
+          "&eThis stock is distinct from the residual oil and wax oil recovered by the current crude-distillation process.&r"
+        ]
+      },
+      "after": {
+        "title": "Heavy Oil",
+        "description": [
+          "&eHeavy oil is a viscous petroleum stock used for rubber sheets and bitumen.&r",
+          "",
+          "&eIt is a separate stock from residual oil and wax oil.&r"
+        ]
+      },
+      "rationale": "Shortens heavy-oil identification and retains its distinction from residual oil and wax oil."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "3DB9E5F294FAFF09",
+      "title": "Napalm",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Napalm",
+        "subtitle": "Separate Incendiary Fluid",
+        "description": [
+          "&eNapalm is a thickened incendiary fuel used in napalm bombs. Thickening makes burning fuel remain where it lands instead of behaving like a freely flowing engine fuel.&r"
+        ]
+      },
+      "after": {
+        "title": "Napalm",
+        "subtitle": "Separate Incendiary Fluid",
+        "description": [
+          "&eNapalm is a thickened incendiary fuel, used as the filling for napalm bombs.&r"
+        ]
+      },
+      "rationale": "Keeps napalm's incendiary purpose without implying simulated fuel adhesion behavior."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "6B3B0E0C4983791F",
+      "title": "Gasoline",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Gasoline",
+        "subtitle": "Gasoline Recovery",
+        "description": [
+          "&eTFMG gasoline is the pack's volatile petroleum fuel for compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement; it also supplies the fuel base for napalm.&r",
+          "",
+          "&eCracking wax oil produces a mixture from which gasoline can be separated, turning heavier refinery stock into a lighter fuel.&r"
+        ]
+      },
+      "after": {
+        "title": "Gasoline",
+        "subtitle": "Gasoline Recovery",
+        "description": [
+          "&eUse TFMG gasoline for compatible engines and fluid-fed burners. Combustion releases chemical energy as heat, which an engine turns into movement. This gasoline also supplies the fuel base for napalm.&r",
+          "",
+          "&eCracking wax oil produces a mixture from which gasoline can be separated, turning heavier refinery stock into a lighter fuel.&r",
+          "",
+          "&eThe separate gasoline from Create Diesel Generators is not accepted as engine fuel here.&r"
+        ]
+      },
+      "rationale": "Explicitly identifies TFMG gasoline as the compatible engine fuel and excludes the separate Create Diesel Generators gasoline, matching author intent and the current fuel tag."
+    },
+    {
+      "chapter": "petroleum.snbt",
+      "id": "56CD87E991F1847E",
+      "title": "Molten Polyvinyl Chloride",
+      "changedFields": [
+        "subtitle",
+        "description"
+      ],
+      "before": {
+        "title": "Molten Polyvinyl Chloride",
+        "subtitle": "PVC Reaction Sequence",
+        "description": [
+          "&ePVC is made by polymerizing vinyl chloride, so its chlorine must be incorporated before the long chains are formed. Ethylene first becomes a chlorinated intermediate; that intermediate supplies the monomer used by the polymerization process.&r",
+          "",
+          "&eThe molten polymer can be shaped into solid stock and sheets. Muriatic acid is recovered separately during monomer production, giving the process another useful chemical output.&r"
+        ]
+      },
+      "after": {
+        "title": "Molten Polyvinyl Chloride",
+        "subtitle": "Chlorinated Polymer Stock",
+        "description": [
+          "&ePVC's chains are built from vinyl chloride, which already contains chlorine. Polymerization links those units into a thermoplastic that can be cast into solid stock and sheets.&r",
+          "",
+          "&eMaking the monomer also recovers muriatic acid as a separate chemical output.&r"
+        ]
+      },
+      "rationale": "Explains polymerization and useful acid recovery instead of narrating the reaction sequence. The subtitle identifies the stock rather than promising a recipe walkthrough."
+    },
+    {
+      "chapter": "precision.snbt",
+      "id": "32BA01C17B48E245",
+      "title": "Precision Manufacturing",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Precision Manufacturing",
+        "subtitle": "Workshop Instruction Copy",
+        "description": [
+          "&eThe package from the brass lockbox contains the precision manual, processing notes, and a manufacturing engineer's log. Cut the wrapping open before separating the documents.&r",
+          "",
+          "&eThese pages explain how to reproduce components without their original makers. A working assembly line can then supply its own replacements.&r"
+        ]
+      },
+      "after": {
+        "title": "Precision Manufacturing",
+        "subtitle": "Workshop Instruction Copy",
+        "description": [
+          "&eThe package from the brass lockbox contains the precision manual, processing notes, and a manufacturing engineer's log. Cut the wrapping open before separating the documents.&r",
+          "",
+          "&eThese pages explain how to reproduce components without their original makers. A working assembly line can then supply its own replacements.&r",
+          "",
+          "&eA note on the cover reads: 'Restoration copy — project engineering.' Beneath it, the initials look familiar.&r"
+        ]
+      },
+      "rationale": "Adds a small cover-note and familiar-initials clue at document recovery. It connects the player to project engineering without revealing displacement in an ordinary component entry."
+    },
+    {
+      "chapter": "precision.snbt",
+      "id": "785427A61D5C6471",
+      "title": "Electron Tube",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Electron Tube",
+        "subtitle": "A One-Way Signal Element",
+        "description": [
+          "&eThe electron tube is a circuit component for control chips and precise machine cores. The one-way design described in these notes follows the principle of a vacuum diode: current can pass in one direction while the reverse path is blocked.&r",
+          "",
+          "&eIn electronics, additional control electrodes allow tubes to regulate or switch current. Here, chips assembled with tubes are used in deployers that repeat hand operations and transport blocks that select passing items.&r",
+          "",
+          "&cHandle it carefully, could be factured if it falls on the ground.&r"
+        ]
+      },
+      "after": {
+        "title": "Electron Tube",
+        "subtitle": "A One-Way Signal Element",
+        "description": [
+          "&eIn conventional electronics, a vacuum tube controls current between electrodes inside an evacuated enclosure. A diode passes current in one direction; tubes with additional electrodes can regulate or amplify a signal.&r",
+          "",
+          "&eThe workshop uses electron tubes in control chips and precise machine cores. These assemblies give machines controlled actions: deployers repeat tool operations, and filtered transport selects which materials pass.&r",
+          "",
+          "&cHandle it carefully, could be factured if it falls on the ground.&r"
+        ]
+      },
+      "rationale": "Separates established vacuum-tube behavior from the pack's control-chip and machine-core uses. It avoids asserting an unverified diode-only design and preserves the exact dropping warning."
+    },
+    {
+      "chapter": "precision.snbt",
+      "id": "3CD9A2ACE4B55909",
+      "title": "Robot Hand",
+      "changedFields": [
+        "subtitle"
+      ],
+      "before": {
+        "title": "Robot Hand",
+        "subtitle": "Interchangeable Arm Attachment",
+        "description": [
+          "&eThe robot hand lets a mechanical arm grip solid items and release them at the selected destination.&r",
+          "",
+          "&eThe arm base supplies movement and control; the hand is its item-handling attachment.&r"
+        ]
+      },
+      "after": {
+        "title": "Robot Hand",
+        "subtitle": "Attachment for Solid Items",
+        "description": [
+          "&eThe robot hand lets a mechanical arm grip solid items and release them at the selected destination.&r",
+          "",
+          "&eThe arm base supplies movement and control; the hand is its item-handling attachment.&r"
+        ]
+      },
+      "rationale": "Replaces a subtitle implying interchangeable attachments with the supported item-handling role."
+    },
+    {
+      "chapter": "precision.snbt",
+      "id": "64100A05BE92A991",
+      "title": "Compressor",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Compressor",
+        "subtitle": "Compression Equipment",
+        "description": [
+          "&eThe compressor applies pressure to fluids in a processing chamber and recovers solid products. In this workshop, lava supplies mineral powders and honey supplies sugar, giving it a role in recovering materials from a liquid feed.&r"
+        ]
+      },
+      "after": {
+        "title": "Compressor",
+        "subtitle": "Compression Equipment",
+        "description": [
+          "&eThe compressor recovers solid products from liquid feedstocks. The workshop uses it to obtain mineral powders from lava and sugar from honey.&r"
+        ]
+      },
+      "rationale": "Keeps the compressor's verified feedstock and product function while removing an unsupported account of its internal physical action."
+    },
+    {
+      "chapter": "preface.snbt",
+      "id": "5137F04F4288DA8F",
+      "title": "What Next?",
+      "changedFields": [
+        "title",
+        "description"
+      ],
+      "before": {
+        "title": "Confusing Quests",
+        "subtitle": "What Should I Do?",
+        "description": [
+          "&eIf you do not know what to do next, read the quests carefully, especially their descriptions.&r"
+        ]
+      },
+      "after": {
+        "title": "What Next?",
+        "subtitle": "What Should I Do?",
+        "description": [
+          "&eIf you do not know what to do next, read the quest descriptions and check which manuals you have recovered. They explain the equipment and where further records can be found.&r",
+          "",
+          "&eUse JEI for recipes. The relevant quests explain controls and operating limits that a recipe cannot show.&r"
+        ]
+      },
+      "rationale": "Clarifies where to look next without adding recipe narration: recovered manuals supply operating explanations and JEI supplies recipes. The simpler title replaces a label that described confusion rather than the useful action."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "7EAD0C34B17014A4",
+      "title": "Processing Notes",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Processing Notes",
+        "subtitle": "Glassmaking and Ore Recovery",
+        "description": [
+          "&eGlassmaking turns a loose mineral batch into a shaped, transparent solid. Ore processing has a different aim: separate useful material from the rock around it and recover what remains after the first pass.&r",
+          "",
+          "&ePhysical separation uses differences between particles. Chemical recovery changes the mineral compounds themselves. The appropriate treatment depends on what the ore contains and how that material responds.&r"
+        ]
+      },
+      "after": {
+        "title": "Processing Notes",
+        "subtitle": "Glassmaking and Ore Recovery",
+        "description": [
+          "&eGlassmaking turns a loose mineral batch into a shaped, transparent solid. Ore processing has a different aim: separate useful material from the rock around it and recover what remains after the first pass.&r",
+          "",
+          "&ePhysical separation sorts particles; chemical recovery changes the mineral compounds themselves. Choose a treatment compatible with the ore, and follow the tailings as well as the concentrate. The first separation does not recover everything.&r"
+        ]
+      },
+      "rationale": "Makes ore recovery guidance operational: choose a compatible treatment and consider tailings as well as concentrate. It stops short of enumerating recipes."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "486EA6444B07AE9E",
+      "title": "Glass",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Glass",
+        "subtitle": "Transparent Barriers",
+        "description": [
+          "&eGlass provides a hard, transparent barrier for windows, vessels and fluid equipment. Unlike a crystal, its atoms have no repeating long-range arrangement.&r",
+          "",
+          "&eIn conventional glassmaking, uneven cooling can cause cracking, while unwanted crystallization causes devitrification. These are different defects: one breaks the barrier, the other disrupts its clear structure.&r"
+        ]
+      },
+      "after": {
+        "title": "Glass",
+        "subtitle": "Transparent Barriers",
+        "description": [
+          "&eGlass provides a hard, transparent barrier for windows, vessels and fluid equipment. Unlike a crystal, its atoms have no repeating long-range arrangement.&r",
+          "",
+          "&eIn conventional glassmaking, uneven cooling can cause cracking. Devitrification is a different defect: unwanted crystals form within the glass and can cloud it.&r"
+        ]
+      },
+      "rationale": "Explains cracking and devitrification as different conventional glass defects without repeating the same barrier comparison."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "6E14C5649AE916F6",
+      "title": "Pressed Glass Blank",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Pressed Glass Blank",
+        "description": [
+          "&ePressing gives the fired blank a defined form. Uniform shape and thickness matter when a glass piece must fit a frame or vessel; cooling fixes the shape after it has been worked.&r"
+        ]
+      },
+      "after": {
+        "title": "Pressed Glass Blank",
+        "description": [
+          "&ePressing shapes the fired blank before its final cooling treatment. A regular shape is important for glass fitted into frames and vessels.&r"
+        ]
+      },
+      "rationale": "Shortens the shaping explanation to why regular glass forms matter for frames and vessels."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "3A3EEC1B9D937AEF",
+      "title": "Heated Glass",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Heated Glass",
+        "subtitle": "Mobile Surface Ions",
+        "description": [
+          "&eHeat allows ions near the glass surface to move and exchange with ions in the molten salt. This mobility is needed for surface strengthening: a cold, rigid glass structure does not exchange those ions readily.&r"
+        ]
+      },
+      "after": {
+        "title": "Heated Glass",
+        "subtitle": "Mobile Surface Ions",
+        "description": [
+          "&eChemical strengthening needs enough heat for ions near the glass surface to exchange with those in a molten salt bath. Heating prepares the glass for that treatment.&r"
+        ]
+      },
+      "rationale": "Explains heating as preparation for chemical strengthening, without an unnecessary molecular digression."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "3A991DA7FC5F6E12",
+      "title": "Ion-Exchanged Glass Blank",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Ion-Exchanged Glass Blank",
+        "subtitle": "Surface Compression",
+        "description": [
+          "&eThe nitrate bath exchanges sodium ions near the glass surface for larger potassium ions. The crowded surface layer is left under compression, making it harder for cracks to open.&r",
+          "",
+          "&eStrengthening acts at the surface because small surface defects are common starting points for glass fracture. The interior remains glass; the treatment changes how readily those defects can grow into cracks.&r"
+        ]
+      },
+      "after": {
+        "title": "Ion-Exchanged Glass Blank",
+        "subtitle": "Surface Compression",
+        "description": [
+          "&eIn chemical strengthening, larger potassium ions replace sodium ions near the glass surface. The crowded surface layer is put under compression, resisting the opening of small cracks.&r"
+        ]
+      },
+      "rationale": "Keeps the useful surface-compression explanation and removes the repeated account of crack growth."
+    },
+    {
+      "chapter": "processing_note.snbt",
+      "id": "67A10FC69686A727",
+      "title": "Tempered Glass",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Tempered Glass",
+        "subtitle": "Strengthened Glass",
+        "description": [
+          "&eThis strengthened glass is required for the lava-extractor pump. Surface compression helps glass resist the opening of small cracks; it does not make a glass part indestructible.&r",
+          "",
+          "&eIon exchange and thermal tempering are different ways of producing a compressed surface. This workshop's strengthened grade combines a salt treatment with cooling, rather than relying on untreated glass alone.&r"
+        ]
+      },
+      "after": {
+        "title": "Tempered Glass",
+        "subtitle": "Strengthened Glass",
+        "description": [
+          "&eThis strengthened grade supplies the lava-extractor pump. The workshop combines ion exchange with a cooling treatment.&r",
+          "",
+          "&eConventional thermal tempering creates surface compression by controlled cooling, without an ion-exchange bath. The two methods should not be confused simply because both strengthen glass.&r"
+        ]
+      },
+      "rationale": "Distinguishes the pack's combined treatment from conventional thermal tempering. The game process does not become a misleading claim that the real methods are identical."
+    },
+    {
+      "chapter": "survival_note.snbt",
+      "id": "5733B6FE443F3A31",
+      "title": "Survival Note",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Survival Note",
+        "description": [
+          "&eEmergency field notes: begin with loose scrap, dead timber, and stone. These can supply a first set of tools and a small workshop.&r",
+          "",
+          "&eThe procedures below use salvaged materials. We cannot yet say how long someone could live on those reserves, or how far they would need to travel for replacements.&r"
+        ]
+      },
+      "after": {
+        "title": "Survival Note",
+        "description": [
+          "&eEmergency field notes for an improvised workshop. Loose scrap, dead timber and stone can supply the first tools without relying on an intact machine.&r",
+          "",
+          "&eThese procedures cover recovery from wreckage. We have no experience of living on salvage for as long as these notes may be needed. Food production will have to follow before the reserves are exhausted.&r"
+        ]
+      },
+      "rationale": "Frames the survival note as practical salvage advice left for an unknown future. Food production must follow depleted supplies; it does not pretend that long-term survival was already demonstrated."
+    },
+    {
+      "chapter": "survival_note.snbt",
+      "id": "033BB57BC19A2871",
+      "title": "Depleted Dirt",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Depleted Dirt",
+        "subtitle": "Soil that needs restoration",
+        "description": [
+          "&eDepleted dirt is abundant, but it is not ready farmland. Water can soften it; restoring usable soil also needs the biological and nutrient treatments described in the environmental notes.&r",
+          "",
+          "&eSet aside a small test plot. It is still uncertain whether a first crop would be the beginning of recovery or a brief use of the nutrients we supplied.&r"
+        ]
+      },
+      "after": {
+        "title": "Depleted Dirt",
+        "subtitle": "Soil that needs restoration",
+        "description": [
+          "&eDepleted dirt is abundant, but it is not ready farmland. Water can soften it; restoring usable soil also needs the biological and nutrient treatments described in the environmental notes.&r",
+          "",
+          "&eSet aside a small test plot. We can describe how to prepare growing ground; we cannot yet predict how much of the damaged landscape could be restored from it.&r"
+        ]
+      },
+      "rationale": "Moves uncertainty from a crop exhausting its supplied nutrients to the scale of landscape recovery. This avoids suggesting an unimplemented soil-depletion mechanic."
+    },
+    {
+      "chapter": "the_pulse_of_industry.snbt",
+      "id": "497B62C9B689DE39",
+      "title": "Fluid Mechanics",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Fluid Mechanics",
+        "subtitle": "Supply and Return",
+        "description": [
+          "&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r"
+        ]
+      },
+      "after": {
+        "title": "Fluid Mechanics",
+        "subtitle": "Supply and Return",
+        "description": [
+          "&eFluid machinery connects a stored supply to the process that consumes it. Pipes link the vessels, pumps drive the flow, and valves open or isolate individual branches.&r",
+          "",
+          "&eIf fluid stops moving, trace the line from source to outlet. Check the supply, pump direction, closed valves, and room in the receiving tank.&r"
+        ]
+      },
+      "rationale": "Adds concise troubleshooting for a fluid line. Supply, pump direction, valves, and receiving capacity are useful operating checks outside JEI."
+    },
+    {
+      "chapter": "the_pulse_of_industry.snbt",
+      "id": "11F9A3AD93930BDD",
+      "title": "Robot Pipette",
+      "changedFields": [
+        "description"
+      ],
+      "before": {
+        "title": "Robot Pipette",
+        "subtitle": "The Fluid-Handling End of an Arm",
+        "description": [
+          "&eThe robot pipette equips a mechanical arm for fluid transfer and item filling. It is a component of the mechanical pipette, not a pump by itself.&r"
+        ]
+      },
+      "after": {
+        "title": "Robot Pipette",
+        "subtitle": "The Fluid-Handling End of an Arm",
+        "description": [
+          "&eThe robot pipette is the fluid-handling attachment fitted to a mechanical arm base. The completed mechanical pipette transfers fluid and fills items within its reach.&r"
+        ]
+      },
+      "rationale": "Identifies the pipette as an attachment and distinguishes it from the completed machine that transfers and fills fluid."
+    }
+  ],
+  "limits": [
+    "No in-game review of wrapping, centering, or page balance.",
+    "No playable planetary transfer or cryogenic machinery was implemented by this prose revision.",
+    "Narrative effectiveness is an editorial judgment, not established by parser checks."
+  ]
+}
