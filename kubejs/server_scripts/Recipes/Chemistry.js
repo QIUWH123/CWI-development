@@ -1,17 +1,12 @@
-// ============================================================
-// 整合包石化产线 — 最终审定版（含PVC产线）
-// 原子守恒·摩尔守恒·蒸馏顺序·工程约束 全部验证通过
-//
-// 关键物态定义（唯一形态，永不改变）：
-//   kubejs:muriatic_acid      液体 (1 mB = 1 mol)
-//   kubejs:cracked_naphtha    气体 (2 mB = 1 mol)
-//   tfmg:lpg                  气体 (2 mB = 1 mol)
-//   tfmg:coal_coke_dust       粉末 (1个 = 125 mol)
-//   kubejs:edc                液体 (1 mB = 1 mol)
-//   kubejs:vinyl_chloride_monomer 液体 (1 mB = 1 mol)
-//   kubejs:nitrous_oxide      气体 (2 mB = 1 mol)
-//   其余流体/物品按命名规则推断，粉末/气体/液体形态唯一
-// ============================================================
+// Every Registered Substance Must Retain Its Defined Physical State Across Recipes
+// Reference Reaction Conditions Must Not Override A Substance's Registered State
+// Register A Separate Form With Its Own ID Before Using A Different Physical State
+// Mole Accounting Uses 2 mB Per Mol For Registered Gases And 1 mB Per Mol For Registered Liquids
+// Define Moles Per Item For Each Solid Material And Use That Value Consistently Across Recipes
+// Balance Reaction Equations And Convert Coefficients Using These Mole Accounting Rules
+// Mixtures Require Defined Compositions Before A Unique Molecular Equation Can Be Written
+// Reference Equations Do Not Prove Current Recipe Quantities Are Balanced, Flag Any Mismatches
+
 
 function distillation(event, heat, ingredients, results, processingTime) {
     return event.custom({
@@ -57,135 +52,200 @@ function vatRecipe(event, heatRequirement, machines, allowedVatTypes, minSize, i
 
 ServerEvents.recipes(event => {
 
-// ============================================================
-// 第一部分：Create 混合
-// ============================================================
+// Create Mixing And Catalyst Preparation
 
+// Pyrite Preparation: Fe + 2 S -> FeS2
+// Formal Composition Equation Only, Not Proof Of Selective Pyrite Formation
     event.recipes.create.mixing('kubejs:pyrite_powder', [
         '2x kubejs:sulfur_powder',
         'kubejs:iron_powder'
     ]).heated()
 
+// Caustic-soda Recovery: NaOH(aq) -> NaOH(s)
+// Solvent Evaporation Is Implicit
     event.recipes.create.mixing('kubejs:caustic_soda_powder', Fluid.of('kubejs:caustic_soda', 125)).heated()
+
+// Salt Recovery: Na+(aq) + Cl-(aq) -> NaCl(s)
+// Solvent Evaporation Is Implicit
     event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:salt_solution', 125)).heated()
+
+// Sugar Recovery: C12H22O11(aq) -> C12H22O11(s)
+// Sucrose Reference Only, Sugar Composition Is Not Defined
     event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
+
+// Nitrate Recovery: Dissolved Nitrate Salt -> Solid Nitrate Salt
+// Nitrate Counter Ion Is Unspecified, No Unique Molecular Equation
     event.recipes.create.mixing('tfmg:nitrate_dust', Fluid.of('kubejs:nitrate_solution', 125)).heated()
 
+// Caustic-soda Dissolution: NaOH(s) -> Na+(aq) + OH-(aq)
     event.recipes.create.mixing(Fluid.of('kubejs:caustic_soda', 125), [
         'kubejs:caustic_soda_powder',
         Fluid.of('kubejs:distilled_water', 125)
     ])
+
+// Syrup Preparation: C12H22O11(s) -> C12H22O11(aq)
+// Sucrose Reference Only, Sugar Composition Is Not Defined
     event.recipes.create.mixing(Fluid.of('kubejs:syrup', 125), [
         Fluid.of('kubejs:distilled_water', 125),
         'minecraft:sugar'
     ])
+
+// Salt-solution Preparation: NaCl(s) -> Na+(aq) + Cl-(aq)
     event.recipes.create.mixing(Fluid.of('kubejs:salt_solution', 125), [
         Fluid.of('kubejs:distilled_water', 125),
         'ratatouille:salt'
     ])
+
+// Halite Dissolution: NaCl(s) -> Na+(aq) + Cl-(aq)
     event.recipes.create.mixing(Fluid.of('kubejs:raw_brine', 125), [
         AddFluid('125 #cwi:water'),
         'kubejs:halite_powder'
     ])
+
+// Ferric-chloride Synthesis: 2 Fe + 3 Cl2 -> 2 FeCl3
     event.recipes.create.mixing(Fluid.of('kubejs:ferric_chloride', 125), [
         Fluid.of('kubejs:chlorine', 375),
         'kubejs:iron_powder'
     ])
+
+// Nitrate-solution Preparation: Solid Nitrate Salt -> Dissolved Nitrate Salt
+// Nitrate Counter Ion Is Unspecified, No Unique Molecular Equation
     event.recipes.create.mixing(Fluid.of('kubejs:nitrate_solution', 125), [
         Fluid.of('kubejs:distilled_water', 125),
         'tfmg:nitrate_dust'
     ])
 
+// Chlorine-copper Catalyst Preparation: Cu + Cl2 -> CuCl2
+// Reference If The Catalyst Represents Copper(II) Chloride
     event.recipes.create.mixing('kubejs:chlorine_copper_catalyst', [
         'kubejs:copper_powder',
         Fluid.of('kubejs:chlorine', 250)
     ]).heated()
+
+// Nickel Catalyst Preparation: Nickel Powder + Alumina -> Supported Nickel Catalyst
+// Supported Ni/Al2O3 Assembly, Not A New Molecular Compound
     event.recipes.create.mixing('kubejs:nickel_catalyst', [
         'kubejs:nickel_powder',
         'kubejs:alumina_powder'
     ]).heated()
+
+// Cobalt Catalyst Preparation: Cobalt Powder + Alumina -> Supported Cobalt Catalyst
+// Supported Co/Al2O3 Assembly, Activation Is Unspecified
     event.recipes.create.mixing('kubejs:cobalt_catalyst', [
         'kubejs:cobalt_powder',
         'kubejs:alumina_powder'
     ]).heated()
+
+// Iron Catalyst Preparation: Iron Powder + Alumina + Potassium Powder -> Promoted Iron Catalyst
+// Supported Iron With Potassium Promoter, Active Phases Are Unspecified
     event.recipes.create.mixing('kubejs:iron_catalyst', [
         'kubejs:iron_powder',
         'kubejs:alumina_powder',
         'kubejs:potassium_powder'
     ]).heated()
+
+// Platinum Catalyst Preparation: Platinum Powder + Alumina -> Supported Platinum Catalyst
+// Supported Pt/Al2O3 Assembly, Not A New Molecular Compound
     event.recipes.create.mixing('kubejs:platinum_catalyst', [
         'kubejs:platinum_powder',
         'kubejs:alumina_powder'
     ]).heated()
+
+// Sulfur-copper Catalyst Preparation: Copper Powder + Zinc Powder + Sulfur Powder -> Sulfur-copper Catalyst
+// Catalyst Composition Is Unspecified, No Unique Molecular Equation
     event.recipes.create.mixing('kubejs:sulfur_copper_catalyst', [
         'kubejs:copper_powder',
         'kubejs:zinc_powder',
         'kubejs:sulfur_powder'
     ]).heated()
+
+// Dehydrogenation Catalyst Preparation: Iron Oxide + Chromium Oxide -> Mixed-oxide Catalyst
+// Mixed Oxide Catalyst Assembly, Exact Oxide Phases Are Unspecified
     event.recipes.create.mixing('kubejs:dehydrogenation_catalyst', [
         'kubejs:iron_oxide_powder',
         'kubejs:chromium_oxide_powder'
     ]).heated()
+
+// Oxidation Catalyst Preparation: Cobalt Powder + Manganese Powder -> Oxidation Catalyst
+// Catalyst Assembly, Active Oxidation States Are Unspecified
     event.recipes.create.mixing('kubejs:oxidation_catalyst', [
         'kubejs:cobalt_powder',
         'kubejs:manganese_powder'
     ]).heated()
+
+// Silver Catalyst Preparation: Silver Powder + Alumina -> Supported Silver Catalyst
+// Supported Ag/Al2O3 Assembly, Not A New Molecular Compound
     event.recipes.create.mixing('kubejs:silver_catalyst', [
         'kubejs:silver_powder',
         'kubejs:alumina_powder'
     ]).heated()
+
+// Phosphoric-acid Catalyst Preparation: Ca3(PO4)2 + 3 H2SO4 -> 2 H3PO4 + 3 CaSO4
+// Reference Only If Phosphate Represents Ca3(PO4)2, Sulfate Byproduct Is Omitted
     event.recipes.create.mixing('kubejs:phosphoric_acid_catalyst', [
         'kubejs:phosphate_powder',
         Fluid.of('kubejs:sulfuric_acid', 50)
     ]).heated()
+
+// Zeolite Catalyst Preparation: Zeolite Powder + Alumina -> Zeolite/alumina Catalyst
+// Variable Zeolite Composition, Catalyst Assembly Rather Than A Defined Reaction
     event.recipes.create.mixing('kubejs:zeolite_catalyst', [
         'kubejs:zeolite_powder',
         'kubejs:alumina_powder'
     ]).heated()
 
+// Alumina Synthesis: 4 Al + 3 O2 -> 2 Al2O3
     event.recipes.create.mixing('kubejs:alumina_powder', [
         '2x kubejs:aluminum_powder',
         Fluid.of('kubejs:oxygen', 375)
     ]).heated()
 
-// ============================================================
-// 第二部分：柴油发电机蒸馏器（水 → 蒸汽）
-// ============================================================
+// Water Boiling
 
+// Distilled-water Boiling, Heated: H2O(l) -> H2O(g)
     distillation(event, "heated",
         [ AddFluid('125 kubejs:distilled_water') ],
         [ AddFluid('250 kubejs:steam') ],
         150
     )
+
+// Distilled-water Boiling, Superheated: H2O(l) -> H2O(g)
     distillation(event, "superheated",
         [ AddFluid('125 kubejs:distilled_water') ],
         [ AddFluid('250 kubejs:steam') ],
         75
     )
+
+// Water Boiling, Heated: H2O(l) -> H2O(g)
     distillation(event, "heated",
         [ AddFluid('125 minecraft:water') ],
         [ AddFluid('250 kubejs:steam') ],
         200
     )
+
+// Water Boiling, Superheated: H2O(l) -> H2O(g)
     distillation(event, "superheated",
         [ AddFluid('125 minecraft:water') ],
         [ AddFluid('250 kubejs:steam') ],
         100
     )
 
-// ============================================================
-// 第三部分：tfmg 蒸馏塔（物理分离）
-// ============================================================
+// Tower Physical Separation
 
+// Tower Water Boiling: H2O(l) -> H2O(g)
     advancedDistillation(event,
         [ AddFluid('2000 minecraft:water') ],
         [ AddFluid('4000 kubejs:steam') ]
     )
+
+// Tower Distilled-water Boiling: H2O(l) -> H2O(g)
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:distilled_water') ],
         [ AddFluid('4000 kubejs:steam') ]
     )
 
+// Liquid-air Fractionation: Liquid Air Mixture -> O2(g) + Ar(g) + N2(g)
+// Physical Separation, Output Proportions Are Gameplay Values
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:condensed_air') ],
         [
@@ -195,6 +255,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Helium Recovery From Natural Gas: Natural Gas Containing Helium -> Helium-depleted Natural Gas + He
+// Physical Separation, Natural Gas Composition Is Unspecified
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:natural_gas') ],
         [
@@ -203,6 +265,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Condensed Natural Gas Fractionation: Condensed Natural Gas Mixture -> C3H8(g) + C2H6(g) + CH4(g)
+// Physical Separation Of A Mixture, Not Molecular Synthesis
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:condensed_natural_gas') ],
         [
@@ -212,6 +276,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Crude-oil Fractionation: Crude Oil -> Residual Oil + Wax Oil + Diesel + Kerosene + Naphtha
+// Physical Separation, Petroleum Fractions Have No Single Formula
     advancedDistillation(event,
         [ AddFluid('2000 tfmg:crude_oil') ],
         [
@@ -223,6 +289,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// FCC-effluent Fractionation: FCC Effluent -> Slurry Oil + Diesel + Gasoline + LPG + Propylene + Dry Gas
+// Physical Separation, Petroleum Fractions Have No Single Formula
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:fcc_effluent') ],
         [
@@ -235,6 +303,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Visbreaker-effluent Fractionation: Visbreaker Effluent -> Visbreaker Residue + Heavy Fuel Oil + Diesel + Naphtha + Cracked Gas
+// Physical Separation, Petroleum Fractions Have No Single Formula
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:visbreaker_effluent') ],
         [
@@ -246,6 +316,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Cracked Naphtha Fractionation: Condensed Cracked Naphtha -> Pyrolysis Gasoline + C3H8 + C3H6 + C2H6 + C2H4
+// Physical Separation, Feed And Pyrolysis Gasoline Are Mixtures
     advancedDistillation(event,
         [ AddFluid('500 kubejs:condensed_cracked_naphtha') ],
         [
@@ -257,6 +329,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Aromatic Mixture Separation: Aromatic Mixture -> C8H10 (Xylenes) + C7H8 (Toluene) + C6H6 (Benzene)
+// Physical Separation Of A Mixture, Not Molecular Synthesis
     advancedDistillation(event,
         [ AddFluid('600 kubejs:aromatic_mix') ],
         [
@@ -266,6 +340,8 @@ ServerEvents.recipes(event => {
         ]
     )
 
+// Xylene Isomer Separation: Mixed C8H10 -> Separated o-C8H10 + m-C8H10 + p-C8H10 Fractions
+// Isomer Separation Requires A Combined Process, Current Gas To Liquid Quantities Do Not Match The Mole Convention
     advancedDistillation(event,
         [ AddFluid('200 kubejs:xylene') ],
         [
@@ -275,15 +351,17 @@ ServerEvents.recipes(event => {
         ]
     )
 
-// ============================================================
-// 第四部分：Vat 化学反应（主产线 + PVC）
-// ============================================================
+// Vat Processes And Reactions
 
+// Steam Condensation: H2O(g) -> H2O(l)
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('1000 kubejs:steam') ],
         [ AddFluid('500 kubejs:distilled_water') ],
         400
     )
+
+// Steam Condensation With Blue Ice: H2O(g) -> H2O(l)
+// Blue Ice To Ice Is A Cooling Item Conversion
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:steam'),
@@ -296,6 +374,10 @@ ServerEvents.recipes(event => {
         150
     )
 
+// Natural-gas Caustic Scrubbing: CO2 + 2 NaOH -> Na2CO3 + H2O
+// Bicarbonate Alternative: CO2 + NaOH -> NaHCO3
+// Sulfide Absorption: H2S + 2 NaOH -> Na2S + 2 H2O
+// Current NaCl And Free CO2 Outputs Do Not Represent These Absorption Reactions
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:natural_gas'),
@@ -309,6 +391,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Natural-gas Liquefaction: Purified Natural Gas(g) -> Condensed Natural Gas(l)
+// Mixture Phase Change, Blue Ice Represents Fictional Cryogenic Cooling
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('minecraft:blue_ice'),
@@ -321,6 +405,7 @@ ServerEvents.recipes(event => {
         100
     )
 
+// Hydrogen-chloride Preparation: NaCl + H2SO4 -> NaHSO4 + HCl
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('ratatouille:salt'),
@@ -333,6 +418,8 @@ ServerEvents.recipes(event => {
         90
     )
 
+// Deacon Chlorine Recovery: 4 HCl + O2 -> 2 Cl2 + 2 H2O
+// Overall Deacon Reaction, Copper Catalyst Is Returned
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('kubejs:chlorine_copper_catalyst'),
@@ -346,6 +433,9 @@ ServerEvents.recipes(event => {
         ],
         60
     )
+
+// Deacon Chlorine Recovery, Larger Batch: 4 HCl + O2 -> 2 Cl2 + 2 H2O
+// Overall Deacon Reaction, Copper Catalyst Is Returned
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('kubejs:chlorine_copper_catalyst'),
@@ -360,6 +450,8 @@ ServerEvents.recipes(event => {
         100
     )
 
+// Haber Ammonia Synthesis: N2 + 3 H2 <=> 2 NH3
+// Iron Catalyst Is Returned
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('kubejs:iron_catalyst'),
@@ -372,6 +464,9 @@ ServerEvents.recipes(event => {
         ],
         240
     )
+
+// Haber Ammonia Synthesis, Two Catalyst Items: N2 + 3 H2 <=> 2 NH3
+// Extra Catalyst Changes Duration, Not Stoichiometry
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('kubejs:iron_catalyst'),
@@ -387,6 +482,8 @@ ServerEvents.recipes(event => {
         120
     )
 
+// Ostwald Nitric-acid Synthesis: NH3 + 2 O2 -> HNO3 + H2O
+// Overall Ostwald Route, Oxidation And Absorption Stages Are Combined
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('100 kubejs:ammonia'),
@@ -401,6 +498,8 @@ ServerEvents.recipes(event => {
         100
     )
 
+// Kerosene/diesel Processing To Paraffin And Dewaxed Oil: Kerosene + Diesel -> Paraffin Oil + Dewaxed Oil
+// Mixture Processing, Feed And Product Compositions Are Unspecified
     vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('200 tfmg:kerosene'),
@@ -415,6 +514,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Wax-oil Catalytic Cracking: Wax Oil -> FCC Effluent
+// Mixture Cracking, No Unique Balanced Molecular Equation
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:wax_oil'),
@@ -427,12 +528,16 @@ ServerEvents.recipes(event => {
         240
     )
 
+// Residual-oil Visbreaking: Residual Oil -> Visbreaker Effluent
+// Mixture Thermal Cracking, No Unique Balanced Molecular Equation
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('2000 kubejs:residual_oil') ],
         [ AddFluid('2000 kubejs:visbreaker_effluent') ],
         200
     )
 
+// Naphtha Catalytic Reforming: Naphtha -> Reformate + H2 + Coke Oil Cut
+// Mixture Reforming, No Unique Balanced Molecular Equation
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 tfmg:naphtha'),
@@ -447,6 +552,8 @@ ServerEvents.recipes(event => {
         350
     )
 
+// Aromatic Extraction: Reformate -> Aromatic Extract + Raffinate
+// Physical Solvent Extraction, Ethylene Glycol Is Returned
     vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('925 kubejs:reformate'),
@@ -460,6 +567,8 @@ ServerEvents.recipes(event => {
         150
     )
 
+// Naphtha Steam Cracking: Naphtha -> Cracked Naphtha
+// Mixture Steam Cracking, Steam Is Returned As Diluent
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 tfmg:naphtha'),
@@ -472,6 +581,8 @@ ServerEvents.recipes(event => {
         180
     )
 
+// Cracked-naphtha Condensation: Cracked Naphtha(g) -> Condensed Cracked Naphtha(l)
+// Mixture Phase Change, Blue Ice To Ice Is A Cooling Conversion
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('minecraft:blue_ice'),
@@ -484,6 +595,8 @@ ServerEvents.recipes(event => {
         100
     )
 
+// Air Liquefaction: Air(g) -> Liquid Air
+// Mixture Phase Change, Blue Ice Represents Fictional Cryogenic Cooling
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('minecraft:blue_ice'),
@@ -496,6 +609,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Benzene Hydrogenation: C6H6 + 3 H2 -> C6H12
+// Current Benzene Input Does Not Match This Equation Under The Mole Convention
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('250 kubejs:benzene'),
@@ -509,6 +624,8 @@ ServerEvents.recipes(event => {
         250
     )
 
+// Cyclohexane Oxidation To Alcohol/ketone Mixture: 4 C6H12 + 3 O2 -> 2 C6H12O + 2 C6H10O + 2 H2O
+// Combined Cyclohexanol And Cyclohexanone Branches, Cobalt Catalyst Is Returned
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:cyclohexane'),
@@ -524,6 +641,8 @@ ServerEvents.recipes(event => {
         300
     )
 
+// Cyclohexanol Oxidation To Adipic Acid: C6H12O + 2 HNO3 -> C6H10O4 + N2O + 2 H2O
+// Aggregate Oxidation Equation, Solution Carrier Water Is Unspecified
     vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:cyclohexanol'),
@@ -537,6 +656,8 @@ ServerEvents.recipes(event => {
         100
     )
 
+// Adiponitrile Formation: C6H10O4 + 2 NH3 -> C6H8N2 + 4 H2O
+// Aggregate Amidation And Dehydration Equation
     vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:adipic_acid_solution'),
@@ -549,6 +670,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Adiponitrile Hydrogenation: C6H8N2 + 4 H2 -> C6H16N2
+// Nickel Catalyst Is Returned, Solution Carrier Water Is Unspecified
     vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:adiponitrile'),
@@ -562,6 +685,8 @@ ServerEvents.recipes(event => {
         250
     )
 
+// Nylon Salt Formation: C6H16N2 + C6H10O4 -> C12H26N2O4
+// Hexamethylenediammonium Adipate Salt, No Condensation Water Yet
     vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:hexamethylenediamine_solution'),
@@ -571,6 +696,8 @@ ServerEvents.recipes(event => {
         120
     )
 
+// Cumene Route To Phenol And Acetone: C6H6 + C3H6 + O2 -> C6H6O + C3H6O
+// Overall Cumene Route, Current Benzene Input Does Not Match The Mole Convention
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('250 kubejs:benzene'),
@@ -586,6 +713,8 @@ ServerEvents.recipes(event => {
         240
     )
 
+// Bisphenol-A Synthesis: 2 C6H6O + C3H6O -> C15H16O2 + H2O
+// Acid Catalyst Is Returned
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:phenol'),
@@ -600,6 +729,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Epichlorohydrin Aggregate Route: C3H6 + 2 Cl2 + 3 NaOH -> C3H5ClO + 3 NaCl + 2 H2O
+// Aggregate Allyl Chloride And Dichlorohydrin Route Including HCl Neutralization
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('375 kubejs:caustic_soda'),
@@ -614,6 +745,8 @@ ServerEvents.recipes(event => {
         280
     )
 
+// Epoxy-resin Production: n C15H16O2 + n C3H5ClO + n NaOH -> [C18H20O3]n + n NaCl + n H2O
+// Formal Repeat Unit Model Ignoring Chain Ends, Resin Grade Is Unspecified
     vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('2 kubejs:bisphenol_a'),
@@ -628,11 +761,16 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Polyethylene Formation: n C2H4 -> [CH2-CH2]n
+// Addition Polymerization, Quantities Represent Repeat Units
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('200 tfmg:ethylene') ],
         [ AddFluid('100 kubejs:molten_polyethylene') ],
         80
     )
+
+// Polyethylene Formation, Zinc Variant: n C2H4 -> [CH2-CH2]n
+// Same Repeat Equation, Returned Zinc Does Not Establish A Suitable Initiator
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('200 tfmg:ethylene'),
@@ -645,16 +783,18 @@ ServerEvents.recipes(event => {
         50
     )
 
+// Polypropylene Formation: n C3H6 -> [CH2-CH(CH3)]n
+// Addition Polymerization, Suitable Catalyst Conditions Are Implicit
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('200 tfmg:propylene') ],
         [ AddFluid('100 kubejs:molten_polypropylene') ],
         120
     )
 
-// ============================================================
-// ==== 聚氯乙烯（PVC）产线 ====
-// ============================================================
+// Polyvinyl Chloride Production
 
+// Ethylene Dichlorination: C2H4 + Cl2 -> C2H4Cl2
+// EDC Is 1,2 Dichloroethane, Iron Catalyst Is Returned
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 tfmg:ethylene'),
@@ -668,6 +808,8 @@ ServerEvents.recipes(event => {
         120
     )
 
+// EDC Cracking To Vinyl Chloride: C2H4Cl2 -> C2H3Cl + HCl
+// EDC Cracking Produces Vinyl Chloride And HCl
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('500 kubejs:edc') ],
         [
@@ -677,6 +819,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// PVC Formation: n C2H3Cl -> [CH2-CHCl]n
+// Addition Polymerization, This Equation Does Not Validate The Catalyst System
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:vinyl_chloride_monomer'),
@@ -689,6 +833,8 @@ ServerEvents.recipes(event => {
         150
     )
 
+// PVC Formation, Zinc Variant: n C2H3Cl -> [CH2-CHCl]n
+// Same Repeat Equation, This Equation Does Not Validate The Catalyst System
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:vinyl_chloride_monomer'),
@@ -703,6 +849,8 @@ ServerEvents.recipes(event => {
         90
     )
 
+// Terephthalic-acid Synthesis: C8H10 + 3 O2 -> C8H6O4 + 2 H2O
+// Para Xylene Oxidation, Catalyst Is Returned
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('125 kubejs:paraxylene'),
@@ -717,6 +865,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Ethylene-glycol Aggregate Synthesis: 2 C2H4 + O2 + 2 H2O -> 2 C2H6O2
+// Aggregate Ethylene Oxide Formation And Hydration
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 tfmg:ethylene'),
@@ -731,6 +881,8 @@ ServerEvents.recipes(event => {
         180
     )
 
+// PET Formation: n C8H6O4 + n C2H6O2 -> [C10H8O4]n + 2n H2O
+// Bulk Condensation Equation Ignores Chain Ends
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('2 kubejs:terephthalic_acid'),
@@ -742,6 +894,9 @@ ServerEvents.recipes(event => {
         ],
         350
     )
+
+// PET Formation, Larger Batch: n C8H6O4 + n C2H6O2 -> [C10H8O4]n + 2n H2O
+// Bulk Condensation Equation Ignores Chain Ends
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('4 kubejs:terephthalic_acid'),
@@ -754,10 +909,10 @@ ServerEvents.recipes(event => {
         200
     )
 
-// ============================================================
-// 第五部分：副产物化工利用
-// ============================================================
+// Byproduct Chemical Processing
 
+// Slurry-oil Coking: Slurry Oil -> Coke + Diesel + Naphtha + Cracked Gas
+// Mixture Coking, Feed Composition Is Unspecified
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('500 kubejs:slurry_oil') ],
         [
@@ -769,6 +924,8 @@ ServerEvents.recipes(event => {
         300
     )
 
+// Visbreaker-residue Coking: Visbreaker Residue -> Coke + Diesel + Naphtha + Cracked Gas
+// Mixture Coking, Feed Composition Is Unspecified
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [ AddFluid('500 kubejs:visbreaker_residue') ],
         [
@@ -780,6 +937,8 @@ ServerEvents.recipes(event => {
         280
     )
 
+// Pyrolysis Gasoline Hydrogen Treatment And Aromatic Recovery: Pyrolysis Gasoline + H2 -> Benzene + Toluene + Xylenes + Raffinate
+// Combined Hydrogen Treatment And Separation, No Unique Molecular Equation
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('450 kubejs:pyrolysis_gasoline'),
@@ -796,6 +955,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Ethane Steam Cracking: C2H6 -> C2H4 + H2
+// Steam Is Returned As Diluent
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:ethane'),
@@ -809,6 +970,8 @@ ServerEvents.recipes(event => {
         120
     )
 
+// Toluene Hydrodealkylation: C7H8 + H2 -> C6H6 + CH4
+// Current Hydrogen And Methane Quantities Do Not Match This Equation
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('200 kubejs:toluene'),
@@ -823,6 +986,8 @@ ServerEvents.recipes(event => {
         200
     )
 
+// Propane Dehydrogenation: C3H8 -> C3H6 + H2
+// Dehydrogenation Catalyst Is Returned
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 tfmg:propane'),
@@ -836,6 +1001,8 @@ ServerEvents.recipes(event => {
         250
     )
 
+// Diesel Hydrogen Processing: Diesel + H2 -> Aromatic Solvent + Naphtha
+// Mixture Hydrogen Processing, No Unique Balanced Molecular Equation
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 tfmg:diesel'),
