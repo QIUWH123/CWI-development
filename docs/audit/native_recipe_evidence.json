@@ -1,0 +1,175 @@
+{
+  "scope": "Recipe resources from installed jars; loaded availability has not been verified. excluded_static is an approximate scripted-removal filter, not a runtime result.",
+  "recipes": [
+    {
+      "id": "create_new_age:sequenced_assembly/nuclear_fuel",
+      "jar": "create-new-age-1.2.0+forge-mc1.20.1.jar",
+      "excluded_static": false,
+      "data": {
+        "type": "create:sequenced_assembly",
+        "ingredient": {
+          "item": "create_new_age:radioactive_thorium"
+        },
+        "loops": 1,
+        "results": [
+          {
+            "item": "create_new_age:nuclear_fuel"
+          }
+        ],
+        "sequence": [
+          {
+            "type": "create:pressing",
+            "ingredients": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              }
+            ],
+            "results": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              }
+            ]
+          },
+          {
+            "type": "create:deploying",
+            "ingredients": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              },
+              {
+                "tag": "forge:plates/iron"
+              }
+            ],
+            "results": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              }
+            ]
+          },
+          {
+            "type": "create:pressing",
+            "ingredients": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              }
+            ],
+            "results": [
+              {
+                "item": "create_new_age:incomplete_fuel"
+              }
+            ]
+          }
+        ],
+        "transitionalItem": {
+          "item": "create_new_age:incomplete_fuel"
+        }
+      }
+    },
+    {
+      "id": "tfmg:mixing/cooling_fluid",
+      "jar": "tfmg-1.0.2f.jar",
+      "excluded_static": false,
+      "data": {
+        "type": "create:mixing",
+        "ingredients": [
+          {
+            "amount": 250,
+            "fluid": "minecraft:water",
+            "nbt": {}
+          },
+          {
+            "amount": 1000,
+            "fluid": "tfmg:ethylene",
+            "nbt": {}
+          }
+        ],
+        "results": [
+          {
+            "amount": 250,
+            "fluid": "tfmg:cooling_fluid"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tfmg:mixing/liquid_asphalt",
+      "jar": "tfmg-1.0.2f.jar",
+      "excluded_static": false,
+      "data": {
+        "type": "create:mixing",
+        "ingredients": [
+          {
+            "item": "tfmg:asphalt_mixture"
+          },
+          {
+            "amount": 250,
+            "fluid": "minecraft:water",
+            "nbt": {}
+          }
+        ],
+        "results": [
+          {
+            "amount": 1000,
+            "fluid": "tfmg:liquid_asphalt"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tfmg:mixing/napalm",
+      "jar": "tfmg-1.0.2f.jar",
+      "excluded_static": false,
+      "data": {
+        "type": "create:mixing",
+        "ingredients": [
+          {
+            "tag": "forge:ingots/aluminum"
+          },
+          {
+            "amount": 1000,
+            "fluid": "tfmg:gasoline",
+            "nbt": {}
+          }
+        ],
+        "results": [
+          {
+            "amount": 250,
+            "fluid": "tfmg:napalm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tfmg:vat_machine_recipe/rubber",
+      "jar": "tfmg-1.0.2f.jar",
+      "excluded_static": false,
+      "data": {
+        "type": "tfmg:vat_machine_recipe",
+        "allowedVatTypes": [
+          "tfmg:steel_vat",
+          "tfmg:firebrick_lined_vat"
+        ],
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "item": "tfmg:sulfur_dust"
+          },
+          {
+            "amount": 250,
+            "fluid": "tfmg:heavy_oil",
+            "nbt": {}
+          }
+        ],
+        "machines": [
+          "tfmg:mixing"
+        ],
+        "minSize": 1,
+        "results": [
+          {
+            "item": "tfmg:rubber_sheet"
+          }
+        ]
+      }
+    }
+  ]
+}

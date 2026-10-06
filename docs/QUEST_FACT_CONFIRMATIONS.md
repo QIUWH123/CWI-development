@@ -2,7 +2,7 @@
 
 Audit date: 4 October 2026. All 504 quest descriptions in all 15 chapters were read. Claims were compared with KubeJS, configuration, structure contents, installed mod implementations, and configured resource packs. This document is for maintaining the pack; its author notes contain story spoilers.
 
-Most questions from the initial audit are now settled. The Stargate cause and chronology still require discussion. Static file/parser checks do not establish every interaction or generation result in a running world.
+Most questions from the initial audit are now settled. The Stargate cause and chronology are being derived separately from the quest text. Static file/parser checks do not establish every interaction or generation result in a running world.
 
 ## Confirmed writing constraints and applied corrections
 
@@ -16,7 +16,7 @@ Most questions from the initial audit are now settled. The Stargate cause and ch
 - **Lost Logs:** keep the chapter hidden. The records provide optional side information about the backstory through details readers can connect, as in a detective novel. Their role does not require revealing a normal quest chapter.
 - **Quest progression:** completing quests does not gate gameplay. The preface now says quests record progress through each stage. Existing quest/manual dependencies are preserved.
 - **Staff records:** the six staff-log incidents are approved fiction. Logs can span several pages and cover people's work and thoughts before, during, and after the Stargate incident. Small details should support inference and foreshadowing rather than directly explaining the mystery.
-- **Player backstory:** the player was a Stargate developer, assigned to repair it, travel back in time, and save everyone. Remembering standing at the gate is canonical. The player, or players in multiplayer, were the only eventual survivors. Saving everyone is the mission's aim; its outcome has not been supplied.
+- **Player backstory:** the player was a Stargate developer and remembers standing at the gate. The player, or players in multiplayer, are the only eventual human survivors. On 6 October the author accepted planetary displacement and a rebuilt gate returning Earth home, superseding the earlier time-travel rescue mission. The transfer also destroyed the gate, and a long interval precedes awakening. See [Stargate story](STARGATE_STORY.md) for accepted facts and unresolved details.
 
 ## Remaining discussions
 
@@ -24,13 +24,17 @@ Most questions from the initial audit are now settled. The Stargate cause and ch
 
 `tfmg:gasoline` is intended to power compatible engines and fluid-fed burners. The separate Create Diesel Generators fluid, `createdieselgenerators:gasoline`, is intentionally excluded from the pack's `forge:gasoline` fuel tag. [tags.js](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/tags/tags.js:64) now restores only TFMG's source and flowing fluids after clearing the inherited tag. The [gasoline quest](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quests/chapters/petroleum.snbt:398) names TFMG gasoline explicitly. The [fluid combustion recipe](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/kubejs/server_scripts/Recipes/BasicRecipe.js:348) and napalm feedstock remain implemented.
 
-### Stargate cause and chronology — original question 12
+### Stargate cause and chronology — updated 6 October 2026
 
-Confirmed: player role, repair/time-travel mission, memory at the gate, and eventual sole survivors. Cause, assignment timing, who knew the plan, and mission outcome remain unsettled and require discussion before more specific clues are written.
+The author accepted planetary displacement: an uncontrolled expansion transports Earth into another solar system and destroys the gate. The player reconstructs it after a long interval, with the endgame goal of bringing Earth home. Meteorite showers are excluded from the essential explanation.
 
-The first discussion question is whether the gate caused the catastrophe, was being used to avert another catastrophe, or should remain causally ambiguous to readers. Reader uncertainty can coexist with a privately settled explanation; it does not require inconsistent underlying events.
+[Stargate story](STARGATE_STORY.md) records the accepted direction, retained engineer/memo/log background, and remaining decisions. The preceding time-travel rescue and temporal-preservation draft is superseded.
 
-These are private writing constraints. Quest prose should convey them indirectly through people, incidents, and records rather than plain exposition. Proposed possibilities are not canon.
+The magnetic explanation remains a recommendation: Earth can retain its internally generated field while stronger stellar wind compresses and disturbs its magnetosphere. A permanent weakening of the geodynamo would require a separate fictional mechanism. Relocation alone does not establish it.
+
+### Narrative agreement and implementation
+
+This update records story decisions, not quest or gameplay implementation. Cascade boundaries, the safe return orbit, preservation duration and release, astronomical clues, and ending mechanics still need design. Keep proposals distinct from accepted facts, and verify implementation before describing a functioning system to players.
 
 ## Verification sources for resolved questions
 
@@ -51,4 +55,4 @@ These are private writing constraints. Quest prose should convey them indirectly
 - **Sugar:** a food ingredient, rather than a directly edible item.
 - **Copper, magnesium, polyethylene, zinc:** real industrial or physical context is explicitly labeled. Lead toxicity is implemented through the pack's Neurotoxin tags and inventory effect.
 
-Parser, protected-text, and structural verification are recorded in [the writing review](/Users/ivan/Documents/curseforge/minecraft/Instances/CWI/config/ftbquests/quest-writing-review.md).
+Parser, protected-text, and structural verification are recorded in [the writing review](QUEST_WRITING_REVIEW.md).

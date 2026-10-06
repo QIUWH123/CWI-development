@@ -1,7 +1,7 @@
 # Steel production
 
 Steel is produced by the existing `cwi:blast_furnace`. The recipes are in
-`server_scripts/Multiblocked2/BlastFurnace.js`, alongside the existing pig-iron
+`kubejs/server_scripts/Multiblocked2/BlastFurnace.js`, alongside the existing pig-iron
 and silicon recipes.
 
 ## Production flow

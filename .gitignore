@@ -10,6 +10,8 @@
 !/modpack.toml
 !/LICENSE
 !/README.md
+!/AGENTS.md
+!/docs/
 
 /config/*
 
