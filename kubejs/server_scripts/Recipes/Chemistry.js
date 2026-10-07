@@ -69,6 +69,13 @@ ServerEvents.recipes(event => {
 // Solvent Evaporation Is Implicit
     event.recipes.create.mixing('ratatouille:salt', Fluid.of('kubejs:salt_solution', 125)).heated()
 
+// Soda Recovery: Na2CO3(aq) -> Na2CO3(s)
+// Solution Uses 1 mB Per Mol Of Na2CO3, Soda Powder Represents 125 Mol Per Item
+// Carrier Water And Solvent Evaporation Are Implicit
+    event.recipes.create.mixing('kubejs:soda_powder', AddFluid('125 kubejs:sodium_carbonate_solution'))
+        .heated()
+        .id('cwi:mixing/soda_powder_from_sodium_carbonate_solution')
+
 // Sugar Recovery: C12H22O11(aq) -> C12H22O11(s)
 // Sucrose Reference Only, Sugar Composition Is Not Defined
     event.recipes.create.mixing('minecraft:sugar', Fluid.of('kubejs:syrup', 125)).heated()
@@ -330,20 +337,20 @@ ServerEvents.recipes(event => {
     )
 
 // Aromatic Mixture Separation: Aromatic Mixture -> C8H10 (Xylenes) + C7H8 (Toluene) + C6H6 (Benzene)
-// Physical Separation Of A Mixture, Not Molecular Synthesis
+// Physical Separation Preserves 600 Mol: 200 Mol Of Each Aromatic Gas
     advancedDistillation(event,
         [ AddFluid('600 kubejs:aromatic_mix') ],
         [
-            AddFluid('200 kubejs:xylene'),
-            AddFluid('200 kubejs:toluene'),
-            AddFluid('200 kubejs:benzene')
+            AddFluid('400 kubejs:xylene'),
+            AddFluid('400 kubejs:toluene'),
+            AddFluid('400 kubejs:benzene')
         ]
     )
 
 // Xylene Isomer Separation: Mixed C8H10 -> Separated o-C8H10 + m-C8H10 + p-C8H10 Fractions
-// Isomer Separation Requires A Combined Process, Current Gas To Liquid Quantities Do Not Match The Mole Convention
+// Combined Isomer Separation Preserves 200 Mol Across Registered Gas And Liquid Forms
     advancedDistillation(event,
-        [ AddFluid('200 kubejs:xylene') ],
+        [ AddFluid('400 kubejs:xylene') ],
         [
             AddFluid('75 kubejs:orthoxylene'),
             AddFluid('50 kubejs:metaxylene'),
@@ -374,22 +381,22 @@ ServerEvents.recipes(event => {
         150
     )
 
-// Natural-gas Caustic Scrubbing: CO2 + 2 NaOH -> Na2CO3 + H2O
-// Bicarbonate Alternative: CO2 + NaOH -> NaHCO3
-// Sulfide Absorption: H2S + 2 NaOH -> Na2S + 2 H2O
-// Current NaCl And Free CO2 Outputs Do Not Represent These Absorption Reactions
+// Natural Gas CO2 Scrubbing: CO2 + 2 NaOH -> Na2CO3 + H2O
+// Pack Feed Model Contains 10 Mol Percent CO2, The Remaining Gas Passes Through
+// Caustic Soda Uses 1 mB Per Mol Of NaOH, With Carrier Water Implicit
+// Sodium Carbonate Solution Uses 1 mB Per Mol Of Na2CO3, With Carrier Water Implicit
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('1000 kubejs:natural_gas'),
-            AddFluid('500 kubejs:caustic_soda')
+            AddFluid('100 kubejs:caustic_soda')
         ],
         [
             AddFluid('900 kubejs:purified_natural_gas'),
-            AddFluid('100 tfmg:carbon_dioxide'),
-            AddFluid('500 kubejs:salt_solution')
+            AddFluid('50 kubejs:sodium_carbonate_solution'),
+            AddFluid('50 kubejs:distilled_water')
         ],
         200
-    )
+    ).id('cwi:vat_machine_recipe/natural_gas_scrubbing')
 
 // Natural-gas Liquefaction: Purified Natural Gas(g) -> Condensed Natural Gas(l)
 // Mixture Phase Change, Blue Ice Represents Fictional Cryogenic Cooling
@@ -610,10 +617,10 @@ ServerEvents.recipes(event => {
     )
 
 // Benzene Hydrogenation: C6H6 + 3 H2 -> C6H12
-// Current Benzene Input Does Not Match This Equation Under The Mole Convention
+// Gas Benzene Uses 2 mB Per Mol And Liquid Cyclohexane Uses 1 mB Per Mol
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('250 kubejs:benzene'),
+            AddFluid('500 kubejs:benzene'),
             AddFluid('1500 tfmg:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
         ],
@@ -697,10 +704,10 @@ ServerEvents.recipes(event => {
     )
 
 // Cumene Route To Phenol And Acetone: C6H6 + C3H6 + O2 -> C6H6O + C3H6O
-// Overall Cumene Route, Current Benzene Input Does Not Match The Mole Convention
+// Gas Reactants Use 2 mB Per Mol And Liquid Products Use 1 mB Per Mol
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('250 kubejs:benzene'),
+            AddFluid('500 kubejs:benzene'),
             AddFluid('500 tfmg:propylene'),
             AddFluid('500 kubejs:oxygen'),
             AddFluid('50 kubejs:sulfuric_acid')
@@ -971,16 +978,16 @@ ServerEvents.recipes(event => {
     )
 
 // Toluene Hydrodealkylation: C7H8 + H2 -> C6H6 + CH4
-// Current Hydrogen And Methane Quantities Do Not Match This Equation
+// All Four Reacting Fluids Are Registered Gases And Use Equal Mole Quantities
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('200 kubejs:toluene'),
-            AddFluid('400 tfmg:hydrogen'),
+            AddFluid('200 tfmg:hydrogen'),
             AddItem('kubejs:dehydrogenation_catalyst')
         ],
         [
             AddFluid('200 kubejs:benzene'),
-            AddFluid('400 kubejs:methane'),
+            AddFluid('200 kubejs:methane'),
             AddItem('kubejs:dehydrogenation_catalyst')
         ],
         200

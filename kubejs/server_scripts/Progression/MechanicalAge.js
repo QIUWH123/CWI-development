@@ -490,7 +490,7 @@ ServerEvents.recipes(event => {
         ],
         {
             A: 'kubejs:andesite_alloy_sheet',
-            B: 'create:cogwheel'
+            B: 'create:shaft'
         }
     )
 

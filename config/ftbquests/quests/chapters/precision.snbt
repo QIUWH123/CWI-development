@@ -250,6 +250,7 @@
 			dependencies: ["1D16D3568A4B56AC"]
 			description: [
 				"   &3-----&r   &bSupports Superheating&r   &3-----&r "
+				"   &3-----&r   &bRight Click On Burners&r   &3-----&r "
 				""
 				"&eThe module feeds liquid fuel into a blaze burner, turning a piped supply into heat for melting, alloying, and other heated processes. Continuous delivery lets the burner remain supplied while a production line runs.&r"
 				""
@@ -807,12 +808,7 @@
 		}
 		{
 			dependencies: ["3CC959E1243E962E"]
-			description: [
-				"   &3---&r   &bHold Flying to Fly&r   &3---&r"
-				"   &3---&r   &bHold Flying + Sneak to Hover&r   &3---&r"
-				""
-				"&eThe Bronze Jetpack uses fuel and water to produce steam that spins its propellers. Flying is bound to Space by default. It also moves faster in water, but this grade can rise only about 28 blocks above the surface below.&r"
-			]
+			description: ["&eThe Bronze Jetpack uses fuel and water to produce steam that spins its propellers. Flying is bound to Space by default. It also moves faster in water, but this grade can rise only about 28 blocks above the surface below.&r"]
 			disable_toast: true
 			id: "1179AACAA33B2ACB"
 			shape: "diamond"

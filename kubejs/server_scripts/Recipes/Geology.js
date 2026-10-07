@@ -43,7 +43,6 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing('farmersdelight:organic_compost', ['2x ratatouille:compost_residue', 'minecraft:dirt', Fluid.of('minecraft:water', 250)])
     event.recipes.create.mixing('3x minecraft:bone_meal', ['2x kubejs:bone_powder', 'biomancy:stone_powder'])
 
-    event.recipes.create.mixing('kubejs:sticky_resin', 'kubejs:rubber').heated().processingTime(600)
     event.recipes.create.mixing(Fluid.of('kubejs:molten_sticky_resin', 100), 'kubejs:sticky_resin').heated().processingTime(600)
     event.recipes.create.mixing(Fluid.of('createdieselgenerators:biodiesel', 100), [Fluid.of('createdieselgenerators:ethanol', 50), Fluid.of('createdieselgenerators:plant_oil', 50)])
     event.recipes.create.mixing('minecraft:bamboo', ['kubejs:muddy_bamboo', AddFluid('500 #cwi:water')])

@@ -509,7 +509,7 @@ ServerEvents.tags('fluid', event => {
 
 // BaseFluids
     event.add('kubejs:base', [
-        'kubejs:caustic_soda', 'kubejs:ammonia_solution'
+        'kubejs:caustic_soda', 'kubejs:ammonia_solution', 'kubejs:sodium_carbonate_solution'
     ])
 
 // OrganicSolvents

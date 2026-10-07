@@ -11,9 +11,7 @@
 	quests: [
 		{
 			dependency_requirement: "one_completed"
-			description: [
-				"&ePages recovered from the laboratory staff: repairs, requests, tests, complaints.&r"
-			]
+			description: ["&ePages recovered from the laboratory staff: repairs, requests, tests, complaints.&r"]
 			icon: "minecraft:writable_book"
 			id: "207E2F3729E91CEC"
 			invisible: true

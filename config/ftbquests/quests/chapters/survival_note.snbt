@@ -33,6 +33,7 @@
 			dependencies: ["5733B6FE443F3A31"]
 			description: [
 				"  &3--------&r  &bRight Click to Collect&r  &3--------&r"
+				""
 				"&eSneak and right-click a scrap pile with an empty hand. Loose screws, rubber, synthetic fibers, leather, and ash can be pulled free. The compact remains become a small scrap block.&r"
 				""
 				"&eSharp edges can injure you. Finish a few piles, check your health, and eat before continuing.&r"
@@ -337,11 +338,7 @@
 		}
 		{
 			dependencies: ["0725AF9EC929C5C6"]
-			description: [
-				"&eWood chips are small enough to recover from damaged timber. They can be made into sticks or pressed into chip wood blocks, which supply early wooden components and the base of an andesite casing.&r"
-				""
-				"&7Burning the whole pile for warmth would also burn the next tool handle.&r"
-			]
+			description: ["&eWood chips are small enough to recover from damaged timber. They can be made into sticks or pressed into chip wood blocks, which supply early wooden components and the base of an andesite casing.&r"]
 			disable_toast: true
 			id: "52CA338C1BB121C9"
 			size: 1.5d
@@ -722,10 +719,7 @@
 		}
 		{
 			dependencies: ["42A753C2A80F604A"]
-			description: [
-				"&eA small hammer delivers controlled blows for fitting and reinforcing equipment. Here it is a workshop tool for upgrades, including reinforcement that adds Unbreaking and helps equipment endure repeated use.&r"
-				"&7Reusable means it remains after the work. It still wears down.&r"
-			]
+			description: ["&eA small hammer delivers controlled blows for fitting and reinforcing equipment. Here it is a workshop tool for upgrades, including reinforcement that adds Unbreaking and helps equipment endure repeated use.&r"]
 			disable_toast: true
 			id: "58AEE1F63EB7C8A8"
 			tasks: [{

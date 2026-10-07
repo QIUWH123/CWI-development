@@ -171,9 +171,7 @@
 		}
 		{
 			dependencies: ["3A3EEC1B9D937AEF"]
-			description: [
-				"&eIn chemical strengthening, larger potassium ions replace sodium ions near the glass surface. The crowded surface layer is put under compression, resisting the opening of small cracks.&r"
-			]
+			description: ["&eIn chemical strengthening, larger potassium ions replace sodium ions near the glass surface. The crowded surface layer is put under compression, resisting the opening of small cracks.&r"]
 			disable_toast: true
 			icon: "kubejs:ion_exchanged_glass_blank"
 			id: "3A991DA7FC5F6E12"

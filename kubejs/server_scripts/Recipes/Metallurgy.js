@@ -48,7 +48,7 @@ ServerEvents.recipes(event => {
             if (!itemId) return
             const amount = 
                 (type === 'block') ? 810 :
-                (type === 'wire' || type === 'rod') ? 45 :
+                (type === 'wire' || type === 'rod' || type === 'spring') ? 45 :
                 (type === 'nugget') ? 10 : 90
             melting(event, heat, AddItem(itemId), calcTime(event, mat, type), AddFluid(amount + ' ' + mat.fluid))
             bulkMelting(event, bulkMin, bulkMax, AddItem(itemId), calcTime(event, mat, type), AddFluid(amount + ' ' + mat.fluid))

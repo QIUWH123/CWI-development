@@ -88,8 +88,6 @@
 				""
 				"&eThe first page of this recovery memo is in handwriting you recognize:&r"
 				""
-				"&7Find water and food first. Search the gray toolboxes for the workshop notes. Leave the gate alone until you can check the replacement parts.&r"
-				""
 				"&eYou know how to follow the instructions. You do not remember writing them.&r"
 			]
 			disable_toast: true
@@ -466,9 +464,7 @@
 		}
 		{
 			dependencies: ["48FAA6DBC81EED3F"]
-			description: [
-				"&eThe gray toolboxes hold manuals, notes, and engineers' logs. Workshop instructions and personal records have been stored together.&r"
-			]
+			description: ["&eThe gray toolboxes hold manuals, notes, and engineers' logs. Workshop instructions and personal records have been stored together.&r"]
 			icon: "create:gray_toolbox"
 			id: "7A4768D007A9209B"
 			size: 1.5d

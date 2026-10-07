@@ -226,7 +226,8 @@ global.thinFluids = [
     ['potassium_solution', 0x88AADD],
     ['silicate_solution', 0xC0D0D0],
     ['hexamethylenediamine_solution', 0xD0D0B0],
-    ['distilled_water', 0xB0EEFF]
+    ['distilled_water', 0xB0EEFF],
+    ['sodium_carbonate_solution', 0xDCEFE8]
 ]
 
 global.normalFluids = [

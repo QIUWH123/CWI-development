@@ -433,8 +433,6 @@
 		{
 			dependencies: ["307A621A21A3E63C"]
 			description: [
-				"   &3---&r   &bWrench: Switch Mode While Idle&r   &3---&r"
-				""
 				"&eThis kinetic chamber has vacuumizing and pressurizing modes. Right-clicking with a wrench selects which pressure operation it performs, but the mode can only change while idle. Some recipes also need heat from a Blaze Burner.&r"
 				""
 				"&eMechanical pumps can fill and drain the chamber's secondary fluid tanks. In pressurizing mode, it can turn sulfur into sulfur dioxide for later chemical work.&r"

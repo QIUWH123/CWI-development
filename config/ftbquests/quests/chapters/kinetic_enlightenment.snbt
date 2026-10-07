@@ -51,11 +51,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"
-				""
-				"&7The hand-tool methods are included for a workshop that has lost its machines. I cannot assume that any powered equipment will still be usable when these drawings are needed.&r"
-			]
+			description: ["&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"]
 			hide_dependent_lines: true
 			id: "5E402C739E34B7D4"
 			invisible: true
@@ -200,6 +196,7 @@
 			description: [
 				"   &3----------&r   &bHold to Charge&r   &3----------&r"
 				"   &3----------&r   &bRelease to Use&r   &3----------&r"
+				""
 				"&eA heavy hammer head delivers an impact that breaks brittle stone and ore or flattens a metal ingot on a depot. It supplies these operations by hand before a powered crusher or press is available.&r"
 				""
 				"&eThe rusted tool has fewer charge stages than the iron hammer.&r"
@@ -229,6 +226,7 @@
 			dependencies: ["6C479154F903BB77"]
 			description: [
 				"     &3----------&r   &bHold to Use&r   &3----------&r"
+				""
 				"&eA chisel concentrates force along a narrow edge, letting it cut or shape a workpiece instead of crushing the whole piece. It prepares parts such as circuit boards from brass sheets and panes from glass.&r"
 				""
 				"&eHold the material in your offhand while using the chisel.&r"
@@ -356,6 +354,7 @@
 			dependencies: ["6C479154F903BB77"]
 			description: [
 				"     &3----------&r   &bHold to Use&r   &3----------&r"
+				""
 				"&eThe paired cutting edges shear suitable soft metals into rods and wires. They also trim dead bushes into sticks and sticks into chips, making the same tool useful for preparing small pieces of construction stock.&r"
 				""
 				"&eKeep the material in your offhand while using the cutters.&r"
@@ -643,7 +642,7 @@
 			description: [
 				"&eThe sail frame holds the net of a white sail in shape as the windmill turns.&r"
 				""
-				"&6Power specification:&r Only white sails contribute to this windmill assembly. An uncovered frame contributes no power.&r"
+				"&6Power specification:&r &bOnly white sails contribute to this windmill assembly. An uncovered frame contributes no power.&r"
 			]
 			disable_toast: true
 			hide_dependency_lines: true
@@ -858,7 +857,8 @@
 		{
 			dependencies: ["6C479154F903BB77"]
 			description: [
-				"   &3----------&r   &bRight Click with Fuel&r   &3----------&r"
+				"  &3---------&r  &bRight Click with Fuel&r  &3---------&r"
+				""
 				"&eThe burner supplies heat beneath a basin or foundry. A mixing drive combines the contents, but the burner provides the thermal energy needed for heated reactions and melting.&r"
 			]
 			disable_toast: true
@@ -896,8 +896,6 @@
 		{
 			dependencies: ["1D5086DE41A5D46B"]
 			description: [
-				"&6Before melting:&r Fit the lid and close it. An open foundry basin cannot begin the melting operation."
-				""
 				"&eThe foundry basin holds material as heat turns it into a molten fluid. The enclosed basin contains the melt for transfer to casting equipment, where it can take a new shape.&r"
 				""
 				"&eAlloying also needs a powered foundry mixer with a glassed lid: melting makes material liquid, while mixing combines the molten constituents.&r"
@@ -1119,6 +1117,7 @@
 			description: [
 				"   &3----------&r   &bHold to Charge&r   &3----------&r"
 				"   &3----------&r   &bRelease to Use&r   &3----------&r"
+				""
 				"&eThe iron hammer is a more durable hand tool for breaking stone and ore or working ingots on a depot. Its heavy head supplies the impact, and it has more charge stages than the rusted hammer.&r"
 			]
 			disable_toast: true

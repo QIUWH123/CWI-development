@@ -258,10 +258,7 @@
 		}
 		{
 			dependencies: ["497B62C9B689DE39"]
-			description: [
-				"   &3----------&r   &bUse to Sample / Sneak to Clear&r   &3----------&r"
-				"&eThe manifest records a fluid selected from a source or container. That record identifies the fluid for filters and requests, allowing a control to specify what a line should carry.&r"
-			]
+			description: ["&eThe manifest records a fluid selected from a source or container. That record identifies the fluid for filters and requests, allowing a control to specify what a line should carry.&r"]
 			disable_toast: true
 			hide_dependency_lines: true
 			id: "51FCF9E1390C7557"
@@ -359,7 +356,6 @@
 		{
 			dependencies: ["497B62C9B689DE39"]
 			description: [
-				"   &3----------&r   &bSneak and Use Empty Hand&r   &3----------&r"
 				"&eRubber deforms around a joint and fills gaps between rigid parts, making it useful for seals in fluid machinery. Its flexibility also suits belts and hose components that must bend while carrying force or fluid.&r"
 				""
 				"&eScrap piles and tree resin provide separate sources of this sealing material.&r"
@@ -424,14 +420,7 @@
 		}
 		{
 			dependencies: ["4D08D43112F8E50A"]
-			description: [
-				"&eA centrifugal pump uses a rotating impeller to drive fluid outward through its housing. This pump offers greater reach and transfer rate at a higher stress cost, suiting longer lines and heavier fluid demand.&r"
-				""
-				"   &3-----&r   &bScroll Panel to Reverse Flow&r   &3-----&r"
-				"   &3---&r   &bRight Click with Conductor's Baton&r   &3---&r"
-				""
-				"&6After copper encasing:&r The panel is removed. Rotation direction then controls the flow.&r"
-			]
+			description: ["&eA centrifugal pump uses a rotating impeller to drive fluid outward through its housing. This pump offers greater reach and transfer rate at a higher stress cost, suiting longer lines and heavier fluid demand.&r"]
 			disable_toast: true
 			id: "3FC61A5F2C151E4F"
 			shape: "hexagon"

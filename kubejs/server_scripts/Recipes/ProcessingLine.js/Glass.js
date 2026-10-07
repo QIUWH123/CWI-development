@@ -57,7 +57,8 @@ ServerEvents.recipes(event => {
             AddFluid('100 kubejs:molten_potassium_sodium_nitrate')
         ],
         [
-            AddFluid('100 kubejs:molten_saltpeter')
+            AddFluid('100 kubejs:molten_saltpeter'),
+            AddItem('4 #cwi:cobbled_stones')
         ],
         600
     )
