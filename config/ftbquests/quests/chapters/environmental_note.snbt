@@ -1085,7 +1085,7 @@
 			subtitle: "Ethylene for Amber Growth"
 			tasks: [{
 				id: "5D633DB7B1FED2B6"
-				item: "tfmg:ethylene_bucket"
+				item: "kubejs:ethylene_bucket"
 				type: "item"
 			}]
 			title: "Ethylene Treatment"

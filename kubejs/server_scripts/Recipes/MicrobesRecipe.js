@@ -730,7 +730,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddFluid('50 tfmg:crude_oil'),
-            AddFluid('100 tfmg:carbon_dioxide'),
+            AddFluid('100 kubejs:carbon_dioxide'),
             AddItem('kubejs:carbofusor_spirillum')
         ],
         150, undefined, ['basin', 'bulk']
@@ -860,7 +860,7 @@ ServerEvents.recipes(function(event) {
         ],
         [
             AddFluid('3 kubejs:ammonia_solution'),
-            AddFluid('1 tfmg:carbon_dioxide'),
+            AddFluid('1 kubejs:carbon_dioxide'),
             AddItem('kubejs:nitrofix_rhizobium')
         ],
         60, undefined, ['basin', 'bulk']

@@ -61,7 +61,18 @@ ServerEvents.tags('fluid', event => {
     event.removeAll('forge:gasoline')
     // Keep the pack's TFMG gasoline as engine fuel while excluding
     // Create Diesel Generators' separate gasoline fluid.
-    event.add('forge:gasoline', ['tfmg:gasoline', 'tfmg:flowing_gasoline'])
+    event.add('forge:gasoline', ['kubejs:gasoline'])
+    event.add('forge:diesel', ['kubejs:diesel'])
+    event.add('tfmg:gasoline', ['kubejs:gasoline'])
+    event.add('tfmg:diesel', ['kubejs:diesel'])
+    event.add('tfmg:naphtha', ['kubejs:naphtha'])
+    event.add('tfmg:kerosene', ['kubejs:kerosene'])
+    event.add('tfmg:lpg', ['kubejs:lpg'])
+    event.add('tfmg:firebox_fuel', ['kubejs:lpg', 'kubejs:diesel', 'kubejs:naphtha', 'kubejs:kerosene', 'kubejs:creosote'])
+    event.add('tfmg:blast_stove_fuel', ['kubejs:creosote'])
+    event.add('tfmg:air', ['kubejs:air'])
+    event.add('tfmg:crude_oil', ['tfmg:crude_oil'])
+    event.add('tfmg:heavy_oil', ['tfmg:heavy_oil'])
     event.removeAll('c:water')
     event.removeAll('minecraft:water')
 })
@@ -100,6 +111,7 @@ const moltenHotFluids = [
     'kubejs:molten_gold',
     'kubejs:molten_iron',
     'kubejs:molten_pig_iron',
+    'kubejs:molten_undeoxidized_steel',
     'kubejs:molten_cast_iron',
     'kubejs:molten_copper',
     'kubejs:molten_brass',
@@ -109,6 +121,8 @@ const moltenHotFluids = [
     'kubejs:molten_constantan',
     'kubejs:molten_bronze',
     'kubejs:molten_electrum',
+    'kubejs:molten_slag',
+    'kubejs:liquid_silicon',
     'kubejs:molten_glass'
 ]
 
@@ -227,6 +241,7 @@ ServerEvents.tags('item', event => {
         'kubejs:heated_iron_ingot',
         'kubejs:heated_industrial_iron_ingot'
     ])
+    event.add('cwi:moltens', 'kubejs:liquid_silicon_bucket')
     
 // Neurotoxin
 
@@ -498,6 +513,7 @@ ServerEvents.tags('fluid', event => {
 
 // MoltenHotFluidTag
     event.add('kubejs:molten_hot', moltenHotFluids)
+    event.add('cwi:moltens', 'kubejs:liquid_silicon')
 
 // AcidFluids
     event.add('kubejs:acid', [

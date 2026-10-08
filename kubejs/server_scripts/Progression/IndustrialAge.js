@@ -80,7 +80,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'tfmg:air_intake',
+        'kubejs:air_intake',
         [
             'AEA',
             'BCB',
@@ -410,7 +410,7 @@ ServerEvents.recipes(event => {
         'kubejs:harden_wood',
         'kubejs:quality_sealed_wood',
         [
-            event.recipes.create.filling('kubejs:incomplete_harden_wood', ['kubejs:incomplete_harden_wood', Fluid.of('tfmg:creosote', 250)]),
+            event.recipes.create.filling('kubejs:incomplete_harden_wood', ['kubejs:incomplete_harden_wood', Fluid.of('kubejs:creosote', 250)]),
             event.recipes.create.pressing('kubejs:incomplete_harden_wood', 'kubejs:incomplete_harden_wood'),
             polishing(event, 3, AddItem('kubejs:incomplete_harden_wood'), [AddItem('kubejs:incomplete_harden_wood')], 20)
         ]
@@ -571,7 +571,7 @@ ServerEvents.recipes(event => {
         'kubejs:heavy_machine',
         'tfmg:heavy_machinery_casing',
         [
-            event.recipes.create.filling('kubejs:incomplete_heavy_machine', ['kubejs:incomplete_heavy_machine', Fluid.of('tfmg:lubrication_oil', 100)]),
+            event.recipes.create.filling('kubejs:incomplete_heavy_machine', ['kubejs:incomplete_heavy_machine', Fluid.of('kubejs:lubrication_oil', 100)]),
             event.recipes.create.deploying('kubejs:incomplete_heavy_machine', ['kubejs:incomplete_heavy_machine', 'tfmg:steel_mechanism']),
             event.recipes.create.deploying('kubejs:incomplete_heavy_machine', ['kubejs:incomplete_heavy_machine', 'kubejs:steel_bearing']),
             event.recipes.create.deploying('kubejs:incomplete_heavy_machine', ['kubejs:incomplete_heavy_machine', 'kubejs:industrial_pump']),
@@ -601,7 +601,7 @@ ServerEvents.recipes(event => {
         'minecraft:iron_ingot',
         [
             turning(event, AddItem('kubejs:incomplete_engine_cylinder'), AddItem('kubejs:incomplete_engine_cylinder')),
-            event.recipes.create.filling('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', Fluid.of('tfmg:lubrication_oil', 25)]),
+            event.recipes.create.filling('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', Fluid.of('kubejs:lubrication_oil', 25)]),
             event.recipes.create.deploying('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', 'create:iron_sheet']),
             event.recipes.create.deploying('kubejs:incomplete_engine_cylinder', ['kubejs:incomplete_engine_cylinder', 'tfmg:screwdriver'])
         ]
@@ -614,7 +614,7 @@ ServerEvents.recipes(event => {
         'tfmg:steel_ingot',
         [
             turning(event, AddItem('kubejs:incomplete_steel_fuel_injector'), AddItem('kubejs:incomplete_steel_fuel_injector')),
-            event.recipes.create.filling('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', Fluid.of('tfmg:lubrication_oil', 25)]),
+            event.recipes.create.filling('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', Fluid.of('kubejs:lubrication_oil', 25)]),
             event.recipes.create.deploying('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', 'tfmg:steel_pipe']),
             event.recipes.create.deploying('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', 'kubejs:steel_ring']),
             event.recipes.create.deploying('kubejs:incomplete_steel_fuel_injector', ['kubejs:incomplete_steel_fuel_injector', 'tfmg:screwdriver'])
@@ -631,7 +631,7 @@ ServerEvents.recipes(event => {
             event.recipes.create.deploying('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', 'kubejs:steel_fuel_injector']),
             event.recipes.create.deploying('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', 'kubejs:engine_cylinder']),
             event.recipes.create.deploying('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', 'kubejs:engine_cylinder']),
-            event.recipes.create.filling('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', Fluid.of('tfmg:lubrication_oil', 50)]),
+            event.recipes.create.filling('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', Fluid.of('kubejs:lubrication_oil', 50)]),
             event.recipes.create.deploying('kubejs:incomplete_diesel_engine', ['kubejs:incomplete_diesel_engine', 'tfmg:screwdriver'])
         ]
     )
@@ -651,8 +651,8 @@ ServerEvents.recipes(event => {
 
 // Coking
 
-    coking(event, AddItem('createdieselgenerators:chip_wood_block'), [AddItem('kubejs:dark_ash'), AddFluid('50 tfmg:creosote'), AddFluid('5 tfmg:carbon_dioxide')], 300)
-    coking(event, AddItem('#minecraft:logs_that_burn'), [AddItem('minecraft:charcoal'), AddFluid('100 tfmg:creosote'), AddFluid('20 tfmg:carbon_dioxide')], 600)
-    coking(event, AddItem('minecraft:coal'), [AddItem('tfmg:coal_coke'), AddFluid('25 tfmg:creosote'), AddFluid('30 tfmg:carbon_dioxide')], 900)
+    coking(event, AddItem('createdieselgenerators:chip_wood_block'), [AddItem('kubejs:dark_ash'), AddFluid('50 kubejs:creosote'), AddFluid('5 kubejs:carbon_dioxide')], 300)
+    coking(event, AddItem('#minecraft:logs_that_burn'), [AddItem('minecraft:charcoal'), AddFluid('100 kubejs:creosote'), AddFluid('20 kubejs:carbon_dioxide')], 600)
+    coking(event, AddItem('minecraft:coal'), [AddItem('tfmg:coal_coke'), AddFluid('25 kubejs:creosote'), AddFluid('30 kubejs:carbon_dioxide')], 900)
 
 })

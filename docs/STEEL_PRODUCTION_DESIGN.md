@@ -7,7 +7,7 @@ and silicon recipes.
 ## Production flow
 
 ```text
-iron feed + limestone
+iron feed + limestone + coke dust
         |
         v
 superheated blast furnace -> molten pig iron + slag
@@ -31,7 +31,8 @@ slag. Return the collected pig iron through a furnace hatch as an input.
 
 Both recipes require the existing `superheated` state (temperature at least
 1900), and inherit the furnace's parallel capacity and temperature-based speed.
-Each batch also consumes one `kubejs:limestone_powder`.
+Each batch also consumes one `kubejs:limestone_powder` and one
+`tfmg:coal_coke_dust` as its explicit charge.
 
 | Route | Pig iron | Gas | Liquid silicon | Steel | Slag | Base duration |
 | --- | ---: | --- | ---: | ---: | ---: | ---: |
@@ -98,7 +99,9 @@ first, then an oxidising refining batch with an explicit air or oxygen input.
 It is a shared machine abstraction, not a claim that an ordinary reducing blast
 furnace directly refines steel.
 
-Limestone stands in for slag-forming flux. Silicon represents a deoxidising
+Limestone stands in for slag-forming flux. Coke dust is now an explicit carbon
+charge in every pig-iron recipe; the furnace's separate coke-filtered fuel slot
+still supplies furnace fuel and heat. Silicon represents a deoxidising
 addition after blowing, although all inputs are consumed in a single recipe.
 The implementation does not add quicklime, a separate converter, carbon grades,
 or a refractory-lining chemistry model. The existing ironmaking recipes and

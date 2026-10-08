@@ -277,7 +277,7 @@ ServerEvents.recipes(event => {
     advancedDistillation(event,
         [ AddFluid('2000 kubejs:condensed_natural_gas') ],
         [
-            AddFluid('600 tfmg:propane'),
+            AddFluid('600 kubejs:propane'),
             AddFluid('1000 kubejs:ethane'),
             AddFluid('2400 kubejs:methane')
         ]
@@ -290,9 +290,9 @@ ServerEvents.recipes(event => {
         [
             AddFluid('950 kubejs:residual_oil'),
             AddFluid('500 kubejs:wax_oil'),
-            AddFluid('250 tfmg:diesel'),
-            AddFluid('200 tfmg:kerosene'),
-            AddFluid('100 tfmg:naphtha')
+            AddFluid('250 kubejs:diesel'),
+            AddFluid('200 kubejs:kerosene'),
+            AddFluid('100 kubejs:naphtha')
         ]
     )
 
@@ -302,10 +302,10 @@ ServerEvents.recipes(event => {
         [ AddFluid('2000 kubejs:fcc_effluent') ],
         [
             AddFluid('700 kubejs:slurry_oil'),
-            AddFluid('350 tfmg:diesel'),
-            AddFluid('700 tfmg:gasoline'),
-            AddFluid('150 tfmg:lpg'),
-            AddFluid('100 tfmg:propylene'),
+            AddFluid('350 kubejs:diesel'),
+            AddFluid('700 kubejs:gasoline'),
+            AddFluid('150 kubejs:lpg'),
+            AddFluid('100 kubejs:propylene'),
             AddFluid('250 kubejs:dry_gas')
         ]
     )
@@ -317,8 +317,8 @@ ServerEvents.recipes(event => {
         [
             AddFluid('1600 kubejs:visbreaker_residue'),
             AddFluid('50 kubejs:heavy_fuel_oil'),
-            AddFluid('200 tfmg:diesel'),
-            AddFluid('100 tfmg:naphtha'),
+            AddFluid('200 kubejs:diesel'),
+            AddFluid('100 kubejs:naphtha'),
             AddFluid('100 kubejs:cracked_gas')
         ]
     )
@@ -329,10 +329,10 @@ ServerEvents.recipes(event => {
         [ AddFluid('500 kubejs:condensed_cracked_naphtha') ],
         [
             AddFluid('250 kubejs:pyrolysis_gasoline'),
-            AddFluid('50 tfmg:propane'),
-            AddFluid('100 tfmg:propylene'),
+            AddFluid('50 kubejs:propane'),
+            AddFluid('100 kubejs:propylene'),
             AddFluid('100 kubejs:ethane'),
-            AddFluid('250 tfmg:ethylene')
+            AddFluid('250 kubejs:ethylene')
         ]
     )
 
@@ -463,7 +463,7 @@ ServerEvents.recipes(event => {
         [
             AddItem('kubejs:iron_catalyst'),
             AddFluid('200 kubejs:nitrogen'),
-            AddFluid('600 tfmg:hydrogen')
+            AddFluid('600 kubejs:hydrogen')
         ],
         [
             AddFluid('400 kubejs:ammonia'),
@@ -479,7 +479,7 @@ ServerEvents.recipes(event => {
             AddItem('kubejs:iron_catalyst'),
             AddItem('kubejs:iron_catalyst'),
             AddFluid('200 kubejs:nitrogen'),
-            AddFluid('600 tfmg:hydrogen')
+            AddFluid('600 kubejs:hydrogen')
         ],
         [
             AddFluid('400 kubejs:ammonia'),
@@ -509,8 +509,8 @@ ServerEvents.recipes(event => {
 // Mixture Processing, Feed And Product Compositions Are Unspecified
     vatRecipe(event, null, ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('200 tfmg:kerosene'),
-            AddFluid('250 tfmg:diesel'),
+            AddFluid('200 kubejs:kerosene'),
+            AddFluid('250 kubejs:diesel'),
             AddItem('kubejs:zeolite_catalyst')
         ],
         [
@@ -547,12 +547,12 @@ ServerEvents.recipes(event => {
 // Mixture Reforming, No Unique Balanced Molecular Equation
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('1000 tfmg:naphtha'),
+            AddFluid('1000 kubejs:naphtha'),
             AddItem('kubejs:platinum_catalyst')
         ],
         [
             AddFluid('925 kubejs:reformate'),
-            AddFluid('50 tfmg:hydrogen'),
+            AddFluid('50 kubejs:hydrogen'),
             AddFluid('50 kubejs:coke_oil'),
             AddItem('kubejs:platinum_catalyst')
         ],
@@ -578,7 +578,7 @@ ServerEvents.recipes(event => {
 // Mixture Steam Cracking, Steam Is Returned As Diluent
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('500 tfmg:naphtha'),
+            AddFluid('500 kubejs:naphtha'),
             AddFluid('200 kubejs:steam')
         ],
         [
@@ -607,7 +607,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('minecraft:blue_ice'),
-            AddFluid('1000 tfmg:air')
+            AddFluid('1000 kubejs:air')
         ],
         [
             AddFluid('500 kubejs:condensed_air'),
@@ -621,7 +621,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:benzene'),
-            AddFluid('1500 tfmg:hydrogen'),
+            AddFluid('1500 kubejs:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
         ],
         [
@@ -682,7 +682,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, "heated", [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:adiponitrile'),
-            AddFluid('4000 tfmg:hydrogen'),
+            AddFluid('4000 kubejs:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
         ],
         [
@@ -708,7 +708,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('500 kubejs:benzene'),
-            AddFluid('500 tfmg:propylene'),
+            AddFluid('500 kubejs:propylene'),
             AddFluid('500 kubejs:oxygen'),
             AddFluid('50 kubejs:sulfuric_acid')
         ],
@@ -742,7 +742,7 @@ ServerEvents.recipes(event => {
         [
             AddFluid('375 kubejs:caustic_soda'),
             AddFluid('500 kubejs:chlorine'),
-            AddFluid('250 tfmg:propylene')
+            AddFluid('250 kubejs:propylene')
         ],
         [
             AddFluid('125 kubejs:epichlorohydrin'),
@@ -771,7 +771,7 @@ ServerEvents.recipes(event => {
 // Polyethylene Formation: n C2H4 -> [CH2-CH2]n
 // Addition Polymerization, Quantities Represent Repeat Units
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
-        [ AddFluid('200 tfmg:ethylene') ],
+        [ AddFluid('200 kubejs:ethylene') ],
         [ AddFluid('100 kubejs:molten_polyethylene') ],
         80
     )
@@ -780,7 +780,7 @@ ServerEvents.recipes(event => {
 // Same Repeat Equation, Returned Zinc Does Not Establish A Suitable Initiator
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('200 tfmg:ethylene'),
+            AddFluid('200 kubejs:ethylene'),
             AddItem('kubejs:zinc_powder')
         ],
         [
@@ -793,7 +793,7 @@ ServerEvents.recipes(event => {
 // Polypropylene Formation: n C3H6 -> [CH2-CH(CH3)]n
 // Addition Polymerization, Suitable Catalyst Conditions Are Implicit
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
-        [ AddFluid('200 tfmg:propylene') ],
+        [ AddFluid('200 kubejs:propylene') ],
         [ AddFluid('100 kubejs:molten_polypropylene') ],
         120
     )
@@ -804,7 +804,7 @@ ServerEvents.recipes(event => {
 // EDC Is 1,2 Dichloroethane, Iron Catalyst Is Returned
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('1000 tfmg:ethylene'),
+            AddFluid('1000 kubejs:ethylene'),
             AddFluid('1000 kubejs:chlorine'),
             AddItem('kubejs:iron_catalyst')
         ],
@@ -876,7 +876,7 @@ ServerEvents.recipes(event => {
 // Aggregate Ethylene Oxide Formation And Hydration
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('1000 tfmg:ethylene'),
+            AddFluid('1000 kubejs:ethylene'),
             AddFluid('500 kubejs:oxygen'),
             AddFluid('500 minecraft:water'),
             AddItem('kubejs:silver_catalyst')
@@ -924,8 +924,8 @@ ServerEvents.recipes(event => {
         [ AddFluid('500 kubejs:slurry_oil') ],
         [
             AddItem('tfmg:coal_coke_dust'),
-            AddFluid('125 tfmg:diesel'),
-            AddFluid('125 tfmg:naphtha'),
+            AddFluid('125 kubejs:diesel'),
+            AddFluid('125 kubejs:naphtha'),
             AddFluid('250 kubejs:cracked_gas')
         ],
         300
@@ -937,8 +937,8 @@ ServerEvents.recipes(event => {
         [ AddFluid('500 kubejs:visbreaker_residue') ],
         [
             AddItem('tfmg:coal_coke_dust'),
-            AddFluid('125 tfmg:diesel'),
-            AddFluid('125 tfmg:naphtha'),
+            AddFluid('125 kubejs:diesel'),
+            AddFluid('125 kubejs:naphtha'),
             AddFluid('250 kubejs:cracked_gas')
         ],
         280
@@ -949,7 +949,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('450 kubejs:pyrolysis_gasoline'),
-            AddFluid('100 tfmg:hydrogen'),
+            AddFluid('100 kubejs:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
         ],
         [
@@ -970,8 +970,8 @@ ServerEvents.recipes(event => {
             AddFluid('100 kubejs:steam')
         ],
         [
-            AddFluid('500 tfmg:ethylene'),
-            AddFluid('500 tfmg:hydrogen'),
+            AddFluid('500 kubejs:ethylene'),
+            AddFluid('500 kubejs:hydrogen'),
             AddFluid('100 kubejs:steam')
         ],
         120
@@ -982,7 +982,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddFluid('200 kubejs:toluene'),
-            AddFluid('200 tfmg:hydrogen'),
+            AddFluid('200 kubejs:hydrogen'),
             AddItem('kubejs:dehydrogenation_catalyst')
         ],
         [
@@ -997,12 +997,12 @@ ServerEvents.recipes(event => {
 // Dehydrogenation Catalyst Is Returned
     vatRecipe(event, "superheated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('500 tfmg:propane'),
+            AddFluid('500 kubejs:propane'),
             AddItem('kubejs:dehydrogenation_catalyst')
         ],
         [
-            AddFluid('500 tfmg:propylene'),
-            AddFluid('500 tfmg:hydrogen'),
+            AddFluid('500 kubejs:propylene'),
+            AddFluid('500 kubejs:hydrogen'),
             AddItem('kubejs:dehydrogenation_catalyst')
         ],
         250
@@ -1012,13 +1012,13 @@ ServerEvents.recipes(event => {
 // Mixture Hydrogen Processing, No Unique Balanced Molecular Equation
     vatRecipe(event, "heated", ["tfmg:mixing"], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
-            AddFluid('500 tfmg:diesel'),
-            AddFluid('200 tfmg:hydrogen'),
+            AddFluid('500 kubejs:diesel'),
+            AddFluid('200 kubejs:hydrogen'),
             AddItem('kubejs:nickel_catalyst')
         ],
         [
             AddFluid('300 kubejs:aromatic_solvent'),
-            AddFluid('100 tfmg:naphtha'),
+            AddFluid('100 kubejs:naphtha'),
             AddItem('kubejs:nickel_catalyst')
         ],
         220

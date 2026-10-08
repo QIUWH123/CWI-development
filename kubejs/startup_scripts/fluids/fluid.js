@@ -146,6 +146,8 @@ global.moltenMetals = [
     ['molten_gold', 0xFFF860],
     ['molten_iron', 0xFF8A8A],
     ['molten_steel', 0xFFAD8A],
+    ['molten_slag', 0xFFF760],
+    ['molten_undeoxidized_steel', 0xFFAD8A],
     ['molten_stainless_steel', 0xF0F7FF],
     ['molten_lithium', 0xFFF1D9],
     ['molten_magnesium', 0xA9B9C4],
@@ -182,13 +184,25 @@ global.specialFluids = [
         container: 'kubejs:item/fluid_container',
         overlay: 'kubejs:item/fluids/fine_pulp'
     }],
-    ['kubejs:concentrated_sulfuric_acid', null, 'special', ['kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow'], {
+    ['concentrated_sulfuric_acid', null, 'special', ['kubejs:fluid/concentrated_sulfuric_acid_still', 'kubejs:fluid/concentrated_sulfuric_acid_flow'], {
        container: 'kubejs:item/fluid_container',
         overlay: 'kubejs:item/fluids/concentrated_sulfuric_acid'
     }],
-    ['kubejs:sulfuric_acid', null, 'special', ['kubejs:fluid/sulfuric_acid_still', 'kubejs:fluid/sulfuric_acid_flow'], {
+    ['sulfuric_acid', null, 'special', ['kubejs:fluid/sulfuric_acid_still', 'kubejs:fluid/sulfuric_acid_flow'], {
         container: 'kubejs:item/fluid_container',
         overlay: 'kubejs:item/fluids/sulfuric_acid'
+    }],
+    ['liquid_silicon', null, 'special', ['tfmg:fluid/liquid_silicon_still', 'tfmg:fluid/liquid_silicon_flow'], {
+        container: 'kubejs:item/fireproof_bucket',
+        overlay: 'tfmg:item/liquid_silicon_bucket'
+    }],
+    ['liquid_concrete', null, 'special', ['tfmg:fluid/liquid_concrete_still', 'tfmg:fluid/liquid_concrete_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'tfmg:item/bottle_of_concrete'
+    }],
+    ['liquid_asphalt', null, 'special', ['tfmg:fluid/liquid_asphalt_still', 'tfmg:fluid/liquid_asphalt_flow'], {
+        container: 'kubejs:item/fluid_container',
+        overlay: 'tfmg:item/liquid_asphalt_bucket'
     }]
 ]
 
@@ -231,6 +245,14 @@ global.thinFluids = [
 ]
 
 global.normalFluids = [
+    ['gasoline', 0xCCB17D],
+    ['diesel', 0xBEA8A4],
+    ['naphtha', 0x684905],
+    ['kerosene', 0x7C8B75],
+    ['creosote', 0x010101],
+    ['lubrication_oil', 0x9D9B7F],
+    ['cooling_fluid', 0x7BBF81],
+    ['napalm', 0xC0D037],
     ['ethylene_glycol', 0x9CCCCC],
     ['cyclohexanone', 0xC8C8C8],
     ['magnesium_chloride_solution', 0xA8D0D0],
@@ -280,6 +302,15 @@ global.chemicalFluids = [
 ]
 
 global.gases = [
+    ['lpg', 0xF5E687],
+    ['butane', 0xAD77D4],
+    ['propane', 0x88BF80],
+    ['hydrogen', 0xD0F2F5],
+    ['ethylene', 0xBCADCC],
+    ['propylene', 0xC0D1B4],
+    ['neon', 0x9DEDE9],
+    ['carbon_dioxide', 0x525252],
+    ['air', 0xDFE6E5],
     ['oxygen', 0xFAFFFA],
     ['nitrogen', 0xD0E0F0],
     ['nitrogen_dioxide', 0xF08060],
@@ -364,5 +395,8 @@ BlockEvents.modification(event => {
         event.modify(`kubejs:${id}`, block => {
             block.lightEmission = 12
         })
+    })
+    event.modify('kubejs:liquid_silicon', block => {
+        block.lightEmission = 12
     })
 })

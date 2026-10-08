@@ -345,9 +345,9 @@ ServerEvents.recipes(event => {
     sandpaperPolishing(event, AddItem('geode_plus:nether_quartz_crystal_block'), AddItem('minecraft:quartz_block'))
 
     // Liquid Burning
-    liquidBurning(event, AddFluid('1 tfmg:gasoline'), 48, true)
-    liquidBurning(event, AddFluid('1 tfmg:diesel'), 32, true)
-    liquidBurning(event, AddFluid('1 tfmg:kerosene'), 32, false)
+    liquidBurning(event, AddFluid('1 kubejs:gasoline'), 48, true)
+    liquidBurning(event, AddFluid('1 kubejs:diesel'), 32, true)
+    liquidBurning(event, AddFluid('1 kubejs:kerosene'), 32, false)
     liquidBurning(event, AddFluid('1 kubejs:methane'), 16, false)
     liquidBurning(event, AddFluid('1 createdieselgenerators:plant_oil'), 4, false)
 
@@ -408,7 +408,7 @@ ServerEvents.recipes(event => {
     ], 360, AddFluid('400 kubejs:molten_andesite_alloy'))
 
     basinCasting(event, false, [AddFluid('1000 kubejs:molten_slime')], 43, AddItem('minecraft:slime_block'))
-    basinCasting(event, false, [AddFluid('1000 tfmg:molten_slag')], 1482, AddItem('tfmg:slag_block'))
+    basinCasting(event, false, [AddFluid('1000 kubejs:molten_slag')], 1482, AddItem('tfmg:slag_block'))
 
     // Alloying Recipes
     alloying(event, null, [AddFluid('30 kubejs:molten_gold'), AddFluid('10 kubejs:molten_silver')], 4, AddFluid('40 kubejs:molten_electrum'))

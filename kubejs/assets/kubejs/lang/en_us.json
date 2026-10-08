@@ -1,6 +1,4 @@
 {
     "tooltip.kubejs.hot": "Hot",
-    "tooltip.kubejs.no_gravity": "No Gravity",
-    "fluid.kubejs.sodium_carbonate_solution": "Sodium Carbonate Solution",
-    "item.kubejs.sodium_carbonate_solution_bucket": "Sodium Carbonate Solution Bucket"
+    "tooltip.kubejs.no_gravity": "No Gravity"
 }

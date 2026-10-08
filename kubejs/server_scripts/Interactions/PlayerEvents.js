@@ -32,6 +32,7 @@ MEJSEvents.standOnFluid(event=>{
         'kubejs:molten_gold',
         'kubejs:molten_iron',
         'kubejs:molten_pig_iron',
+        'kubejs:molten_undeoxidized_steel',
         'kubejs:molten_cast_iron',
         'kubejs:molten_copper',
         'kubejs:molten_brass',
@@ -41,6 +42,8 @@ MEJSEvents.standOnFluid(event=>{
         'kubejs:molten_constantan',
         'kubejs:molten_bronze',
         'kubejs:molten_electrum',
+        'kubejs:molten_slag',
+        'kubejs:liquid_silicon',
         'kubejs:molten_glass'
     ]
 

@@ -186,14 +186,14 @@ global.blastFurnaceRecipes = [
         duration: 300,
         heat: 'superheated',
         inputs: [{ item: 'minecraft:quartz' }],
-        outputs: [{ fluid: 'tfmg:liquid_silicon', amount: 90 }]
+        outputs: [{ fluid: 'kubejs:liquid_silicon', amount: 90 }]
     },
     {
         id: 'cwi:industrial_blasting/quartz_powder_to_silicon',
         duration: 200,
         heat: 'superheated',
         inputs: [{ item: 'kubejs:quartz_powder' }],
-        outputs: [{ fluid: 'tfmg:liquid_silicon', amount: 90 }]
+        outputs: [{ fluid: 'kubejs:liquid_silicon', amount: 90 }]
     },
     {
         id: 'cwi:industrial_blasting/magnetite_to_pig_iron',
@@ -201,11 +201,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'kubejs:magnetite' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 180 },
-            { fluid: 'tfmg:molten_slag', amount: 200 }
+            { fluid: 'kubejs:molten_slag', amount: 200 }
         ]
     },
     {
@@ -214,11 +215,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'kubejs:iron_powder' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 90 },
-            { fluid: 'tfmg:molten_slag', amount: 20 }
+            { fluid: 'kubejs:molten_slag', amount: 20 }
         ]
     },
     {
@@ -227,11 +229,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'minecraft:iron_ingot' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 90 },
-            { fluid: 'tfmg:molten_slag', amount: 20 }
+            { fluid: 'kubejs:molten_slag', amount: 20 }
         ]
     },
     {
@@ -240,11 +243,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'create:crushed_raw_iron' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 90 },
-            { fluid: 'tfmg:molten_slag', amount: 100 }
+            { fluid: 'kubejs:molten_slag', amount: 100 }
         ]
     },
     {
@@ -253,11 +257,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'minecraft:raw_iron' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 180 },
-            { fluid: 'tfmg:molten_slag', amount: 200 }
+            { fluid: 'kubejs:molten_slag', amount: 200 }
         ]
     },
     {
@@ -266,11 +271,12 @@ global.blastFurnaceRecipes = [
         heat: 'superheated',
         inputs: [
             { item: 'create:crimsite' },
-            { item: 'kubejs:limestone_powder' }
+            { item: 'kubejs:limestone_powder' },
+            { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 180 },
-            { fluid: 'tfmg:molten_slag', amount: 200 }
+            { fluid: 'kubejs:molten_slag', amount: 200 }
         ]
     },
     {
@@ -285,12 +291,12 @@ global.blastFurnaceRecipes = [
         inputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 900 },
             { item: 'kubejs:limestone_powder' },
-            { fluid: 'tfmg:air', amount: 1500 },
-            { fluid: 'tfmg:liquid_silicon', amount: 5 }
+            { fluid: 'kubejs:air', amount: 1500 },
+            { fluid: 'kubejs:liquid_silicon', amount: 5 }
         ],
         outputs: [
             { fluid: 'kubejs:molten_steel', amount: 810 },
-            { fluid: 'tfmg:molten_slag', amount: 180 }
+            { fluid: 'kubejs:molten_slag', amount: 180 }
         ]
     },
     {
@@ -303,11 +309,11 @@ global.blastFurnaceRecipes = [
             { fluid: 'kubejs:molten_pig_iron', amount: 1800 },
             { item: 'kubejs:limestone_powder' },
             { fluid: 'kubejs:oxygen', amount: 600 },
-            { fluid: 'tfmg:liquid_silicon', amount: 10 }
+            { fluid: 'kubejs:liquid_silicon', amount: 10 }
         ],
         outputs: [
             { fluid: 'kubejs:molten_steel', amount: 1710 },
-            { fluid: 'tfmg:molten_slag', amount: 180 }
+            { fluid: 'kubejs:molten_slag', amount: 180 }
         ]
     }
 ]

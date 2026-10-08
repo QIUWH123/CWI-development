@@ -158,7 +158,6 @@
 			dependencies: [
 				"5148FEA0B12D0880"
 				"4B93583D74E7E010"
-				"13C9C9F227B312DD"
 			]
 			description: [
 				"&eSteel combines iron with a controlled amount of carbon. Its strength and toughness make it useful for parts that transmit force or hold a machine together, including heavy plates, bearings, mechanisms, and furnace reinforcement.&r"
@@ -280,45 +279,37 @@
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
-			description: ["&eThe air intake draws air for industrial processes that need a gas supply. The furnace hatch serves a different purpose: it provides access through the blast furnace's refractory structure.&r"]
+			description: ["&eThe air intake uses rotation to collect atmospheric air for industrial processing. Steel refining uses the oxygen in this air to remove excess carbon from molten pig iron.&r"]
 			disable_toast: true
 			id: "13C9C9F227B312DD"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "Air Equipment and Furnace Access"
-			tasks: [
-				{
-					id: "043662A42D209F9F"
-					item: "tfmg:air_intake"
-					type: "item"
-				}
-				{
-					id: "2B00603360C21C6A"
-					item: "cwi:furnace_hatch"
-					type: "item"
-				}
-			]
-			title: "Furnace Air and Access"
+			tasks: [{
+				id: "043662A42D209F9F"
+				item: "kubejs:air_intake"
+				type: "item"
+			}]
+			title: "Air Access"
 			x: 4.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["3E0CF50CF54A7795"]
 			description: [
-				"&eBlast stoves historically heated the air supplied to ironmaking furnaces. Preheated air carries heat into the furnace instead of cooling the reaction zone as cold incoming air would.&r"
+				"&eA furnace hatch provides ingredient access through the blast furnace's refractory wall. Connect item transport and pipes to supply solid feed and molten ingredients.&r"
 				""
-				"&eThe furnace described in this manual is heated from beneath, with reinforcement setting the heat it can withstand. This design does not require a blast stove's hot-air supply.&r"
+				"&eKeep molten pig iron and liquid silicon on separate supply lines. Collect molten products from the furnace's output rather than through the hatch.&r"
 			]
 			disable_toast: true
 			id: "337E1339823083A2"
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
-				id: "3AD67A3E7E1B6578"
-				item: "tfmg:blast_stove"
+				id: "43B5A7B03E49F313"
+				item: "cwi:furnace_hatch"
 				type: "item"
 			}]
-			title: "Blast Stove"
+			title: "Furnace Hatch"
 			x: 2.0d
 			y: 2.0d
 		}
@@ -505,7 +496,7 @@
 			subtitle: "Keep the Coking Byproduct"
 			tasks: [{
 				id: "27F49C90ECC65A2E"
-				item: "tfmg:creosote_bucket"
+				item: "kubejs:creosote_bucket"
 				type: "item"
 			}]
 			title: "Creosote"

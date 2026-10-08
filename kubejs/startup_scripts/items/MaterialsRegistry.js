@@ -43,6 +43,7 @@ StartupEvents.registry('item', event => {
         ['lignin_powder', 0xE8C396],
         ['soda_powder', 0xE0FEFF],
         ['calcium_powder', 0xE0FEFF],
+        ['quicklime_powder', 0xF0F0E8],
         ['calcium_chloride_powder', 0xEDFFBA],
         ['alumina_powder', 0xF0F0F0],
         ['iron_oxide_powder', 0x8B4513],

@@ -251,7 +251,7 @@
 			subtitle: "Naphtha as Feedstock"
 			tasks: [{
 				id: "7DC916E7F2D0EBDA"
-				item: "tfmg:naphtha_bucket"
+				item: "kubejs:naphtha_bucket"
 				type: "item"
 			}]
 			title: "Naphtha"
@@ -368,7 +368,7 @@
 			subtitle: "Incendiary Stores"
 			tasks: [{
 				id: "79B9416FC88C852E"
-				item: "tfmg:napalm_bomb"
+				item: "kubejs:napalm_bomb"
 				type: "item"
 			}]
 			title: "Napalm Bomb"
@@ -383,7 +383,7 @@
 			subtitle: "Separate Incendiary Fluid"
 			tasks: [{
 				id: "17A57557DDC12D91"
-				item: "tfmg:napalm_bucket"
+				item: "kubejs:napalm_bucket"
 				type: "item"
 			}]
 			title: "Napalm"
@@ -404,7 +404,7 @@
 			subtitle: "Gasoline Recovery"
 			tasks: [{
 				id: "059B563E7C8F20F3"
-				item: "tfmg:gasoline_bucket"
+				item: "kubejs:gasoline_bucket"
 				type: "item"
 			}]
 			title: "Gasoline"
@@ -423,7 +423,7 @@
 			subtitle: "Assembly Lubricant Reserve"
 			tasks: [{
 				id: "184655FC37C9735C"
-				item: "tfmg:lubrication_oil_bucket"
+				item: "kubejs:lubrication_oil_bucket"
 				type: "item"
 			}]
 			title: "Lubrication Oil"
@@ -480,7 +480,7 @@
 			subtitle: "Ethylene Recovery"
 			tasks: [{
 				id: "7D17880A3C2D58CE"
-				item: "tfmg:ethylene_bucket"
+				item: "kubejs:ethylene_bucket"
 				type: "item"
 			}]
 			title: "Ethylene"
@@ -499,7 +499,7 @@
 			subtitle: "Propylene Recovery"
 			tasks: [{
 				id: "246CD4E629D90A01"
-				item: "tfmg:propylene_bucket"
+				item: "kubejs:propylene_bucket"
 				type: "item"
 			}]
 			title: "Propylene"

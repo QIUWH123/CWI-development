@@ -769,6 +769,7 @@ ServerEvents.recipes(event => {
         'tfmg:engine_cylinder_cheap',
         'tfmg:engine_cylinder_gas',
         'tfmg:engine_cylinder_spark_plug',
+        'tfmg:hot_blast/hot_air',
         'tfmg:industrial_blasting/silicon',
         'tfmg:industrial_blasting/steel',
         'tfmg:industrial_blasting/steel_from_dust',

@@ -752,7 +752,7 @@ global.materialTypes = {
 // Metalloids
     silicon: {
         id: 'silicon', type: 'metalloid', formula: 'Si',
-        mp: 1687, stiffness: 132, fluid: 'tfmg:liquid_silicon',
+        mp: 1687, stiffness: 132, fluid: 'kubejs:liquid_silicon',
         items: {
             powder: 'kubejs:silicon_powder',
             ingot:  'tfmg:silicon_ingot'
