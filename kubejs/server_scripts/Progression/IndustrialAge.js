@@ -80,7 +80,7 @@ ServerEvents.recipes(event => {
     )
 
     event.shaped(
-        'kubejs:air_intake',
+        'tfmg:air_intake',
         [
             'AEA',
             'BCB',
