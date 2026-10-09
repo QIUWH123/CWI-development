@@ -285,8 +285,8 @@
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
-				id: "043662A42D209F9F"
-				item: "kubejs:air_intake"
+				id: "20BCC4EC39AED10F"
+				item: "tfmg:air_intake"
 				type: "item"
 			}]
 			title: "Air Access"
