@@ -23,5 +23,10 @@
 
   "message.cwi.no_lockpick": "No Lockpick",
   "message.cwi.lockpick_success": "Lockpick Success",
-  "message.cwi.lockpick_failure": "Lockpick Failure"
+  "message.cwi.lockpick_failure": "Lockpick Failure",
+
+  "menu.cwi.singleplayer": "  Singleplayer",
+  "menu.cwi.multiplayer": "  Multiplayer",
+  "menu.cwi.option": "     Option",
+  "menu.cwi.quit": "   Quit Game"
 }

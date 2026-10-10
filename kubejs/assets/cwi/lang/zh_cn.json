@@ -23,5 +23,10 @@
 
   "message.cwi.no_lockpick": "无法开锁",
   "message.cwi.lockpick_success": "开锁成功",
-  "message.cwi.lockpick_failure": "开锁失败"
+  "message.cwi.lockpick_failure": "开锁失败",
+
+  "menu.cwi.singleplayer": "    单人游戏",
+  "menu.cwi.multiplayer": "    多人游戏",
+  "menu.cwi.option": "      选项",
+  "menu.cwi.quit": "    退出游戏"
 }
