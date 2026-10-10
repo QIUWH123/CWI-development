@@ -371,7 +371,7 @@ StartupEvents.registry('block', event => {
 
     event.create('cast_iron_blast_furnace_reinforcement')
         .textureAll('kubejs:block/cast_iron_blast_furnace_reinforcement')
-        .soundType('metal')
+        .soundType('netherite')
         .hardness(10)
         .resistance(40)
         .requiresTool(true)
@@ -381,7 +381,7 @@ StartupEvents.registry('block', event => {
 
     event.create('steel_blast_furnace_reinforcement')
         .textureAll('kubejs:block/steel_blast_furnace_reinforcement')
-        .soundType('metal')
+        .soundType('netherite')
         .hardness(12)
         .resistance(48)
         .requiresTool(true)

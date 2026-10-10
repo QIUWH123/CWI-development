@@ -10,9 +10,9 @@ MBDMachineEvents.onStructureFormed("cwi:blast_furnace", event => {
         function equals(target) { return block.equals(Block.getBlock(target)) }
         if (equals('tfmg:fireproof_bricks') || equals('cwi:furnace_hatch')) {
             fireproofBricks++
-        } else if (equals('tfmg:blast_furnace_reinforcement') || equals('tfmg:blast_furnace_reinforcement_wall')) {
+        } else if (equals('kubejs:industrial_iron_blast_furnace_reinforcement')) {
             reinforcementTotal += 2
-        } else if (equals('tfmg:rusted_blast_furnace_reinforcement') || equals('tfmg:rusted_blast_furnace_reinforcement_wall')) {
+        } else if (equals('kubejs:steel_blast_furnace_reinforcement')) {
             reinforcementTotal += 1
         }
     })
