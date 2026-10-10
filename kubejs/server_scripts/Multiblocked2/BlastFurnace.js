@@ -10,10 +10,10 @@ MBDMachineEvents.onStructureFormed("cwi:blast_furnace", event => {
         function equals(target) { return block.equals(Block.getBlock(target)) }
         if (equals('tfmg:fireproof_bricks') || equals('cwi:furnace_hatch')) {
             fireproofBricks++
-        } else if (equals('kubejs:industrial_iron_blast_furnace_reinforcement')) {
-            reinforcementTotal += 2
-        } else if (equals('kubejs:steel_blast_furnace_reinforcement')) {
+        } else if (equals('kubejs:cast_iron_blast_furnace_reinforcement')) {
             reinforcementTotal += 1
+        } else if (equals('kubejs:steel_blast_furnace_reinforcement')) {
+            reinforcementTotal += 2
         }
     })
 
@@ -82,7 +82,6 @@ MBDMachineEvents.onTick('cwi:blast_furnace', event => {
     const lastArmor = machine.customData.getInt('lastArmor')
     if (heaterHeats === lastHH && armor === lastArmor && Math.abs(temperature - effectiveMax) < 1.5) {
         machine.customData.putFloat('temperature', effectiveMax)
-        //Utils.server.tell(`Temp: ${effectiveMax}`)
         return
     }
 
@@ -101,6 +100,7 @@ MBDMachineEvents.onTick('cwi:blast_furnace', event => {
     Utils.server.tell('')
     Utils.server.tell(`HeatingLevel: ${heaterHeats}`)
     Utils.server.tell(`HeaterMaxTemp: ${targetTemp}`)
+    Utils.server.tell(`Reinforcement: ${maxTemp}`)
     Utils.server.tell(`EffectiveMax: ${effectiveMax}`)
     Utils.server.tell(`CurrentTemp: ${temperature}`)
     Utils.server.tell(`MachineHeat: ${newHeat}`)
@@ -247,7 +247,7 @@ global.blastFurnaceRecipes = [
             { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
-            { fluid: 'kubejs:molten_pig_iron', amount: 90 },
+            { fluid: 'kubejs:molten_pig_iron', amount: 120 },
             { fluid: 'kubejs:molten_slag', amount: 100 }
         ]
     },
@@ -261,7 +261,7 @@ global.blastFurnaceRecipes = [
             { item: 'tfmg:coal_coke_dust' }
         ],
         outputs: [
-            { fluid: 'kubejs:molten_pig_iron', amount: 180 },
+            { fluid: 'kubejs:molten_pig_iron', amount: 120 },
             { fluid: 'kubejs:molten_slag', amount: 200 }
         ]
     },
