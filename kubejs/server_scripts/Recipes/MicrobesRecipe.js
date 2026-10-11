@@ -170,13 +170,27 @@ ServerEvents.recipes(function(event) {
     addFermentingRecipes(event,
         [
             AddItem('kubejs:powdered_fermento_mycetes'),
-            AddItem('#createdieselgenerators:fermentable'),
-            AddFluid('250 kubejs:distilled_water')
+            AddItem('3x #createdieselgenerators:fermentable'),
+            AddFluid('250 kubejs:syrup'),
+            AddFluid('1000 kubejs:distilled_water')
         ],
         [
             AddItem('kubejs:fermento_mycetes')
         ],
-        600, undefined, ['basin', 'bulk']
+        1000, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:powdered_fermento_mycetes'),
+            AddItem('3x #createdieselgenerators:fermentable'),
+            AddItem('2x minecraft:sugar'),
+            AddFluid('1000 kubejs:distilled_water')
+        ],
+        [
+            AddItem('kubejs:fermento_mycetes')
+        ],
+        1000, undefined, ['basin', 'bulk']
     )
 
     addFermentingRecipes(event,
@@ -724,6 +738,34 @@ ServerEvents.recipes(function(event) {
 // Carbofusor Spirillum
     addFermentingRecipes(event,
         [
+            AddItem('kubejs:powdered_carbofusor_spirillum'),
+            AddItem('2x kubejs:yeast_paste'),
+            AddItem('6x kubejs:coal_powder'),
+            AddFluid('250 kubejs:syrup'),
+            AddFluid('1000 kubejs:distilled_water')
+        ],
+        [
+            AddItem('kubejs:carbofusor_spirillum')
+        ],
+        3000, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:powdered_carbofusor_spirillum'),
+            AddItem('2x kubejs:yeast_paste'),
+            AddItem('6x kubejs:coal_powder'),
+            AddItem('2x minecraft:sugar'),
+            AddFluid('1000 kubejs:distilled_water')
+        ],
+        [
+            AddItem('kubejs:carbofusor_spirillum')
+        ],
+        3000, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
             AddItem('kubejs:carbofusor_spirillum'),
             AddItem('minecraft:coal'),
             AddFluid('100 minecraft:water')
@@ -1022,6 +1064,34 @@ ServerEvents.recipes(function(event) {
     )
 
 // Putrelys Sporogenes
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:powdered_putrelys_sporogenes'),
+            AddItem('2x kubejs:yeast_paste'),
+            AddItem('3x ratatouille:compost_residue'),
+            AddFluid('250 kubejs:syrup'),
+            AddFluid('1000 kubejs:distilled_water')
+        ],
+        [
+            AddItem('kubejs:putrelys_sporogenes')
+        ],
+        3000, undefined, ['basin', 'bulk']
+    )
+
+    addFermentingRecipes(event,
+        [
+            AddItem('kubejs:powdered_putrelys_sporogenes'),
+            AddItem('2x kubejs:yeast_paste'),
+            AddItem('3x ratatouille:compost_residue'),
+            AddItem('2x minecraft:sugar'),
+            AddFluid('1000 kubejs:distilled_water')
+        ],
+        [
+            AddItem('kubejs:putrelys_sporogenes')
+        ],
+        3000, undefined, ['basin', 'bulk']
+    )
+
     addFermentingRecipes(event,
         [
             AddItem('ratatouille:compost_mass'),

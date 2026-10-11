@@ -17,13 +17,6 @@ ServerEvents.recipes(event => {
 
         microbe.variants.forEach(variant => {
             const trait = variant.trait
-            // Revival dishes must not feed the active-culture nutrient sequences.
-            const variantInoculated = variant.inoculum ? `kubejs:inoculated_${trait}_${name}_petri_dish` : inoculated
-            const variantTransition = variant.inoculum ? `kubejs:processing_${trait}_${name}_petri_dish` : transition
-            if (variant.inoculum) {
-                event.recipes.create.deploying(variantInoculated, ['kubejs:sterile_petri_dish', variant.inoculum])
-                    .id(`cwi:microbes_culture/${name}/${trait}_inoculation`)
-            }
             const agarPlate = `kubejs:${trait}_${name}_agar_plate`
 
             curving(event, 'kubejs:capping_head', AddItem(agarPlate), [AddItem(`kubejs:sealed_${trait}_${name}_agar_plate`)])
@@ -38,15 +31,15 @@ ServerEvents.recipes(event => {
                         if (typeof ingredient === 'object' && ingredient.fluid) {
                             ingredient = Fluid.of(ingredient.fluid, ingredient.amount)
                         }
-                        steps.push(event.recipes.create.deploying(variantTransition, [variantTransition, ingredient]))
+                        steps.push(event.recipes.create.deploying(transition, [transition, ingredient]))
                     } else if (step.type === 'filling') {
-                        steps.push(event.recipes.create.filling(variantTransition, [variantTransition, Fluid.of(step.fluid, step.amount)]))
+                        steps.push(event.recipes.create.filling(transition, [transition, Fluid.of(step.fluid, step.amount)]))
                     }
                 }
             })
 
-            event.recipes.create.sequenced_assembly(agarPlate, variantInoculated, steps)
-                .transitionalItem(variantTransition)
+            event.recipes.create.sequenced_assembly(agarPlate, inoculated, steps)
+                .transitionalItem(transition)
                 .loops(1)
                 .id(`cwi:microbes_culture/${name}/${trait}`)
         })

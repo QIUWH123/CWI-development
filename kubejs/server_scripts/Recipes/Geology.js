@@ -62,7 +62,9 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing('minecraft:clay_ball', ['kubejs:clay_powder', Fluid.of('minecraft:water', 50)])
     event.recipes.create.mixing('3x minecraft:gunpowder', ['3x tfmg:nitrate_dust', '2x kubejs:sulfur_powder', 'kubejs:charcoal_powder'])
     event.recipes.create.mixing('minecraft:glow_ink_sac', ['darkerdepths:glow_grime', 'minecraft:ink_sac'])
-    event.recipes.create.mixing('minecraft:sugar', Fluid.of("create:honey", 100)).heated()
+    event.recipes.create.mixing('minecraft:sugar', Fluid.of('create:honey', 100)).heated()
+
+    event.recipes.create.mixing('kubejs:yeast_paste', ['2x kubejs:fermento_mycetes', Fluid.of('createdieselgenerators:ethanol', 50), Fluid.of('kubejs:distilled_water', 250)]).heated()
 
 // Milling
 
@@ -71,6 +73,8 @@ ServerEvents.recipes(event => {
     event.recipes.create.milling(['2x minecraft:white_dye', Item.of('minecraft:light_gray_dye').withChance(0.1)], 'kubejs:bone_powder')
     event.recipes.create.milling(['2x kubejs:ash', Item.of('kubejs:ash').withChance(0.75), Item.of('miners_delight:silverfish_eggs').withChance(0.03)], 'kubejs:depleted_dirt')
     event.recipes.create.milling('kubejs:powdered_fermento_mycetes', 'kubejs:dry_fermento_mycetes')
+    event.recipes.create.milling('kubejs:powdered_carbofusor_spirillum', 'kubejs:dry_carbofusor_spirillum')
+    event.recipes.create.milling('kubejs:powdered_putrelys_sporogenes', 'kubejs:dry_putrelys_sporogenes')
     event.recipes.create.milling('kubejs:bone_powder', 'biomancy:bone_fragments')
     event.recipes.create.milling(['2x minecraft:string', Item.of('minecraft:string').withChance(0.25)], 'miners_delight:gossypium')
     event.recipes.create.milling(['minecraft:string', Item.of('minecraft:string').withChance(0.5)], 'rusticdelight:cotton_boll')
@@ -139,20 +143,6 @@ ServerEvents.recipes(event => {
     centrifuging(event, [AddItem('kubejs:diorite_powder'), AddItem('kubejs:diorite_powder')], [AddItem('kubejs:quartz_powder'), AddItem('kubejs:stone_powder')], 80)
     centrifuging(event, [AddItem('kubejs:andesite_powder'), AddItem('kubejs:andesite_powder')], [AddItem('kubejs:diorite_powder'), AddItem('kubejs:stone_powder')], 80)
     centrifuging(event, [AddItem('minecraft:clay_ball')], [AddItem('kubejs:clay_powder'), AddFluid('50x minecraft:water')], 300)
-
-// Fermentation
-
-    addFermentingRecipes(event,
-        [
-            AddItem('3 kubejs:fermento_mycetes'),
-            AddFluid('250 kubejs:distilled_water'),
-            AddFluid('50 createdieselgenerators:ethanol')
-        ],
-        [
-            AddItem('kubejs:yeast_paste')
-        ],
-        100, undefined, ['basin', 'bulk']
-    )
 
 // Sequenced Assembly
 

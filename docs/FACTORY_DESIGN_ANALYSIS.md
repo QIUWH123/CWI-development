@@ -75,9 +75,10 @@ The original furnace error was reproduced by executing the full recipe callback
 with the installed Rhino jar and mocked game APIs. The repaired callback runs
 twice and registers all 10 recipes on each invocation, including the typed air
 tag. The ore information callback likewise executes twice with 49 groups per
-invocation. The original incubator error was also reproduced; repaired layout
-and draw handlers run twice across all 31 variants and 124 feed entries, with
-deferred tooltip indices, tools, repeats, and displayed amounts checked.
+invocation. The original incubator error was also reproduced; before the later
+revival-route removal, repaired layout and draw handlers ran twice across all
+31 variants and 124 feed entries, with deferred tooltip indices, tools, repeats,
+and displayed amounts checked.
 These execution checks cover callback scoping; mocked APIs do not
 prove live serialization or rendering. Compile-only validation had missed the
 reported execution errors.
@@ -102,19 +103,39 @@ its lump fuel use and microbial coal conversion; its powder has no current
 onward use. Returned microbes are display-only entries. Sulfur's related forms
 and separate ore sources are distinguished from the unprocessed sulfur block.
 
-The revised incubator handlers execute twice for all 31 variants and 124 feed
-entries with the installed Rhino build. The checks include deferred feed
-tooltips, the shifted coordinates, microbe yield overlay, and retained time/RPM.
+Before the later revival-route removal, the revised incubator handlers executed
+twice for all 31 variants and 124 feed entries with the installed Rhino build.
+The checks included deferred feed tooltips, the shifted coordinates, microbe
+yield overlay, and retained time/RPM.
 This verifies callback execution and display data; live rendering remains a
 Minecraft check.
 
 The later presentation adjustment removes the bottom-right recovery slots and
 colors the step numbers, yield multiplier, and RPM gold. The yield remains on
 the enlarged microbe icon. Rhino compilation, Node syntax, and diff checks pass
-for this adjustment. Repeated Rhino execution also verifies ingredient lookup
-for all 124 preparation feeds across the 31 variants, including exact item
-counts and repeated fluid amounts; its final appearance still requires a live
-check.
+for this adjustment. Before the later revival-route removal, repeated Rhino
+execution also verified ingredient lookup for all 124 preparation feeds across
+the 31 variants, including exact item counts and repeated fluid amounts; its
+final appearance still requires a live check.
+
+On 11 October the author requested removal of the added Fermento, Carbofusor,
+and Putrelys revival plates. The remaining shared definitions contain 28 culture
+variants and 117 preparation feed entries. Powdered Fermento fermentation
+remains the initial activation route; Carbofusor and Putrelys no longer have
+an implemented first-activation recipe. Their existing propagation and
+industrial-use recipes remain. Quest descriptions and current documentation
+remove the deleted route claims; the preceding 31/124 figures record checks
+of the earlier version.
+
+Installed Rhino checks after removal passed three registration-callback runs:
+exactly 15 revival-only item registrations and 28 revival-only builder calls
+were removed, and all 28 remaining assembly IDs were retained. Restoring the
+frugal Fermento yield to one is the only retained-variant recipe change. JEI
+lookup/draw ran twice for 28 variants and 117 feeds, including 234 deferred
+tooltip callbacks; gold labels retain their shadows. The installed FTB Library
+parser accepts the two corrected quest chapters. Exactly six description lines
+changed; IDs, dependencies, tasks, layout, and all other quest text remain
+unchanged. Live machine and JEI rendering checks remain separate.
 
 The mineral handlers execute across three full passes for all 18 entries.
 The validation checks active forms, product IDs and route probabilities,

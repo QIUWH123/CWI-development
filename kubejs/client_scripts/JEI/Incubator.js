@@ -18,7 +18,6 @@ JEIAddedEvents.registerRecipes(event => {
                 input: sealed,
                 output: cultured,
                 time: variant.time,
-                inoculum: variant.inoculum || `kubejs:${microbe.name}`,
                 microbeName: microbe.name,
                 steps: JSON.parse(JSON.stringify(variant.steps)),
                 count: variant.count
@@ -46,11 +45,6 @@ JEIAddedEvents.registerCategories(event => {
 
             layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.OUTPUT)
                 .addItemStack(Item.of('kubejs:' + data.microbeName))
-
-            if (data.inoculum !== 'kubejs:' + data.microbeName) {
-                layoutBuilder.addInvisibleIngredients($RecipeIngredientRole.INPUT)
-                    .addItemStack(Item.of(data.inoculum))
-            }
 
         // Index Preparation Feeds For Lookup, Incubation Still Uses One Sealed Plate
             data.steps.forEach((step, index) => {
