@@ -87,10 +87,16 @@ function registerThinFLuid(event, name, color) {
 }
 
 function registerSpecialFLuid(event, name, overrides) {
-    event.create(name)
+    const fluid = event.create(name)
         .stillTexture(overrides.still)
         .flowingTexture(overrides.flowing)
         .tag('cwi:special_fluids')
+
+    if (overrides.tags) {
+        overrides.tags.forEach(tag => fluid.tag(tag))
+    }
+
+    fluid
         .bucketItem
         .textureJson(overrides.textureJson || {
             layer0: 'kubejs:item/fluid_container',
@@ -194,7 +200,8 @@ global.specialFluids = [
     }],
     ['liquid_silicon', null, 'special', ['tfmg:fluid/liquid_silicon_still', 'tfmg:fluid/liquid_silicon_flow'], {
         container: 'kubejs:item/fireproof_bucket',
-        overlay: 'tfmg:item/liquid_silicon_bucket'
+        overlay: 'tfmg:item/liquid_silicon_bucket',
+        tags: ['cwi:moltens']
     }],
     ['liquid_concrete', null, 'special', ['tfmg:fluid/liquid_concrete_still', 'tfmg:fluid/liquid_concrete_flow'], {
         container: 'kubejs:item/fluid_container',
@@ -358,7 +365,8 @@ StartupEvents.registry('fluid', function (event) {
         registerFluids(event, entry[0], null, 'special', {
             still: still,
             flowing: flowing,
-            textureJson: textureJson
+            textureJson: textureJson,
+            tags: entry[4].tags || []
         })
     })
 

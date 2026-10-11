@@ -17,10 +17,10 @@ ServerEvents.recipes(event => {
         return ingotTime
     }
 
-// Auto Generated Casting Melting And Bulk Melting For All Metals And Alloys
+// Auto Generated Casting Melting And Bulk Melting For Metals Alloys Metalloids And Polymers
 
     materials.forEach(mat => {
-        if (!['metal', 'alloy', 'polymer'].includes(mat.type)) return
+        if (!['metal', 'alloy', 'metalloid', 'polymer'].includes(mat.type)) return
         if (!mat.fluid) return
         moldTypes.forEach(moldPrefix => {
             if (moldPrefix === 'terracotta' && mat.mp >= 1200) return
@@ -58,7 +58,7 @@ ServerEvents.recipes(event => {
 // Auto Generated Pressing Milling And Rolling
 
     materials.forEach(mat => {
-        if (!['metal', 'alloy', 'polymer'].includes(mat.type)) return
+        if (!['metal', 'alloy', 'metalloid', 'polymer'].includes(mat.type)) return
         if (!mat.items) return
 
         const items = mat.items
