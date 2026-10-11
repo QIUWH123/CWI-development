@@ -291,7 +291,7 @@ global.blastFurnaceRecipes = [
         inputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 900 },
             { item: 'kubejs:limestone_powder' },
-            { fluid: 'kubejs:air', amount: 1500 },
+            { fluidTag: 'tfmg:air', amount: 1500 },
             { fluid: 'kubejs:liquid_silicon', amount: 5 }
         ],
         outputs: [
@@ -319,6 +319,8 @@ global.blastFurnaceRecipes = [
 ]
 
 ServerEvents.recipes(event => {
+    const blastFluidIngredient = Java.loadClass('com.lowdragmc.mbd2.api.recipe.ingredient.FluidIngredient')
+
     const applyConditional = (builder, ingredientString, chance, perTick, setter) => {
         if (perTick) {
             builder.perTick(tickBuilder => applyConditional(tickBuilder, ingredientString, chance, false, setter))
@@ -358,10 +360,13 @@ ServerEvents.recipes(event => {
                             entry.perTick,
                             (target, ingredient) => target.inputItems(ingredient)
                         )
-                    } else if (entry.fluid) {
+                    } else if (entry.fluid || entry.fluidTag) {
+                    // MBD Requires A Typed Tag Ingredient, Its Fluid String Parser Only Accepts IDs
                         applyConditional(
                             builder,
-                            `${entry.fluid} ${entry.amount}`,
+                            entry.fluidTag
+                                ? blastFluidIngredient.fromJson(JsonIO.of({ amount: entry.amount, value: { tag: entry.fluidTag } }))
+                                : `${entry.fluid} ${entry.amount}`,
                             entry.chance,
                             entry.perTick,
                             (target, ingredient) => target.inputFluids(ingredient)

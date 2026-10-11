@@ -51,7 +51,11 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"]
+			description: [
+				"&eA mechanical workshop puts rotation to work: crushing stone, shaping metal, and combining materials. Shafts carry power between machines; each machine turns that rotation into a different action.&r"
+				""
+				"&eSpeed and capacity serve different needs. A machine may need faster rotation to work, but increasing its speed also increases its stress load. If the connected machines exceed the power sources' capacity, the whole network stops; add capacity, lower the machines' speed with gearing, or disconnect a load.&r"
+			]
 			hide_dependent_lines: true
 			id: "5E402C739E34B7D4"
 			invisible: true

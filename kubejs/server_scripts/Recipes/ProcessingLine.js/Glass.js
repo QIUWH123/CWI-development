@@ -12,6 +12,11 @@ ServerEvents.recipes(event => {
 
     event.recipes.create.compacting('kubejs:pressed_glass_blank', 'kubejs:sintered_glass_blank')
 
+// Four Glass Powder Portions Reclaim One Blank, Matching The Maximum Powder Yield Of One Glass Block
+    event.recipes.create.compacting('kubejs:sintered_glass_blank', '4x kubejs:glass_powder')
+        .heated()
+        .id('cwi:compacting/glass_blank_from_cullet')
+
     event.recipes.create.sequenced_assembly(
         [
             Item.of('minecraft:glass').withChance(0.76),

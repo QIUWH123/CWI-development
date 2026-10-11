@@ -242,6 +242,17 @@ global.compoundOreTypes = {
     }
 }
 
+// Shared Ore Separation Values For Recipes And JEI Planning
+
+global.oreProcessing = {
+    powderCount: 2,
+    extraPowderChance: 0.75,
+    vibratingChance: 0.32,
+    centrifugingChance: 0.42,
+    flotationChance: 0.37,
+    regrindingChance: 0.3
+}
+
 global.productionMaps = {
     cassiterite: {
         main: 'tin', sulfur: false, leachable: false,

@@ -70,7 +70,8 @@ ServerEvents.tags('fluid', event => {
     event.add('tfmg:lpg', ['kubejs:lpg'])
     event.add('tfmg:firebox_fuel', ['kubejs:lpg', 'kubejs:diesel', 'kubejs:naphtha', 'kubejs:kerosene', 'kubejs:creosote'])
     event.add('tfmg:blast_stove_fuel', ['kubejs:creosote'])
-    event.add('tfmg:air', ['kubejs:air'])
+// The Native Air Intake Produces TFMG Air, Both Registrations Supply The Same Gas Inputs
+    event.add('tfmg:air', ['tfmg:air', 'kubejs:air'])
     event.add('tfmg:crude_oil', ['tfmg:crude_oil'])
     event.add('tfmg:heavy_oil', ['tfmg:heavy_oil'])
     event.removeAll('c:water')

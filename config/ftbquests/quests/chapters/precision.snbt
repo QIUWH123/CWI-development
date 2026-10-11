@@ -359,7 +359,7 @@
 			description: [
 				"&eThe deployer repeats the action of a hand: applying ingredients, using tools, or interacting with the block in front of it. Rotation drives its repeated strokes.&r"
 				""
-				"&eThis makes it useful for assembly operations that require contact with a workpiece rather than grinding or heating it. The held item determines the action.&r"
+				"&eThe held item determines the action. During sequenced assembly, the unfinished workpiece carries its progress: send that same piece through the next operation and any repeated passes until the sequence is complete.&r"
 			]
 			disable_toast: true
 			id: "00C03DD3A3903E7C"

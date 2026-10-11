@@ -1,5 +1,7 @@
 ServerEvents.recipes(event => {
 
+    const processing = global.oreProcessing
+
     // ----- 遍历全部矿石 -----
     Object.values(global.compoundOreTypes).forEach(ore => {
         if (!ore.process) return
@@ -31,8 +33,8 @@ ServerEvents.recipes(event => {
 
         // ================= 1. 粗碎 =================
         let crushOut = [
-            Item.of(crushed, 2),
-            Item.of(crushed, 1).withChance(0.75)
+            Item.of(crushed, processing.powderCount),
+            Item.of(crushed, 1).withChance(processing.extraPowderChance)
         ]
         hostRocks.forEach(([rock, chance]) => {
             let rockPowder = getStone(rock, 'powder')
@@ -42,8 +44,8 @@ ServerEvents.recipes(event => {
 
         // ================= 2. 研磨 (原矿 → 矿粉) =================
         let millOutOre = [
-            Item.of(powder, 2),
-            Item.of(powder, 1).withChance(0.75)
+            Item.of(powder, processing.powderCount),
+            Item.of(powder, 1).withChance(processing.extraPowderChance)
         ]
         hostRocks.forEach(([rock, chance]) => {
             let rockPowder = getStone(rock, 'powder')
@@ -62,16 +64,16 @@ ServerEvents.recipes(event => {
 
         // ================= 4. 再磨 (顽固尾矿 → 矿粉) =================
         event.recipes.create.milling(
-            [Item.of(powder).withChance(0.3)],
+            [Item.of(powder).withChance(processing.regrindingChance)],
             stubborn
         ).processingTime(200)
 
         // ================= 5. 震动重选 (只产概率最高的岩粉) =================
         let vibOut = [
-            AddItem(refinedMain, 0.32),
+            AddItem(refinedMain, processing.vibratingChance),
             AddItem(tailings, 1.0)
         ]
-        if (sulfur) vibOut.push(AddItem('tfmg:sulfur_dust', 0.32))
+        if (sulfur) vibOut.push(AddItem('tfmg:sulfur_dust', processing.vibratingChance))
         by.forEach(([metal, chance]) => vibOut.push(AddItem(`kubejs:refined_${metal}`, chance)))
 
         // 选出调整后概率最高的岩粉
@@ -86,10 +88,10 @@ ServerEvents.recipes(event => {
 
         // ================= 6. 高级离心 (只产概率最高的岩粉) =================
         let centOut = [
-            AddItem(refinedMain, 0.42),
+            AddItem(refinedMain, processing.centrifugingChance),
             AddItem(tailings, 1.0)
         ]
-        if (sulfur) centOut.push(AddItem('tfmg:sulfur_dust', 0.42))
+        if (sulfur) centOut.push(AddItem('tfmg:sulfur_dust', processing.centrifugingChance))
         by.forEach(([metal, chance]) => centOut.push(AddItem(`kubejs:refined_${metal}`, chance * 1.4)))
 
         if (hostRocks.length > 0) {
@@ -103,7 +105,7 @@ ServerEvents.recipes(event => {
 
         // ================= 7. 浮选 =================
         let flotationOut = [
-            AddItem(refinedMain, 0.37),
+            AddItem(refinedMain, processing.flotationChance),
             AddItem(stubborn, 1.0)
         ]
         by.forEach(([metal, chance]) => flotationOut.push(AddItem(`kubejs:refined_${metal}`, chance)))

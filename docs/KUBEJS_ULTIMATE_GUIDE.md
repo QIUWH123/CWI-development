@@ -146,6 +146,22 @@ as Node programs. Node modules and browser globals are not supplied by KubeJS.
   not prove live registries, machine inventories, client rendering, or world
   behavior. Node syntax checking alone proves less.
 
+**Repeated callback execution.** In the installed Rhino build, a `const` inside
+an `if` branch of a repeatedly called arrow function can compile successfully
+but fail during execution with `TypeError: redeclaration of var ...`.
+This was reproduced in the blast-furnace fluid-input branch and the incubator
+fluid-feed branch. Renaming the variable did not fix the furnace reproduction.
+The repaired branches pass the calculated value directly to the receiving API,
+preserving amounts and tag data. Keep `const` as the default elsewhere; execute
+callbacks across repeated entries when validating a change to these patterns.
+
+**Overloaded component helpers.** Calling `Text.join(separator, jsArray)` is
+ambiguous in this installation between the separator/Iterable overload and the
+Component varargs overload. The ore-planning display instead appends separator
+and translated name components to an empty component. This preserves localized
+names without relying on overload selection. Public method signatures alone
+do not prove Rhino will choose the intended overload.
+
 ## Choosing A Recipe API
 
 Use the smallest API that exactly matches the recipe serializer:
@@ -509,6 +525,7 @@ serializer.
 | `materialTypes` | Material registration, metallurgy, batch tags, tooltips, `getMaterial` callers |
 | `stoneTypes` | Stone registration, stone recipes, tags, hammer recipes, `getStone` callers |
 | `compoundOreTypes`, `productionMaps`, `outPutMaterial`, `oreTypes`, `variantSettings` | Ore registration, ore processing, crushing, tags, loot, hammer data |
+| `oreProcessing` | Shared ore separation quantities/chances and client JEI yield planning |
 | `apples` | Startup food registration and generated server food recipes |
 | Fluid arrays in `Fluids/Fluid.js` | Fluid registration, bucket/texture/tag setup and downstream consumers |
 
@@ -538,6 +555,28 @@ registers heat variants according to the configured starting heat, and writes
 machine data containing the heat level. Preserve this data when changing a
 steel recipe.
 
+**Tagged MBD fluid inputs.** The installed `FluidIngredientJS.of(Object)` accepts
+an actual MBD `FluidIngredient`, but its string fallback uses `FluidStackJS.of`.
+A string such as `'#tfmg:air 1500'` is therefore not a supported MBD tag input.
+The installed MBD class supports this JSON shape through `fromJson`:
+
+```js
+const mbdFluidIngredient = Java.loadClass('com.lowdragmc.mbd2.api.recipe.ingredient.FluidIngredient')
+const airInput = mbdFluidIngredient.fromJson(JsonIO.of({ amount: 1500, value: { tag: 'tfmg:air' } }))
+builder.inputFluids(airInput)
+```
+
+This is an MBD ingredient schema. Create and TFMG vat recipes instead use the
+existing `AddFluid('1500 #tfmg:air')` shape with `fluidTag` and `amount`.
+Do not interchange those shapes. Keep tag matching on inputs; a concrete fluid
+must be selected for outputs.
+
+**Hardcoded machine outputs.** TFMG's installed air intake produces `tfmg:air`
+directly rather than reading a recipe output. The shared `tfmg:air` fluid tag
+contains both native and KubeJS air, and steel/air-liquefaction inputs use it.
+Registering a replacement fluid or adding it to a tag does not convert the
+native fluid. Trace machine code as well as recipe JSON during fluid migrations.
+
 MBD2 also exposes typed recipe components for inputs and outputs, item and
 fluid arrays, duration, priority, machine level, structure blocks, heat, RPM,
 stress, FE, mana, aura, pressure, and per-tick behavior. These are MBD2
@@ -559,6 +598,8 @@ Important current locations include:
   `PrecisionAge.js`, and `ElectricAge.js`: progression recipe lines.
 - `kubejs/server_scripts/Recipes/ProcessingLine.js/`: glass, ore, and paper
   processing lines.
+- `kubejs/server_scripts/Recipes/IndustrialSupplies.js`: reagent preparation
+  and the wax-oil lubricating-stock route.
 - `kubejs/server_scripts/Multiblocked2/`: CWI machine recipe registrations.
 - `kubejs/client_scripts/JEI/`: JEI hiding, custom categories, catalysts, and
   display data.

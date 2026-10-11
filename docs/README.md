@@ -9,7 +9,7 @@ All project notes and reports live here. These are maintenance documents; the qu
 | [KubeJS recipe schema guide](KUBEJS_RECIPE_SCHEMA_GUIDE.md) | Complete lessons from the supplied schema article and its helper, corrected examples, native component APIs, and validation workflow. |
 | [Recipe realism audit](RECIPE_REALISM_AUDIT.md) | Implemented chemistry/separation quantities, spring melting and natural-gas corrections; current strict issue list; remaining supply proposals and historical findings. |
 | [Steel production design](STEEL_PRODUCTION_DESIGN.md) | Existing blast furnace steel production design and progression considerations. |
-| [Factory design analysis](FACTORY_DESIGN_ANALYSIS.md) | Evidence-based analysis of CWI's production lines, progression, player experience, worldgen links, and factory-game design lessons. |
+| [Factory design analysis](FACTORY_DESIGN_ANALYSIS.md) | Production/progression analysis, implemented opening improvements, mineral/incubator JEI displays, validation, remaining proposals, and factory-game design lessons. |
 | [Quest fact confirmations](QUEST_FACT_CONFIRMATIONS.md) | Confirmed writing constraints, factual corrections, current story status, and unresolved implementation questions. |
 | [Quest writing review](QUEST_WRITING_REVIEW.md) | Whole-book review, implemented planetary-story revision, entry rationales, validation, and comparison with the original. |
 | [Stargate story](STARGATE_STORY.md) | Accepted planetary-displacement story, implemented quest prose, magnetic explanation, chronology, and remaining gameplay design decisions. |

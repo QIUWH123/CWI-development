@@ -8,6 +8,12 @@ questions that require a live Forge test. It does not treat every simplified
 recipe as a defect. The pack deliberately uses abstractions when they make an
 early factory practical.
 
+Development priority confirmed by the author: Electrical Age has only just
+started and is unfinished. Refine the first few chapters before expanding later
+content. Evaluate the existing opening for clarity, progression, production
+dependencies, and automation rather than treating unfinished later content as
+a design flaw.
+
 ## Evidence And Limits
 
 The analysis covered the active files under `kubejs/`, the CWI datapack under
@@ -17,11 +23,105 @@ worldgen JSON describes generation rules, not guaranteed deposits in an existing
 world. A source recipe proves intended registration, not successful serializer
 deserialization or live machine operation.
 
-The current silicon change was checked with a Rhino-style VM harness that
+The earlier silicon change was checked with a Node VM harness that
 compared all 943 pre-existing generated metallurgy records and confirmed that
 the only new records are silicon casting, melting, bulk melting, and milling.
 `node --check` passed for both changed scripts and `git diff --check` passed.
 The harness is a structural check; an in-game reload is still the final proof.
+
+## Implemented Opening Improvements
+
+The author authorized improvements based on this report. This batch addresses
+supply gaps, recoverable waste, and planning information in the existing
+opening and industrial progression.
+
+| Change | Result And Reason |
+| --- | --- |
+| Precipitant supply | One soda powder makes four reagent doses. The consumed precipitation reagent now has a simple automated source; these are smaller doses, not four full soda portions. |
+| Flotation reagent supply | Unheated Create mixing combines clay, plant oil, and bioethanol into four doses. Existing pressing and fermentation supplies support the line; the generic collector/frother blend is a gameplay abstraction. |
+| Lubricating oil supply | Wax oil can be distilled into lubricant and four existing petroleum cuts instead of being cracked. The five liquid outputs total the 1,000 mB input. Existing plant-oil assembly still supplies the first heavy machinery. |
+| Native intake compatibility | Steel refining and air liquefaction consume an air tag containing both native TFMG air and KubeJS air. The intake hardcodes its native fluid, so replacing recipe IDs alone had disconnected its output. Tag inputs avoid an extra conversion machine. |
+| Glass reject recovery | Heated compacting reclaims one sintered blank from four glass powders. Rejects can return through pressing and quenching; four powders match the maximum milling yield of one glass block, preventing resource gain. |
+| Ore planning in JEI | Shared separation values supply both recipes and localized information. Fifteen ore entries show expected powder/concentrate yield, tailings routes, applicable acid recovery, and buffer advice. |
+| Compound mineral overview in JEI | Eighteen entries show a shadowed mineral block, its deposit, processing forms, physical/acid products, and available furnace products. Tooltips distinguish producing routes, probabilities, and intermediate forms. Halite and lignite use their own supply routes; the sulfur block explicitly has no current processing recipe. |
+| Incubator planning in JEI | An enlarged, unframed microbe icon shows culture yield as `xN`. Feed slots are shifted right; step numbers, `xN`, and `64 RPM` use gold text. Duration and actual plate input/output remain visible. Headings, inoculation/uncapping prose, and the bottom-right culture/dish recovery slots have been removed at the author's request. |
+| Early quest teaching | The mechanical introduction explains speed versus stress capacity and overload remedies. The deployer entry explains how the same unfinished workpiece retains assembly progress. |
+
+Structural validation preserves all 203 ore registrations and all 18 existing
+glass registrations. The three supply recipes and the glass recovery recipe
+have four unique explicit IDs; distillation output volume is conserved.
+The planning script registers 49 information groups. EN/ZH keys and substitution
+counts match, and every pre-existing translation value is preserved. Comparisons
+of 10 furnace and 85 chemistry registrations confirm that only their two air
+inputs change, from an exact fluid to the shared tag; quantities, outputs,
+heat, and duration stay the same.
+
+All changed JavaScript files compile with the installed Rhino jar. The installed
+FTB Library SNBT parser accepts the two edited quest chapters. Installed JEI,
+TFMG, and MBD2 signatures/bytecode were checked for the new API calls, output
+limits, native air source, and typed fluid-tag input. `git diff --check` passes.
+Minecraft recipe reloads, machine operation, and live JEI rendering remain
+untested. Restart before checking the shared startup data and client displays.
+
+### Corrections After The First Game Reload
+
+The first reload reported two Rhino execution errors: a block-scoped `const`
+was redeclared across furnace fluid entries and across incubator filling steps.
+Both branches now pass their values directly without those local declarations.
+The supplied client log also showed an ambiguous `Text.join` overload; ore
+byproduct names now use component appends and retain translated names/separators.
+
+The original furnace error was reproduced by executing the full recipe callback
+with the installed Rhino jar and mocked game APIs. The repaired callback runs
+twice and registers all 10 recipes on each invocation, including the typed air
+tag. The ore information callback likewise executes twice with 49 groups per
+invocation. The original incubator error was also reproduced; repaired layout
+and draw handlers run twice across all 31 variants and 124 feed entries, with
+deferred tooltip indices, tools, repeats, and displayed amounts checked.
+These execution checks cover callback scoping; mocked APIs do not
+prove live serialization or rendering. Compile-only validation had missed the
+reported execution errors.
+
+### Mineral Overview And Incubator Presentation
+
+The mineral category is an overview rather than an executable combined recipe.
+It indexes ore blocks, deposits, and processing forms for ingredient lookup.
+Deposit tooltips explain that mining supplies the ore block. A mineral with no
+implemented acid route does not display its unused registered leach forms;
+the status describes pack processing, not chemical impossibility in reality.
+
+Physical-product tooltips separate crushing/milling, vibration, centrifugation,
+and flotation probabilities. Acid products identify fan processing, leach
+residue washing, purification, and precipitation. Enabled concentrate/crystal
+furnace conversions produce a separate ingot row; disabled conversions receive
+a tooltip rather than an invented route. Chances above one in host-rock
+centrifugation display as guaranteed output, without changing the recipe value.
+
+Halite shows brine, salt, evaporation residue, and returned water. Lignite shows
+its lump fuel use and microbial coal conversion; its powder has no current
+onward use. Returned microbes are display-only entries. Sulfur's related forms
+and separate ore sources are distinguished from the unprocessed sulfur block.
+
+The revised incubator handlers execute twice for all 31 variants and 124 feed
+entries with the installed Rhino build. The checks include deferred feed
+tooltips, the shifted coordinates, microbe yield overlay, and retained time/RPM.
+This verifies callback execution and display data; live rendering remains a
+Minecraft check.
+
+The later presentation adjustment removes the bottom-right recovery slots and
+colors the step numbers, yield multiplier, and RPM gold. The yield remains on
+the enlarged microbe icon. Rhino compilation, Node syntax, and diff checks pass
+for this adjustment. Repeated Rhino execution also verifies ingredient lookup
+for all 124 preparation feeds across the 31 variants, including exact item
+counts and repeated fluid amounts; its final appearance still requires a live
+check.
+
+The mineral handlers execute across three full passes for all 18 entries.
+The validation checks active forms, product IDs and route probabilities,
+furnace flags, sulfur isolation, returned-culture roles, 795 bounded and
+nonoverlapping slots, and 795 deferred tooltip callbacks. All 48 added EN/ZH
+category keys resolve and their substitution counts match. These are source
+and mock-runtime checks, not live registry or visual verification.
 
 ## Architecture
 
@@ -77,7 +177,11 @@ The intended loop is coherent and cumulative:
 7. **Precision and storage.** Electron tubes, control chips, precision
    mechanisms, integrated tubes, heavy machinery, and nested Create assemblies
    support storage automation and construction tools.
-8. **Stargate objective.** Manuals and staff logs frame the factory as an
+8. **Electrical work begins.** `ElectricAge.js` currently starts the electrical
+   chapter with its first connector route. It is an early foundation, not a
+   completed power age. The first few chapters should be refined for clarity
+   and pacing before development moves on to later content.
+9. **Stargate objective.** Manuals and staff logs frame the factory as an
    attempt to restore a damaged civilization and control the Stargate. Logs can
    foreshadow the incident through ordinary work details without explaining it
    directly.
@@ -97,16 +201,19 @@ moves through crushing or milling, vibration or flotation, leaching, washing,
 purification, and crystallization. A raw ore can produce an extra crushed item;
 separation then uses chances for the main material, byproducts, tailings, and
 host rock. Centrifugation raises the main probability and changes byproduct
-chances.
+chances. Shared values now drive both recipe generation and JEI averages:
+2.75 powders per raw block, approximately 0.88 main concentrates with vibration
+or 1.16 with centrifugation before tailings recovery. These are long-run means,
+not guaranteed batch counts.
 
 This is a strong connection between exploration and factory layout. The player
 chooses between a simpler probabilistic separation and a reagent-heavy recovery
 line. The cost is planning difficulty: a short run does not guarantee a metal
 count, and tailings, stubborn tailings, acid, flotation reagent, and precipitant
-must have visible storage and supply paths. The source confirms that flotation
-reagent and precipitant are consumed, while their complete crafting supply route
-is not obvious from the active scripts; verify this in JEI and in a live test
-before calling it a dead end.
+must have visible storage and supply paths. Consumed flotation reagent now has
+an unheated clay/oil/alcohol mixing route, and soda supplies precipitant doses.
+The reagent recipes and ore-specific recovery notes make these dependencies
+discoverable without changing separation chances.
 
 ### Generic Material Grammar
 
@@ -138,7 +245,10 @@ automatable before the player has a complex carbonate plant. Sintering, pressing
 quench assembly, and nitrate ion exchange provide later quality routes. Chance
 outputs communicate process loss without making the line unusable. Treat the
 returned soda and limestone as a deliberate reusable feed in documentation;
-do not describe them as a strict mass-balance simulation.
+do not describe them as a strict mass-balance simulation. Cracked and devitrified
+glass can now be milled and reclaimed as blanks. Milling averages three powders
+and yields at most four; reclaiming requires four, so recovery is lossy on
+average and cannot multiply glass.
 
 ### Paper And Renewable Biomass
 
@@ -157,9 +267,11 @@ The comments correctly mark undefined mixtures and gameplay quantities.
 
 The useful network is crude fractionation -> FCC or visbreaking -> naphtha
 cracking -> gas and aromatic separation -> reforming, solvents, polymers, nylon,
-PET, and epoxy. Catalysts are returned in several major reactions, making them
-capital infrastructure. The main design cost is that many reactions share the
-same vat and differ mostly by fluids, heat, and time. Several petroleum cuts
+PET, and epoxy. Wax oil now has a lubricant-stock branch alongside cracking,
+giving the migrated lubricating oil a current source. Catalysts are returned
+in several major reactions, making them capital infrastructure. The main design
+cost is that many reactions share the same vat and differ mostly by fluids,
+heat, and time. Several petroleum cuts
 such as dry gas, cracked gas, raffinates, dewaxed oil, coke oil, and
 cyclohexanone need a current consumer or sink check before any recipe is called
 broken; source references alone do not establish a full production dead end.
@@ -174,8 +286,10 @@ This creates an accessible reserve route and rewards building a culture line.
 The risk is timing: if high-yield cultures become available before targeted
 mining has mattered, geography loses strategic value. Gate advanced strains by
 their culture discoveries rather than removing the renewable system. The
-incubator JEI display should expose enough of the feed sequence to make a culture
-factory plan possible.
+incubator JEI display now shows ordered preparation feeds, repeated feed amounts,
+incubation, and the resulting culture yield. Detailed recovery slots were removed
+to keep the display compact. Each preparation item and fluid is indexed as a
+JEI input, so its Uses lookup also finds the relevant culture pages.
 
 ### Blast Furnace And Steel
 
@@ -194,7 +308,11 @@ Current steel routes are clear:
 All pig-iron feeds now include coke. Liquid silicon is a valid molten/hot
 process fluid and can be supplied through the same tagged fluid logistics, while
 its special registration preserves TFMG's intended appearance. Quests should
-present the air route first and the oxygen route as a scale upgrade.
+present the air route first and the oxygen route as a scale upgrade. Both steel
+refining and air liquefaction accept native intake air through the shared air
+tag. JEI explains warmup, the different roles of heaters and reinforcement, and
+separate steel/slag outputs. Slag already has a casting-block route followed by
+native crushing into solid slag for construction mixtures.
 
 ### Precision, Storage, And Logistics
 
@@ -243,10 +361,7 @@ These are design risks, not automatic fixes.
    changing the player-facing routes.
 6. **Biology and geography timing.** Renewable microbes should arrive late enough
    that exploration still matters, while remaining a reliable reserve afterward.
-7. **Electric chapter scale.** `ElectricAge.js` currently adds one connector
-   recipe; it is a small chapter rather than a complete power age. That may be
-   intentional, but the quest chapter should set the right expectation.
-8. **Potential duplicate registration.** `Mods/Create.js` appears to register a
+7. **Potential duplicate registration.** `Mods/Create.js` appears to register a
    smart fluid interface twice. Confirm recipe IDs and serializer behavior in a
    live reload before changing it.
 
@@ -265,39 +380,38 @@ These comparisons are design references, not instructions to copy another
 game's mechanics. CWI's strongest identity is the combination of recovery story,
 geology, chemistry, and custom machinery.
 
-## Ranked Improvements
+## Remaining Improvements
+
+These are proposals for later batches. The implemented changes above do not
+complete every item in the original design review.
 
 ### High impact, low behavior risk
 
-1. Add compact JEI or quest line cards for steel, ore, glass, petroleum,
-   polymer, and biology: machine, batch size, average main output, duration,
-   heat, and major byproducts.
-2. For each bottleneck fluid or item, show source, renewable status, and its
-   first major consumer. Prioritize soda, limestone, coke, silicon, oxygen,
-   acids, precipitant, flotation reagent, and tailings.
-3. Extend incubator discovery to show the complete feed sequence and the trait
-   that changes time or count.
-4. Add one documented recovery or storage destination for each major tailings,
-   residue, gas, water, and slag stream.
+1. Extend the new planning notes to petroleum and polymer lines where batch
+   size, heat, duration, or competing outputs affect layout decisions.
+2. Extend source and consumer guidance for bottleneck feeds such as coke,
+   silicon, oxygen, and acids. Avoid repeating recipe lists already in JEI.
+3. Check remaining residue, gas, and carrier-water streams for usable sinks
+   before adding recovery recipes. Slag and glass rejects already have routes.
 
 ### Medium impact, moderate maintenance work
 
-5. Define canonical line data and generate the Create and MBD preparation routes
+4. Define canonical line data and generate the Create and MBD preparation routes
    from it. Preserve existing IDs and quantities while removing source drift.
-6. Group generated metallurgy and upgrade JEI entries by material and operation.
-7. Gate advanced mineral microbes behind culture milestones while retaining their
+5. Group generated metallurgy and upgrade JEI entries by material and operation.
+6. Review advanced mineral-microbe milestones while retaining their
    renewable reserve role.
-8. Make the first air-steel route and later oxygen route explicit in the quest
+7. Make the first air-steel route and later oxygen route explicit in the quest
    dependency and manual wording.
 
 ### Later review
 
-9. Confirm the duplicate smart-fluid-interface registration and resolve only if a
+8. Confirm the duplicate smart-fluid-interface registration and resolve only if a
    live serializer test shows replacement or conflict.
-10. Decide whether the Electric Age should stay a short connector chapter or
-    receive a complete power line; do not infer a missing system solely from the
-    chapter name.
-11. Consider optional catalyst maintenance only if perfect catalyst return
+9. Expand the electrical age after the first few chapters have been refined.
+    Its current small scope reflects ongoing development and should not be
+    evaluated as a finished system.
+10. Consider optional catalyst maintenance only if perfect catalyst return
     removes a meaningful planning choice. Reusable catalysts are currently a
     strong accessibility feature.
 
@@ -325,8 +439,9 @@ Before calling a design issue a bug, test the smallest relevant case:
 2. Confirm liquid silicon appears in molten fluid filters, hot-container
    warnings, contact damage, and casting/melting JEI entries.
 3. Form a blast furnace with the intended reinforcement and heater layout; test
-   air steel, oxygen steel, coke inputs, heat state, parallel count, and slag
-   output.
+   native intake air feeding the first steel recipe, oxygen steel, coke inputs,
+   heat state, parallel count, and slag output. Test the same native air in
+   liquefaction; confirm its output stays KubeJS condensed air.
 4. Run one ore line from raw block through tailings and precipitation, recording
    average output over multiple batches rather than one lucky run.
 5. Verify every major petroleum byproduct in JEI and a machine inventory before
@@ -334,6 +449,13 @@ Before calling a design issue a bug, test the smallest relevant case:
 6. Test the duplicate smart-fluid-interface recipes by ID and serializer result.
 7. Generate a fresh world or new chunks for worldgen edits; existing chunks do
    not retroactively regenerate.
+8. Produce both reagents and lubricating oil, then consume them in their
+   existing ore/assembly routes. Check upstream supply and output-tank handling.
+9. Mill glass rejects, compact four powders with heat, and return the blank to
+   pressing/quenching. Check that the reusable carbonate feed stays separated.
+10. Inspect incubator variants with the longest feed sequence and repeated
+    feeds in both languages; check slot placement, gold step/yield/RPM labels,
+    duration, and the displayed culture yield against actual operation.
 
 ## Source Map
 
@@ -342,15 +464,17 @@ Before calling a design issue a bug, test the smallest relevant case:
 - Generated metallurgy: `kubejs/server_scripts/Recipes/Metallurgy.js`
 - Blast furnace: `kubejs/server_scripts/Multiblocked2/BlastFurnace.js`
 - Chemistry: `kubejs/server_scripts/Recipes/Chemistry.js`
+- Reagent and lubricant supplies: `kubejs/server_scripts/Recipes/IndustrialSupplies.js`
 - Ore line: `kubejs/server_scripts/Recipes/ProcessingLine.js/Ore.js`
 - Glass and paper: `kubejs/server_scripts/Recipes/ProcessingLine.js/Glass.js`,
   `Paper.js`
 - Biology: `kubejs/server_scripts/Recipes/MicrobesRecipe.js`
 - Progression: `kubejs/server_scripts/Progression/`
 - Recipe removals: `kubejs/server_scripts/Recipes/RecipeDelete.js`
-- Tags and hazards: `kubejs/server_scripts/Tags/tags.js`,
+- Tags and hazards: `kubejs/server_scripts/tags/tags.js`,
   `kubejs/server_scripts/Interactions/PlayerEvents.js`
 - Worldgen: `kubejs/data/cwi/worldgen/`,
   `kubejs/data/minecraft/dimension/overworld.json`
 - Quests: `config/ftbquests/quests/chapters/`
+- JEI planning: `kubejs/client_scripts/JEI/ProductionPlanning.js`, `CompoundMinerals.js`, `Incubator.js`
 - KubeJS API reference: `docs/KUBEJS_ULTIMATE_GUIDE.md`
