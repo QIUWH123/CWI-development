@@ -75,6 +75,13 @@ This document is the repository standard for KubeJS scripts, recipe data, config
 - Prefer updating an existing document over creating duplicate dated reports.
 - Keep temporary formatter reports outside the repository unless they are intentionally retained under `docs/audit/`.
 
+### Documentation Privacy And Portability
+
+- Use project-relative links and paths in retained documentation and evidence.
+- Identify supplied archives by filename, version, and fingerprint when useful; do not record their personal filesystem locations.
+- Do not include operating-system usernames, home-directory paths, temporary screenshot paths, personal timezone settings, or unrelated personal metadata.
+- Keep dates or version information only when they help identify the reviewed state. Remove personal environment details from generated reports before retaining them.
+
 ## Behavior Safeguards
 
 - Formatting changes must be functionally identical to the original code.

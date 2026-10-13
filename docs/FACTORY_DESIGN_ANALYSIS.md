@@ -394,12 +394,25 @@ These are design risks, not automatic fixes.
 | [Satisfactory](https://www.satisfactorygame.com/) | Spatial construction, distinct logistics roles, and exploration feeding expansion make layout visible. | The blast furnace structure, biome deposits, tanks, belts, pipes, and storage already support this. Improve source and byproduct signposting. |
 | [Dyson Sphere Program](https://store.steampowered.com/app/1366540/Dyson_Sphere_Program/) | Geographic specialization and scalable logistics turn expansion into a production decision. | Let biome-specific ores and biological reserves complement each other, and show when a new region solves a factory bottleneck. |
 | [Shapez 2](https://store.steampowered.com/app/2162800/shapez_2__Factory/) | A small production vocabulary, visible multi-layer layouts, blueprints, and easy rebuilding keep complexity focused on flow. | CWI cannot remove its survival and chemistry identity, but can group generated recipes and provide line cards so complexity stays in factory design. |
-| [Mindustry](https://mindustrygame.github.io/wiki/) | Production chains and resource roles are readable, while the source and mod surface remain inspectable. | Keep the data-driven globals and custom JEI categories; add a concise source/consumer view for bottleneck materials. |
+| [Mindustry](https://mindustrygame.github.io/wiki/) | Production supports concrete objectives; service supply, routing geometry, terrain, and startup conditions affect useful capacity. | Commission existing workshops, improve a measured operating limit, retain startup stock, and use the output for the next useful project. |
 | [Captain of Industry](https://www.captain-of-industry.com/) | Terrain, population needs, pollution, waste, and specialized logistics make secondary streams strategic. | Treat slag, tailings, residues, and water as deliberate logistics streams with optional recovery sinks instead of accidental blockers. |
 
 These comparisons are design references, not instructions to copy another
 game's mechanics. CWI's strongest identity is the combination of recovery story,
 geology, chemistry, and custom machinery.
+
+The [detailed Factorio study](FACTORIO_DESIGN_ANALYSIS.md) expands the comparison
+with current wiki evidence and CWI source checks. Its leading proposals are an
+equipment resupply workshop, a circulating glass line, and a complete first
+steel works, followed by stock control, repeatable construction, and explicit
+upgrade comparisons. These are proposals, not implemented additions.
+
+The [detailed Mindustry study](MINDUSTRY_DESIGN_ANALYSIS.md) adds release-checked
+production, logistics, power, heat, and campaign evidence. Its strongest early
+applications are workshop operating contracts, separate construction/startup
+stock, reversible commissioning checks, and upgrades that address a measured
+limit. These proposals use existing mechanics and preserve informational
+quests, the blast furnace steel bootstrap, and deliberate recipe abstractions.
 
 ## Remaining Improvements
 

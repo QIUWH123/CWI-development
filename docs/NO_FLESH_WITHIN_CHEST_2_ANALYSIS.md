@@ -11,7 +11,7 @@ geology, restoration story, and existing approach to realism.
 
 ## Evidence And Scope
 
-Source: `/Users/ivan/Desktop/No Flesh Within Chest 2.zip`.
+Source: `No Flesh Within Chest 2.zip`.
 The Modrinth index identifies **No Flesh Within Chest 2 1.0.0**, Minecraft
 **1.20.1**, Forge **47.4.20**. Archive SHA-256:
 `dd2c5972698ad321dce2d45e037b6ff10cc519ce274d8fa55961f3a1b7157502`.

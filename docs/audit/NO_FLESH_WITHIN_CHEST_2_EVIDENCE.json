@@ -1,9 +1,8 @@
 {
     "review_date": "2026-10-12",
-    "timezone": "Asia/Shanghai",
     "status": "Analysis Only; CWI Applications Are Proposals",
     "archive": {
-        "path": "/Users/ivan/Desktop/No Flesh Within Chest 2.zip",
+        "file": "No Flesh Within Chest 2.zip",
         "sha256": "dd2c5972698ad321dce2d45e037b6ff10cc519ce274d8fa55961f3a1b7157502",
         "name": "No Flesh Within Chest 2",
         "version": "1.0.0",
