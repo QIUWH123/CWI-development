@@ -52,6 +52,51 @@
 			y: -4.0d
 		}
 		{
+			dependencies: ["486EA6444B07AE9E"]
+			description: [
+				"&eA circulating workshop should leave its working stock where the next batch can use it. For glass batching, extract only the glass batch from the basin. The returned soda and limestone can stay inside; an unfiltered outlet will empty them along with the product.&r"
+				""
+				"&eAdd a supply of sand, keep room for the returned powders, and run several batches without replacing them. Stop the drive with some sand still available, empty the product storage, then restart. Watch the basin rather than assuming the line is circulating because it produced glass once.&r"
+				""
+				"&eAfter firing, pressing, and quenching, give cracked and devitrified glass their own route. Return recovered blanks to pressing; they do not need to pass through batching again. Extra recovery machinery is useful only if its powders and blanks can leave without blocking the main line.&r"
+				""
+				"&7Glass batch has a Ponder example of working-stock retention and output backup. The supplied cwi_glass_batching.nbt is a Precision Age batching module; connect the rest of the workshop separately.&r"
+				""
+				"&7The cwi_glass_workshop.nbt is a Precision Age tower for ordinary glass, with separate product and reject routes and recovery back to pressing. It needs a filled blaze burner, one filter, water, dry solid fuel, and a base drive at positive 32 RPM or more. Seed its upper basin with soda and limestone; no working supplies are included.&r"
+				""
+				"&7After building, check that the batching basin faces down, the pressing basin faces its eastern depot, and the recovery basin faces its southern depot. This layout is an example; its operation and restart still need to be checked in your world.&r"
+				""
+				"&7This is an optional workshop project. Its checkmarks record your own operating checks.&r"
+			]
+			disable_toast: true
+			icon: "kubejs:glass_batch"
+			id: "576E9C35509C412A"
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Keep Working Stock Inside"
+			tasks: [
+				{
+					id: "6AFD29265E824E0B"
+					title: "Run Repeated Batches With the Same Working Powders"
+					type: "checkmark"
+				}
+				{
+					id: "1519C26710FD4BA1"
+					title: "Stop, Clear Product Storage, and Restart"
+					type: "checkmark"
+				}
+				{
+					id: "0EBB167567AF4B22"
+					title: "Recover Rejects Without Blocking the Main Line"
+					type: "checkmark"
+				}
+			]
+			title: "A Circulating Glass Workshop"
+			x: -3.0d
+			y: -7.5d
+		}
+		{
 			dependencies: ["078BB9F9932F52D8"]
 			description: ["&ePressing shapes the fired blank before its final cooling treatment. A regular shape is important for glass fitted into frames and vessels.&r"]
 			disable_toast: true

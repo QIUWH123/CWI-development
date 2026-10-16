@@ -291,7 +291,7 @@ global.blastFurnaceRecipes = [
         inputs: [
             { fluid: 'kubejs:molten_pig_iron', amount: 900 },
             { item: 'kubejs:limestone_powder' },
-            { fluidTag: 'tfmg:air', amount: 1500 },
+            { fluid: 'tfmg:air', amount: 1500 },
             { fluid: 'kubejs:liquid_silicon', amount: 5 }
         ],
         outputs: [

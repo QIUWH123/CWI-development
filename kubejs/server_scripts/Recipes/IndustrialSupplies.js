@@ -16,6 +16,31 @@ ServerEvents.recipes(event => {
     ]).processingTime(100)
         .id('cwi:mixing/flotation_reagent')
 
+// Washed Mineral Recovery
+
+// Washed Silicate Fines Act As Aggregate And Filler, Compaction Also Abstracts Curing
+    event.recipes.create.compacting('4x tfmg:concrete', [
+        '2x kubejs:silicate_residue',
+        'tfmg:cement',
+        'minecraft:gravel',
+        AddFluid('250 #cwi:water')
+    ]).processingTime(100)
+        .id('cwi:compacting/concrete_from_silicate_residue')
+
+// Plank Treatment
+
+    event.recipes.create.filling('tfmg:hardened_planks', ['#minecraft:planks', Fluid.of('kubejs:creosote', 250)])
+        .id('cwi:filling/hardened_planks')
+
+// Fire Extinguisher
+
+    event.replaceInput({ id: 'tfmg:crafting/kinetics/fire_extinguisher' }, 'tfmg:carbon_dioxide_bucket', 'kubejs:carbon_dioxide_bucket')
+
+    event.recipes.create.filling(Item.of('tfmg:fire_extinguisher', '{fill_level:500}'), [
+        'tfmg:fire_extinguisher',
+        Fluid.of('kubejs:carbon_dioxide', 1000)
+    ]).id('cwi:filling/fire_extinguisher')
+
 // Lubricating Oil Supply
 
 // Wax Oil Can Supply Lubricating Stock Instead Of Entering Catalytic Cracking

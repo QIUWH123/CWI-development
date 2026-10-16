@@ -202,14 +202,6 @@ global.specialFluids = [
         container: 'kubejs:item/fireproof_bucket',
         overlay: 'tfmg:item/liquid_silicon_bucket',
         tags: ['cwi:moltens']
-    }],
-    ['liquid_concrete', null, 'special', ['tfmg:fluid/liquid_concrete_still', 'tfmg:fluid/liquid_concrete_flow'], {
-        container: 'kubejs:item/fluid_container',
-        overlay: 'tfmg:item/bottle_of_concrete'
-    }],
-    ['liquid_asphalt', null, 'special', ['tfmg:fluid/liquid_asphalt_still', 'tfmg:fluid/liquid_asphalt_flow'], {
-        container: 'kubejs:item/fluid_container',
-        overlay: 'tfmg:item/liquid_asphalt_bucket'
     }]
 ]
 
@@ -317,7 +309,6 @@ global.gases = [
     ['propylene', 0xC0D1B4],
     ['neon', 0x9DEDE9],
     ['carbon_dioxide', 0x525252],
-    ['air', 0xDFE6E5],
     ['oxygen', 0xFAFFFA],
     ['nitrogen', 0xD0E0F0],
     ['nitrogen_dioxide', 0xF08060],

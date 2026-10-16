@@ -177,6 +177,47 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["0635A293D5BA7EF2"]
+			description: [
+				"&eAir refining supplies the first steel. Once oxygen separation is available, compare the two routes before expanding either supply line.&r"
+				""
+				"&eUse the same total pig iron: two air batches match one oxygen batch. Oxygen refining then recovers more steel, uses half as much limestone, and produces half as much refining slag. Liquid silicon use is equal.&r"
+				""
+				"&eKeep the furnace structure and heat comparable. Count the steel delivered and supplies consumed, with room for both molten outputs. The oxygen line also needs air collection, blue ice for liquefaction, a steel distillation tower, and handling for returned ice, nitrogen, and argon.&r"
+				""
+				"&eFor a longer run, record delivered steel over elapsed time, interruptions, and gas stock at the start and end. A stored oxygen reserve can conceal a supply shortage. Choose the route that supports your construction demand with the least repeated intervention.&r"
+				""
+				"&7This is an optional operating comparison. Mark each step after observing it yourself.&r"
+			]
+			disable_toast: true
+			icon: "tfmg:steel_ingot"
+			id: "41DC5E2B7B634D08"
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Compare the Whole Supply Line"
+			tasks: [
+				{
+					id: "2F8D28AAED494B9C"
+					title: "Compare Equal Pig-Iron Inputs"
+					type: "checkmark"
+				}
+				{
+					id: "1411B1EDE0C14C8A"
+					title: "Account for the Oxygen Supply and All Outputs"
+					type: "checkmark"
+				}
+				{
+					id: "5B80F9C3306E4B8F"
+					title: "Compare Sustained Delivery and Choose a Route"
+					type: "checkmark"
+				}
+			]
+			title: "Air or Oxygen Refining"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
 			dependencies: ["7A0C6B3904C55546"]
 			description: [
 				"   &3----------&r   &bRequires Fuel to Operate&r   &3----------&r"
@@ -569,27 +610,6 @@
 			title: "Casting Basin"
 			x: 6.0d
 			y: 4.0d
-		}
-		{
-			dependencies: ["4DADEE61B50B2B74"]
-			description: [
-				"&eThe firebox burns liquid fuel supplied through pipes, transferring combustion heat to compatible machinery above it. The fuel burns in a separate chamber beneath the vessel, heating the contents without adding the fuel to the batch.&r"
-				""
-				"&eCombustion also produces carbon dioxide. Pump this exhaust out continuously: when its exhaust tank fills, the firebox stops burning even if fuel remains.&r"
-			]
-			disable_toast: true
-			id: "1AC4C7E11C7A406E"
-			shape: "hexagon"
-			size: 1.5d
-			subtitle: "Liquid Fuel and Exhaust"
-			tasks: [{
-				id: "2C5E85DE64CB14A6"
-				item: "tfmg:firebox"
-				type: "item"
-			}]
-			title: "Firebox"
-			x: 4.0d
-			y: 6.0d
 		}
 		{
 			dependencies: ["5531421570274E82"]

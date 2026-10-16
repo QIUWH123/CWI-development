@@ -53,8 +53,8 @@ JEIAddedEvents.registerRecipes(event => {
             })
 
             if (map.sulfur) {
-                addProduct(data.physical, 'tfmg:sulfur_dust', chanceNote('vibration', processing.vibratingChance))
-                addProduct(data.physical, 'tfmg:sulfur_dust', chanceNote('centrifuging', processing.centrifugingChance))
+                addProduct(data.physical, 'kubejs:sulfur_powder', chanceNote('vibration', processing.vibratingChance))
+                addProduct(data.physical, 'kubejs:sulfur_powder', chanceNote('centrifuging', processing.centrifugingChance))
             }
 
             hostRocks.forEach(([rock, chance]) => {

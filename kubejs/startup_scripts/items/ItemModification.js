@@ -179,6 +179,7 @@ ItemEvents.modification(event => {
 
     burnTime_change('kubejs:peat', 200)
     burnTime_change('kubejs:lignite_item', 400)
+    burnTime_change('kubejs:lignite_powder', 400)
     burnTime_change('kubejs:bituminous_coal', 800)
 
     burnTime_change('kubejs:coal_powder', 1600)

@@ -12,6 +12,14 @@
 !/README.md
 !/AGENTS.md
 !/docs/
+!/schematics/
+/schematics/*
+!/schematics/cwi_press_station.nbt
+!/schematics/cwi_belt_press_station.nbt
+!/schematics/cwi_automated_press_station.nbt
+!/schematics/cwi_andesite_supply_workshop.nbt
+!/schematics/cwi_glass_batching.nbt
+!/schematics/cwi_glass_workshop.nbt
 
 /config/*
 

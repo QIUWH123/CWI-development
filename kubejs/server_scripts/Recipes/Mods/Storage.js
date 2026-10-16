@@ -410,6 +410,37 @@ ServerEvents.recipes(event => {
         }
     )
 
+// Fluid Drawer Overflow And Locking Infrastructure
+
+// Native Patterns Use A Fluid Drawer To Match The Pack's Fluid Storage Progression
+    event.shaped(
+        'functionalstorage:void_upgrade',
+        [
+            'III',
+            'IDI',
+            'III'
+        ],
+        {
+            D: 'functionalstorage:fluid_1',
+            I: '#forge:obsidian'
+        }
+    ).id('cwi:crafting/fluid_drawer_void_upgrade')
+
+    event.shaped(
+        'functionalstorage:configuration_tool',
+        [
+            'PPG',
+            'PDG',
+            'PEP'
+        ],
+        {
+            D: 'functionalstorage:fluid_1',
+            E: 'minecraft:emerald',
+            G: '#forge:ingots/gold',
+            P: 'minecraft:paper'
+        }
+    ).id('cwi:crafting/fluid_drawer_configuration_tool')
+
 // Functional Storage Controller
 
     event.recipes.create.mechanical_crafting(

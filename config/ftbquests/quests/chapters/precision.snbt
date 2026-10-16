@@ -1395,6 +1395,47 @@
 			y: -2.0d
 		}
 		{
+			dependencies: ["0F10364E2DA4BE4C"]
+			description: [
+				"&eMake the outpost supply a process you already use. Sturdy-sheet preparation consumes lava with powdered obsidian; its mixer still needs separate superheating and rotation.&r"
+				""
+				"&eBegin the search along the lower bedrock near Y -63 to -60 in cave biomes such as Typical Caves or Molten Caves. A suitable patch is not guaranteed nearby. Confirm eruptive bedrock directly beneath the head, form the extractor, and establish at least 128 RPM.&r"
+				""
+				"&eConnect the head's output to storage and deliver lava to the obsidian mixer. Keep the extractor and its delivery route loaded, and supply the water used later in sheet forming. Choose between processing near the site and delivering lava to the main workshop according to the drive and transport each needs.&r"
+				""
+				"&eMake a sheet using the pumped supply, then interrupt and restore the delivery. Check that lava reaches the consumer again before expanding the outpost.&r"
+				""
+				"&7This is an optional outpost check. Mark each step after observing it yourself.&r"
+			]
+			disable_toast: true
+			icon: "cwi:lava_extractor_head"
+			id: "13B1F7AF1C4A4EEA"
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Give a Remote Site a Useful Consumer"
+			tasks: [
+				{
+					id: "154C180040374AEE"
+					title: "Find and Commission a Valid Extraction Site"
+					type: "checkmark"
+				}
+				{
+					id: "79754B86B36B45FD"
+					title: "Deliver Pumped Lava and Produce a Sturdy Sheet"
+					type: "checkmark"
+				}
+				{
+					id: "56D4A5669B24434A"
+					title: "Interrupt and Restore the Delivery"
+					type: "checkmark"
+				}
+			]
+			title: "A Lava Supply Outpost"
+			x: 18.0d
+			y: -2.0d
+		}
+		{
 			dependencies: ["3CC959E1243E962E"]
 			description: [
 				"&eA Stirling engine works by heating and cooling gas within a closed cycle. Expansion and contraction move the pistons, turning a temperature difference into mechanical motion.&r"

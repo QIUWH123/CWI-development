@@ -73,7 +73,7 @@ ServerEvents.recipes(event => {
             AddItem(refinedMain, processing.vibratingChance),
             AddItem(tailings, 1.0)
         ]
-        if (sulfur) vibOut.push(AddItem('tfmg:sulfur_dust', processing.vibratingChance))
+        if (sulfur) vibOut.push(AddItem('kubejs:sulfur_powder', processing.vibratingChance))
         by.forEach(([metal, chance]) => vibOut.push(AddItem(`kubejs:refined_${metal}`, chance)))
 
         // 选出调整后概率最高的岩粉
@@ -91,7 +91,7 @@ ServerEvents.recipes(event => {
             AddItem(refinedMain, processing.centrifugingChance),
             AddItem(tailings, 1.0)
         ]
-        if (sulfur) centOut.push(AddItem('tfmg:sulfur_dust', processing.centrifugingChance))
+        if (sulfur) centOut.push(AddItem('kubejs:sulfur_powder', processing.centrifugingChance))
         by.forEach(([metal, chance]) => centOut.push(AddItem(`kubejs:refined_${metal}`, chance * 1.4)))
 
         if (hostRocks.length > 0) {

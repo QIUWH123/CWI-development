@@ -61,4 +61,33 @@ JEIEvents.information(event => {
     event.addFluid(Fluid.of('kubejs:molten_slag'), [
         Text.translate('cwi.info.slag.casting')
     ])
+
+// Disposal Is Kept Separate From Useful Recovery And Working Stock
+
+    event.addItem('kubejs:washing_residue', [
+        Text.translate('cwi.info.byproduct.washing_residue')
+    ])
+
+    event.addFluid(Fluid.of('kubejs:carbon_dioxide'), [
+        Text.translate('cwi.info.byproduct.blockless_gas')
+    ])
+
+    const unusedGases = ['kubejs:argon', 'kubejs:helium', 'kubejs:sulfur_dioxide']
+    unusedGases.forEach(id => {
+        event.addFluid(Fluid.of(id), [Text.translate('cwi.info.byproduct.gas_vent')])
+    })
+
+// Optional Overflow Disposal Keeps A Locked Reserve For Unfinished Liquid Outputs
+
+    event.addItem(['functionalstorage:fluid_1', 'functionalstorage:void_upgrade', 'functionalstorage:configuration_tool'], [
+        Text.translate('cwi.info.byproduct.fluid_overflow')
+    ])
+
+    const unfinishedLiquids = ['kubejs:acetic_acid', 'kubejs:humic_acid_slurry', 'kubejs:methanol']
+    unfinishedLiquids.forEach(id => {
+        event.addFluid(Fluid.of(id), [
+            Text.translate('cwi.info.byproduct.unfinished_liquid'),
+            Text.translate('cwi.info.byproduct.fluid_overflow')
+        ])
+    })
 })

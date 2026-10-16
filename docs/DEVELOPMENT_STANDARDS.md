@@ -84,6 +84,10 @@ This document is the repository standard for KubeJS scripts, recipe data, config
 
 ## Behavior Safeguards
 
+- Trace the active recipe-removal lists, generated recipes, hardcoded machine behavior, and intended progression before proposing a compatibility recipe, tag, or new byproduct consumer. A recipe or machine present in an installed mod may already be retired by the pack.
+- Verify each product's actual uses, properties, processing routes, and progression role before calling it a duplicate. Similar names or source materials do not prove equivalence. Preserve distinct products and their supply routes unless the author approves combining them; Hardened Wood and Hardened Planks are different products.
+- When the pack replaces a material or fluid, use its chosen ID directly in retained recipes and remove the retired version's production and consumption recipes. Do not add conversion recipes or shared compatibility tags merely to keep both versions useful. Resolve hardcoded sources explicitly before choosing a replacement.
+- Do not restore removed machines as disposal routes or revive an abandoned progression path to give a byproduct a use. Leave an unfinished route explicit until an intended consumer is approved.
 - Formatting changes must be functionally identical to the original code.
 - Do not change recipe logic, values, chances, counts, fluids, outputs, event priorities, event order, load order, or helper semantics while applying style rules.
 - Treat `Preload/Global.js`, `Fluids/Fluid.js`, and other shared definition files as behavior-sensitive. Preserve their keys, order, and exported values unless the task explicitly changes them.

@@ -326,9 +326,10 @@ not yet implemented objectives.
 ## Quest And Balance Integration
 
 Use **discovery → commissioning → optional mastery**. Current early chapters
-mostly detect possession: Mechanical has 63 item tasks and one checkmark;
-Fluid Mechanics has 27 item tasks; Precision has 70 item tasks and one
-checkmark; Heavy Industry has 59 item tasks and one checkmark. These are task
+mostly detect possession: Mechanical has 63 item tasks and four checkmarks;
+Fluid Mechanics has 27 item tasks; Precision has 70 item tasks and four
+checkmarks; Heavy Industry has 59 item tasks and four checkmarks. The optional
+factory projects add the three checkmarks in each of those chapters. These are task
 entries, not quest counts. None of these four chapters has a reward block.
 
 Possessing an item does not prove an automated or continuously running line.

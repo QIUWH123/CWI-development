@@ -607,7 +607,7 @@ ServerEvents.recipes(event => {
     vatRecipe(event, null, [], ["tfmg:steel_vat", "tfmg:firebrick_lined_vat"], 1,
         [
             AddItem('minecraft:blue_ice'),
-            AddFluid('1000 #tfmg:air')
+            AddFluid('1000 tfmg:air')
         ],
         [
             AddFluid('500 kubejs:condensed_air'),

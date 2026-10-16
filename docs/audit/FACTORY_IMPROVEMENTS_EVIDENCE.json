@@ -1,0 +1,1498 @@
+{
+    "scope": "Retained factory improvements with direct sulfur output, explicit native fluid choices and distinct wood products preserved",
+    "status": "Restored product/fluid scope source-validated; no live Minecraft reload or machine-operation result is claimed",
+    "validation_limits": [
+        "Rhino mocks validate registration data and repeated callbacks, not live registries or machines",
+        "Ponder inventory and redstone snapshots are scripted teaching scenes, not production measurements",
+        "NBT and installed Create source checks do not establish live placement, rotation or sustained operation",
+        "Desktop inspection attempts did not execute because automatic approval review returned service errors and timeouts; no safety rejection was reported"
+    ],
+    "improvements": [
+        {
+            "number": 1,
+            "implementation": "New furnace diagnostic removed at the author's request; existing furnace mechanics retained",
+            "state": "Withdrawn; no further diagnostic work requested"
+        },
+        {
+            "number": 2,
+            "implementation": "Optional press workshop plus Mechanical-stage compound/alloy/sheet supply schematic with accessible alloy reserve and press-feed lever",
+            "state": "Source implemented; sustained production and upstream expansion supply pending"
+        },
+        {
+            "number": 3,
+            "implementation": "Optional glass project, batching Ponder, and complete ordinary-glass tower including milling, heated recovery and return to pressing",
+            "state": "Source implemented; live construction, sustained circulation, backpressure and restart pending"
+        },
+        {
+            "number": 4,
+            "implementation": "Separate construction supplies from consumed operating stock in optional project; schematics empty",
+            "state": "Source implemented; live build/restart pending"
+        },
+        {
+            "number": 5,
+            "implementation": "Separate filtering, stack sharing and reserve-priority Ponder scenes",
+            "state": "Source implemented; live rendering/routing pending"
+        },
+        {
+            "number": 6,
+            "implementation": "Threshold switch 16/64 item-count hysteresis with input and surplus examples",
+            "state": "Source implemented; live wiring/stock movement pending"
+        },
+        {
+            "number": 7,
+            "implementation": "Six empty survival layouts linked from optional projects, with native material bills and external services",
+            "state": "Source implemented; import/rotation/material/build checks pending"
+        },
+        {
+            "number": 8,
+            "implementation": "Optional equal-pig-iron air/oxygen steel comparison including supporting infrastructure",
+            "state": "Source implemented; player measurement pending"
+        },
+        {
+            "number": 9,
+            "implementation": "Retained silicate recovery, lignite-powder fuel, overflow supplies and disposal/vent notes; direct canonical sulfur output replaces compatibility bridge; firebox additions removed",
+            "state": "Restored source scope validated; live recovery/overflow/vent checks remain"
+        },
+        {
+            "number": 10,
+            "implementation": "Optional lava supply outpost feeds existing sturdy-sheet line",
+            "state": "Source implemented; live delivery/restart pending"
+        }
+    ],
+    "byproducts": {
+        "new_recipes": [
+            {
+                "id": "cwi:compacting/concrete_from_silicate_residue",
+                "inputs": [
+                    "2x kubejs:silicate_residue",
+                    "tfmg:cement",
+                    "minecraft:gravel",
+                    {
+                        "fluidTag": "cwi:water",
+                        "amount": 250
+                    }
+                ],
+                "output": "4x tfmg:concrete",
+                "processing_ticks": 100,
+                "heat": "none",
+                "abstraction": "Washed fines as aggregate/filler; compaction includes curing"
+            },
+            {
+                "id": "cwi:crafting/fluid_drawer_void_upgrade",
+                "pattern": [
+                    "III",
+                    "IDI",
+                    "III"
+                ],
+                "keys": {
+                    "I": "#forge:obsidian",
+                    "D": "functionalstorage:fluid_1"
+                },
+                "output": "functionalstorage:void_upgrade"
+            },
+            {
+                "id": "cwi:crafting/fluid_drawer_configuration_tool",
+                "pattern": [
+                    "PPG",
+                    "PDG",
+                    "PEP"
+                ],
+                "keys": {
+                    "P": "minecraft:paper",
+                    "G": "#forge:ingots/gold",
+                    "D": "functionalstorage:fluid_1",
+                    "E": "minecraft:emerald"
+                },
+                "output": "functionalstorage:configuration_tool"
+            }
+        ],
+        "fuel": {
+            "item": "kubejs:lignite_powder",
+            "burn_ticks": 400,
+            "matches_lump": true,
+            "lump_milling_ratio": "1:1",
+            "block_crushing_and_milling_expected_portions": 2.75,
+            "restart_required": true
+        },
+        "engine_tags_changed": false,
+        "fluid_overflow": {
+            "supplies_restored": true,
+            "procedure": "Use empty drawers when crafting supplies; seed dedicated fluid drawer, lock it, add void upgrade",
+            "behavior": "Matching fluid fills normally; only excess above capacity is discarded and stored fluid remains",
+            "unfinished_liquids": [
+                "kubejs:acetic_acid",
+                "kubejs:humic_acid_slurry",
+                "kubejs:methanol"
+            ],
+            "abstraction": "Overflow disposal is a gameplay option, not chemical destruction"
+        },
+        "gas_vent_notes": [
+            "kubejs:carbon_dioxide",
+            "kubejs:argon",
+            "kubejs:helium",
+            "kubejs:sulfur_dioxide"
+        ],
+        "solid_disposal": "Segregated washing residue through a chute into enclosed lava; useful fines and working stock excluded",
+        "preserved_routes": [
+            "Tailings recovery and host-rock reuse",
+            "Glass reject milling and heated recovery",
+            "Steam condensation",
+            "Creosote use",
+            "Heavy-residue coking",
+            "Native compost-tea consumers",
+            "Slag casting and bricks"
+        ],
+        "no_invented_streams": [
+            "Spent catalysts",
+            "Dead cultures"
+        ],
+        "solid_streams": [
+            {
+                "ids": [
+                    "kubejs:washing_residue"
+                ],
+                "destination": "Segregated disposal; no composition-defined recovery invented",
+                "state": "New JEI guidance"
+            },
+            {
+                "ids": [
+                    "kubejs:silicate_residue"
+                ],
+                "destination": "New four-concrete compacting recipe",
+                "state": "Implemented"
+            },
+            {
+                "ids": [
+                    "kubejs:lignite_powder"
+                ],
+                "destination": "400-tick ordinary fuel",
+                "state": "Implemented; restart required"
+            },
+            {
+                "ids": [
+                    "kubejs:ash",
+                    "kubejs:dark_ash"
+                ],
+                "destination": "Existing workshop/soil recovery; ash-specific falling/Lychee behavior preserved",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "ratatouille:salt",
+                    "kubejs:soda_powder",
+                    "biomancy:stone_powder"
+                ],
+                "destination": "Existing reagents, glass working stock and nitrate-bath recovery; no assumed kubejs:stone_powder equivalence",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "ratatouille:compost_residue"
+                ],
+                "destination": "Existing compost/biomass/fuel and surviving native routes",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "kubejs:cracked_glass",
+                    "kubejs:devitrified_glass",
+                    "kubejs:glass_powder"
+                ],
+                "destination": "Existing lossy milling and heated compacting return to sintered blank",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "tfmg:slag_block",
+                    "tfmg:slag"
+                ],
+                "destination": "Blocks/stonecutting bricks; surviving mixture alone is not complete concrete production",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "generated_tailings",
+                    "host_rock_powders"
+                ],
+                "destination": "Existing flotation, eligible regrind/leach, gravel/stone recovery",
+                "state": "Existing"
+            },
+            {
+                "ids": [
+                    "kubejs:sulfur_powder"
+                ],
+                "destination": "Existing pack sulfur chemistry; ore separation emits this ID directly",
+                "state": "Replaces the removed compatibility bridge"
+            }
+        ],
+        "audited_fluid_stream_groups": [
+            {
+                "ids": [
+                    "kubejs:heavy_fuel_oil"
+                ],
+                "role": "Visbreaking coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:coke_oil"
+                ],
+                "role": "Naphtha reforming coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:raffinate"
+                ],
+                "role": "Aromatic extraction/hydrogen treatment coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:dry_gas"
+                ],
+                "role": "FCC fractionation coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:cracked_gas"
+                ],
+                "role": "Visbreaking/coking coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:natural_gas_depleted"
+                ],
+                "role": "Helium recovery coproduct",
+                "destination": "No new consumer; the proposed firebox destination was removed from progression",
+                "status": "historical_sink_removed"
+            },
+            {
+                "ids": [
+                    "kubejs:creosote"
+                ],
+                "role": "Coking coproduct",
+                "destination": "Distinct supplies: existing kubejs:harden_wood sequenced assembly and tfmg:hardened_planks filling using 250 mB KubeJS creosote; no firebox destination",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:molten_slag"
+                ],
+                "role": "Blast-furnace coproduct",
+                "destination": "Existing casting to slag blocks and retained native building-block processing; native liquid concrete/asphalt identities are retained separately",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:steam"
+                ],
+                "role": "Boiling output, microbe coproduct, returned cracking diluent",
+                "destination": "Existing condensation: 1000 mB gas to 500 mB distilled water in steel/firebrick vat at Chemistry.js:364; pump/open-ended pipe can discard surplus gas",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:carbon_dioxide"
+                ],
+                "role": "Coking/microbial gas coproduct",
+                "destination": "Dedicated gas buffer and outward pump to an open-ended Create pipe facing a loaded, replaceable air space",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:slurry_oil",
+                    "kubejs:visbreaker_residue"
+                ],
+                "role": "Heavy petroleum coproduct",
+                "destination": "Existing superheated vat coking gives coke dust, diesel, naphtha and cracked gas; no new cracked-gas consumer supplied",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:residual_oil"
+                ],
+                "role": "Crude-oil fractionation coproduct",
+                "destination": "Existing visbreaking at Chemistry.js:540; downstream heavy residue coking already exists",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:wax_oil"
+                ],
+                "role": "Crude-oil fractionation coproduct",
+                "destination": "Existing FCC cracking at Chemistry.js:525; new lubrication oil supply at IndustrialSupplies.js:39 also returns residual oil for visbreaking",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:ethylene_glycol"
+                ],
+                "role": "Returned aromatic-extraction solvent",
+                "destination": "Return to aromatic extraction input",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:soda_powder",
+                    "kubejs:limestone_powder"
+                ],
+                "role": "Returned glass-batch processing aids",
+                "destination": "Retain working powders inside the basin with product-filtered extraction; glass batching reuse remains unchanged",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:molten_potassium_sodium_nitrate"
+                ],
+                "role": "Returned ion-exchange bath",
+                "destination": "Existing user-approved regeneration with stone powder at Glass.js:5 and :60; return molten saltpeter to ion exchange",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:methane"
+                ],
+                "role": "Gas separation/chemical/microbial coproduct",
+                "destination": "Existing liquid-burning recipe at BasicRecipe.js:351; excess gas can use open-ended pipe",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "kubejs:wood_vinegar"
+                ],
+                "role": "Wood/microbial liquid coproduct",
+                "destination": "Existing heated distillation at Geology.js:112 yields water and methanol",
+                "status": "existing"
+            },
+            {
+                "ids": [
+                    "ratatouille:bio_gas"
+                ],
+                "role": "Microbial gas coproduct",
+                "destination": "Existing native createaddition:liquid_burning/bio_gas: 1000 mB burns for 4000 ticks",
+                "status": "existing"
+            }
+        ],
+        "removed_additions": [
+            "cwi:crafting/sulfur_powder_from_separation",
+            "Added tfmg:firebox_fuel tag registrations and JEI firebox destinations"
+        ],
+        "canonical_sulfur": {
+            "retained": "kubejs:sulfur_powder",
+            "source": "Direct ore separation output",
+            "retired": "tfmg:sulfur_dust",
+            "policy": "Remove retired recipes; no conversion or compatibility tag"
+        }
+    },
+    "projects": [
+        {
+            "path": "config/ftbquests/quests/chapters/kinetic_enlightenment.snbt",
+            "id": "6D91D76D4F3246A2",
+            "improvements": [
+                2,
+                4,
+                7
+            ],
+            "title": "A Reproducible Press Station",
+            "dependencies": [
+                "4C5689F8A2DBC8A7"
+            ],
+            "tasks": [
+                "13772380F53F4396",
+                "50D50DDCE3294EA8",
+                "4E36F15E0FE94ABC"
+            ],
+            "optional": true,
+            "rewards": 0,
+            "downstream_dependencies": 0
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/processing_note.snbt",
+            "id": "576E9C35509C412A",
+            "improvements": [
+                3,
+                7
+            ],
+            "title": "A Circulating Glass Workshop",
+            "dependencies": [
+                "486EA6444B07AE9E"
+            ],
+            "tasks": [
+                "6AFD29265E824E0B",
+                "1519C26710FD4BA1",
+                "0EBB167567AF4B22"
+            ],
+            "optional": true,
+            "rewards": 0,
+            "downstream_dependencies": 0
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/industrial_foregoing.snbt",
+            "id": "41DC5E2B7B634D08",
+            "improvements": [
+                8
+            ],
+            "title": "Air or Oxygen Refining",
+            "dependencies": [
+                "0635A293D5BA7EF2"
+            ],
+            "tasks": [
+                "2F8D28AAED494B9C",
+                "1411B1EDE0C14C8A",
+                "5B80F9C3306E4B8F"
+            ],
+            "optional": true,
+            "rewards": 0,
+            "downstream_dependencies": 0
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/precision.snbt",
+            "id": "13B1F7AF1C4A4EEA",
+            "improvements": [
+                10
+            ],
+            "title": "A Lava Supply Outpost",
+            "dependencies": [
+                "0F10364E2DA4BE4C"
+            ],
+            "tasks": [
+                "154C180040374AEE",
+                "79754B86B36B45FD",
+                "56D4A5669B24434A"
+            ],
+            "optional": true,
+            "rewards": 0,
+            "downstream_dependencies": 0
+        }
+    ],
+    "schematics": [
+        {
+            "path": "schematics/cwi_press_station.nbt",
+            "sha256": "2ac745b59276c596d6d63db12b8c49edc6dd9cdb56b19fd4f9aea440f08a9831",
+            "size": [
+                3,
+                4,
+                3
+            ],
+            "explicit_positions": 36,
+            "materials": {
+                "create:depot": 1,
+                "create:mechanical_press": 1,
+                "create:shaft": 1,
+                "minecraft:barrel": 1,
+                "minecraft:cobblestone": 11
+            },
+            "operation": "Connect external survival rotational power to the rear shaft; place a pressable item on the depot by hand and retrieve its result by hand. Barrel is separate storage.",
+            "validation": [
+                "Compressed NBT round trip",
+                "Complete unique bounded positions",
+                "Empty survival inventories and no bundled power source",
+                "Installed Create geometry and extraction/kinetic source inspection"
+            ],
+            "live_validation": false
+        },
+        {
+            "path": "schematics/cwi_belt_press_station.nbt",
+            "sha256": "6091257756ca5f9c514183e256a87b6f39a4eb33e65ac184fa692e353fdca1de",
+            "size": [
+                7,
+                4,
+                4
+            ],
+            "explicit_positions": 112,
+            "materials": {
+                "create:mechanical_press": 1,
+                "create:andesite_funnel": 2,
+                "create:cogwheel": 3,
+                "create:shaft": 4,
+                "create:belt_connector": 1,
+                "minecraft:barrel": 2,
+                "minecraft:cobblestone": 30
+            },
+            "operation": "Connect external survival rotational power to the rear shaft. Ensure the belt moves from the input side toward the output barrel, east in the unrotated schematic. Feed only items with a press recipe. The shared drive powers both belt and press; the output funnel holds products when the output barrel is full.",
+            "validation": [
+                "Compressed NBT round trip",
+                "Complete unique bounded positions",
+                "Empty survival inventories and no bundled power source",
+                "Installed Create geometry and extraction/kinetic source inspection"
+            ],
+            "live_validation": false
+        },
+        {
+            "path": "schematics/cwi_automated_press_station.nbt",
+            "sha256": "f4766a2ea873a5b1cabad114767b1d697f40abb7d9cb7ca7731874680af42d15",
+            "size": [
+                3,
+                6,
+                3
+            ],
+            "explicit_positions": 54,
+            "materials": {
+                "create:depot": 1,
+                "create:mechanical_press": 1,
+                "create:shaft": 1,
+                "create:smart_chute": 1,
+                "minecraft:barrel": 2,
+                "minecraft:cobblestone": 15,
+                "minecraft:hopper": 1
+            },
+            "operation": "Connect external survival rotational power to the rear shaft and place iron ingots in the upper barrel. Hopper feeds the depot; the filtered smart chute extracts iron sheets into the lower barrel. Check the iron-sheet filter after building and before feeding the line.",
+            "validation": [
+                "Compressed NBT round trip",
+                "Complete unique bounded positions",
+                "Empty survival inventories and no bundled power source",
+                "Installed Create geometry and extraction/kinetic source inspection"
+            ],
+            "live_validation": false
+        },
+        {
+            "path": "schematics/cwi_glass_batching.nbt",
+            "sha256": "7c99de88f220b76e480925c5153422b81847deafe3329c06c8246e4abbea7ec1",
+            "size": [
+                5,
+                6,
+                5
+            ],
+            "explicit_positions": 150,
+            "materials": {
+                "minecraft:cobblestone": 24,
+                "minecraft:barrel": 2,
+                "create:smart_chute": 1,
+                "create:basin": 1,
+                "create:mechanical_mixer": 1,
+                "create:cogwheel": 1,
+                "create:shaft": 1,
+                "minecraft:hopper": 1
+            },
+            "operation": "Precision-stage batching module; external drive and carbonate working stock required; firing, pressing, quenching, and recovery are separate.",
+            "validation": [
+                "Compressed NBT round trip",
+                "Complete unique bounded positions",
+                "Empty survival inventories and no bundled power source",
+                "Installed Create geometry and extraction/kinetic source inspection"
+            ],
+            "live_validation": false
+        },
+        {
+            "path": "schematics/cwi_andesite_supply_workshop.nbt",
+            "sha256": "984dfaf48424d662bf7ba9ddab5142c18136f24ca07bd624c6ad755a4c6ab789",
+            "size": [
+                10,
+                11,
+                4
+            ],
+            "explicit_positions": 440,
+            "materials": {
+                "minecraft:cobblestone": 73,
+                "create:cogwheel": 4,
+                "create:shaft": 5,
+                "minecraft:barrel": 5,
+                "minecraft:lever": 1,
+                "create:mechanical_press": 1,
+                "minecraft:hopper": 5,
+                "minecraft:furnace": 1,
+                "create:depot": 1,
+                "create:basin": 1,
+                "create:mechanical_mixer": 1,
+                "create:belt_connector": 1,
+                "create:andesite_funnel": 2
+            },
+            "ports": {
+                "andesite_powder_barrel": [
+                    2,
+                    8,
+                    2
+                ],
+                "clay_ball_barrel": [
+                    3,
+                    8,
+                    1
+                ],
+                "furnace_fuel_barrel": [
+                    5,
+                    5,
+                    2
+                ],
+                "alloy_reserve_barrel": [
+                    4,
+                    2,
+                    2
+                ],
+                "sheet_output_barrel": [
+                    9,
+                    2,
+                    1
+                ],
+                "sheet_feed_pause_lever": [
+                    4,
+                    3,
+                    0
+                ],
+                "mixer_drive_shaft": [
+                    3,
+                    10,
+                    3
+                ],
+                "external_mixer_connection": [
+                    3,
+                    11,
+                    3
+                ],
+                "press_belt_drive_shaft": [
+                    6,
+                    1,
+                    3
+                ],
+                "external_press_belt_connection": [
+                    6,
+                    1,
+                    4
+                ]
+            },
+            "recipe_chain": [
+                {
+                    "inputs": {
+                        "minecraft:clay_ball": 1,
+                        "kubejs:andesite_powder": 1
+                    },
+                    "output": {
+                        "kubejs:andesite_compound": 1
+                    },
+                    "machine": "create:mechanical_mixer",
+                    "heat": "none"
+                },
+                {
+                    "input": {
+                        "kubejs:andesite_compound": 1
+                    },
+                    "output": {
+                        "create:andesite_alloy": 1
+                    },
+                    "machine": "minecraft:furnace"
+                },
+                {
+                    "input": {
+                        "create:andesite_alloy": 1
+                    },
+                    "output": {
+                        "kubejs:andesite_alloy_sheet": 1
+                    },
+                    "machine": "create:mechanical_press"
+                }
+            ],
+            "operation": [
+                "Supply only andesite powder to the west reagent barrel and clay balls to the front reagent barrel.",
+                "Connect external mixer power at >=32 RPM and the lower press/belt drive so the belt travels east toward the sheet barrel.",
+                "Supply dry solid furnace fuel to the fuel barrel; no fuel or raw materials are bundled.",
+                "Leave the front lever off to press stock into sheets. Turn it on to stop new alloy entering the belt and collect alloy from the reserve barrel.",
+                "The lever powers an isolated support beside the input funnel, so furnace output can continue filling the alloy reserve.",
+                "Alloy already on the belt continues to the press after the lever is turned on.",
+                "The furnace and its inventories throttle the upstream line; additional furnaces are a later expansion.",
+                "A furnace item is obtained through the pack's ash brick base \u2192 incomplete furnace \u2192 furnace shaping route and ordinary mining, not the removed vanilla craft."
+            ],
+            "validation": [
+                "Deterministic compressed NBT round trip passed",
+                "440 positions are unique and inside [10,11,4]",
+                "Mixer is two blocks above basin with a clear air gap",
+                "Only basin products use native east side spout to a depot one block lower",
+                "No extractor sits below the basin, so unused reagents cannot escape before mixing",
+                "Dedicated reagent hoppers insert from west and north; BasinInventory limits each item type to one stack",
+                "Depot exports through its item capability to the hopper below; hopper feeds furnace from above",
+                "Fuel feeds furnace from side and product is extracted from below",
+                "Belt and press share a Z axis drive with two cog meshes; mixer has separate Y axis drive",
+                "Front lever powers only input funnel support and does not lock furnace output hopper",
+                "Vanilla floor lever supplies direct power to its support; Create funnel reads neighboring power",
+                "Opposite-facing retracted output funnel retains products when final barrel is full",
+                "Current scripts supply unheated compound mixing, furnace alloy production and generated pressing at stiffness156",
+                "No entities, stock, stored kinetic speeds/networks, captured world or personal metadata",
+                "All native/custom parts are Mechanical stage; no Precision Smart Chute is used",
+                "Functional hopper destinations and source inventories independently decoded and verified",
+                "Unknown mechanical mixer waterlogged property removed; installed block defines no such property"
+            ],
+            "limits": [
+                "No live Minecraft production, rendering or cannon placement test occurred",
+                "Two external drive connections are required; no power source is included",
+                "Keep the lower drive outputward; reversed belt movement changes funnel behavior",
+                "Use solid dry fuel to avoid empty bucket remainders contaminating alloy/sheet stream",
+                "Lever stops new feed rather than clearing alloy already traveling on the belt",
+                "Furnace XP remains in the furnace for normal manual retrieval",
+                "Mirrored schematic preview is unverified"
+            ],
+            "live_validation": false
+        },
+        {
+            "path": "schematics/cwi_glass_workshop.nbt",
+            "sha256": "208fc795cbe69a21568936a5f90b6e72e3c8179f2bcc41f4cee400647c29b0ed",
+            "size": [
+                10,
+                28,
+                10
+            ],
+            "explicit_positions": 2800,
+            "materials": {
+                "create:basin": 3,
+                "create:mechanical_mixer": 1,
+                "create:cogwheel": 2,
+                "create:shaft": 59,
+                "minecraft:hopper": 18,
+                "minecraft:barrel": 5,
+                "create:smart_chute": 4,
+                "minecraft:furnace": 1,
+                "create:mechanical_press": 2,
+                "create:depot": 3,
+                "create:spout": 1,
+                "create:fluid_pipe": 1,
+                "create:millstone": 1,
+                "create:blaze_burner": 1,
+                "create:deployer": 1,
+                "create:encased_fan": 1,
+                "create:chute": 13,
+                "create:gearbox": 17,
+                "create:brass_funnel": 1,
+                "create:filter": 1
+            },
+            "manual_materials": {
+                "create:basin": 3,
+                "create:mechanical_mixer": 1,
+                "create:cogwheel": 2,
+                "create:shaft": 59,
+                "minecraft:hopper": 18,
+                "minecraft:barrel": 5,
+                "create:smart_chute": 4,
+                "minecraft:furnace": 1,
+                "create:mechanical_press": 2,
+                "create:depot": 3,
+                "create:spout": 1,
+                "create:fluid_pipe": 1,
+                "create:millstone": 1,
+                "create:blaze_burner": 1,
+                "create:deployer": 1,
+                "create:encased_fan": 1,
+                "create:chute": 13,
+                "create:gearbox": 8,
+                "create:brass_funnel": 1,
+                "create:filter": 1,
+                "create:vertical_gearbox": 9
+            },
+            "material_mapping": {
+                "create:brass_belt_funnel": "BeltFunnelBlock.getRequiredItems consumes its parent create:brass_funnel item",
+                "create:filter": "FilteringBehaviour.getRequiredItems consumes one real list filter item; ordinary ghost item filters do not consume item stocks",
+                "create:blaze_burner": "BlazeBurnerBlock.getRequiredItems uses a filled create:blaze_burner for SMOULDERING state",
+                "create:gearbox": "Cannon default requirement uses block.asItem for all 17 orientations; manual pickblock/drops yield 8 ordinary and 9 vertical gearbox items"
+            },
+            "flows": [
+                "Sand barrel -> hopper -> product-filtered batching basin; soda and limestone seeded in basin and retained",
+                "Glass batch -> smart chute -> top furnace hopper -> furnace",
+                "Furnace -> lower hopper -> elbow hoppers -> pressing basin",
+                "Pressing basin -> east spout -> depot -> product-filtered chute -> elbow hoppers -> quench depot",
+                "Quench depot -> glass-only pulling funnel -> good-glass barrel",
+                "Quench depot -> cracked/devitrified allow-list smart chute -> reject barrel -> millstone",
+                "Millstone -> lower/elbow hoppers -> heated recovery basin",
+                "Recovery basin -> south spout -> depot -> east-facing hopper -> smart chute -> fan-powered chute elevator -> pressing basin from below"
+            ],
+            "ports": {
+                "common_drive_input_shaft": {
+                    "position": [
+                        8,
+                        0,
+                        6
+                    ],
+                    "axis": "y",
+                    "rpm_requirement": "Positive 32 RPM or greater, at most installed limit; positive input yields upward return fan"
+                },
+                "sand_barrel": [
+                    1,
+                    24,
+                    4
+                ],
+                "batching_working_stock_basin": [
+                    2,
+                    23,
+                    4
+                ],
+                "furnace_fuel_barrel": [
+                    2,
+                    21,
+                    3
+                ],
+                "good_glass_barrel": [
+                    7,
+                    15,
+                    4
+                ],
+                "reject_buffer_barrel": [
+                    6,
+                    11,
+                    4
+                ],
+                "recovery_burner_fuel_barrel": [
+                    1,
+                    7,
+                    3
+                ],
+                "water_external_pipe_connection": [
+                    8,
+                    16,
+                    4
+                ],
+                "mixer_drive_shaft": {
+                    "position": [
+                        2,
+                        26,
+                        5
+                    ],
+                    "axis": "y",
+                    "rpm_requirement": "At least 30 RPM; either sign"
+                },
+                "main_press_drive_shaft": {
+                    "position": [
+                        4,
+                        20,
+                        5
+                    ],
+                    "axis": "z",
+                    "rpm_requirement": "Nonzero"
+                },
+                "millstone_drive_shaft": {
+                    "position": [
+                        6,
+                        8,
+                        5
+                    ],
+                    "axis": "y",
+                    "rpm_requirement": "Nonzero"
+                },
+                "recovery_press_drive_shaft": {
+                    "position": [
+                        3,
+                        8,
+                        2
+                    ],
+                    "axis": "z",
+                    "rpm_requirement": "Nonzero"
+                },
+                "burner_deployer_drive_shaft": {
+                    "position": [
+                        1,
+                        5,
+                        2
+                    ],
+                    "axis": "z",
+                    "rpm_requirement": "Nonzero"
+                },
+                "return_fan_drive_shaft": {
+                    "position": [
+                        4,
+                        2,
+                        4
+                    ],
+                    "axis": "y",
+                    "rpm_requirement": "Positive shaft speed giving upward air; source speed sign verified in chute calculation"
+                }
+            },
+            "operation": [
+                "Supply one filled blaze burner, not an empty burner, to the schematicannon",
+                "Seed the batching basin with one soda powder and one limestone powder; the schematic contains no free ingredient inventory",
+                "Supply one Create filter to the cannon; native safe NBT preserves the cracked/devitrified allow-list with NBT ignored",
+                "Connect sufficient stress capacity at positive 32 RPM to the exposed base shaft",
+                "Connect a pumped water service at the east pipe connection",
+                "Stock furnace and recovery fuel barrels with compatible dry solid fuel; no free fuel or ingredients are serialized",
+                "Verify basin outlets after placement: batching DOWN, main press EAST, recovery SOUTH; geometry recomputes them without unsafe preference NBT",
+                "Keep the good-glass barrel available for output; downstream fullness is expected to stop upstream production"
+            ],
+            "validation": [
+                "Deterministic NBT roundtrip",
+                "2800 complete unique bounded positions",
+                "No duplicate solids",
+                "Mixer/press air clearances",
+                "Independent source-model kinetic graph: 84 connected nodes, 83 undirected edges, no loop or sign conflict",
+                "Spout exactly two blocks above depot; installed source permits the intermediate funnel",
+                "Separated product/reject filters exclude pressed blanks",
+                "Return elevator endpoint below pressing basin",
+                "Installed millstone handler exposes output extraction only",
+                "Deployer two-block target aligns burner; installed burner interaction accepts solid fuel"
+            ],
+            "source_checks": {
+                "kinetic_layout": {
+                    "reviewer": "factory_final_regression",
+                    "nodes": 84,
+                    "edges": 83,
+                    "connected": true,
+                    "acyclic": true,
+                    "sign_conflict": false,
+                    "positive_input_output_signs": {
+                        "return_fan": 1,
+                        "mixer": -1,
+                        "main_press": -1,
+                        "millstone": -1,
+                        "recovery_press": -1,
+                        "deployer": -1
+                    },
+                    "basis": "Installed GearboxBlock shaft faces and RotationPropagator source-facing signs"
+                },
+                "burner": {
+                    "state": "smouldering",
+                    "required_material": "create:blaze_burner",
+                    "captured_blaze_required": true,
+                    "basis": "BlazeBurnerBlock.getRequiredItems/getLitOrUnlitStack selects filled burner for non-NONE heat; filled state is not missing creature NBT",
+                    "fueling": "Hopper-fed USE deployer aimed two blocks forward; source accepts solid fuel interaction"
+                },
+                "returned_carbonates": "Basin down-facing outputs remain in combined basin inventories; BasinRecipe uses the combined item capability to consume returned soda and limestone again",
+                "filter_configuration": "FilteringBehaviour isSafeNBT=true; SmartBlockEntity.writeSafe retains Filter/FilterAmount/UpTo; ListFilterItem and ListFilterItemStack use the encoded nested 18-slot Items, Blacklist=false, RespectNBT=false. Brass funnel accepts only glass; reject chute accepts cracked and devitrified glass, excluding pressed blank",
+                "basin_outlets": "Unsafe PreferredSpoutput/DisabledSpoutput are omitted. Source recomputes outlets from geometry: batching has no eligible lateral outlet; main press has only EAST depot; recovery has only SOUTH depot",
+                "spout_clearance": "Spout source permits intermediate funnels above a depot",
+                "millstone_extraction": "MillstoneInventoryHandler rejects extraction from input inventory, permitting only processed powder output"
+            },
+            "limits": [
+                "Prototype only; no live Minecraft test",
+                "One external rotational source must be connected to the base input shaft, with sufficient stress capacity",
+                "External pumped renewable water supply required; 1000 mB per quench",
+                "Furnace and blaze-burner fuel barrels must be stocked or supplied by external automation",
+                "Elevator has one smart chute plus 13 regular chutes; verify propagation and restart under live power before publication",
+                "No foundations/access platform included; bare equipment layout",
+                "A filled blaze burner is required as a cannon material; this prototype does not grant a free captured blaze",
+                "Native safe-NBT and filter-material logic are source-verified; live cannon placement and restart remain untested",
+                "Base glass line only; no tempering or ion-exchange stage"
+            ],
+            "live_validation": false
+        }
+    ],
+    "installed_source_references": [
+        {
+            "artifact": "mods/create-1.20.1-6.0.8.jar",
+            "classes": [
+                "MechanicalPressBlock",
+                "PressingBehaviour",
+                "MechanicalMixerBlockEntity",
+                "BasinBlockEntity",
+                "ChuteBlockEntity",
+                "SmartChuteBlockEntity",
+                "FilteringBehaviour",
+                "OpenEndedPipe",
+                "BeltBlock",
+                "BeltBlockEntity",
+                "BeltFunnelBlock",
+                "RotationPropagator",
+                "ThresholdSwitchBlockEntity",
+                "BrassTunnelBlockEntity",
+                "BlockHelper"
+            ]
+        },
+        {
+            "artifact": "mods/rhino-forge-2001.2.3-build.10.jar",
+            "evidence": "Actual installed compiler and repeated callback execution"
+        },
+        {
+            "artifact": "mods/functionalstorage-1.20.1-1.2.14.jar",
+            "evidence": "Installed void-fluid behavior and native recipe patterns checked"
+        },
+        {
+            "artifact": "mods/kubejs-forge-2001.6.5-build.26.jar",
+            "evidence": "JEI information addFluid single FluidStackJS and addItem Ingredient contract"
+        },
+        {
+            "artifact": "mods/tfmg-1.0.2f.jar",
+            "evidence": "Native intake hardcodes tfmg:air; previous firebox findings describe installed capability, not intended progression"
+        },
+        {
+            "artifact": "mods/ftb-library-forge-2001.2.13.jar",
+            "evidence": "Actual SNBTParser accepts all chapter files"
+        },
+        {
+            "artifact": "mods/ponderjs-1.20.1-2.1.0.jar",
+            "dependency": "Ponder 1.0.92",
+            "evidence": "Explicit scene namespace and sequential translation-key registration checked in installed implementation"
+        }
+    ],
+    "historical_checks": {
+        "evidence_state": "Historical checks of the pre-correction revision; not passing results for current changed scripts",
+        "invalidated_by_revision": [
+            "Furnace diagnostic and readiness tests describe removed functionality",
+            "64 planning groups and old language counts predate removal of firebox/diagnostic notes",
+            "Industrial-supply and byproduct audits included the removed sulfur bridge",
+            "Firebox tests describe rejected progression content"
+        ],
+        "installed_rhino_compiled_scripts": 8,
+        "furnace": {
+            "recipe_registrations_unchanged": 10,
+            "registration_repeats": 3,
+            "configurations": 24,
+            "heat_ticks": 5280,
+            "readiness_cases": 12,
+            "click_guards_and_repeat_clicks": "Passed without furnace-state mutation"
+        },
+        "industrial_supplies": {
+            "callback_repeats": 3,
+            "exact_new_recipe_quantities": "Passed"
+        },
+        "storage": {
+            "before": 100,
+            "after": 102,
+            "callback_repeats": 3,
+            "previous_registration_data_order_and_modifiers": "Identical"
+        },
+        "planning": {
+            "callback_repeats": 2,
+            "groups_each": 64,
+            "new_fluid_destinations_each_once": 13,
+            "fluid_arrays": "Absent"
+        },
+        "logistics": {
+            "scenes": 4,
+            "scopes": 2,
+            "deferred_nbt_callbacks": "Passed",
+            "threshold_snapshots_each_scope": 10,
+            "same_40_item_stock_different_filling_draining_states": true
+        },
+        "glass_ponder": {
+            "scenes": 1,
+            "scopes": 2,
+            "scene_repeats_each_scope": 3,
+            "basin_snapshots_each_scope": 15,
+            "blocked_output": "Full barrel and full carried chute stack",
+            "restart": "Stop kinetics, clear output, restore drive, restart mixer",
+            "first_mixer_animation_wait_ticks": 130,
+            "example_rpm": 32,
+            "installed_medium_minimum_rpm": 30
+        },
+        "quests": {
+            "actual_ftb_library_parser_chapters": 15,
+            "unique_quest_ids": 508,
+            "unique_ftb_object_ids": 1103,
+            "dependencies_resolve": true,
+            "new_projects": 4,
+            "project_checkmarks": 12
+        },
+        "language": {
+            "new_keys_each": 56,
+            "existing_changes_each": [
+                "cwi.info.slag.casting",
+                "cwi.jei.mineral.lignite_powder"
+            ],
+            "duplicate_keys": 0,
+            "key_and_placeholder_parity": true,
+            "ponder_text_order_matches_english": true,
+            "installed_ponder_localization_contract": "PonderJS 2.1.0 and bundled Ponder 1.0.92 use namespace.ponder.scenePath.header and sequential text_N in call order; all 5 headers and 24 text entries match both locales"
+        },
+        "whitespace": "git diff --check passed",
+        "quest_facts": {
+            "steel_equal_pig_iron_mb": 1800,
+            "steel_air_mb": 1620,
+            "steel_oxygen_mb": 1710,
+            "oxygen_refining_limestone_and_slag": "Half of equal-input air route",
+            "silicon_use": "Equal",
+            "lava_requirements": "Current height/biome generation, eruptive bedrock beneath head and positive >=128 RPM match source",
+            "glass_working_stock": "Combined basin input/output ingredients are reusable with product-filtered extraction",
+            "press_routes": "Available at respective Mechanical/Precision stages"
+        },
+        "live_minecraft": {
+            "executed": false,
+            "latest_attempt_result": "Automatic approval review HTTP 503 service unavailable; action did not execute",
+            "safety_rejection": false,
+            "log_audit": {
+                "paths": [
+                    "logs/latest.log",
+                    "logs/debug.log",
+                    "logs/kubejs/startup.log",
+                    "logs/kubejs/server.log",
+                    "logs/kubejs/client.log"
+                ],
+                "latest_startup_scripts": 34,
+                "latest_server_scripts": 63,
+                "latest_client_scripts": 12,
+                "loaded_state": "Startup and server loading on 12 October; client loading early on 13 October precedes all current improvement runtime edits",
+                "new_ponder_scripts_loaded": false,
+                "attributable_errors": "None evidenced; current improvements have not loaded, so their live error status is unverified",
+                "current_live_gate_satisfied": false
+            },
+            "remaining_byproduct_checks": [
+                "Restart with current files and confirm retained recovery recipes and information entries in JEI",
+                "Execute silicate concrete recovery and confirm direct sulfur output in ore separation",
+                "Check locked-drawer stock retention, matching overflow, wrong-fluid rejection and drainage/refill",
+                "Vent each documented blockless gas and check segregated washing-residue disposal"
+            ],
+            "blocked_audit": {
+                "consecutive_goal_turns": 3,
+                "condition": "Automatic approval review returns HTTP 503 before desktop inspection executes",
+                "current_artifacts": "All retained fingerprints still match the final source audit",
+                "current_logs": "Unchanged; current improvements have not loaded",
+                "remaining_work": "Live loading, rendering, construction and machine operation checks",
+                "resolution": "Inspection service recovery or user-provided live test results",
+                "no_live_action_executed": true
+            }
+        },
+        "independent_review": {
+            "recipe_and_diagnostic": "No concrete regressions found against current installed APIs and baseline captures",
+            "schematics_and_ponder": "Six layouts and five scenes have no remaining source/API/geometry failures; andesite mixer property corrected; complete glass layout independently reviewed",
+            "localization": "Five scene headers and 24 text entries follow installed translation-key contract",
+            "limits": "Live behavior, rotation/mirroring, sustained production and schematicannon placement remain unverified",
+            "final_artifact_comparison": "All six schematic hashes, dimensions, position counts and native bills match; all eleven schematic/Ponder NBT fingerprints match"
+        },
+        "andesite_workshop": {
+            "nbt_roundtrip": true,
+            "unique_bounded_positions": 440,
+            "native_blockstate_values": "Verified",
+            "sided_hopper_inventory_path": "Verified",
+            "basin_output": "Product-only native side spout; unprocessed inputs retained",
+            "lever": "Powers input funnel support without locking furnace output hopper",
+            "recipe_chain": "Current compound mixing, alloy furnace smelting and sheet pressing",
+            "live_validation": false,
+            "source_material_bill": "Includes four pulley+port shafts and one belt connector instead of five belt blocks",
+            "furnace_acquisition": "Pack ash-brick/incomplete-furnace shaping route followed by ordinary mining; removed vanilla craft not assumed",
+            "lever_native_signal": "Floor-mounted lever directly powers support; adjacent funnel sees powered support; furnace output hopper isolated",
+            "mixer_property": "Unknown waterlogged property omitted"
+        },
+        "glass_workshop": {
+            "positions": 2800,
+            "nbt_roundtrip": true,
+            "drive": {
+                "reviewer": "factory_final_regression",
+                "nodes": 84,
+                "edges": 83,
+                "connected": true,
+                "acyclic": true,
+                "sign_conflict": false,
+                "positive_input_output_signs": {
+                    "return_fan": 1,
+                    "mixer": -1,
+                    "main_press": -1,
+                    "millstone": -1,
+                    "recovery_press": -1,
+                    "deployer": -1
+                },
+                "basis": "Installed GearboxBlock shaft faces and RotationPropagator source-facing signs"
+            },
+            "filters_safe_nbt": true,
+            "real_filter_items_required": 1,
+            "filled_blaze_burner_required": true,
+            "basin_preferences": "Omitted because native safe-NBT discards them; unique geometry recomputes correct outlets",
+            "manual_and_cannon_material_bills": "Distinct gearbox item requirements recorded",
+            "live_validation": false
+        },
+        "documentation_index": "All relative index links exist; source/API lessons retained in ultimate guide",
+        "byproduct_source_audit": {
+            "result": "Passed; no concrete source implementation bug found",
+            "recipe_quantities_and_states": "Historical checks covered the prior sulfur bridge; current direct sulfur output and native recipe removals require the corrected source audit",
+            "fuel": "Lignite milling retains expected fuel; firebox tag additions are historical and removed",
+            "overflow": "Installed handler retains stored fluid and accepts matching excess with void upgrade and locked identity",
+            "gas_disposal": "Installed open-ended pipe handles registered blockless gases at a loaded replaceable outlet",
+            "washing_residue": "Ordinary non-fire-resistant item supports segregated lava disposal",
+            "live_validation": false
+        }
+    },
+    "historical_artifact_fingerprints": [
+        {
+            "path": ".gitignore",
+            "sha256": "037648d4e37e4a5ce648d8228fe6b0e6d4df0f2ffb5483b0a8b2d08ccaf638cd"
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/industrial_foregoing.snbt",
+            "sha256": "ca355e99d56eb411372ee9fc49e597cb7c8ff01db110d8aa93a88dd9fb520ee0"
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/kinetic_enlightenment.snbt",
+            "sha256": "20bcf79bd0373fddc6c8e8480488dc31c7b95da1faddfe242712652e2547227d"
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/precision.snbt",
+            "sha256": "718681cdb88e99f0cf630bbecbc6b085b19b2f7c15862458e36fccacc34c66ee"
+        },
+        {
+            "path": "config/ftbquests/quests/chapters/processing_note.snbt",
+            "sha256": "a3201f2f34891c207d9ef9b6bd0ffe76920f40b3032a34c531197af57278d141"
+        },
+        {
+            "path": "docs/FACTORIO_DESIGN_ANALYSIS.md",
+            "sha256": "5caae1e8f0697b2f43c9566b22d0d3206890d450670ac3b5ca1a2533e5841e24"
+        },
+        {
+            "path": "docs/KUBEJS_ULTIMATE_GUIDE.md",
+            "sha256": "4832ea6a1503f80e7add5ced9355d1057ec22bfb11d85b2f8604f70dbd79867b"
+        },
+        {
+            "path": "kubejs/assets/cwi/lang/en_us.json",
+            "sha256": "34eb0524325282dd4cffd9e41d01cadd9678664a273f73bbb40e6f4f2e26a7e7"
+        },
+        {
+            "path": "kubejs/assets/cwi/lang/zh_cn.json",
+            "sha256": "74d69ee0f969c51f0f0f205e1f6f89e94339a8a963a949e5614cfa27f32faa1d"
+        },
+        {
+            "path": "kubejs/assets/cwi/ponder/glass_batching.nbt",
+            "sha256": "7c99de88f220b76e480925c5153422b81847deafe3329c06c8246e4abbea7ec1"
+        },
+        {
+            "path": "kubejs/assets/cwi/ponder/logistics/filtering.nbt",
+            "sha256": "5cce71a46245e730cdd7e100cf595dfab6c70c7b41ea9310eee29787f8e345a3"
+        },
+        {
+            "path": "kubejs/assets/cwi/ponder/logistics/reserve_priority.nbt",
+            "sha256": "997e124b39809d1454d2db33b884f2a2d8a9c1b7c6597e539e925a19338cb2f0"
+        },
+        {
+            "path": "kubejs/assets/cwi/ponder/logistics/sharing.nbt",
+            "sha256": "2d215b9c9c19d172cffd9211f46e14a50f98f912cae90cd7227a377308b07345"
+        },
+        {
+            "path": "kubejs/assets/cwi/ponder/logistics/stockpile_hysteresis.nbt",
+            "sha256": "b7f76f80b84d00b386fe141e3da2a56c5badeb9c7e72b10069baea01941ae307"
+        },
+        {
+            "path": "kubejs/client_scripts/JEI/ProductionPlanning.js",
+            "sha256": "68dadc165ee3f4661602e023819ceb0215b09727342ada967a61376c67cd2255"
+        },
+        {
+            "path": "kubejs/client_scripts/Ponder/GlassWorkshop.js",
+            "sha256": "4f66938c0e27315d0620c915da3d5b8f86e9d9eedbbeaf4635cc8bb73a3a3d68"
+        },
+        {
+            "path": "kubejs/client_scripts/Ponder/Logistics.js",
+            "sha256": "c8feaa0a7bd3709a2fc5bb353f6db44f7101710a8963bf51b00db2fecd29bfbe"
+        },
+        {
+            "path": "kubejs/server_scripts/Multiblocked2/BlastFurnace.js",
+            "sha256": "a275a993a9f779e459ba90dce16c0dd6d6a2b24a917212a0f55e5cfa46c62faf"
+        },
+        {
+            "path": "kubejs/server_scripts/Recipes/IndustrialSupplies.js",
+            "sha256": "f7f4be47b274f90be641e3c91cc72330cebf46f6121ca2c87cc8a6541fced148"
+        },
+        {
+            "path": "kubejs/server_scripts/Recipes/Mods/Storage.js",
+            "sha256": "181e6123cd98a78513f0cdb2a003f27764176bf7b72b1f0ec24f220f64c9b073"
+        },
+        {
+            "path": "kubejs/server_scripts/tags/tags.js",
+            "sha256": "cb689e4bdc7eb8292419a00f42d9feae8fd0daf98865bee97458c023dc26510a"
+        },
+        {
+            "path": "kubejs/startup_scripts/items/ItemModification.js",
+            "sha256": "c32320879062542ea2c6b77dee5baef0076d51ad34ded81028592ceedc628e4a"
+        },
+        {
+            "path": "schematics/cwi_andesite_supply_workshop.nbt",
+            "sha256": "984dfaf48424d662bf7ba9ddab5142c18136f24ca07bd624c6ad755a4c6ab789"
+        },
+        {
+            "path": "schematics/cwi_automated_press_station.nbt",
+            "sha256": "f4766a2ea873a5b1cabad114767b1d697f40abb7d9cb7ca7731874680af42d15"
+        },
+        {
+            "path": "schematics/cwi_belt_press_station.nbt",
+            "sha256": "6091257756ca5f9c514183e256a87b6f39a4eb33e65ac184fa692e353fdca1de"
+        },
+        {
+            "path": "schematics/cwi_glass_batching.nbt",
+            "sha256": "7c99de88f220b76e480925c5153422b81847deafe3329c06c8246e4abbea7ec1"
+        },
+        {
+            "path": "schematics/cwi_glass_workshop.nbt",
+            "sha256": "208fc795cbe69a21568936a5f90b6e72e3c8179f2bcc41f4cee400647c29b0ed"
+        },
+        {
+            "path": "schematics/cwi_press_station.nbt",
+            "sha256": "2ac745b59276c596d6d63db12b8c49edc6dd9cdb56b19fd4f9aea440f08a9831"
+        }
+    ],
+    "fingerprint_scope": "Historical fingerprints identify the earlier audited revision only; changed current files require new hashes and validation",
+    "superseded_material_retirement_audit": {
+        "evidence_state": "Superseded by the author: Hardened Wood and Hardened Planks have distinct roles; native asphalt/concrete are retained. These checks describe the rejected broader-removal revision only.",
+        "revision": {
+            "date": "2026-10-16",
+            "decisions": [
+                "Remove newly added blast-furnace diagnostic interaction, translated messages and JEI note; preserve furnace heat and steel mechanics",
+                "Remove all added firebox fuel tags and guidance; the firebox is not in intended progression",
+                "Produce kubejs:sulfur_powder directly from ore separation and remove TFMG sulfur recipes; no conversion recipe or compatibility tag",
+                "Retain tfmg:air as the single air identity because the native intake hardcodes it; remove unused kubejs:air registration and shared compatibility tag",
+                "Retire duplicate TFMG hardened planks; centrifuge C consumes existing kubejs:harden_wood and the custom TFMG filling replacement is removed",
+                "Remove standalone Firebox and duplicate Hardened Planks quests; redirect the centrifuge prerequisite to existing Hardened Wood"
+            ],
+            "verification": "Corrected source audit passed: Node syntax, installed Rhino compilation, executed recipe-removal callback, installed-jar retired-ID coverage, structural quest checks, JSON parsing and whitespace checks; live behavior untested"
+        },
+        "runtime_corrections": {
+            "date": "2026-10-16",
+            "native_recipe_removals_added_vs_head": 24,
+            "native_retired_id_recipe_coverage": 53,
+            "removed_scope": [
+                "standalone TFMG firebox craft",
+                "retired-fluid and bucket processing/filling routes",
+                "TFMG sulfur recipes and custom conversion bridge",
+                "duplicate TFMG hardened-plank processing and variants"
+            ],
+            "hardened_wood": {
+                "retained": "kubejs:harden_wood",
+                "consumer": "Centrifuge C recipe",
+                "removed_custom_recipe": "cwi:filling/hardened_planks",
+                "policy": "No replacement TFMG hardened-plank supply; use the existing pack item"
+            },
+            "quest_cleanup": "Standalone Firebox and duplicate Hardened Planks quests removed; centrifuge prerequisite points to existing Hardened Wood, and the creosote description is corrected",
+            "air": "tfmg:air is sole retained identity; native intake output is hardcoded and KubeJS air registration/tag bridge are removed",
+            "sulfur": "Ore separation emits kubejs:sulfur_powder directly",
+            "furnace": "Added diagnostic removed; remaining BlastFurnace.js change against HEAD is exact native-air input instead of a compatibility tag",
+            "native_recipe_coverage": "53 TFMG retired fluid/bucket/sulfur recipes, vintageimprovements:milling/sulfur, and all six native hardened-plank references are removed"
+        },
+        "checks": {
+            "date": "2026-10-16",
+            "source_audit": "Passed for the corrected revision",
+            "javascript": {
+                "modified_files": 12,
+                "node_syntax": "Passed",
+                "installed_rhino_compilation": "Passed",
+                "limit": "Compilation is not actual game callback execution or live recipe deserialization"
+            },
+            "recipe_removals": {
+                "callback_execution": "Node VM",
+                "unique_explicit_ids": 733,
+                "duplicate_ids": 0,
+                "added_vs_head": 24,
+                "installed_jar_token_scan": {
+                    "tfmg_retired_fluid_bucket_or_sulfur_recipes": 53,
+                    "vintageimprovements_sulfur_recipe": "vintageimprovements:milling/sulfur",
+                    "native_hardened_plank_recipe_references": 6,
+                    "survivors": 0
+                },
+                "retained_native_air_tank_filling": true
+            },
+            "quests": {
+                "snbt_files": 18,
+                "structural_balance": "Passed",
+                "id_and_dependency_scan": "Passed; no new unresolved dependencies",
+                "deleted_quest_and_task_ids": "Absent",
+                "creosote_and_centrifuge_diff": "Inspected",
+                "actual_ftb_parser_run": false,
+                "live_runtime_check": false
+            },
+            "hardened_wood": "Centrifuge C uses existing kubejs:harden_wood; custom TFMG hardened-plank filling replacement is deleted",
+            "sulfur": "Direct kubejs:sulfur_powder output; no tfmg:sulfur_dust conversion or compatibility tag",
+            "firebox": "Fuel tags and JEI notes removed; standalone Firebox and duplicate Hardened Planks quests removed",
+            "air": "Exact tfmg:air inputs retained for steel and liquefaction; no KubeJS air registration or dual-air tag",
+            "furnace": "Diagnostic code, messages and JEI hook removed; BlastFurnace.js diff against HEAD is only fluidTag to exact tfmg:air input, preserving heat and steel mechanics",
+            "json": "CWI locale files and retained evidence parse",
+            "whitespace": "git diff --check passed",
+            "live_minecraft": {
+                "executed": false,
+                "claim": "No corrected-revision reload, rendering or machine-operation result"
+            }
+        }
+    },
+    "revision": {
+        "date": "2026-10-16",
+        "decisions": [
+            "Keep the firebox additions and blast-furnace diagnostic removed; retain furnace heat and steel mechanics",
+            "Use kubejs:sulfur_powder directly from ore separation; no TFMG sulfur conversion or compatibility tag",
+            "Retain native tfmg:air because its intake output is hardcoded; remove unused kubejs:air registration and dual-air compatibility tag",
+            "Keep kubejs:harden_wood and tfmg:hardened_planks as distinct products; restore centrifuge C, quest and prerequisite to Hardened Planks",
+            "Supply TFMG hardened planks via cwi:filling/hardened_planks with 250 mB kubejs:creosote and restore native slab/stair/wall recipes",
+            "Retain tfmg:liquid_asphalt and tfmg:liquid_concrete with native mixing; remove only their unused KubeJS registrations",
+            "Restore native cinder block crafting; retain the fire extinguisher through targeted KubeJS carbon dioxide bucket replacement and refill"
+        ],
+        "verification": "Final corrected source audit passed for retained and removed scope; Node syntax, installed Rhino compilation, removal/supply/startup mocks, adjusted jar scan and structural quest checks; no FTB parser or live game run"
+    },
+    "current_runtime_corrections": {
+        "date": "2026-10-16",
+        "distinct_products": {
+            "hardened_wood": "kubejs:harden_wood retains its existing separate role and recipe; IndustrialAge.js matches HEAD exactly",
+            "hardened_planks": {
+                "item": "tfmg:hardened_planks",
+                "consumer": "Centrifuge C recipe",
+                "supply": "cwi:filling/hardened_planks uses 250 mB kubejs:creosote",
+                "quest": "Hardened Planks quest and centrifuge prerequisite restored",
+                "variants": "Native slab, stair and wall recipes restored"
+            }
+        },
+        "native_fluid_choices": {
+            "tfmg:air": "Native intake, exact steel and liquefaction input; remove kubejs:air and tag bridge",
+            "tfmg:liquid_asphalt": "Retain native fluid and native mixing; remove unused KubeJS registration",
+            "tfmg:liquid_concrete": "Retain native fluid and native mixing; remove unused KubeJS registration; installed concrete hose hardcodes native concrete"
+        },
+        "retained_native_products": {
+            "cinder_block": "Restore native crafting",
+            "fire_extinguisher": {
+                "craft": "Retain tfmg:crafting/kinetics/fire_extinguisher and replace only tfmg:carbon_dioxide_bucket with kubejs:carbon_dioxide_bucket",
+                "refill": "cwi:filling/fire_extinguisher consumes 1000 mB kubejs:carbon_dioxide",
+                "result": "tfmg:fire_extinguisher with {fill_level:500}",
+                "old_refill": "Native tfmg:filling/filled_fire_extinguisher remains removed because it uses retired native CO2"
+            }
+        },
+        "unchanged_removals": [
+            "Firebox fuel tags, guidance and quest",
+            "Blast-furnace diagnostic interaction, messages and JEI note",
+            "TFMG sulfur compatibility bridge"
+        ],
+        "verification": "Final corrected source audit passed; runtime operation remains untested",
+        "native_mixture_scope": "Restore only native mixing/liquid_asphalt and mixing/liquid_concrete conversions; old base-mixture removals remain intentional because retained slag-mixture routes supply both"
+    },
+    "current_checks": {
+        "date": "2026-10-16",
+        "source_audit": "Passed for final restored product/fluid scope",
+        "javascript": {
+            "modified_files": 11,
+            "node_syntax": "Passed",
+            "installed_rhino_compilation": "Passed",
+            "industrial_age_diff_against_head": "Empty; identical to HEAD",
+            "limit": "Compilation and mocks are not a live game reload or machine operation"
+        },
+        "recipe_removals": {
+            "callback_execution": "Node VM",
+            "unique_explicit_ids": 726,
+            "duplicate_ids": 0,
+            "added_vs_head": 17,
+            "retained_native_routes_asserted": 10,
+            "retained_scope": [
+                "Cinder block crafting",
+                "Fire extinguisher crafting",
+                "Liquid concrete mixing",
+                "Liquid asphalt mixing",
+                "Hardened plank slab, stair and wall recipes",
+                "Native air-tank filling",
+                "Two retained slag-mixture routes"
+            ],
+            "adjusted_installed_jar_scan": {
+                "tfmg_retired_fluid_bucket_or_sulfur_matches": 48,
+                "native_asphalt_and_concrete_excluded_from_retired_set": true,
+                "fire_extinguisher_craft": "Retained with targeted retired-bucket replacement",
+                "vintageimprovements_sulfur": "Removed by whole-mod recipe removal",
+                "retired_id_survivors_after_targeted_replacement": 0
+            }
+        },
+        "industrial_supplies_mock": {
+            "hardened_planks": "tfmg:hardened_planks from #minecraft:planks and 250 mB kubejs:creosote",
+            "fire_extinguisher_craft": "Targeted replaceInput changes only tfmg:carbon_dioxide_bucket to kubejs:carbon_dioxide_bucket",
+            "fire_extinguisher_refill": "1000 mB kubejs:carbon_dioxide returns tfmg:fire_extinguisher with fill_level:500 NBT"
+        },
+        "startup_fluid_mock": {
+            "absent_kubejs_registrations": [
+                "air",
+                "liquid_asphalt",
+                "liquid_concrete"
+            ],
+            "liquid_silicon": "Retained"
+        },
+        "quests": {
+            "snbt_files": 18,
+            "structural_balance": "Passed",
+            "id_and_dependency_scan": "Passed; no new missing references",
+            "hardened_planks_quest": "Present; centrifuge prerequisite restored",
+            "firebox_quest_and_task_ids": "Absent",
+            "actual_ftb_parser_run": false,
+            "live_runtime_check": false
+        },
+        "runtime_source_scan": "No removed KubeJS air/asphalt/concrete fluid references or TFMG sulfur references in active runtime code",
+        "sulfur": "Direct kubejs:sulfur_powder output; no conversion or compatibility tag",
+        "firebox": "Fuel tags, JEI guidance and standalone quest removed",
+        "furnace": "Added diagnostic code, messages and JEI hook removed; heat and steel mechanics retained",
+        "whitespace": "git diff --check passed",
+        "live_minecraft": {
+            "executed": false,
+            "claim": "No current reload, rendering or machine-operation result"
+        }
+    }
+}

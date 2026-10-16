@@ -165,6 +165,53 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["4C5689F8A2DBC8A7"]
+			description: [
+				"&eKeep the first press available while building another press station. The new station can supply iron sheets for further construction.&r"
+				""
+				"&eSupply the new station from your compound, alloy, and sheet production. Set its construction parts aside, including the shafts and drive needed by your layout, so expansion does not take material already reserved for operating the first station.&r"
+				""
+				"&eKeep a separate iron ingot as working stock. Connect the new station to a drive with spare stress capacity, press the ingot, and transfer the sheet to storage.&r"
+				""
+				"&eStop the station deliberately. Clear its output, restore one working ingot, and restart it. Leave the first station's drive and stock available while expanding.&r"
+				""
+				"&7The supplied cwi_press_station.nbt gives a small manual layout. The cwi_belt_press_station.nbt automates pressing with Mechanical Age parts; its belt and press share a drive. Run the belt toward the output barrel and feed only pressable items.&r"
+				""
+				"&7The cwi_automated_press_station.nbt gives a compact depot layout with filtered extraction once Precision Age hardware is available. Its preset output is iron sheet.&r"
+				""
+				"&7The cwi_andesite_supply_workshop.nbt connects compound mixing, alloy smelting, and sheet pressing. Its front lever pauses feed to the press, leaving new alloy available in the reserve barrel.&r"
+				""
+				"&7This is an optional workshop check. Mark each step after observing it yourself.&r"
+			]
+			disable_toast: true
+			icon: "create:depot"
+			id: "6D91D76D4F3246A2"
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Build, Run, and Restart"
+			tasks: [
+				{
+					id: "13772380F53F4396"
+					title: "Build Another Press Station"
+					type: "checkmark"
+				}
+				{
+					id: "50D50DDCE3294EA8"
+					title: "Press an Ingot and Store the Sheet"
+					type: "checkmark"
+				}
+				{
+					id: "4E36F15E0FE94ABC"
+					title: "Clear, Refill, and Restart"
+					type: "checkmark"
+				}
+			]
+			title: "A Reproducible Press Station"
+			x: 14.5d
+			y: -2.5d
+		}
+		{
 			dependencies: ["5E402C739E34B7D4"]
 			description: ["&eDamp clay is pliable enough to fill a mold and bind loose mineral grains together. This makes it useful in andesite compound, ash bricks, and casting molds; firing fixes the shaped clay into ceramic.&r"]
 			disable_toast: true

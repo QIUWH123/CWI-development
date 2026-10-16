@@ -557,25 +557,58 @@ steel recipe.
 
 **Tagged MBD fluid inputs.** The installed `FluidIngredientJS.of(Object)` accepts
 an actual MBD `FluidIngredient`, but its string fallback uses `FluidStackJS.of`.
-A string such as `'#tfmg:air 1500'` is therefore not a supported MBD tag input.
+A string such as `'#cwi:water 500'` is therefore not a supported MBD tag input.
 The installed MBD class supports this JSON shape through `fromJson`:
 
 ```js
 const mbdFluidIngredient = Java.loadClass('com.lowdragmc.mbd2.api.recipe.ingredient.FluidIngredient')
-const airInput = mbdFluidIngredient.fromJson(JsonIO.of({ amount: 1500, value: { tag: 'tfmg:air' } }))
-builder.inputFluids(airInput)
+const taggedWaterInput = mbdFluidIngredient.fromJson(JsonIO.of({ amount: 500, value: { tag: 'cwi:water' } }))
+builder.inputFluids(taggedWaterInput)
 ```
 
 This is an MBD ingredient schema. Create and TFMG vat recipes instead use the
-existing `AddFluid('1500 #tfmg:air')` shape with `fluidTag` and `amount`.
+existing `AddFluid('500 #cwi:water')` shape with `fluidTag` and `amount`.
 Do not interchange those shapes. Keep tag matching on inputs; a concrete fluid
 must be selected for outputs.
 
 **Hardcoded machine outputs.** TFMG's installed air intake produces `tfmg:air`
-directly rather than reading a recipe output. The shared `tfmg:air` fluid tag
-contains both native and KubeJS air, and steel/air-liquefaction inputs use it.
-Registering a replacement fluid or adding it to a tag does not convert the
-native fluid. Trace machine code as well as recipe JSON during fluid migrations.
+directly rather than reading a recipe output. Registering a replacement fluid
+does not convert this output. Trace machine code as well as recipe JSON during
+fluid migrations. The author chose native `tfmg:air` as the sole retained air
+identity because the intake produces it directly. Steel refining and air
+liquefaction use that exact fluid; the unused `kubejs:air` registration and the
+dual-air compatibility tag are removed. This is an explicit native-only
+exception to the earlier fluid migration, not a conversion route.
+
+**Retired content and duplicate materials.** Inspect the current recipe-removal
+lists and progression before treating a native recipe or machine as available.
+Check actual properties, recipes, consumers, and progression roles before
+calling products duplicates. Similar names are insufficient: `kubejs:harden_wood`
+and `tfmg:hardened_planks` are distinct products, and the centrifuge consumes
+the latter. Its filling recipe uses 250 mB `kubejs:creosote`; the distinct
+Hardened Planks quest and native slab/stair/wall recipes are retained.
+Use the pack's retained material directly in active recipes; remove recipes
+for the retired version instead of creating a conversion or compatibility tag.
+Ore separation must yield `kubejs:sulfur_powder` directly, without a TFMG sulfur
+bridge. The TFMG firebox is removed from progression and must not be offered as
+a fuel sink. Leave unfinished consumers explicit rather than restoring a
+removed machine to make an audit appear complete.
+
+The author confirmed these native fluid identities. Remove only their unused
+KubeJS registrations; do not replace their native recipes wholesale:
+
+| Retained Fluid | Removed Registration | Reason |
+| --- | --- | --- |
+| `tfmg:air` | `kubejs:air` | The native air intake hardcodes this output; steel refining and air liquefaction consume it directly. |
+| `tfmg:liquid_asphalt` | `kubejs:liquid_asphalt` | Retain the native construction fluid and its native mixing route. |
+| `tfmg:liquid_concrete` | `kubejs:liquid_concrete` | Retain the native construction fluid and its native mixing route; the concrete hose hardcodes the native fluid. |
+
+Recipe edits must remain specific to the replaced ingredient. Keep native cinder
+block crafting. Keep the fire extinguisher available by replacing its carbon
+dioxide bucket input with KubeJS carbon dioxide and supplying a refill route;
+do not remove the product to avoid migrating that ingredient.
+The refill consumes 1,000 mB `kubejs:carbon_dioxide` and returns the extinguisher
+with `{fill_level:500}`. Its NBT is required and must not be simplified away.
 
 MBD2 also exposes typed recipe components for inputs and outputs, item and
 fluid arrays, duration, priority, machine level, structure blocks, heat, RPM,
@@ -661,10 +694,33 @@ Keep server recipe data and client JEI data synchronized. The custom JEI scripts
 may reshape data for display, such as separating item inputs from fluid inputs;
 that display transformation is not necessarily the server recipe JSON.
 
+**JEI information inputs.** The installed base KubeJS information event accepts
+an item `Ingredient` for `addItem`, including an array of item IDs, but
+`addFluid` takes one `FluidStackJS`. Register separate fluid information entries
+with `Fluid.of(id)` in a loop. An array of fluids is not an equivalent overload.
+Repeated callback checks should compare the count and identities of entries,
+as well as their translated text.
+
 KubeJS Additions also exposes Jade provider registration. Locally documented
 `JadeEvents.onCommonRegistration` belongs in startup scripts and
 `JadeEvents.onClientRegistration` in client scripts. Provider IDs and payload
 shapes must match between their common and client sides.
+
+### PonderJS Scenes And Localization
+
+The installed `mods/ponderjs-1.20.1-2.1.0.jar` uses bundled Ponder 1.0.92.
+An explicit scene ID such as `cwi:glass_working_stock` retains its namespace.
+Its header key is `cwi.ponder.glass_working_stock.header`; each text call
+registers `text_1`, `text_2`, and later keys in call order. Recheck both locales
+whenever a scene adds, removes, or reorders text. A mock using that key convention
+is useful only after the installed implementation has been checked.
+
+Scene actions and deferred NBT callbacks must follow the real block-entity
+contracts. For example, basin inventories use the `InputItems` and `OutputItems`
+Forge item-handler compounds, not ordinary container `Items` lists. Scripted
+inventory or redstone snapshots can explain circulation and hysteresis, but
+they do not demonstrate that a live factory sustains production. Give animations
+enough time to finish before describing their result.
 
 ## Event Contracts And Persistent Data
 
@@ -755,6 +811,9 @@ Before editing a recipe or helper:
    chance, processing time, heat requirement, stage, and machine data field.
 4. Check whether a native KubeJS or addon builder already handles the type.
 5. Check pack helpers and shared globals before adding duplicate logic.
+   Trace recipe removals and intended progression as well: installed content
+   is not automatically active content. Resolve a replacement's source and
+   retained identity before adding any compatibility behavior.
 6. Choose a stable explicit recipe ID. Avoid accidental generated IDs when the
    recipe may be modified or removed later.
 7. Add the smallest change in the correct script directory.

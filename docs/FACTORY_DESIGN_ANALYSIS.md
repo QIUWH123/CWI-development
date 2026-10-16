@@ -2,6 +2,21 @@
 
 Date: 2026-10-11
 
+Scope correction: 2026-10-16. The author removed the added blast-furnace
+diagnostics and firebox support, and rejected material-conversion bridges.
+Retained recipes use KubeJS sulfur powder directly; native TFMG air is the
+single air identity because the intake hardcodes it. The earlier validation
+figures below describe their reviewed revisions, not a passing current reload.
+The later correction preserves distinct Hardened Wood and Hardened Planks
+products. The centrifuge uses TFMG hardened planks, supplied by filling with
+250 mB KubeJS creosote. Native liquid asphalt and concrete are retained;
+only their unused KubeJS registrations are removed. Native cinder block
+crafting is restored, and the fire extinguisher receives a targeted KubeJS
+carbon dioxide bucket replacement and refill route. The earlier claim that
+all 53 native recipes should be removed is superseded. Final validation of
+the revised scope passes the source checks described below; live operation
+remains untested.
+
 This report describes the current KubeJS, datapack, quest, and machine design
 in CWI. It separates source-confirmed behavior from design risks and from
 questions that require a live Forge test. It does not treat every simplified
@@ -31,7 +46,7 @@ The harness is a structural check; an in-game reload is still the final proof.
 
 ## Implemented Opening Improvements
 
-The author authorized improvements based on this report. This batch addresses
+The author authorized improvements based on this report. The initial batch addresses
 supply gaps, recoverable waste, and planning information in the existing
 opening and industrial progression.
 
@@ -40,7 +55,7 @@ opening and industrial progression.
 | Precipitant supply | One soda powder makes four reagent doses. The consumed precipitation reagent now has a simple automated source; these are smaller doses, not four full soda portions. |
 | Flotation reagent supply | Unheated Create mixing combines clay, plant oil, and bioethanol into four doses. Existing pressing and fermentation supplies support the line; the generic collector/frother blend is a gameplay abstraction. |
 | Lubricating oil supply | Wax oil can be distilled into lubricant and four existing petroleum cuts instead of being cracked. The five liquid outputs total the 1,000 mB input. Existing plant-oil assembly still supplies the first heavy machinery. |
-| Native intake compatibility | Steel refining and air liquefaction consume an air tag containing both native TFMG air and KubeJS air. The intake hardcodes its native fluid, so replacing recipe IDs alone had disconnected its output. Tag inputs avoid an extra conversion machine. |
+| Native intake air | The author chose `tfmg:air` as the single retained air ID. Steel refining and air liquefaction consume it directly; the unused KubeJS air registration and compatibility tag are removed. |
 | Glass reject recovery | Heated compacting reclaims one sintered blank from four glass powders. Rejects can return through pressing and quenching; four powders match the maximum milling yield of one glass block, preventing resource gain. |
 | Ore planning in JEI | Shared separation values supply both recipes and localized information. Fifteen ore entries show expected powder/concentrate yield, tailings routes, applicable acid recovery, and buffer advice. |
 | Compound mineral overview in JEI | Eighteen entries show a shadowed mineral block, its deposit, processing forms, physical/acid products, and available furnace products. Tooltips distinguish producing routes, probabilities, and intermediate forms. Halite and lignite use their own supply routes; the sulfur block explicitly has no current processing recipe. |
@@ -50,13 +65,13 @@ opening and industrial progression.
 Structural validation preserves all 203 ore registrations and all 18 existing
 glass registrations. The three supply recipes and the glass recovery recipe
 have four unique explicit IDs; distillation output volume is conserved.
-The planning script registers 49 information groups. EN/ZH keys and substitution
-counts match, and every pre-existing translation value is preserved. Comparisons
-of 10 furnace and 85 chemistry registrations confirm that only their two air
-inputs change, from an exact fluid to the shared tag; quantities, outputs,
-heat, and duration stay the same.
+The earlier planning revision registered 64 information groups. EN/ZH keys and
+substitution counts match. The lignite-powder and slag notes have been updated
+to match their implemented destinations. Comparisons
+of 10 furnace and 85 chemistry registrations covered the earlier dual-air-tag
+revision. That compatibility approach is superseded by native-only air.
 
-All changed JavaScript files compile with the installed Rhino jar. The installed
+For that earlier revision, all changed JavaScript files compiled with the installed Rhino jar. The installed
 FTB Library SNBT parser accepts the two edited quest chapters. Installed JEI,
 TFMG, and MBD2 signatures/bytecode were checked for the new API calls, output
 limits, native air source, and typed fluid-tag input. `git diff --check` passes.
@@ -72,12 +87,12 @@ The supplied client log also showed an ambiguous `Text.join` overload; ore
 byproduct names now use component appends and retain translated names/separators.
 
 The original furnace error was reproduced by executing the full recipe callback
-with the installed Rhino jar and mocked game APIs. The repaired callback runs
-twice and registers all 10 recipes on each invocation, including the typed air
-tag. The ore information callback likewise executes twice with 49 groups per
-invocation. The original incubator error was also reproduced; before the later
-revival-route removal, repaired layout and draw handlers ran twice across all
-31 variants and 124 feed entries, with deferred tooltip indices, tools, repeats,
+with the installed Rhino jar and mocked game APIs. The repaired callback ran
+twice and registered all 10 recipes on each invocation, including the then-used
+typed air tag. The ore information callback likewise executed twice with 64 groups per
+invocation after the byproduct additions. The original incubator error was also
+reproduced; before the later revival-route removal, repaired layout and draw
+handlers ran twice across all 31 variants and 124 feed entries, with deferred tooltip indices, tools, repeats,
 and displayed amounts checked.
 These execution checks cover callback scoping; mocked APIs do not
 prove live serialization or rendering. Compile-only validation had missed the
@@ -99,8 +114,9 @@ a tooltip rather than an invented route. Chances above one in host-rock
 centrifugation display as guaranteed output, without changing the recipe value.
 
 Halite shows brine, salt, evaporation residue, and returned water. Lignite shows
-its lump fuel use and microbial coal conversion; its powder has no current
-onward use. Returned microbes are display-only entries. Sulfur's related forms
+its fuel use and microbial coal conversion. Powder now retains the lump's
+400-tick fuel value, as described in the later byproduct batch below.
+Returned microbes are display-only entries. Sulfur's related forms
 and separate ore sources are distinguished from the unprocessed sulfur block.
 
 Before the later revival-route removal, the revised incubator handlers executed
@@ -143,6 +159,203 @@ furnace flags, sulfur isolation, returned-culture roles, 795 bounded and
 nonoverlapping slots, and 795 deferred tooltip callbacks. All 48 added EN/ZH
 category keys resolve and their substitution counts match. These are source
 and mock-runtime checks, not live registry or visual verification.
+
+## Ten Factory Improvements
+
+The author approved work on these ten improvements, starting with byproduct
+destinations. The 16 October correction removes improvement 1 and revises
+improvement 9: removed machines and duplicate materials must not be revived
+through compatibility additions. The retained layouts and optional projects
+still need Minecraft operation and rendering checks.
+
+| # | Improvement | Current Result | Remaining Check |
+| --- | --- | --- | --- |
+| 1 | Blast-furnace diagnostic | Removed at the author's request, including the interaction, language entries, and added JEI note. Existing furnace heat and steel mechanics are retained. | No further diagnostic work requested. |
+| 2 | Useful mechanical workshop | Optional project commissions another press station. Manual, belt, and depot layouts are supplied, plus a Mechanical-stage compound/alloy/sheet workshop with an accessible alloy reserve. | Live production and expansion supply remain unmeasured. |
+| 3 | Circulating glass workshop | Optional project, batching Ponder, and a complete ordinary-glass tower cover firing, pressing, quenching, reject milling, heated recovery, and return to pressing. | Live construction, sustained circulation, output blockage, and restart remain unverified. |
+| 4 | Construction and startup supplies | The press project reserves construction parts separately from consumed working ingots and keeps the first station available during expansion. Schematics contain no preloaded supplies. | Build from ordinary survival supplies and compare restart behavior. |
+| 5 | Separate routing examples | Three Ponder scenes distinguish filtering, stack sharing, and reserve priority; sharing contrasts Split with Forced Round Robin. | Live rendering, belt transfer, and blocked-output behavior. |
+| 6 | Automatic reserves | A fourth scene demonstrates a normal threshold-switch signal stopping input at 64 items and restarting at 16; the priority scene uses an inverted signal to gate surplus. | Live redstone wiring, thresholds, and stock movement. |
+| 7 | Optional workshop schematics | Six press, andesite-supply, and glass NBT files provide empty survival builds, preset product filters where needed, and external drive connections. Quests identify their scope. | Import, rotation, material requirements, and schematicannon construction. |
+| 8 | Measured factory upgrades | An optional steel comparison uses equal pig-iron inputs, counts oxygen infrastructure and all outputs, and measures sustained delivered steel. | Player comparison under equivalent furnace conditions. |
+| 9 | Deliberate byproduct destinations | Retain silicate concrete recovery, lignite-powder fuel, fluid overflow supplies, and disposal/venting notes. Ore separation produces KubeJS sulfur directly. The sulfur conversion and firebox additions are removed. | Live recovery, venting, and locked-drawer overflow. |
+| 10 | Useful outposts | An optional lava project supplies the existing sturdy-sheet line, checks the extraction site and drive, then interrupts and restores delivery. | Live site, loaded transport, and consumer operation. |
+
+These are optional operating projects with three manual checkmarks each. They
+add no rewards, recipe locks, downstream dependencies, time quotas, or scripted
+attacks. A checkmark records the player's observation; it does not monitor a
+working factory automatically. The Ponder scenes use scripted inventories and
+signals to explain controls rather than acting as production test evidence.
+
+### Byproduct Destinations
+
+- Two silicate residues, cement, gravel, and 250 mB tagged water compact into
+  four concrete blocks without heat. Washed mineral fines serve as aggregate
+  and filler; compaction also abstracts curing. This gives mineral recovery a
+  construction use without recovering imaginary metals from undefined refuse.
+- Ore separation produces `kubejs:sulfur_powder` directly. TFMG sulfur recipes
+  are removed rather than supported with a conversion or compatibility tag.
+- Lignite powder burns for 400 ticks, matching the lump. Milling a lump is
+  1:1, and block crushing/milling have equal expected fuel yield, so grinding
+  creates no fuel multiplication.
+- Firebox fuel tags and guidance are removed. The firebox was already excluded
+  from progression; it is not a destination for petroleum residues or gases.
+  Unfinished uses remain unfinished until an intended consumer is designed.
+- KubeJS carbon dioxide can leave through a powered, open-ended Create pipe
+  facing replaceable air. Its gas registration has no world block.
+- Washing residue has no defined composition or recovery recipe. The JEI
+  note describes a segregated chute into enclosed lava for unwanted solids.
+  Useful fines, carbonate stock, and products belong outside that waste route.
+- Fluid drawers can retain stock and discard only matching overflow. Recipes
+  now supply their void upgrade and configuration tool, previously unavailable
+  after the pack's whole-mod removal. Native patterns retain obsidian, paper,
+  gold, and emerald costs, using a single fluid drawer as the base. Seed and
+  lock a dedicated drawer before enabling overflow disposal. Acetic acid,
+  humic-acid slurry, and methanol receive this optional destination without
+  invented chemistry; argon, helium, and sulfur dioxide receive gas-vent notes.
+  Use empty drawers to craft these supplies: ordinary shaped ingredients do
+  not protect stored inventory NBT.
+- Existing slag casting followed by stonecutting supplies building bricks.
+  Existing tailings recovery, glass reject recovery, steam condensation,
+  creosote use, and heavy-residue coking remain useful destinations. Native
+  liquid concrete and asphalt retain their TFMG identities and mixing routes;
+  the unused KubeJS registrations are removed instead of replacing these lines.
+
+The earlier fluid audit covered 20 stream groups. Some registered liquids still have
+unfinished uses; a new consumer is not justified merely by naming a plausible
+chemical reaction. Native recipes and direct machine behavior were checked
+alongside scripts before calling a stream unused.
+
+### Layout Scope And Validation
+
+`schematics/cwi_press_station.nbt` is a small manual station.
+`schematics/cwi_belt_press_station.nbt` automates pressing with Mechanical-stage
+parts. Its belt and press share one drive, so loss of that drive stops transport
+as well as pressing. Run the belt toward the output barrel and feed only items
+with a press recipe; unrelated items would pass through. Its output funnel faces
+against travel and holds products when the barrel cannot accept them. The five
+belt segments require one belt connector and three pulley shafts, rather than
+five belt items. The total build uses four shafts including the rear drive port.
+`schematics/cwi_automated_press_station.nbt` adds a Smart Chute filtered to
+iron sheets, so raw ingots remain on the depot until pressed. It requires
+Precision hardware. Change the output filter before feeding another material.
+
+`schematics/cwi_andesite_supply_workshop.nbt` connects unheated compound mixing,
+ordinary furnace smelting, and belt pressing with Mechanical-stage parts. Two
+dedicated reagent barrels feed the basin; only its products leave through the
+native side spout. The intermediate alloy barrel stays accessible. Its front
+lever stops new feed onto the press belt while the furnace continues filling
+that reserve. Alloy already on the belt continues to pressing. Connect the
+upper mixer drive at 32 RPM or more and the lower press/belt drive toward the
+sheet barrel. Keep solid dry furnace fuel in the separate fuel barrel; bucket
+fuel would introduce empty containers into the downstream alloy stream. The
+single furnace limits the line's sustained production. Build its furnace using
+the pack's ash-brick/incomplete-furnace route, rather than an assumed vanilla
+crafting recipe. This 10×11×4 example supplies alloys and sheets; component
+crafting and mineral/wood supplies are separate workshop services.
+
+`schematics/cwi_glass_batching.nbt` likewise requires a Smart Chute and is only
+the batching module. Its two product filters select glass batch; returned soda
+and limestone remain accessible to later mixing. Drive, sand supply, carbonate
+working stock, and downstream processing are supplied separately.
+
+`schematics/cwi_glass_workshop.nbt` is a complete ordinary-glass material-flow
+example for Precision hardware. Its 10×28×10 tower keeps transport in machine
+inventories, hoppers, and chutes. Good glass leaves separately from rejects;
+rejects are milled and heated into sintered blanks, then lifted through the
+fan-driven chute column directly into the pressing basin. Carbonate working
+stock stays inside the upper batching basin. Tempering and nitrate ion exchange
+are separate later lines.
+
+Connect one rotational source at positive 32 RPM or more to the base shaft
+at local `(8, 0, 6)`, with enough stress capacity for all consumers. Supply
+pumped water at `(8, 16, 4)`, sand at `(1, 24, 4)`, and compatible dry solid
+fuel to the furnace and recovery-burner barrels. Seed soda and limestone in
+the batching basin. The cannon requires one filled blaze burner and one real
+Create filter; ordinary item ghost filters do not consume their sample items.
+Its bill uses 17 ordinary gearbox items under the native cannon requirement;
+manual placement instead uses eight ordinary and nine vertical gearboxes.
+The example contains no free raw materials, fuel, water, or power. It omits
+foundations and access platforms, which depend on the building site.
+
+Installed safe-NBT logic retains filters and deployer mode but omits basin
+outlet preferences. Those preferences are therefore absent from the file.
+Geometry leaves the batching basin facing down, the pressing basin toward its
+east depot, and recovery toward its south depot; check those outlets after
+construction. The independently reviewed kinetic graph has 84 connected nodes
+and 83 edges, with no loops, conflicting speeds, or incidental cog meshes.
+Positive base input sends the return fan upward. These findings establish the
+source design, while actual construction, output pressure, and restart still
+require a live test.
+
+Installed Create code confirms the press/mixer offset, filtering during chute
+extraction, safe schematic filter serialization, combined basin inventories,
+and retention of chute insertion remainders when a barrel is full. The current
+mixer's medium-speed threshold is 30 RPM; the example uses 32 RPM. These source
+checks do not replace building and operating the structures.
+
+The belt controller and indexes were checked against the installed schematicannon
+rebuilding path. Live placement, rotation, and mirrored preview rendering remain
+unverified.
+
+Earlier installed Rhino checks executed the industrial-supply, fuel-tag,
+item-fuel, and planning callbacks repeatedly. That planning revision had 64
+information groups per run; removal of the firebox and diagnostic notes
+invalidates this as a current count. The installed JEI
+`addFluid` method does not accept an array of fluids. Both Ponder scripts compile,
+and all five scenes execute with deferred inventory/NBT callbacks. Both language
+files have matching keys and placeholders. The FTB Library parser accepts all
+15 chapters; the four new projects preserve existing quest IDs and resolve
+their dependencies.
+
+Earlier storage callbacks executed three times: all 100 previous registrations retained
+their order, values, and modifiers, and only the two overflow-supply recipes
+are added. Installed Functional Storage code retains existing fluid and accepts
+matching excess without storing it when the void utility upgrade is active.
+
+Earlier furnace regression checks retained all ten recipe registrations over
+three runs and identical heat, modes, duration, and parallelism across 24
+configurations and 5,280 ticks. Readiness and click tests applied to the removed
+diagnostic and are historical evidence, not current functionality.
+
+The retained [implementation evidence](audit/FACTORY_IMPROVEMENTS_EVIDENCE.json)
+records source checks, layout bills, and remaining live gates. Desktop inventory
+inspection could not execute because automatic approval review returned service
+errors/timeouts. No live Minecraft success is claimed, and the ten-improvement
+task is not complete while those operating gates remain open.
+
+The earlier byproduct source audit covered the subsequently rejected firebox
+and sulfur-bridge additions. Its checks and fingerprints must not be cited as
+current validation of the corrected scripts. Unchanged schematic checks remain
+source evidence only; their live construction and operation are unverified.
+
+The prior correction passed syntax, compilation, removal-list, structural quest,
+and JSON checks for its reviewed state. Its removal counts and retired-product
+assumptions are superseded by the restoration of Hardened Planks and native
+construction fluids. Those results do not validate the restored recipes or
+quests. The corrected audit checks the intended retained products as well as
+removed IDs; an absence scan alone cannot prove the scope is correct.
+
+The restored scope passes Node syntax and installed Rhino compilation for
+11 modified JavaScript files. The executed removal callback contains 726 unique
+explicit IDs with no duplicates, including 17 additions against HEAD; all ten
+intended retained native routes remain available. A recipe mock verifies plank
+filling with 250 mB KubeJS creosote and the extinguisher's targeted bucket
+replacement plus 1,000 mB carbon dioxide refill with `{fill_level:500}`. A startup
+mock confirms removal of only the KubeJS air, asphalt, and concrete registrations
+while retaining liquid silicon. The adjusted installed-jar scan leaves no
+retired-fluid, bucket, or sulfur reference after the targeted replacement.
+Structural and dependency checks pass for 18 SNBT files: the plank quest and
+centrifuge prerequisite are restored and Firebox quest/task IDs are absent.
+`IndustrialAge.js` matches HEAD. These checks are not an actual FTB parser run
+or a live Minecraft reload; `git diff --check` also passes.
+
+The latest logs cover startup and server loading on 12 October and client loading
+early on 13 October, before the current improvement edits. The new Ponder scripts
+are absent from those loaded-script lists. No error attributable to these changes
+is evidenced, but these logs establish no live gate for the current version.
+The latest desktop attempt again returned an automatic approval-review HTTP 503
+service failure before executing an action; it was not a safety rejection.
 
 ## Architecture
 
@@ -330,10 +543,10 @@ All pig-iron feeds now include coke. Liquid silicon is a valid molten/hot
 process fluid and can be supplied through the same tagged fluid logistics, while
 its special registration preserves TFMG's intended appearance. Quests should
 present the air route first and the oxygen route as a scale upgrade. Both steel
-refining and air liquefaction accept native intake air through the shared air
-tag. JEI explains warmup, the different roles of heaters and reinforcement, and
-separate steel/slag outputs. Slag already has a casting-block route followed by
-native crushing into solid slag for construction mixtures.
+refining and air liquefaction consume `tfmg:air` directly. The added furnace
+diagnostic interaction and its JEI note are removed. Slag already has a casting-block route followed by
+native crushing and stonecutting into building bricks. Liquid asphalt and
+concrete remain native TFMG construction fluids, with native mixing retained.
 
 ### Precision, Storage, And Logistics
 
@@ -405,13 +618,14 @@ The [detailed Factorio study](FACTORIO_DESIGN_ANALYSIS.md) expands the compariso
 with current wiki evidence and CWI source checks. Its leading proposals are an
 equipment resupply workshop, a circulating glass line, and a complete first
 steel works, followed by stock control, repeatable construction, and explicit
-upgrade comparisons. These are proposals, not implemented additions.
+upgrade comparisons. The ten-improvement batch above records which parts now
+have implementations and which still need operating layouts or live validation.
 
 The [detailed Mindustry study](MINDUSTRY_DESIGN_ANALYSIS.md) adds release-checked
 production, logistics, power, heat, and campaign evidence. Its strongest early
 applications are workshop operating contracts, separate construction/startup
 stock, reversible commissioning checks, and upgrades that address a measured
-limit. These proposals use existing mechanics and preserve informational
+limit. These applications use existing mechanics and preserve informational
 quests, the blast furnace steel bootstrap, and deliberate recipe abstractions.
 
 ## Remaining Improvements
@@ -511,4 +725,7 @@ Before calling a design issue a bug, test the smallest relevant case:
   `kubejs/data/minecraft/dimension/overworld.json`
 - Quests: `config/ftbquests/quests/chapters/`
 - JEI planning: `kubejs/client_scripts/JEI/ProductionPlanning.js`, `CompoundMinerals.js`, `Incubator.js`
+- Workshop and logistics Ponder: `kubejs/client_scripts/Ponder/`,
+  `kubejs/assets/cwi/ponder/`
+- Supplied survival layouts: `schematics/cwi_*.nbt`
 - KubeJS API reference: `docs/KUBEJS_ULTIMATE_GUIDE.md`
