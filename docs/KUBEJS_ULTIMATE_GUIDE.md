@@ -709,6 +709,22 @@ shapes must match between their common and client sides.
 ### PonderJS Scenes And Localization
 
 The installed `mods/ponderjs-1.20.1-2.1.0.jar` uses bundled Ponder 1.0.92.
+Its `@RemapForJS` annotations expose scene helpers `world`, `overlay`, `effects`,
+`special`, and `debug`, and utility helpers `select`, `grid`, and `vector`, as
+JavaScript properties. Use `scene.world.showSection(util.select.layersFrom(1), direction.DOWN)`;
+do not call `scene.world()` or `util.select()`. Methods on those helper objects
+remain calls, such as `showSection(...)` and `layersFrom(...)`. Public Java
+signatures alone miss these remaps; inspect annotations with `javap -v` and
+check the actual Rhino bridge. Mocks that make every helper callable can hide
+this error and do not validate the property contract.
+
+To apply scene script changes during a session, run `/kubejs reload client_scripts`
+and then `/ponder reload`. The first command reloads script callbacks; the second
+clears and rebuilds Ponder's scene registry. The installed PonderJS injection into
+`reloadClientScripts` is empty, so that script reload alone does not rebuild the
+scene registry. A full client restart also loads both. Check for fresh script-load
+and Ponder-reload entries before treating a later error as evidence about edited code.
+
 An explicit scene ID such as `cwi:glass_working_stock` retains its namespace.
 Its header key is `cwi.ponder.glass_working_stock.header`; each text call
 registers `text_1`, `text_2`, and later keys in call order. Recheck both locales
@@ -721,6 +737,14 @@ Forge item-handler compounds, not ordinary container `Items` lists. Scripted
 inventory or redstone snapshots can explain circulation and hysteresis, but
 they do not demonstrate that a live factory sustains production. Give animations
 enough time to finish before describing their result.
+
+PonderJS `world.modifyBlock` callbacks receive a KubeJS `BlockIDPredicate`, not
+a native Minecraft `BlockState`. Use `state.with('powered', String(powered))`
+or `state.with('power', '15')`; the installed descriptor has no `setValue`
+method. PonderJS copies existing properties into that descriptor, so changing
+one property this way preserves the others. These callbacks run during playback
+and timeline seeking. Test deferred actions and repeated playback with the
+actual callback contract; successful registration alone cannot catch their errors.
 
 ## Event Contracts And Persistent Data
 
